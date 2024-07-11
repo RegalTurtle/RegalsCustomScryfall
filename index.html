@@ -27,7 +27,7 @@
         for (i=0; i<all_cards.length; i++)
         {
           // height=\"350\" width=\"250\"
-          htmlOut += '<div class="cell"><img src="'+all_cards[i]["img"]+'"></div>'
+          htmlOut += '<div class="cell"><img src="'+all_cards[i]["img"]+'" alt="'+all_cards[i]["name"]+' || '+all_cards[i]["text"]+'"></div>'
         }
         cardsElem.innerHTML = htmlOut
       })
