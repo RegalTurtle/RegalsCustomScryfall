@@ -604,10 +604,14 @@
     "type": "Creature - Giant Soldier",
     "text": "Vigilance\nAt the beginning of combat on each opponent's turn, tap target creature that player controls.",
     "rarity": "U",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/jQRQ9Z5.png",
+    "has_bleed_edge": true,
     "power": 4,
-    "toughness": 6
+    "toughness": 6,
+    "art-remarks": "",
+    "notes": [
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Might need flavor text"}
+    ]
   },
   {
     "name": "Ancestral Thurbile",
@@ -643,9 +647,14 @@
     "type": "Enchantment",
     "text": "{2}: Skip the next shot you would take this turn.",
     "flavor": "\"Sorry, it's my medication\"\n-You, probably",
-    "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false
+    "rarity": "U",
+    "img": "https://i.imgur.com/AsH5nBj.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "09-07-2024", "creator": "Sam", "notes": "Card rename to: Mandate of Sobriety. Reason: new token with same name [Excuse token]"},
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added new card art and name"}
+    ]
   },
   {
     "name": "Bog Witch",
@@ -672,11 +681,15 @@
     "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at any unopened booster pack in the draft or any booster pack not being looked at by another player.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/xq4rq0G.png",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 2,
-    "watermark": "draft"
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN"}
+    ]
   },
   {
     "name": "Anointed Chorister",
@@ -688,10 +701,14 @@
     "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/ETYxqLv.png",
+    "has_bleed_edge": true,
     "power": 1,
-    "toughness": 1
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"}
+    ]
   },
   {
     "name": "Harvester Giant",
@@ -703,10 +720,14 @@
     "text": "When ~ enters, you gain 3 life.\nPlainscycling {2}",
     "flavor": "",
     "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/rN6i6Dy.png",
+    "has_bleed_edge": true,
     "power": 3,
-    "toughness": 5
+    "toughness": 5,
+    "art-remarks": "",
+    "notes": [
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"}
+    ]
   },
   {
     "name": "Ossify",
@@ -718,13 +739,66 @@
     "text": "Exile target creature. Its controller creates a Bronze Armor token with \"Equipped creature gets +X/+X, where X is the exiled card's power.\" and equip {2}.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/tqmscJJ.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {"date": "11-07-2024", "creator": "Thys", "notes": "Created from idea for Sam's cards"},
       {"date": "11-07-2024", "creator": "Sam", "notes": "Name change to ossify"},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Maybe shift to uncommon, putting in the set for now"}
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Maybe shift to uncommon, putting in the set for now"},
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Updated art, might need flavor text? But text box also might be fine as is"}
+    ]
+  },
+  {
+    "name": "Blue Fork",
+    "set": "MTX",
+    "cn": 1001,
+    "id": "U",
+    "cost": "{1}{U}{U}",
+    "type": "Instant",
+    "text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "11-07-2024", "creator": "Thys", "notes": "It's fork in blue what can I say, seems fun"}
+    ]
+  },
+  {
+    "name": "Atemsis, All-Seeing",
+    "set": "MTD",
+    "cn": 43,
+    "id": "U",
+    "cost": "{3}{U}{U}{U}",
+    "type": "Legendary Creature - Sphinx",
+    "text": "Flying\n{2}{U}, {T}: Draw two cards, then discard a card.\nWhenever ~ deals damage to an opponent, you may reveal your hand. If cards with at least six different mana values are revealed this way, that player loses the game.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/Fx8yfPt.png",
+    "has_bleed_edge": false,
+    "power": 4,
+    "toughness": 5,
+    "art-remarks": "",
+    "notes": []
+  },
+  {
+    "name": "Stalwart Training",
+    "set": "MTC",
+    "cn": 505,
+    "id": "W",
+    "cost": "{1}{W}",
+    "type": "Enchantment - Aura",
+    "text": "Enchant creature\nEnchanted creature gets +0/+2 and has vigilance.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/SHvvPGi.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "09-07-2024", "creator": "Thys", "notes": "Cutting this because it feels like it would just be better to have a draft matters card instead, and this was what we were most on the fence about"},
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added this to the website, so we have a record of cut cards and stuff. Also made a quick mock-up"}
     ]
   }
 ]
