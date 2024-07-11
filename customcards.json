@@ -688,6 +688,7 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Inspired from Whispergear Sneak, same effect on a white body"},
       {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN"}
     ]
   },
@@ -799,6 +800,27 @@
     "notes": [
       {"date": "09-07-2024", "creator": "Thys", "notes": "Cutting this because it feels like it would just be better to have a draft matters card instead, and this was what we were most on the fence about"},
       {"date": "11-07-2024", "creator": "Thys", "notes": "Added this to the website, so we have a record of cut cards and stuff. Also made a quick mock-up"}
+    ]
+  },
+  {
+    "name": "Trash Broker",
+    "set": "MTD",
+    "cn": 150,
+    "id": "R",
+    "cost": "{2}{R}",
+    "type": "Creature - Goblin",
+    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, target player passes the last card from their booster to you.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/ZTsVB7N.img",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "watermark": "draft",
+    "art-remarks": "art is a like a goblin working at a pawn shop and appraising what appears to be the contents of a dumpster",
+    "notes": [
+      {"date": "09-07-2024", "creator": "Thys", "notes": "Inspired from Canal Dredger for the red draft matters card."},
+      {"date": "09-07-2024", "creator": "Thys", "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."}
     ]
   }
 ]
