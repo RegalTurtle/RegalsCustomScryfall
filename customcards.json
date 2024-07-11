@@ -708,7 +708,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"}
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"},
+      {"date": "11-07-2024", "creator": "Sam", "notes": "Needs flavor text, I'll work on that"}
     ]
   },
   {
@@ -727,7 +728,8 @@
     "toughness": 5,
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"}
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"},
+      {"date": "11-07-2024", "creator": "Sam", "notes": "Cooking up new art"}
     ]
   },
   {
@@ -819,8 +821,9 @@
     "watermark": "draft",
     "art-remarks": "art is a like a goblin working at a pawn shop and appraising what appears to be the contents of a dumpster",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Inspired from Canal Dredger for the red draft matters card."},
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."}
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Inspired from Canal Dredger for the red draft matters card."},
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."},
+      {"date": "11-07-2024", "creator": "Sam", "notes": "Needs the draft matters card frame and backdrop."}
     ]
   }
 ]
