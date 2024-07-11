@@ -1,0 +1,22 @@
+{
+  "name": "regalscustomscryfall",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "description": "A Scryfall-like interface for RegalTurtle's custom or proxy cards",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RegalTurtle24/RegalsCustomScryfall.git"
+  },
+  "author": "RegalTurtle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RegalTurtle24/RegalsCustomScryfall/issues"
+  },
+  "homepage": "https://github.com/RegalTurtle24/RegalsCustomScryfall#readme"
+}

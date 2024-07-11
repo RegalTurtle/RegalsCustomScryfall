@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <title>Regal's Custom Scryfall</title>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <!-- <a class="active" href="#home">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a> -->
+      <input type="text" placeholder="Search..">
+    </div>
+
+    <div id="cards" class="container"></div>
+    <script>
+      fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
+        // object.sort
+        all_cards.sort((a,b) => {return a["cn"] - b["cn"]})
+        var cardsElem = document.getElementById('cards')
+        var htmlOut = ''
+        for (i=0; i<all_cards.length; i++)
+        {
+          // height=\"350\" width=\"250\"
+          htmlOut += '<div class="cell"><img src="'+all_cards[i]["img"]+'"></div>'
+        }
+        cardsElem.innerHTML = htmlOut
+      })
+    </script>
+  </body>
+</html>
