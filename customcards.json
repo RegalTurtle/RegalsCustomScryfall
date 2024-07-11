@@ -94,7 +94,7 @@
   {
     "name": "Clairmont, Vicious Arbiter",
     "set": "MTD",
-    "cn": 8,
+    "cn": 10,
     "id": "U",
     "cost": "{2}{W}",
     "type": "Legendary Creature - Human Noble",
@@ -108,7 +108,7 @@
   {
     "name": "Rally the People",
     "set": "MTD",
-    "cn": 28,
+    "cn": 34,
     "id": "U",
     "cost": "{5}{W}{W}",
     "type": "Sorcery",
@@ -120,7 +120,7 @@
   {
     "name": "Dawn of Hope",
     "set": "MTD",
-    "cn": 10,
+    "cn": 12,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Enchantment",
@@ -146,7 +146,7 @@
   {
     "name": "Path to .08 B.A.C.",
     "set": "MTD",
-    "cn": 24,
+    "cn": 30,
     "id": "W",
     "cost": "{W}",
     "type": "Instant",
@@ -158,7 +158,7 @@
   {
     "name": "Prohibition",
     "set": "MTD",
-    "cn": 26,
+    "cn": 32,
     "id": "W",
     "cost": "{3}{W}",
     "type": "Enchantment",
@@ -170,7 +170,7 @@
   {
     "name": "Reformed Priest",
     "set": "MTD",
-    "cn": 30,
+    "cn": 35,
     "id": "W",
     "cost": "{2}{W}",
     "type": "Creature - Elf Noble",
@@ -184,7 +184,7 @@
   {
     "name": "Parishioner",
     "set": "MTD",
-    "cn": 23,
+    "cn": 29,
     "id": "W",
     "cost": "{W}",
     "type": "Creature - Human Citizen",
@@ -198,7 +198,7 @@
   {
     "name": "Zealot",
     "set": "MTD",
-    "cn": 39,
+    "cn": 42,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Soldier",
@@ -212,7 +212,7 @@
   {
     "name": "Champion of Light",
     "set": "MTD",
-    "cn": 7,
+    "cn": 9,
     "id": "W",
     "cost": "{3}{W}",
     "type": "Creature - Human Angel",
@@ -224,9 +224,9 @@
     "toughness": 3
   },
   {
-    "name": "Champion of Light",
+    "name": "Hopeful Monk",
     "set": "MTD",
-    "cn": 14,
+    "cn": 9,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Monk",
@@ -240,7 +240,7 @@
   {
     "name": "Archon of Coronation",
     "set": "MTD",
-    "cn": 4,
+    "cn": 6,
     "id": "W",
     "cost": "{4}{W}{W}",
     "type": "Creature - Archon",
@@ -280,7 +280,7 @@
   {
     "name": "Guardsmen",
     "set": "MTD",
-    "cn": 13,
+    "cn": 15,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Soldier",
@@ -294,7 +294,7 @@
   {
     "name": "Inquisitorial Knight",
     "set": "MTD",
-    "cn": 15,
+    "cn": 19,
     "id": "W",
     "cost": "{3}{W}",
     "type": "Creature - Human Soldier",
@@ -308,7 +308,7 @@
   {
     "name": "Judge Unworthy",
     "set": "MTD",
-    "cn": 16,
+    "cn": 21,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Instant",
@@ -320,7 +320,7 @@
   {
     "name": "Arrest",
     "set": "MTD",
-    "cn": 5,
+    "cn": 7,
     "id": "W",
     "cost": "{2}{W}",
     "type": "Enchantment - Aura",
@@ -332,7 +332,7 @@
   {
     "name": "Condemn",
     "set": "MTD",
-    "cn": 9,
+    "cn": 11,
     "id": "W",
     "cost": "{W}",
     "type": "Instant",
@@ -344,7 +344,7 @@
   {
     "name": "Throne Warden",
     "set": "MTD",
-    "cn": 37,
+    "cn": 41,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Soldier",
@@ -358,7 +358,7 @@
   {
     "name": "Palace Sentinels",
     "set": "MTD",
-    "cn": 21,
+    "cn": 27,
     "id": "W",
     "cost": "{3}{W}",
     "type": "Creature - Human Soldier",
@@ -372,19 +372,23 @@
   {
     "name": "Astral Confrontation",
     "set": "MTD",
-    "cn": 6,
+    "cn": 8,
     "id": "W",
     "cost": "{4}{W}",
     "type": "Instant",
     "text": "This spell costs {1} less to cast for each opponent you're attacking.\nExile target creature.",
+    "flavor": "Bow down and obey.",
     "rarity": "U",
     "img": "https://i.imgur.com/zZF7K9z.png",
-    "has_bleed_edge": false
+    "has_bleed_edge": false,
+    "notes": [
+      {"date": "09-07-2024", "creator": "Thys", "info": "Upshifted from r=C to r=U"}
+    ]
   },
   {
     "name": "Raise the Alarm",
     "set": "MTD",
-    "cn": 28,
+    "cn": 33,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Instant",
@@ -410,7 +414,7 @@
   {
     "name": "Martial Coup",
     "set": "MTD",
-    "cn": 21,
+    "cn": 24,
     "id": "W",
     "cost": "{X}{W}{W}",
     "type": "Sorcery",
@@ -422,7 +426,7 @@
   {
     "name": "Apostle of Purifying Light",
     "set": "MTD",
-    "cn": 3,
+    "cn": 5,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Cleric",
@@ -436,7 +440,7 @@
   {
     "name": "Fortified Rampart",
     "set": "MTD",
-    "cn": 11,
+    "cn": 13,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Wall",
@@ -450,7 +454,7 @@
   {
     "name": "Goliath Protector",
     "set": "MTD",
-    "cn": 12,
+    "cn": 14,
     "id": "W",
     "cost": "{4}{W}",
     "type": "Creature - Giant",
@@ -464,7 +468,7 @@
   {
     "name": "Paladin of the Holy Order",
     "set": "MTD",
-    "cn": 22,
+    "cn": 26,
     "id": "W",
     "cost": "{5}{W}",
     "type": "Creature - Human Soldier",
@@ -478,7 +482,7 @@
   {
     "name": "Palace Jailer",
     "set": "MTD",
-    "cn": 20,
+    "cn": 26,
     "id": "W",
     "cost": "{2}{W}{W}",
     "type": "Creature - Human Soldier",
@@ -506,7 +510,7 @@
   {
     "name": "Sephara, Sky's Blade",
     "set": "MTD",
-    "cn": 35,
+    "cn": 39,
     "id": "W",
     "cost": "{4}{W}{W}{W}",
     "type": "Legendary Creature - Angel",
@@ -520,7 +524,7 @@
   {
     "name": "Skyhoof Pegasus",
     "set": "MTD",
-    "cn": 34,
+    "cn": 40,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Pegasus",
@@ -534,7 +538,7 @@
   {
     "name": "No Fun Allowed",
     "set": "MTD",
-    "cn": 19,
+    "cn": 25,
     "id": "W",
     "cost": "{W}",
     "type": "Instant",
@@ -546,7 +550,7 @@
   {
     "name": "Peace",
     "set": "MTD",
-    "cn": 25,
+    "cn": 31,
     "id": "W",
     "cost": "{1}{W}{W}",
     "type": "Enchantment",
@@ -558,7 +562,7 @@
   {
     "name": "Royal Privilege",
     "set": "MTD",
-    "cn": 31,
+    "cn": 36,
     "id": "W",
     "cost": "{2}{W}{W}{W}",
     "type": "Enchantment",
@@ -570,7 +574,7 @@
   {
     "name": "Sales Tax",
     "set": "MTD",
-    "cn": 33,
+    "cn": 37,
     "id": "W",
     "cost": "{2}{W}{W}",
     "type": "Enchantment",
@@ -582,7 +586,7 @@
   {
     "name": "High Ground",
     "set": "MTD",
-    "cn": 14,
+    "cn": 16,
     "id": "W",
     "cost": "{W}",
     "type": "Enchantment",
@@ -594,7 +598,7 @@
   {
     "name": "Sentinel of the Eternal Watch",
     "set": "MTD",
-    "cn": 33,
+    "cn": 38,
     "id": "W",
     "cost": "{5}{W}",
     "type": "Creature - Giant Soldier",
@@ -620,7 +624,7 @@
   {
     "name": "Light of God",
     "set": "MTD",
-    "cn": 19,
+    "cn": 22,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Enchantment - Aura",
@@ -633,7 +637,7 @@
   {
     "name": "Mandate of Sobriety",
     "set": "MTD",
-    "cn": 20,
+    "cn": 23,
     "id": "W",
     "cost": "{2}{W}",
     "type": "Enchantment",
@@ -657,5 +661,70 @@
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2
+  },
+  {
+    "name": "Inspector General",
+    "set": "MTD",
+    "cn": 20,
+    "id": "W",
+    "cost": "{1}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at any unopened booster pack in the draft or any booster pack not being looked at by another player.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 2,
+    "watermark": "draft"
+  },
+  {
+    "name": "Anointed Chorister",
+    "set": "MTD",
+    "cn": 4,
+    "id": "W",
+    "cost": "{W}",
+    "type": "Creature - Human Cleric",
+    "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1
+  },
+  {
+    "name": "Harvester Giant",
+    "set": "MTD",
+    "cn": 17,
+    "id": "W",
+    "cost": "{4}{W}",
+    "type": "Creature - Giant",
+    "text": "When ~ enters, you gain 3 life.\nPlainscycling {2}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 5
+  },
+  {
+    "name": "Ossify",
+    "set": "MTD",
+    "cn": 54,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Exile target creature. Its controller creates a Bronze Armor token with \"Equipped creature gets +X/+X, where X is the exiled card's power.\" and equip {2}.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Created from idea for Sam's cards"},
+      {"date": "11-07-2024", "creator": "Sam", "notes": "Name change to ossify"},
+      {"date": "11-07-2024", "creator": "Thys", "notes": "Maybe shift to uncommon, putting in the set for now"}
+    ]
   }
 ]
