@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <title>Regal's Custom Cards</title>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <div class="searchbar">
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+
+    <div id="displaycard"></div>
+    <script>
+      fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
+        var location = window.location.pathname.substring(6);
+        var cardsElem = document.getElementById('displaycard');
+        var htmlOut = '';
+        for (i=0; i<all_cards.length; i++)
+        {
+          if (all_cards[i]["set"] == location.substring(0,3) && all_cards[i]["cn"] == location.substring(3))
+          {
+            htmlOut += '<div class="cell"><img src="'+all_cards[i]["img"]+'" alt="'+all_cards[i]["name"]+' || '+all_cards[i]["text"]+'"></div>'
+          }
+        }
+        cardsElem.innerHTML = htmlOut
+      })
+    </script>
+  </body>
+</html>
