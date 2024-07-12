@@ -11,7 +11,7 @@ app.get('*/customcards.json', (req, res) => {
 });
 
 app.get('*/style.css', (req, res) => {
-  res.sendFile(path.join(__dirname, 'style.css'));
+  res.sendFile(path.join(__dirname, 'client/style.css'));
 });
 
 // // Serve the main index.html file
