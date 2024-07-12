@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/card+*', (req, res) => {
+app.get('/card/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'card.html'));
 });
 
