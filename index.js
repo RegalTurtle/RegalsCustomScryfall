@@ -14,15 +14,15 @@ app.get('*/style.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'style.css'));
 });
 
-// Serve the main index.html file
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// // Serve the main index.html file
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 app.get('/card/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'card.html'));
 });
 
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
-  console.log(`Now listening on port ${port}`); 
+  console.log(`Now listening on port ${port}`);
 });
