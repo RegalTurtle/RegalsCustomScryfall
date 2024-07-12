@@ -14,15 +14,6 @@ app.get('*/style.css', (req, res) => {
   res.sendFile(path.join(__dirname, 'style.css'));
 });
 
-// Use the following to handle JSON files specifically if needed
-app.get('/customcards.json', (req, res) => {
-  res.sendFile(path.join(__dirname, 'customcards.json'));
-});
-
-app.get('/style.css', (req, res) => {
-  res.sendFile(path.join(__dirname, 'style.css'));
-});
-
 // Serve the main index.html file
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'home.html'));
