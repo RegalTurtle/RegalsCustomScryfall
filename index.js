@@ -6,7 +6,7 @@ var mime = require('mime-types');
 var app = express();
 
 // Serve static files from the 'client' directory
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, '/client/')));
 
 // Use the following to handle JSON files specifically if needed
 app.get('/customcards.json', (req, res) => {
