@@ -16,7 +16,7 @@ app.get('*/style.css', (req, res) => {
 
 // Serve the main index.html file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'home.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/card/*', (req, res) => {
