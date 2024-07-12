@@ -10,16 +10,16 @@ var app = express();
 
 // Use the following to handle JSON files specifically if needed
 app.get('/customcards.json', (req, res) => {
-  res.sendFile(path.join(__dirname, 'customcards.json'));
+  res.sendFile(path.join(__dirname, 'client\\customcards.json'));
 });
 
 app.get('/style.css', (req, res) => {
-  res.sendFile(path.join(__dirname, 'style.css'));
+  res.sendFile(path.join(__dirname, 'client\\style.css'));
 });
 
 // Serve the main index.html file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'client\\index.html'));
 });
 
 
