@@ -25,15 +25,15 @@ app.use((req, res, next) => {
   });
 });
 
-// Use the following to handle JSON files specifically if needed
-app.get('/customcards.json', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/customcards.json'));
-});
+// // Use the following to handle JSON files specifically if needed
+// app.get('/customcards.json', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/customcards.json'));
+// });
 
-// Serve the main index.html file
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/index.html'));
-});
+// // Serve the main index.html file
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client/index.html'));
+// });
 
 // app.get('/*', (req, res) => { // If a client file is asked for, give it and specify the correct MIME type
 //   // Connect to the correct dir of the file hierarchy
