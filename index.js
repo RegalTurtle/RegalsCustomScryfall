@@ -19,7 +19,7 @@ app.get('*/style.css', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'index.html'));
 // });
 
-app.get('/card/*', (req, res) => {
+app.get('regalscustomcards.dev/card/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'card.html'));
 });
 
