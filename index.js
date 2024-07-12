@@ -19,15 +19,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/card/*', (req, res) => {
+app.get('/card+*', (req, res) => {
   res.sendFile(path.join(__dirname, 'card.html'));
-})
-
-
-// app.get('/*', (req, res) => { // If a client file is asked for, give it and specify the correct MIME type
-//   // Connect to the correct dir of the file hierarchy
-//   res.sendFile(__dirname + req.url)
-// });
+});
 
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
   console.log(`Now listening on port ${port}`); 

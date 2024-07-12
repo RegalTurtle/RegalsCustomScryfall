@@ -24,7 +24,7 @@
         var htmlOut = ''
         for (i=0; i<all_cards.length; i++)
         {
-          htmlOut += '<a href="/card/'+all_cards[i]["set"]+all_cards[i]["cn"]+'"><div class="cell"><img src="'+all_cards[i]["img"]+'" alt="'+all_cards[i]["name"]+' || '+all_cards[i]["text"]+'"></div></a>'
+          htmlOut += '<a href="/card+'+all_cards[i]["set"]+all_cards[i]["cn"]+'"><div class="cell"><img src="'+all_cards[i]["img"]+'" alt="'+all_cards[i]["name"]+' || '+all_cards[i]["text"]+'"></div></a>'
         }
         cardsElem.innerHTML = htmlOut
       })
