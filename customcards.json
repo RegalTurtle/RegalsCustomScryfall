@@ -720,16 +720,17 @@
     "cost": "{4}{W}",
     "type": "Creature - Giant",
     "text": "When ~ enters, you gain 3 life.\nPlainscycling {2}",
-    "flavor": "",
+    "flavor": "As crop tithes increased, lords chose to look past their prejudices in favor of profit.",
     "rarity": "C",
-    "img": "https://i.imgur.com/rN6i6Dy.png",
+    "img": "https://i.imgur.com/8WGHBgu.png",
     "has_bleed_edge": true,
     "power": 3,
     "toughness": 5,
     "art-remarks": "",
     "notes": [
       {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"},
-      {"date": "11-07-2024", "creator": "Sam", "notes": "Cooking up new art"}
+      {"date": "11-07-2024", "creator": "Sam", "notes": "Cooking up new art"},
+      {"date": "13-07-2024", "creator": "Sam", "notes": "Added flavor and new artwork"}
     ]
   },
   {
