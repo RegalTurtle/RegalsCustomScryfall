@@ -933,5 +933,360 @@
     "notes": [
       {"date": "14-07-2024", "creator": "Sam", "notes": "Added new art for Hysterical Blindness"}
     ]
+  },
+  {
+    "name": "Zanhor, Keeper of Knowledge",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{3}{U}{U}",
+    "type": "Legendary Creature - Sphinx Noble",
+    "text": "Flying\nWhenever a creature enters, that creature's controller takes a shot.\nStupor - Once per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/xdRaspz.png",
+    "has_bleed_edge": false,
+    "power": 4,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed etb to enters"}
+    ]
+  },
+  {
+    "name": "Challenger Penguin",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Creature - Bird",
+    "text": "",
+    "flavor": "\"Birds of the north are of a different breed. Unlike their lofty southern counterparts, these species lack the ability of flight. A group of them mobbed my colleague this morning, it seems being flightless has given them something to prove\"-Jhonsmith, biologist",
+    "rarity": "C",
+    "img": "https://i.imgur.com/1bDmFPF.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Cerulean Drake",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Creature - Drake",
+    "text": "Flying\nProtection from red\nSacrifice ~: Counter target spell that targets you.",
+    "flavor": "The magic of Aphelion seeps into all things, lying dormant until their ancient triggers are activated.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/oPdwBbn.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Aremon, Slipstream Archmage",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Legendary Creature - Bird Wizard",
+    "text": "Flash\nFlying\nWhenever ~ deals combat damage to a player, put a beer counter on it. Draw a card, then discard a card. If there are four or more beer counters on ~, you may cast the discarded card without paying its mana cost.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/JUpiXfs.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed name to be Slipstream, also second ~ should be just name."}
+    ]
+  },
+  {
+    "name": "Broadwind Seabird",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{4}{U}",
+    "type": "Creature - Bird",
+    "text": "Flying\nWard - Take a shot.",
+    "flavor": "Aphelion is home to an ancient race of Rocs who have long adapted to the ocean reaches. Ferocious predators.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/K4Au4Id.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Tragic Lesson",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Draw two card. Then discard a card unless you return a land you control to its owner's hand.",
+    "flavor": "She had finally done it. In her palm was a small glimmering point of magical heat and warmth, her joy at finally casting a spell quickly turned to despair as she watched that flame furn her life to the ground.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/h87c6JM.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Tragic Lesson",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Draw two card. Then discard a card unless you return a land you control to its owner's hand.",
+    "flavor": "She had finally done it. In her palm was a small glimmering point of magical heat and warmth, her joy at finally casting a spell quickly turned to despair as she watched that flame furn her life to the ground.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/h87c6JM.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Lofty Denial",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Instant",
+    "text": "Counter target spell unless its controller pays {1}. If you control a creature with flying, counter that spell unless its controller pays {4} instead.",
+    "flavor": "The bird wizards of Aphelion are adept in the art of misdirection and deception.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/vCCH3JK.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Warden of Evos Isle",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Creature - Bird Wizard",
+    "text": "Flying\nCreature spells with flying you cast cost {1} less to cast.",
+    "flavor": "Birds of a feather flock together, normally an innocuous fact, until you realize the birds know fireball.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/GM313Jj.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Winged Words",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Sorcery",
+    "text": "This spell costs {1} less to cast if control a creature with flying.\nDraw two cards.",
+    "flavor": "It is the weird of a wizard to want their messages carried by a beast akin to their own heart. In short, magical pigeons.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/dgT8P8Y.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Unexplained Disappearance",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Instant",
+    "text": "Return target creature to its owner's hand.\nSurveil 1.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/EsnPiGS.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Illusionary Informant",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Creature - Bird Illusion",
+    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at the next card drafted by a player of your choice.\nFlying",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/MhzLhtV.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 3,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Spiked Spell",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}{U}",
+    "type": "Instant",
+    "text": "Counter target noncreature spell. Its controller takes a shot.",
+    "flavor": "Be careful, or someone might just put something in your spell.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/VRXzprM.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Wizard's Hipflask",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{3}{U}",
+    "type": "Artifact",
+    "text": "Whenever you take a shot, put a beer counter on ~.\nInstant and Sorcery spells you cast cost {1} less for each beer counter on ~.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/B6cv18e.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Crack One Open",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Instant",
+    "text": "Pact\nReturn target creature you don't control to its owners hand. If you accepted ~'s pact, that creature's controller discards a card.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/1kIAPVO.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed to be pact instead of just taking a shot"}
+    ]
+  },
+  {
+    "name": "Return to Immaterial",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "For each opponent with an instant card in their graveyard, return target nonland permanent to its owners hand.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/McjYptG.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, fixed wording, upshifted to Uncommon"}
+    ]
+  },
+  {
+    "name": "Brain Fog",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{U}",
+    "type": "Instant",
+    "text": "Discard three cards, then return up to two cards from your graveyard to your hand.",
+    "flavor": "\"Ughhhh\"",
+    "rarity": "C",
+    "img": "https://i.imgur.com/PV2OMfk.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, fixed wording, upshifted to Uncommon"}
+    ]
+  },
+  {
+    "name": "Hangover",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{U}{U}",
+    "type": "Enchantment - Aura",
+    "text": "Enchant creature\nWhen ~ enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nAt the beginning of the upkeep of enchanted creature's controller, that player may take a shot. If they do, untap enchanted creature.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/htXekMA.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed etb to enters"}
+    ]
+  },
+  {
+    "name": "Washed Up",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{U}",
+    "type": "Instant",
+    "text": "Cleave-Take a shot.\nCounter target spell [with mana value 1].",
+    "flavor": "Irrelevant",
+    "rarity": "R",
+    "img": "https://i.imgur.com/WIoIKT8.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+    ]
+  },
+  {
+    "name": "Pirates' Grog",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Enchantment",
+    "text": "Whenever you take a shot, draw a card, then discard a card.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/dSEWEd1.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed draw to be looting instead, tbd change name and art"}
+    ]
   }
 ]
