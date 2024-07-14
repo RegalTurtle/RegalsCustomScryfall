@@ -591,9 +591,13 @@
     "cost": "{W}",
     "type": "Enchantment",
     "text": "Each creature you control can block an additional creature each combat.",
+    "flavor": "\"You were like a brother to me!\"\n-A legendary duel",
     "rarity": "U",
-    "img": "https://i.imgur.com/vLXrenk.png",
-    "has_bleed_edge": false
+    "img": "https://i.imgur.com/nXlcggz.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {"date": "13-07-2024", "creator": "Sam", "notes": "New art, added bleed edge and CN info"}
+    ]
   },
   {
     "name": "Sentinel of the Eternal Watch",
