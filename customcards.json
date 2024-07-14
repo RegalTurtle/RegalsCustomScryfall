@@ -254,7 +254,7 @@
   {
     "name": "Saint Marcus IX",
     "set": "MTC",
-    "cn": 502,
+    "cn": 2,
     "id": "W",
     "cost": "{1}{W}{W}{W}",
     "type": "Legendary Creature - Human Priest",
@@ -268,7 +268,7 @@
   {
     "name": "Tavern's Ruin",
     "set": "MTC",
-    "cn": 504,
+    "cn": 4,
     "id": "W",
     "cost": "{2}{W}{W}",
     "type": "Sorcery",
@@ -377,12 +377,13 @@
     "cost": "{4}{W}",
     "type": "Instant",
     "text": "This spell costs {1} less to cast for each opponent you're attacking.\nExile target creature.",
-    "flavor": "Bow down and obey.",
+    "flavor": "\"You are not made in God's image.\"",
     "rarity": "U",
-    "img": "https://i.imgur.com/zZF7K9z.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/dAMESNT.png",
+    "has_bleed_edge": true,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "info": "Upshifted from r=C to r=U"}
+      {"date": "09-07-2024", "creator": "Thys", "info": "Upshifted from r=C to r=U"},
+      {"date": "09-07-2024", "creator": "Sam", "info": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge"}
     ]
   },
   {
@@ -400,7 +401,7 @@
   {
     "name": "Welcoming Vampire",
     "set": "MTC",
-    "cn": 501,
+    "cn": 1,
     "id": "W",
     "cost": "{2}{W}",
     "type": "Creature - Vampire",
@@ -495,8 +496,8 @@
   },
   {
     "name": "Protector of the Crown",
-    "set": "MTD",
-    "cn": 503,
+    "set": "MTC",
+    "cn": 3,
     "id": "W",
     "cost": "{5}{W}",
     "type": "Creature - Giant Soldier",
@@ -708,16 +709,17 @@
     "cost": "{W}",
     "type": "Creature - Human Cleric",
     "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
-    "flavor": "",
+    "flavor": "Dies irae, dies illa\nSolvet saeclum in favilla, Teste David cum Sibylla.",
     "rarity": "C",
-    "img": "https://i.imgur.com/ETYxqLv.png",
+    "img": "https://i.imgur.com/3zk7jrC.png",
     "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
     "art-remarks": "",
     "notes": [
       {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"},
-      {"date": "11-07-2024", "creator": "Sam", "notes": "Needs flavor text, I'll work on that"}
+      {"date": "11-07-2024", "creator": "Sam", "notes": "Needs flavor text, I'll work on that"},
+      {"date": "13-07-2024", "creator": "Sam", "notes": "Updated flavor text and art"}
     ]
   },
   {
@@ -762,20 +764,21 @@
     ]
   },
   {
-    "name": "Blue Fork",
-    "set": "MTX",
-    "cn": 1001,
+    "name": "Spell Schism",
+    "set": "MTD",
+    "cn": 50,
     "id": "U",
     "cost": "{1}{U}{U}",
     "type": "Instant",
     "text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
     "flavor": "",
     "rarity": "U",
-    "img": "",
+    "img": "https://i.imgur.com/UC6QE0V.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "It's fork in blue what can I say, seems fun"}
+      {"date": "11-07-2024", "creator": "Thys", "notes": "It's fork in blue what can I say, seems fun"},
+      {"date": "13-07-2024", "creator": "Thys", "notes": "Added art to this card and brought it to MTD. Changed name to Spell Schism"}
     ]
   },
   {
@@ -798,7 +801,7 @@
   {
     "name": "Stalwart Training",
     "set": "MTC",
-    "cn": 505,
+    "cn": 5,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Enchantment - Aura",
@@ -855,6 +858,80 @@
       {"date": "13-07-2024", "creator": "Thys", "notes": "Needs to have the draft matters stuff the next time we make the card"},
       {"date": "13-07-2024", "creator": "Thys", "notes": "Doesn't need flavor text, not enough space on the card."},
       {"date": "13-07-2024", "creator": "Sam", "notes": "Added draft matters stuff to card"}
+    ]
+  },
+  {
+    "name": "Raging Tide Elemental",
+    "set": "MTC",
+    "cn": 6,
+    "id": "U",
+    "cost": "{U}{U}{U}",
+    "type": "Creature - Elemental",
+    "text": "Trample, haste\nAt the beginning of the end step, sacrifice ~.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/sQnJ8hW.png",
+    "has_bleed_edge": true,
+    "power": 6,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {"date": "13-07-2024", "creator": "Sam", "notes": "Isn't good as a rare in the set, moving to commander set because we can"}
+    ]
+  },
+  {
+    "name": "Duelist of the Mind",
+    "set": "MTD",
+    "cn": 50,
+    "id": "R",
+    "cost": "{1}{U}",
+    "type": "Creature - Human Advisor",
+    "text": "Flying, vigilance\n~'s power is equal to the number of cards you've drawn this turn.\nWhenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/ssLFsKd.png",
+    "has_bleed_edge": true,
+    "power": 0,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {"date": "13-07-2024", "creator": "Sam", "notes": "Added card with new art"}
+    ]
+  },
+  {
+    "name": "Whispering Wizard",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{3}{U}",
+    "type": "Creature - Human Wizard",
+    "text": "Whenever you cast a noncreature spell, creatre a 1/1 white Spirit creature token with flying. This ability triggers only once each turn.",
+    "flavor": "\"Sometimes the remnants of spells manifest in the corporeal, I simply coax a little more order.\"-Spell Singer",
+    "rarity": "U",
+    "img": "https://i.imgur.com/PFtgWuT.png",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {"date": "13-07-2024", "creator": "Sam", "notes": "Added card with new art"}
+    ]
+  },
+  {
+    "name": "Hysterical Blindness",
+    "set": "MTD",
+    "cn": 50,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Creatures your opponents control get -4/-0 until end of turn.",
+    "flavor": "For just but a moment, the townspeople got a glimpse of the other side, the screaming began shortly after",
+    "rarity": "U",
+    "img": "https://i.imgur.com/LJtuQiK.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {"date": "14-07-2024", "creator": "Sam", "notes": "Added new art for Hysterical Blindness"}
     ]
   }
 ]

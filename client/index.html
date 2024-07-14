@@ -19,7 +19,12 @@
     <script>
       fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
         // object.sort
-        all_cards.sort((a,b) => {return a["cn"] - b["cn"]})
+        all_cards.sort((a,b) => {
+          if (a["set"].localeCompare(b["set"]) == 0) {
+            return a["cn"] - b["cn"]
+          }
+          return a["set"].localeCompare(b["set"])
+        })
         var cardsElem = document.getElementById('cards')
         var htmlOut = ''
         for (i=0; i<all_cards.length; i++)
