@@ -95,11 +95,11 @@
     "name": "Clairmont, Vicious Arbiter",
     "set": "MTD",
     "cn": 10,
-    "id": "U",
+    "id": "W",
     "cost": "{2}{W}",
     "type": "Legendary Creature - Human Noble",
     "text": "At the beginning of your end step, if you gained 3 or more life this turn, create a tapped Excuse token.",
-    "rarity": "C",
+    "rarity": "U",
     "img": "https://i.imgur.com/IwN1Kc8.png",
     "has_bleed_edge": false,
     "power": 2,
@@ -109,7 +109,7 @@
     "name": "Rally the People",
     "set": "MTD",
     "cn": 34,
-    "id": "U",
+    "id": "W",
     "cost": "{5}{W}{W}",
     "type": "Sorcery",
     "text": "Convoke\nCreate X 1/1 green and white Citizen creature tokens, where X is the number of counters on permanents you control.",
@@ -226,7 +226,7 @@
   {
     "name": "Hopeful Monk",
     "set": "MTD",
-    "cn": 9,
+    "cn": 18,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Monk",
@@ -746,7 +746,7 @@
   {
     "name": "Ossify",
     "set": "MTD",
-    "cn": 54,
+    "cn": 55,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Instant",
@@ -766,7 +766,7 @@
   {
     "name": "Spell Schism",
     "set": "MTD",
-    "cn": 50,
+    "cn": 58,
     "id": "U",
     "cost": "{1}{U}{U}",
     "type": "Instant",
@@ -784,7 +784,7 @@
   {
     "name": "Atemsis, All-Seeing",
     "set": "MTD",
-    "cn": 43,
+    "cn": 44,
     "id": "U",
     "cost": "{3}{U}{U}{U}",
     "type": "Legendary Creature - Sphinx",
@@ -1024,23 +1024,6 @@
     "has_bleed_edge": false,
     "power": 3,
     "toughness": 4,
-    "art-remarks": "",
-    "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
-    ]
-  },
-  {
-    "name": "Tragic Lesson",
-    "set": "MTD",
-    "cn": 50,
-    "id": "U",
-    "cost": "{2}{U}",
-    "type": "Instant",
-    "text": "Draw two card. Then discard a card unless you return a land you control to its owner's hand.",
-    "flavor": "She had finally done it. In her palm was a small glimmering point of magical heat and warmth, her joy at finally casting a spell quickly turned to despair as she watched that flame furn her life to the ground.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/h87c6JM.png",
-    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
