@@ -625,9 +625,13 @@
     "cost": "{2}{W}{W}",
     "type": "Artifact - Equipment",
     "text": "When ~ enters, create a 1/1 white Cleric creature token with vigilance, then attach ~ to it.\nEquipped creature gets +1/+1 and lifelink.\nEquip {2}",
+    "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/By5YHou.png",
-    "has_bleed_edge": false
+    "img": "https://i.imgur.com/ds7ULbT.png",
+    "has_bleed_edge": false,
+    "notes": [
+      {"date": "13-07-2024", "creator": "Sam", "notes": "Added new art, added CN and bleed edge"}
+    ]
   },
   {
     "name": "Light of God",
@@ -838,10 +842,10 @@
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Demon",
-    "text": "Draft ~ face up.\nAs long as ~ is face up during the draft, you can’t look at booster packs and must draft cards at random. After you draft one cards this way, turn ~ face down.\nFlying, lifelink",
+    "text": "Draft ~ face up.\nAs long as ~ is face up during the draft, you can't look at booster packs and must draft cards at random. After you draft one cards this way, turn ~ face down.\nFlying, lifelink",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/iKXMRoP.png",
+    "img": "https://i.imgur.com/tWFvuJ5.png",
     "has_bleed_edge": true,
     "power": 3,
     "toughness": 4,
@@ -849,7 +853,8 @@
     "art-remarks": "",
     "notes": [
       {"date": "13-07-2024", "creator": "Thys", "notes": "Needs to have the draft matters stuff the next time we make the card"},
-      {"date": "13-07-2024", "creator": "Thys", "notes": "Doesn't need flavor text, not enough space on the card."}
+      {"date": "13-07-2024", "creator": "Thys", "notes": "Doesn't need flavor text, not enough space on the card."},
+      {"date": "13-07-2024", "creator": "Sam", "notes": "Added draft matters stuff to card"}
     ]
   }
 ]
