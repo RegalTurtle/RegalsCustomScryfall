@@ -819,7 +819,7 @@
     "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, target player passes the last card from their booster to you.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://imgur.com/ZTsVB7N.png",
+    "img": "https://i.imgur.com/ZTsVB7N.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
@@ -829,6 +829,27 @@
       {"date": "11-07-2024", "creator": "Thys", "notes": "Inspired from Canal Dredger for the red draft matters card."},
       {"date": "11-07-2024", "creator": "Thys", "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."},
       {"date": "11-07-2024", "creator": "Sam", "notes": "Needs the draft matters card frame and backdrop."}
+    ]
+  },
+  {
+    "name": "The False Prophet",
+    "set": "MTD",
+    "cn": 85,
+    "id": "B",
+    "cost": "{2}{B}{B}",
+    "type": "Creature - Demon",
+    "text": "Draft ~ face up.\nAs long as ~ is face up during the draft, you can’t look at booster packs and must draft cards at random. After you draft one cards this way, turn ~ face down.\nFlying, lifelink",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/iKXMRoP.png",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 4,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {"date": "13-07-2024", "creator": "Thys", "notes": "Needs to have the draft matters stuff the next time we make the card"},
+      {"date": "13-07-2024", "creator": "Thys", "notes": "Doesn't need flavor text, not enough space on the card."}
     ]
   }
 ]
