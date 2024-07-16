@@ -405,8 +405,8 @@
     "img": "https://i.imgur.com/dAMESNT.png",
     "has_bleed_edge": true,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "info": "upshift astral confrontation"},
-      {"date": "09-07-2024", "creator": "Sam", "info": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge"}
+      {"date": "09-07-2024", "creator": "Thys", "notes": "upshift astral confrontation"},
+      {"date": "09-07-2024", "creator": "Sam", "notes": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge"}
     ]
   },
   {
@@ -750,7 +750,7 @@
     "cost": "{W}",
     "type": "Creature - Human Cleric",
     "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
-    "flavor": "Dies irae, dies illa\nSolvet saeclum in favilla, Teste David cum Sibylla.",
+    "flavor": "Dies irae, dies illa\nSolvet saeclum in favilla,\nTeste David cum Sibylla.",
     "rarity": "C",
     "img": "https://i.imgur.com/3zk7jrC.png",
     "has_bleed_edge": true,
@@ -3292,7 +3292,7 @@
   {
     "name": "Drinking Challenge",
     "set": "MTD",
-    "cn": 245,
+    "cn": 248,
     "id": "C",
     "cost": "{9}",
     "type": "Artifact",
@@ -3313,7 +3313,10 @@
       {"date": "15-07-2024", "creator": "Sam", "notes": "No it should be colorless // The ultimate meme card"},
       {"date": "15-07-2024", "creator": "Thys", "notes": "I guess it could work as a sorcery, but I feel like the end '2 life less' thing is an artifact"},
       {"date": "15-07-2024", "creator": "Sam", "notes": "Or we could make it gain you a ton of life, and avoid adding a permanent necessary clause to it"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"}
+      {"date": "15-07-2024", "creator": "Thys", "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"},
+      {"date": "15-07-2024", "creator": "Sam", "notes": "we'll stick with that // i want to talk about making a token tho // since the effect is very much a spell or a challenge"},
+      {"date": "15-07-2024", "creator": "Thys", "notes": "mayyyyybe it could give an emblem"},
+      {"date": "15-07-2024", "creator": "Sam", "notes": "or just maybe like, make an artifact token with hexproof and indestructible that has the same effect // or just an emblem lol"}
     ]
   },
   {

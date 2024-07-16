@@ -15,20 +15,43 @@
       </div>
     </div>
 
-    <div id="displaycard"></div>
+    <div class="row">
+      <div class="column">
+        <div id="cardImage"></div>
+      </div>
+      <div class="column">
+        <p id="cardName">Name: </p>
+        <p id="cardType">Type: </p>
+        <p id="cardOracle"></p>
+        <p id="cardPowTou"></p>
+        <i id="cardFlavor"></i>
+        <ul id="cardNotes"></ul>
+      </div>
+    </div>
     <script>
       fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
         var location = window.location.pathname.substring(6);
-        var cardsElem = document.getElementById('displaycard');
-        var htmlOut = '';
+        var cardDict;
         for (i=0; i<all_cards.length; i++)
         {
           if (all_cards[i]["set"] == location.substring(0,3) && all_cards[i]["cn"] == location.substring(3))
           {
-            htmlOut += '<div class="cell"><img src="'+all_cards[i]["img"]+'" alt="'+all_cards[i]["name"]+' || '+all_cards[i]["text"]+'"></div>'
+            cardDict = all_cards[i];
+            break;
           }
         }
-        cardsElem.innerHTML = htmlOut
+        document.getElementById('cardImage').innerHTML = '<div class="cell"><img src="'+cardDict["img"]+'" alt="'+cardDict["name"]+' || '+cardDict["text"]+'"></div>';
+        document.getElementById('cardName').innerText += " " + cardDict["name"];
+        document.getElementById('cardType').innerText += " " + cardDict["type"];
+        document.getElementById('cardOracle').innerText = cardDict["text"].replace(/~/g, cardDict["name"]);
+        if (cardDict["type"].includes("Creature")) {
+          document.getElementById('cardPowTou').innerText = cardDict["power"] + "/" + cardDict["toughness"];
+        }
+        document.getElementById('cardFlavor').innerText = cardDict["flavor"];
+        for (i = 0; i < cardDict["notes"].length; i++) 
+        {
+          document.getElementById('cardNotes').innerHTML += `<li>${cardDict["notes"][i]["creator"]}: ${cardDict["notes"][i]["notes"]}</li>`;
+        }
       })
     </script>
   </body>
