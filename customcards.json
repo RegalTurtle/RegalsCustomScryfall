@@ -12,7 +12,11 @@
     "img": "https://i.imgur.com/TqNYZm4.png",
     "has_bleed_edge": false,
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "this needs an m dash before the name in flavor"}
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "this needs an m dash before the name in flavor"
+      }
     ]
   },
   {
@@ -68,9 +72,7 @@
     "img": "https://i.imgur.com/w6oY2uz.png",
     "has_bleed_edge": true,
     "art-remarks": "",
-    "notes": [
-      {"date": "14-07-2024", "creator": "Sam", "notes": "New art"}
-    ]
+    "notes": [{ "date": "14-07-2024", "creator": "Sam", "notes": "New art" }]
   },
   {
     "name": "High Priestess",
@@ -87,8 +89,16 @@
     "power": 2,
     "toughness": 2,
     "notes": [
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Added notes and flavor to json"},
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Changed buffed creature back to elves // new image"}
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added notes and flavor to json"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Changed buffed creature back to elves // new image"
+      }
     ]
   },
   {
@@ -119,9 +129,13 @@
     "power": 2,
     "toughness": 3,
     "notes": [
-      {"date": "05-05-2024", "creator": "Sam", "notes": "clairmont downshift and increase cost"},
-      {"date": "05-05-2024", "creator": "Thys", "notes": "2/3, 2w"},
-      {"date": "05-05-2024", "creator": "Sam", "notes": "Posted new image"}
+      {
+        "date": "05-05-2024",
+        "creator": "Sam",
+        "notes": "clairmont downshift and increase cost"
+      },
+      { "date": "05-05-2024", "creator": "Thys", "notes": "2/3, 2w" },
+      { "date": "05-05-2024", "creator": "Sam", "notes": "Posted new image" }
     ]
   },
   {
@@ -163,7 +177,11 @@
     "power": 2,
     "toughness": 3,
     "notes": [
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Added CN and bleed edge"}
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed edge"
+      }
     ]
   },
   {
@@ -179,7 +197,11 @@
     "img": "https://i.imgur.com/FXEvceu.png",
     "has_bleed_edge": false,
     "notes": [
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Removing most of the original cycle to MTC, replacing with Protector of the crown"}
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Removing most of the original cycle to MTC, replacing with Protector of the crown"
+      }
     ]
   },
   {
@@ -224,8 +246,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Changing wording of Excuse token"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "New card image with new wording and CN and bleed edge"}
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changing wording of Excuse token"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "New card image with new wording and CN and bleed edge"
+      }
     ]
   },
   {
@@ -285,8 +315,16 @@
     "power": 5,
     "toughness": 5,
     "notes": [
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Added notes and flavor to json"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Uploaded art with CN and bleed edge"}
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added notes and flavor to json"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Uploaded art with CN and bleed edge"
+      }
     ]
   },
   {
@@ -304,7 +342,11 @@
     "power": 1,
     "toughness": 1,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Cutting st. marcus to MTC"}
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Cutting st. marcus to MTC"
+      }
     ]
   },
   {
@@ -320,7 +362,7 @@
     "img": "https://i.imgur.com/REF37Fl.png",
     "has_bleed_edge": false,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "remove janky wrath"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "remove janky wrath" }
     ]
   },
   {
@@ -428,8 +470,16 @@
     "img": "https://i.imgur.com/dAMESNT.png",
     "has_bleed_edge": true,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "upshift astral confrontation"},
-      {"date": "09-07-2024", "creator": "Sam", "notes": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge"}
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "upshift astral confrontation"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge"
+      }
     ]
   },
   {
@@ -555,9 +605,21 @@
     "power": 2,
     "toughness": 5,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "remove protector of the crown"},
-      {"date": "09-07-2024", "creator": "Sam", "notes": "protector of the crown, commander set you go :)"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Re-adding Protector of the Crown, only displaces 3 cards."}
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "remove protector of the crown"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "protector of the crown, commander set you go :)"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Re-adding Protector of the Crown, only displaces 3 cards."
+      }
     ]
   },
   {
@@ -649,9 +711,17 @@
     "img": "https://i.imgur.com/nXlcggz.png",
     "has_bleed_edge": true,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Here are my submissions for white reprints"},
-      {"date": "09-07-2024", "creator": "Sam", "notes": "Love"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "New art, added bleed edge and CN info"}
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Here are my submissions for white reprints"
+      },
+      { "date": "09-07-2024", "creator": "Sam", "notes": "Love" },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed edge and CN info"
+      }
     ]
   },
   {
@@ -669,7 +739,11 @@
     "toughness": 6,
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Might need flavor text"}
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN. Might need flavor text"
+      }
     ]
   },
   {
@@ -685,7 +759,11 @@
     "img": "https://i.imgur.com/ds7ULbT.png",
     "has_bleed_edge": false,
     "notes": [
-      {"date": "13-07-2024", "creator": "Sam", "notes": "Added new art, added CN and bleed edge"}
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added new art, added CN and bleed edge"
+      }
     ]
   },
   {
@@ -701,8 +779,12 @@
     "img": "https://i.imgur.com/HxA3cSZ.png",
     "has_bleed_edge": false,
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "this is genius i love it"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "this is genius i love it"
+      }
     ]
   },
   {
@@ -719,15 +801,47 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Sam", "notes": "That card is a token now. The enchantment is defunct. Or are you suggesting making it a different card with that name"},
-      {"date": "09-07-2024", "creator": "Thys", "notes": "different card, same name"},
-      {"date": "09-07-2024", "creator": "Sam", "notes": "Good idea"},
-      {"date": "09-07-2024", "creator": "Thys", "notes": "see this. you suggested it. forever ago"},
-      {"date": "09-07-2024", "creator": "Sam", "notes": "Lmao yeah. Good call back"},
-      {"date": "09-07-2024", "creator": "Sam", "notes": "Card rename to: Mandate of Sobriety. Reason: new token with same name [Excuse token]"},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added new card art and name"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Change skip next shot to prevent next shot"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Changed art and added CN and bleed edge"}
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "That card is a token now. The enchantment is defunct. Or are you suggesting making it a different card with that name"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "different card, same name"
+      },
+      { "date": "09-07-2024", "creator": "Sam", "notes": "Good idea" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "see this. you suggested it. forever ago"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Lmao yeah. Good call back"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Card rename to: Mandate of Sobriety. Reason: new token with same name [Excuse token]"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added new card art and name"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Change skip next shot to prevent next shot"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art and added CN and bleed edge"
+      }
     ]
   },
   {
@@ -762,8 +876,16 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Inspired from Whispergear Sneak, same effect on a white body"},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN"}
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Inspired from Whispergear Sneak, same effect on a white body"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN"
+      }
     ]
   },
   {
@@ -782,9 +904,21 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"},
-      {"date": "11-07-2024", "creator": "Sam", "notes": "Needs flavor text, I'll work on that"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "Updated flavor text and art"}
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Needs flavor text, I'll work on that"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Updated flavor text and art"
+      }
     ]
   },
   {
@@ -803,9 +937,17 @@
     "toughness": 5,
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"},
-      {"date": "11-07-2024", "creator": "Sam", "notes": "Cooking up new art"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "Added flavor and new artwork"}
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"
+      },
+      { "date": "11-07-2024", "creator": "Sam", "notes": "Cooking up new art" },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added flavor and new artwork"
+      }
     ]
   },
   {
@@ -822,10 +964,26 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Created from idea for Sam's cards"},
-      {"date": "11-07-2024", "creator": "Sam", "notes": "Name change to ossify"},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Maybe shift to uncommon, putting in the set for now"},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Updated art, might need flavor text? But text box also might be fine as is"}
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Created from idea for Sam's cards"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Name change to ossify"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Maybe shift to uncommon, putting in the set for now"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Updated art, might need flavor text? But text box also might be fine as is"
+      }
     ]
   },
   {
@@ -842,9 +1000,17 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "It's fork in blue what can I say, seems fun"},
-      {"date": "13-07-2024", "creator": "Thys", "notes": "Added art to this card and brought it to MTD. Changed name to Spell Schism"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "It's fork in blue what can I say, seems fun"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Added art to this card and brought it to MTD. Changed name to Spell Schism"
+      }
     ]
   },
   {
@@ -878,8 +1044,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Cutting this because it feels like it would just be better to have a draft matters card instead, and this was what we were most on the fence about"},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added this to the website, so we have a record of cut cards and stuff. Also made a quick mock-up"}
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Cutting this because it feels like it would just be better to have a draft matters card instead, and this was what we were most on the fence about"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added this to the website, so we have a record of cut cards and stuff. Also made a quick mock-up"
+      }
     ]
   },
   {
@@ -899,9 +1073,21 @@
     "watermark": "draft",
     "art-remarks": "art is a like a goblin working at a pawn shop and appraising what appears to be the contents of a dumpster",
     "notes": [
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Inspired from Canal Dredger for the red draft matters card."},
-      {"date": "11-07-2024", "creator": "Thys", "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."},
-      {"date": "11-07-2024", "creator": "Sam", "notes": "Needs the draft matters card frame and backdrop."}
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Inspired from Canal Dredger for the red draft matters card."
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Needs the draft matters card frame and backdrop."
+      }
     ]
   },
   {
@@ -921,9 +1107,21 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      {"date": "13-07-2024", "creator": "Thys", "notes": "Needs to have the draft matters stuff the next time we make the card"},
-      {"date": "13-07-2024", "creator": "Thys", "notes": "Doesn't need flavor text, not enough space on the card."},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "Added draft matters stuff to card"}
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Needs to have the draft matters stuff the next time we make the card"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Doesn't need flavor text, not enough space on the card."
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added draft matters stuff to card"
+      }
     ]
   },
   {
@@ -942,9 +1140,21 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "13-07-2024", "creator": "Thys", "notes": "Art reminds me of Ball Lightning"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "ball lightning but flying haste, make it cost 3 and a lot smaller and bounce it to hand?"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "Isn't good as a rare in the set, moving to commander set because we can"}
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Art reminds me of Ball Lightning"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "ball lightning but flying haste, make it cost 3 and a lot smaller and bounce it to hand?"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Isn't good as a rare in the set, moving to commander set because we can"
+      }
     ]
   },
   {
@@ -963,8 +1173,16 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Crime Vigilance Flyer???"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "Added card with new art"}
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Crime Vigilance Flyer???"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added card with new art"
+      }
     ]
   },
   {
@@ -983,8 +1201,16 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "13-07-2024", "creator": "Thys", "notes": "Once a turn Murmuring Mystic"},
-      {"date": "13-07-2024", "creator": "Sam", "notes": "Added card with new art"}
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Once a turn Murmuring Mystic"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added card with new art"
+      }
     ]
   },
   {
@@ -1001,7 +1227,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Added new art for Hysterical Blindness"}
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Added new art for Hysterical Blindness"
+      }
     ]
   },
   {
@@ -1020,7 +1250,11 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed etb to enters"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed etb to enters"
+      }
     ]
   },
   {
@@ -1039,7 +1273,7 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1058,7 +1292,7 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1077,7 +1311,11 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed name to be Slipstream, also second ~ should be just name."}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed name to be Slipstream, also second ~ should be just name."
+      }
     ]
   },
   {
@@ -1096,8 +1334,12 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Art is slightly misaligned, so there is white peeking through"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Art is slightly misaligned, so there is white peeking through"
+      }
     ]
   },
   {
@@ -1114,7 +1356,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1131,7 +1373,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1150,7 +1392,7 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1167,7 +1409,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1184,7 +1426,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1204,7 +1446,7 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1221,7 +1463,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1238,9 +1480,13 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "06-12-2023", "creator": "Sam", "notes": "we need to talk about this one, the beer counters, as well as this could replace the 4 mana enchantment because I think the current one is way to strong, it turns each spell you take a shot for into a cantrip"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "we need to talk about this one, the beer counters, as well as this could replace the 4 mana enchantment because I think the current one is way to strong, it turns each spell you take a shot for into a cantrip"
+      },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" }
     ]
   },
   {
@@ -1257,8 +1503,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested basically this card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed to be pact instead of just taking a shot"}
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested basically this card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed to be pact instead of just taking a shot"
+      }
     ]
   },
   {
@@ -1275,7 +1529,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, fixed wording, upshifted to Uncommon"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, fixed wording, upshifted to Uncommon"
+      }
     ]
   },
   {
@@ -1292,7 +1550,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, fixed wording, upshifted to Uncommon"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, fixed wording, upshifted to Uncommon"
+      }
     ]
   },
   {
@@ -1309,7 +1571,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed etb to enters"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed etb to enters"
+      }
     ]
   },
   {
@@ -1326,8 +1592,12 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Moved to MTC, moved most of the original cycle"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Moved to MTC, moved most of the original cycle"
+      }
     ]
   },
   {
@@ -1344,8 +1614,16 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed draw to be looting instead, tbd change name and art"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Changed mana cost from 2U to 3U, changed art, and changed name from Pirate's Grog to Crackpot Moonshine, changed flavor text"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed draw to be looting instead, tbd change name and art"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed mana cost from 2U to 3U, changed art, and changed name from Pirate's Grog to Crackpot Moonshine, changed flavor text"
+      }
     ]
   },
   {
@@ -1362,12 +1640,32 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Added to json"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "whenever you take a shot put a counter on this // 0 mana prevent the next shot you would take (and remove two beer counters) // Changed wording of skip to prevent"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "changed name to Elvish Beer"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Changed to remove one counter to keep original functionality"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Changed first line to proc when being targetted, as putting counters on elvish beer is quite easy, changed removal of counters back to 2"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Changed art, added bleed edge"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "whenever you take a shot put a counter on this // 0 mana prevent the next shot you would take (and remove two beer counters) // Changed wording of skip to prevent"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "changed name to Elvish Beer"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed to remove one counter to keep original functionality"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed first line to proc when being targetted, as putting counters on elvish beer is quite easy, changed removal of counters back to 2"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art, added bleed edge"
+      }
     ]
   },
   {
@@ -1384,18 +1682,50 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "13-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "26-06-2024", "creator": "Thys", "notes": "Bitter Triumph but pact"},
-      {"date": "26-06-2024", "creator": "Thys", "notes": "did we already do this but it's pact?"},
-      {"date": "26-06-2024", "creator": "Sam", "notes": "Brilliant"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "he is him // thats the bitter triumph but pact card, but we need to change it to be pact"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Changed additional cost to be pact"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Changed back to orginal wording because pact is naturally a may ability"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Added flavor to the json blob"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Posted new image with new art and bleed edge"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "HOLY // he cooked"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "UH HUH // i cooooked"}
+      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Bitter Triumph but pact"
+      },
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "did we already do this but it's pact?"
+      },
+      { "date": "26-06-2024", "creator": "Sam", "notes": "Brilliant" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "he is him // thats the bitter triumph but pact card, but we need to change it to be pact"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed additional cost to be pact"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Changed back to orginal wording because pact is naturally a may ability"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Added flavor to the json blob"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Posted new image with new art and bleed edge"
+      },
+      { "date": "15-07-2024", "creator": "Thys", "notes": "HOLY // he cooked" },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "UH HUH // i cooooked"
+      }
     ]
   },
   {
@@ -1412,10 +1742,18 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "26-06-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Mana cost 3U -> 2U"},
-      {"date": "16-07-2024", "creator": "Sam", "notes": "Name changed to Tides of Battle, added flavor and new card image"}
+      { "date": "26-06-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Mana cost 3U -> 2U"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Name changed to Tides of Battle, added flavor and new card image"
+      }
     ]
   },
   {
@@ -1434,8 +1772,12 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "21-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, changed flavor from alley ways to alleyways"}
+      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, changed flavor from alley ways to alleyways"
+      }
     ]
   },
   {
@@ -1452,7 +1794,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1471,8 +1813,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1489,8 +1831,12 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera"
+      }
     ]
   },
   {
@@ -1507,9 +1853,13 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Maybe could be split into 2 cards, I like the idea of a blue mana sink for card draw, but this cycling thing is interesting"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Maybe could be split into 2 cards, I like the idea of a blue mana sink for card draw, but this cycling thing is interesting"
+      },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1528,8 +1878,8 @@
     "toughness": 5,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1548,8 +1898,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1568,8 +1918,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1586,8 +1936,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1604,8 +1954,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1624,8 +1974,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "09-07-2024", "creator": "Thys", "notes": "Suggested card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1642,7 +1992,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1659,7 +2009,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1676,7 +2026,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1695,7 +2045,7 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1712,7 +2062,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1731,7 +2081,7 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1748,7 +2098,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1765,7 +2115,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1782,7 +2132,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, might need a rewording on the cost reduction"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, might need a rewording on the cost reduction"
+      }
     ]
   },
   {
@@ -1799,8 +2153,12 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "I don't want tutors in the set, move to MTC"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "I don't want tutors in the set, move to MTC"
+      }
     ]
   },
   {
@@ -1819,7 +2177,7 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1838,7 +2196,11 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, fixed flavor text, fixed subtype"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed flavor text, fixed subtype"
+      }
     ]
   },
   {
@@ -1857,8 +2219,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, fixed text, maybe we should upshift this??"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Upshifted to Uncommon, maybe could go back to Common"}
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed text, maybe we should upshift this??"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Upshifted to Uncommon, maybe could go back to Common"
+      }
     ]
   },
   {
@@ -1875,7 +2245,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1892,7 +2262,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1909,8 +2279,12 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Given art and flavor text"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Given art and flavor text"
+      }
     ]
   },
   {
@@ -1927,8 +2301,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "13-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1945,8 +2319,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "12-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1965,8 +2339,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "31-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "31-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -1985,8 +2359,8 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "30-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "30-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2003,11 +2377,15 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "30-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "We cut this card"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Changed to remove the +2/+2 and move the target to any permanent"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Uploaded new text"}
+      { "date": "30-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "14-07-2024", "creator": "Sam", "notes": "We cut this card" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed to remove the +2/+2 and move the target to any permanent"
+      },
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Uploaded new text" }
     ]
   },
   {
@@ -2026,8 +2404,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "30-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "30-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2044,8 +2422,12 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "29-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, fixed a couple of oracle things"}
+      { "date": "29-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed a couple of oracle things"
+      }
     ]
   },
   {
@@ -2062,8 +2444,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "17-12-2023", "creator": "Sam", "notes": "Posted card image // *we might just have too many burn/shot spells, but wanted to throw this one into the ring // *we'll talk about it when we do set balancing"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, fixed card templating"}
+      {
+        "date": "17-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image // *we might just have too many burn/shot spells, but wanted to throw this one into the ring // *we'll talk about it when we do set balancing"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed card templating"
+      }
     ]
   },
   {
@@ -2082,8 +2472,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "16-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "16-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2102,8 +2492,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "16-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "16-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2122,8 +2512,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "13-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2140,8 +2530,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "12-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "12-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2160,8 +2550,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2178,8 +2568,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2198,8 +2588,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2218,10 +2608,18 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Sliver of white next to Torbran art, slightly un-centered"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Fixed art and new card image"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Sliver of white next to Torbran art, slightly un-centered"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Fixed art and new card image"
+      }
     ]
   },
   {
@@ -2240,11 +2638,19 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "maybe remove the magecraft and make it only cast?"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "sure"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Changed magecraft to just instant and sorcery casts"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "maybe remove the magecraft and make it only cast?"
+      },
+      { "date": "14-07-2024", "creator": "Sam", "notes": "sure" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed magecraft to just instant and sorcery casts"
+      }
     ]
   },
   {
@@ -2261,8 +2667,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2279,14 +2685,34 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "maybe change to you may"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "i like that"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Changed from forcing you to target to giving may option"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "we should fix this flavor text and name so they're the same"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Should we keep it dwarf related? // i was just thinking because red is elves and goblins"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "I'm fine with it changing or staying the same"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "maybe change to you may"
+      },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "i like that" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed from forcing you to target to giving may option"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "we should fix this flavor text and name so they're the same"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Should we keep it dwarf related? // i was just thinking because red is elves and goblins"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I'm fine with it changing or staying the same"
+      }
     ]
   },
   {
@@ -2305,9 +2731,13 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Made it so it has to sac to have the player take a shot"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Made it so it has to sac to have the player take a shot"
+      }
     ]
   },
   {
@@ -2324,10 +2754,14 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "change flavor text???"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "will do"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "change flavor text???"
+      },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "will do" }
     ]
   },
   {
@@ -2346,8 +2780,8 @@
     "toughness": 5,
     "art-remarks": "",
     "notes": [
-      {"date": "24-02-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "24-02-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2364,8 +2798,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "24-02-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "24-02-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2384,8 +2818,8 @@
     "toughness": 8,
     "art-remarks": "",
     "notes": [
-      {"date": "22-02-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "22-02-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2404,8 +2838,8 @@
     "toughness": 0,
     "art-remarks": "",
     "notes": [
-      {"date": "12-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2424,8 +2858,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "24-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "24-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2442,8 +2876,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "22-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "22-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2462,8 +2896,8 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      {"date": "13-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2483,8 +2917,8 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      {"date": "13-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2501,8 +2935,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2521,8 +2955,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2541,8 +2975,8 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2561,8 +2995,8 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2581,8 +3015,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2601,8 +3035,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2621,8 +3055,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2639,9 +3073,13 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Moved to MTC, don't want ramp"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Moved to MTC, don't want ramp"
+      }
     ]
   },
   {
@@ -2660,8 +3098,12 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Changed art and added bleed edge"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art and added bleed edge"
+      }
     ]
   },
   {
@@ -2680,8 +3122,12 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "New art and added bleed edge"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "New art and added bleed edge"
+      }
     ]
   },
   {
@@ -2700,10 +3146,22 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Posted card image with new art"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "ok so uhhh lys alana originally at C // maybe should be upshifted"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "HUH // uncommon // Posted with correct rarity"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image with new art"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "ok so uhhh lys alana originally at C // maybe should be upshifted"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "HUH // uncommon // Posted with correct rarity"
+      }
     ]
   },
   {
@@ -2722,8 +3180,12 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Sam", "notes": "Added art and uploaded"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Added art and uploaded"
+      }
     ]
   },
   {
@@ -2742,8 +3204,8 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Sam", "notes": "Created card"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "16-07-2024", "creator": "Sam", "notes": "Created card" }
     ]
   },
   {
@@ -2762,9 +3224,13 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Sam", "notes": "Downshifted to common"},
-      {"date": "16-07-2024", "creator": "Sam", "notes": "New image"}
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Downshifted to common"
+      },
+      { "date": "16-07-2024", "creator": "Sam", "notes": "New image" }
     ]
   },
   {
@@ -2783,9 +3249,13 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      {"date": "05-05-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Added devil to typeline"}
+      { "date": "05-05-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Added devil to typeline"
+      }
     ]
   },
   {
@@ -2804,8 +3274,12 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "04-05-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, the second cardname should probably be just the first name"}
+      { "date": "04-05-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, the second cardname should probably be just the first name"
+      }
     ]
   },
   {
@@ -2822,8 +3296,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "22-02-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "22-02-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2840,8 +3314,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "22-02-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "22-02-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2860,8 +3334,12 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "21-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, second cardname should probably just be first name"}
+      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, second cardname should probably just be first name"
+      }
     ]
   },
   {
@@ -2880,12 +3358,28 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "21-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "ARIEL NEEDS SO MUCH HELP"},
-      {"date": "17-07-2024", "creator": "Thys", "notes": "Changed last paragraph to 'Whenever you take a shot, if it wasn't the first shot you took this turn, you gain 3 life.'"},
-      {"date": "17-07-2024", "creator": "Thys", "notes": "Changed last paragraph to 'nWhenever you take your second shot each turn, you gain 6 life.'"},
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Changed art of Ariel"}
+      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "ARIEL NEEDS SO MUCH HELP"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "Changed last paragraph to 'Whenever you take a shot, if it wasn't the first shot you took this turn, you gain 3 life.'"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "Changed last paragraph to 'nWhenever you take your second shot each turn, you gain 6 life.'"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art of Ariel"
+      }
     ]
   },
   {
@@ -2904,8 +3398,12 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "21-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, second cardname should probably just be first name"}
+      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, second cardname should probably just be first name"
+      }
     ]
   },
   {
@@ -2924,10 +3422,22 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Created card based on Goblin Booze Runner"},
-      {"date": "16-01-2024", "creator": "Sam", "notes": "Added alcoholic to typeline // Name is now Impatiant Swindler"},
-      {"date": "16-01-2024", "creator": "Thys", "notes": "Moved from MTX to MTD, added flavor text"},
-      {"date": "16-01-2024", "creator": "Sam", "notes": "New card image"}
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Created card based on Goblin Booze Runner"
+      },
+      {
+        "date": "16-01-2024",
+        "creator": "Sam",
+        "notes": "Added alcoholic to typeline // Name is now Impatiant Swindler"
+      },
+      {
+        "date": "16-01-2024",
+        "creator": "Thys",
+        "notes": "Moved from MTX to MTD, added flavor text"
+      },
+      { "date": "16-01-2024", "creator": "Sam", "notes": "New card image" }
     ]
   },
   {
@@ -2944,13 +3454,33 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "06-12-2023", "creator": "Sam", "notes": "changed the name, and changed from target creature to target permanent, its a slow rate, and rg puts counters on creatures mainly, so I thought this could be an interesting change of pace"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "idk if this should be in WG"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "Just green? // And then mess with the second ability to make it less white // Or the opposite"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "idk it just feels like white doesnt care about this card // maybe gw cares? // idk"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "I agree // Make it mono green and shift it around"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "changed the name, and changed from target creature to target permanent, its a slow rate, and rg puts counters on creatures mainly, so I thought this could be an interesting change of pace"
+      },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "idk if this should be in WG"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Just green? // And then mess with the second ability to make it less white // Or the opposite"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "idk it just feels like white doesnt care about this card // maybe gw cares? // idk"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "I agree // Make it mono green and shift it around"
+      }
     ]
   },
   {
@@ -2967,8 +3497,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -2985,8 +3515,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "24-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "24-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3005,8 +3535,12 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, changed 'if that creature would die this way' to 'if that creature dies this way'"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, changed 'if that creature would die this way' to 'if that creature dies this way'"
+      }
     ]
   },
   {
@@ -3025,8 +3559,8 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3043,8 +3577,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "06-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3061,8 +3595,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3079,9 +3613,13 @@
     "has_bleed_edge": true,
     "art-remarks": "A shot glass on a scroll or spellbook",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Changed UR in casting cost to U/R U/R // Uploaded new art and card"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Changed UR in casting cost to U/R U/R // Uploaded new art and card"
+      }
     ]
   },
   {
@@ -3098,8 +3636,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "24-02-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "24-02-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3116,8 +3654,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "06-02-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "06-02-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3134,8 +3672,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "14-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "14-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3152,8 +3690,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "12-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3173,8 +3711,8 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      {"date": "12-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3194,8 +3732,8 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      {"date": "12-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3215,8 +3753,8 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      {"date": "12-01-2024", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3233,9 +3771,17 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, might be good to do this without the nickname and have = in the notes"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Changed from nickname to note, uploaded new image"}
+      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, might be good to do this without the nickname and have = in the notes"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Changed from nickname to note, uploaded new image"
+      }
     ]
   },
   {
@@ -3248,16 +3794,21 @@
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {R} or {G}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/1tB0sRD.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/pO8rSsG.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "05-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "New art and bleed edge"
+      }
     ]
   },
   {
-    "name": "Shadowstone Portal",
+    "name": "Magestone Portal",
     "set": "MTD",
     "cn": 266,
     "id": "UB",
@@ -3266,12 +3817,17 @@
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {U} or {B}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/YZcq6Ed.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/ruG08JH.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "05-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "New art, changed name to Magestone Portal"
+      }
     ]
   },
   {
@@ -3284,16 +3840,21 @@
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {B} or {R}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/EPb6BqR.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/fbihywA.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "05-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "New art and bleed edge"
+      }
     ]
   },
   {
-    "name": "Hoverstone Portal",
+    "name": "Skystone Portal",
     "set": "MTD",
     "cn": 266,
     "id": "WU",
@@ -3302,12 +3863,17 @@
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {W} or {U}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/9mPGJwJ.png",
+    "img": "https://i.imgur.com/Ck7Ag0A.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "05-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "New art and bleed edge and changed name to Skystone Portal"
+      }
     ]
   },
   {
@@ -3320,12 +3886,17 @@
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {G} or {W}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/SsyhfqA.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/H6I0yzs.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "05-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "New art and bleed edge"
+      }
     ]
   },
   {
@@ -3342,8 +3913,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "05-12-2023", "creator": "Sam", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3360,20 +3931,72 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, fixed wording"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "id like to give this hexproof"},
-      {"date": "14-07-2024", "creator": "Sam", "notes": "That card is a conversation of its own lol // But I agree // With the idea of your statement // It honestly feels like a sorcery which should make a custom token or emblem // The fact that it is an artifact is so bank"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "i guess // idk i think it's fine as an artifact but it needs hexproof"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "I disagree, but I agree it should have hexproof"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "do you think it should be colored?"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "No it should be colorless // The ultimate meme card"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "I guess it could work as a sorcery, but I feel like the end '2 life less' thing is an artifact"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "Or we could make it gain you a ton of life, and avoid adding a permanent necessary clause to it"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "we'll stick with that // i want to talk about making a token tho // since the effect is very much a spell or a challenge"},
-      {"date": "15-07-2024", "creator": "Thys", "notes": "mayyyyybe it could give an emblem"},
-      {"date": "15-07-2024", "creator": "Sam", "notes": "or just maybe like, make an artifact token with hexproof and indestructible that has the same effect // or just an emblem lol"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed wording"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "id like to give this hexproof"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "That card is a conversation of its own lol // But I agree // With the idea of your statement // It honestly feels like a sorcery which should make a custom token or emblem // The fact that it is an artifact is so bank"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "i guess // idk i think it's fine as an artifact but it needs hexproof"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "I disagree, but I agree it should have hexproof"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "do you think it should be colored?"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "No it should be colorless // The ultimate meme card"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I guess it could work as a sorcery, but I feel like the end '2 life less' thing is an artifact"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Or we could make it gain you a ton of life, and avoid adding a permanent necessary clause to it"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "we'll stick with that // i want to talk about making a token tho // since the effect is very much a spell or a challenge"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "mayyyyybe it could give an emblem"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "or just maybe like, make an artifact token with hexproof and indestructible that has the same effect // or just an emblem lol"
+      }
     ]
   },
   {
@@ -3390,8 +4013,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "13-11-2023", "creator": "Thys", "notes": "Posted card image"},
-      {"date": "14-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3408,7 +4031,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3425,7 +4048,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3442,8 +4065,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
     ]
   },
   {
@@ -3460,7 +4083,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3477,8 +4100,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
     ]
   },
   {
@@ -3495,7 +4118,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3512,8 +4135,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
     ]
   },
   {
@@ -3530,8 +4153,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
     ]
   },
   {
@@ -3548,8 +4171,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"},
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
     ]
   },
   {
@@ -3566,7 +4189,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3585,7 +4208,7 @@
     "toughness": 6,
     "art-remarks": "",
     "notes": [
-      {"date": "15-07-2024", "creator": "Thys", "notes": "Created json blob"}
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ]
   },
   {
@@ -3604,7 +4227,11 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "16-07-2024", "creator": "Thys", "notes": "Added to MTD, created blob"}
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added to MTD, created blob"
+      }
     ]
   },
   {
@@ -3623,7 +4250,11 @@
     "toughness": 5,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Re-written from old version in MTC, added to MTD"}
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Re-written from old version in MTC, added to MTD"
+      }
     ]
   },
   {
@@ -3642,8 +4273,8 @@
     "toughness": 0,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Thys", "notes": "..."},
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Captain America"}
+      { "date": "17-07-2024", "creator": "Thys", "notes": "..." },
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Captain America" }
     ]
   },
   {
@@ -3662,7 +4293,11 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Created and gave card image"}
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Created and gave card image"
+      }
     ]
   },
   {
@@ -3681,7 +4316,11 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Created card based on cemetery gatekeeper, created art"}
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Created card based on cemetery gatekeeper, created art"
+      }
     ]
   },
   {
@@ -3700,8 +4339,12 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Created card"},
-      {"date": "17-07-2024", "creator": "Sam", "notes": "change to you only gain 1 life"}
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Created card" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "change to you only gain 1 life"
+      }
     ]
   },
   {
@@ -3718,7 +4361,7 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Thys", "notes": "Mana cost created"}
+      { "date": "17-07-2024", "creator": "Thys", "notes": "Mana cost created" }
     ]
   },
   {
@@ -3737,7 +4380,11 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "when cast spell become unblockable // when deal damage get a spell back // dimir rare creature"}
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "when cast spell become unblockable // when deal damage get a spell back // dimir rare creature"
+      }
     ]
   },
   {
@@ -3754,7 +4401,7 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Posted card image"}
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
     ]
   },
   {
@@ -3771,7 +4418,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Posted card image // either this card exactly or an inversed version where it gains flying? // i kind of love this card tbh // it checks all the boxes for the set"}
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image // either this card exactly or an inversed version where it gains flying? // i kind of love this card tbh // it checks all the boxes for the set"
+      }
     ]
   },
   {
@@ -3788,7 +4439,7 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Posted card image"}
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
     ]
   },
   {
@@ -3805,8 +4456,24 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {"date": "17-07-2024", "creator": "Sam", "notes": "Posted card image"}
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
+    ]
+  },
+  {
+    "name": "Dimir Aqueduct",
+    "set": "MTD",
+    "cn": 93,
+    "id": "B",
+    "cost": "{3}{B}{B}",
+    "type": "Sorcery",
+    "text": "Return target creature card from your graveyard to the battlefield.\nWhen you discard ~, you may pay {B}. When you do, return target creature card from your graveyard to your hand.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/6JmMi55.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
     ]
   }
-
 ]
