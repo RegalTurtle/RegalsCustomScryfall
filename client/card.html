@@ -11,7 +11,7 @@
   <body>
     <div class="topnav">
       <div class="searchbar">
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" style="font-weight: bold;">
       </div>
     </div>
 
@@ -20,12 +20,21 @@
         <div id="cardImage"></div>
       </div>
       <div class="column">
-        <p id="cardName">Name: </p>
-        <p id="cardType">Type: </p>
-        <p id="cardOracle"></p>
-        <p id="cardPowTou"></p>
-        <i id="cardFlavor"></i>
-        <ul id="cardNotes"></ul>
+        <div class="cardTextBox">
+          <p id="cardName" style="color: #fff; font-weight: bold;"></p>
+          <hr>
+          <p id="cardType" style="color: #fff; font-weight: bold;"></p>
+          <hr>
+          <p id="cardOracle" style="color: #fff; font-weight: bold;"></p>
+          <hr>
+          <p id="cardPowTou" style="color: #fff; font-weight: bold;"></p>
+          <hr id="belowPowTou">
+          <i id="cardFlavor" style="color: #fff; font-weight: bold;"></i>
+          <hr id="belowFlavor">
+          <ul id="cardNotes" style="color: #fff; font-weight: bold;"></ul>
+          <hr>
+          <p id="cardCN" style="color: #fff; font-weight: bold;"></p>
+        </div>
       </div>
     </div>
     <script>
@@ -41,17 +50,24 @@
           }
         }
         document.getElementById('cardImage').innerHTML = '<div class="cell"><img src="'+cardDict["img"]+'" alt="'+cardDict["name"]+' || '+cardDict["text"]+'"></div>';
-        document.getElementById('cardName').innerText += " " + cardDict["name"];
-        document.getElementById('cardType').innerText += " " + cardDict["type"];
+        document.getElementById('cardName').innerText = " " + cardDict["name"];
+        document.getElementById('cardType').innerText = " " + cardDict["type"];
         document.getElementById('cardOracle').innerText = cardDict["text"].replace(/~/g, cardDict["name"]);
         if (cardDict["type"].includes("Creature")) {
           document.getElementById('cardPowTou').innerText = cardDict["power"] + "/" + cardDict["toughness"];
+        } else {
+          document.getElementById('belowPowTou').remove();
         }
-        document.getElementById('cardFlavor').innerText = cardDict["flavor"];
+        if (cardDict["flavor"] == "") {
+          document.getElementById('belowFlavor').remove();
+        } else {
+          document.getElementById('cardFlavor').innerText = cardDict["flavor"];
+        }
         for (i = 0; i < cardDict["notes"].length; i++) 
         {
           document.getElementById('cardNotes').innerHTML += `<li>${cardDict["notes"][i]["creator"]}: ${cardDict["notes"][i]["notes"]}</li>`;
         }
+        document.getElementById('cardCN').innerText = cardDict["set"] + cardDict["cn"]
       })
     </script>
   </body>

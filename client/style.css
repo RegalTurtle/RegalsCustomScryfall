@@ -60,6 +60,11 @@ input:focus {
   outline: none;
 }
 
+.row {
+  width: 75%;
+  margin: auto;
+}
+
 .column {
   float: left;
   width: 50%;
@@ -70,4 +75,17 @@ input:focus {
   content: "";
   display: table;
   clear: both;
+}
+
+.cardTextBox {
+  width: 75%;
+  background-color: #2f9288;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+hr {
+  border-top: #ffffff;
 }
