@@ -10,9 +10,9 @@
 
   <body>
     <div class="topnav">
-      <div class="searchbar">
-        <input type="text" placeholder="Search" style="font-weight: bold;">
-      </div>
+      <form class="searchbar" action="/search/" method="GET">
+        <input type="text" placeholder="Search" style="font-weight: bold;" name="q">
+      </form>
     </div>
 
     <div id="cards" class="container"></div>

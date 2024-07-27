@@ -12,11 +12,7 @@
     "img": "https://i.imgur.com/TqNYZm4.png",
     "has_bleed_edge": false,
     "notes": [
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "this needs an m dash before the name in flavor"
-      }
+      { "date": "15-07-2024", "creator": "Thys", "notes": "this needs an m dash before the name in flavor" }
     ]
   },
   {
@@ -72,7 +68,9 @@
     "img": "https://i.imgur.com/w6oY2uz.png",
     "has_bleed_edge": true,
     "art-remarks": "",
-    "notes": [{ "date": "14-07-2024", "creator": "Sam", "notes": "New art" }]
+    "notes": [
+      { "date": "14-07-2024", "creator": "Sam", "notes": "New art" }
+    ]
   },
   {
     "name": "High Priestess",
@@ -84,21 +82,14 @@
     "text": "Elves you control get +1/+1 for each beer counter on ~.",
     "flavor": "She was bestowed the heights of honors, and she delivered with pride.",
     "rarity": "R",
-    "img": "https://i.imgur.com/43oBY1p.png",
+    "img": "https://i.imgur.com/K8FYWUw.png",
     "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
     "notes": [
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Added notes and flavor to json"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Changed buffed creature back to elves // new image"
-      }
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Added notes and flavor to json" },
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Changed buffed creature back to elves // new image" },
+      { "date": "17-07-2024", "creator": "Sam", "notes": "damn holo stamps" }
     ]
   },
   {
@@ -847,7 +838,7 @@
   {
     "name": "Bog Witch",
     "set": "MTD",
-    "cn": 87,
+    "cn": 88,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Human Warlock",
@@ -857,7 +848,9 @@
     "img": "https://i.imgur.com/DNKzqFt.png",
     "has_bleed_edge": false,
     "power": 2,
-    "toughness": 2
+    "toughness": 2,
+    "notes": [
+    ]
   },
   {
     "name": "Inspector General",
@@ -1016,7 +1009,7 @@
   {
     "name": "Atemsis, All-Seeing",
     "set": "MTD",
-    "cn": 44,
+    "cn": 46,
     "id": "U",
     "cost": "{3}{U}{U}{U}",
     "type": "Legendary Creature - Sphinx",
@@ -1040,20 +1033,13 @@
     "text": "Enchant creature\nEnchanted creature gets +0/+2 and has vigilance.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/SHvvPGi.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/AWv1Ogr.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Cutting this because it feels like it would just be better to have a draft matters card instead, and this was what we were most on the fence about"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added this to the website, so we have a record of cut cards and stuff. Also made a quick mock-up"
-      }
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Cutting this because it feels like it would just be better to have a draft matters card instead, and this was what we were most on the fence about" },
+      { "date": "11-07-2024", "creator": "Thys", "notes": "Added this to the website, so we have a record of cut cards and stuff. Also made a quick mock-up" },
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Given art from Copilot" }
     ]
   },
   {
@@ -1073,21 +1059,9 @@
     "watermark": "draft",
     "art-remarks": "art is a like a goblin working at a pawn shop and appraising what appears to be the contents of a dumpster",
     "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Inspired from Canal Dredger for the red draft matters card."
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Sam",
-        "notes": "Needs the draft matters card frame and backdrop."
-      }
+      { "date": "11-07-2024", "creator": "Thys", "notes": "Inspired from Canal Dredger for the red draft matters card." },
+      { "date": "11-07-2024", "creator": "Thys", "notes": "Added card image without bleed edge since it will need to be changed at some point anyways." },
+      { "date": "11-07-2024", "creator": "Sam", "notes": "Needs the draft matters card frame and backdrop." }
     ]
   },
   {
@@ -1237,7 +1211,7 @@
   {
     "name": "Zanhor, Keeper of Knowledge",
     "set": "MTD",
-    "cn": 50,
+    "cn": 74,
     "id": "U",
     "cost": "{3}{U}{U}",
     "type": "Legendary Creature - Sphinx Noble",
@@ -1298,7 +1272,7 @@
   {
     "name": "Aremon, Slipstream Archmage",
     "set": "MTD",
-    "cn": 43,
+    "cn": 45,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Legendary Creature - Bird Wizard",
@@ -1311,35 +1285,30 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json, changed name to be Slipstream, also second ~ should be just name."
-      }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed name to be Slipstream, also second ~ should be just name." },
+      { "date": "20-07-2024", "creator": "Thys", "notes": "Probably will be removed to add Malcolm back in since blue doesn't really care about beer counters." }
     ]
   },
   {
-    "name": "Broadwind Seabird",
+    "name": "Broadwing Seabird",
     "set": "MTD",
-    "cn": 50,
+    "cn": 48,
     "id": "U",
     "cost": "{4}{U}",
     "type": "Creature - Bird",
     "text": "Flying\nWard - Take a shot.",
-    "flavor": "Aphelion is home to an ancient race of Rocs who have long adapted to the ocean reaches. Ferocious predators.",
+    "flavor": "Aphelion is home to an ancient race of Rocs who make their home far away from shore.",
     "rarity": "C",
-    "img": "https://i.imgur.com/K4Au4Id.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/7K6rVTK.png",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 4,
     "art-remarks": "",
     "notes": [
       { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Art is slightly misaligned, so there is white peeking through"
-      }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Art is slightly misaligned, so there is white peeking through" },
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Fixed name in json" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Fixed art and new flavor" }
     ]
   },
   {
@@ -1807,175 +1776,177 @@
     "text": "When ~ enters, put your choice of a +1/+1 counter or two beer counters on target creature.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/My3rUBi.png",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
-    "name": "",
+    "name": "Scry Engine",
     "set": "MTX",
-    "cn": 0,
+    "cn": 1,
     "id": "U",
     "cost": "",
     "type": "",
     "text": "Whenever you case an instant or sorcery spell, scry 1.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/gbWpCyn.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera"
-      }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
     "name": "Blue Mana Sink",
     "set": "MTX",
-    "cn": 0,
+    "cn": 2,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Enchantment",
     "text": "When ~ enters, scry 2.\n{1}, Sacrifice ~: Draw a card.\n{4}: Draw a card.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/edIUPPY.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Maybe could be split into 2 cards, I like the idea of a blue mana sink for card draw, but this cycling thing is interesting"
-      },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Maybe could be split into 2 cards, I like the idea of a blue mana sink for card draw, but this cycling thing is interesting" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
-    "name": "Fact or Fiction Sphinx",
-    "set": "MTX",
-    "cn": 0,
+    "name": "Crossroads Sphinx",
+    "set": "MTD",
+    "cn": 53,
     "id": "U",
     "cost": "{4}{U}{U}",
     "type": "Creature - Sphinx",
-    "text": "When ~ enters, reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
+    "text": "Flying\nWhen ~ enters, reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
     "flavor": "",
     "rarity": "U",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/DNWcLTj.png",
+    "has_bleed_edge": true,
     "power": 4,
     "toughness": 5,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Added flying" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Given image" }
     ]
   },
   {
     "name": "Cheap Flyer",
     "set": "MTX",
-    "cn": 0,
+    "cn": 3,
     "id": "U",
     "cost": "{U}",
     "type": "Creature",
     "text": "Flying",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/6msLXVI.png",
     "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
     "name": "Conditional Flyer",
     "set": "MTX",
-    "cn": 0,
+    "cn": 4,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Creature",
     "text": "{2}: ~ gains flying until end of turn.",
     "flavor": "",
     "rarity": "U",
-    "img": "",
+    "img": "https://i.imgur.com/s0tg2AY.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
     "name": "Stop Attacking",
     "set": "MTX",
-    "cn": 0,
+    "cn": 5,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Instant",
     "text": "Remove target creature from combat.",
     "flavor": "",
     "rarity": "U",
-    "img": "",
+    "img": "https://i.imgur.com/yKLK0EI.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
     "name": "Sleep",
     "set": "MTX",
-    "cn": 0,
+    "cn": 6,
     "id": "U",
     "cost": "{2}{U}{U}",
     "type": "Sorcery",
     "text": "Tap all creatures target player controls. Those creatures don't untap during that player's next untap step.",
     "flavor": "",
     "rarity": "U",
-    "img": "",
+    "img": "https://i.imgur.com/9iLNlmI.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
     "name": "Portal Mage",
-    "set": "MTX",
-    "cn": 0,
+    "set": "MTD",
+    "cn": 59,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Creature - Human Wizard",
     "text": "Flash\nWhen ~ enters during the declare attackers step, you may reselect which player or permanent target attacking creature is attacking.",
     "flavor": "",
     "rarity": "U",
-    "img": "",
+    "img": "https://i.imgur.com/loGKiNF.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
     "art-remarks": "",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "New art" }
     ]
   },
   {
@@ -3303,7 +3274,7 @@
   {
     "name": "Rest Well Deserved",
     "set": "MTD",
-    "cn": 221,
+    "cn": 223,
     "id": "WG",
     "cost": "{G}{W}",
     "type": "Instant",
@@ -3321,7 +3292,7 @@
   {
     "name": "Radha, Victorious Queen",
     "set": "MTD",
-    "cn": 219,
+    "cn": 221,
     "id": "RG",
     "cost": "{R}{G}",
     "type": "Legendary Creature - Elf Alcoholic",
@@ -3360,26 +3331,10 @@
     "notes": [
       { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "ARIEL NEEDS SO MUCH HELP"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Thys",
-        "notes": "Changed last paragraph to 'Whenever you take a shot, if it wasn't the first shot you took this turn, you gain 3 life.'"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Thys",
-        "notes": "Changed last paragraph to 'nWhenever you take your second shot each turn, you gain 6 life.'"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Changed art of Ariel"
-      }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "ARIEL NEEDS SO MUCH HELP" },
+      { "date": "17-07-2024", "creator": "Thys", "notes": "Changed last paragraph to 'Whenever you take a shot, if it wasn't the first shot you took this turn, you gain 3 life.'" },
+      { "date": "17-07-2024", "creator": "Thys", "notes": "Changed last paragraph to 'Whenever you take your second shot each turn, you gain 6 life.'" },
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Changed art of Ariel" }
     ]
   },
   {
@@ -3443,7 +3398,7 @@
   {
     "name": "Lively Tavern",
     "set": "MTD",
-    "cn": 211,
+    "cn": 220,
     "id": "WG",
     "cost": "{2}{G}{W}",
     "type": "Artifact",
@@ -3566,11 +3521,11 @@
   {
     "name": "Freyan's Warpath",
     "set": "MTD",
-    "cn": 211,
+    "cn": 219,
     "id": "RG",
     "cost": "{4}{R}{G}",
     "type": "Sorcery",
-    "text": "Choose one -\n*Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n*Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.",
+    "text": "Choose one -\n*Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n*Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.\nEntwine {3}",
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/BcvPR9z.png",
@@ -3578,7 +3533,8 @@
     "art-remarks": "",
     "notes": [
       { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Add entwine for {3}" }
     ]
   },
   {
@@ -3625,7 +3581,7 @@
   {
     "name": "Throne of the High City",
     "set": "MTD",
-    "cn": 266,
+    "cn": 285,
     "id": "C",
     "cost": "",
     "type": "Land",
@@ -3787,116 +3743,101 @@
   {
     "name": "Growthstone Portal",
     "set": "MTD",
-    "cn": 266,
+    "cn": 273,
     "id": "RG",
     "cost": "",
     "type": "Land",
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {R} or {G}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/pO8rSsG.png",
+    "img": "https://i.imgur.com/GE1Ch3V.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "New art and bleed edge"
-      }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "New art and bleed edge" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
     ]
   },
   {
     "name": "Magestone Portal",
     "set": "MTD",
-    "cn": 266,
+    "cn": 277,
     "id": "UB",
     "cost": "",
     "type": "Land",
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {U} or {B}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/ruG08JH.png",
+    "img": "https://i.imgur.com/6mwBqMR.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "New art, changed name to Magestone Portal"
-      }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "New art, changed name to Magestone Portal" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
     ]
   },
   {
     "name": "Hellstone Portal",
     "set": "MTD",
-    "cn": 266,
+    "cn": 275,
     "id": "BR",
     "cost": "",
     "type": "Land",
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {B} or {R}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/fbihywA.png",
+    "img": "https://i.imgur.com/YywEybu.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "New art and bleed edge"
-      }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "New art and bleed edge" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
     ]
   },
   {
     "name": "Skystone Portal",
     "set": "MTD",
-    "cn": 266,
+    "cn": 284,
     "id": "WU",
     "cost": "",
     "type": "Land",
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {W} or {U}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/Ck7Ag0A.png",
+    "img": "https://i.imgur.com/hMrKWev.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "New art and bleed edge and changed name to Skystone Portal"
-      }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "New art and bleed edge and changed name to Skystone Portal" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
     ]
   },
   {
     "name": "Riftstone Portal",
     "set": "MTD",
-    "cn": 266,
+    "cn": 282,
     "id": "WG",
     "cost": "",
     "type": "Land",
     "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {G} or {W}.\"",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/H6I0yzs.png",
+    "img": "https://i.imgur.com/aqpYOxY.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "New art and bleed edge"
-      }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "New art and bleed edge" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
     ]
   },
   {
@@ -4000,55 +3941,59 @@
     ]
   },
   {
-    "name": "Brewing Spire",
+    "name": "Decoction Tower",
     "set": "MTD",
-    "cn": 266,
+    "cn": 269,
     "id": "B",
     "cost": "",
     "type": "Legendary Land",
     "text": "{T}: Add {C}\n{T}, Take a shot: Add {B}{B}",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/obHlPA8.png",
+    "flavor": "No batch is perfect, sometimes you have to boil part of the mash again to get the desired effect.",
+    "rarity": "M",
+    "img": "https://i.imgur.com/SQ2luvm.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "also, changed the new from brewing spire to Decoction tower, as i thought brewing spire was a really lame name lol. Decoction is the process of taking half of the mash and boiling it again before adding it back to the batch. It felt kind of like beer making eugenics which aligns with Yawgmoth and the phyrexians"},
+      { "date": "14-07-2024", "creator": "Sam", "notes": "Upshifted to Mythic" }
     ]
   },
   {
     "name": "Contaminated Aquifer",
     "set": "MTD",
-    "cn": 266,
+    "cn": 268,
     "id": "UB",
     "cost": "",
     "type": "Land - Island Swamp",
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/paFZxmH.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
     ]
   },
   {
     "name": "Geothermal Bog",
     "set": "MTD",
-    "cn": 266,
+    "cn": 272,
     "id": "BR",
     "cost": "",
     "type": "Land - Swamp Mountain",
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/ux6dDEf.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
     ]
   },
   {
@@ -4061,29 +4006,31 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/eL6hkhn.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
     ]
   },
   {
     "name": "Idyllic Beachfront",
     "set": "MTD",
-    "cn": 266,
+    "cn": 276,
     "id": "WU",
     "cost": "",
     "type": "Land - Plains Island",
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/BupeQwc.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
     ]
   },
   {
@@ -4096,29 +4043,31 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/Z3r0dNE.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
     ]
   },
   {
-    "name": "Radient Grove",
+    "name": "Radiant Grove",
     "set": "MTD",
-    "cn": 266,
+    "cn": 280,
     "id": "WG",
     "cost": "",
     "type": "Land - Forest Plains",
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/DnEdVUW.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
     ]
   },
   {
@@ -4131,12 +4080,13 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/D1VEpSn.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
     ]
   },
   {
@@ -4149,12 +4099,14 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/WaYvip4.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" },
+      { "date": "20-07-2024", "creator": "Thys", "notes": "Put correct set symbol on" }
     ]
   },
   {
@@ -4167,29 +4119,31 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/ldylwQ3.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" }
+      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
     ]
   },
   {
     "name": "Wooded Ridgeline",
     "set": "MTD",
-    "cn": 266,
+    "cn": 286,
     "id": "RG",
     "cost": "",
     "type": "Land - Mountain Forest",
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "",
+    "img": "https://i.imgur.com/76a25ZC.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
     ]
   },
   {
@@ -4333,7 +4287,7 @@
     "text": "Whenever you accept a pact, ~ deals 1 damage to each opponent and you gain 1 life.",
     "flavor": "The scourge of the weak.",
     "rarity": "R",
-    "img": "https://i.imgur.com/fffWiNo.png",
+    "img": "https://i.imgur.com/2PZ7bnA.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 1,
@@ -4350,18 +4304,19 @@
   {
     "name": "RAINBOWWWW",
     "set": "MTX",
-    "cn": 1,
+    "cn": 7,
     "id": "WUBRG",
     "cost": "{W/U}{U/B}{B/R}{R/G}{G/W}",
     "type": "",
     "text": "",
     "flavor": "",
     "rarity": "R",
-    "img": ".png",
+    "img": "https://i.imgur.com/jijC73S.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Thys", "notes": "Mana cost created" }
+      { "date": "17-07-2024", "creator": "Thys", "notes": "Mana cost created" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
     ]
   },
   {
@@ -4414,15 +4369,11 @@
     "text": "Flying\n~ gets +1/+1 as long as you control a Plains.\n{W}: ~ gains lifelink until end of turn.",
     "flavor": "While Aphelion is the least inhabited region, it is by far the largest.",
     "rarity": "C",
-    "img": ".png",
+    "img": "https://i.imgur.com/yz3kasO.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Posted card image // either this card exactly or an inversed version where it gains flying? // i kind of love this card tbh // it checks all the boxes for the set"
-      }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image // either this card exactly or an inversed version where it gains flying? // i kind of love this card tbh // it checks all the boxes for the set" }
     ]
   },
   {
@@ -4435,11 +4386,12 @@
     "text": "Counter target spell. You gain 3 life.",
     "flavor": "Creation comes from all places, even destruction.",
     "rarity": "R",
-    "img": ".png",
+    "img": "https://i.imgur.com/m3eUNr0.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "17-07-2024", "creator": "Sam", "notes": "damn holo stamps // new image" }
     ]
   },
   {
@@ -4462,18 +4414,612 @@
   {
     "name": "Dimir Aqueduct",
     "set": "MTD",
-    "cn": 93,
-    "id": "B",
-    "cost": "{3}{B}{B}",
-    "type": "Sorcery",
-    "text": "Return target creature card from your graveyard to the battlefield.\nWhen you discard ~, you may pay {B}. When you do, return target creature card from your graveyard to your hand.",
+    "cn": 270,
+    "id": "UB",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {U}{B}.",
     "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/6JmMi55.png",
+    "rarity": "C",
+    "img": "https://i.imgur.com/dNeydTJ.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "18-08-2024", "creator": "Sam", "notes": "Added correct rarity"}
+    ]
+  },
+  {
+    "name": "Azorius Chancery",
+    "set": "MTD",
+    "cn": 266,
+    "id": "WU",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {W}{U}.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/SLcxEps.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "18-08-2024", "creator": "Sam", "notes": "Added correct rarity"}
+    ]
+  },
+  {
+    "name": "Gruul Turf",
+    "set": "MTD",
+    "cn": 274,
+    "id": "RG",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {R}{G}.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/J6ddjSo.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "18-08-2024", "creator": "Sam", "notes": "Added correct rarity"}
+    ]
+  },
+  {
+    "name": "Rakdos Carnarium",
+    "set": "MTD",
+    "cn": 281,
+    "id": "BR",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {B}{R}.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/BsL8fi7.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "18-08-2024", "creator": "Sam", "notes": "Added correct rarity"}
+    ]
+  },
+  {
+    "name": "Selesnya Sanctuary",
+    "set": "MTD",
+    "cn": 283,
+    "id": "WG",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {G}{W}.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/5cJgKwc.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      { "date": "18-08-2024", "creator": "Sam", "notes": "Added correct rarity"}
+    ]
+  },
+  {
+    "name": "Necromancer's Puppet",
+    "set": "MTD",
+    "cn": 99,
+    "id": "B",
+    "cost": "{2}{B}{B}",
+    "type": "Creature - Zombie",
+    "text": "Whenever ~ deals combat damage to a player, each player discards a card.",
+    "flavor": "Brought back to serve a purpose, kept around for entertainment.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/rC55WaC.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-06-2024", "creator": "Thys", "notes": "Posted card idea" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Posted card image" }
+    ]
+  },
+  {
+    "name": "Selection Process",
+    "set": "MTD",
+    "cn": 60,
+    "id": "U",
+    "cost": "{2}{B}{B}",
+    "type": "Instant",
+    "text": "This spell costs {1} less to cast for each Wizard you control.\nReturn X target nonland permanents to their owners hands.",
+    "flavor": "Being selected to apprentice is a brutal and competitive process.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/JdEjsvr.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-06-2024", "creator": "Thys", "notes": "Posted card idea" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "change flying to wizard // Posted card image and chose name" }
+    ]
+  },
+  {
+    "name": "Vibe Check",
+    "set": "MTD",
+    "cn": 107,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Instant",
+    "text": "Destroy target non-alcoholic creature.",
+    "flavor": "You did not pass, it is now time to face the flames, goodbye.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/NHemTM6.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-06-2024", "creator": "Thys", "notes": "Posted card idea" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Posted card image and chose name" }
+    ]
+  },
+  {
+    "name": "Blessed Grove",
+    "set": "MTD",
+    "cn": 267,
+    "id": "G",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\n{T}: Add {G}.\n{1}{G}, {T}: Put a beer counter on target permanent you control.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/w9fHqkt.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Sam", "notes": "green land w/ add a beer counter // Posted card image" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Renamed to Blessed Grove, added CN, changed art" }
+    ]
+  },
+  {
+    "name": "Mountainous Brewery",
+    "set": "MTD",
+    "cn": 278,
+    "id": "R",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\n{T}: Add {R}.\n{3}{R}, {T}: Target player takes a shot.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/5d3Tg8n.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Sam", "notes": "red land w/ someone takes a shot // Posted card image" }
+    ]
+  },
+  {
+    "name": "Mystical Archive",
+    "set": "MTD",
+    "cn": 279,
+    "id": "U",
+    "cost": "",
+    "type": "Land",
+    "text": "~ enters tapped.\n{T}: Add {U}.\n{2}{U}, {T}: Return target instant or sorcery card from your graveyard to your hand.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/aRtkhaP.png",
+    "has_bleed_edge": true,
+    "art-remarks": "Bookshelves/library feel",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Posted card idea" },
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Generated art" }
+    ]
+  },
+  {
+    "name": "Exotic Orchard",
+    "set": "MTD",
+    "cn": 271,
+    "id": "C",
+    "cost": "",
+    "type": "Land",
+    "text": "{T}: Add one mana of any color that a land an opponent controls could produce.",
+    "flavor": "Those who have seen it never forget it.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/x3WIGWK.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Suggested Exotic Orchard" }
+    ]
+  },
+  {
+    "name": "Windrider Wizard",
+    "set": "MTD",
+    "cn": 69,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Creature - Human Wizard",
+    "text": "Flying\nWhenever you cast an instant, sorcery, or Wizard spell, you may draw a card. If you do, discard a card.",
+    "flavor": "The combination of ingenuity and irritability.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/z9UkLg2.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Suggested card" }
+    ]
+  },
+  {
+    "name": "Storm Crow",
+    "set": "MTD",
+    "cn": 64,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Creature - Bird",
+    "text": "Flying",
+    "flavor": "Storm crow descending, winter unending. Storm crow departing summer is starting.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/7pURnvy.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Suggested card // Given art" }
+    ]
+  },
+  {
+    "name": "Night's Whisper",
+    "set": "MTC",
+    "cn": 17,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Sorcery",
+    "text": "You draw two cards and you lose 2 life.",
+    "flavor": "\"Gaze into the orb, everyone learns something, at a price...\"",
+    "rarity": "C",
+    "img": "https://i.imgur.com/eYwfl8Q.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Suggested card, did art" },
+      { "date": "18-07-2024", "creator": "Thys", "notes": "Decided to cut to MTC" },
+      { "date": "20-07-2024", "creator": "Thys", "notes": "Art is misaligned" }
+    ]
+  },
+  {
+    "name": "Windrider Elf",
+    "set": "MTD",
+    "cn": 192,
+    "id": "G",
+    "cost": "{2}{G}{G}",
+    "type": "Creature - Bird",
+    "text": "When ~ enters, create a 1/1 green Elf Druid creature token with \"{T}: Add {G}.\"",
+    "flavor": "While uncommon, some elves have chosen an avian life.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/FXA8Msp.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Created card based on Koilos Roc" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "this is so egregious (the art)" }
+    ]
+  },
+  {
+    "name": "Rotting Rats",
+    "set": "MTX",
+    "cn": 8,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Creature - Zombie Rat",
+    "text": "When ~ enters, each player discards a card.\nUnearth {1}{B}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/xWsMyiF.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Sam", "notes": "i think we should add it tbh" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "definitely should have reminder if we choose to add it" }
+    ]
+  },
+  {
+    "name": "Starfall Roc",
+    "set": "MTC",
+    "cn": 18,
+    "id": "U",
+    "cost": "{4}{U}",
+    "type": "Creature - Bird",
+    "text": "Flash, flying\nWhen ~ enters, create a tapped colorless artifact token named Meteorite with \"When Meteorite enters, it deals 2 damage to any target\" and \"{T}: Add one mana of any color.\"",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/O9VyNV1.png",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Created card based on Koilos Roc" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "This was the original concept for Windrider Elf" },
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Given art from Copilot, combined keyword lines" }
+    ]
+  },
+  {
+    "name": "Devourer of Memory",
+    "set": "MTX",
+    "cn": 9,
+    "id": "UB",
+    "cost": "{U}{B}",
+    "type": "Creature — Nightmare",
+    "text": "Whenever one or more cards are put into your graveyard from your library, ~ gets +1/+1 until end of turn and can't be blocked this turn.\n{1}{U}{B}: Mill a card.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/fe6tCrv.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Suggested card" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Art 2 for Devourer of Memory" }
+    ]
+  },
+  {
+    "name": "Devourer of Memory",
+    "set": "MTX",
+    "cn": 10,
+    "id": "UB",
+    "cost": "{U}{B}",
+    "type": "Creature — Nightmare",
+    "text": "Whenever one or more cards are put into your graveyard from your library, ~ gets +1/+1 until end of turn and can't be blocked this turn.\n{1}{U}{B}: Mill a card.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/apRg67X.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Suggested card" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Art 1 for Devourer of Memory" }
+    ]
+  },
+  {
+    "name": "Bloodgift Demon",
+    "set": "MTD",
+    "cn": 87,
+    "id": "B",
+    "cost": "{3}{B}{B}",
+    "type": "Creature — Demon",
+    "text": "Flying\nAt the beginning of your upkeep, target player draws a card and loses 1 life.",
+    "flavor": "Whenever the eternal party reaches the surface, it makes itself known.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/apRf0PG.png",
+    "has_bleed_edge": true,
+    "power": 5,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      { "date": "17-07-2024", "creator": "Sam", "notes": "Suggested card" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created json blob // needs a stamp :)" }
+    ]
+  },
+  {
+    "name": "Mnemonic Betrayal",
+    "set": "MTD",
+    "cn": 221,
+    "id": "UB",
+    "cost": "{1}{U}{B}",
+    "type": "Sorcery",
+    "text": "Exile all opponents' graveyards. You may cast spells from among those cards this turn, and mana of any type can be spent to cast them. At the beginning of the next end step, if any of those cards remain exiled, return them to their owners' graveyards.\nExile ~.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/Lz9tf9M.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip" }
+    ]
+  },
+  {
+    "name": "",
+    "set": "MTX",
+    "cn": 11,
+    "id": "UB",
+    "cost": "{1}{B}{B}",
+    "type": "Creature",
+    "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/HLgCXch.png",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 5,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip // this card is kinda rediculous at 3 mana why is it a 3/5" }
+    ]
+  },
+  {
+    "name": "",
+    "set": "MTX",
+    "cn": 12,
+    "id": "U",
+    "cost": "{5}{U}{U}",
+    "type": "Creature - Jellyfish",
+    "text": "Flash, flying\nIslandcycling {2}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/sXWGTEn.png",
+    "has_bleed_edge": true,
+    "power": 5,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip" }
+    ]
+  },
+  {
+    "name": "",
+    "set": "MTX",
+    "cn": 13,
+    "id": "B",
+    "cost": "{2}{B}{B}",
+    "type": "Creature",
+    "text": "Deathtouch\nSwampcycling {2}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/YsQV6DU.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip" }
+    ]
+  },
+  {
+    "name": "",
+    "set": "MTX",
+    "cn": 14,
+    "id": "R",
+    "cost": "{3}{R}{R}",
+    "type": "Creature - Devil",
+    "text": "Haste\nMountaincycling {2}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/BeaZPU9.png",
+    "has_bleed_edge": true,
+    "power": 7,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip" }
+    ]
+  },
+  {
+    "name": "Colossal",
+    "set": "MTX",
+    "cn": 15,
+    "id": "G",
+    "cost": "{4}{G}{G}",
+    "type": "Creature",
+    "text": "Trample\nForestcycling {2}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/VPYAqxz.png",
+    "has_bleed_edge": true,
+    "power": 6,
+    "toughness": 6,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip" }
+    ]
+  },
+  {
+    "name": "Dire-Strain Copy",
+    "set": "MTX",
+    "cn": 16,
+    "id": "G",
+    "cost": "{1}{G}{G}",
+    "type": "Sorcery",
+    "text": "Destroy target artifact, enchantment, or land. Its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle. If you controlled the permanent, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/p7KQ9jM.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip // This was added based off of memory, looking at it now it may need significant rebalancing" }
+    ]
+  },
+  {
+    "name": "Rain of Thorns",
+    "set": "MTX",
+    "cn": 17,
+    "id": "G",
+    "cost": "{4}{G}{G}",
+    "type": "Sorcery",
+    "text": "Choose one or more -\n*Destroy target artifact.\n*Destroy target enchantment.\n*Destroy target land.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/fNMMJsP.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Looking for vandalize and found this" }
+    ]
+  },
+  {
+    "name": "Reap and Sow",
+    "set": "MTX",
+    "cn": 18,
+    "id": "G",
+    "cost": "{3}{G}",
+    "type": "Sorcery",
+    "text": "Choose one -\n*Destroy target land.\n*Search your library for a land card, put that card onto the battlefield, then shuffle.\nEntwine {1}{G}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/hPJebdN.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Looking for vandalize and found this" }
+    ]
+  },
+  {
+    "name": "Rain of Rust",
+    "set": "MTX",
+    "cn": 19,
+    "id": "R",
+    "cost": "{3}{R}{R}",
+    "type": "Instant",
+    "text": "Choose one -\n*Destroy target artifact.\n*Destroy target land.\nEntwine {3}{R}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/DQ1pJin.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "Looking for vandalize and found this" }
+    ]
+  },
+  {
+    "name": "Not Shatter",
+    "set": "MTX",
+    "cn": 20,
+    "id": "R",
+    "cost": "{3}{R}",
+    "type": "Sorcery",
+    "text": "Choose one -\n*Destroy target artifact.\n*Destroy target land.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/u9QBnO7.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "This is what I thought shatter did" }
+    ]
+  },
+  {
+    "name": "Enti, the Worldshaker",
+    "set": "MTX",
+    "cn": 21,
+    "id": "G",
+    "cost": "{4}{G}{G}",
+    "type": "Legendary Creature - Turtle",
+    "text": "~ enters with nine beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove one beer counter from ~: Put a +1/+1 counter on target creature.\nRemove one beer counter from ~: Creatures you control get +2/+2 until end of turn.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/PFLFZwz.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "26-07-2024", "creator": "Thys", "notes": "The turtle mythic itself. All names need to be reduced to name without title" }
     ]
   }
+
 ]

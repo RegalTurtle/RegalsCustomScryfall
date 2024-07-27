@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <title>Regal's Custom Cards</title>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <form class="searchbar" action="/search/" method="GET">
+        <input type="text" placeholder="Search" style="font-weight: bold;" name="q" id="searchInput">
+      </form>
+    </div>
+
+    <!-- <p id="output"></p> -->
+
+    <div id="cards" class="container"></div>
+    <script>
+      function containsAllCharacters(str1, str2) {
+        for (i = 0 ; i < str1.length ; i++) {
+          if (str2.includes(str1.charAt(i))) {
+            continue;
+          }
+          return false;
+        }
+        return true;
+      }
+
+      function getColors(str) {
+        var colors = "";
+        if (str.includes("W")) colors += "w";
+        if (str.includes("U")) colors += "u";
+        if (str.includes("B")) colors += "b";
+        if (str.includes("R")) colors += "r";
+        if (str.includes("G")) colors += "g";
+        if (colors.length === 0) colors = "c";
+        return colors;
+      }
+
+      function haveSameCharacters(str1, str2) {
+        const sortString = (str) => str.split('').sort().join('');
+        return sortString(str1) === sortString(str2);
+      }
+      
+      // get the search parameters (the stuff after ?)
+      const queryValue = new URLSearchParams(window.location.search).get('q');
+
+      document.getElementById("searchInput").value = queryValue;
+
+      // if the user searched for nothing, redirect them to the main page
+      if (queryValue == "") {
+        window.location.href = "/";
+      }
+
+      // change the html element to say what the user searched for
+      // TODO: change this to not look like shit
+      // document.getElementById('output').textContent = `You searched for: ${queryValue}`;
+
+      // is essentially a split that tokenizes the string, but not if it's inside of quotes
+      // Regex Breakdown:
+      // (?: ... ) is a non-capturing group.
+      // [^\s"]+ matches sequences of characters that are not spaces or quotes.
+      // "[^"]*" matches sequences enclosed in quotes.
+      var params = queryValue.toLowerCase().match(/(?:[^\s"]+|"[^"]*")+/g);
+
+      // get the json with all of the cards
+      fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
+        // then filter the cards based on the search criteria
+        all_cards = all_cards.filter((card) => {
+          // need to loop through all search parameters
+          for (i = 0 ; i < params.length ; i++) {
+            // this strips quotes off of the search, so that it's not searching for the quote char, since it will never be there
+            cur_param = params[i].replace(/"/g, "");
+            // checks to see if the current search term is a type check
+            if (cur_param.slice(0,2) == "t:") {
+              // if the types match, continue with next param
+              if (card["type"].toLowerCase().includes(cur_param.slice(2))) {
+                continue;
+              // else, return false and break now
+              } else {
+                return false;
+              }
+            }
+            // same as type checking but for sets
+            if (cur_param.slice(0,2) == "s:") {
+              if (card["set"].toLowerCase().includes(cur_param.slice(2))) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param.slice(0,3) == "id:") {
+              if (containsAllCharacters(card["id"].toLowerCase(), cur_param.slice(3))) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param.slice(0,2) == "c=") {
+              if (haveSameCharacters(getColors(card["cost"]), cur_param.slice(2))) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            // if all other checks fail, turn it into a name check
+            if (card["name"].toLowerCase().includes(cur_param)) {
+              continue;
+            } else {
+              return false;
+            }
+            // fail-safe, nothing should ever reach here though, it should all be caught above
+            return false;
+          }
+          // if the loop goes off without triggering a return false, then the card matches, return true
+          return true;
+        })
+
+        if (all_cards.length == 1) {
+          window.location.href = `/card/${all_cards[0]["set"]}${all_cards[0]["cn"]}`;
+        }
+        
+        // object.sort
+        all_cards.sort((a,b) => {
+          if (a["set"].localeCompare(b["set"]) == 0) {
+            return a["cn"] - b["cn"]
+          }
+          return a["set"].localeCompare(b["set"])
+        })
+        var cardsElem = document.getElementById('cards')
+        var htmlOut = ''
+        for (i=0; i<all_cards.length; i++)
+        {
+          htmlOut += '<a href="/card/'+all_cards[i]["set"]+all_cards[i]["cn"]+'"><div class="cell"><img src="'+all_cards[i]["img"]+'" alt="'+all_cards[i]["name"]+' || '+all_cards[i]["text"]+'"></div></a>'
+        }
+        cardsElem.innerHTML = htmlOut
+      })
+    </script>
+  </body>
+</html>

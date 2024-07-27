@@ -23,6 +23,10 @@ app.get('/card/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/card.html'));
 });
 
+app.get('/search/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/search.html'));
+});
+
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
   console.log(`Now listening on port ${port}`);
 });
