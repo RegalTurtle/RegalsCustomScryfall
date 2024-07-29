@@ -52,7 +52,8 @@
         document.getElementById('cardImage').innerHTML = '<div class="cell"><img src="'+cardDict["img"]+'" alt="'+cardDict["name"]+' || '+cardDict["text"]+'"></div>';
         document.getElementById('cardName').innerText = " " + cardDict["name"];
         document.getElementById('cardType').innerText = " " + cardDict["type"];
-        document.getElementById('cardOracle').innerText = cardDict["text"].replace(/~/g, cardDict["name"]);
+        document.getElementById('cardOracle').innerText = cardDict["text"]
+            .replace(/~/g, cardDict["name"]);
         if (cardDict["type"].includes("Creature")) {
           document.getElementById('cardPowTou').innerText = cardDict["power"] + "/" + cardDict["toughness"];
         } else {
@@ -61,7 +62,9 @@
         if (cardDict["flavor"] == "") {
           document.getElementById('belowFlavor').remove();
         } else {
-          document.getElementById('cardFlavor').innerText = cardDict["flavor"];
+          document.getElementById('cardFlavor').innerText = cardDict["flavor"]
+              .replace(/{lns}/g, "\n")
+              .replace(/{-}/g, "—");
         }
         for (i = 0; i < cardDict["notes"].length; i++) 
         {
