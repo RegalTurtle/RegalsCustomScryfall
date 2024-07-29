@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 /* Add a black background color to the top navigation */
@@ -88,4 +90,388 @@ input:focus {
 
 hr {
   border-top: #ffffff;
+}
+
+.card-grid-item {
+  page-break-after: auto;
+  page-break-before: auto;
+  page-break-inside: avoid;
+  position: relative;
+  display: block;
+  width: 49.25%;
+  margin: 0 0 9px 0
+}
+
+@media screen and (min-width: 660px) {
+  .card-grid-item {
+      width:32.75%
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .card-grid-item {
+      width:24.5%
+  }
+}
+
+.card-grid-item.wide .card-grid-item-transform-button {
+  left: 15%
+}
+
+.card-grid-item.flexbox-spacer {
+  margin: 0 !important;
+  height: 1px
+}
+
+.card-grid-item.flexbox-spacer.horizontal-spacer {
+  margin: -4% 4% !important
+}
+
+.card-grid-item.horizontal {
+  padding-bottom: 10px
+}
+
+@media screen and (min-width: 660px) {
+  .card-grid-item.horizontal {
+      width:36%;
+      margin: -6% 6%
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .card-grid-item.horizontal {
+      width:24.5%;
+      margin: -4% 4%;
+      padding-left: 1%
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .card-grid-item.horizontal {
+      width:60%;
+      margin: -10% 0 -10% 20%
+  }
+}
+
+.card-grid-item.horizontal .card-grid-item-card {
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.card-grid-item.horizontal:hover .card-grid-item-admin {
+  bottom: 20%;
+  right: -17%
+}
+
+.card-grid-item.horizontal .card-grid-item-spoiler-source {
+  position: relative;
+  bottom: 12%;
+  margin-bottom: -10px
+}
+
+.card-grid-item-card {
+  display: block;
+  position: relative;
+  padding-bottom: 139.344262295%;
+  width: 100%;
+  height: 0;
+  -webkit-perspective: 2000px;
+  perspective: 2000px
+}
+
+.card-grid-item-card.js-focus,.card-grid-item-card:focus:not(:hover):not(:active),.card-grid-item-card-focus-visible {
+  -webkit-box-shadow: 0 0 0 4px #af7cf0;
+  box-shadow: 0 0 0 4px #af7cf0;
+  -webkit-border-radius: 4.75% / 3.5%;
+  border-radius: 4.75% / 3.5%
+}
+
+.card-grid .card {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-box-shadow: 1px 1px 6px rgba(0,0,0,0.45);
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.45);
+  background-color: transparent;
+  z-index: 5
+}
+
+.card-grid-item-invisible-label {
+  z-index: 1000;
+  color: transparent;
+  font-size: 14px;
+  position: absolute;
+  padding: 6.75% 0 0 8%;
+  width: 100%;
+  letter-spacing: 0px;
+  pointer-events: none
+}
+
+.card-grid-item-spoiler-source {
+  display: block;
+  font-size: 12px;
+  width: 90%;
+  margin: 8px auto 10px auto;
+  text-align: center
+}
+
+.card-grid-item-spoiler-source a {
+  color: #634496
+}
+
+.card-grid-item-card-faces {
+  z-index: 5;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  -o-transition: -o-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms, -o-transform 200ms;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+
+.card-grid-item-card-faces.flipped {
+  -webkit-transition: -webkit-transform 750ms;
+  transition: -webkit-transform 750ms;
+  -o-transition: -o-transform 750ms;
+  transition: transform 750ms;
+  transition: transform 750ms, -webkit-transform 750ms, -o-transform 750ms;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg)
+}
+
+.card-grid-item-card-front,.card-grid-item-card-back {
+  z-index: 5;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+
+.card-grid-item-card-front {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg)
+}
+
+.card-grid-item-card-back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg)
+}
+
+.card-grid-item-transform-button {
+  position: absolute;
+  opacity: 0.60;
+  background: white;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: 2px solid #343242;
+  display: block;
+  height: 44px;
+  width: 44px;
+  padding: 7px;
+  cursor: pointer;
+  top: 26%;
+  left: 75%;
+  -webkit-transform-style: flat;
+  transform-style: flat;
+  -webkit-transition: background-color 200ms linear, opacity 50ms linear;
+  -o-transition: background-color 200ms linear, opacity 50ms linear;
+  transition: background-color 200ms linear, opacity 50ms linear;
+  z-index: 1000;
+  -webkit-transform: translateZ(0.01px);
+  transform: translateZ(0.01px)
+}
+
+.card-grid-item-transform-button path {
+  -webkit-transition: fill 200ms linear;
+  -o-transition: fill 200ms linear;
+  transition: fill 200ms linear
+}
+
+.card-grid-item-transform-button:hover,.card-grid-item-transform-button:active {
+  opacity: 1.0
+}
+
+.card-grid-item-transform-button.spooky {
+  border-color: #FFF;
+  background-color: #343242
+}
+
+.card-grid-item-transform-button.spooky path {
+  fill: #FFF
+}
+
+.card-grid-item-count {
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFF;
+  background-color: #222;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border-right: 2px solid black;
+  z-index: 10;
+  z-index: 5000;
+  top: 13.5%;
+  left: 11%;
+  padding: 0 5px 0 7px;
+  height: 22px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transform-style: flat;
+  transform-style: flat;
+  -webkit-transform: translateZ(0.01px);
+  transform: translateZ(0.01px)
+}
+
+.card-grid-item-admin {
+  display: none
+}
+
+.card-grid-item:hover .card-grid-item-admin {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  position: absolute;
+  bottom: 10px;
+  right: 9px
+}
+
+.card-grid-item:hover .card-grid-item-admin .button-n,.card-grid-item:hover .card-grid-item-admin .select-n {
+  margin: 4px 0 0 0 !important
+}
+
+.card-grid .card-content-warning {
+  padding: 20px;
+  font-size: 14px
+}
+
+.card-grid .card-content-warning svg {
+  width: 42px;
+  height: 42px
+}
+
+.card-grid {
+  display: block;
+  width: 100%;
+  padding: 0 2.5%;
+  margin: 20px 0 15px 0
+}
+
+.card-grid-inner {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.card-grid-header {
+  display: block;
+  width: 100%;
+  padding: 0 2.5%;
+  margin: 12px 0 -6px 0
+}
+
+.card-grid-header-inner {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  margin: 0 auto 0 auto;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  display: block
+}
+
+.card-grid-header-inner:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(95,79,102,0.35);
+  position: absolute;
+  top: 50%;
+  z-index: 1
+}
+
+.card-grid-header-content {
+  position: relative;
+  display: inline;
+  background: #F5F6F7;
+  padding: 0 0.75em 0 0.75em;
+  text-transform: uppercase;
+  color: #5F4F66;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2
+}
+
+.card-grid-header-dot {
+  color: rgba(95,79,102,0.4)
+}
+
+.card-grid-header a {
+  color: #7b59b4;
+  text-decoration: underline
+}
+
+.card-grid-header a:hover,.card-grid-header a:active,.card-grid-header a:focus {
+  color: #CBAAF5
+}
+
+.deck .card-grid {
+  padding: 0;
+  margin: 0
+}
+
+.deck .card-grid-header {
+  padding: 0;
+  margin: 2px 0 12px 0
 }

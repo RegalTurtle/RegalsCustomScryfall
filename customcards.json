@@ -525,13 +525,14 @@
     "cost": "{2}{W}",
     "type": "Creature - Vampire",
     "text": "Flying\nWhenever one or more other creatures with power 2 or less enter the battlefield under your control, draw a card. This ability triggers only once each turn.",
+    "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/JYtbaKr.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 3,
     "notes": [
-      
+      { "date": "27-07-2024", "creator": "Thys", "notes": "Created alt image" }
     ]
   },
   {

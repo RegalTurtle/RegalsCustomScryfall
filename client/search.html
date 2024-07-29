@@ -17,7 +17,11 @@
 
     <!-- <p id="output"></p> -->
 
-    <div id="cards" class="container"></div>
+    <div class="card-grid">
+      <div class="card-grid-inner" id="card-grid-id">
+      </div>
+    </div>
+    
     <script>
       function containsAllCharacters(str1, str2) {
         for (i = 0 ; i < str1.length ; i++) {
@@ -130,13 +134,22 @@
           }
           return a["set"].localeCompare(b["set"])
         })
-        var cardsElem = document.getElementById('cards')
+        var cardsElem = document.getElementById('card-grid-id')
         var htmlOut = ''
         for (i=0; i<all_cards.length; i++)
         {
-          htmlOut += '<a href="/card/'+all_cards[i]["set"]+all_cards[i]["cn"]+'"><div class="cell"><img src="'+all_cards[i]["img"]+'" alt="'+all_cards[i]["name"]+' || '+all_cards[i]["text"]+'"></div></a>'
+          htmlOut += `<div class="card-grid-item ">
+                        <a class="card-grid-item-card" href="/card/${all_cards[i]["set"]}${all_cards[i]["cn"]}">
+                          <span class="card-grid-item-invisible-label" aria-hidden="true">Aegis Turtle</span>
+                          <div class="card-grid-item-card-faces">
+                              <div class="card-grid-item-card-front">
+                                <img class="card jmp border-black " title="Aegis Turtle (Jumpstart #138)" alt="Aegis Turtle (Jumpstart #138)" loading="eager" src="${all_cards[i]["img"]}">
+                              </div>
+                          </div>
+                        </a>
+                      </div>`;
         }
-        cardsElem.innerHTML = htmlOut
+        cardsElem.innerHTML = htmlOut + `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>` + `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>` + `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>`
       })
     </script>
   </body>
