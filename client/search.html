@@ -110,6 +110,20 @@
                 return false;
               }
             }
+            if (cur_param.slice(0,3) == "c>=") {
+              if (containsAllCharacters(cur_param.slice(3), getColors(card["cost"]))) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param.slice(0,2) == "r=") {
+              if (cur_param.slice(2) == card["rarity"].toLowerCase()) {
+                continue;
+              } else {
+                return false;
+              }
+            }
             // if all other checks fail, turn it into a name check
             if (card["name"].toLowerCase().includes(cur_param)) {
               continue;
@@ -143,7 +157,7 @@
                           <span class="card-grid-item-invisible-label" aria-hidden="true">Aegis Turtle</span>
                           <div class="card-grid-item-card-faces">
                               <div class="card-grid-item-card-front">
-                                <img class="card jmp border-black " title="Aegis Turtle (Jumpstart #138)" alt="Aegis Turtle (Jumpstart #138)" loading="eager" src="${all_cards[i]["img"]}">
+                                <img class="card jmp border-black " title="${all_cards[i]["name"]} (${all_cards[i]["set"]}${all_cards[i]["cn"]})" alt="${all_cards[i]["name"]} (${all_cards[i]["set"]}${all_cards[i]["cn"]})" loading="eager" src="${all_cards[i]["img"]}">
                               </div>
                           </div>
                         </a>
