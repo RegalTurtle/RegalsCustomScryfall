@@ -215,34 +215,42 @@
   },
   {
     "name": "Prohibition",
-    "set": "MTD",
-    "cn": 31,
-    "id": "W",
     "cost": "{3}{W}",
     "type": "Enchantment",
     "text": "Each player can't take more than one shot each turn.",
-    "flavor": "",
+    "flavor": "“But drinking brought us together, this fragile peace with the elves, why did you have to find that old tome Simon. Why!” - Archivist of the Ecclesiarch",
     "rarity": "U",
-    "img": "https://i.imgur.com/kQZAJj6.png",
+    "cn": 31,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/PcbYxjW.png",
+    "id": "W",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Added CN and bleed" }
+      { "date": "27-07-2024", "creator": "Thys", "notes": "Added CN and bleed" },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "mtd31 might need flavor text" },
+      { "date": "13-08-2024", "creator": "Sam", "notes": "New art and flavor" }
     ],
     "tags": []
   },
   {
     "name": "Reformed Priest",
-    "set": "MTD",
-    "cn": 35,
-    "id": "W",
     "cost": "{2}{W}",
     "type": "Creature - Elf Noble",
     "text": "Remove a beer counter from a permanent you control: You gain 2 life.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/njESa7J.png",
-    "has_bleed_edge": false,
+    "flavor": "Purity through sobriety, a crime to all elven culture.",
     "power": 1,
     "toughness": 2,
+    "rarity": "U",
+    "cn": 35,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/N4j31AP.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Added bleed, CN, etc." }
+    ],
     "tags": []
   },
   {
@@ -259,34 +267,30 @@
     "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changing wording of Excuse token"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "New card image with new wording and CN and bleed edge"
-      }
+      { "date": "14-07-2024", "creator": "Sam", "notes": "Changing wording of Excuse token" },
+      { "date": "14-07-2024", "creator": "Sam", "notes": "New card image with new wording and CN and bleed edge" }
     ],
     "tags": []
   },
   {
     "name": "Zealot",
-    "set": "MTD",
-    "cn": 42,
-    "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Soldier",
     "text": "Whenever ~ blocks or is blocked by an Alcoholic, ~ gets +1/+2 until end of turn.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/OhahdTP.png",
-    "has_bleed_edge": false,
+    "flavor": "Drunken rage matched only by religious fervor.",
     "power": 2,
     "toughness": 1,
+    "rarity": "C",
+    "cn": 42,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/k6rfdnm.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Added bleed, CN, etc." }
+    ],
     "tags": []
   },
   {
@@ -521,20 +525,22 @@
   },
   {
     "name": "Astral Confrontation",
-    "set": "MTD",
-    "cn": 8,
-    "id": "W",
     "cost": "{4}{W}",
     "type": "Instant",
     "text": "This spell costs {1} less to cast for each opponent you're attacking.\nExile target creature.",
-    "flavor": "\"You are not made in God's image.\"",
+    "flavor": "“You are not made in God's image.”",
     "rarity": "U",
-    "img": "https://i.imgur.com/dAMESNT.png",
+    "cn": 8,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/fgTIIPQ.png",
+    "id": "W",
     "has_bleed_edge": true,
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "upshift astral confrontation" },
       { "date": "09-07-2024", "creator": "Sam", "notes": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge" },
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Needs artist notes, I believe Midjourney" }
+      { "date": "27-07-2024", "creator": "Thys", "notes": "Needs artist notes, I believe Midjourney" },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Added artist credit" }
     ],
     "tags": []
   },
@@ -702,10 +708,12 @@
     "cn": 26,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/vUYIXhP.png",
+    "img": "https://i.imgur.com/YgsNsiv.png",
     "id": "W",
-    "has_bleed_edge": false,
-    "notes": [],
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Added bleed, CN, etc." }
+    ],
     "tags": [
       { "function": "removal" },
       { "frame": "normal" }
@@ -713,26 +721,24 @@
   },
   {
     "name": "Protector of the Crown",
-    "set": "MTD",
-    "cn": 32,
-    "id": "W",
     "cost": "{5}{W}",
     "type": "Creature - Giant Soldier",
     "text": "When ~ enters, you become the monarch.\nAll damage that would be dealt to you is dealt to ~ instead.",
-    "flavor": "\"I gladly offer my weapon and my life to the glory of my sovereign.\"",
-    "rarity": "R",
-    "img": "https://i.imgur.com/8fFyQ6h.png",
-    "has_bleed_edge": false,
+    "flavor": "“I gladly offer my weapon and my life to the glory of my sovereign.”",
     "power": 2,
     "toughness": 5,
+    "rarity": "R",
+    "cn": 32,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/Do1VPiT.png",
+    "id": "W",
+    "has_bleed_edge": true,
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "remove protector of the crown" },
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "protector of the crown, commander set you go :)"
-      },
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Re-adding Protector of the Crown, only displaces 3 cards." }
+      { "date": "09-07-2024", "creator": "Sam", "notes": "protector of the crown, commander set you go :)" },
+      { "date": "15-07-2024", "creator": "Thys", "notes": "Re-adding Protector of the Crown, only displaces 3 cards." },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Added bleed, CN, etc." }
     ],
     "tags": []
   },
@@ -811,41 +817,52 @@
   },
   {
     "name": "Peace",
-    "set": "MTD",
-    "cn": 30,
-    "id": "W",
     "cost": "{1}{W}{W}",
     "type": "Enchantment",
     "text": "Creatures controlled by the player whose turn it is get -1/-0.\nCreatures controlled by each opponent of the player whose turn it is get +0/+1.",
+    "flavor": "A great pact was struck. Peace between the Elves of the glade and Man of the city.",
     "rarity": "R",
-    "img": "https://i.imgur.com/9RwkIAI.png",
+    "cn": 30,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/gktUmcI.png",
+    "id": "W",
     "has_bleed_edge": false,
+    "notes": [
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Updated and added bleed and cn etc." }
+    ],
     "tags": []
   },
   {
     "name": "Royal Privilege",
-    "set": "MTD",
-    "cn": 36,
-    "id": "W",
     "cost": "{2}{W}{W}{W}",
     "type": "Enchantment",
     "text": "When ~ enters, you become the monarch.\nAs long as you are the monarch, your life total can't change as a result of you taking a shot.",
+    "flavor": "“Do you know who I am”",
     "rarity": "R",
-    "img": "https://i.imgur.com/7f9FjgR.png",
-    "has_bleed_edge": false,
+    "cn": 36,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/wVzmdWB.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Updated and added bleed and cn etc." }
+    ],
     "tags": []
   },
   {
     "name": "Sales Tax",
-    "set": "MTD",
-    "cn": 37,
-    "id": "W",
     "cost": "{2}{W}{W}",
     "type": "Enchantment",
     "text": "Whenever a spell or ability an opponent controls forces you to take a shot, that player may pay {2}. If the player doesn't, you create a Treasure token.",
     "flavor": "Bureaucracy.",
     "rarity": "R",
+    "cn": 37,
+    "set": "MTD",
+    "artist": "Copilot Designer",
     "img": "https://i.imgur.com/BbCfEdZ.png",
+    "id": "W",
     "has_bleed_edge": false,
     "notes": [
       { "date": "29-07-2024", "creator": "Thys", "notes": "Changed from punishing people taking shots to punishing the people that force you to take shots. Also, changed flavor text to a damn unspellable word" }
@@ -873,42 +890,41 @@
   },
   {
     "name": "Sentinel of the Eternal Watch",
-    "set": "MTD",
-    "cn": 38,
-    "id": "W",
     "cost": "{5}{W}",
     "type": "Creature - Giant Soldier",
     "text": "Vigilance\nAt the beginning of combat on each opponent's turn, tap target creature that player controls.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/Lh6dJ1h.png",
-    "has_bleed_edge": true,
+    "flavor": "",
     "power": 4,
     "toughness": 6,
-    "art-remarks": "",
+    "rarity": "U",
+    "cn": 38,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Lh6dJ1h.png",
+    "id": "W",
+    "has_bleed_edge": true,
     "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added image with correct bleed edge and CN. Might need flavor text"
-      }
+      { "date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Might need flavor text" }
     ],
     "tags": []
   },
   {
     "name": "Ancestral Thurbile",
-    "set": "MTD",
-    "cn": 2,
-    "id": "W",
     "cost": "{2}{W}{W}",
     "type": "Artifact - Equipment",
     "text": "When ~ enters, create a 1/1 white Cleric creature token with vigilance, then attach ~ to it.\nEquipped creature gets +1/+1 and lifelink.\nEquip {2}",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/ds7ULbT.png",
-    "has_bleed_edge": false,
+    "cn": 2,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/AEuxeid.png",
+    "id": "W",
+    "has_bleed_edge": true,
     "notes": [
       { "date": "13-07-2024", "creator": "Sam", "notes": "Added new art, added CN and bleed edge" },
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Needs artist notes, pretty sure this was on Midjourney" }
+      { "date": "27-07-2024", "creator": "Thys", "notes": "Needs artist notes, pretty sure this was on Midjourney" },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Added artist credit" }
     ],
     "tags": []
   },
@@ -922,12 +938,13 @@
     "cn": 22,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/HxA3cSZ.png",
+    "img": "https://i.imgur.com/hi514pz.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "13-07-2024", "creator": "Sam", "notes": "this is genius i love it" }
+      { "date": "13-07-2024", "creator": "Sam", "notes": "this is genius i love it" },
+      { "date": "13-08-2024", "creator": "Sam", "notes": "Added bleed, CN, etc." }
     ],
     "tags": []
   },
@@ -1034,24 +1051,25 @@
   },
   {
     "name": "Anointed Chorister",
-    "set": "MTD",
-    "cn": 4,
-    "id": "W",
     "cost": "{W}",
     "type": "Creature - Human Cleric",
     "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
     "flavor": "Dies irae, dies illa\nSolvet saeclum in favilla,\nTeste David cum Sibylla.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/3zk7jrC.png",
-    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
+    "rarity": "C",
+    "cn": 4,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/UdeQACz.png",
+    "id": "W",
+    "has_bleed_edge": true,
     "notes": [
       { "date": "11-07-2024", "creator": "Thys", "notes": "Added image with correct bleed edge and CN. Probably will need flavor text" },
       { "date": "11-07-2024", "creator": "Sam", "notes": "Needs flavor text, I'll work on that" },
       { "date": "13-07-2024", "creator": "Sam", "notes": "Updated flavor text and art" },
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Needs artist notes" }
+      { "date": "27-07-2024", "creator": "Thys", "notes": "Needs artist notes" },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Added artist credit" }
     ],
     "tags": []
   },
@@ -1080,7 +1098,7 @@
   {
     "name": "Ossify",
     "set": "MTD",
-    "cn": 55,
+    "cn": 60,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Instant",
@@ -1145,7 +1163,7 @@
   {
     "name": "Atemsis, All-Seeing",
     "set": "MTD",
-    "cn": 46,
+    "cn": 45,
     "id": "U",
     "cost": "{3}{U}{U}{U}",
     "type": "Legendary Creature - Sphinx",
@@ -1333,22 +1351,19 @@
   {
     "name": "Hysterical Blindness",
     "set": "MTD",
-    "cn": 50,
+    "cn": 57,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Instant",
     "text": "Creatures your opponents control get -4/-0 until end of turn.",
-    "flavor": "For just but a moment, the townspeople got a glimpse of the other side, the screaming began shortly after",
+    "flavor": "For just but a moment, the townspeople got a glimpse of the other side. The screaming began shortly after.",
     "rarity": "U",
     "img": "https://i.imgur.com/LJtuQiK.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Added new art for Hysterical Blindness"
-      }
+      { "date": "14-07-2024", "creator": "Sam", "notes": "Added new art for Hysterical Blindness" },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Changed flavor text slightly to split into two sentences." }
     ],
     "tags": []
   },
@@ -1441,7 +1456,7 @@
   {
     "name": "Broadwing Seabird",
     "set": "MTD",
-    "cn": 48,
+    "cn": 47,
     "id": "U",
     "cost": "{4}{U}",
     "type": "Creature - Bird",
@@ -1668,7 +1683,7 @@
   {
     "name": "Brain Fog",
     "set": "MTD",
-    "cn": 50,
+    "cn": 46,
     "id": "U",
     "cost": "{U}",
     "type": "Instant",
@@ -1959,22 +1974,33 @@
     "tags": []
   },
   {
-    "name": "Scry Engine",
-    "set": "MTX",
-    "cn": 1,
+    "name": "Silent Companion",
+    "cost": "{2}{U}",
+    "type": "Creature - Bird",
+    "text": "Whenever you cast an instant or sorcery spell, you may scry 1.",
+    "flavor": "Aphelion scholars rarely travel alone.",
+    "power": 1,
+    "toughness": 3,
+    "rarity": "U",
+    "cn": 64,
+    "set": "MTD",
+    "artist": "",
+    "img": "https://i.imgur.com/Uryv4t2.png",
     "id": "U",
-    "cost": "",
-    "type": "",
-    "text": "Whenever you case an instant or sorcery spell, scry 1.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/gbWpCyn.png",
     "has_bleed_edge": true,
-    "art-remarks": "",
+    "art-remarks": "Art is of an owl, similar to Harrier Strix. It's a familiar flying or standing near an Aphelion scholar",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      { "date": "14-08-2024", "creator": "Thys", "notes": "Gave card name of Silent Companion, upshifted to uncommon, new render" },
+      { "date": "14-08-2024", "creator": "Sam", "notes": "*no flying // Hehehe" },
+      { "date": "14-08-2024", "creator": "Thys", "notes": "Added flying, changed to 1/3" },
+      { "date": "14-08-2024", "creator": "Sam", "notes": "Also make it a wizard I think? // Idk up to you on that" },
+      { "date": "14-08-2024", "creator": "Thys", "notes": "but i also like not having it be a wizard bc it's like a familiar" },
+      { "date": "14-08-2024", "creator": "Sam", "notes": "I like that flavor a lot" },
+      { "date": "14-08-2024", "creator": "Thys", "notes": "Added flavor" },
+      { "date": "14-08-2024", "creator": "Sam", "notes": "Added art" }
     ],
     "tags": []
   },
@@ -2023,28 +2049,6 @@
     "tags": []
   },
   {
-    "name": "Cheap Flyer",
-    "set": "MTX",
-    "cn": 3,
-    "id": "U",
-    "cost": "{U}",
-    "type": "Creature",
-    "text": "Flying",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/6msLXVI.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" }
-    ],
-    "tags": []
-  },
-  {
     "name": "Conditional Flyer",
     "set": "MTX",
     "cn": 4,
@@ -2068,17 +2072,18 @@
   },
   {
     "name": "Dead End",
-    "set": "MTX",
-    "cn": 5,
-    "id": "U",
     "cost": "{1}{U}",
     "type": "Instant",
     "text": "Remove target creature from combat.",
-    "flavor": "",
+    "flavor": "The pursuit of knowledge often results in frustration and burnout.",
     "rarity": "U",
+    "cn": 53,
+    "set": "MTD",
+    "artist": "Copilot Designer",
     "img": "https://i.imgur.com/eYpdqIl.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "id": "U",
+    "has_bleed_edge": true,
+    "art-remarks": "Dark corridor of a library, closing in and converging on a closed door. The hall is dark",
     "notes": [
       { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
@@ -4594,22 +4599,24 @@
     "tags": []
   },
   {
-    "name": "RAINBOWWWW",
-    "set": "MTX",
-    "cn": 7,
-    "id": "WUBRG",
+    "name": "Ending of Ages",
     "cost": "{W/B}{U/R}{B/G}{R/W}{G/U}",
-    "type": "Enchantment",
-    "text": "Whenever a player takes a shot, put a charge counter on ~.\nCreatures you control get +1/+1 for each charge counter on ~.",
+    "type": "Enchantment - Saga",
+    "text": "Surveil 3, then draw three cards.\nExile any number of target cards from your graveyard. Until end of turn, you may play those cards.\nEach opponent may discard a card or sacrifice a nonland permanent. If they don't, they lose 3 life. Repeat this process five more times.\nYou get an emblem with “Whenever you draw a card, you take a shot.”",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/hlOGbKf.png",
-    "has_bleed_edge": false,
+    "cn": 218,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/H0dV8FR.png",
+    "id": "WUBRG",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       { "date": "17-07-2024", "creator": "Thys", "notes": "Mana cost created" },
       { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
-      { "date": "05-08-2024", "creator": "Thys", "notes": "Created potential card idea" }
+      { "date": "05-08-2024", "creator": "Thys", "notes": "Created potential card idea" },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Changed name from RAINBOWWWW to Ending of Ages, added render, updated rules text from anthem to saga" }
     ],
     "tags": []
   },
@@ -4958,8 +4965,8 @@
   },
   {
     "name": "Storm Crow",
-    "set": "MTD",
-    "cn": 64,
+    "set": "MTC",
+    "cn": 29,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Creature - Bird",
@@ -4972,7 +4979,8 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Suggested card // Given art" }
+      { "date": "18-07-2024", "creator": "Sam", "notes": "Suggested card // Given art" },
+      { "date": "13-08-2024", "creator": "Thys", "notes": "Moved card to MTC in favor of Storm Chick" }
     ],
     "tags": []
   },
@@ -5428,6 +5436,7 @@
     "notes": [
       { "date": "29-07-2024", "creator": "Thys", "notes": "Added card json from backpacking trip" },
       { "date": "30-07-2024", "creator": "Thys", "notes": "Suggested card text of milling each player 3, then allowing a cast from gy" },
+      { "date": "30-07-2024", "creator": "Sam", "notes": "i think 3 mana is an appropriate casting cost tbh // maybe 4? // Drukar, Titan of Mind's Desire or Nepenthe, Titan of Mind's Desire // Nepenthe in greek more or less means a drug of forgetfulness // Then Helen, daughter of Zeus, took other counsel. Straightway she cast into the wine of which they were drinking a drug to quiet all pain and strife, and bring forgetfulness of every ill. // Drukar (no meaning, my own creation), Nepenthe (used to make people forget), Dolus (latin for deceit)" },
       { "date": "31-07-2024", "creator": "Sam", "notes": "Added art, name" },
       { "date": "31-07-2024", "creator": "Thys", "notes": "Changed wording so that the exiling of a nonland card isn't on a may clause anymore, removing the need to add some 'If you do' clause" }
     ],
@@ -5452,27 +5461,6 @@
       { "date": "29-07-2024", "creator": "Sam", "notes": "Came up with name to be used with another card" },
       { "date": "31-07-2024", "creator": "Thys", "notes": "Created card from the name" },
       { "date": "31-07-2024", "creator": "Thys", "notes": "Removed the wizard subtype because none of the other spellshapers are wizards" }
-    ],
-    "tags": []
-  },
-  {
-    "name": "Inalla, Archmage Ritualist",
-    "set": "PRX",
-    "cn": 1,
-    "id": "UBR",
-    "cost": "{2}{U}{B}{R}",
-    "type": "Legendary Creature - Human Wizard",
-    "text": "Eminence — Whenever another nontoken Wizard you control enters, if Inalla, Archmage Ritualist is in the command zone or on the battlefield, you may pay {1}. If you do, create a token that's a copy of that Wizard. The token gains haste. Exile it at the beginning of the next end step.\nTap five untapped Wizards you control: Target player loses 7 life.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/bM3oQjN.png",
-    "has_bleed_edge": true,
-    "artist": "Midjourney",
-    "power": 4,
-    "toughness": 5,
-    "art-remarks": "",
-    "notes": [
-      { "date": "31-07-2024", "creator": "Thys", "notes": "Added proxy with art given by Sam" }
     ],
     "tags": []
   },
@@ -5525,14 +5513,15 @@
     "text": "Draw two cards, then discard two cards. Untap up to three lands.",
     "flavor": "",
     "rarity": "C",
-    "cn": 11,
-    "set": "MTX",
+    "cn": 55,
+    "set": "MTD",
     "artist": "",
     "img": "https://i.imgur.com/fJ5ENsI.png",
     "id": "U",
     "has_bleed_edge": false,
     "notes": [
-      { "date": "05-08-2024", "creator": "Thys", "notes": "Added card render to MTX" }
+      { "date": "05-08-2024", "creator": "Thys", "notes": "Added card render to MTX" },
+      { "date": "14-08-2024", "creator": "Thys", "notes": "Added to MTD because it's in the spreadsheet" }
     ],
     "tags": []
   },
@@ -5551,6 +5540,47 @@
     "has_bleed_edge": false,
     "notes": [
       { "date": "05-08-2024", "creator": "Thys", "notes": "Created card concept" }
+    ],
+    "tags": []
+  },
+  {
+    "name": "Storm Chick",
+    "set": "MTD",
+    "cn": 66,
+    "id": "U",
+    "cost": "{U}",
+    "type": "Creature - Bird",
+    "text": "Flying",
+    "flavor": "Storm chick descending, winter unending. Storm chick departing summer is starting.",
+    "power": 1,
+    "toughness": 1,
+    "rarity": "C",
+    "img": "https://i.imgur.com/cgeM78A.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      { "date": "13-08-2024", "creator": "Sam", "notes": "Made it a Storm Crow reference, added to MTD" }
+    ],
+    "tags": []
+  },
+  {
+    "name": "Ending of Ages",
+    "cost": "",
+    "type": "Emblem",
+    "text": "Whenever you draw a card, you take a shot.",
+    "flavor": "",
+    "rarity": "E",
+    "cn": 1,
+    "set": "TMTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/hoaAUp1.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-08-2024", "creator": "Sam", "notes": "Added render" }
     ],
     "tags": []
   }
