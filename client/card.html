@@ -43,7 +43,9 @@
         var cardDict;
         for (i=0; i<all_cards.length; i++)
         {
-          if (all_cards[i]["set"] == location.substring(0,3) && all_cards[i]["cn"] == location.substring(3))
+          var setnum = location.split("_");
+          console.log(setnum);
+          if (all_cards[i]["set"] == setnum[0] && all_cards[i]["cn"] == setnum[1])
           {
             cardDict = all_cards[i];
             break;
