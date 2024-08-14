@@ -44,6 +44,28 @@
         return colors;
       }
 
+      function calculateTotalCost(manaString) {
+        // Remove all curly braces
+        const cleanString = manaString.replace(/{|}/g, '');
+        
+        // Initialize total cost
+        let totalCost = 0;
+        
+        // Loop through each character in the cleaned string
+        for (let char of cleanString) {
+          // Check if the character is a digit
+          if (!isNaN(char)) {
+            // Add the numeric value to the total cost
+            totalCost += parseInt(char);
+          } else if (char !== 'X') {
+            // If not a number and not 'X', add 1
+            totalCost += 1;
+          }
+        }
+        
+        return totalCost;
+      }
+      
       function haveSameCharacters(str1, str2) {
         const sortString = (str) => str.split('').sort().join('');
         return sortString(str1) === sortString(str2);
@@ -72,12 +94,19 @@
 
       // get the json with all of the cards
       fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
+        let order_cmc = false;
+
         // then filter the cards based on the search criteria
         all_cards = all_cards.filter((card) => {
           // need to loop through all search parameters
           for (i = 0 ; i < params.length ; i++) {
             // this strips quotes off of the search, so that it's not searching for the quote char, since it will never be there
             cur_param = params[i].replace(/"/g, "");
+            console.log(cur_param);
+            if (cur_param == "order:cmc") {
+              order_cmc = true;
+              continue;
+            }
             // checks to see if the current search term is a type check
             if (cur_param.slice(0,2) == "t:") {
               // if the types match, continue with next param
@@ -155,6 +184,11 @@
           }
           return a["set"].localeCompare(b["set"])
         })
+        if (order_cmc) {
+          all_cards.sort((a,b) => {
+            return calculateTotalCost(a["cost"]) - calculateTotalCost(b["cost"]);
+          })
+        }
         var cardsElem = document.getElementById('card-grid-id')
         var htmlOut = ''
         for (i=0; i<all_cards.length; i++)
