@@ -67,7 +67,7 @@
     "id": "R",
     "cost": "{1}{R}",
     "type": "Instant",
-    "text": "Choose one -\n*Destroy target artifact.\n*Create a Blood token.",
+    "text": "Choose one -\n• Destroy target artifact.\n• Create a Blood token.",
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/w6oY2uz.png",
@@ -407,10 +407,12 @@
     "cn": 15,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/wQH03VG.png",
+    "img": "https://i.imgur.com/rV1NxCT.png",
     "id": "W",
     "has_bleed_edge": false,
-    "notes": [],
+    "notes": [
+      { "date": "14-08-2024", "creator": "Sam", "notes": "New art, added bleed and CN" }
+    ],
     "tags": [
       { "frame": "normal" }
     ]
@@ -427,10 +429,12 @@
     "cn": 19,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/F68Vnaj.png",
+    "img": "https://i.imgur.com/p5obOhP.png",
     "id": "W",
-    "has_bleed_edge": false,
-    "notes": [],
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-08-2024", "creator": "Sam", "notes": "New art, added bleed and CN" }
+    ],
     "tags": [
       { "frame": "normal" }
     ]
@@ -488,17 +492,22 @@
   },
   {
     "name": "Throne Warden",
-    "set": "MTD",
-    "cn": 41,
-    "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Soldier",
     "text": "At the beginning of your end step, if you're the monarch, put a +1/+1 counter on ~.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/FZXmFhM.png",
-    "has_bleed_edge": false,
+    "flavor": "My loyalty is to the throne.",
     "power": 2,
     "toughness": 2,
+    "rarity": "C",
+    "cn": 41,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/rUIjiBO.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-08-2024", "creator": "Thys", "notes": "Added bleed, CN, etc." }
+    ],
     "tags": []
   },
   {
@@ -604,15 +613,17 @@
     "cost": "{X}{W}{W}",
     "type": "Sorcery",
     "text": "Create X 1/1 white Soldier creature tokens. If X is 5 or more, destroy all creatures.",
-    "flavor": "And so the crown returned to the kind, the church finally bending the knee.",
+    "flavor": "And so the crown returned to the king, the church finally bending the knee.",
     "rarity": "R",
     "cn": 24,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/mDcdMEa.png",
+    "img": "https://i.imgur.com/dpbH5dT.png",
     "id": "W",
     "has_bleed_edge": false,
-    "notes": [],
+    "notes": [
+      { "date": "14-08-2024", "creator": "Sam", "notes": "New art, added bleed and CN" }
+    ],
     "tags": [
       { "frame": "normal" }
     ]
@@ -638,20 +649,21 @@
   },
   {
     "name": "Fortified Rampart",
-    "set": "MTD",
-    "cn": 13,
-    "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Wall",
     "text": "Defender",
     "flavor": "“Today we hold, today we stand, today we prove to our fathers the metal of our hearts and the steel of our blades!”",
-    "rarity": "C",
-    "img": "https://i.imgur.com/rCFcRum.png",
-    "has_bleed_edge": false,
     "power": 0,
     "toughness": 6,
+    "rarity": "C",
+    "cn": 13,
+    "set": "MTD",
+    "artist": "",
+    "img": "https://i.imgur.com/3MCVM6m.png",
+    "id": "W",
+    "has_bleed_edge": false,
     "notes": [
-
+      { "date": "14-08-2024", "creator": "Sam", "notes": "New art, added bleed and CN" }
     ],
     "tags": []
   },
@@ -659,7 +671,7 @@
     "name": "Goliath Protector",
     "cost": "{4}{W}",
     "type": "Creature - Giant",
-    "text": "When ~ enters, choose one:\n*Destroy target artifact.\n*Destroy target enchantment.\n*Put two +1/+1 counters on ~.",
+    "text": "When ~ enters, choose one:\n• Destroy target artifact.\n• Destroy target enchantment.\n• Put two +1/+1 counters on ~.",
     "flavor": "",
     "power": 2,
     "toughness": 4,
@@ -667,10 +679,12 @@
     "cn": 14,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/gggUFHI.png",
+    "img": "https://i.imgur.com/wGGDNAY.png",
     "id": "W",
-    "has_bleed_edge": false,
-    "notes": [],
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-08-2024", "creator": "Sam", "notes": "New art, added bleed and CN" }
+    ],
     "tags": []
   },
   {
@@ -784,17 +798,22 @@
   },
   {
     "name": "Skyhoof Pegasus",
-    "set": "MTD",
-    "cn": 40,
-    "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Pegasus",
     "text": "Whenever you gain life, ~ gains flying until end of turn.\n{3}: You gain 2 life.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/gJNzI8R.png",
-    "has_bleed_edge": false,
+    "flavor": "The sky shone with a brilliant hope, how can the world be so dire with such beauty?",
     "power": 2,
     "toughness": 2,
+    "rarity": "C",
+    "cn": 40,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/J96DG1Z.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-08-2024", "creator": "Sam", "notes": "New art, added bleed and CN" }
+    ],
     "tags": []
   },
   {
@@ -802,16 +821,17 @@
     "cost": "{W}",
     "type": "Instant",
     "text": "Counter target spell or activated ability that would force a player to take a shot.\nDraw a card.",
-    "flavor": "“Stop! In the name of the lord I command thee!”",
+    "flavor": "“The Lord wills it not”",
     "rarity": "U",
     "cn": 25,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/kDrKGlc.png",
+    "img": "https://i.imgur.com/zeDcu7u.png",
     "id": "W",
     "has_bleed_edge": false,
     "notes": [
-      { "date": "05-08-2024", "creator": "Thys", "notes": "Collectors info needs to be updated to U for rarity" }
+      { "date": "05-08-2024", "creator": "Thys", "notes": "Collectors info needs to be updated to U for rarity" },
+      { "date": "14-08-2024", "creator": "Sam", "notes": "New art, added bleed and CN" }
     ],
     "tags": []
   },
@@ -1293,7 +1313,7 @@
   {
     "name": "Duelist of the Mind",
     "set": "MTD",
-    "cn": 50,
+    "cn": 55,
     "id": "R",
     "cost": "{1}{U}",
     "type": "Creature - Human Advisor",
@@ -1322,7 +1342,7 @@
   {
     "name": "Whispering Wizard",
     "set": "MTD",
-    "cn": 50,
+    "cn": 73,
     "id": "U",
     "cost": "{3}{U}",
     "type": "Creature - Human Wizard",
@@ -1394,7 +1414,7 @@
   {
     "name": "Challenger Penguin",
     "set": "MTD",
-    "cn": 50,
+    "cn": 49,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Creature - Bird",
@@ -1414,7 +1434,7 @@
   {
     "name": "Cerulean Drake",
     "set": "MTD",
-    "cn": 50,
+    "cn": 48,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Creature - Drake",
@@ -1479,7 +1499,7 @@
   {
     "name": "Tragic Lesson",
     "set": "MTD",
-    "cn": 50,
+    "cn": 70,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Instant",
@@ -1497,7 +1517,7 @@
   {
     "name": "Lofty Denial",
     "set": "MTD",
-    "cn": 50,
+    "cn": 60,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Instant",
@@ -1515,7 +1535,7 @@
   {
     "name": "Warden of Evos Isle",
     "set": "MTD",
-    "cn": 50,
+    "cn": 72,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Creature - Bird Wizard",
@@ -1535,7 +1555,7 @@
   {
     "name": "Winged Words",
     "set": "MTD",
-    "cn": 50,
+    "cn": 75,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Sorcery",
@@ -1553,7 +1573,7 @@
   {
     "name": "Unexplained Disappearance",
     "set": "MTD",
-    "cn": 50,
+    "cn": 71,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Instant",
@@ -1571,7 +1591,7 @@
   {
     "name": "Illusionary Informant",
     "set": "MTD",
-    "cn": 50,
+    "cn": 59,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Creature - Bird Illusion",
@@ -1592,7 +1612,7 @@
   {
     "name": "Spiked Spell",
     "set": "MTD",
-    "cn": 50,
+    "cn": 67,
     "id": "U",
     "cost": "{1}{U}{U}",
     "type": "Instant",
@@ -1610,7 +1630,7 @@
   {
     "name": "Wizard's Hipflask",
     "set": "MTD",
-    "cn": 50,
+    "cn": 76,
     "id": "U",
     "cost": "{3}{U}",
     "type": "Artifact",
@@ -1994,7 +2014,7 @@
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera" },
       { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
       { "date": "14-08-2024", "creator": "Thys", "notes": "Gave card name of Silent Companion, upshifted to uncommon, new render" },
-      { "date": "14-08-2024", "creator": "Sam", "notes": "*no flying // Hehehe" },
+      { "date": "14-08-2024", "creator": "Sam", "notes": "no flying // Hehehe" },
       { "date": "14-08-2024", "creator": "Thys", "notes": "Added flying, changed to 1/3" },
       { "date": "14-08-2024", "creator": "Sam", "notes": "Also make it a wizard I think? // Idk up to you on that" },
       { "date": "14-08-2024", "creator": "Thys", "notes": "but i also like not having it be a wizard bc it's like a familiar" },
@@ -2618,23 +2638,15 @@
     "id": "R",
     "cost": "{1}{R}{R}",
     "type": "Instant",
-    "text": "Choose one -\n*Target player takes a shot.\n*~ deals 3 damage to target creature.\nMadness {R}",
+    "text": "Choose one -\n• Target player takes a shot.\n• ~ deals 3 damage to target creature.\nMadness {R}",
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/lyaNNRO.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {
-        "date": "17-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image // *we might just have too many burn/shot spells, but wanted to throw this one into the ring // *we'll talk about it when we do set balancing"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, fixed card templating"
-      }
+      { "date": "17-12-2023", "creator": "Sam", "notes": "Posted card image // we might just have too many burn/shot spells, but wanted to throw this one into the ring // we'll talk about it when we do set balancing" },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, fixed card templating" }
     ],
     "tags": []
   },
@@ -3769,7 +3781,7 @@
     "id": "RG",
     "cost": "{4}{R}{G}",
     "type": "Sorcery",
-    "text": "Choose one -\n*Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n*Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.\nEntwine {3}",
+    "text": "Choose one -\n• Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n• Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.\nEntwine {3}",
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/BcvPR9z.png",
@@ -4106,7 +4118,7 @@
     "set": "MTD",
     "cn": 245,
     "id": "C",
-    "cost": "",
+    "cost": "{2}",
     "type": "Artifact",
     "text": "Equipped creature gets +1/+1 for each beer counter on it.\nEquip {2}",
     "flavor": "Whilst their Southern counterparts value peace and prosperity, the brews of the North represent a much more passionate culture.",
@@ -4651,7 +4663,7 @@
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Sorcery",
-    "text": "Choose one -\n*Target player draws two cards.\n*Target player discards two cards.",
+    "text": "Choose one -\n• Target player draws two cards.\n• Target player discards two cards.",
     "flavor": "\"What isss it you requirrre?\"",
     "rarity": "U",
     "img": "https://i.imgur.com/vcRzIMU.png",
@@ -5310,7 +5322,7 @@
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Sorcery",
-    "text": "Choose one or more -\n*Destroy target artifact.\n*Destroy target enchantment.\n*Destroy target land.",
+    "text": "Choose one or more -\n• Destroy target artifact.\n• Destroy target enchantment.\n• Destroy target land.",
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/fNMMJsP.png",
@@ -5329,7 +5341,7 @@
     "id": "G",
     "cost": "{3}{G}",
     "type": "Sorcery",
-    "text": "Choose one -\n*Destroy target land.\n*Search your library for a land card, put that card onto the battlefield, then shuffle.\nEntwine {1}{G}",
+    "text": "Choose one -\n• Destroy target land.\n• Search your library for a land card, put that card onto the battlefield, then shuffle.\nEntwine {1}{G}",
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/hPJebdN.png",
@@ -5348,7 +5360,7 @@
     "id": "R",
     "cost": "{3}{R}{R}",
     "type": "Instant",
-    "text": "Choose one -\n*Destroy target artifact.\n*Destroy target land.\nEntwine {3}{R}",
+    "text": "Choose one -\n• Destroy target artifact.\n• Destroy target land.\nEntwine {3}{R}",
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/DQ1pJin.png",
@@ -5581,6 +5593,44 @@
     "has_bleed_edge": true,
     "notes": [
       { "date": "14-08-2024", "creator": "Sam", "notes": "Added render" }
+    ],
+    "tags": []
+  },
+  {
+    "name": "Divination",
+    "cost": "{2}{U}",
+    "type": "Sorcery",
+    "text": "Draw two cards.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 1,
+    "set": "MTX",
+    "artist": "",
+    "img": "https://i.imgur.com/KiVu7Bc.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-08-2024", "creator": "Thys", "notes": "Added card to MTX" }
+    ],
+    "tags": []
+  },
+  {
+    "name": "Aphelion Explorer",
+    "cost": "{4}{U}",
+    "type": "Creature - Bird Scout",
+    "text": "When ~ attacks, you may draw a card. If you do, discard a card. Whenever you discard an instant or sorcery, draw a card.",
+    "flavor": "",
+    "power": 4,
+    "toughness": 4,
+    "rarity": "R",
+    "cn": 3,
+    "set": "MTX",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/mipLtAz.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-08-2024", "creator": "Thys", "notes": "Added card to MTX" }
     ],
     "tags": []
   }
