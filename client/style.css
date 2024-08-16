@@ -475,3 +475,8 @@ hr {
   padding: 0;
   margin: 2px 0 12px 0
 }
+
+*,*:before,*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
