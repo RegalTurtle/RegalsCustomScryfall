@@ -24,8 +24,8 @@
     
     <script>
       function containsAllCharacters(str1, str2) {
-        for (i = 0 ; i < str1.length ; i++) {
-          if (str2.includes(str1.charAt(i))) {
+        for (j = 0 ; j < str1.length ; j++) {
+          if (str2.includes(str1.charAt(j))) {
             continue;
           }
           return false;
@@ -95,6 +95,7 @@
       // get the json with all of the cards
       fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
         let order_cmc = false;
+        let see_invis = false;
 
         // then filter the cards based on the search criteria
         all_cards = all_cards.filter((card) => {
@@ -105,6 +106,10 @@
             console.log(cur_param);
             if (cur_param == "order:cmc") {
               order_cmc = true;
+              continue;
+            }
+            if (cur_param == "show:all") {
+              see_invis = true;
               continue;
             }
             // checks to see if the current search term is a type check
@@ -146,6 +151,13 @@
                 return false;
               }
             }
+            if (cur_param.slice(0,3) == "c<=") {
+              if (containsAllCharacters(getColors(card["cost"]), cur_param.slice(3))) {
+                continue;
+              } else {
+                return false;
+              }
+            }
             if (cur_param.slice(0,2) == "r=") {
               if (cur_param.slice(2) == card["rarity"].toLowerCase()) {
                 continue;
@@ -155,6 +167,48 @@
             }
             if (cur_param.slice(0,3) == "cn=") {
               if (cur_param.slice(3) == card["cn"]) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param.slice(0,2) == "o:") {
+              if (card["text"].toLowerCase().includes(cur_param.slice(2))) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param == "is:reprint") {
+              if (card["tags"]["reprint"]) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param == "not:reprint") {
+              if (!card["tags"]["reprint"]) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param.slice(0,4) == "cmc=") {
+              if (calculateTotalCost(card["cost"]) == cur_param.slice(4)) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param.slice(0,4) == "cmc>") {
+              if (calculateTotalCost(card["cost"]) > cur_param.slice(4)) {
+                continue;
+              } else {
+                return false;
+              }
+            }
+            if (cur_param.slice(0,4) == "cmc<") {
+              if (calculateTotalCost(card["cost"]) < cur_param.slice(4)) {
                 continue;
               } else {
                 return false;
@@ -193,6 +247,10 @@
         var htmlOut = ''
         for (i=0; i<all_cards.length; i++)
         {
+          console.log(see_invis);
+          if (all_cards[i]["invisible"] && !see_invis) {
+            continue;
+          }
           htmlOut += `<div class="card-grid-item ">
                         <a class="card-grid-item-card" href="/card/${all_cards[i]["set"]}_${all_cards[i]["cn"]}">
                           <span class="card-grid-item-invisible-label" aria-hidden="true">${all_cards[i]["name"]}</span>
