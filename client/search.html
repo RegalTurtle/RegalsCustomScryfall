@@ -214,8 +214,15 @@
                 return false;
               }
             }
+            if (cur_param.slice(0,9) == "function:") {
+              if (card["tags"] && card["tags"]["function"] && card["tags"]["function"].includes(cur_param.slice(9))) {
+                continue;
+              } else {
+                return false;
+              }
+            }
             // if all other checks fail, turn it into a name check
-            if (card["name"].toLowerCase().includes(cur_param)) {
+            if (card["name"].toLowerCase().includes(cur_param) || (card["nickname"] && card["nickname"].toLowerCase().includes(cur_param))) {
               continue;
             } else {
               return false;

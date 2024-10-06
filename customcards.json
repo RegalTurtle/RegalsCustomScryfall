@@ -2439,8 +2439,8 @@
   },
   {
     "name": "Soul Tap",
-    "set": "MTD",
-    "cn": 98,
+    "set": "MTC",
+    "cn": 14,
     "id": "B",
     "cost": "{3}{B}",
     "type": "Instant",
@@ -2451,11 +2451,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, might need a rewording on the cost reduction"
-      }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob, might need a rewording on the cost reduction" },
+      { "date": "16-08-2024", "creator": "Thys", "notes": "Removed to MTC" }
     ],
     "tags": {}
   },
@@ -2969,17 +2966,9 @@
     "notes": [
       { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "maybe remove the magecraft and make it only cast?"
-      },
+      { "date": "14-07-2024", "creator": "Thys", "notes": "maybe remove the magecraft and make it only cast?" },
       { "date": "14-07-2024", "creator": "Sam", "notes": "sure" },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Changed magecraft to just instant and sorcery casts"
-      }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Changed magecraft to just instant and sorcery casts" }
     ],
     "tags": {}
   },
@@ -4872,7 +4861,9 @@
     "notes": [
       { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
     ],
-    "tags": {}
+    "tags": {
+      "function": ["recursion"]
+    }
   },
   {
     "name": "Dimir Aqueduct",
@@ -5608,7 +5599,7 @@
     "text": "When ~ enters, sacrifice it unless it escaped.\nWhenever ~ enters or attacks, each player mills three cards, then exile target nonland card from a graveyard. You may cast it this turn by exiling two cards from your graveyard in addition to paying its other costs, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.\nEscape - {U}{U}{B}{B}, Exile five other cards from your graveyard.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/C3bP1Qx.png",
+    "img": "https://i.imgur.com/XlaUoFv.png",
     "has_bleed_edge": true,
     "power": 6,
     "toughness": 6,
@@ -5618,9 +5609,14 @@
       { "date": "30-07-2024", "creator": "Thys", "notes": "Suggested card text of milling each player 3, then allowing a cast from gy" },
       { "date": "30-07-2024", "creator": "Sam", "notes": "i think 3 mana is an appropriate casting cost tbh // maybe 4? // Drukar, Titan of Mind's Desire or Nepenthe, Titan of Mind's Desire // Nepenthe in greek more or less means a drug of forgetfulness // Then Helen, daughter of Zeus, took other counsel. Straightway she cast into the wine of which they were drinking a drug to quiet all pain and strife, and bring forgetfulness of every ill. // Drukar (no meaning, my own creation), Nepenthe (used to make people forget), Dolus (latin for deceit)" },
       { "date": "31-07-2024", "creator": "Sam", "notes": "Added art, name" },
-      { "date": "31-07-2024", "creator": "Thys", "notes": "Changed wording so that the exiling of a nonland card isn't on a may clause anymore, removing the need to add some 'If you do' clause" }
+      { "date": "31-07-2024", "creator": "Thys", "notes": "Changed wording so that the exiling of a nonland card isn't on a may clause anymore, removing the need to add some 'If you do' clause" },
+      { "date": "16-09-2024", "creator": "Sam", "notes": "Fixed wording on render" }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": ["recursion"],
+      "reprint": false
+    }
   },
   {
     "name": "Fleshweaver Savant",
@@ -5689,7 +5685,11 @@
       { "date": "05-08-2024", "creator": "Thys", "notes": "Balance changes or just put 1/8th on it and ship it?" },
       { "date": "05-08-2024", "creator": "Sam", "notes": "I'll put flavor text on it // But yeah ship it" }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": ["recursion"],
+      "reprint": false
+    }
   },
   {
     "name": "Frantic Search",
@@ -6210,7 +6210,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -6260,7 +6260,278 @@
     "tags": {
       "frame": "normal",
       "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Key to the City",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.\nWhenever ~ becomes untapped, you may pay {2}. If you do, draw a card.",
+    "flavor": "Many doors are open to you, my friend.",
+    "rarity": "R",
+    "cn": 251,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/vB54djU.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "15-09-2024", "creator": "Sam", "notes": "Found card, added card to MTD, created art" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Dark Visions",
+    "cost": "{1}{B}{B}",
+    "type": "Sorcery",
+    "text": "Pact\nYou draw two cards and you lose 2 life.\nIf you accepted ~' pact, each player discards a card.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 122,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/s53nccQ.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      { "date": "15-09-2024", "creator": "Thys", "notes": "Created card" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["draw"],
       "reprint": false
+    }
+  },
+  {
+    "name": "Forgotten Nemesis",
+    "cost": "{B}",
+    "type": "Creature - Zombie Wizard",
+    "text": "~ can't block.\n{1}{B}: Return ~ from your graveyard to the battlefield. Activate only if you've discarded a nonland card this turn.",
+    "flavor": "Death rarely stops hatred.",
+    "power": 2,
+    "toughness": 1,
+    "rarity": "U",
+    "cn": 98,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/qaHWtCl.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "15-09-2024", "creator": "Sam", "notes": "Created card" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Tactical Retreat",
+    "cost": "{2}{R}",
+    "type": "Sorcery",
+    "text": "Discard your hand, then draw three cards.",
+    "flavor": "“Back! Back! We'll come at them from a different angle!”",
+    "rarity": "C",
+    "cn": 159,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/L6RwsX7.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "16-09-2024", "creator": "Thys", "notes": "Created card" },
+      { "date": "16-09-2024", "creator": "Sam", "notes": "Changed mana from 1R to 2R and made it draw an additional card." }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["wheel"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Braingeyser",
+    "cost": "{X}{U}{U}",
+    "type": "Sorcery",
+    "text": "Target player draws X cards.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 50,
+    "set": "LEA",
+    "artist": "Mark Tedin",
+    "img": "https://i.imgur.com/sjamWuq.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["draw"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Mithril Coat",
+    "nickname": "Darksteel Coat",
+    "cost": "{3}",
+    "type": "Legendary Artifact - Equipment",
+    "text": "Flash, indestructible\nWhen ~ enters attach it to target legendary creature you control.\nEquipped creature has indestructible.\nEquip {3}",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 3,
+    "note": "=LTR 245",
+    "set": "REGT",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/gVKq2Xi.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render with new turtle set symbol :D" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Mithril Coat",
+    "nickname": "Darksteel Coat",
+    "cost": "{3}",
+    "type": "Legendary Artifact - Equipment",
+    "text": "Flash, indestructible\nWhen ~ enters attach it to target legendary creature you control.\nEquipped creature has indestructible.\nEquip {3}",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 4,
+    "note": "=LTR 245",
+    "set": "REGT",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/9AXa3VC.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render with new turtle set symbol :D" }
+    ],
+    "tags": {
+      "frame": "fullart",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Even the Score",
+    "cost": "{X}{U}{U}{U}",
+    "type": "Instant",
+    "text": "This spell costs {U}{U}{U} less to cast if an opponent has drawn four or more cards this turn.\nDraw X cards.",
+    "flavor": "Those who try to rob the Obscura often leave behind more than they take away.",
+    "rarity": "M",
+    "cn": 42,
+    "set": "SNC",
+    "artist": "Greg Opalinski",
+    "img": "https://i.imgur.com/3I5dETY.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["draw"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Gruesome Realization",
+    "cost": "{1}{B}{B}",
+    "type": "Sorcery",
+    "text": "Choose one —\n• You draw two cards and you lose 2 life.\n• Creatures your opponents control get -1/-1 until end of turn.",
+    "flavor": "Mishra was gone—all that remained was a machine wearing his face.",
+    "rarity": "U",
+    "cn": 103,
+    "set": "BRO",
+    "artist": "Julie Dillon",
+    "img": "https://i.imgur.com/Szf3huV.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["draw"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Knighthood",
+    "cost": "{2}{W}",
+    "type": "Enchantment",
+    "text": "Creatures you control have first strike.",
+    "flavor": "Kings don't make knights. Actions do.",
+    "rarity": "U",
+    "cn": 25,
+    "set": "7ED",
+    "artist": "Greg Hildebrandt & Tim Hildebrandt",
+    "img": "https://i.imgur.com/T2yHLmL.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Obsidian Obelisk",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "~ enters tapped.\n{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a multicolored spell.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 18,
+    "set": "DMC",
+    "artist": "Andrew Mar",
+    "img": "https://i.imgur.com/WSQnu3S.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["ramp"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "One with the Multiverse",
+    "cost": "{6}{U}{U}",
+    "type": "Enchantment",
+    "text": "You may look at the top card of your library any time.\nYou may play lands and cast spells from the top of your library.\nOnce during each of your turns, you may cast a spell from your hand or the top of your library without paying its mana cost.",
+    "flavor": "",
+    "rarity": "M",
+    "cn": 59,
+    "set": "BRO",
+    "artist": "Liiga Smilshkalne",
+    "img": "https://i.imgur.com/eaN7amx.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
     }
   }
 
