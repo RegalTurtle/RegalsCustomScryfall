@@ -6,24 +6,24 @@ var mime = require('mime-types');
 var app = express();
 
 // Use the following to handle JSON files specifically if needed
-app.get('*/customcards.json', (req, res) => {
+app.get('*/customcards.json', async (req, res) => {
   res.sendFile(path.join(__dirname, 'customcards.json'));
 });
 
-app.get('*/style.css', (req, res) => {
+app.get('*/style.css', async (req, res) => {
   res.sendFile(path.join(__dirname, 'client/style.css'));
 });
 
 // Serve the main index.html file
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.sendFile(path.join(__dirname, 'client/index.html'));
 });
 
-app.get('/card/*', (req, res) => {
+app.get('/card/*', async (req, res) => {
   res.sendFile(path.join(__dirname, 'client/card.html'));
 });
 
-app.get('/search/*', (req, res) => {
+app.get('/search/*', async (req, res) => {
   res.sendFile(path.join(__dirname, 'client/search.html'));
 });
 
