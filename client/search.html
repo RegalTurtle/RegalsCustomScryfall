@@ -103,7 +103,6 @@
           for (i = 0 ; i < params.length ; i++) {
             // this strips quotes off of the search, so that it's not searching for the quote char, since it will never be there
             cur_param = params[i].replace(/"/g, "");
-            console.log(cur_param);
             if (cur_param == "order:cmc") {
               order_cmc = true;
               continue;
@@ -180,14 +179,14 @@
               }
             }
             if (cur_param == "is:reprint") {
-              if (card["tags"]["reprint"]) {
+              if (card["tags"] && card["tags"]["reprint"]) {
                 continue;
               } else {
                 return false;
               }
             }
             if (cur_param == "not:reprint") {
-              if (!card["tags"]["reprint"]) {
+              if (card[tags] && !card["tags"]["reprint"]) {
                 continue;
               } else {
                 return false;
@@ -254,7 +253,6 @@
         var htmlOut = ''
         for (i=0; i<all_cards.length; i++)
         {
-          console.log(see_invis);
           if (all_cards[i]["invisible"] && !see_invis) {
             continue;
           }
