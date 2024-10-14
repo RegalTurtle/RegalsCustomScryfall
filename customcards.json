@@ -7841,5 +7841,27 @@
       "function": ["discard-outlet"],
       "reprint": false
     }
+  },
+  {
+    "name": "Cursed Lightning",
+    "cost": "{3}{R}",
+    "type": "Sorcery",
+    "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~’s pact, draw a card.",
+    "flavor": "“Come in! I found plenty of food for everyone.”{lns}{-}Circe, Vampire Hemomancer",
+    "rarity": "R",
+    "cn": 101,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4mWNr78.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["Removal"],
+      "reprint": false
+    }
   }
 ]
