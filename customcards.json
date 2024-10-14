@@ -7817,5 +7817,29 @@
       "function": [],
       "reprint": true
     }
+  },
+  {
+    "name": "Graciouss Hostess",
+    "cost": "{2}{B}",
+    "type": "Creature - Vampire Wizard",
+    "text": "Discard a card: ~ gets +1/+1 until end of turn.",
+    "flavor": "“Come in! I found plenty of food for everyone.”{lns}{-}Circe, Vampire Hemomancer",
+    "power": 3,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 101,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/zhfVFMR",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["discard-outlet"],
+      "reprint": false
+    }
   }
 ]
