@@ -2303,13 +2303,13 @@
     "tags": {}
   },
   {
-    "name": "Crack One Open",
+    "name": "Cursed Technique",
     "cost": "{1}{U}",
     "type": "Instant",
     "text": "Pact\nReturn target creature you don't control to its owners hand. If you accepted ~'s pact, that creature's controller discards a card.",
     "flavor": "",
     "rarity": "C",
-    "cn": 53,
+    "cn": 55,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/1VkSBsa.png",
@@ -2330,6 +2330,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "New Art, New render, added bleed, CN, etc."
       }
     ],
     "tags": {
