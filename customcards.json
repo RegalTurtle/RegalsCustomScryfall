@@ -2056,9 +2056,9 @@
     "tags": {}
   },
   {
-    "name": "Black Out",
+    "name": "Infernal Whispers",
     "set": "MTD",
-    "cn": 86,
+    "cn": 106,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Sorcery",
@@ -2069,7 +2069,8 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "14-10-2024", "creator": "Sam", "notes": "Renamed from Black out to Infernal Whispers" }
     ],
     "tags": {}
   },
