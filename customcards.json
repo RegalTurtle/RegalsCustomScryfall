@@ -7847,9 +7847,31 @@
     "cost": "{3}{R}",
     "type": "Sorcery",
     "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~’s pact, draw a card.",
-    "flavor": "“Come in! I found plenty of food for everyone.”{lns}{-}Circe, Vampire Hemomancer",
+    "flavor": "",
     "rarity": "R",
     "cn": 101,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4mWNr78.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["Removal"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Watchful Flittermouse",
+    "cost": "{3}{B}",
+    "type": "Creature - Bat",
+    "text": "Flying, haste{\n}Madness {1}{{B}",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 126,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/4mWNr78.png",
@@ -7860,7 +7882,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [],
       "reprint": false
     }
   }
