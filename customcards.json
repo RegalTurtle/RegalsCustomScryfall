@@ -1,5 +1,1267 @@
 [
   {
+    "name": "Audacious Thief",
+    "set": "MTD",
+    "cn": 85,
+    "id": "B",
+    "cost": "{2}{B}",
+    "type": "Creature - Human Rogue",
+    "text": "Whenever ~ attacks, you draw a card and you lose 1 life.",
+    "flavor": "\"Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.\"",
+    "rarity": "C",
+    "img": "https://i.imgur.com/YP6Ux23.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "21-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, changed flavor from alley ways to alleyways"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Bite of the Black Rose",
+    "cost": "{3}{B}",
+    "type": "Sorcery",
+    "text": "{i}Will of the Council{/i}{-}Starting with you, each player votes for sickness or psychosis. If sickness gets more votes, creatures your opponents control get -2/-2 until end of turn. If psychosis gets more votes or the vote is tied, each opponent discards two cards.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 86,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/undefined.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Bloodcrazed Socialite",
+    "cost": "{3}{B}",
+    "type": "Creature - Vampire",
+    "text": "Menace\nWhen ~ enters, create a Blood token.\nWhenever ~ attacks, you may sacrifice a Blood token. If you do, it gets +2/+2 until end of turn.",
+    "flavor": "",
+    "power": 3,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 87,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/QZffwcE.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added render and art"
+      }
+    ],
+    "tags": {
+      "function": [],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Bloodgift Demon",
+    "set": "MTD",
+    "cn": 88,
+    "id": "B",
+    "cost": "{3}{B}{B}",
+    "type": "Creature — Demon",
+    "text": "Flying\nAt the beginning of your upkeep, target player draws a card and loses 1 life.",
+    "flavor": "Whenever the eternal party reaches the surface, it makes itself known.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/apRf0PG.png",
+    "has_bleed_edge": true,
+    "power": 5,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob // needs a stamp :)"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Costly Search",
+    "cost": "{B}",
+    "type": "Instant",
+    "text": "You draw a card and you lose 1 life.\nMadness {B}",
+    "flavor": "The question strained his sanity. The answer snapped it in half.",
+    "rarity": "C",
+    "cn": 89,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/UTHy01Y.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Costly Torment",
+    "set": "MTD",
+    "cn": 90,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Instant",
+    "text": "As an additional cost to cast this spell, discard a card or take a shot.\nDestroy target creature or planeswalker.",
+    "flavor": "Do not challenge what you cannot even begin to comprehend.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/p615sLq.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Bitter Triumph but pact"
+      },
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "did we already do this but it's pact?"
+      },
+      {
+        "date": "26-06-2024",
+        "creator": "Sam",
+        "notes": "Brilliant"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "he is him // thats the bitter triumph but pact card, but we need to change it to be pact"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed additional cost to be pact"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Changed back to orginal wording because pact is naturally a may ability"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Added flavor to the json blob"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Posted new image with new art and bleed edge"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "HOLY // he cooked"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "UH HUH // i cooooked"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Cursed Lightning",
+    "cost": "{3}{R}",
+    "type": "Sorcery",
+    "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~'s pact, draw a card.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 91,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4mWNr78.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["Removal"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Dark Cocktail",
+    "cost": "{2}{B}",
+    "type": "Sorcery",
+    "text": "Put target creature card from a graveyard onto the battlefield under your control. Take a shot.",
+    "flavor": "So strong it can wake the dead.",
+    "rarity": "U",
+    "cn": 92,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/btbX0LQ.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "New art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["recursion"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Dark Visions",
+    "cost": "{1}{B}{B}",
+    "type": "Sorcery",
+    "text": "Pact\nYou draw two cards and you lose 2 life.\nIf you accepted ~' pact, each player discards a card.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 93,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/s53nccQ.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-09-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["draw"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Dead Weight",
+    "set": "MTD",
+    "cn": 94,
+    "id": "B",
+    "cost": "{B}",
+    "type": "Enchantment - Aura",
+    "text": "Enchant creature\nEnchanted creature gets -2/-2.",
+    "flavor": "\"Your aid has ceased to be worth your burden\"-Drana",
+    "rarity": "C",
+    "img": "https://i.imgur.com/mchRbHf.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Given art and flavor text"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Demonic Rite",
+    "set": "MTD",
+    "cn": 95,
+    "id": "B",
+    "cost": "{1}{B}{B}",
+    "type": "Enchantment",
+    "text": "At the beginning of your upkeep, if you have no cards in hand, you may take a shot and draw two cards.\nMadness {1}{B}",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/LcJtCVJ.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Drana, Liberator of Malakir",
+    "set": "MTD",
+    "cn": 96,
+    "id": "B",
+    "cost": "{1}{B}{B}",
+    "type": "Legendary Creature - Vampire Ally",
+    "text": "Flying, first strike\nWhenever ~ deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
+    "flavor": "\"I will be chained to the shadows no longer.\"",
+    "rarity": "M",
+    "img": "https://i.imgur.com/INbivUh.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Edgar's Awakening",
+    "set": "MTD",
+    "cn": 97,
+    "id": "B",
+    "cost": "{3}{B}{B}",
+    "type": "Sorcery",
+    "text": "Return target creature card from your graveyard to the battlefield.\nWhen you discard ~, you may pay {B}. When you do, return target creature card from your graveyard to your hand.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/6JmMi55.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      }
+    ],
+    "tags": {
+      "function": ["recursion"]
+    }
+  },
+  {
+    "name": "First-Sphere Gargantua",
+    "cost": "{4}{B}{B}",
+    "type": "Creature - Phyrexian Horror",
+    "text": "When ~ enters, you draw a card and you lose 1 life.\nUnearth {2}{B}",
+    "flavor": "",
+    "power": 5,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 98,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/koAwRKB.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Fleshweaver Savant",
+    "cost": "{2}{B}",
+    "type": "Creature - Human Spellshaper",
+    "text": "{4}{B}, {T}, Discard a card: Put target creature card from a graveyard onto the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
+    "flavor": "",
+    "power": 2,
+    "toughness": 3,
+    "rarity": "U",
+    "cn": 99,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/8jIgaO1.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Came up with name to be used with another card"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Created card from the name"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Removed the wizard subtype because none of the other spellshapers are wizards"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "New render with new art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["recursion"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Forgotten Nemesis",
+    "cost": "{B}",
+    "type": "Creature - Zombie Wizard",
+    "text": "~ can't block.\n{1}{B}: Return ~ from your graveyard to the battlefield. Activate only if you've discarded a nonland card this turn.",
+    "flavor": "Death rarely stops hatred.",
+    "power": 2,
+    "toughness": 1,
+    "rarity": "U",
+    "cn": 100,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/qaHWtCl.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-09-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Gluttonous Guest",
+    "cost": "{2}{B}",
+    "type": "Creature - Vampire",
+    "text": "When ~ enters, create a Blood token.\nWhenever you sacrifice a Blood token, you gain 1 life.",
+    "flavor": "“Darling, it's 5 o'clock somewhere.”",
+    "power": 1,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 101,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/L7hClND.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added render and art"
+      }
+    ],
+    "tags": {
+      "function": [],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Graciouss Hostess",
+    "cost": "{2}{B}",
+    "type": "Creature - Vampire Wizard",
+    "text": "Discard a card: ~ gets +1/+1 until end of turn.",
+    "flavor": "“Come in! I found plenty of food for everyone.”{lns}{-}Circe, Vampire Hemomancer",
+    "power": 3,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 102,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/zhfVFMR.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["discard-outlet"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Grave Scrabbler",
+    "cost": "{3}{B}",
+    "type": "Creature - Zombie",
+    "text": "Madness {1}{B}\nWhen ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
+    "flavor": "There will always be a seeker.",
+    "rarity": "C",
+    "cn": 103,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/THYDcDR.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["recursion"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Grisly Ritual",
+    "cost": "{5}{B}",
+    "type": "Sorcery",
+    "text": "Destroy target creature or planeswalker. Create two Blood tokens.",
+    "flavor": "“See what's left of you in Hell.”",
+    "rarity": "C",
+    "cn": 104,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/x9MaEwe.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added render and art"
+      }
+    ],
+    "tags": {
+      "function": ["removal"],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Hell Boon",
+    "cost": "{B}",
+    "type": "Instant",
+    "text": "Pact\nTarget creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 105,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/O9ecPa7.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Hypnostatic Architect",
+    "set": "MTD",
+    "cn": 106,
+    "id": "UB",
+    "cost": "{1}{B}{B}",
+    "type": "Creature - Nightmare Wizard",
+    "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card. Activate only as sorcery.",
+    "flavor": "Your mind is an Escher painting and I am an artist.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/pOvMqfz.png",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 5,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip // this card is kinda rediculous at 3 mana why is it a 3/5"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added art and name and flavor"
+      },
+      {
+        "date": "30-07-2024",
+        "creator": "Kenneth",
+        "notes": "Suggested changing to 2/3 and making first ability 'This creature gains flying and “Whenever this creature deals combat damage to a player, you draw a card” until end of turn.'"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Added 'activate only sorc' to the discard half"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Infernal Whispers",
+    "cost": "{1}{B}",
+    "type": "Sorcery",
+    "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 107,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/ZAqkMiq.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Renamed from Black out to Infernal Whispers"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Updated image, needs to have pact reminder text"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Intoxicating Deluge",
+    "cost": "{2}{B}",
+    "type": "Sorcery",
+    "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 108,
+    "set": "MTD",
+    "artist": "",
+    "id": "B",
+    "img": "https://i.imgur.com/qDYqNzt.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Kitesail Freebooter",
+    "set": "MTD",
+    "cn": 109,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Creature - Human Pirate",
+    "text": "Flying\nWhen ~ enters, target opponent reveals their hand. You choose a noncreature, nonland card from it. Exile that card until ~ leaves the battlefield.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/R2bYfMo.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Larceny",
+    "set": "MTD",
+    "cn": 110,
+    "id": "B",
+    "cost": "{3}{B}{B}",
+    "type": "Enchantment",
+    "text": "Whenever a creature you control deals combat damage to a player, that player discards a card.",
+    "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/HCmIc3G.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Lich's Conquest",
+    "cost": "{2}{B}{B}",
+    "type": "Sorcery",
+    "text": "As an additional cost to cast ~, discard X cards.\nReturn X target creature cards from graveyards to the battlefield under your control.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 111,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/v9a5Dsf.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Created card concept"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Sam",
+        "notes": "Yesssss // Fuck yes"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Balance changes or just put 1/8th on it and ship it?"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Sam",
+        "notes": "I'll put flavor text on it // But yeah ship it"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["recursion"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Lonely Crypt",
+    "set": "MTD",
+    "cn": 112,
+    "id": "B",
+    "cost": "{3}{B}",
+    "type": "Enchantment",
+    "text": "If you would take a shot, you may discard a card instead.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/u5G8NvE.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "23-08-2024",
+        "creator": "Sam",
+        "notes": "Changed card name"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Necromancer's Puppet",
+    "set": "MTD",
+    "cn": 113,
+    "id": "B",
+    "cost": "{2}{B}{B}",
+    "type": "Creature - Zombie",
+    "text": "Whenever ~ deals combat damage to a player, each player discards a card.",
+    "flavor": "Brought back to serve a purpose, kept around for entertainment.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/rC55WaC.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Posted card idea"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Pact Broker",
+    "set": "MTD",
+    "cn": 114,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Creature - Vampire Devil",
+    "text": "Whenever you accept a pact, ~ deals 1 damage to each opponent and you gain 1 life.",
+    "flavor": "The scourge of the weak.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/2PZ7bnA.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "change to you only gain 1 life"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Quickblade Devilkin",
+    "cost": "{1}{B}",
+    "type": "Creature - Devil Assassin",
+    "text": "Deathtouch\nMadness {1}{B}",
+    "flavor": "An unshakable malice.",
+    "power": 1,
+    "toughness": 1,
+    "rarity": "C",
+    "cn": 115,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/8GudArw.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Remnant Hulk",
+    "cost": "{6}{B}",
+    "type": "Creature - Zombie Giant",
+    "text": "When ~ enters, it deals 1 damage to target opponent for each instant and sorcery card in your graveyard.\nSwampcycling {2}",
+    "flavor": "Born of an ancient war, held together by a single minded will to live.",
+    "power": 4,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 116,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/O6U3irg.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "23-08-2024",
+        "creator": "Sam",
+        "notes": "Added swampcycling, removed p/t, new render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Rotting Rats",
+    "cost": "{1}{B}",
+    "type": "Creature - Zombie Rat",
+    "text": "When ~ enters, each player discards a card.\nUnearth {1}{B}",
+    "flavor": "",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 1,
+    "cn": 117,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Fn04nDg.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "i think we should add it tbh"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "definitely should have reminder if we choose to add it"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Sam",
+        "notes": "New render with new art"
+      },
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Fixed art framing"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Sower of Chaos",
+    "cost": "{2}{B}",
+    "type": "Creature - Human Wizard",
+    "text": "When ~ enters, each player sacrifices a creature. Each player who can't discards a card.",
+    "flavor": "“Purge the unclean ones, in the name of our new father!”",
+    "power": 3,
+    "toughness": 1,
+    "rarity": "U",
+    "cn": 118,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/undefined.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Tess, Necromancer Prodigy",
+    "cost": "{2}{B}",
+    "type": "Legendary Creature - Human Wizard",
+    "text": "Lifelink\nWard{-}Pay 3 life.\nWhenever you cast an instant or sorcery spell, create a 1/1 black Zombie Wizard creature token.",
+    "flavor": "",
+    "power": 3,
+    "toughness": 2,
+    "rarity": "R",
+    "cn": 119,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/lqAEDcf.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Wanted Sedgemoor Witch to be a wizard so we created a legendary creature that does a similar thing"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "The False Prophet",
+    "set": "MTD",
+    "cn": 120,
+    "id": "B",
+    "cost": "{2}{B}{B}",
+    "type": "Creature - Demon",
+    "text": "Draft ~ face up.\nAs long as ~ is face up during the draft, you can't look at booster packs and must draft cards at random. After you draft one cards this way, turn ~ face down.\nFlying, lifelink",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/tWFvuJ5.png",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 4,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Needs to have the draft matters stuff the next time we make the card"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Doesn't need flavor text, not enough space on the card."
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added draft matters stuff to card"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Typhoid Devil",
+    "set": "MTD",
+    "cn": 121,
+    "id": "B",
+    "cost": "{1}{B}{B}",
+    "type": "Creature - Rat Devil",
+    "text": "Pact\nDeathtouch\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to target creature.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/KnVzteR.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "23-08-2024",
+        "creator": "Sam",
+        "notes": "Cut to MTC"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Vampiric Bartender",
+    "cost": "{B}",
+    "type": "Creature - Vampire Alcoholic",
+    "text": "Blood tokens you control have \"{T}, Take a shot, Sacrifice this artifact: Draw a card.\"",
+    "flavor": "\"So, what will it be stranger?\"",
+    "power": 1,
+    "toughness": 1,
+    "rarity": "U",
+    "cn": 122,
+    "set": "MTD",
+    "artist": "",
+    "img": "https://i.imgur.com/sRGNMgg.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed text, maybe we should upshift this??"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Upshifted to Uncommon, maybe could go back to Common"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Vampiric Brew",
+    "set": "MTD",
+    "cn": 123,
+    "id": "B",
+    "cost": "{2}{B}",
+    "type": "Sorcery",
+    "text": "Target opponent take a shot and you gain 3 life.\nMadness {B}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/AyXgyYZ.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Vibe Check",
+    "set": "MTD",
+    "cn": 124,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Instant",
+    "text": "Destroy target non-alcoholic creature.",
+    "flavor": "You did not pass, it is now time to face the flames, goodbye.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/NHemTM6.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Posted card idea"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image and chose name"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Vicious Rumors",
+    "cost": "{B}",
+    "type": "Sorcery",
+    "text": "~ deals 1 damage to each opponent. Each opponent discards a card, then mills a card. You gain 1 life.",
+    "flavor": "A dark mockery of the soul.",
+    "rarity": "U",
+    "cn": 125,
+    "set": "MTD",
+    "artist": "Microsoft Copilot",
+    "id": "B",
+    "img": "https://i.imgur.com/6mAOODh.png",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Update rarity to U"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Watchful Flittermouse",
+    "cost": "{3}{B}",
+    "type": "Creature - Bat",
+    "text": "Flying, haste{\n}Madness {1}{{B}",
+    "flavor": "",
+    "power": 2,
+    "toughness": 2,
+    "rarity": "C",
+    "cn": 126,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4mWNr78.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
     "name": "Aerial Assault",
     "set": "MTD",
     "cn": 1,
@@ -83,7 +1345,13 @@
     "img": "https://i.imgur.com/w6oY2uz.png",
     "has_bleed_edge": true,
     "art-remarks": "",
-    "notes": [{ "date": "14-07-2024", "creator": "Sam", "notes": "New art" }],
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "New art"
+      }
+    ],
     "tags": {}
   },
   {
@@ -111,7 +1379,11 @@
         "creator": "Sam",
         "notes": "Changed buffed creature back to elves // new image"
       },
-      { "date": "17-07-2024", "creator": "Sam", "notes": "damn holo stamps" }
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "damn holo stamps"
+      }
     ],
     "tags": {}
   },
@@ -151,8 +1423,16 @@
         "creator": "Sam",
         "notes": "clairmont downshift and increase cost"
       },
-      { "date": "05-05-2024", "creator": "Thys", "notes": "2/3, 2w" },
-      { "date": "05-05-2024", "creator": "Sam", "notes": "Posted new image" },
+      {
+        "date": "05-05-2024",
+        "creator": "Thys",
+        "notes": "2/3, 2w"
+      },
+      {
+        "date": "05-05-2024",
+        "creator": "Sam",
+        "notes": "Posted new image"
+      },
       {
         "date": "27-07-2024",
         "creator": "Thys",
@@ -181,7 +1461,11 @@
     "img": "https://i.imgur.com/zRH03Js.png",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Added CN and bleed" }
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed"
+      }
     ],
     "tags": {}
   },
@@ -209,7 +1493,11 @@
         "creator": "Thys",
         "notes": "New render with Nyx border"
       },
-      { "date": "19-08-2024", "creator": "Thys", "notes": "Fixed art framing" }
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed art framing"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -307,13 +1595,21 @@
         "creator": "Thys",
         "notes": "mtd31 might need flavor text"
       },
-      { "date": "13-08-2024", "creator": "Sam", "notes": "New art and flavor" },
+      {
+        "date": "13-08-2024",
+        "creator": "Sam",
+        "notes": "New art and flavor"
+      },
       {
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "New render with Nyx border"
       },
-      { "date": "19-08-2024", "creator": "Thys", "notes": "Fixed flavor text" }
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed flavor text"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -418,7 +1714,11 @@
     "power": 3,
     "toughness": 3,
     "notes": [
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Added CN and bleed" }
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed"
+      }
     ],
     "tags": {
       "reprint": false
@@ -440,7 +1740,11 @@
     "id": "W",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "05-08-2024", "creator": "Thys", "notes": "Updated render" }
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Updated render"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -518,7 +1822,11 @@
     "img": "https://i.imgur.com/REF37Fl.png",
     "has_bleed_edge": false,
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "remove janky wrath" }
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "remove janky wrath"
+      }
     ],
     "tags": {}
   },
@@ -652,7 +1960,11 @@
         "creator": "Thys",
         "notes": "Added CN and bleed, updated flavor display to work with flavor off of cardconjurer"
       },
-      { "date": "19-08-2024", "creator": "Thys", "notes": "Fixed art framing" }
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed art framing"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -803,7 +2115,11 @@
     "power": 2,
     "toughness": 3,
     "notes": [
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Created alt image" }
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Created alt image"
+      }
     ],
     "tags": {}
   },
@@ -1021,7 +2337,11 @@
     "art-remarks": "",
     "flavor": "",
     "notes": [
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Added bleed and CN" }
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added bleed and CN"
+      }
     ],
     "tags": {
       "reprint": true
@@ -1220,7 +2540,11 @@
         "creator": "Thys",
         "notes": "Here are my submissions for white reprints"
       },
-      { "date": "09-07-2024", "creator": "Sam", "notes": "Love" },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Love"
+      },
       {
         "date": "13-07-2024",
         "creator": "Sam",
@@ -1320,7 +2644,11 @@
     "id": "W",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
       {
         "date": "13-07-2024",
         "creator": "Sam",
@@ -1367,7 +2695,11 @@
         "creator": "Thys",
         "notes": "different card, same name"
       },
-      { "date": "09-07-2024", "creator": "Sam", "notes": "Good idea" },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Good idea"
+      },
       {
         "date": "09-07-2024",
         "creator": "Thys",
@@ -1512,7 +2844,11 @@
         "creator": "Thys",
         "notes": "Added artist credit"
       },
-      { "date": "19-08-2024", "creator": "Thys", "notes": "Fixed art framing" }
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed art framing"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -1541,7 +2877,11 @@
         "creator": "Thys",
         "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"
       },
-      { "date": "11-07-2024", "creator": "Sam", "notes": "Cooking up new art" },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Cooking up new art"
+      },
       {
         "date": "13-07-2024",
         "creator": "Sam",
@@ -1592,7 +2932,11 @@
         "creator": "Thys",
         "notes": "Updated art, might need flavor text? But text box also might be fine as is"
       },
-      { "date": "16-08-2024", "creator": "Sam", "notes": "New art" },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "New art"
+      },
       {
         "date": "16-08-2024",
         "creator": "Thys",
@@ -1603,7 +2947,11 @@
         "creator": "Sam",
         "notes": "Changed to not buff toughness"
       },
-      { "date": "16-08-2024", "creator": "Thys", "notes": "Redid render" }
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Redid render"
+      }
     ],
     "tags": {}
   },
@@ -1621,7 +2969,11 @@
     "id": "U",
     "has_bleed_edge": false,
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
       {
         "date": "11-07-2024",
         "creator": "Thys",
@@ -1734,41 +3086,6 @@
         "date": "11-07-2024",
         "creator": "Sam",
         "notes": "Needs the draft matters card frame and backdrop."
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "The False Prophet",
-    "set": "MTD",
-    "cn": 105,
-    "id": "B",
-    "cost": "{2}{B}{B}",
-    "type": "Creature - Demon",
-    "text": "Draft ~ face up.\nAs long as ~ is face up during the draft, you can't look at booster packs and must draft cards at random. After you draft one cards this way, turn ~ face down.\nFlying, lifelink",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/tWFvuJ5.png",
-    "has_bleed_edge": true,
-    "power": 3,
-    "toughness": 4,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-07-2024",
-        "creator": "Thys",
-        "notes": "Needs to have the draft matters stuff the next time we make the card"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Thys",
-        "notes": "Doesn't need flavor text, not enough space on the card."
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "Added draft matters stuff to card"
       }
     ],
     "tags": {}
@@ -1965,7 +3282,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -1990,7 +3311,11 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Sam",
@@ -2029,7 +3354,11 @@
         "creator": "Thys",
         "notes": "Probably will be removed to add Malcolm back in since blue doesn't really care about beer counters."
       },
-      { "date": "29-07-2024", "creator": "Sam", "notes": "Removed to MTC" }
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Removed to MTC"
+      }
     ],
     "tags": {}
   },
@@ -2049,7 +3378,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -2070,7 +3403,11 @@
         "creator": "Sam",
         "notes": "New render with correct CN"
       },
-      { "date": "19-08-2024", "creator": "Sam", "notes": "Fixed ward cost" }
+      {
+        "date": "19-08-2024",
+        "creator": "Sam",
+        "notes": "Fixed ward cost"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -2092,7 +3429,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2119,7 +3460,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2148,7 +3493,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2175,7 +3524,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2202,7 +3555,11 @@
     "has_bleed_edge": true,
     "id": "U",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2232,7 +3589,11 @@
     "has_bleed_edge": true,
     "watermark": "draft",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2260,7 +3621,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "18-08-2024",
         "creator": "Thys",
@@ -2287,13 +3652,21 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "06-12-2023",
         "creator": "Sam",
         "notes": "we need to talk about this one, the beer counters, as well as this could replace the 4 mana enchantment because I think the current one is way to strong, it turns each spell you take a shot for into a cantrip"
       },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2396,7 +3769,11 @@
         "creator": "Thys",
         "notes": "Added to json, fixed wording, upshifted to Uncommon"
       },
-      { "date": "16-08-2024", "creator": "Thys", "notes": "Upshifted to Rare" }
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Upshifted to Rare"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -2447,7 +3824,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "15-07-2024",
         "creator": "Sam",
@@ -2516,7 +3897,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
       {
         "date": "14-07-2024",
         "creator": "Sam",
@@ -2546,67 +3931,6 @@
     "tags": {}
   },
   {
-    "name": "Costly Torment",
-    "set": "MTD",
-    "cn": 90,
-    "id": "B",
-    "cost": "{1}{B}",
-    "type": "Instant",
-    "text": "As an additional cost to cast this spell, discard a card or take a shot.\nDestroy target creature or planeswalker.",
-    "flavor": "Do not challenge what you cannot even begin to comprehend.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/p615sLq.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      {
-        "date": "26-06-2024",
-        "creator": "Thys",
-        "notes": "Bitter Triumph but pact"
-      },
-      {
-        "date": "26-06-2024",
-        "creator": "Thys",
-        "notes": "did we already do this but it's pact?"
-      },
-      { "date": "26-06-2024", "creator": "Sam", "notes": "Brilliant" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "he is him // thats the bitter triumph but pact card, but we need to change it to be pact"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Changed additional cost to be pact"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "Changed back to orginal wording because pact is naturally a may ability"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "Added flavor to the json blob"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "Posted new image with new art and bleed edge"
-      },
-      { "date": "15-07-2024", "creator": "Thys", "notes": "HOLY // he cooked" },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "UH HUH // i cooooked"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Tides of Battle",
     "cost": "{2}{U}",
     "type": "Sorcery",
@@ -2620,8 +3944,16 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "26-06-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "15-07-2024",
         "creator": "Thys",
@@ -2645,64 +3977,6 @@
     }
   },
   {
-    "name": "Audacious Thief",
-    "set": "MTD",
-    "cn": 85,
-    "id": "B",
-    "cost": "{2}{B}",
-    "type": "Creature - Human Rogue",
-    "text": "Whenever ~ attacks, you draw a card and you lose 1 life.",
-    "flavor": "\"Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.\"",
-    "rarity": "C",
-    "img": "https://i.imgur.com/YP6Ux23.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, changed flavor from alley ways to alleyways"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Infernal Whispers",
-    "cost": "{1}{B}",
-    "type": "Sorcery",
-    "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
-    "flavor": "",
-    "rarity": "U",
-    "cn": 106,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/ZAqkMiq.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Renamed from Black out to Infernal Whispers"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Updated image, needs to have pact reminder text"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
-      "reprint": false
-    }
-  },
-  {
     "name": "Generous Host",
     "set": "MTD",
     "cn": 183,
@@ -2718,10 +3992,26 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
-      { "date": "29-07-2024", "creator": "Sam", "notes": "Added name and art" }
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added name and art"
+      }
     ],
     "tags": {}
   },
@@ -2742,13 +4032,21 @@
     "has_bleed_edge": true,
     "art-remarks": "Art is of an owl, similar to Harrier Strix. It's a familiar flying or standing near an Aphelion scholar",
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera"
       },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
       {
         "date": "14-08-2024",
         "creator": "Thys",
@@ -2779,8 +4077,16 @@
         "creator": "Sam",
         "notes": "I like that flavor a lot"
       },
-      { "date": "14-08-2024", "creator": "Thys", "notes": "Added flavor" },
-      { "date": "14-08-2024", "creator": "Sam", "notes": "Added art" },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added flavor"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      },
       {
         "date": "16-08-2024",
         "creator": "Thys",
@@ -2803,14 +4109,26 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
       {
         "date": "09-07-2024",
         "creator": "Thys",
         "notes": "Maybe could be split into 2 cards, I like the idea of a blue mana sink for card draw, but this cycling thing is interesting"
       },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
       {
         "date": "16-08-2024",
         "creator": "Sam",
@@ -2840,10 +4158,26 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Added flying" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Given image" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Added flying"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Given image"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2877,9 +4211,21 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
       {
         "date": "18-08-2024",
         "creator": "Thys",
@@ -2912,9 +4258,21 @@
     "has_bleed_edge": true,
     "art-remarks": "Dark corridor of a library, closing in and converging on a closed door. The hall is dark",
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
       {
         "date": "29-07-2024",
         "creator": "Thys",
@@ -2930,7 +4288,11 @@
         "creator": "Sam",
         "notes": "New art, flavor text"
       },
-      { "date": "16-08-2024", "creator": "Thys", "notes": "New render" }
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "New render"
+      }
     ],
     "tags": {}
   },
@@ -2948,9 +4310,21 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
       {
         "date": "18-08-2024",
         "creator": "Thys",
@@ -2976,9 +4350,21 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "New art" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "New art"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -2990,125 +4376,6 @@
       "function": [],
       "reprint": true
     }
-  },
-  {
-    "name": "Dark Cocktail",
-    "cost": "{2}{B}",
-    "type": "Sorcery",
-    "text": "Put target creature card from a graveyard onto the battlefield under your control. Take a shot.",
-    "flavor": "So strong it can wake the dead.",
-    "rarity": "U",
-    "cn": 91,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/btbX0LQ.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "14-08-2024", "creator": "Sam", "notes": "New art" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Intoxicating Deluge",
-    "cost": "{2}{B}",
-    "type": "Sorcery",
-    "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 100,
-    "set": "MTD",
-    "artist": "",
-    "id": "B",
-    "img": "https://i.imgur.com/qDYqNzt.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Demonic Rite",
-    "set": "MTD",
-    "cn": 93,
-    "id": "B",
-    "cost": "{1}{B}{B}",
-    "type": "Enchantment",
-    "text": "At the beginning of your upkeep, if you have no cards in hand, you may take a shot and draw two cards.\nMadness {1}{B}",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/LcJtCVJ.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Drana, Liberator of Malakir",
-    "set": "MTD",
-    "cn": 94,
-    "id": "B",
-    "cost": "{1}{B}{B}",
-    "type": "Legendary Creature - Vampire Ally",
-    "text": "Flying, first strike\nWhenever ~ deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
-    "flavor": "\"I will be chained to the shadows no longer.\"",
-    "rarity": "M",
-    "img": "https://i.imgur.com/INbivUh.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Lonely Crypt",
-    "set": "MTD",
-    "cn": 97,
-    "id": "B",
-    "cost": "{3}{B}",
-    "type": "Enchantment",
-    "text": "If you would take a shot, you may discard a card instead.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/u5G8NvE.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "23-08-2024", "creator": "Sam", "notes": "Changed card name" }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Kitesail Freebooter",
-    "set": "MTD",
-    "cn": 95,
-    "id": "B",
-    "cost": "{1}{B}",
-    "type": "Creature - Human Pirate",
-    "text": "Flying\nWhen ~ enters, target opponent reveals their hand. You choose a noncreature, nonland card from it. Exile that card until ~ leaves the battlefield.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/R2bYfMo.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
-    ],
-    "tags": {}
   },
   {
     "name": "Lack of Sanity",
@@ -3124,30 +4391,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "24-08-2024",
         "creator": "Thys",
         "notes": "Cut to MTC this card is broken."
       }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Larceny",
-    "set": "MTD",
-    "cn": 97,
-    "id": "B",
-    "cost": "{3}{B}{B}",
-    "type": "Enchantment",
-    "text": "Whenever a creature you control deals combat damage to a player, that player discards a card.",
-    "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/HCmIc3G.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
     ],
     "tags": {}
   },
@@ -3170,7 +4423,11 @@
         "creator": "Thys",
         "notes": "Created json blob, might need a rewording on the cost reduction"
       },
-      { "date": "16-08-2024", "creator": "Thys", "notes": "Removed to MTC" }
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Removed to MTC"
+      }
     ],
     "tags": {}
   },
@@ -3188,40 +4445,27 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "15-07-2024",
         "creator": "Sam",
         "notes": "I don't want tutors in the set, move to MTC"
       },
-      { "date": "05-08-2024", "creator": "Thys", "notes": "Added new render" }
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Added new render"
+      }
     ],
     "tags": {
       "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
-  },
-  {
-    "name": "Typhoid Devil",
-    "set": "MTD",
-    "cn": 118,
-    "id": "B",
-    "cost": "{1}{B}{B}",
-    "type": "Creature - Rat Devil",
-    "text": "Pact\nDeathtouch\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to target creature.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/KnVzteR.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "23-08-2024", "creator": "Sam", "notes": "Cut to MTC" }
-    ],
-    "tags": {}
   },
   {
     "name": "Typhoid Rats",
@@ -3248,103 +4492,6 @@
     "tags": {}
   },
   {
-    "name": "Vampiric Bartender",
-    "cost": "{B}",
-    "type": "Creature - Vampire Alcoholic",
-    "text": "Blood tokens you control have \"{T}, Take a shot, Sacrifice this artifact: Draw a card.\"",
-    "flavor": "\"So, what will it be stranger?\"",
-    "power": 1,
-    "toughness": 1,
-    "rarity": "U",
-    "cn": 114,
-    "set": "MTD",
-    "artist": "",
-    "img": "https://i.imgur.com/sRGNMgg.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, fixed text, maybe we should upshift this??"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Upshifted to Uncommon, maybe could go back to Common"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Vampiric Brew",
-    "set": "MTD",
-    "cn": 119,
-    "id": "B",
-    "cost": "{2}{B}",
-    "type": "Sorcery",
-    "text": "Target opponent take a shot and you gain 3 life.\nMadness {B}",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/AyXgyYZ.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Vicious Rumors",
-    "cost": "{B}",
-    "type": "Sorcery",
-    "text": "~ deals 1 damage to each opponent. Each opponent discards a card, then mills a card. You gain 1 life.",
-    "flavor": "A dark mockery of the soul.",
-    "rarity": "U",
-    "cn": 122,
-    "set": "MTD",
-    "artist": "Microsoft Copilot",
-    "id": "B",
-    "img": "https://i.imgur.com/6mAOODh.png",
-    "has_bleed_edge": false,
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "14-10-2024", "creator": "Thys", "notes": "Update rarity to U" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Dead Weight",
-    "set": "MTD",
-    "cn": 92,
-    "id": "B",
-    "cost": "{B}",
-    "type": "Enchantment - Aura",
-    "text": "Enchant creature\nEnchanted creature gets -2/-2.",
-    "flavor": "\"Your aid has ceased to be worth your burden\"-Drana",
-    "rarity": "C",
-    "img": "https://i.imgur.com/mchRbHf.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "Given art and flavor text"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Emblem of the Warmind",
     "set": "MTD",
     "cn": 139,
@@ -3358,8 +4505,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "13-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3377,8 +4532,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3398,8 +4561,16 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "31-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "31-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3419,8 +4590,16 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "30-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "30-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3438,15 +4617,31 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "30-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "14-07-2024", "creator": "Sam", "notes": "We cut this card" },
+      {
+        "date": "30-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "We cut this card"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Changed to remove the +2/+2 and move the target to any permanent"
       },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Uploaded new text" }
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Uploaded new text"
+      }
     ],
     "tags": {}
   },
@@ -3466,8 +4661,16 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "30-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "30-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3485,7 +4688,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "29-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "29-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -3537,8 +4744,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "16-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "16-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3558,8 +4773,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "16-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "16-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3579,8 +4802,16 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3598,8 +4829,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "12-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "12-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3619,8 +4858,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3638,8 +4885,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3659,8 +4914,16 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3680,8 +4943,16 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -3711,14 +4982,26 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "maybe remove the magecraft and make it only cast?"
       },
-      { "date": "14-07-2024", "creator": "Sam", "notes": "sure" },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "sure"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -3741,8 +5024,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3760,14 +5051,26 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "maybe change to you may"
       },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "i like that" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "i like that"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -3807,8 +5110,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -3831,14 +5142,26 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "change flavor text???"
       },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "will do" }
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "will do"
+      }
     ],
     "tags": {}
   },
@@ -3858,8 +5181,16 @@
     "toughness": 5,
     "art-remarks": "",
     "notes": [
-      { "date": "24-02-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "24-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3877,8 +5208,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "24-02-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "24-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3898,8 +5237,16 @@
     "toughness": 8,
     "art-remarks": "",
     "notes": [
-      { "date": "22-02-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "22-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3919,8 +5266,16 @@
     "toughness": 0,
     "art-remarks": "",
     "notes": [
-      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3940,8 +5295,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "24-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "24-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3959,8 +5322,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "22-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "22-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -3980,8 +5351,16 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4002,8 +5381,16 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4021,8 +5408,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4042,8 +5437,16 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4063,8 +5466,16 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4084,8 +5495,16 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4105,8 +5524,16 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4131,8 +5558,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4152,8 +5587,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4171,8 +5614,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "15-07-2024",
         "creator": "Sam",
@@ -4197,7 +5648,11 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Sam",
@@ -4222,7 +5677,11 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "15-07-2024",
         "creator": "Sam",
@@ -4247,7 +5706,11 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "15-07-2024",
         "creator": "Sam",
@@ -4282,7 +5745,11 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "16-07-2024",
         "creator": "Sam",
@@ -4307,8 +5774,16 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Sam", "notes": "Created card" }
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
     ],
     "tags": {}
   },
@@ -4328,13 +5803,21 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "16-07-2024",
         "creator": "Sam",
         "notes": "Downshifted to common"
       },
-      { "date": "16-07-2024", "creator": "Sam", "notes": "New image" }
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "New image"
+      }
     ]
   },
   {
@@ -4353,8 +5836,16 @@
     "toughness": 4,
     "art-remarks": "",
     "notes": [
-      { "date": "05-05-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "05-05-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
@@ -4379,7 +5870,11 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "04-05-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "04-05-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4402,8 +5897,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "22-02-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "22-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4421,8 +5924,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "22-02-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "22-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4442,7 +5953,11 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "21-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4467,8 +5982,16 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "21-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4508,7 +6031,11 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "21-01-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "21-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4553,7 +6080,11 @@
         "creator": "Thys",
         "notes": "Moved from MTX to MTD, added flavor text"
       },
-      { "date": "16-07-2024", "creator": "Sam", "notes": "New card image" },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "New card image"
+      },
       {
         "date": "05-08-2024",
         "creator": "Thys",
@@ -4576,13 +6107,21 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "06-12-2023",
         "creator": "Sam",
         "notes": "changed the name, and changed from target creature to target permanent, its a slow rate, and rg puts counters on creatures mainly, so I thought this could be an interesting change of pace"
       },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4620,8 +6159,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4639,8 +6186,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "24-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "24-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4660,7 +6215,11 @@
     "toughness": 2,
     "art-remarks": "",
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4685,8 +6244,16 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4704,8 +6271,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "06-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "26-07-2024",
         "creator": "Thys",
@@ -4728,8 +6303,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "14-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4747,8 +6330,16 @@
     "has_bleed_edge": true,
     "art-remarks": "A shot glass on a scroll or spellbook",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
@@ -4771,8 +6362,16 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "24-02-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "24-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "27-07-2024",
         "creator": "Thys",
@@ -4795,8 +6394,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "06-02-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "06-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4814,8 +6421,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "14-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "14-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4833,8 +6448,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4855,8 +6478,16 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4877,8 +6508,16 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4899,8 +6538,16 @@
     "watermark": "draft",
     "art-remarks": "",
     "notes": [
-      { "date": "12-01-2024", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -4918,7 +6565,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-12-2023", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -4946,14 +6597,26 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "New art and bleed edge"
       },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Added stamp"
+      }
     ],
     "tags": {}
   },
@@ -4971,14 +6634,26 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "New art, changed name to Magestone Portal"
       },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Added stamp"
+      }
     ],
     "tags": {}
   },
@@ -4996,14 +6671,26 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "New art and bleed edge"
       },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Added stamp"
+      }
     ],
     "tags": {}
   },
@@ -5021,14 +6708,26 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "New art and bleed edge and changed name to Skystone Portal"
       },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Added stamp"
+      }
     ],
     "tags": {}
   },
@@ -5046,14 +6745,26 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "New art and bleed edge"
       },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Added stamp" }
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Added stamp"
+      }
     ],
     "tags": {}
   },
@@ -5071,8 +6782,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "05-12-2023", "creator": "Sam", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -5090,7 +6809,11 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
       {
         "date": "14-07-2024",
         "creator": "Thys",
@@ -5173,14 +6896,26 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "13-11-2023", "creator": "Thys", "notes": "Posted card image" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "also, changed the new from brewing spire to Decoction tower, as i thought brewing spire was a really lame name lol. Decoction is the process of taking half of the mash and boiling it again before adding it back to the batch. It felt kind of like beer making eugenics which aligns with Yawgmoth and the phyrexians"
       },
-      { "date": "14-07-2024", "creator": "Sam", "notes": "Upshifted to Mythic" }
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Upshifted to Mythic"
+      }
     ],
     "tags": {}
   },
@@ -5198,8 +6933,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Card image posted"
+      }
     ],
     "tags": {}
   },
@@ -5217,8 +6960,16 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Card image posted"
+      }
     ],
     "tags": {}
   },
@@ -5236,9 +6987,21 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
-      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Cut to MTC"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Thys",
+        "notes": "Given image"
+      }
     ],
     "tags": {},
     "invisible": true
@@ -5257,8 +7020,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Card image posted"
+      }
     ],
     "tags": {}
   },
@@ -5276,9 +7047,21 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
-      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Cut to MTC"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Thys",
+        "notes": "Given image"
+      }
     ],
     "tags": {},
     "invisible": true
@@ -5297,8 +7080,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Card image posted"
+      }
     ],
     "tags": {}
   },
@@ -5316,9 +7107,21 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
-      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Cut to MTC"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Thys",
+        "notes": "Given image"
+      }
     ],
     "tags": {},
     "invisible": true
@@ -5337,9 +7140,21 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
-      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Cut to MTC"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Thys",
+        "notes": "Given image"
+      },
       {
         "date": "20-07-2024",
         "creator": "Thys",
@@ -5363,9 +7178,21 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "16-07-2024", "creator": "Thys", "notes": "Cut to MTC" },
-      { "date": "18-07-2024", "creator": "Thys", "notes": "Given image" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Cut to MTC"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Thys",
+        "notes": "Given image"
+      }
     ],
     "tags": {},
     "invisible": true
@@ -5384,8 +7211,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Card image posted" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Card image posted"
+      }
     ],
     "tags": {}
   },
@@ -5405,7 +7240,11 @@
     "toughness": 6,
     "art-remarks": "",
     "notes": [
-      { "date": "15-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
     ],
     "tags": {}
   },
@@ -5482,9 +7321,21 @@
     "toughness": 0,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Thys", "notes": "..." },
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Captain America" },
-      { "date": "19-08-2024", "creator": "Thys", "notes": "New render" }
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "..."
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Captain America"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "New render"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -5532,7 +7383,11 @@
     "toughness": 3,
     "art-remarks": "",
     "notes": [
-      { "date": "27-07-2024", "creator": "Thys", "notes": "Created alt image" }
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Created alt image"
+      }
     ],
     "tags": {}
   },
@@ -5561,31 +7416,6 @@
     "tags": {}
   },
   {
-    "name": "Pact Broker",
-    "set": "MTD",
-    "cn": 98,
-    "id": "B",
-    "cost": "{1}{B}",
-    "type": "Creature - Vampire Devil",
-    "text": "Whenever you accept a pact, ~ deals 1 damage to each opponent and you gain 1 life.",
-    "flavor": "The scourge of the weak.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/2PZ7bnA.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Created card" },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "change to you only gain 1 life"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Ending of Ages",
     "cost": "{W/B}{U/R}{B/G}{R/W}{G/U}",
     "type": "Enchantment - Saga",
@@ -5600,8 +7430,16 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Thys", "notes": "Mana cost created" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "Mana cost created"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
       {
         "date": "05-08-2024",
         "creator": "Thys",
@@ -5653,7 +7491,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      }
     ],
     "tags": {}
   },
@@ -5704,7 +7546,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "17-07-2024",
         "creator": "Sam",
@@ -5712,26 +7558,6 @@
       }
     ],
     "tags": {}
-  },
-  {
-    "name": "Edgar's Awakening",
-    "set": "MTD",
-    "cn": 95,
-    "id": "B",
-    "cost": "{3}{B}{B}",
-    "type": "Sorcery",
-    "text": "Return target creature card from your graveyard to the battlefield.\nWhen you discard ~, you may pay {B}. When you do, return target creature card from your graveyard to your hand.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/6JmMi55.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" }
-    ],
-    "tags": {
-      "function": ["recursion"]
-    }
   },
   {
     "name": "Dimir Aqueduct",
@@ -5747,7 +7573,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "18-08-2024",
         "creator": "Sam",
@@ -5770,7 +7600,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "18-08-2024",
         "creator": "Sam",
@@ -5793,7 +7627,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "18-08-2024",
         "creator": "Sam",
@@ -5816,7 +7654,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "18-08-2024",
         "creator": "Sam",
@@ -5839,31 +7681,16 @@
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Posted card image" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
       {
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Added correct rarity"
       }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Necromancer's Puppet",
-    "set": "MTD",
-    "cn": 102,
-    "id": "B",
-    "cost": "{2}{B}{B}",
-    "type": "Creature - Zombie",
-    "text": "Whenever ~ deals combat damage to a player, each player discards a card.",
-    "flavor": "Brought back to serve a purpose, kept around for entertainment.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/rC55WaC.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      { "date": "26-06-2024", "creator": "Thys", "notes": "Posted card idea" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Posted card image" }
     ],
     "tags": {}
   },
@@ -5881,7 +7708,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "26-06-2024", "creator": "Thys", "notes": "Posted card idea" },
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Posted card idea"
+      },
       {
         "date": "18-07-2024",
         "creator": "Sam",
@@ -5891,29 +7722,6 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Vibe Check",
-    "set": "MTD",
-    "cn": 120,
-    "id": "B",
-    "cost": "{1}{B}",
-    "type": "Instant",
-    "text": "Destroy target non-alcoholic creature.",
-    "flavor": "You did not pass, it is now time to face the flames, goodbye.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/NHemTM6.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      { "date": "26-06-2024", "creator": "Thys", "notes": "Posted card idea" },
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "Posted card image and chose name"
       }
     ],
     "tags": {}
@@ -5981,8 +7789,16 @@
     "has_bleed_edge": true,
     "art-remarks": "Bookshelves/library feel",
     "notes": [
-      { "date": "18-07-2024", "creator": "Thys", "notes": "Posted card idea" },
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Generated art" }
+      {
+        "date": "18-07-2024",
+        "creator": "Thys",
+        "notes": "Posted card idea"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Generated art"
+      }
     ],
     "tags": {}
   },
@@ -6024,7 +7840,11 @@
     "has_bleed_edge": true,
     "id": "U",
     "notes": [
-      { "date": "18-07-2024", "creator": "Sam", "notes": "Suggested card" },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
       {
         "date": "17-08-2024",
         "creator": "Thys",
@@ -6092,7 +7912,11 @@
         "creator": "Thys",
         "notes": "Decided to cut to MTC"
       },
-      { "date": "20-07-2024", "creator": "Thys", "notes": "Art is misaligned" }
+      {
+        "date": "20-07-2024",
+        "creator": "Thys",
+        "notes": "Art is misaligned"
+      }
     ],
     "tags": {}
   },
@@ -6124,45 +7948,6 @@
       }
     ],
     "tags": {}
-  },
-  {
-    "name": "Rotting Rats",
-    "cost": "{1}{B}",
-    "type": "Creature - Zombie Rat",
-    "text": "When ~ enters, each player discards a card.\nUnearth {1}{B}",
-    "flavor": "",
-    "rarity": "C",
-    "power": 1,
-    "toughness": 1,
-    "cn": 108,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/Fn04nDg.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "i think we should add it tbh"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "definitely should have reminder if we choose to add it"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Sam",
-        "notes": "New render with new art"
-      },
-      { "date": "21-08-2024", "creator": "Sam", "notes": "Fixed art framing" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
   },
   {
     "name": "Starfall Roc",
@@ -6214,14 +7999,26 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Suggested card" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "22-07-2024",
         "creator": "Thys",
         "notes": "Art 2 for Devourer of Memory"
       },
-      { "date": "29-07-2024", "creator": "Thys", "notes": "Moved to MTC" }
+      {
+        "date": "29-07-2024",
+        "creator": "Thys",
+        "notes": "Moved to MTC"
+      }
     ],
     "tags": {}
   },
@@ -6241,38 +8038,25 @@
     "toughness": 1,
     "art-remarks": "",
     "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Suggested card" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
       {
         "date": "22-07-2024",
         "creator": "Thys",
         "notes": "Art 1 for Devourer of Memory"
       },
-      { "date": "29-07-2024", "creator": "Thys", "notes": "Moved to MTC" }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Bloodgift Demon",
-    "set": "MTD",
-    "cn": 88,
-    "id": "B",
-    "cost": "{3}{B}{B}",
-    "type": "Creature — Demon",
-    "text": "Flying\nAt the beginning of your upkeep, target player draws a card and loses 1 life.",
-    "flavor": "Whenever the eternal party reaches the surface, it makes itself known.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/apRf0PG.png",
-    "has_bleed_edge": true,
-    "power": 5,
-    "toughness": 4,
-    "art-remarks": "",
-    "notes": [
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Suggested card" },
       {
-        "date": "22-07-2024",
+        "date": "29-07-2024",
         "creator": "Thys",
-        "notes": "Created json blob // needs a stamp :)"
+        "notes": "Moved to MTC"
       }
     ],
     "tags": {}
@@ -6295,45 +8079,6 @@
         "date": "26-07-2024",
         "creator": "Thys",
         "notes": "Added card json from backpacking trip"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Hypnostatic Architect",
-    "set": "MTD",
-    "cn": 103,
-    "id": "UB",
-    "cost": "{1}{B}{B}",
-    "type": "Creature - Nightmare Wizard",
-    "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card. Activate only as sorcery.",
-    "flavor": "Your mind is an Escher painting and I am an artist.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/pOvMqfz.png",
-    "has_bleed_edge": true,
-    "power": 3,
-    "toughness": 5,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip // this card is kinda rediculous at 3 mana why is it a 3/5"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added art and name and flavor"
-      },
-      {
-        "date": "30-07-2024",
-        "creator": "Kenneth",
-        "notes": "Suggested changing to 2/3 and making first ability 'This creature gains flying and “Whenever this creature deals combat damage to a player, you draw a card” until end of turn.'"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Added 'activate only sorc' to the discard half"
       }
     ],
     "tags": {}
@@ -6522,7 +8267,11 @@
         "creator": "Thys",
         "notes": "Downshifted to uncommon, changed from getting 2 lands on you control to whenever a land is hit (changed it to dire-strain rampage wording without flashback)"
       },
-      { "date": "29-07-2024", "creator": "Sam", "notes": "Given name and art" }
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Given name and art"
+      }
     ],
     "tags": {}
   },
@@ -6601,7 +8350,11 @@
         "creator": "Thys",
         "notes": "Looking for vandalize and found this"
       },
-      { "date": "29-07-2024", "creator": "Sam", "notes": "Vetoed to MTC" }
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Vetoed to MTC"
+      }
     ],
     "tags": {},
     "invisible": true
@@ -6654,7 +8407,11 @@
         "creator": "Thys",
         "notes": "The turtle mythic itself. All names need to be reduced to name without title"
       },
-      { "date": "29-07-2024", "creator": "Sam", "notes": "Added art" }
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
     ],
     "tags": {}
   },
@@ -6672,7 +8429,11 @@
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
-      { "date": "29-07-2024", "creator": "Thys", "notes": "Added idea to MTX" },
+      {
+        "date": "29-07-2024",
+        "creator": "Thys",
+        "notes": "Added idea to MTX"
+      },
       {
         "date": "21-08-2024",
         "creator": "Sam",
@@ -6712,7 +8473,11 @@
         "creator": "Sam",
         "notes": "i think 3 mana is an appropriate casting cost tbh // maybe 4? // Drukar, Titan of Mind's Desire or Nepenthe, Titan of Mind's Desire // Nepenthe in greek more or less means a drug of forgetfulness // Then Helen, daughter of Zeus, took other counsel. Straightway she cast into the wine of which they were drinking a drug to quiet all pain and strife, and bring forgetfulness of every ill. // Drukar (no meaning, my own creation), Nepenthe (used to make people forget), Dolus (latin for deceit)"
       },
-      { "date": "31-07-2024", "creator": "Sam", "notes": "Added art, name" },
+      {
+        "date": "31-07-2024",
+        "creator": "Sam",
+        "notes": "Added art, name"
+      },
       {
         "date": "31-07-2024",
         "creator": "Thys",
@@ -6722,49 +8487,6 @@
         "date": "16-09-2024",
         "creator": "Sam",
         "notes": "Fixed wording on render"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Fleshweaver Savant",
-    "cost": "{2}{B}",
-    "type": "Creature - Human Spellshaper",
-    "text": "{4}{B}, {T}, Discard a card: Put target creature card from a graveyard onto the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
-    "flavor": "",
-    "power": 2,
-    "toughness": 3,
-    "rarity": "U",
-    "cn": 96,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/8jIgaO1.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Came up with name to be used with another card"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Created card from the name"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Removed the wizard subtype because none of the other spellshapers are wizards"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "New render with new art"
       }
     ],
     "tags": {
@@ -6799,47 +8521,6 @@
     "tags": {}
   },
   {
-    "name": "Lich's Conquest",
-    "cost": "{2}{B}{B}",
-    "type": "Sorcery",
-    "text": "As an additional cost to cast ~, discard X cards.\nReturn X target creature cards from graveyards to the battlefield under your control.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 101,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/v9a5Dsf.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Created card concept"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Sam",
-        "notes": "Yesssss // Fuck yes"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Balance changes or just put 1/8th on it and ship it?"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Sam",
-        "notes": "I'll put flavor text on it // But yeah ship it"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
-  },
-  {
     "name": "Frantic Search",
     "cost": "{2}{U}",
     "type": "Instant",
@@ -6863,7 +8544,11 @@
         "creator": "Thys",
         "notes": "Added to MTD because it's in the spreadsheet"
       },
-      { "date": "16-08-2024", "creator": "Sam", "notes": "Made new art" }
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Made new art"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -6919,9 +8604,21 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "09-07-2024", "creator": "Thys", "notes": "Suggested card" },
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
-      { "date": "22-07-2024", "creator": "Thys", "notes": "Created card stub" },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
       {
         "date": "13-08-2024",
         "creator": "Sam",
@@ -6953,7 +8650,11 @@
     "id": "C",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-08-2024", "creator": "Sam", "notes": "Added render" }
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Added render"
+      }
     ],
     "tags": {}
   },
@@ -6971,7 +8672,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-08-2024", "creator": "Thys", "notes": "Added card to MTX" },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added card to MTX"
+      },
       {
         "date": "18-08-2024",
         "creator": "Thys",
@@ -6997,7 +8702,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-08-2024", "creator": "Thys", "notes": "Added card to MTX" },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added card to MTX"
+      },
       {
         "date": "16-08-2024",
         "creator": "Sam",
@@ -7080,7 +8789,11 @@
     "id": "G",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "16-08-2024", "creator": "Sam", "notes": "Created card" }
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
     ],
     "tags": {
       "function": ["recursion"],
@@ -7102,8 +8815,16 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "16-08-2024", "creator": "Thys", "notes": "Found card" },
-      { "date": "16-08-2024", "creator": "Sam", "notes": "Given art" }
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Found card"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Given art"
+      }
     ],
     "tags": {
       "function": ["removal"],
@@ -7125,8 +8846,16 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-08-2024", "creator": "Sam", "notes": "Suggested card" },
-      { "date": "16-08-2024", "creator": "Sam", "notes": "Given art" }
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Given art"
+      }
     ],
     "tags": {
       "function": [],
@@ -7158,7 +8887,11 @@
         "creator": "Thys",
         "notes": "Suggested Clear the Mind as a different option"
       },
-      { "date": "17-07-2024", "creator": "Sam", "notes": "Added art" }
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
     ],
     "tags": {
       "function": [],
@@ -7208,7 +8941,11 @@
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-08-2024", "creator": "Sam", "notes": "Suggested card" },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
       {
         "date": "18-08-2024",
         "creator": "Sam",
@@ -7224,88 +8961,6 @@
       "frame": "normal",
       "function": [],
       "reprint": true
-    }
-  },
-  {
-    "name": "Grisly Ritual",
-    "cost": "{5}{B}",
-    "type": "Sorcery",
-    "text": "Destroy target creature or planeswalker. Create two Blood tokens.",
-    "flavor": "“See what's left of you in Hell.”",
-    "rarity": "C",
-    "cn": 96,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/x9MaEwe.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added render and art"
-      }
-    ],
-    "tags": {
-      "function": ["removal"],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Gluttonous Guest",
-    "cost": "{2}{B}",
-    "type": "Creature - Vampire",
-    "text": "When ~ enters, create a Blood token.\nWhenever you sacrifice a Blood token, you gain 1 life.",
-    "flavor": "“Darling, it's 5 o'clock somewhere.”",
-    "power": 1,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 98,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/L7hClND.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added render and art"
-      }
-    ],
-    "tags": {
-      "function": [],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Bloodcrazed Socialite",
-    "cost": "{3}{B}",
-    "type": "Creature - Vampire",
-    "text": "Menace\nWhen ~ enters, create a Blood token.\nWhenever ~ attacks, you may sacrifice a Blood token. If you do, it gets +2/+2 until end of turn.",
-    "flavor": "",
-    "power": 3,
-    "toughness": 3,
-    "rarity": "C",
-    "cn": 87,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/QZffwcE.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added render and art"
-      }
-    ],
-    "tags": {
-      "function": [],
-      "reprint": true,
-      "frame": "normal"
     }
   },
   {
@@ -7337,201 +8992,6 @@
     }
   },
   {
-    "name": "Tess, Necromancer Prodigy",
-    "cost": "{2}{B}",
-    "type": "Legendary Creature - Human Wizard",
-    "text": "Lifelink\nWard{-}Pay 3 life.\nWhenever you cast an instant or sorcery spell, create a 1/1 black Zombie Wizard creature token.",
-    "flavor": "",
-    "power": 3,
-    "toughness": 2,
-    "rarity": "R",
-    "cn": 110,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/lqAEDcf.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Wanted Sedgemoor Witch to be a wizard so we created a legendary creature that does a similar thing"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Quickblade Devilkin",
-    "cost": "{1}{B}",
-    "type": "Creature - Devil Assassin",
-    "text": "Deathtouch\nMadness {1}{B}",
-    "flavor": "An unshakable malice.",
-    "power": 1,
-    "toughness": 1,
-    "rarity": "C",
-    "cn": 108,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/8GudArw.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Hell Boon",
-    "cost": "{B}",
-    "type": "Instant",
-    "text": "Pact\nTarget creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 99,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/O9ecPa7.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Costly Search",
-    "cost": "{B}",
-    "type": "Instant",
-    "text": "You draw a card and you lose 1 life.\nMadness {B}",
-    "flavor": "The question strained his sanity. The answer snapped it in half.",
-    "rarity": "C",
-    "cn": 89,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/UTHy01Y.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Grave Scrabbler",
-    "cost": "{3}{B}",
-    "type": "Creature - Zombie",
-    "text": "Madness {1}{B}\nWhen ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
-    "flavor": "There will always be a seeker.",
-    "rarity": "C",
-    "cn": 99,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/THYDcDR.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Remnant Hulk",
-    "cost": "{6}{B}",
-    "type": "Creature - Zombie Giant",
-    "text": "When ~ enters, it deals 1 damage to target opponent for each instant and sorcery card in your graveyard.\nSwampcycling {2}",
-    "flavor": "Born of an ancient war, held together by a single minded will to live.",
-    "power": 4,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 112,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/O6U3irg.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      },
-      {
-        "date": "23-08-2024",
-        "creator": "Sam",
-        "notes": "Added swampcycling, removed p/t, new render"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "First-Sphere Gargantua",
-    "cost": "{4}{B}{B}",
-    "type": "Creature - Phyrexian Horror",
-    "text": "When ~ enters, you draw a card and you lose 1 life.\nUnearth {2}{B}",
-    "flavor": "",
-    "power": 5,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 96,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/koAwRKB.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
     "name": "Key to the City",
     "cost": "{2}",
     "type": "Artifact",
@@ -7558,52 +9018,6 @@
     }
   },
   {
-    "name": "Dark Visions",
-    "cost": "{1}{B}{B}",
-    "type": "Sorcery",
-    "text": "Pact\nYou draw two cards and you lose 2 life.\nIf you accepted ~' pact, each player discards a card.",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 122,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/s53nccQ.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      { "date": "15-09-2024", "creator": "Thys", "notes": "Created card" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["draw"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Forgotten Nemesis",
-    "cost": "{B}",
-    "type": "Creature - Zombie Wizard",
-    "text": "~ can't block.\n{1}{B}: Return ~ from your graveyard to the battlefield. Activate only if you've discarded a nonland card this turn.",
-    "flavor": "Death rarely stops hatred.",
-    "power": 2,
-    "toughness": 1,
-    "rarity": "U",
-    "cn": 98,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/qaHWtCl.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      { "date": "15-09-2024", "creator": "Sam", "notes": "Created card" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
     "name": "Tactical Retreat",
     "cost": "{2}{R}",
     "type": "Sorcery",
@@ -7617,7 +9031,11 @@
     "id": "R",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "16-09-2024", "creator": "Thys", "notes": "Created card" },
+      {
+        "date": "16-09-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      },
       {
         "date": "16-09-2024",
         "creator": "Sam",
@@ -7644,7 +9062,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+      {
+        "date": "06-10-2024",
+        "creator": "Thys",
+        "notes": "Created render"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -7722,7 +9144,11 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+      {
+        "date": "06-10-2024",
+        "creator": "Thys",
+        "notes": "Created render"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -7744,7 +9170,11 @@
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+      {
+        "date": "06-10-2024",
+        "creator": "Thys",
+        "notes": "Created render"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -7766,7 +9196,11 @@
     "id": "W",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+      {
+        "date": "06-10-2024",
+        "creator": "Thys",
+        "notes": "Created render"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -7788,7 +9222,11 @@
     "id": "C",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+      {
+        "date": "06-10-2024",
+        "creator": "Thys",
+        "notes": "Created render"
+      }
     ],
     "tags": {
       "frame": "normal",
@@ -7810,102 +9248,16 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "06-10-2024", "creator": "Thys", "notes": "Created render" }
+      {
+        "date": "06-10-2024",
+        "creator": "Thys",
+        "notes": "Created render"
+      }
     ],
     "tags": {
       "frame": "normal",
       "function": [],
       "reprint": true
-    }
-  },
-  {
-    "name": "Graciouss Hostess",
-    "cost": "{2}{B}",
-    "type": "Creature - Vampire Wizard",
-    "text": "Discard a card: ~ gets +1/+1 until end of turn.",
-    "flavor": "“Come in! I found plenty of food for everyone.”{lns}{-}Circe, Vampire Hemomancer",
-    "power": 3,
-    "toughness": 3,
-    "rarity": "C",
-    "cn": 101,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/zhfVFMR.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["discard-outlet"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Cursed Lightning",
-    "cost": "{3}{R}",
-    "type": "Sorcery",
-    "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~’s pact, draw a card.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 101,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/4mWNr78.png",
-    "id": "R",
-    "has_bleed_edge": true,
-    "notes": [
-      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["Removal"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Watchful Flittermouse",
-    "cost": "{3}{B}",
-    "type": "Creature - Bat",
-    "text": "Flying, haste{\n}Madness {1}{{B}",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 126,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/m478NXo.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Bite of the Black Rose",
-    "cost": "{3}{B}",
-    "type": "Sorcery",
-    "text": "{i}Will of the Council{/i}{-}Starting with you, each player votes for sickness or psychosis. If sickness gets more votes, creatures your opponents control get -2/-2 until end of turn. If psychosis gets more votes or the vote is tied, each opponent discards two cards.",
-    "flavor": "",
-    "rarity": "U",
-    "cn": 86,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/jOyCMfG.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
     }
   }
 ]
