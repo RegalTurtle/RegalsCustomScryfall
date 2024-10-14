@@ -1,14 +1,15 @@
 {
   "name": "regalscustomscryfall",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0"
   },
   "description": "A Scryfall-like interface for RegalTurtle's custom or proxy cards",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

@@ -19,11 +19,11 @@ app.get('/', async (req, res) => {
   res.sendFile(path.join(__dirname, 'client/index.html'));
 });
 
-app.get('/card/*', async (req, res) => {
+app.get('/card/*', async (req, res) => { /**/
   res.sendFile(path.join(__dirname, 'client/card.html'));
 });
 
-app.get('/search/*', async (req, res) => {
+app.get('/search/*', async (req, res) => { /**/
   res.sendFile(path.join(__dirname, 'client/search.html'));
 });
 
