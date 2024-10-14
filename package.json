@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/RegalTurtle24/RegalsCustomScryfall/issues"
   },
-  "homepage": "https://github.com/RegalTurtle24/RegalsCustomScryfall#readme"
+  "homepage": "https://github.com/RegalTurtle24/RegalsCustomScryfall#readme",
+  "type": "module"
 }
