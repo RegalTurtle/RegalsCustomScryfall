@@ -9266,6 +9266,8 @@
     "type": "Enchantment Creature — Zombie",
     "text": "Constellation — Whenever ~ or another enchantment you control enters, exile target player's graveyard.",
     "flavor": "Erebos's minions hunt the Returned and warn those who consider the same folly.",
+    "power": 2,
+    "toughness": 2,
     "rarity": "U",
     "cn": 59,
     "set": "JOU",
