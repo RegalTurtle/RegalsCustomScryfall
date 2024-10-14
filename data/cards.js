@@ -29,8 +29,17 @@ const exportedMethods = {
     validation.checkTags(tags);
   },
   async getCardByName(name) {
-  }
+    name = validation.checkName(name);
+    const cardCollection = await cards();
+    const matchCards = await cardCollection.find({name: name}).toArray();
+    return matchCards;
+  },
   async getCardByCN(set, cn) {
+    set = validation.checkSet(set);
+    cn = validation.checkCn(cn);
+    const cardCollection = await cards();
+    const matchCards = await cardCollection.find({set: set, cn: cn}).toArray();
+    return matchCards;
   },
   async getCardByCNStr(setcn) {
   },

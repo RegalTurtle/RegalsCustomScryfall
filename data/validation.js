@@ -18,7 +18,7 @@ const checkStrLoose = (str, type) => {
 
 const checkObj = (obj, type) => {
   if (!obj) throw new Error(`Error: ${type} must exist`);
-  if (typeof obj !== "object) throw new Error(`Error: ${type} must be an object`);
+  if (typeof obj !== "object") throw new Error(`Error: ${type} must be an object`);
 }
 
 const exportedMethods = {

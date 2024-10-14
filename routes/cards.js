@@ -8,7 +8,7 @@ router
   .get(async (req, res) => {
     try {
       const cardList = await cardData.getAllCards();
-      return res.json(postList);
+      return res.json(cardList);
     } catch (e) {
       return res.status(500).send(e);
     }
