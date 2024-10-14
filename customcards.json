@@ -2570,21 +2570,26 @@
   },
   {
     "name": "Vicious Rumors",
-    "set": "MTD",
-    "cn": 121,
-    "id": "B",
     "cost": "{B}",
     "type": "Sorcery",
     "text": "~ deals 1 damage to each opponent. Each opponent discards a card, then mills a card. You gain 1 life.",
     "flavor": "A dark mockery of the soul.",
-    "rarity": "C",
+    "rarity": "U",
+    "cn": 122,
+    "set": "MTD",
+    "artist": "Microsoft Copilot",
+    "id": "B",
     "img": "https://i.imgur.com/6mAOODh.png",
     "has_bleed_edge": false,
-    "art-remarks": "",
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" }
+      { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
+      { "date": "14-10-2024", "creator": "Thys", "notes": "Update rarity to U" }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   },
   {
     "name": "Dead Weight",
