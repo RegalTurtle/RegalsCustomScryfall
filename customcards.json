@@ -7885,5 +7885,27 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Bite of the Black Rose",
+    "cost": "{3}{B}",
+    "type": "Sorcery",
+    "text": "{i}Will of the Council{/i}{-}Starting with you, each player votes for sickness or psychosis. If sickness gets more votes, creatures your opponents control get -2/-2 until end of turn. If psychosis gets more votes or the vote is tied, each opponent discards two cards.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 86,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/undefined.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      { "date": "14-10-2024", "creator": "Sam", "notes": "Created card" }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
