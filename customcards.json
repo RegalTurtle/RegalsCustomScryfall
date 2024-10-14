@@ -32,7 +32,7 @@
     "name": "Bite of the Black Rose",
     "cost": "{3}{B}",
     "type": "Sorcery",
-    "text": "{i}Will of the Council{/i}{-}Starting with you, each player votes for sickness or psychosis. If sickness gets more votes, creatures your opponents control get -2/-2 until end of turn. If psychosis gets more votes or the vote is tied, each opponent discards two cards.",
+    "text": "Will of the Council{-}Starting with you, each player votes for sickness or psychosis. If sickness gets more votes, creatures your opponents control get -2/-2 until end of turn. If psychosis gets more votes or the vote is tied, each opponent discards two cards.",
     "flavor": "",
     "rarity": "U",
     "cn": 86,
@@ -1237,7 +1237,7 @@
     "name": "Watchful Flittermouse",
     "cost": "{3}{B}",
     "type": "Creature - Bat",
-    "text": "Flying, haste{\n}Madness {1}{{B}",
+    "text": "Flying, haste\nMadness {1}{B}",
     "flavor": "",
     "power": 2,
     "toughness": 2,
@@ -9257,6 +9257,37 @@
     "tags": {
       "frame": "normal",
       "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Agent of Erebos",
+    "cost": "{3}{B}",
+    "type": "Enchantment Creature — Zombie",
+    "text": "Constellation — Whenever ~ or another enchantment you control enters, exile target player's graveyard.",
+    "flavor": "Erebos's minions hunt the Returned and warn those who consider the same folly.",
+    "rarity": "U",
+    "cn": 59,
+    "set": "JOU",
+    "artist": "Cyril Van Der Haegen",
+    "img": "https://i.imgur.com/PikILCL.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Created render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "constellation",
+        "namesake-spell",
+        "sweeper-graveyard",
+        "synergy-enchantment"
+      ],
       "reprint": true
     }
   }
