@@ -1882,7 +1882,7 @@
     "text": "Whenever you take a shot, draw a card, then discard a card.",
     "flavor": "Wizards are known for their curiously strong brews. Never the traditionalist, their brews are at the forefront of innovation.",
     "rarity": "U",
-    "cn": 54,
+    "cn": 53,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/rx3LqfO.png",
@@ -1892,7 +1892,8 @@
       { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed draw to be looting instead, tbd change name and art" },
       { "date": "14-07-2024", "creator": "Sam", "notes": "Changed mana cost from 2U to 3U, changed art, and changed name from Pirate's Grog to Crackpot Moonshine, changed flavor text" },
       { "date": "17-08-2024", "creator": "Thys", "notes": "New render with correct CN" },
-      { "date": "17-08-2024", "creator": "Thys", "notes": "New render with Nyx border" }
+      { "date": "17-08-2024", "creator": "Thys", "notes": "New render with Nyx border" },
+      { "date": "14-10-2024", "creator": "Sam", "notes": "New CN, New render with correct CN" }
     ],
     "tags": {
       "reprint": false,
@@ -2161,7 +2162,7 @@
     "power": 4,
     "toughness": 5,
     "rarity": "U",
-    "cn": 55,
+    "cn": 54,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/kZqPLpu.png",
@@ -2172,7 +2173,8 @@
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
       { "date": "18-07-2024", "creator": "Sam", "notes": "Added flying" },
       { "date": "18-07-2024", "creator": "Sam", "notes": "Given image" },
-      { "date": "17-08-2024", "creator": "Thys", "notes": "New render with correct CN" }
+      { "date": "17-08-2024", "creator": "Thys", "notes": "New render with correct CN" },
+      { "date": "14-10-2024", "creator": "Sam", "notes": "New CN, New render with correct CN" }
     ],
     "tags": {
       "frame": "normal",
