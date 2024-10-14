@@ -2465,11 +2465,31 @@
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
-      { "date": "14-07-2024", "creator": "Thys", "notes": "Added to json, changed draw to be looting instead, tbd change name and art" },
-      { "date": "14-07-2024", "creator": "Sam", "notes": "Changed mana cost from 2U to 3U, changed art, and changed name from Pirate's Grog to Crackpot Moonshine, changed flavor text" },
-      { "date": "17-08-2024", "creator": "Thys", "notes": "New render with correct CN" },
-      { "date": "17-08-2024", "creator": "Thys", "notes": "New render with Nyx border" },
-      { "date": "14-10-2024", "creator": "Sam", "notes": "New CN, New render with correct CN" }
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed draw to be looting instead, tbd change name and art"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed mana cost from 2U to 3U, changed art, and changed name from Pirate's Grog to Crackpot Moonshine, changed flavor text"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with Nyx border"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "New CN, New render with correct CN"
+      }
     ],
     "tags": {
       "reprint": false,
@@ -2819,8 +2839,16 @@
       { "date": "14-07-2024", "creator": "Thys", "notes": "Created json blob" },
       { "date": "18-07-2024", "creator": "Sam", "notes": "Added flying" },
       { "date": "18-07-2024", "creator": "Sam", "notes": "Given image" },
-      { "date": "17-08-2024", "creator": "Thys", "notes": "New render with correct CN" },
-      { "date": "14-10-2024", "creator": "Sam", "notes": "New CN, New render with correct CN" }
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "New CN, New render with correct CN"
+      }
     ],
     "tags": {
       "frame": "normal",
