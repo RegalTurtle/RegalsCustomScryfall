@@ -616,10 +616,10 @@
     "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card. Activate only as sorcery.",
     "flavor": "Your mind is an Escher painting and I am an artist.",
     "rarity": "R",
-    "img": "https://i.imgur.com/pOvMqfz.png",
+    "img": "https://i.imgur.com/BK6qaB3.png",
     "has_bleed_edge": true,
-    "power": 3,
-    "toughness": 5,
+    "power": 2,
+    "toughness": 4,
     "art-remarks": "",
     "notes": [
       {
@@ -641,6 +641,11 @@
         "date": "31-07-2024",
         "creator": "Thys",
         "notes": "Added 'activate only sorc' to the discard half"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "3/5 to 2/4"
       }
     ],
     "tags": {}
@@ -655,7 +660,7 @@
     "cn": 106,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/f0YTPlV.png",
+    "img": "https://i.imgur.com/KysDdt0.png",
     "id": "B",
     "has_bleed_edge": false,
     "art-remarks": "",
