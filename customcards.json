@@ -7,13 +7,13 @@
     "cost": "{2}{B}",
     "type": "Creature - Human Rogue",
     "text": "Whenever ~ attacks, you draw a card and you lose 1 life.",
-    "flavor": "\"Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.\"",
+    "flavor": "“Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.”",
+    "artist": "Microsoft Copilot",
     "rarity": "C",
-    "img": "https://i.imgur.com/YP6Ux23.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/idxnbj0.png",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "21-01-2024",
@@ -24,9 +24,24 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob, changed flavor from alley ways to alleyways"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "attack trigger",
+        "life payment",
+        "repeatable draw",
+        "synergy-attacker-self",
+        "card-advantage",
+        "draw"
+      ]
+    }
   },
   {
     "name": "Bite of the Black Rose",
@@ -1485,6 +1500,11 @@
         "date": "31-07-2024",
         "creator": "Thys",
         "notes": "Fixed name on Clairmont, updated flavor in the json"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped"
       }
     ],
     "tags": {
@@ -1664,7 +1684,7 @@
     "name": "Reformed Priest",
     "cost": "{2}{W}",
     "type": "Creature - Elf Noble",
-    "text": "Remove a beer counter from a permanent you control: You gain 2 life.",
+    "text": "Remove a beer counter from ~: You gain 2 life.",
     "flavor": "Purity through sobriety, a crime to all elven culture.",
     "power": 1,
     "toughness": 2,
@@ -1680,6 +1700,11 @@
         "date": "13-08-2024",
         "creator": "Thys",
         "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Changed from remove a beer counter from any permanent to just itself"
       }
     ],
     "tags": {
