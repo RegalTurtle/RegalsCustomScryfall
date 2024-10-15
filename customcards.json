@@ -9751,5 +9751,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Dark-Stout Oracle",
+    "cost": "{1}{R}",
+    "type": "Creature - Goblin Alcoholic",
+    "text": "{1}, Remove a beer counter from a permanent you control: Exile the top card of your library. You may play that card this turn.",
+    "flavor": "\"Come child, sit, and take a sip of your destiny.\"",
+    "rarity": "U",
+    "cn": 135,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/fWGlFvs.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
