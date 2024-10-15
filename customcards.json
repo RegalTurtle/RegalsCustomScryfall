@@ -9725,5 +9725,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Brewery Hellkite",
+    "cost": "{3}{R}{R}",
+    "type": "Creature - Dragon",
+    "text": "Flying\n~ enters with two beer counters.\nRemove a beer counter from ~: ~ gets +1/+0 until end of turn.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 131,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Q0YwlQr.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
