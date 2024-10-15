@@ -853,9 +853,10 @@
     "cost": "{3}{B}",
     "type": "Enchantment",
     "text": "If you would take a shot, you may discard a card instead.",
-    "flavor": "",
+    "flavor": "Once the burial place of all the great kings, after the lengthening of shadows, it was no longer safe to return to those ancient of places.",
+    "artist": "Microsoft Copilot",
     "rarity": "U",
-    "img": "https://i.imgur.com/u5G8NvE.png",
+    "img": "https://i.imgur.com/I4SPmQW.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
@@ -867,10 +868,19 @@
       {
         "date": "23-08-2024",
         "creator": "Sam",
-        "notes": "Changed card name"
+        "notes": "Changed card name from Forgotten Barrows to Lonely Crypt"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Updated frame, added bleed, cn"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   },
   {
     "name": "Necromancer's Puppet",
