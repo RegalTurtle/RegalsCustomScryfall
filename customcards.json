@@ -9777,5 +9777,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Veteran Huntsman",
+    "cost": "{G}{G}",
+    "type": "Creature - Elf",
+    "text": "",
+    "flavor": "\"I have been on many hunts, I have felled many a beast, but lately, it is I who have felt hunted. The woods aren't what they used to be, something has been let loose and it is finally making itself known.\"",
+    "rarity": "C",
+    "cn": 169,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/bbTfYvG.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
