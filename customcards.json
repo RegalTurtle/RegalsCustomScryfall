@@ -1509,10 +1509,17 @@
     "type": "Creature - Vampire",
     "text": "When ~ enters, it deals 1 damage to each opponent. Create a Blood token.",
     "rarity": "C",
-    "img": "https://i.imgur.com/L3iQOS0.png",
+    "img": "https://i.imgur.com/4YOjdWi.png",
     "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "New Art"
+      }
+    ],
     "tags": {}
   },
   {
