@@ -9699,5 +9699,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Feldon and Jaxis",
+    "cost": "{1}{R}{R}",
+    "type": "Legendary Creature - Human",
+    "text": "{r},{t}, Discard a card, Exile a creature card from your graveyard: Create a token that’s a copy of the exiled card, except it’s an artifact in addition to its other types. It gains haste and “When this creature dies, draw a card.” Sacrifice it at the beginning of the next end step. ",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 127,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Om46C6T.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
