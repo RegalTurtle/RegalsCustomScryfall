@@ -1234,6 +1234,7 @@
         "creator": "Sam",
         "notes": "Added draft matters stuff to card"
       },
+      { "date": "14-10-2024", "creator": "Sam", "notes": "PIPE BOMB" },
       {
         "date": "15-10-2024",
         "creator": "Thys",
@@ -9569,6 +9570,11 @@
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Thys",
+        "notes": "What in the WOTC card design is this????"
       }
     ],
     "tags": {
