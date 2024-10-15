@@ -9647,5 +9647,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Dubious Brewer",
+    "cost": "{R}",
+    "type": "Creature - Shapeshifter",
+    "text": "Changeling\nSacrifice a creature: Put a beer counter on target permanent you control.",
+    "flavor": "Would you trust him... it?",
+    "rarity": "C",
+    "cn": 127,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/L4rpGIo.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
