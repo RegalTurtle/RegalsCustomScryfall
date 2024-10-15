@@ -161,8 +161,9 @@
     "type": "Instant",
     "text": "As an additional cost to cast this spell, discard a card or take a shot.\nDestroy target creature or planeswalker.",
     "flavor": "Do not challenge what you cannot even begin to comprehend.",
+    "artist": "Midjourney",
     "rarity": "U",
-    "img": "https://i.imgur.com/p615sLq.png",
+    "img": "https://i.imgur.com/YsLwU4f.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
@@ -225,9 +226,18 @@
         "date": "15-07-2024",
         "creator": "Sam",
         "notes": "UH HUH // i cooooked"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "New render, removed planeswalker"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": ["removal", "discard-outlet"],
+      "reprint": false
+    }
   },
   {
     "name": "Dark Cocktail",
@@ -1135,11 +1145,11 @@
   },
   {
     "name": "Typhoid Devil",
-    "set": "MTD",
+    "set": "MTC",
     "cn": 121,
     "id": "B",
     "cost": "{1}{B}{B}",
-    "type": "Creature - Rat Devil",
+    "type": "Creature - Devil Rat",
     "text": "Pact\nDeathtouch\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to target creature.",
     "flavor": "",
     "rarity": "U",
@@ -1158,6 +1168,11 @@
         "date": "23-08-2024",
         "creator": "Sam",
         "notes": "Cut to MTC"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Updated typeline from Rat Devil to Devil Rat // Actually moved it to MTC"
       }
     ],
     "tags": {}
