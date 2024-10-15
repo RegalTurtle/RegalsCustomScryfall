@@ -9673,5 +9673,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Banner of Assimilation",
+    "cost": "{3}",
+    "type": "Artifact",
+    "text": "Equipped creature gets +1/+1.\nCreatures that share a creature type with equipped creature also get +1/+1.\nEquip {2}",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 127,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/LrQSqdz.png",
+    "id": "A",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
