@@ -9621,5 +9621,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Effigy of Flame",
+    "cost": "{2}{R}",
+    "type": "Creature - Spirit",
+    "text": "",
+    "flavor": "Summoning demons is not so easy as one might assume, you might attract something much more aggressive and volatile.",
+    "rarity": "C",
+    "cn": 127,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/ewxaDEY.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
