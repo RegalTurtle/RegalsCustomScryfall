@@ -9810,10 +9810,37 @@
     "type": "Artifact - Equipment",
     "text": "Equipped creature gets +0/+2 and gains \"Whenever this creature blocks a creature, put a beer counter on a permanent you control.\"\n{G}{G}{G}{G}{G}, Remove six beer counters from among permanents you control: Set your life total to 20 and untap all permanents you control. Activate only once.\nEquip {G}{G}",
     "flavor": "",
+    "rarity": "R",
     "cn": 169,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/hufO0Ez.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Wall of Trees",
+    "cost": "{2}{G}{G}",
+    "type": "Creature - Plant Wall",
+    "text": "Defender, reach\n~ can block one additional creature each combat for each beer counter on it.",
+    "flavor": "The forest gives back to those who nurture it.",
+    "rarity": "U",
+    "cn": 169,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/RExCihB.png",
     "id": "G",
     "has_bleed_edge": true,
     "notes": [
