@@ -1567,7 +1567,7 @@
     "id": "W",
     "cost": "{2}{W}",
     "type": "Legendary Creature - Human Noble",
-    "text": "At the beginning of your end step, if you gained 3 or more life this turn, create a tapped Excuse token.",
+    "text": "At the beginning of your end step, if you gained 2 or more life this turn, create an Excuse token.",
     "flavor": "“If the Inquisition is the pen, then I am their sword.”",
     "rarity": "U",
     "img": "https://i.imgur.com/Yfdfldb.png",
@@ -1604,7 +1604,7 @@
       {
         "date": "14-10-2024",
         "creator": "Thys",
-        "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped"
+        "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped // Changed the actual json"
       }
     ],
     "tags": {
