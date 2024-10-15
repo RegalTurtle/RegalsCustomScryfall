@@ -533,7 +533,7 @@
     "cn": 102,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/zhfVFMR.png",
+    "img": "https://i.imgur.com/zskqtDi.png",
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
@@ -541,6 +541,11 @@
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Updtaed render"
       }
     ],
     "tags": {
@@ -676,7 +681,7 @@
     "cn": 107,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/ZAqkMiq.png",
+    "img": "https://i.imgur.com/f0YTPlV.png",
     "id": "B",
     "has_bleed_edge": false,
     "art-remarks": "",
@@ -695,6 +700,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Updated image, needs to have pact reminder text"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Updated card render, added reminder txt and CN"
       }
     ],
     "tags": {
