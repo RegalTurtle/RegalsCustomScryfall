@@ -423,21 +423,28 @@
     "cost": "{1}{B}{B}",
     "type": "Legendary Creature - Vampire Ally",
     "text": "Flying, first strike\nWhenever ~ deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
-    "flavor": "\"I will be chained to the shadows no longer.\"",
+    "flavor": "“I will be chained to the shadows no longer.”",
+    "artist": "Microsoft Copilot",
     "rarity": "M",
-    "img": "https://i.imgur.com/INbivUh.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/e0SXexL.png",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
-    "art-remarks": "",
     "notes": [
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Thys",
+        "notes": "Added CN"
       }
     ],
-    "tags": {}
+    "tags": {
+      "reprint": true
+    }
   },
   {
     "name": "Edgar's Awakening",
@@ -871,18 +878,26 @@
     "type": "Enchantment",
     "text": "Whenever a creature you control deals combat damage to a player, that player discards a card.",
     "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
+    "artist": "Microsoft Copilot",
     "rarity": "R",
-    "img": "https://i.imgur.com/HCmIc3G.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/LkeQoQo.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Added CN"
       }
     ],
-    "tags": {}
+    "tags": {
+      "reprint": true
+    }
   },
   {
     "name": "Lich's Conquest",
@@ -936,9 +951,8 @@
     "flavor": "Once the burial place of all the great kings, after the lengthening of shadows, it was no longer safe to return to those ancient of places.",
     "artist": "Microsoft Copilot",
     "rarity": "U",
-    "img": "https://i.imgur.com/I4SPmQW.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/bjcgFpR.png",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -953,7 +967,7 @@
       {
         "date": "14-10-2024",
         "creator": "Thys",
-        "notes": "Updated frame, added bleed, cn"
+        "notes": "Updated frame, added bleed, cn // Updated again with correct CN"
       }
     ],
     "tags": {
@@ -1167,7 +1181,7 @@
     "cn": 120,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/lqAEDcf.png",
+    "img": "https://i.imgur.com/NXmjHPZ.png",
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
@@ -1175,6 +1189,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Wanted Sedgemoor Witch to be a wizard so we created a legendary creature that does a similar thing"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Thys",
+        "notes": "Added CN"
       }
     ],
     "tags": {
@@ -1192,13 +1211,13 @@
     "type": "Creature - Demon",
     "text": "Draft ~ face up.\nAs long as ~ is face up during the draft, you can't look at booster packs and must draft cards at random. After you draft one cards this way, turn ~ face down.\nFlying, lifelink",
     "flavor": "",
+    "artist": "Midjourney",
     "rarity": "C",
-    "img": "https://i.imgur.com/tWFvuJ5.png",
+    "img": "https://i.imgur.com/Mcv3ujz.png",
     "has_bleed_edge": true,
     "power": 3,
     "toughness": 4,
     "watermark": "draft",
-    "art-remarks": "",
     "notes": [
       {
         "date": "13-07-2024",
@@ -1214,6 +1233,11 @@
         "date": "13-07-2024",
         "creator": "Sam",
         "notes": "Added draft matters stuff to card"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Thys",
+        "notes": "Added CN"
       }
     ],
     "tags": {}
