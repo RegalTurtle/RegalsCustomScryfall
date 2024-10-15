@@ -4751,11 +4751,15 @@
       },
       {
         "date": "14-10-2024",
-        "creator": "Thys",
+        "creator": "Sam",
         "notes": "added etb beer counters and removed flavor text"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   },
   {
     "name": "Elven Beer Still",
