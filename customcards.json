@@ -4662,8 +4662,8 @@
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Elf Alcoholic",
-    "text": "{T}, Remove a beer counter from ~, Discard a card: Draw a card.\n{2}: Untap ~.",
-    "flavor": "Raving mad, she searched for anything of value.",
+    "text": "~ enters with two beer counters.\n{T}, Remove a beer counter from ~, Discard a card: Draw a card.\n{2}: Untap ~.",
+    "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/YYXrVsG.png",
     "has_bleed_edge": false,
@@ -4680,6 +4680,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "added etb beer counters and removed flavor text"
       }
     ],
     "tags": {}
