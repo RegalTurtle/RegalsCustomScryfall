@@ -1,5 +1,2014 @@
 [
   {
+    "name": "Ancient Grudge",
+    "set": "MTD",
+    "cn": 127,
+    "id": "RG",
+    "cost": "{1}{R}",
+    "type": "Instant",
+    "text": "Destroy target artifact.\nFlashback {G}",
+    "flavor": "How did the symbol of chaos get there?",
+    "rarity": "C",
+    "img": "https://i.imgur.com/u2gBywl.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Blood Party",
+    "set": "MTD",
+    "cn": 128,
+    "id": "R",
+    "cost": "{1}{R}",
+    "type": "Enchantment",
+    "text": "When ~ enters, create a blood token.\n{1}{R}: Sacrifice an artifact or creature: Goad target creature.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/qlaFcER.png",
+    "has_bleed_edge": false,
+    "tags": {}
+  },
+  {
+    "name": "Bloody Retribution",
+    "set": "MTD",
+    "cn": 129,
+    "id": "R",
+    "cost": "{1}{R}",
+    "type": "Instant",
+    "text": "Choose one -\n• Destroy target artifact.\n• Create a Blood token.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/w6oY2uz.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "New art"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Boon of Vigor",
+    "set": "MTD",
+    "cn": 130,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Instant",
+    "text": "Put two beer counters on target permanent you control.",
+    "flavor": "After casting the spell, she looked at her challenger with new fire behind her eyes.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/2TRTPdW.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "30-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "We cut this card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed to remove the +2/+2 and move the target to any permanent"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Uploaded new text"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Connoisseur of Apathy",
+    "set": "MTD",
+    "cn": 131,
+    "id": "R",
+    "cost": "{2}{R}",
+    "type": "Creature - Vampire",
+    "text": "First strike\nWhen ~ enters, exile a card from a graveyard.\nWhenever a player plays a land or casts a spell, if it shares a card type with the exiled card, that player takes a shot.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/dHa62g9.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Created card based on cemetery gatekeeper, created art"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Crazed Fanatic",
+    "set": "MTD",
+    "cn": 132,
+    "id": "R",
+    "cost": "{1}{R}",
+    "type": "Creature - Elf Alcoholic",
+    "text": "{T}: Add {R}.\nWhenever an opponent takes a shot, you may untap ~.",
+    "flavor": "Down! Down! Down! Anarchy and Fire!",
+    "rarity": "U",
+    "img": "https://i.imgur.com/Sjvtk1b.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Cursed Lightning",
+    "cost": "{3}{R}",
+    "type": "Sorcery",
+    "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~'s pact, draw a card.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 133,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4mWNr78.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["Removal"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Delina, Wild Mage",
+    "set": "MTD",
+    "cn": 134,
+    "id": "R",
+    "cost": "{3}{R}",
+    "type": "Creature - Elf Shaman",
+    "text": "Whenever ~ attacks, choose target creature you control, then roll a d20.\n1-14 | Create a tapped and attacking token that's a copy of that creature, except it's not legendary and it has \"At the end of combat, exile this creature.\"\n15-20 | Create one of those tokens. You may roll again.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/uuShjHB.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Drunken Warrior",
+    "set": "MTD",
+    "cn": 135,
+    "id": "R",
+    "cost": "{1}{R}",
+    "type": "Creature - Human Alcoholic",
+    "text": "As long as it's your turn, ~ has first strike.",
+    "flavor": "\"ughhh blugh blah\"",
+    "rarity": "U",
+    "img": "https://i.imgur.com/74Pvli1.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Duchess of Silver Moor",
+    "set": "MTD",
+    "cn": 136,
+    "id": "R",
+    "cost": "{4}{R}",
+    "type": "Creature - Vampire Devil",
+    "text": "Elder Pact\nFor each time you accepted ~'s pact, create a Blood token.\nActivated abilities of Blood tokens you control cost {1} less to activate.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/G9V03st.png",
+    "has_bleed_edge": true,
+    "power": 4,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Created and gave card image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Dwarven Mead",
+    "set": "MTD",
+    "cn": 137,
+    "id": "R",
+    "cost": "{3}{R}",
+    "type": "Enchantment",
+    "text": "Whenever you take a shot, you may have target player take a shot.",
+    "flavor": "Dwarvish mead is never meant to be sipped alone.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/0qfpvXN.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "maybe change to you may"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "i like that"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed from forcing you to target to giving may option"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "we should fix this flavor text and name so they're the same"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Should we keep it dwarf related? // i was just thinking because red is elves and goblins"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I'm fine with it changing or staying the same"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elven Beer Still",
+    "set": "MTD",
+    "cn": 138,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Artifact",
+    "text": "At the beginning of your upkeep, put a beer counter on target creature you control.\n{2}, {T}: Create a 1/1 red Crazed Elf creature token. Activate only if a beer counter was removed from a creature you control this turn or a creature with a beer counter on it was put into your graveyard this turn.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/65mw2sK.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "29-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed a couple of oracle things"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elven Moonshiner",
+    "set": "MTD",
+    "cn": 139,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Creature - Elf Alcoholic",
+    "text": "Whenever ~ deals combat damage to a player, put a beer counter on target creature you control.",
+    "flavor": "Elven moonshiners are known for their aggressive marketing techniques.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/q7M5Gc7.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "16-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elven Mountie",
+    "cost": "{1}{R}",
+    "type": "Creature - Elf Soldier",
+    "text": "Ward {1}\nOther creatures you control have haste.",
+    "flavor": "Built for peace, equipped for war.",
+    "rarity": "U",
+    "cn": 140,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/vDrGxFJ.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Thys",
+        "notes": "What in the WOTC card design is this????"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Falkenrath Celebrants",
+    "set": "MTD",
+    "cn": 141,
+    "id": "R",
+    "cost": "{4}{R}",
+    "type": "Creature - Vampire",
+    "text": "Menace\nWhen ~ enters, create two Blood tokens.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/XnDghgM.png",
+    "has_bleed_edge": false,
+    "power": 4,
+    "toughness": 4,
+    "tags": {}
+  },
+  {
+    "name": "Fiery Brew",
+    "set": "MTD",
+    "cn": 142,
+    "id": "R",
+    "cost": "{1}{R}{R}",
+    "type": "Instant",
+    "text": "Choose one -\n• Target player takes a shot.\n• ~ deals 3 damage to target creature.\nMadness {R}",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/lyaNNRO.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image // we might just have too many burn/shot spells, but wanted to throw this one into the ring // we'll talk about it when we do set balancing"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed card templating"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Fiery Shot",
+    "set": "MTD",
+    "cn": 143,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Instant",
+    "text": "Target player takes a shot.",
+    "flavor": "Lightning bolt - Fiery Shot",
+    "rarity": "U",
+    "img": "https://i.imgur.com/AJI04lA.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "change flavor text???"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "will do"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Goblin Anarchist",
+    "set": "MTD",
+    "cn": 144,
+    "id": "R",
+    "cost": "{3}{R}",
+    "type": "Creature - Goblin Alcoholic",
+    "text": "Whenever you cast an instant or sorcery spell, target opponent takes a shot.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/3E4n5fJ.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "maybe remove the magecraft and make it only cast?"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "sure"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed magecraft to just instant and sorcery casts"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Goblin Beer Brawler",
+    "set": "MTD",
+    "cn": 145,
+    "id": "R",
+    "cost": "{2}{R}",
+    "type": "Creature - Goblin Alcoholic",
+    "text": "Sacrifice ~: Target player takes a shot.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/oDKyEJp.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 3,
+    "tags": {}
+  },
+  {
+    "name": "Goblin Beer Launcher",
+    "set": "MTD",
+    "cn": 146,
+    "id": "R",
+    "cost": "{2}{R}",
+    "type": "Artifact Creature - Wall",
+    "text": "Defender, reach\n{T}, Remove a beer counter from ~: Target player takes a shot.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/XbftEWc.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "30-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Goblin Booze Runner",
+    "set": "MTD",
+    "cn": 147,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Creature - Goblin",
+    "text": "Haste\nWhenever ~ deals combat damage to a player, you may sacrifice ~. If you do, that player takes a shot.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/jgAdbaJ.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Made it so it has to sac to have the player take a shot"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Hellfire Ritual",
+    "cost": "{1}{R}",
+    "type": "Sorcery",
+    "text": "Pact {i}(You may take a shot or discard a card as you cast this spell.){/i}\nAs an additional cost to cast this spell, discard a card.\nDraw two cards. If you accepted ~’s pact, create a 3/1 red Elemental creature token with trample and haste. Exile it at the beginning of the next end step.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 148,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/extFu6m.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Impatiant Swindler",
+    "set": "MTD",
+    "cn": 149,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Creature - Goblin Alcoholic",
+    "text": "Haste\nWhenever ~ deals combat damage to a player, you take a shot.",
+    "flavor": "\"I'll go shot for shot with ye, anyone betting on me losing!?\"",
+    "rarity": "R",
+    "img": "https://i.imgur.com/3Ty9vNU.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Created card based on Goblin Booze Runner"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Added alcoholic to typeline // Name is now Impatiant Swindler"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Moved from MTX to MTD, added flavor text"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "New card image"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed flavor in the json"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Pact Devil",
+    "set": "MTD",
+    "cn": 150,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Creature - Devil",
+    "text": "Pact\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to any target.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/flvGoAu.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "16-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Play with Fire",
+    "set": "MTD",
+    "cn": 151,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Instant",
+    "text": "~ deals 2 damage to any target. If a player is dealt damage this way, scry 1.",
+    "flavor": "Try not to get burned.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/NlyHKc3.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Raging Quartermaster",
+    "set": "MTD",
+    "cn": 152,
+    "id": "R",
+    "cost": "{3}{R}",
+    "type": "Creature - Elf Alcoholic",
+    "text": "When ~ enters, it deals X damage to any target, where X is the number of permanents you control with beer counters on them.",
+    "flavor": "Who's been drinking my beer! If I catch you, ohhhh if I catch you.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/t20G3ZV.png",
+    "has_bleed_edge": false,
+    "power": 4,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "31-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Rampage Devil",
+    "set": "MTD",
+    "cn": 153,
+    "id": "R",
+    "cost": "{3}{R}{R}",
+    "type": "Creature - Devil",
+    "text": "Haste\nMountaincycling {2}",
+    "flavor": "Hell is a party best experienced on Earth.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/CyFcWWp.png",
+    "has_bleed_edge": true,
+    "power": 7,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added art, flavor, and name"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Red Solo Cup",
+    "set": "MTD",
+    "cn": 154,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Artifact - Equipment",
+    "text": "Whenever equipped creature becomes blocked by a creature, that creature's controller takes a shot.\nEquip {1}",
+    "flavor": "\"Sup Bro\"",
+    "rarity": "C",
+    "img": "https://i.imgur.com/dEARHlN.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Rummager Elf",
+    "set": "MTD",
+    "cn": 155,
+    "id": "R",
+    "cost": "{1}{R}",
+    "type": "Creature - Elf Alcoholic",
+    "text": "~ enters with two beer counters.\n{T}, Remove a beer counter from ~, Discard a card: Draw a card.\n{2}: Untap ~.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/9RJgf1N.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "30-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "added etb beer counters and removed flavor text"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Scorching Blast",
+    "set": "MTD",
+    "cn": 156,
+    "id": "R",
+    "cost": "{3}{R}",
+    "type": "Sorcery",
+    "text": "Choose one - \n• Destroy target artifact.\n• Destroy target land.",
+    "flavor": "The Carnarium burned but the party never stopped.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/3QR3gKQ.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "This is what I thought shatter did"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added art, name, and flavor"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Tactical Retreat",
+    "cost": "{2}{R}",
+    "type": "Sorcery",
+    "text": "Discard your hand, then draw three cards.",
+    "flavor": "“Back! Back! We'll come at them from a different angle!”",
+    "rarity": "C",
+    "cn": 157,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/L6RwsX7.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "16-09-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      },
+      {
+        "date": "16-09-2024",
+        "creator": "Sam",
+        "notes": "Changed mana from 1R to 2R and made it draw an additional card."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["wheel"],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Torbran, Before the Fall",
+    "set": "MTD",
+    "cn": 158,
+    "id": "R",
+    "cost": "{1}{R}{R}{R}",
+    "type": "Legendary Creature - Dwarf Noble",
+    "text": "If a player would lose life as a result of taking a shot, instead that player loses an additional 2 life.",
+    "flavor": "At the court of high king Torbran of Red Fell, refusing a drink was the highest of blasphemies.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/FOPPDhZ.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Sliver of white next to Torbran art, slightly un-centered"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Fixed art and new card image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Trash Broker",
+    "set": "MTD",
+    "cn": 159,
+    "id": "R",
+    "cost": "{2}{R}",
+    "type": "Creature - Goblin",
+    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, target player passes the last card from their booster pack to you.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/ZTsVB7N.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "watermark": "draft",
+    "art-remarks": "art is a like a goblin working at a pawn shop and appraising what appears to be the contents of a dumpster",
+    "notes": [
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Inspired from Canal Dredger for the red draft matters card."
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Needs the draft matters card frame and backdrop."
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Fixed wording around booster packs"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Voldaren Epicure",
+    "set": "MTD",
+    "cn": 160,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Creature - Vampire",
+    "text": "When ~ enters, it deals 1 damage to each opponent. Create a Blood token.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/L3iQOS0.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1,
+    "tags": {}
+  },
+  {
+    "name": "Wizard's Shot",
+    "set": "MTD",
+    "cn": 161,
+    "id": "R",
+    "cost": "{R}",
+    "type": "Instant",
+    "text": "You may choose new targets for target instant or sorcery spell unless its controller takes a shot.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/0TvmGes.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Battle Caravan",
+    "set": "MTD",
+    "cn": 169,
+    "id": "G",
+    "cost": "{5}{G}",
+    "type": "Creature - Elf Warrior",
+    "text": "Whenever you take a shot, put two beer counters on target permanent you control.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/DUrXoK7.png",
+    "has_bleed_edge": false,
+    "power": 6,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Brewery Guard",
+    "set": "MTD",
+    "cn": 170,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature - Elf Soldier",
+    "text": "Reach\n~ gets +1/+1 for each beer counter on it.",
+    "flavor": "He stands tall, barring all from entering, less they are true of intention and high of spirit.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/2uzC2x4.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Changed toughness from 1 to 2"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Brewery Shaman",
+    "set": "MTD",
+    "cn": 171,
+    "id": "G",
+    "cost": "{G}",
+    "type": "Creature - Elf Shaman",
+    "text": "Whenever you take a shot, put a beer counter on target permanent you control.\n{T}: Add {G}.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/30ZCpea.png",
+    "has_bleed_edge": false,
+    "power": 0,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Cellar Assistant",
+    "set": "MTD",
+    "cn": 172,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature - Elf",
+    "text": "Remove a beer counter from ~: Add {G}",
+    "flavor": "Hints of oak, maple, and a touch of cherry.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/TVYjg9F.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "24-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Colossal Dreadbeast",
+    "set": "MTD",
+    "cn": 173,
+    "id": "G",
+    "cost": "{4}{G}{G}",
+    "type": "Creature - Beast",
+    "text": "Trample\nForestcycling {2}",
+    "flavor": "If you see the trees shake, run. If you smell the rank, flee. If you see its fur, it's too late.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/PrdtuSI.png",
+    "has_bleed_edge": true,
+    "power": 6,
+    "toughness": 6,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added name, subtype, flavor, and art"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elven Bartender",
+    "set": "MTD",
+    "cn": 174,
+    "id": "G",
+    "cost": "{2}{G}",
+    "type": "Creature - Elf",
+    "text": "{T}: Add {G}. You gain 2 life.",
+    "flavor": "\"All payments must be made in advance. I'm tired of patrons passing out with unpaid tabs.\"",
+    "rarity": "C",
+    "img": "https://i.imgur.com/MR6Vrx7.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elven Mixologist",
+    "set": "MTD",
+    "cn": 175,
+    "id": "G",
+    "cost": "{2}{G}",
+    "type": "Creature - Elf",
+    "text": "At the beginning of you upkeep, put a beer counter on target permanent you control.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/SBoLnKk.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elvish Beer",
+    "set": "MTD",
+    "cn": 176,
+    "id": "G",
+    "cost": "{3}{G}",
+    "type": "Enchantment",
+    "text": "Whenever you become the target of a spell or ability that would force you to take a shot, put a beer counter on ~.\nRemove two beer counters from ~: Prevent the next shot you would take.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/1YESVuv.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "whenever you take a shot put a counter on this // 0 mana prevent the next shot you would take (and remove two beer counters) // Changed wording of skip to prevent"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "changed name to Elvish Beer"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed to remove one counter to keep original functionality"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed first line to proc when being targetted, as putting counters on elvish beer is quite easy, changed removal of counters back to 2"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art, added bleed edge"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elvish Visionary",
+    "set": "MTD",
+    "cn": 177,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature - Elf Shaman",
+    "text": "When ~ enters, draw a card.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/dJCA2ZU.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art and added bleed edge"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Elvish Warmaster",
+    "set": "MTD",
+    "cn": 178,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature - Elf Warrior",
+    "text": "Whenever one or more other Elves enters under your control, create a 1/1 green Elf Warrior creature token. This ability triggers only once each turn.\n{5}{G}{G}: Elves you control get +2/+2 and gain deathtouch until end of turn.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/NBte17x.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "New art and added bleed edge"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Enti, the Worldshaker",
+    "set": "MTD",
+    "cn": 179,
+    "id": "G",
+    "cost": "{4}{G}{G}",
+    "type": "Legendary Creature - Turtle",
+    "text": "~ enters with nine beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove two beer counters from ~: Put a +1/+1 counter on target creature.\nRemove five beer counters from ~: Creatures you control get +2/+2 until end of turn.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/jDbg9rJ.png",
+    "has_bleed_edge": true,
+    "power": 4,
+    "toughness": 7,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "The turtle mythic itself. All names need to be reduced to name without title"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Entourage of Trest",
+    "set": "MTD",
+    "cn": 180,
+    "id": "G",
+    "cost": "{4}{G}",
+    "type": "Creature - Elf Soldier",
+    "text": "When ~ enters, you become the monarch.\n~ can block an additional creature as long as you're the monarch.",
+    "flavor": "The envoys to the throne were as strong as they were graceful.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/q6h4Ss4.png",
+    "has_bleed_edge": false,
+    "power": 4,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Evolving Culture",
+    "set": "MTD",
+    "cn": 181,
+    "id": "G",
+    "cost": "{G}",
+    "type": "Creature - Elemental",
+    "text": "~ enters with a beer counter on it.\n~ gets +1/+1 for each beer counter on it.\nWhenever one or more beer counters are put on a permanent you control not named ~, put a beer counter on ~.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/0v1wmGN.png",
+    "has_bleed_edge": false,
+    "power": 0,
+    "toughness": 0,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Fervent Acolyte",
+    "set": "MTD",
+    "cn": 182,
+    "id": "G",
+    "cost": "{G}",
+    "type": "Creature - Elf Alcoholic",
+    "text": "{T}, Remove a beer counter from a permanent you control: Create a Food token.",
+    "flavor": "To the most fervent of acolyted, drinking is more than a ritual, it is a lifestyle.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/AgH5dEX.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Generous Host",
+    "set": "MTD",
+    "cn": 183,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature - Elf",
+    "text": "When ~ enters, choose one - \n• Put a +1/+1 counter on target creature.\n• Put two beer counters on target permanent.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/9XZjEVw.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added name and art"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Gifts for the Host",
+    "set": "MTD",
+    "cn": 184,
+    "id": "G",
+    "cost": "{2}{G}{G}",
+    "type": "Sorcery",
+    "text": "Draw a card for each creature you control with a counter on it.",
+    "flavor": "The host provides, the guests pay their respects, everyone leaves happy.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/aU7esHr.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "24-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Ginger Beer",
+    "set": "MTD",
+    "cn": 185,
+    "id": "G",
+    "cost": "{G}",
+    "type": "Artifact - Food",
+    "text": "When ~ enters, put a beer counter on target permanent you control.\n{2}, {T}, Sacrifice ~: You gain 3 life.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/RJIQmEu.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "22-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "High Priestess",
+    "set": "MTD",
+    "cn": 186,
+    "id": "G",
+    "cost": "{2}{G}{G}",
+    "type": "Creature - Elf Shaman",
+    "text": "Elves you control get +1/+1 for each beer counter on ~.",
+    "flavor": "She was bestowed the heights of honors, and she delivered with pride.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/K8FYWUw.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 2,
+    "notes": [
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added notes and flavor to json"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Changed buffed creature back to elves // new image"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "damn holo stamps"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Invigorating Brew",
+    "set": "MTD",
+    "cn": 187,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Instant",
+    "text": "Target creature gets +3/+3 until end of turn. Put a beer counter on it.",
+    "flavor": "Cheers!",
+    "rarity": "C",
+    "img": "https://i.imgur.com/9JCjMu4.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Leovold's Operative",
+    "set": "MTD",
+    "cn": 188,
+    "id": "G",
+    "cost": "{2}{G}",
+    "type": "Creature - Elf Rogue",
+    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that pack. If you do, turn ~ face down, then pass the next booster pack without drafting a card from it.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/ZyDyH97.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 2,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Life Sprout",
+    "cost": "{G}",
+    "type": "Instant",
+    "text": "As an additional cost to cast this spell, take a shot.\nReturn target card from a graveyard to its owner's hand.",
+    "flavor": "“Here is your chance to turn a new leaf”",
+    "rarity": "U",
+    "cn": 189,
+    "set": "MTD",
+    "artist": "",
+    "img": "https://i.imgur.com/YIGD2sp.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "function": ["recursion"],
+      "reprint": false,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Lively Tavern",
+    "cost": "{2}{G}{G}",
+    "type": "Artifact",
+    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch.",
+    "flavor": "Those who make us happy, often have our true loyalty.",
+    "rarity": "U",
+    "cn": 190,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/vD05wbh.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "changed the name, and changed from target creature to target permanent, its a slow rate, and rg puts counters on creatures mainly, so I thought this could be an interesting change of pace"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "idk if this should be in WG"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Just green? // And then mess with the second ability to make it less white // Or the opposite"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "idk it just feels like white doesnt care about this card // maybe gw cares? // idk"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "I agree // Make it mono green and shift it around"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Shifted to green and updated to better fit the color"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Lys Alana Huntmaster",
+    "set": "MTD",
+    "cn": 191,
+    "id": "G",
+    "cost": "{2}{G}{G}",
+    "type": "Creature - Elf Warrior",
+    "text": "Whenever you cast an Elf spell, you may create a 1/1 green Elf Warrior creature token.",
+    "flavor": "The hunt master called her aids, she found the trail, the hunt was on!",
+    "rarity": "U",
+    "img": "https://i.imgur.com/MxL6g39.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image with new art"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "ok so uhhh lys alana originally at C // maybe should be upshifted"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "HUH // uncommon // Posted with correct rarity"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Priest of Titania",
+    "set": "MTD",
+    "cn": 192,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature - Elf Druid",
+    "text": "{T}: Add {G} for each Elf on the battlefield.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/Awh26WC.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Added art and uploaded"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Prosperous Innkeeper",
+    "set": "MTD",
+    "cn": 193,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature — Halfling Citizen",
+    "text": "When ~ enters, create a Treasure token.\nWhenever another creature enters under your control, you gain 1 life.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/3OIBR5S.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Regal Behemoth",
+    "set": "MTD",
+    "cn": 194,
+    "id": "G",
+    "cost": "{4}{G}{G}",
+    "type": "Creature - Dinosaur",
+    "text": "Trample\nWhen ~ enters, you become the monarch.\nWhenever you tap a land for mana while you're the monarch, add an additional one mana of any color.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/OnBfiOG.png",
+    "has_bleed_edge": false,
+    "power": 5,
+    "toughness": 5,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "24-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Return to Soil",
+    "set": "MTD",
+    "cn": 195,
+    "id": "G",
+    "cost": "{1}{G}{G}",
+    "type": "Sorcery",
+    "text": "Destroy target artifact, enchantment, or land. If a land was destroyed this way, its controller may search their library for up to two basic land cards, put them onto the battlefield tapped, then shuffle. Otherwise, its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/9tAMBOS.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip // This was added based off of memory, looking at it now it may need significant rebalancing"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Thys",
+        "notes": "Downshifted to uncommon, changed from getting 2 lands on you control to whenever a land is hit (changed it to dire-strain rampage wording without flashback)"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Given name and art"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Return to the Earth",
+    "set": "MTD",
+    "cn": 196,
+    "id": "G",
+    "cost": "{3}{G}",
+    "type": "Instant",
+    "text": "Destroy target artifact, enchantment, or creature with flying.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/jSzVzhz.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "29-07-2024",
+        "creator": "Thys",
+        "notes": "Added idea to MTX"
+      },
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "New art with new render"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Spirit of the Glade",
+    "set": "MTD",
+    "cn": 197,
+    "id": "G",
+    "cost": "{10}{G}{G}",
+    "type": "Creature - Elemental Spirit",
+    "text": "This spell costs {1} less to cast for each counter among players and permanents.\nTrample\n~ enters tapped.",
+    "flavor": "Tall and elegant as she is fierce and unyielding, mother nature's hand.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/Y0d007e.png",
+    "has_bleed_edge": false,
+    "power": 8,
+    "toughness": 8,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "22-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Timberwatch Elf",
+    "set": "MTD",
+    "cn": 198,
+    "id": "G",
+    "cost": "{1}{G}",
+    "type": "Creature — Elf",
+    "text": "{T}: Target creature gets +X/+X until end of turn, where X is the number of Elves on the battlefield.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/6pFSFTP.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Downshifted to common"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "New image"
+      }
+    ]
+  },
+  {
+    "name": "Windrider Elf",
+    "set": "MTD",
+    "cn": 199,
+    "id": "G",
+    "cost": "{2}{G}{G}",
+    "type": "Creature - Bird",
+    "text": "When ~ enters, create a 1/1 green Elf Druid creature token with \"{T}: Add {G}.\"",
+    "flavor": "While uncommon, some elves have chosen an avian life.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/FXA8Msp.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Created card based on Koilos Roc"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "this is so egregious (the art)"
+      }
+    ],
+    "tags": {}
+  },
+  {
     "name": "Audacious Thief",
     "set": "MTD",
     "cn": 85,
@@ -1234,7 +3243,11 @@
         "creator": "Sam",
         "notes": "Added draft matters stuff to card"
       },
-      { "date": "14-10-2024", "creator": "Sam", "notes": "PIPE BOMB" },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "PIPE BOMB"
+      },
       {
         "date": "15-10-2024",
         "creator": "Thys",
@@ -1419,32 +3432,6 @@
     "tags": {}
   },
   {
-    "name": "Cursed Lightning",
-    "cost": "{3}{R}",
-    "type": "Sorcery",
-    "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~'s pact, draw a card.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 132,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/4mWNr78.png",
-    "id": "R",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["Removal"],
-      "reprint": false
-    }
-  },
-  {
     "name": "Aerial Assault",
     "set": "MTD",
     "cn": 1,
@@ -1471,119 +3458,6 @@
     "tags": {
       "function": ["removal"]
     }
-  },
-  {
-    "name": "Blood Party",
-    "set": "MTD",
-    "cn": 128,
-    "id": "R",
-    "cost": "{1}{R}",
-    "type": "Enchantment",
-    "text": "When ~ enters, create a blood token.\n{1}{R}: Sacrifice an artifact or creature: Goad target creature.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/qlaFcER.png",
-    "has_bleed_edge": false,
-    "tags": {}
-  },
-  {
-    "name": "Goblin Beer Brawler",
-    "set": "MTD",
-    "cn": 140,
-    "id": "R",
-    "cost": "{2}{R}",
-    "type": "Creature - Goblin Alcoholic",
-    "text": "Sacrifice ~: Target player takes a shot.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/oDKyEJp.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 3,
-    "tags": {}
-  },
-  {
-    "name": "Voldaren Epicure",
-    "set": "MTD",
-    "cn": 149,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Creature - Vampire",
-    "text": "When ~ enters, it deals 1 damage to each opponent. Create a Blood token.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/L3iQOS0.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "tags": {}
-  },
-  {
-    "name": "Bloody Retribution",
-    "set": "MTD",
-    "cn": 129,
-    "id": "R",
-    "cost": "{1}{R}",
-    "type": "Instant",
-    "text": "Choose one -\n• Destroy target artifact.\n• Create a Blood token.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/w6oY2uz.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "New art"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "High Priestess",
-    "set": "MTD",
-    "cn": 186,
-    "id": "G",
-    "cost": "{2}{G}{G}",
-    "type": "Creature - Elf Shaman",
-    "text": "Elves you control get +1/+1 for each beer counter on ~.",
-    "flavor": "She was bestowed the heights of honors, and she delivered with pride.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/K8FYWUw.png",
-    "has_bleed_edge": true,
-    "power": 2,
-    "toughness": 2,
-    "notes": [
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Added notes and flavor to json"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Changed buffed creature back to elves // new image"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "damn holo stamps"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Falkenrath Celebrants",
-    "set": "MTD",
-    "cn": 137,
-    "id": "R",
-    "cost": "{4}{R}",
-    "type": "Creature - Vampire",
-    "text": "Menace\nWhen ~ enters, create two Blood tokens.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/XnDghgM.png",
-    "has_bleed_edge": false,
-    "power": 4,
-    "toughness": 4,
-    "tags": {}
   },
   {
     "name": "Clairmont, Vicious Arbiter",
@@ -3249,46 +5123,6 @@
     "tags": {}
   },
   {
-    "name": "Trash Broker",
-    "set": "MTD",
-    "cn": 150,
-    "id": "R",
-    "cost": "{2}{R}",
-    "type": "Creature - Goblin",
-    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, target player passes the last card from their booster pack to you.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/ZTsVB7N.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 2,
-    "watermark": "draft",
-    "art-remarks": "art is a like a goblin working at a pawn shop and appraising what appears to be the contents of a dumpster",
-    "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Inspired from Canal Dredger for the red draft matters card."
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added card image without bleed edge since it will need to be changed at some point anyways."
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Sam",
-        "notes": "Needs the draft matters card frame and backdrop."
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Fixed wording around booster packs"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Raging Tide Elemental",
     "set": "MTC",
     "cn": 10,
@@ -4082,53 +5916,6 @@
     }
   },
   {
-    "name": "Elvish Beer",
-    "set": "MTD",
-    "cn": 174,
-    "id": "G",
-    "cost": "{3}{G}",
-    "type": "Enchantment",
-    "text": "Whenever you become the target of a spell or ability that would force you to take a shot, put a beer counter on ~.\nRemove two beer counters from ~: Prevent the next shot you would take.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/1YESVuv.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "whenever you take a shot put a counter on this // 0 mana prevent the next shot you would take (and remove two beer counters) // Changed wording of skip to prevent"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "changed name to Elvish Beer"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changed to remove one counter to keep original functionality"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changed first line to proc when being targetted, as putting counters on elvish beer is quite easy, changed removal of counters back to 2"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changed art, added bleed edge"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Tides of Battle",
     "cost": "{2}{U}",
     "type": "Sorcery",
@@ -4173,45 +5960,6 @@
       "function": ["draw"],
       "reprint": false
     }
-  },
-  {
-    "name": "Generous Host",
-    "set": "MTD",
-    "cn": 183,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature - Elf",
-    "text": "When ~ enters, choose one - \n• Put a +1/+1 counter on target creature.\n• Put two beer counters on target permanent.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/9XZjEVw.png",
-    "has_bleed_edge": true,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "Created card stub"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added name and art"
-      }
-    ],
-    "tags": {}
   },
   {
     "name": "Silent Companion",
@@ -4717,1097 +6465,6 @@
     "tags": {}
   },
   {
-    "name": "Ancient Grudge",
-    "set": "MTD",
-    "cn": 127,
-    "id": "RG",
-    "cost": "{1}{R}",
-    "type": "Instant",
-    "text": "Destroy target artifact.\nFlashback {G}",
-    "flavor": "How did the symbol of chaos get there?",
-    "rarity": "C",
-    "img": "https://i.imgur.com/u2gBywl.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Raging Quartermaster",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{3}{R}",
-    "type": "Creature - Elf Alcoholic",
-    "text": "When ~ enters, it deals X damage to any target, where X is the number of permanents you control with beer counters on them.",
-    "flavor": "Who's been drinking my beer! If I catch you, ohhhh if I catch you.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/t20G3ZV.png",
-    "has_bleed_edge": false,
-    "power": 4,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "31-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Goblin Beer Launcher",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{2}{R}",
-    "type": "Artifact Creature - Wall",
-    "text": "Defender, reach\n{T}, Remove a beer counter from ~: Target player takes a shot.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/XbftEWc.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "30-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Boon of Vigor",
-    "set": "MTD",
-    "cn": 130,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Instant",
-    "text": "Put two beer counters on target permanent you control.",
-    "flavor": "After casting the spell, she looked at her challenger with new fire behind her eyes.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/2TRTPdW.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "30-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "We cut this card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Changed to remove the +2/+2 and move the target to any permanent"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Uploaded new text"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Rummager Elf",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{1}{R}",
-    "type": "Creature - Elf Alcoholic",
-    "text": "~ enters with two beer counters.\n{T}, Remove a beer counter from ~, Discard a card: Draw a card.\n{2}: Untap ~.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/9RJgf1N.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "30-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "added etb beer counters and removed flavor text"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Elven Beer Still",
-    "set": "MTD",
-    "cn": 137,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Artifact",
-    "text": "At the beginning of your upkeep, put a beer counter on target creature you control.\n{2}, {T}: Create a 1/1 red Crazed Elf creature token. Activate only if a beer counter was removed from a creature you control this turn or a creature with a beer counter on it was put into your graveyard this turn.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/65mw2sK.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "29-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, fixed a couple of oracle things"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Fiery Brew",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{1}{R}{R}",
-    "type": "Instant",
-    "text": "Choose one -\n• Target player takes a shot.\n• ~ deals 3 damage to target creature.\nMadness {R}",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/lyaNNRO.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image // we might just have too many burn/shot spells, but wanted to throw this one into the ring // we'll talk about it when we do set balancing"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, fixed card templating"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Pact Devil",
-    "set": "MTD",
-    "cn": 148,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Creature - Devil",
-    "text": "Pact\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to any target.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/flvGoAu.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "16-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Elven Moonshiner",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Creature - Elf Alcoholic",
-    "text": "Whenever ~ deals combat damage to a player, put a beer counter on target creature you control.",
-    "flavor": "Elven moonshiners are known for their aggressive marketing techniques.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/q7M5Gc7.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "16-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Delina, Wild Mage",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{3}{R}",
-    "type": "Creature - Elf Shaman",
-    "text": "Whenever ~ attacks, choose target creature you control, then roll a d20.\n1-14 | Create a tapped and attacking token that's a copy of that creature, except it's not legendary and it has \"At the end of combat, exile this creature.\"\n15-20 | Create one of those tokens. You may roll again.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/uuShjHB.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Play with Fire",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Instant",
-    "text": "~ deals 2 damage to any target. If a player is dealt damage this way, scry 1.",
-    "flavor": "Try not to get burned.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/NlyHKc3.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Drunken Warrior",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{1}{R}",
-    "type": "Creature - Human Alcoholic",
-    "text": "As long as it's your turn, ~ has first strike.",
-    "flavor": "\"ughhh blugh blah\"",
-    "rarity": "U",
-    "img": "https://i.imgur.com/74Pvli1.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Red Solo Cup",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Artifact - Equipment",
-    "text": "Whenever equipped creature becomes blocked by a creature, that creature's controller takes a shot.\nEquip {1}",
-    "flavor": "\"Sup Bro\"",
-    "rarity": "C",
-    "img": "https://i.imgur.com/dEARHlN.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Crazed Fanatic",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{1}{R}",
-    "type": "Creature - Elf Alcoholic",
-    "text": "{T}: Add {R}.\nWhenever an opponent takes a shot, you may untap ~.",
-    "flavor": "Down! Down! Down! Anarchy and Fire!",
-    "rarity": "U",
-    "img": "https://i.imgur.com/Sjvtk1b.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Torbran, Before the Fall",
-    "set": "MTD",
-    "cn": 155,
-    "id": "R",
-    "cost": "{1}{R}{R}{R}",
-    "type": "Legendary Creature - Dwarf Noble",
-    "text": "If a player would lose life as a result of taking a shot, instead that player loses an additional 2 life.",
-    "flavor": "At the court of high king Torbran of Red Fell, refusing a drink was the highest of blasphemies.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/FOPPDhZ.png",
-    "has_bleed_edge": true,
-    "power": 2,
-    "toughness": 4,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Sliver of white next to Torbran art, slightly un-centered"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Fixed art and new card image"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Goblin Anarchist",
-    "set": "MTD",
-    "cn": 141,
-    "id": "R",
-    "cost": "{3}{R}",
-    "type": "Creature - Goblin Alcoholic",
-    "text": "Whenever you cast an instant or sorcery spell, target opponent takes a shot.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/3E4n5fJ.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "maybe remove the magecraft and make it only cast?"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "sure"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Changed magecraft to just instant and sorcery casts"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Wizard's Shot",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Instant",
-    "text": "You may choose new targets for target instant or sorcery spell unless its controller takes a shot.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/0TvmGes.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Dwarven Mead",
-    "set": "MTD",
-    "cn": 134,
-    "id": "R",
-    "cost": "{3}{R}",
-    "type": "Enchantment",
-    "text": "Whenever you take a shot, you may have target player take a shot.",
-    "flavor": "Dwarvish mead is never meant to be sipped alone.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/0qfpvXN.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "maybe change to you may"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "i like that"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Changed from forcing you to target to giving may option"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "we should fix this flavor text and name so they're the same"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "Should we keep it dwarf related? // i was just thinking because red is elves and goblins"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "I'm fine with it changing or staying the same"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Goblin Booze Runner",
-    "set": "MTD",
-    "cn": 146,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Creature - Goblin",
-    "text": "Haste\nWhenever ~ deals combat damage to a player, you may sacrifice ~. If you do, that player takes a shot.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/jgAdbaJ.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Made it so it has to sac to have the player take a shot"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Fiery Shot",
-    "set": "MTD",
-    "cn": 127,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Instant",
-    "text": "Target player takes a shot.",
-    "flavor": "Lightning bolt - Fiery Shot",
-    "rarity": "U",
-    "img": "https://i.imgur.com/AJI04lA.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "change flavor text???"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "will do"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Regal Behemoth",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{4}{G}{G}",
-    "type": "Creature - Dinosaur",
-    "text": "Trample\nWhen ~ enters, you become the monarch.\nWhenever you tap a land for mana while you're the monarch, add an additional one mana of any color.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/OnBfiOG.png",
-    "has_bleed_edge": false,
-    "power": 5,
-    "toughness": 5,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "24-02-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Gifts for the Host",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{2}{G}{G}",
-    "type": "Sorcery",
-    "text": "Draw a card for each creature you control with a counter on it.",
-    "flavor": "The host provides, the guests pay their respects, everyone leaves happy.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/aU7esHr.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "24-02-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Spirit of the Glade",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{10}{G}{G}",
-    "type": "Creature - Elemental Spirit",
-    "text": "This spell costs {1} less to cast for each counter among players and permanents.\nTrample\n~ enters tapped.",
-    "flavor": "Tall and elegant as she is fierce and unyielding, mother nature's hand.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/Y0d007e.png",
-    "has_bleed_edge": false,
-    "power": 8,
-    "toughness": 8,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "22-02-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Evolving Culture",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{G}",
-    "type": "Creature - Elemental",
-    "text": "~ enters with a beer counter on it.\n~ gets +1/+1 for each beer counter on it.\nWhenever one or more beer counters are put on a permanent you control not named ~, put a beer counter on ~.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/0v1wmGN.png",
-    "has_bleed_edge": false,
-    "power": 0,
-    "toughness": 0,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Cellar Assistant",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature - Elf",
-    "text": "Remove a beer counter from ~: Add {G}",
-    "flavor": "Hints of oak, maple, and a touch of cherry.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/TVYjg9F.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "24-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Ginger Beer",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{G}",
-    "type": "Artifact - Food",
-    "text": "When ~ enters, put a beer counter on target permanent you control.\n{2}, {T}, Sacrifice ~: You gain 3 life.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/RJIQmEu.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "22-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Entourage of Trest",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{4}{G}",
-    "type": "Creature - Elf Soldier",
-    "text": "When ~ enters, you become the monarch.\n~ can block an additional creature as long as you're the monarch.",
-    "flavor": "The envoys to the throne were as strong as they were graceful.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/q6h4Ss4.png",
-    "has_bleed_edge": false,
-    "power": 4,
-    "toughness": 4,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Leovold's Operative",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{2}{G}",
-    "type": "Creature - Elf Rogue",
-    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that pack. If you do, turn ~ face down, then pass the next booster pack without drafting a card from it.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/ZyDyH97.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 2,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Invigorating Brew",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Instant",
-    "text": "Target creature gets +3/+3 until end of turn. Put a beer counter on it.",
-    "flavor": "Cheers!",
-    "rarity": "C",
-    "img": "https://i.imgur.com/9JCjMu4.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Elven Bartender",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{2}{G}",
-    "type": "Creature - Elf",
-    "text": "{T}: Add {G}. You gain 2 life.",
-    "flavor": "\"All payments must be made in advance. I'm tired of patrons passing out with unpaid tabs.\"",
-    "rarity": "C",
-    "img": "https://i.imgur.com/MR6Vrx7.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Battle Caravan",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{5}{G}",
-    "type": "Creature - Elf Warrior",
-    "text": "Whenever you take a shot, put two beer counters on target permanent you control.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/DUrXoK7.png",
-    "has_bleed_edge": false,
-    "power": 6,
-    "toughness": 4,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Elven Mixologist",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{2}{G}",
-    "type": "Creature - Elf",
-    "text": "At the beginning of you upkeep, put a beer counter on target permanent you control.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/SBoLnKk.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Brewery Guard",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature - Elf Soldier",
-    "text": "Reach\n~ gets +1/+1 for each beer counter on it.",
-    "flavor": "He stands tall, barring all from entering, less they are true of intention and high of spirit.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/2uzC2x4.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Changed toughness from 1 to 2"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Brewery Shaman",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{G}",
-    "type": "Creature - Elf Shaman",
-    "text": "Whenever you take a shot, put a beer counter on target permanent you control.\n{T}: Add {G}.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/30ZCpea.png",
-    "has_bleed_edge": false,
-    "power": 0,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Fervent Acolyte",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{G}",
-    "type": "Creature - Elf Alcoholic",
-    "text": "{T}, Remove a beer counter from a permanent you control: Create a Food token.",
-    "flavor": "To the most fervent of acolyted, drinking is more than a ritual, it is a lifestyle.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/AgH5dEX.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Three Spirits",
     "set": "MTC",
     "cn": 32,
@@ -5838,194 +6495,6 @@
       }
     ],
     "tags": {}
-  },
-  {
-    "name": "Elvish Visionary",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature - Elf Shaman",
-    "text": "When ~ enters, draw a card.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/dJCA2ZU.png",
-    "has_bleed_edge": true,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changed art and added bleed edge"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Elvish Warmaster",
-    "set": "MTD",
-    "cn": 177,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature - Elf Warrior",
-    "text": "Whenever one or more other Elves enters under your control, create a 1/1 green Elf Warrior creature token. This ability triggers only once each turn.\n{5}{G}{G}: Elves you control get +2/+2 and gain deathtouch until end of turn.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/NBte17x.png",
-    "has_bleed_edge": true,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "New art and added bleed edge"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Lys Alana Huntmaster",
-    "set": "MTD",
-    "cn": 186,
-    "id": "G",
-    "cost": "{2}{G}{G}",
-    "type": "Creature - Elf Warrior",
-    "text": "Whenever you cast an Elf spell, you may create a 1/1 green Elf Warrior creature token.",
-    "flavor": "The hunt master called her aids, she found the trail, the hunt was on!",
-    "rarity": "U",
-    "img": "https://i.imgur.com/MxL6g39.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "Posted card image with new art"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "ok so uhhh lys alana originally at C // maybe should be upshifted"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "HUH // uncommon // Posted with correct rarity"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Priest of Titania",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature - Elf Druid",
-    "text": "{T}: Add {G} for each Elf on the battlefield.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/Awh26WC.png",
-    "has_bleed_edge": true,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Sam",
-        "notes": "Added art and uploaded"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Prosperous Innkeeper",
-    "set": "MTD",
-    "cn": 188,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature — Halfling Citizen",
-    "text": "When ~ enters, create a Treasure token.\nWhenever another creature enters under your control, you gain 1 life.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/3OIBR5S.png",
-    "has_bleed_edge": true,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Timberwatch Elf",
-    "set": "MTD",
-    "cn": 169,
-    "id": "G",
-    "cost": "{1}{G}",
-    "type": "Creature — Elf",
-    "text": "{T}: Target creature gets +X/+X until end of turn, where X is the number of Elves on the battlefield.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/6pFSFTP.png",
-    "has_bleed_edge": true,
-    "power": 1,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Sam",
-        "notes": "Downshifted to common"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Sam",
-        "notes": "New image"
-      }
-    ]
   },
   {
     "name": "Daughter of Moonshine",
@@ -6252,107 +6721,6 @@
         "date": "29-07-2024",
         "creator": "Sam",
         "notes": "a shortened flavor text // and a sick art in my opinion"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Impatiant Swindler",
-    "set": "MTD",
-    "cn": 145,
-    "id": "R",
-    "cost": "{R}",
-    "type": "Creature - Goblin Alcoholic",
-    "text": "Haste\nWhenever ~ deals combat damage to a player, you take a shot.",
-    "flavor": "\"I'll go shot for shot with ye, anyone betting on me losing!?\"",
-    "rarity": "R",
-    "img": "https://i.imgur.com/3Ty9vNU.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Created card based on Goblin Booze Runner"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Sam",
-        "notes": "Added alcoholic to typeline // Name is now Impatiant Swindler"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Moved from MTX to MTD, added flavor text"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Sam",
-        "notes": "New card image"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Fixed flavor in the json"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Lively Tavern",
-    "cost": "{2}{G}{G}",
-    "type": "Artifact",
-    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch.",
-    "flavor": "Those who make us happy, often have our true loyalty.",
-    "rarity": "U",
-    "cn": 169,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/vD05wbh.png",
-    "id": "G",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "changed the name, and changed from target creature to target permanent, its a slow rate, and rg puts counters on creatures mainly, so I thought this could be an interesting change of pace"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "idk if this should be in WG"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Just green? // And then mess with the second ability to make it less white // Or the opposite"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "idk it just feels like white doesnt care about this card // maybe gw cares? // idk"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "I agree // Make it mono green and shift it around"
-      },
-      {
-        "date": "15-10-2024",
-        "creator": "Sam",
-        "notes": "Shifted to green and updated to better fit the color"
       }
     ],
     "tags": {}
@@ -7558,30 +7926,6 @@
   {
     "name": "Duchess of Silver Moor",
     "set": "MTD",
-    "cn": 135,
-    "id": "R",
-    "cost": "{4}{R}",
-    "type": "Creature - Vampire Devil",
-    "text": "Elder Pact\nFor each time you accepted ~'s pact, create a Blood token.\nActivated abilities of Blood tokens you control cost {1} less to activate.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/G9V03st.png",
-    "has_bleed_edge": true,
-    "power": 4,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Created and gave card image"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Duchess of Silver Moor",
-    "set": "MTD",
     "cn": 289,
     "id": "R",
     "cost": "{4}{R}",
@@ -7599,30 +7943,6 @@
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Created alt image"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Connoisseur of Apathy",
-    "set": "MTD",
-    "cn": 131,
-    "id": "R",
-    "cost": "{2}{R}",
-    "type": "Creature - Vampire",
-    "text": "First strike\nWhen ~ enters, exile a card from a graveyard.\nWhenever a player plays a land or casts a spell, if it shares a card type with the exiled card, that player takes a shot.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/dHa62g9.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Created card based on cemetery gatekeeper, created art"
       }
     ],
     "tags": {}
@@ -8133,35 +8453,6 @@
     "tags": {}
   },
   {
-    "name": "Windrider Elf",
-    "set": "MTD",
-    "cn": 192,
-    "id": "G",
-    "cost": "{2}{G}{G}",
-    "type": "Creature - Bird",
-    "text": "When ~ enters, create a 1/1 green Elf Druid creature token with \"{T}: Add {G}.\"",
-    "flavor": "While uncommon, some elves have chosen an avian life.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/FXA8Msp.png",
-    "has_bleed_edge": true,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "Created card based on Koilos Roc"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "this is so egregious (the art)"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Starfall Roc",
     "set": "MTC",
     "cn": 11,
@@ -8398,96 +8689,6 @@
     "tags": {}
   },
   {
-    "name": "Rampage Devil",
-    "set": "MTD",
-    "cn": 151,
-    "id": "R",
-    "cost": "{3}{R}{R}",
-    "type": "Creature - Devil",
-    "text": "Haste\nMountaincycling {2}",
-    "flavor": "Hell is a party best experienced on Earth.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/CyFcWWp.png",
-    "has_bleed_edge": true,
-    "power": 7,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added art, flavor, and name"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Colossal Dreadbeast",
-    "set": "MTD",
-    "cn": 173,
-    "id": "G",
-    "cost": "{4}{G}{G}",
-    "type": "Creature - Beast",
-    "text": "Trample\nForestcycling {2}",
-    "flavor": "If you see the trees shake, run. If you smell the rank, flee. If you see its fur, it's too late.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/PrdtuSI.png",
-    "has_bleed_edge": true,
-    "power": 6,
-    "toughness": 6,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added name, subtype, flavor, and art"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Return to Soil",
-    "set": "MTD",
-    "cn": 193,
-    "id": "G",
-    "cost": "{1}{G}{G}",
-    "type": "Sorcery",
-    "text": "Destroy target artifact, enchantment, or land. If a land was destroyed this way, its controller may search their library for up to two basic land cards, put them onto the battlefield tapped, then shuffle. Otherwise, its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/9tAMBOS.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip // This was added based off of memory, looking at it now it may need significant rebalancing"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Thys",
-        "notes": "Downshifted to uncommon, changed from getting 2 lands on you control to whenever a land is hit (changed it to dire-strain rampage wording without flashback)"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Given name and art"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Rain of Thorns",
     "set": "MTC",
     "cn": -9,
@@ -8570,89 +8771,6 @@
     ],
     "tags": {},
     "invisible": true
-  },
-  {
-    "name": "Scorching Blast",
-    "set": "MTD",
-    "cn": 154,
-    "id": "R",
-    "cost": "{3}{R}",
-    "type": "Sorcery",
-    "text": "Choose one - \n• Destroy target artifact.\n• Destroy target land.",
-    "flavor": "The Carnarium burned but the party never stopped.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/3QR3gKQ.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "This is what I thought shatter did"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added art, name, and flavor"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Enti, the Worldshaker",
-    "set": "MTD",
-    "cn": 178,
-    "id": "G",
-    "cost": "{4}{G}{G}",
-    "type": "Legendary Creature - Turtle",
-    "text": "~ enters with nine beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove two beer counters from ~: Put a +1/+1 counter on target creature.\nRemove five beer counters from ~: Creatures you control get +2/+2 until end of turn.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/jDbg9rJ.png",
-    "has_bleed_edge": true,
-    "power": 4,
-    "toughness": 7,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "The turtle mythic itself. All names need to be reduced to name without title"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added art"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Return to the Earth",
-    "set": "MTD",
-    "cn": 194,
-    "id": "G",
-    "cost": "{3}{G}",
-    "type": "Instant",
-    "text": "Destroy target artifact, enchantment, or creature with flying.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/jSzVzhz.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "29-07-2024",
-        "creator": "Thys",
-        "notes": "Added idea to MTX"
-      },
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "New art with new render"
-      }
-    ],
-    "tags": {}
   },
   {
     "name": "Nepenthe, Titan of Mind's Deisre",
@@ -8988,32 +9106,6 @@
     }
   },
   {
-    "name": "Life Sprout",
-    "cost": "{G}",
-    "type": "Instant",
-    "text": "As an additional cost to cast this spell, take a shot.\nReturn target card from a graveyard to its owner's hand.",
-    "flavor": "“Here is your chance to turn a new leaf”",
-    "rarity": "U",
-    "cn": 189,
-    "set": "MTD",
-    "artist": "",
-    "img": "https://i.imgur.com/YIGD2sp.png",
-    "id": "G",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      }
-    ],
-    "tags": {
-      "function": ["recursion"],
-      "reprint": false,
-      "frame": "normal"
-    }
-  },
-  {
     "name": "Desynchronize",
     "cost": "{4}{U}",
     "type": "Instant",
@@ -9227,37 +9319,6 @@
       "frame": "normal",
       "function": [],
       "reprint": true
-    }
-  },
-  {
-    "name": "Tactical Retreat",
-    "cost": "{2}{R}",
-    "type": "Sorcery",
-    "text": "Discard your hand, then draw three cards.",
-    "flavor": "“Back! Back! We'll come at them from a different angle!”",
-    "rarity": "C",
-    "cn": 159,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/L6RwsX7.png",
-    "id": "R",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "16-09-2024",
-        "creator": "Thys",
-        "notes": "Created card"
-      },
-      {
-        "date": "16-09-2024",
-        "creator": "Sam",
-        "notes": "Changed mana from 1R to 2R and made it draw an additional card."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["wheel"],
-      "reprint": false
     }
   },
   {
@@ -9523,63 +9584,6 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Created card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Hellfire Ritual",
-    "cost": "{1}{R}",
-    "type": "Sorcery",
-    "text": "Pact {i}(You may take a shot or discard a card as you cast this spell.){/i}\nAs an additional cost to cast this spell, discard a card.\nDraw two cards. If you accepted ~’s pact, create a 3/1 red Elemental creature token with trample and haste. Exile it at the beginning of the next end step.",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 127,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/extFu6m.png",
-    "id": "R",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Elven Mountie",
-    "cost": "{1}{R}",
-    "type": "Creature - Elf Soldier",
-    "text": "Ward {1}\nOther creatures you control have haste.",
-    "flavor": "Built for peace, equipped for war.",
-    "rarity": "U",
-    "cn": 127,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/vDrGxFJ.png",
-    "id": "R",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "15-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      },
-      {
-        "date": "15-10-2024",
-        "creator": "Thys",
-        "notes": "What in the WOTC card design is this????"
       }
     ],
     "tags": {
