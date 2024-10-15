@@ -9587,5 +9587,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Inspiring Drake Rider",
+    "cost": "{R}{R}",
+    "type": "Creature - Goblin Warrior",
+    "text": "Echo {r}\nBattle cry {i}\nFlying, haste",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 127,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/ewxaDEY.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
