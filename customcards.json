@@ -7,13 +7,13 @@
     "cost": "{2}{B}",
     "type": "Creature - Human Rogue",
     "text": "Whenever ~ attacks, you draw a card and you lose 1 life.",
-    "flavor": "\"Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.\"",
+    "flavor": "“Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.”",
+    "artist": "Microsoft Copilot",
     "rarity": "C",
-    "img": "https://i.imgur.com/YP6Ux23.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/idxnbj0.png",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "21-01-2024",
@@ -24,9 +24,24 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob, changed flavor from alley ways to alleyways"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "attack trigger",
+        "life payment",
+        "repeatable draw",
+        "synergy-attacker-self",
+        "card-advantage",
+        "draw"
+      ]
+    }
   },
   {
     "name": "Bite of the Black Rose",
@@ -607,19 +622,47 @@
     }
   },
   {
+    "name": "Highborn Vampire",
+    "cost": "{3}{B}",
+    "type": "Creature — Vampire Warrior",
+    "text": "",
+    "flavor": "The Markov family arrived four hundred years ago and settled in the northern reaches of the spine. The southern splinter group lacked none of their restraint, in their bloodlust they opened a portal to hell, and threw the world into a second eternal chaos.",
+    "power": 4,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 105,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/1Tj8e2y.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Added Card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
     "name": "Hypnostatic Architect",
     "set": "MTD",
-    "cn": 105,
+    "cn": 106,
     "id": "UB",
     "cost": "{1}{B}{B}",
     "type": "Creature - Nightmare Wizard",
     "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card. Activate only as sorcery.",
     "flavor": "Your mind is an Escher painting and I am an artist.",
     "rarity": "R",
-    "img": "https://i.imgur.com/pOvMqfz.png",
+    "img": "https://i.imgur.com/BK6qaB3.png",
     "has_bleed_edge": true,
-    "power": 3,
-    "toughness": 5,
+    "power": 2,
+    "toughness": 4,
     "art-remarks": "",
     "notes": [
       {
@@ -641,6 +684,11 @@
         "date": "31-07-2024",
         "creator": "Thys",
         "notes": "Added 'activate only sorc' to the discard half"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "3/5 to 2/4"
       }
     ],
     "tags": {}
@@ -652,10 +700,10 @@
     "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
     "flavor": "",
     "rarity": "U",
-    "cn": 106,
+    "cn": 107,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/f0YTPlV.png",
+    "img": "https://i.imgur.com/KysDdt0.png",
     "id": "B",
     "has_bleed_edge": false,
     "art-remarks": "",
@@ -694,7 +742,7 @@
     "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
     "flavor": "",
     "rarity": "R",
-    "cn": 107,
+    "cn": 108,
     "set": "MTD",
     "artist": "",
     "id": "B",
@@ -713,7 +761,7 @@
   {
     "name": "Kitesail Freebooter",
     "set": "MTD",
-    "cn": 108,
+    "cn": 109,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Creature - Human Pirate",
@@ -737,7 +785,7 @@
   {
     "name": "Larceny",
     "set": "MTD",
-    "cn": 109,
+    "cn": 110,
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Enchantment",
@@ -763,7 +811,7 @@
     "text": "As an additional cost to cast ~, discard X cards.\nReturn X target creature cards from graveyards to the battlefield under your control.",
     "flavor": "",
     "rarity": "R",
-    "cn": 110,
+    "cn": 111,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/v9a5Dsf.png",
@@ -800,7 +848,7 @@
   {
     "name": "Lonely Crypt",
     "set": "MTD",
-    "cn": 111,
+    "cn": 112,
     "id": "B",
     "cost": "{3}{B}",
     "type": "Enchantment",
@@ -827,7 +875,7 @@
   {
     "name": "Necromancer's Puppet",
     "set": "MTD",
-    "cn": 112,
+    "cn": 113,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Zombie",
@@ -854,7 +902,7 @@
   {
     "name": "Pact Broker",
     "set": "MTD",
-    "cn": 113,
+    "cn": 114,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Creature - Vampire Devil",
@@ -889,7 +937,7 @@
     "power": 1,
     "toughness": 1,
     "rarity": "C",
-    "cn": 114,
+    "cn": 115,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/8GudArw.png",
@@ -917,7 +965,7 @@
     "power": 4,
     "toughness": 4,
     "rarity": "C",
-    "cn": 115,
+    "cn": 116,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/O6U3irg.png",
@@ -950,7 +998,7 @@
     "rarity": "C",
     "power": 1,
     "toughness": 1,
-    "cn": 116,
+    "cn": 117,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Fn04nDg.png",
@@ -993,7 +1041,7 @@
     "power": 3,
     "toughness": 1,
     "rarity": "U",
-    "cn": 117,
+    "cn": 118,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/E1NiQYc.png",
@@ -1021,7 +1069,7 @@
     "power": 3,
     "toughness": 2,
     "rarity": "R",
-    "cn": 118,
+    "cn": 119,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lqAEDcf.png",
@@ -1043,7 +1091,7 @@
   {
     "name": "The False Prophet",
     "set": "MTD",
-    "cn": 119,
+    "cn": 120,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Demon",
@@ -1078,7 +1126,7 @@
   {
     "name": "Typhoid Devil",
     "set": "MTD",
-    "cn": 120,
+    "cn": 121,
     "id": "B",
     "cost": "{1}{B}{B}",
     "type": "Creature - Rat Devil",
@@ -1113,7 +1161,7 @@
     "power": 1,
     "toughness": 1,
     "rarity": "U",
-    "cn": 121,
+    "cn": 122,
     "set": "MTD",
     "artist": "",
     "img": "https://i.imgur.com/sRGNMgg.png",
@@ -1140,7 +1188,7 @@
   {
     "name": "Vampiric Brew",
     "set": "MTD",
-    "cn": 122,
+    "cn": 123,
     "id": "B",
     "cost": "{2}{B}",
     "type": "Sorcery",
@@ -1162,7 +1210,7 @@
   {
     "name": "Vibe Check",
     "set": "MTD",
-    "cn": 123,
+    "cn": 124,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Instant",
@@ -1193,7 +1241,7 @@
     "text": "~ deals 1 damage to each opponent. Each opponent discards a card, then mills a card. You gain 1 life.",
     "flavor": "A dark mockery of the soul.",
     "rarity": "U",
-    "cn": 124,
+    "cn": 125,
     "set": "MTD",
     "artist": "Microsoft Copilot",
     "id": "B",
@@ -1226,7 +1274,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "C",
-    "cn": 125,
+    "cn": 126,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/m478NXo.png",
@@ -1452,6 +1500,11 @@
         "date": "31-07-2024",
         "creator": "Thys",
         "notes": "Fixed name on Clairmont, updated flavor in the json"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped"
       }
     ],
     "tags": {
@@ -1631,7 +1684,7 @@
     "name": "Reformed Priest",
     "cost": "{2}{W}",
     "type": "Creature - Elf Noble",
-    "text": "Remove a beer counter from a permanent you control: You gain 2 life.",
+    "text": "Remove a beer counter from ~: You gain 2 life.",
     "flavor": "Purity through sobriety, a crime to all elven culture.",
     "power": 1,
     "toughness": 2,
@@ -1647,6 +1700,11 @@
         "date": "13-08-2024",
         "creator": "Thys",
         "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Changed from remove a beer counter from any permanent to just itself"
       }
     ],
     "tags": {
@@ -9305,34 +9363,6 @@
         "sweeper-graveyard",
         "synergy-enchantment"
       ],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Highborn Vampire",
-    "cost": "{3}{B}",
-    "type": "Creature — Vampire Warrior",
-    "text": "",
-    "flavor": "The Markov family arrived four hundred years ago and settled in the northern reaches of the spine. The southern splinter group lacked none of their restraint, in their bloodlust they opened a portal to hell, and threw the world into a second eternal chaos.",
-    "power": 4,
-    "toughness": 3,
-    "rarity": "C",
-    "cn": 105,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/1Tj8e2y.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Added Card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
       "reprint": true
     }
   }
