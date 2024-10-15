@@ -9500,5 +9500,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Hellfire Ritual",
+    "cost": "{1}{R}",
+    "type": "Sorcery",
+    "text": "Pact {i}(You may take a shot or discard a card as you cast this spell.){/i}\nAs an additional cost to cast this spell, discard a card.\nDraw two cards. If you accepted ~’s pact, create a 3/1 red Elemental creature token with trample and haste. Exile it at the beginning of the next end step.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 86,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/extFu6m.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   }
 ]
