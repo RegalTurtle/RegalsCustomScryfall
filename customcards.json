@@ -1508,6 +1508,7 @@
     "cost": "{R}",
     "type": "Creature - Vampire",
     "text": "When ~ enters, it deals 1 damage to each opponent. Create a Blood token.",
+    "flavor": "A scion of the southern vampire families, they seek only blood and pain.",
     "rarity": "C",
     "img": "https://i.imgur.com/wVTssg1.png",
     "has_bleed_edge": false,
