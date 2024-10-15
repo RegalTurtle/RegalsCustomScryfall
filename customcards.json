@@ -9307,5 +9307,33 @@
       ],
       "reprint": true
     }
+  },
+  {
+    "name": "Highborn Vampire",
+    "cost": "{3}{B}",
+    "type": "Creature — Vampire Warrior",
+    "text": "",
+    "flavor": "The Markov family arrived four hundred years ago and settled in the northern reaches of the spine. The southern splinter group lacked none of their restraint, in their bloodlust they opened a portal to hell, and threw the world into a second eternal chaos.",
+    "power": 4,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 105,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/1Tj8e2y.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Added Card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   }
 ]
