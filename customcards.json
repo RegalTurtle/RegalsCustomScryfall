@@ -161,8 +161,9 @@
     "type": "Instant",
     "text": "As an additional cost to cast this spell, discard a card or take a shot.\nDestroy target creature or planeswalker.",
     "flavor": "Do not challenge what you cannot even begin to comprehend.",
+    "artist": "Midjourney",
     "rarity": "U",
-    "img": "https://i.imgur.com/p615sLq.png",
+    "img": "https://i.imgur.com/YsLwU4f.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
@@ -225,9 +226,18 @@
         "date": "15-07-2024",
         "creator": "Sam",
         "notes": "UH HUH // i cooooked"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "New render, removed planeswalker"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": ["removal", "discard-outlet"],
+      "reprint": false
+    }
   },
   {
     "name": "Dark Cocktail",
@@ -314,9 +324,35 @@
     "tags": {}
   },
   {
+    "name": "Demonic Insight",
+    "cost": "{B}",
+    "type": "Instant",
+    "text": "Pact\nScry 2, then if you accepted ~'s pact, choose one:\n• Draw a card.\n• You gain three life.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 94,
+    "set": "MTD",
+    "artist": "",
+    "img": "https://imgur.com/TqsO6L1.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
     "name": "Demonic Rite",
     "set": "MTD",
-    "cn": 94,
+    "cn": 95,
     "id": "B",
     "cost": "{1}{B}{B}",
     "type": "Enchantment",
@@ -338,7 +374,7 @@
   {
     "name": "Drana, Liberator of Malakir",
     "set": "MTD",
-    "cn": 95,
+    "cn": 96,
     "id": "B",
     "cost": "{1}{B}{B}",
     "type": "Legendary Creature - Vampire Ally",
@@ -362,7 +398,7 @@
   {
     "name": "Edgar's Awakening",
     "set": "MTD",
-    "cn": 96,
+    "cn": 97,
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Sorcery",
@@ -392,7 +428,7 @@
     "power": 5,
     "toughness": 4,
     "rarity": "C",
-    "cn": 97,
+    "cn": 98,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/koAwRKB.png",
@@ -420,7 +456,7 @@
     "power": 2,
     "toughness": 3,
     "rarity": "U",
-    "cn": 98,
+    "cn": 99,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/8jIgaO1.png",
@@ -463,7 +499,7 @@
     "power": 2,
     "toughness": 1,
     "rarity": "U",
-    "cn": 99,
+    "cn": 100,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/qaHWtCl.png",
@@ -491,7 +527,7 @@
     "power": 1,
     "toughness": 4,
     "rarity": "C",
-    "cn": 100,
+    "cn": 101,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/L7hClND.png",
@@ -519,7 +555,7 @@
     "power": 3,
     "toughness": 3,
     "rarity": "C",
-    "cn": 101,
+    "cn": 102,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/zskqtDi.png",
@@ -550,7 +586,7 @@
     "text": "Madness {1}{B}\nWhen ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
     "flavor": "There will always be a seeker.",
     "rarity": "C",
-    "cn": 102,
+    "cn": 103,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/THYDcDR.png",
@@ -576,7 +612,7 @@
     "text": "Destroy target creature or planeswalker. Create two Blood tokens.",
     "flavor": "“See what's left of you in Hell.”",
     "rarity": "C",
-    "cn": 103,
+    "cn": 104,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/x9MaEwe.png",
@@ -602,7 +638,7 @@
     "text": "Pact\nTarget creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
     "flavor": "",
     "rarity": "C",
-    "cn": 104,
+    "cn": 105,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/O9ecPa7.png",
@@ -630,7 +666,7 @@
     "power": 4,
     "toughness": 3,
     "rarity": "C",
-    "cn": 105,
+    "cn": 106,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/1Tj8e2y.png",
@@ -652,7 +688,7 @@
   {
     "name": "Hypnostatic Architect",
     "set": "MTD",
-    "cn": 106,
+    "cn": 107,
     "id": "UB",
     "cost": "{1}{B}{B}",
     "type": "Creature - Nightmare Wizard",
@@ -700,7 +736,7 @@
     "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
     "flavor": "",
     "rarity": "U",
-    "cn": 107,
+    "cn": 108,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/KysDdt0.png",
@@ -742,7 +778,7 @@
     "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
     "flavor": "",
     "rarity": "R",
-    "cn": 108,
+    "cn": 109,
     "set": "MTD",
     "artist": "",
     "id": "B",
@@ -761,7 +797,7 @@
   {
     "name": "Kitesail Freebooter",
     "set": "MTD",
-    "cn": 109,
+    "cn": 110,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Creature - Human Pirate",
@@ -785,7 +821,7 @@
   {
     "name": "Larceny",
     "set": "MTD",
-    "cn": 110,
+    "cn": 111,
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Enchantment",
@@ -811,7 +847,7 @@
     "text": "As an additional cost to cast ~, discard X cards.\nReturn X target creature cards from graveyards to the battlefield under your control.",
     "flavor": "",
     "rarity": "R",
-    "cn": 111,
+    "cn": 112,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/v9a5Dsf.png",
@@ -848,7 +884,7 @@
   {
     "name": "Lonely Crypt",
     "set": "MTD",
-    "cn": 112,
+    "cn": 113,
     "id": "B",
     "cost": "{3}{B}",
     "type": "Enchantment",
@@ -885,7 +921,7 @@
   {
     "name": "Necromancer's Puppet",
     "set": "MTD",
-    "cn": 113,
+    "cn": 114,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Zombie",
@@ -912,7 +948,7 @@
   {
     "name": "Pact Broker",
     "set": "MTD",
-    "cn": 114,
+    "cn": 115,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Creature - Vampire Devil",
@@ -946,8 +982,8 @@
     "flavor": "An unshakable malice.",
     "power": 1,
     "toughness": 1,
-    "rarity": "C",
-    "cn": 115,
+    "rarity": "U",
+    "cn": 116,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/8GudArw.png",
@@ -958,6 +994,11 @@
         "date": "21-08-2024",
         "creator": "Sam",
         "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Common to Uncommon"
       }
     ],
     "tags": {
@@ -975,7 +1016,7 @@
     "power": 4,
     "toughness": 4,
     "rarity": "C",
-    "cn": 116,
+    "cn": 117,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/O6U3irg.png",
@@ -1008,7 +1049,7 @@
     "rarity": "C",
     "power": 1,
     "toughness": 1,
-    "cn": 117,
+    "cn": 118,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Fn04nDg.png",
@@ -1051,7 +1092,7 @@
     "power": 3,
     "toughness": 1,
     "rarity": "U",
-    "cn": 118,
+    "cn": 119,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/E1NiQYc.png",
@@ -1066,7 +1107,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -1079,7 +1120,7 @@
     "power": 3,
     "toughness": 2,
     "rarity": "R",
-    "cn": 119,
+    "cn": 120,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lqAEDcf.png",
@@ -1101,7 +1142,7 @@
   {
     "name": "The False Prophet",
     "set": "MTD",
-    "cn": 120,
+    "cn": 121,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Demon",
@@ -1129,35 +1170,6 @@
         "date": "13-07-2024",
         "creator": "Sam",
         "notes": "Added draft matters stuff to card"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Typhoid Devil",
-    "set": "MTD",
-    "cn": 121,
-    "id": "B",
-    "cost": "{1}{B}{B}",
-    "type": "Creature - Rat Devil",
-    "text": "Pact\nDeathtouch\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to target creature.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/KnVzteR.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "23-08-2024",
-        "creator": "Sam",
-        "notes": "Cut to MTC"
       }
     ],
     "tags": {}
@@ -1302,6 +1314,40 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Typhoid Devil",
+    "set": "MTC",
+    "cn": 121,
+    "id": "B",
+    "cost": "{1}{B}{B}",
+    "type": "Creature - Devil Rat",
+    "text": "Pact\nDeathtouch\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to target creature.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/KnVzteR.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "23-08-2024",
+        "creator": "Sam",
+        "notes": "Cut to MTC"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Updated typeline from Rat Devil to Devil Rat // Actually moved it to MTC"
+      }
+    ],
+    "tags": {}
   },
   {
     "name": "Cursed Lightning",
@@ -9378,6 +9424,32 @@
         "synergy-enchantment"
       ],
       "reprint": true
+    }
+  },
+  {
+    "name": "Cursed Tome",
+    "cost": "{3}{B}",
+    "type": "Artifact",
+    "text": "Pact\nWhen ~ enters, sacrifice it if you accepted its pact.\nWhen ~ enters, draw two cards.\nWhenever you draw a card, you lose 1 life.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 100,
+    "set": "MTC",
+    "artist": "",
+    "img": ".png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
     }
   },
   {
