@@ -9556,7 +9556,7 @@
     "name": "Elven Mountie",
     "cost": "{1}{R}",
     "type": "Creature - Elf Soldier",
-    "text": " Ward {1}\nOther creatures you control have haste.",
+    "text": "Ward {1}\nOther creatures you control have haste.",
     "flavor": "Built for peace, equipped for war.",
     "rarity": "U",
     "cn": 127,
@@ -9575,6 +9575,32 @@
         "date": "15-10-2024",
         "creator": "Thys",
         "notes": "What in the WOTC card design is this????"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Lively Tavern",
+    "cost": "{2}{G}{G}",
+    "type": "Artifact",
+    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch.",
+    "flavor": "Those who make us happy, often have our true loyalty.",
+    "rarity": "U",
+    "cn": 169,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/vD05wbh.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
       }
     ],
     "tags": {
