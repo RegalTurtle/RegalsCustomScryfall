@@ -6302,17 +6302,17 @@
   },
   {
     "name": "Lively Tavern",
-    "set": "MTC",
-    "cn": 220,
-    "id": "WG",
-    "cost": "{2}{G}{W}",
+    "cost": "{2}{G}{G}",
     "type": "Artifact",
-    "text": "{2}: Put a beer counter on target permanent you control.\n{G}{W}, {T}: The next time target creature with a beer counter would be dealt damage, instead remove that many beer counters from it.",
-    "flavor": "",
+    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch.",
+    "flavor": "Those who make us happy, often have our true loyalty.",
     "rarity": "U",
-    "img": "https://i.imgur.com/TmarcUK.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "cn": 169,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/vD05wbh.png",
+    "id": "G",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-12-2023",
@@ -6348,6 +6348,11 @@
         "date": "14-07-2024",
         "creator": "Sam",
         "notes": "I agree // Make it mono green and shift it around"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Shifted to green and updated to better fit the color"
       }
     ],
     "tags": {}
@@ -9575,32 +9580,6 @@
         "date": "15-10-2024",
         "creator": "Thys",
         "notes": "What in the WOTC card design is this????"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Lively Tavern",
-    "cost": "{2}{G}{G}",
-    "type": "Artifact",
-    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch.",
-    "flavor": "Those who make us happy, often have our true loyalty.",
-    "rarity": "U",
-    "cn": 169,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/vD05wbh.png",
-    "id": "G",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "15-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
       }
     ],
     "tags": {
