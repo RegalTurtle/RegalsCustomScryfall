@@ -4690,7 +4690,7 @@
   },
   {
     "name": "Emblem of the Warmind",
-    "set": "MTD",
+    "set": "MTC",
     "cn": 139,
     "id": "R",
     "cost": "{1}{R}",
@@ -9548,7 +9548,33 @@
     "tags": {
       "frame": "normal",
       "function": [],
-      "reprint": true
+      "reprint": false
+    }
+  },
+  {
+    "name": "Elven Mountie",
+    "cost": "{1}{R}",
+    "type": "Creature - Elf Soldier",
+    "text": " Ward {1}\nOther creatures you control have haste.",
+    "flavor": "“What in the WOTC card design is this!“{lns}{-}Thys, 2024",
+    "rarity": "U",
+    "cn": 86,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/g2SzY4j.png",
+    "id": "R",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
     }
   }
 ]
