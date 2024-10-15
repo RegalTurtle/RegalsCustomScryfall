@@ -221,7 +221,7 @@
     "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~'s pact, draw a card.",
     "flavor": "",
     "rarity": "R",
-    "cn": 91,
+    "cn": 132,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/4mWNr78.png",
@@ -522,7 +522,7 @@
     }
   },
   {
-    "name": "Graciouss Hostess",
+    "name": "Gracious Hostess",
     "cost": "{2}{B}",
     "type": "Creature - Vampire Wizard",
     "text": "Discard a card: ~ gets +1/+1 until end of turn.",
@@ -9276,6 +9276,8 @@
     "type": "Enchantment Creature — Zombie",
     "text": "Constellation — Whenever ~ or another enchantment you control enters, exile target player's graveyard.",
     "flavor": "Erebos's minions hunt the Returned and warn those who consider the same folly.",
+    "power": 2,
+    "toughness": 2,
     "rarity": "U",
     "cn": 59,
     "set": "JOU",
