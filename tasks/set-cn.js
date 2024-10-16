@@ -5,8 +5,8 @@ import fs from "fs";
 let dataCopy = structuredClone(data);
 
 const set = "MTD";
-const beginCn = 127;
-const endCn = 162;
+const beginCn = 169;
+const endCn = 210;
 
 // Filter and get the relevant cards
 let filteredData = data.filter((card) => {
