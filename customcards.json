@@ -7030,7 +7030,7 @@
     "type": "Creature - Elf Alcoholic",
     "text": "When ~ enters, you may have it fight target creature. If that creature dies this way, put a +1/+1 counter and a beer counter on target creature you control. If you controlled that creature, instead put two +1/+1 counters and two beer counters on that creature.",
     "flavor": "",
-    "rarity": "R",
+    "rarity": "U",
     "img": "https://i.imgur.com/GYXbwsE.png",
     "has_bleed_edge": false,
     "power": 3,
@@ -7046,6 +7046,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob, changed 'if that creature would die this way' to 'if that creature dies this way'"
+      },
+      {
+        "date": "17-10-2024",
+        "creator": "Thys",
+        "notes": "Downshifted to uncommon"
       }
     ],
     "tags": {}
@@ -7086,7 +7091,7 @@
     "id": "RG",
     "cost": "{4}{R}{G}",
     "type": "Sorcery",
-    "text": "Choose one -\n• Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n• Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.\nEntwine {3}",
+    "text": "Choose one -\n• Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n• Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.",
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/BcvPR9z.png",
@@ -7107,6 +7112,11 @@
         "date": "26-07-2024",
         "creator": "Thys",
         "notes": "Add entwine for {3}"
+      },
+      {
+        "date": "17-10-2024",
+        "creator": "Thys",
+        "notes": "Removed Entwine {3}"
       }
     ],
     "tags": {}
