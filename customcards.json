@@ -9929,9 +9929,9 @@
   {
     "name": "Contaminated Drink",
     "nickname": "Draft of the Dreamer",
-    "cost": "{2}{U}{U}",
-    "type": "Creature — Alien Zombie Horror",
-    "text": "Islandwalk\n{i}Water Always Wins{/i} — Whenever ~ attacks, put a flood counter on another target creature or land. If it's a creature, it becomes a copy of ~. If it's a land, it becomes an Island in addition to its other types.",
+    "cost": "{X}{U}{B}",
+    "type": "Instant",
+    "text": "Draw X cards, then you get half X rad counters, rounded up.",
     "flavor": "The dreamer sleeps, and her children slumber, dreaming of decay and rot, the spaces beyond and between.",
     "rarity": "U",
     "cn": 8,
@@ -9951,6 +9951,32 @@
     "tags": {
       "frame": "normal",
       "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Pyxis of Pandemonium",
+    "cost": "{1}",
+    "type": "Artifact",
+    "text": "{T}: Each player exiles the top card of their library face down.\n{7}, {T}, Sacrifice ~: Each player turns face up all cards they own exiled with ~, then puts all permanent cards among them onto the battlefield.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 220,
+    "set": "THS",
+    "artist": "David Palumbo",
+    "img": "https://i.imgur.com/m6kYeDs.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "22-10-2024",
+        "creator": "Thys",
+        "notes": "Added render, missing holo stamp"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
       "reprint": true
     }
   }
