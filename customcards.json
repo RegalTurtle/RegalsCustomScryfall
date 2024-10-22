@@ -1,5 +1,659 @@
 [
   {
+    "name": "Absorb",
+    "set": "MTD",
+    "cn": 211,
+    "id": "WU",
+    "cost": "{W}{U}{U}",
+    "type": "Instant",
+    "text": "Counter target spell. You gain 3 life.",
+    "flavor": "Creation comes from all places, even destruction.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/m3eUNr0.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "damn holo stamps // new image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Ariel, Architect of Aphelion",
+    "set": "MTD",
+    "cn": 212,
+    "id": "WU",
+    "cost": "{3}{W}{U}",
+    "type": "Legendary Creature - Bird Wizard",
+    "text": "Flash\nFlying\nThis spell costs {3} less to cast if you have taken a shot this turn.\nWhenever you take your second shot each turn, you gain 6 life.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/WhqaOPc.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "21-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "ARIEL NEEDS SO MUCH HELP"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "Changed last paragraph to 'Whenever you take a shot, if it wasn't the first shot you took this turn, you gain 3 life.'"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "Changed last paragraph to 'Whenever you take your second shot each turn, you gain 6 life.'"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art of Ariel"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Battle Preparations",
+    "set": "MTD",
+    "cn": 213,
+    "id": "WG",
+    "cost": "{2}{G}{W}",
+    "type": "Instant",
+    "text": "Put a +1/+1 counter and a Beer counter on each creature you control. You gain 1 life for each creature you control.",
+    "flavor": "We are ready. Do not underestimate us.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/XS1a9vo.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "22-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Consult the Necrosages",
+    "set": "MTD",
+    "cn": 214,
+    "id": "UB",
+    "cost": "{1}{U}{B}",
+    "type": "Sorcery",
+    "text": "Choose one -\n• Target player draws two cards.\n• Target player discards two cards.",
+    "flavor": "\"What isss it you requirrre?\"",
+    "rarity": "U",
+    "img": "https://i.imgur.com/vcRzIMU.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Coy Reversal",
+    "set": "MTD",
+    "cn": 215,
+    "id": "UB",
+    "cost": "{2}{U}{B}",
+    "type": "Instant",
+    "text": "Counter target spell. Its controller discards a card and takes a shot.",
+    "flavor": "Espionage at its finest.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/7f3h9Ui.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Daughter of Moonshine",
+    "set": "MTD",
+    "cn": 216,
+    "id": "BR",
+    "cost": "{2}{B}{R}",
+    "type": "Creature — Vampire Devil",
+    "text": "Flying, lifelink\nTake a shot: Create a Blood token.",
+    "flavor": "The moon shone bright, but her beauty surpassed all.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/nFCDaWk.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "05-05-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Added devil to typeline"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Demonic Party",
+    "set": "MTD",
+    "cn": 217,
+    "id": "BR",
+    "cost": "{2}{B}{R}",
+    "type": "Legendary Artifact",
+    "text": "Take a shot: Add{C}",
+    "flavor": "Beneath the heathen worlds of fire and ice, in the darkest pits of the most hallowed night, the Demon Lord celebrates his forbidden pleasures. Tonight, all of Hell parties with him.",
+    "rarity": "M",
+    "img": "https://i.imgur.com/vWdcL2s.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Ending of Ages",
+    "cost": "{W/B}{U/R}{B/G}{R/W}{G/U}",
+    "type": "Enchantment - Saga",
+    "text": "Surveil 3, then draw three cards.\nExile any number of target cards from your graveyard. Until end of turn, you may play those cards.\nEach opponent may discard a card or sacrifice a nonland permanent. If they don't, they lose 3 life. Repeat this process five more times.\nYou get an emblem with “Whenever you draw a card, you take a shot.”",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 218,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/H0dV8FR.png",
+    "id": "WUBRG",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "Mana cost created"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Created potential card idea"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Changed name from RAINBOWWWW to Ending of Ages, added render, updated rules text from anthem to saga"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Freyan the Crazed Lord",
+    "set": "MTD",
+    "cn": 219,
+    "id": "RG",
+    "cost": "{2}{R}{G}",
+    "type": "Legendary Creature - Elf Alcoholic",
+    "text": "First strike, haste\n Whenever ~ attacks, put a beer counter on each attacking creature you control.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/C8jFHq6.png",
+    "has_bleed_edge": false,
+    "power": 4,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Freyan's Warpath",
+    "set": "MTD",
+    "cn": 220,
+    "id": "RG",
+    "cost": "{4}{R}{G}",
+    "type": "Sorcery",
+    "text": "Choose one -\n• Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n• Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/BcvPR9z.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Add entwine for {3}"
+      },
+      {
+        "date": "17-10-2024",
+        "creator": "Thys",
+        "notes": "Removed Entwine {3}"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Mnemonic Betrayal",
+    "set": "MTD",
+    "cn": 221,
+    "id": "UB",
+    "cost": "{1}{U}{B}",
+    "type": "Sorcery",
+    "text": "Exile all opponents' graveyards. You may cast spells from among those cards this turn, and mana of any type can be spent to cast them. At the beginning of the next end step, if any of those cards remain exiled, return them to their owners' graveyards.\nExile ~.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/Lz9tf9M.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Nepenthe, Titan of Mind's Deisre",
+    "set": "MTD",
+    "cn": 222,
+    "id": "UB",
+    "cost": "{1}{U}{B}",
+    "type": "Legendary Creature - Elder Giant",
+    "text": "When ~ enters, sacrifice it unless it escaped.\nWhenever ~ enters or attacks, each player mills three cards, then exile target nonland card from a graveyard. You may cast it this turn by exiling two cards from your graveyard in addition to paying its other costs, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.\nEscape - {U}{U}{B}{B}, Exile five other cards from your graveyard.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/XlaUoFv.png",
+    "has_bleed_edge": true,
+    "power": 6,
+    "toughness": 6,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "29-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip"
+      },
+      {
+        "date": "30-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card text of milling each player 3, then allowing a cast from gy"
+      },
+      {
+        "date": "30-07-2024",
+        "creator": "Sam",
+        "notes": "i think 3 mana is an appropriate casting cost tbh // maybe 4? // Drukar, Titan of Mind's Desire or Nepenthe, Titan of Mind's Desire // Nepenthe in greek more or less means a drug of forgetfulness // Then Helen, daughter of Zeus, took other counsel. Straightway she cast into the wine of which they were drinking a drug to quiet all pain and strife, and bring forgetfulness of every ill. // Drukar (no meaning, my own creation), Nepenthe (used to make people forget), Dolus (latin for deceit)"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Sam",
+        "notes": "Added art, name"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Changed wording so that the exiling of a nonland card isn't on a may clause anymore, removing the need to add some 'If you do' clause"
+      },
+      {
+        "date": "16-09-2024",
+        "creator": "Sam",
+        "notes": "Fixed wording on render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "recursion"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Radha, Victorious Queen",
+    "set": "MTD",
+    "cn": 223,
+    "id": "RG",
+    "cost": "{R}{G}",
+    "type": "Legendary Creature - Elf Alcoholic",
+    "text": "Haste\nRemove a beer counter from ~: Add {R}{G}. Activate only if ~ has attacked this turn, and only once each turn.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/dsDG17l.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "21-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, second cardname should probably just be first name"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Reach into Hell",
+    "set": "MTD",
+    "cn": 224,
+    "id": "BR",
+    "cost": "{B}{R}",
+    "type": "Sorcery",
+    "text": "Return target black or red creature from your graveyard to your hand.\nMadness {0}",
+    "flavor": "Reaching into Hell, he found what he sought, but at a great price.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/FuAv2uo.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "24-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Rest Well Deserved",
+    "set": "MTD",
+    "cn": 225,
+    "id": "WG",
+    "cost": "{G}{W}",
+    "type": "Instant",
+    "text": "Permanents you control with counters on them gain hexproof and indestructible until end of turn.",
+    "flavor": "They may have every advantage under the Sun. But we have full bellies and clear eyes, I can't say the same for them.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/mkatfaM.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "22-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Shot of Wisdom",
+    "set": "MTD",
+    "cn": 226,
+    "id": "UR",
+    "cost": "{1}{U/R}{U/R}",
+    "type": "Legendary Enchantment Artifact",
+    "text": "You may look at the top card of your library any time.\nYou may play lands and cast spells from the top of your library. If you cast a spell this way, take a shot.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/0JA2xJx.png",
+    "has_bleed_edge": true,
+    "art-remarks": "A shot glass on a scroll or spellbook",
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Changed UR in casting cost to U/R U/R // Uploaded new art and card"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Strefan, Wrathful Reagent",
+    "set": "MTD",
+    "cn": 227,
+    "id": "BR",
+    "cost": "{2}{B}{R}",
+    "type": "Legendary Creature — Vampire Noble",
+    "text": "Flying\nAt the beginning of your end step, create a Blood token for each player who lost life this turn. Whenever ~ attacks, you may sacrifice a Blood token. If you do, defending player takes a shot.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/sb5D54F.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "04-05-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, the second cardname should probably be just the first name"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "The Watcher",
+    "set": "MTD",
+    "cn": 228,
+    "id": "WR",
+    "cost": "{3}{R/W}{R/W}",
+    "type": "Legendary Creature - God",
+    "text": "Vigilance, indestructible\nIf you would take a shot, you may instead sacrifice a nonland permanent you control.",
+    "flavor": "One can only shudder to think what it sees.",
+    "rarity": "M",
+    "img": "https://i.imgur.com/L6adwRq.png",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 5,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Re-written from old version in MTC, added to MTD"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Thunderclap Wyvern",
+    "set": "MTD",
+    "cn": 229,
+    "id": "WU",
+    "cost": "{2}{W}{U}",
+    "type": "Creature - Drake",
+    "text": "Flash\nFlying\nOther creatures you control with flying get +1/+1.",
+    "flavor": "The unholy offspring of lightning and death itself. Never engage this dragon. Your only chance: Hide and pray it does not find you.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/YNH8MKP.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "21-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, second cardname should probably just be first name"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "a shortened flavor text // and a sick art in my opinion"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Twilight Harbinger",
+    "set": "MTD",
+    "cn": 230,
+    "id": "UB",
+    "cost": "{1}{U}{B}",
+    "type": "Creature - Nightmare",
+    "text": "Whenever you cast an instant or sorcery spell, ~ can't be blocked this turn.\nWhenever ~ deals combat damage to a player, return target instant or sorcery from your graveyard to your hand.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/1k572ei.png",
+    "has_bleed_edge": false,
+    "power": 1,
+    "toughness": 3,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "when cast spell become unblockable // when deal damage get a spell back // dimir rare creature"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Vanguard Berserker",
+    "set": "MTD",
+    "cn": 231,
+    "id": "RG",
+    "cost": "{R}{G}",
+    "type": "Creature - Elf Alcoholic",
+    "text": "When ~ enters, you may have it fight target creature. If that creature dies this way, put a +1/+1 counter and a beer counter on target creature you control. If you controlled that creature, instead put two +1/+1 counters and two beer counters on that creature.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/GYXbwsE.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, changed 'if that creature would die this way' to 'if that creature dies this way'"
+      },
+      {
+        "date": "17-10-2024",
+        "creator": "Thys",
+        "notes": "Downshifted to uncommon"
+      }
+    ],
+    "tags": {}
+  },
+  {
     "name": "Battle Caravan",
     "set": "MTD",
     "cn": 169,
@@ -632,7 +1286,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -1253,7 +1909,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [
+        "Removal"
+      ],
       "reprint": false
     }
   },
@@ -2117,7 +2775,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["wheel"],
+      "function": [
+        "wheel"
+      ],
       "reprint": false
     }
   },
@@ -2506,7 +3166,10 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal", "discard-outlet"],
+      "function": [
+        "removal",
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -2542,7 +3205,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -2573,7 +3238,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -2718,7 +3385,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"]
+      "function": [
+        "recursion"
+      ]
     }
   },
   {
@@ -2788,7 +3457,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -2877,7 +3548,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard-outlet"],
+      "function": [
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -2903,7 +3576,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -2928,7 +3603,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -3069,7 +3746,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
+      "function": [
+        "discard",
+        "thoughtseize",
+        "discard-outlet",
+        "pact"
+      ],
       "reprint": false
     }
   },
@@ -3187,7 +3869,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -3416,7 +4100,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -3698,7 +4384,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"]
+      "function": [
+        "removal"
+      ]
     }
   },
   {
@@ -3871,7 +4559,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -4246,7 +4936,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -4585,7 +5277,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -5599,7 +6293,9 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": ["counterspell"]
+      "function": [
+        "counterspell"
+      ]
     }
   },
   {
@@ -5716,7 +6412,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -5747,7 +6445,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": true
     }
   },
@@ -5908,7 +6608,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": false
     }
   },
@@ -6080,7 +6782,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -6199,7 +6903,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -6650,7 +7356,9 @@
       }
     ],
     "tags": {
-      "function": ["tutor"],
+      "function": [
+        "tutor"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -6734,448 +7442,6 @@
         "date": "15-07-2024",
         "creator": "Sam",
         "notes": "Moved to MTC, don't want ramp"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Daughter of Moonshine",
-    "set": "MTD",
-    "cn": 214,
-    "id": "BR",
-    "cost": "{2}{B}{R}",
-    "type": "Creature — Vampire Devil",
-    "text": "Flying, lifelink\nTake a shot: Create a Blood token.",
-    "flavor": "The moon shone bright, but her beauty surpassed all.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/nFCDaWk.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 4,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "05-05-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Added devil to typeline"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Strefan, Wrathful Reagent",
-    "set": "MTD",
-    "cn": 223,
-    "id": "BR",
-    "cost": "{2}{B}{R}",
-    "type": "Legendary Creature — Vampire Noble",
-    "text": "Flying\nAt the beginning of your end step, create a Blood token for each player who lost life this turn. Whenever ~ attacks, you may sacrifice a Blood token. If you do, defending player takes a shot.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/sb5D54F.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "04-05-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, the second cardname should probably be just the first name"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Battle Preparations",
-    "set": "MTD",
-    "cn": 212,
-    "id": "WG",
-    "cost": "{2}{G}{W}",
-    "type": "Instant",
-    "text": "Put a +1/+1 counter and a Beer counter on each creature you control. You gain 1 life for each creature you control.",
-    "flavor": "We are ready. Do not underestimate us.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/XS1a9vo.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "22-02-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Rest Well Deserved",
-    "set": "MTD",
-    "cn": 223,
-    "id": "WG",
-    "cost": "{G}{W}",
-    "type": "Instant",
-    "text": "Permanents you control with counters on them gain hexproof and indestructible until end of turn.",
-    "flavor": "They may have every advantage under the Sun. But we have full bellies and clear eyes, I can't say the same for them.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/mkatfaM.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "22-02-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Radha, Victorious Queen",
-    "set": "MTD",
-    "cn": 221,
-    "id": "RG",
-    "cost": "{R}{G}",
-    "type": "Legendary Creature - Elf Alcoholic",
-    "text": "Haste\nRemove a beer counter from ~: Add {R}{G}. Activate only if ~ has attacked this turn, and only once each turn.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/dsDG17l.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "21-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, second cardname should probably just be first name"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Ariel, Architect of Aphelion",
-    "set": "MTD",
-    "cn": 211,
-    "id": "WU",
-    "cost": "{3}{W}{U}",
-    "type": "Legendary Creature - Bird Wizard",
-    "text": "Flash\nFlying\nThis spell costs {3} less to cast if you have taken a shot this turn.\nWhenever you take your second shot each turn, you gain 6 life.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/WhqaOPc.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "21-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "ARIEL NEEDS SO MUCH HELP"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Thys",
-        "notes": "Changed last paragraph to 'Whenever you take a shot, if it wasn't the first shot you took this turn, you gain 3 life.'"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Thys",
-        "notes": "Changed last paragraph to 'Whenever you take your second shot each turn, you gain 6 life.'"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Changed art of Ariel"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Thunderclap Wyvern",
-    "set": "MTD",
-    "cn": 228,
-    "id": "WU",
-    "cost": "{2}{W}{U}",
-    "type": "Creature - Drake",
-    "text": "Flash\nFlying\nOther creatures you control with flying get +1/+1.",
-    "flavor": "The unholy offspring of lightning and death itself. Never engage this dragon. Your only chance: Hide and pray it does not find you.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/YNH8MKP.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "21-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, second cardname should probably just be first name"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "a shortened flavor text // and a sick art in my opinion"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Coy Reversal",
-    "set": "MTD",
-    "cn": 211,
-    "id": "UB",
-    "cost": "{2}{U}{B}",
-    "type": "Instant",
-    "text": "Counter target spell. Its controller discards a card and takes a shot.",
-    "flavor": "Espionage at its finest.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/7f3h9Ui.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Reach into Hell",
-    "set": "MTD",
-    "cn": 211,
-    "id": "BR",
-    "cost": "{B}{R}",
-    "type": "Sorcery",
-    "text": "Return target black or red creature from your graveyard to your hand.\nMadness {0}",
-    "flavor": "Reaching into Hell, he found what he sought, but at a great price.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/FuAv2uo.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "24-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Vanguard Berserker",
-    "set": "MTD",
-    "cn": 211,
-    "id": "RG",
-    "cost": "{R}{G}",
-    "type": "Creature - Elf Alcoholic",
-    "text": "When ~ enters, you may have it fight target creature. If that creature dies this way, put a +1/+1 counter and a beer counter on target creature you control. If you controlled that creature, instead put two +1/+1 counters and two beer counters on that creature.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/GYXbwsE.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, changed 'if that creature would die this way' to 'if that creature dies this way'"
-      },
-      {
-        "date": "17-10-2024",
-        "creator": "Thys",
-        "notes": "Downshifted to uncommon"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Freyan the Crazed Lord",
-    "set": "MTD",
-    "cn": 211,
-    "id": "RG",
-    "cost": "{2}{R}{G}",
-    "type": "Legendary Creature - Elf Alcoholic",
-    "text": "First strike, haste\n Whenever ~ attacks, put a beer counter on each attacking creature you control.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/C8jFHq6.png",
-    "has_bleed_edge": false,
-    "power": 4,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Freyan's Warpath",
-    "set": "MTD",
-    "cn": 219,
-    "id": "RG",
-    "cost": "{4}{R}{G}",
-    "type": "Sorcery",
-    "text": "Choose one -\n• Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n• Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/BcvPR9z.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Add entwine for {3}"
-      },
-      {
-        "date": "17-10-2024",
-        "creator": "Thys",
-        "notes": "Removed Entwine {3}"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Demonic Party",
-    "set": "MTD",
-    "cn": 211,
-    "id": "BR",
-    "cost": "{2}{B}{R}",
-    "type": "Legendary Artifact",
-    "text": "Take a shot: Add{C}",
-    "flavor": "Beneath the heathen worlds of fire and ice, in the darkest pits of the most hallowed night, the Demon Lord celebrates his forbidden pleasures. Tonight, all of Hell parties with him.",
-    "rarity": "M",
-    "img": "https://i.imgur.com/vWdcL2s.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Shot of Wisdom",
-    "set": "MTD",
-    "cn": 226,
-    "id": "UR",
-    "cost": "{1}{U/R}{U/R}",
-    "type": "Legendary Enchantment Artifact",
-    "text": "You may look at the top card of your library any time.\nYou may play lands and cast spells from the top of your library. If you cast a spell this way, take a shot.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/0JA2xJx.png",
-    "has_bleed_edge": true,
-    "art-remarks": "A shot glass on a scroll or spellbook",
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Changed UR in casting cost to U/R U/R // Uploaded new art and card"
       }
     ],
     "tags": {}
@@ -8109,33 +8375,11 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": true
     }
-  },
-  {
-    "name": "The Watcher",
-    "set": "MTD",
-    "cn": 224,
-    "id": "WR",
-    "cost": "{3}{R/W}{R/W}",
-    "type": "Legendary Creature - God",
-    "text": "Vigilance, indestructible\nIf you would take a shot, you may instead sacrifice a nonland permanent you control.",
-    "flavor": "One can only shudder to think what it sees.",
-    "rarity": "M",
-    "img": "https://i.imgur.com/L6adwRq.png",
-    "has_bleed_edge": true,
-    "power": 3,
-    "toughness": 5,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Re-written from old version in MTC, added to MTD"
-      }
-    ],
-    "tags": {}
   },
   {
     "name": "Anointed Captain",
@@ -8200,90 +8444,6 @@
     "tags": {}
   },
   {
-    "name": "Ending of Ages",
-    "cost": "{W/B}{U/R}{B/G}{R/W}{G/U}",
-    "type": "Enchantment - Saga",
-    "text": "Surveil 3, then draw three cards.\nExile any number of target cards from your graveyard. Until end of turn, you may play those cards.\nEach opponent may discard a card or sacrifice a nonland permanent. If they don't, they lose 3 life. Repeat this process five more times.\nYou get an emblem with “Whenever you draw a card, you take a shot.”",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 218,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/H0dV8FR.png",
-    "id": "WUBRG",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Thys",
-        "notes": "Mana cost created"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "Created card stub"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Created potential card idea"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Changed name from RAINBOWWWW to Ending of Ages, added render, updated rules text from anthem to saga"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Twilight Harbinger",
-    "set": "MTD",
-    "cn": 229,
-    "id": "UB",
-    "cost": "{1}{U}{B}",
-    "type": "Creature - Nightmare",
-    "text": "Whenever you cast an instant or sorcery spell, ~ can't be blocked this turn.\nWhenever ~ deals combat damage to a player, return target instant or sorcery from your graveyard to your hand.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/1k572ei.png",
-    "has_bleed_edge": false,
-    "power": 1,
-    "toughness": 3,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "when cast spell become unblockable // when deal damage get a spell back // dimir rare creature"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Consult the Necrosages",
-    "set": "MTD",
-    "cn": 213,
-    "id": "UB",
-    "cost": "{1}{U}{B}",
-    "type": "Sorcery",
-    "text": "Choose one -\n• Target player draws two cards.\n• Target player discards two cards.",
-    "flavor": "\"What isss it you requirrre?\"",
-    "rarity": "U",
-    "img": "https://i.imgur.com/vcRzIMU.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Arctic Aven",
     "cost": "{2}{U}",
     "type": "Creature - Bird Wizard",
@@ -8315,33 +8475,6 @@
       "function": [],
       "reprint": true
     }
-  },
-  {
-    "name": "Absorb",
-    "set": "MTD",
-    "cn": 211,
-    "id": "WU",
-    "cost": "{W}{U}{U}",
-    "type": "Instant",
-    "text": "Counter target spell. You gain 3 life.",
-    "flavor": "Creation comes from all places, even destruction.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/m3eUNr0.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "damn holo stamps // new image"
-      }
-    ],
-    "tags": {}
   },
   {
     "name": "Dimir Aqueduct",
@@ -8817,28 +8950,6 @@
     "tags": {}
   },
   {
-    "name": "Mnemonic Betrayal",
-    "set": "MTD",
-    "cn": 221,
-    "id": "UB",
-    "cost": "{1}{U}{B}",
-    "type": "Sorcery",
-    "text": "Exile all opponents' graveyards. You may cast spells from among those cards this turn, and mana of any type can be spent to cast them. At the beginning of the next end step, if any of those cards remain exiled, return them to their owners' graveyards.\nExile ~.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/Lz9tf9M.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Hypnostatic Architect",
     "set": "MTD",
     "cn": 288,
@@ -9023,59 +9134,6 @@
     ],
     "tags": {},
     "invisible": true
-  },
-  {
-    "name": "Nepenthe, Titan of Mind's Deisre",
-    "set": "MTD",
-    "cn": 222,
-    "id": "UB",
-    "cost": "{1}{U}{B}",
-    "type": "Legendary Creature - Elder Giant",
-    "text": "When ~ enters, sacrifice it unless it escaped.\nWhenever ~ enters or attacks, each player mills three cards, then exile target nonland card from a graveyard. You may cast it this turn by exiling two cards from your graveyard in addition to paying its other costs, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.\nEscape - {U}{U}{B}{B}, Exile five other cards from your graveyard.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/XlaUoFv.png",
-    "has_bleed_edge": true,
-    "power": 6,
-    "toughness": 6,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "29-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip"
-      },
-      {
-        "date": "30-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card text of milling each player 3, then allowing a cast from gy"
-      },
-      {
-        "date": "30-07-2024",
-        "creator": "Sam",
-        "notes": "i think 3 mana is an appropriate casting cost tbh // maybe 4? // Drukar, Titan of Mind's Desire or Nepenthe, Titan of Mind's Desire // Nepenthe in greek more or less means a drug of forgetfulness // Then Helen, daughter of Zeus, took other counsel. Straightway she cast into the wine of which they were drinking a drug to quiet all pain and strife, and bring forgetfulness of every ill. // Drukar (no meaning, my own creation), Nepenthe (used to make people forget), Dolus (latin for deceit)"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Sam",
-        "notes": "Added art, name"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Changed wording so that the exiling of a nonland card isn't on a may clause anymore, removing the need to add some 'If you do' clause"
-      },
-      {
-        "date": "16-09-2024",
-        "creator": "Sam",
-        "notes": "Fixed wording on render"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
   },
   {
     "name": "Inalla, Archmage Ritualist",
@@ -9383,7 +9441,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -9595,7 +9655,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -9677,7 +9739,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -9703,7 +9767,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -9755,7 +9821,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["ramp"],
+      "function": [
+        "ramp"
+      ],
       "reprint": true
     }
   },

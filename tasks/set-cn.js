@@ -5,8 +5,13 @@ import fs from "fs";
 let dataCopy = structuredClone(data);
 
 const set = "MTD";
-const beginCn = 169;
-const endCn = 210;
+//Red Cards
+//const beginCn = 169;
+//const endCn = 210;
+
+// Multicolor
+const beginCn = 211;
+const endCn = 244;
 
 // Filter and get the relevant cards
 let filteredData = data.filter((card) => {
@@ -37,7 +42,7 @@ let mergedArray = [...filteredData, ...dataCopy];
 
 // Write the merged array back to the JSON file
 fs.writeFileSync(
-  "customcards.json",
+  "../customcards.json",
   JSON.stringify(mergedArray, null, 2),
   "utf8"
 );
