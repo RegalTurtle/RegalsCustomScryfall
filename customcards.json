@@ -9877,7 +9877,7 @@
     "type": "Legendary Artifact",
     "text": "Indestructible\nWhen ~ enters, if you cast it, you gain protection from everything until your next turn.\nAt the beginning of your upkeep, you lose 1 life for each burden counter on ~.\n{T}: Put a burden counter on ~, then draw a card for each burden counter on ~.",
     "flavor": "",
-    "rarity": "U",
+    "rarity": "M",
     "cn": 5,
     "note": "=LTR 246",
     "set": "REGT",
@@ -9895,6 +9895,34 @@
     "tags": {
       "frame": "normal",
       "function": ["draw", "repeatable-draw", "card-advantage"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "The Flood of Mars",
+    "nickname": "The Living Rain",
+    "cost": "{2}{U}{U}",
+    "type": "Creature — Alien Zombie Horror",
+    "text": "Islandwalk\n{i}Water Always Wins{/i} — Whenever ~ attacks, put a flood counter on another target creature or land. If it's a creature, it becomes a copy of ~. If it's a land, it becomes an Island in addition to its other types.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 7,
+    "note": "=WHO 45",
+    "set": "REGT",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/lEYaarY.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "22-10-2024",
+        "creator": "Thys",
+        "notes": "Added render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
       "reprint": true
     }
   }
