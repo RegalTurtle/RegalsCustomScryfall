@@ -9925,5 +9925,33 @@
       "function": [],
       "reprint": true
     }
+  },
+  {
+    "name": "Contaminated Drink",
+    "nickname": "Draft of the Dreamer",
+    "cost": "{2}{U}{U}",
+    "type": "Creature — Alien Zombie Horror",
+    "text": "Islandwalk\n{i}Water Always Wins{/i} — Whenever ~ attacks, put a flood counter on another target creature or land. If it's a creature, it becomes a copy of ~. If it's a land, it becomes an Island in addition to its other types.",
+    "flavor": "The dreamer sleeps, and her children slumber, dreaming of decay and rot, the spaces beyond and between.",
+    "rarity": "U",
+    "cn": 8,
+    "note": "=PIP 99",
+    "set": "REGT",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/x0hezRS.png",
+    "id": "UB",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "22-10-2024",
+        "creator": "Thys",
+        "notes": "Added render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "reprint": true
+    }
   }
 ]
