@@ -277,7 +277,7 @@
     "name": "Brotherhood's Call",
     "cost": "{2}{W}",
     "type": "Instant",
-    "text": "Choose one -\n• Create two 1/1 white Cleric creature tokens.\n• Destroy target artifact or enchantment.",
+    "text": "Choose one -\n• {indent}Create two 1/1 white Cleric creature tokens.\n• {indent}Destroy target artifact or enchantment.",
     "flavor": "Begotten, not made, consubstantial with the Father.",
     "rarity": "C",
     "cn": 9,
