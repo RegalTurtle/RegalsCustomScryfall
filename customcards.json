@@ -1,5 +1,1395 @@
 [
   {
+    "name": "Aerial Assault",
+    "set": "MTD",
+    "cn": 1,
+    "id": "W",
+    "cost": "{2}{W}",
+    "type": "Sorcery",
+    "text": "Destroy target tapped creature. You gain 1 life for each creature you control with flying.",
+    "flavor": "\"Dark times require even the most solitary hunters to work together\"\n-Bunder Diedreck, ex-ornithologist",
+    "rarity": "C",
+    "img": "https://i.imgur.com/qtykpRG.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "this needs an m dash before the name in flavor"
+      },
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Fixed flavor text, added bleed and CN"
+      }
+    ],
+    "tags": {
+      "function": ["removal"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Ancestral Thurbile",
+    "cost": "{2}{W}{W}",
+    "type": "Artifact - Equipment",
+    "text": "When ~ enters, create a 1/1 white Cleric creature token with vigilance, then attach ~ to it.\nEquipped creature gets +1/+1 and lifelink.\nEquip {2}",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 2,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/AEuxeid.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added new art, added CN and bleed edge"
+      },
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Needs artist notes, pretty sure this was on Midjourney"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Added artist credit"
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
+    "name": "Anointed Captain",
+    "cost": "{2}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "Vigilance\nWhenever one or more other creatures enter the battlefield under your control, create a 1/1 white Human Soldier creature token. This ability triggers only once each turn.",
+    "flavor": "",
+    "set": "MTD",
+    "cn": 3,
+    "id": "W",
+    "rarity": "U",
+    "img": "https://i.imgur.com/9LW33FX.png",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 3,
+    "notes": [
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed edge"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "New render with corrected token"
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
+    "name": "Anointed Chorister",
+    "cost": "{W}",
+    "type": "Creature - Human Cleric",
+    "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
+    "flavor": "Dies irae, dies illa\nSolvet sæclum in favilla,\nTeste David cum Sibylla.",
+    "power": 1,
+    "toughness": 1,
+    "rarity": "C",
+    "cn": 4,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/OFShq0W.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Needs flavor text, I'll work on that"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Updated flavor text and art"
+      },
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Needs artist notes"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Added artist credit"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed art framing"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Apostle of Purifying Light",
+    "set": "MTD",
+    "cn": 5,
+    "id": "W",
+    "cost": "{1}{W}",
+    "type": "Creature - Human Cleric",
+    "text": "Protection from black\n{2}: Exile target card from a graveyard.",
+    "flavor": "\"Exorcizamus te, omnis immundus spoiritus, omnis satanica potestas, omnis incursio infernalis adversarii...\"",
+    "rarity": "U",
+    "img": "https://i.imgur.com/EPKLa1r.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Needs artist notes and bleed edge and CN // Added bleed and CN"
+      }
+    ],
+    "tags": {
+      "reprint": true
+    }
+  },
+  {
+    "name": "Archon of Coronation",
+    "set": "MTD",
+    "cn": 6,
+    "id": "W",
+    "cost": "{4}{W}{W}",
+    "type": "Creature - Archon",
+    "text": "Flying\nWhen ~ enters, you become the monarch.\nAs long as you're the monarch, damage doesn't cause you to lose life.",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/5KX1eHH.png",
+    "has_bleed_edge": true,
+    "power": 5,
+    "toughness": 5,
+    "notes": [
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added notes and flavor to json"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Uploaded art with CN and bleed edge"
+      },
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Copilot Designer, not Illustrator, needs to be changed // Updated artist credit"
+      }
+    ],
+    "tags": {
+      "reprint": true
+    }
+  },
+  {
+    "name": "Arrest",
+    "cost": "{2}{W}",
+    "type": "Enchantment - Aura",
+    "text": "Enchant creature\nEnchanted creature can't attack or block, and its activated abilities can't be activated.",
+    "flavor": "Lay still in the name of the Holy Order.",
+    "rarity": "C",
+    "cn": 7,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/K5d9KcJ.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Given bleed edge and CN"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Thys",
+        "notes": "New render with Nyx border"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["removal"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Astral Confrontation",
+    "cost": "{4}{W}",
+    "type": "Instant",
+    "text": "This spell costs {1} less to cast for each opponent you're attacking.\nExile target creature.",
+    "flavor": "“You are not made in God's image.”",
+    "rarity": "U",
+    "cn": 8,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/fgTIIPQ.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "upshift astral confrontation"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge"
+      },
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Needs artist notes, I believe Midjourney"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Added artist credit"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Brotherhood's Call",
+    "cost": "{2}{W}",
+    "type": "Instant",
+    "text": "Choose one -\n• Create two 1/1 white Cleric creature tokens.\n• Destroy target artifact or enchantment.",
+    "flavor": "Begotten, not made, consubstantial with the Father.",
+    "rarity": "C",
+    "cn": 9,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/gk94a1O.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Sam",
+        "notes": "Given art and flavor text"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "removal",
+        "removal-enchantment",
+        "removal-enchantment-destroy",
+        "removal-artifact",
+        "removal-artifact-destroy"
+      ],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Champion of Light",
+    "set": "MTD",
+    "cn": 10,
+    "id": "W",
+    "cost": "{3}{W}",
+    "type": "Creature - Human Angel",
+    "text": "Flying, vigilance\nWhen ~ enters, you become the monarch.",
+    "flavor": "The ultimate union of mortal and the divine.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/BvtldHf.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 3,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed"
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
+    "name": "Clairmont, Vicious Arbiter",
+    "set": "MTD",
+    "cn": 11,
+    "id": "W",
+    "cost": "{2}{W}",
+    "type": "Legendary Creature - Human Noble",
+    "text": "At the beginning of your end step, if you gained 2 or more life this turn, create an Excuse token.",
+    "flavor": "“If the Inquisition is the pen, then I am their sword.”",
+    "rarity": "U",
+    "img": "https://i.imgur.com/Yfdfldb.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 3,
+    "artist": "Copilot Designer",
+    "notes": [
+      {
+        "date": "05-05-2024",
+        "creator": "Sam",
+        "notes": "clairmont downshift and increase cost"
+      },
+      {
+        "date": "05-05-2024",
+        "creator": "Thys",
+        "notes": "2/3, 2w"
+      },
+      {
+        "date": "05-05-2024",
+        "creator": "Sam",
+        "notes": "Posted new image"
+      },
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added bleed and CN // Needs new CN rarity"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Fixed name on Clairmont, updated flavor in the json"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped // Changed the actual json"
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
+    "name": "Condemn",
+    "cost": "{W}",
+    "type": "Instant",
+    "text": "Put target attacking creature on the bottom of its owner's library. Its controller gains life equal to its toughness.",
+    "flavor": "“In the name of the Inquisition, you will stand down!” {lns}{-}Clairmont",
+    "rarity": "U",
+    "cn": 12,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/FIzy6Xm.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed, updated flavor display to work with flavor off of cardconjurer"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed art framing"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Dawn of Hope",
+    "cost": "{1}{W}",
+    "type": "Enchantment",
+    "text": "Whenever you gain life, you may pay {2}. If you do, draw a card.\n{3}{W}: Create a 1/1 Soldier creature token with lifelink.",
+    "flavor": "My people need hope, it's time to make a change.",
+    "rarity": "R",
+    "cn": 13,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/oiEgVbb.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Fixed flavor text from its to it's // added CN and bleed"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Thys",
+        "notes": "New render with Nyx border"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed art framing"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Fortified Rampart",
+    "cost": "{1}{W}",
+    "type": "Creature - Wall",
+    "text": "Defender",
+    "flavor": "“Today we hold, today we stand, today we prove to our fathers the metal of our hearts and the steel of our blades!”",
+    "power": 0,
+    "toughness": 6,
+    "rarity": "C",
+    "cn": 14,
+    "set": "MTD",
+    "artist": "",
+    "img": "https://i.imgur.com/3MCVM6m.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed and CN"
+      }
+    ],
+    "tags": {
+      "reprint": true
+    }
+  },
+  {
+    "name": "Goliath Protector",
+    "cost": "{4}{W}",
+    "type": "Creature - Giant",
+    "text": "When ~ enters, choose one:\n• Destroy target artifact.\n• Destroy target enchantment.\n• Put two +1/+1 counters on ~.",
+    "flavor": "",
+    "power": 2,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 15,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/wGGDNAY.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed and CN"
+      }
+    ],
+    "tags": {
+      "reprint": false,
+      "frame": "normal",
+      "function": [
+        "removal",
+        "removal-enchantment",
+        "removal-artifact",
+        "removal-enchantment-destroy",
+        "removal-artifact-destroy"
+      ]
+    }
+  },
+  {
+    "name": "Guardian Broadwing",
+    "cost": "{1}{W}",
+    "type": "Creature - Bird",
+    "text": "Flying\nWhenever ~ attacks, it gets +2/-1 until end of turn.",
+    "flavor": "",
+    "power": 3,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 16,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/lyfUf8z.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added render and art"
+      }
+    ],
+    "tags": {
+      "function": [],
+      "reprint": false,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Harvester Giant",
+    "cost": "{4}{W}",
+    "type": "Creature - Giant",
+    "text": "When ~ enters, you gain 3 life.\nPlainscycling {2}",
+    "flavor": "As crop tithes increased, lords chose to look past their prejudices in favor of profit.",
+    "power": 3,
+    "toughness": 5,
+    "rarity": "C",
+    "cn": 17,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Hh71NKP.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Cooking up new art"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added flavor and new artwork"
+      },
+      {
+        "date": "15-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed CN from 17 to 16"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
+  },
+  {
+    "name": "High Ground",
+    "cost": "{W}",
+    "type": "Enchantment",
+    "text": "Each creature you control can block an additional creature each combat.",
+    "flavor": "“You were like a brother to me!” {lns}{-}A legendary duel",
+    "rarity": "U",
+    "cn": 18,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/MD48oB3.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Here are my submissions for white reprints"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Love"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed edge and CN info"
+      },
+      {
+        "date": "15-08-2024",
+        "creator": "Sam",
+        "notes": "Fixed CN from 16 to 17"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Thys",
+        "notes": "New render with Nyx border"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed having a holo stamp and rarity symbol"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Hopeful Monk",
+    "cost": "{1}{W}",
+    "type": "Creature - Human Monk",
+    "text": "Blocking creatures you control get +0/+1. If you are the monarch, instead creatures you control get +0/+1.",
+    "flavor": "He hopes for peace, but prepares for war.",
+    "power": 1,
+    "toughness": 1,
+    "rarity": "C",
+    "cn": 19,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/KQFMNoW.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Updated render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
+  },
+  {
+    "name": "Inquisitorial Knight",
+    "cost": "{3}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "",
+    "flavor": "The inquisition stands as a symbol of holy justice. Bastions of charity and support, their holy oath binds them to church, populous, and state.",
+    "power": 3,
+    "toughness": 5,
+    "rarity": "C",
+    "cn": 20,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/p5obOhP.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed and CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Inspector General",
+    "cost": "{1}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at any unopened booster pack in the draft or any booster pack not being looked at by another player.",
+    "flavor": "",
+    "power": 1,
+    "toughness": 2,
+    "rarity": "C",
+    "cn": 21,
+    "set": "MTD",
+    "artist": "",
+    "id": "W",
+    "img": "https://i.imgur.com/rAJeATa.png",
+    "has_bleed_edge": true,
+    "watermark": "draft",
+    "notes": [
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Inspired from Whispergear Sneak, same effect on a white body"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Added artist credit"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
+  },
+  {
+    "name": "Judge Unworthy",
+    "set": "MTD",
+    "cn": 22,
+    "id": "W",
+    "cost": "{1}{W}",
+    "type": "Instant",
+    "text": "Choose target attacking or blocking creature. Scry 3, then reveal the top card of your library. ~ deals damage equal to that card's mana value to that creature.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/CqCZmpG.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Given bleed edge and CN"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Light of God",
+    "cost": "{1}{W}",
+    "type": "Enchantment - Aura",
+    "text": "Flash\nEnchant creature\nWhen ~ enters, untap enchanted creature.\nEnchanted creature has flying.",
+    "flavor": "The council of heaven delivers light to the faithful, to torment the faithless.",
+    "rarity": "C",
+    "cn": 23,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/r1v7Npf.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "this is genius i love it"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Sam",
+        "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Thys",
+        "notes": "New render with Nyx border"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Mandate of Sobriety",
+    "cost": "{2}{W}",
+    "type": "Enchantment",
+    "text": "{2}: Prevent the next shot you would take this turn.",
+    "flavor": "“As of this day, not a drop of alcohol shall defile your lips, nor a whiff of devil weed taint your lungs, arise child of light and be whole.” {-}Sephara",
+    "rarity": "U",
+    "cn": 24,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/D15eEB9.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "That card is a token now. The enchantment is defunct. Or are you suggesting making it a different card with that name"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "different card, same name"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Good idea"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "see this. you suggested it. forever ago"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Lmao yeah. Good call back"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "Card rename to: Mandate of Sobriety. Reason: new token with same name [Excuse token]"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added new card art and name"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Change skip next shot to prevent next shot"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed art and added CN and bleed edge"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Changed flavor text, added Nyx border"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Martial Coup",
+    "cost": "{X}{W}{W}",
+    "type": "Sorcery",
+    "text": "Create X 1/1 white Soldier creature tokens. If X is 5 or more, destroy all creatures.",
+    "flavor": "And so the crown returned to the king, the church finally bending the knee.",
+    "rarity": "R",
+    "cn": 25,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/dpbH5dT.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed and CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "No Fun Allowed",
+    "cost": "{W}",
+    "type": "Instant",
+    "text": "Counter target spell or activated ability that would force a player to take a shot.\nDraw a card.",
+    "flavor": "“The Lord wills it not”",
+    "rarity": "U",
+    "cn": 26,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/zeDcu7u.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Collectors info needs to be updated to U for rarity"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed and CN"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Palace Jailer",
+    "cost": "{2}{W}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "When ~ enters, you become the monarch.\nWhen ~ enters, exile target creature an opponent controls until an opponent becomes the monarch.",
+    "flavor": "",
+    "power": 2,
+    "toughness": 2,
+    "rarity": "U",
+    "cn": 27,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/YgsNsiv.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": ["removal"],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Palace Sentinels",
+    "cost": "{3}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "When ~ enters, you become the monarch.",
+    "flavor": "While the church has power throughout the city, that reach ends at the end of their pikes.",
+    "power": 2,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 28,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/WySUcMB.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Added new render, CN, bleed edge, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
+  },
+  {
+    "name": "Paladin of the Holy Order",
+    "cost": "{5}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "When ~ enters, you become the monarch.\nAt the beginning of combat on each opponent's turn, if you're the monarch, that opponent may pay {X}, where X is the number of cards in their hand. If they don't, they can't attack you this combat.",
+    "flavor": "",
+    "power": 4,
+    "toughness": 6,
+    "rarity": "R",
+    "cn": 29,
+    "note": "=LTC 10",
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/whfCPwf.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Changed cn to 28 instead of 26 // New render, added CN, bleed edge, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
+  },
+  {
+    "name": "Parishioner",
+    "set": "MTD",
+    "cn": 30,
+    "id": "W",
+    "cost": "{W}",
+    "type": "Creature - Human Citizen",
+    "text": "When ~ enters, create a tapped Excuse token.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/OuIOoDu.png",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 1,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changing wording of Excuse token"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "New card image with new wording and CN and bleed edge"
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Needs a proper typeline, currently just \"Creature\""
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
+    "name": "Peace Accord",
+    "cost": "{1}{W}{W}",
+    "type": "Enchantment",
+    "text": "Creatures controlled by the player whose turn it is get -1/-0.\nCreatures controlled by each opponent of the player whose turn it is get +0/+1.",
+    "flavor": "The age of the new monarch has begun, let there be peace and prosperity.",
+    "rarity": "R",
+    "cn": 31,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/zTbxkcg.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Updated and added bleed and cn etc."
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Changed name to Peace Accord, new art and flavor text, added Nyx frame"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Prohibition",
+    "cost": "{3}{W}",
+    "type": "Enchantment",
+    "text": "Each player can't take more than one shot each turn.",
+    "flavor": "“But drinking brought us together, this fragile peace with the elves, why did you have to find that old tome Simon. Why!” {-}Archivist of the Ecclesiarch",
+    "rarity": "U",
+    "cn": 32,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Z2xDrsb.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "mtd31 might need flavor text"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Sam",
+        "notes": "New art and flavor"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "New render with Nyx border"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Thys",
+        "notes": "Fixed flavor text"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Protector of the Crown",
+    "cost": "{5}{W}",
+    "type": "Creature - Giant Soldier",
+    "text": "When ~ enters, you become the monarch.\nAll damage that would be dealt to you is dealt to ~ instead.",
+    "flavor": "“I gladly offer my weapon and my life to the glory of my sovereign.”",
+    "power": 2,
+    "toughness": 5,
+    "rarity": "R",
+    "cn": 33,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/Do1VPiT.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "remove protector of the crown"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Sam",
+        "notes": "protector of the crown, commander set you go :)"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Re-adding Protector of the Crown, only displaces 3 cards."
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "reprint": true
+    }
+  },
+  {
+    "name": "Rally the People",
+    "set": "MTD",
+    "cn": 34,
+    "id": "W",
+    "cost": "{5}{W}{W}",
+    "type": "Sorcery",
+    "text": "Convoke\nCreate X 1/1 green and white Citizen creature tokens, where X is the number of counters on permanents you control.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/zRH03Js.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added CN and bleed"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Reformed Priest",
+    "cost": "{2}{W}",
+    "type": "Creature - Elf Noble",
+    "text": "Remove a beer counter from ~: You gain 2 life.",
+    "flavor": "Purity through sobriety, a crime to all elven culture.",
+    "power": 1,
+    "toughness": 2,
+    "rarity": "U",
+    "cn": 35,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/N4j31AP.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Changed from remove a beer counter from any permanent to just itself"
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
+    "name": "Royal Privilege",
+    "cost": "{2}{W}{W}{W}",
+    "type": "Enchantment",
+    "text": "When ~ enters, you become the monarch.\nAs long as you are the monarch, your life total can't change as a result of you taking a shot.",
+    "flavor": "“Do you know who I am”",
+    "rarity": "R",
+    "cn": 36,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/eL655sO.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Updated and added bleed and cn etc."
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "New render with Nyx border"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Sales Tax",
+    "cost": "{2}{W}{W}",
+    "type": "Enchantment",
+    "text": "Whenever a spell or ability an opponent controls forces you to take a shot, that player may pay {2}. If the player doesn't, you create a Treasure token.",
+    "flavor": "Bureaucracy.",
+    "rarity": "R",
+    "cn": 37,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/UN4AqdS.png",
+    "id": "W",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "29-07-2024",
+        "creator": "Thys",
+        "notes": "Changed from punishing people taking shots to punishing the people that force you to take shots. Also, changed flavor text to a damn unspellable word"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "New render with Nyx border"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Sentinel of the Eternal Watch",
+    "cost": "{5}{W}",
+    "type": "Creature - Giant Soldier",
+    "text": "Vigilance\nAt the beginning of combat on each opponent's turn, tap target creature that player controls.",
+    "flavor": "",
+    "power": 4,
+    "toughness": 6,
+    "rarity": "U",
+    "cn": 38,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Lh6dJ1h.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Added image with correct bleed edge and CN. Might need flavor text"
+      }
+    ],
+    "tags": {
+      "reprint": true
+    }
+  },
+  {
+    "name": "Sephara, Sky's Blade",
+    "set": "MTD",
+    "cn": 39,
+    "id": "W",
+    "cost": "{4}{W}{W}{W}",
+    "type": "Legendary Creature - Angel",
+    "text": "You may pay {W} and tap four untapped creatures you control with flying rather than pay this spell's mana cost.\nFlying, lifelink\nOther creatures you control with flying have indestructible.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/HHSoryZ.png",
+    "has_bleed_edge": true,
+    "power": 7,
+    "toughness": 7,
+    "art-remarks": "",
+    "flavor": "",
+    "notes": [
+      {
+        "date": "27-07-2024",
+        "creator": "Thys",
+        "notes": "Added bleed and CN"
+      }
+    ],
+    "tags": {
+      "reprint": true
+    }
+  },
+  {
+    "name": "Skyhoof Pegasus",
+    "cost": "{1}{W}",
+    "type": "Creature - Pegasus",
+    "text": "Whenever you gain life, ~ gains flying until end of turn.\n{3}: You gain 2 life.",
+    "flavor": "The sky shone with a brilliant hope, how can the world be so dire with such beauty?",
+    "power": 2,
+    "toughness": 2,
+    "rarity": "C",
+    "cn": 40,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/J96DG1Z.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "New art, added bleed and CN"
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
+    "name": "Throne Warden",
+    "cost": "{1}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "At the beginning of your end step, if you're the monarch, put a +1/+1 counter on ~.",
+    "flavor": "My loyalty is to the throne.",
+    "power": 2,
+    "toughness": 2,
+    "rarity": "C",
+    "cn": 41,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/rUIjiBO.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "reprint": true
+    }
+  },
+  {
+    "name": "Zealot",
+    "cost": "{1}{W}",
+    "type": "Creature - Human Soldier",
+    "text": "Whenever ~ blocks or is blocked by an Alcoholic, ~ gets +1/+2 until end of turn.",
+    "flavor": "Drunken rage matched only by religious fervor.",
+    "power": 2,
+    "toughness": 1,
+    "rarity": "C",
+    "cn": 42,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/k6rfdnm.png",
+    "id": "W",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "reprint": false
+    }
+  },
+  {
     "name": "Absorb",
     "set": "MTD",
     "cn": 211,
@@ -479,7 +1869,7 @@
     "set": "MTD",
     "cn": 226,
     "id": "UR",
-    "cost": "{1}{U/R}{U/R}",
+    "cost": "{1}{U}{R}",
     "type": "Legendary Enchantment Artifact",
     "text": "You may look at the top card of your library any time.\nYou may play lands and cast spells from the top of your library. If you cast a spell this way, take a shot.",
     "flavor": "",
@@ -502,6 +1892,11 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Changed UR in casting cost to U/R U/R // Uploaded new art and card"
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Changed {U/R}{U/R} in casting cost to {U}{R}"
       }
     ],
     "tags": {}
@@ -540,7 +1935,7 @@
     "set": "MTD",
     "cn": 228,
     "id": "WR",
-    "cost": "{3}{R/W}{R/W}",
+    "cost": "{3}{R}{W}",
     "type": "Legendary Creature - God",
     "text": "Vigilance, indestructible\nIf you would take a shot, you may instead sacrifice a nonland permanent you control.",
     "flavor": "One can only shudder to think what it sees.",
@@ -555,6 +1950,11 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Re-written from old version in MTC, added to MTD"
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Changed mana cost from {R/W}{R/W} to {R}{W}"
       }
     ],
     "tags": {}
@@ -1502,7 +2902,17 @@
         "notes": "Given name and art"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "removal-enchantment-destroy",
+        "removal",
+        "removal-artifact",
+        "removal-enchantment",
+        "removal-artifact-destroy"
+      ],
+      "reprint": false
+    }
   },
   {
     "name": "Return to the Earth",
@@ -1591,7 +3001,8 @@
         "creator": "Sam",
         "notes": "New image"
       }
-    ]
+    ],
+    "tags": {}
   },
   {
     "name": "Veteran Huntsman",
@@ -1620,16 +3031,16 @@
     }
   },
   {
-    "name": "Vorpal Staff",
+    "name": "World Staff",
     "cost": "{G}",
     "type": "Artifact - Equipment",
-    "text": "Equipped creature gets +0/+2 and gains \"Whenever this creature blocks a creature, put a beer counter on a permanent you control.\"\n{G}{G}{G}{G}{G}, Remove six beer counters from among permanents you control: Set your life total to 20 and untap all permanents you control. Activate only once.\nEquip {G}{G}",
+    "text": "Equipped creature gets +0/+2 and gains \"Whenever this creature blocks a creature, put a beer counter on target permanent you control.\"\n{G}{G}{G}{G}{G}, Remove six beer counters from among permanents you control: Your life total becomes 20. Untap all permanents you control. Activate only once.\nEquip {G}{G}",
     "flavor": "",
     "rarity": "R",
     "cn": 200,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/hufO0Ez.png",
+    "img": "https://i.imgur.com/dUB6ZMW.png",
     "id": "G",
     "has_bleed_edge": true,
     "notes": [
@@ -1637,6 +3048,16 @@
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "16-10-2024",
+        "creator": "Sam",
+        "notes": "Renamed from Vorpal Staff to World Staff // Updated wording from put a counter on a creature to put a counter on target creature // Corrected wording on setting life total to 20."
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Updated image"
       }
     ],
     "tags": {
@@ -3275,7 +4696,7 @@
     "cn": 94,
     "set": "MTD",
     "artist": "",
-    "img": "https://imgur.com/TqsO6L1.png",
+    "img": "https://i.imgur.com/TqsO6L1.png",
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
@@ -4326,172 +5747,6 @@
     "tags": {}
   },
   {
-    "name": "Aerial Assault",
-    "set": "MTD",
-    "cn": 1,
-    "id": "W",
-    "cost": "{2}{W}",
-    "type": "Sorcery",
-    "text": "Destroy target tapped creature. You gain 1 life for each creature you control with flying.",
-    "flavor": "\"Dark times require even the most solitary hunters to work together\"\n-Bunder Diedreck, ex-ornithologist",
-    "rarity": "C",
-    "img": "https://i.imgur.com/qtykpRG.png",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "this needs an m dash before the name in flavor"
-      },
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Fixed flavor text, added bleed and CN"
-      }
-    ],
-    "tags": {
-      "function": ["removal"]
-    }
-  },
-  {
-    "name": "Clairmont, Vicious Arbiter",
-    "set": "MTD",
-    "cn": 10,
-    "id": "W",
-    "cost": "{2}{W}",
-    "type": "Legendary Creature - Human Noble",
-    "text": "At the beginning of your end step, if you gained 2 or more life this turn, create an Excuse token.",
-    "flavor": "“If the Inquisition is the pen, then I am their sword.”",
-    "rarity": "U",
-    "img": "https://i.imgur.com/Yfdfldb.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 3,
-    "artist": "Copilot Designer",
-    "notes": [
-      {
-        "date": "05-05-2024",
-        "creator": "Sam",
-        "notes": "clairmont downshift and increase cost"
-      },
-      {
-        "date": "05-05-2024",
-        "creator": "Thys",
-        "notes": "2/3, 2w"
-      },
-      {
-        "date": "05-05-2024",
-        "creator": "Sam",
-        "notes": "Posted new image"
-      },
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Added bleed and CN // Needs new CN rarity"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Fixed name on Clairmont, updated flavor in the json"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped // Changed the actual json"
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
-    "name": "Rally the People",
-    "set": "MTD",
-    "cn": 34,
-    "id": "W",
-    "cost": "{5}{W}{W}",
-    "type": "Sorcery",
-    "text": "Convoke\nCreate X 1/1 green and white Citizen creature tokens, where X is the number of counters on permanents you control.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/zRH03Js.png",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Added CN and bleed"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Dawn of Hope",
-    "cost": "{1}{W}",
-    "type": "Enchantment",
-    "text": "Whenever you gain life, you may pay {2}. If you do, draw a card.\n{3}{W}: Create a 1/1 Soldier creature token with lifelink.",
-    "flavor": "My people need hope, it's time to make a change.",
-    "rarity": "R",
-    "cn": 12,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/oiEgVbb.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Fixed flavor text from its to it's // added CN and bleed"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Thys",
-        "notes": "New render with Nyx border"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Thys",
-        "notes": "Fixed art framing"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Anointed Captain",
-    "cost": "{2}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "Vigilance\nWhenever one or more other creatures enter the battlefield under your control, create a 1/1 white Human Soldier creature token. This ability triggers only once each turn.",
-    "flavor": "",
-    "set": "MTD",
-    "cn": 3,
-    "id": "W",
-    "rarity": "U",
-    "img": "https://i.imgur.com/9LW33FX.png",
-    "has_bleed_edge": true,
-    "power": 2,
-    "toughness": 3,
-    "notes": [
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Added CN and bleed edge"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "New render with corrected token"
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
     "name": "Path to .08 B.A.C.",
     "cost": "{W}",
     "type": "Instant",
@@ -4525,226 +5780,6 @@
       "frame": "normal",
       "function": ["removal"],
       "reprint": false
-    }
-  },
-  {
-    "name": "Prohibition",
-    "cost": "{3}{W}",
-    "type": "Enchantment",
-    "text": "Each player can't take more than one shot each turn.",
-    "flavor": "“But drinking brought us together, this fragile peace with the elves, why did you have to find that old tome Simon. Why!” {-}Archivist of the Ecclesiarch",
-    "rarity": "U",
-    "cn": 31,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/Z2xDrsb.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Added CN and bleed"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "mtd31 might need flavor text"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Sam",
-        "notes": "New art and flavor"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "New render with Nyx border"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Thys",
-        "notes": "Fixed flavor text"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Reformed Priest",
-    "cost": "{2}{W}",
-    "type": "Creature - Elf Noble",
-    "text": "Remove a beer counter from ~: You gain 2 life.",
-    "flavor": "Purity through sobriety, a crime to all elven culture.",
-    "power": 1,
-    "toughness": 2,
-    "rarity": "U",
-    "cn": 35,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/N4j31AP.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Added bleed, CN, etc."
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Changed from remove a beer counter from any permanent to just itself"
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
-    "name": "Parishioner",
-    "set": "MTD",
-    "cn": 29,
-    "id": "W",
-    "cost": "{W}",
-    "type": "Creature - Human Citizen",
-    "text": "When ~ enters, create a tapped Excuse token.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/OuIOoDu.png",
-    "has_bleed_edge": true,
-    "power": 1,
-    "toughness": 1,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changing wording of Excuse token"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "New card image with new wording and CN and bleed edge"
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
-    "name": "Zealot",
-    "cost": "{1}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "Whenever ~ blocks or is blocked by an Alcoholic, ~ gets +1/+2 until end of turn.",
-    "flavor": "Drunken rage matched only by religious fervor.",
-    "power": 2,
-    "toughness": 1,
-    "rarity": "C",
-    "cn": 42,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/k6rfdnm.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
-    "name": "Champion of Light",
-    "set": "MTD",
-    "cn": 9,
-    "id": "W",
-    "cost": "{3}{W}",
-    "type": "Creature - Human Angel",
-    "text": "Flying, vigilance\nWhen ~ enters, you become the monarch.",
-    "flavor": "The ultimate union of mortal and the divine.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/BvtldHf.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 3,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Added CN and bleed"
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
-    "name": "Hopeful Monk",
-    "cost": "{1}{W}",
-    "type": "Creature - Human Monk",
-    "text": "Blocking creatures you control get +0/+1. If you are the monarch, instead creatures you control get +0/+1.",
-    "flavor": "He hopes for peace, but prepares for war.",
-    "power": 1,
-    "toughness": 1,
-    "rarity": "C",
-    "cn": 18,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/KQFMNoW.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Updated render"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": false
-    }
-  },
-  {
-    "name": "Archon of Coronation",
-    "set": "MTD",
-    "cn": 6,
-    "id": "W",
-    "cost": "{4}{W}{W}",
-    "type": "Creature - Archon",
-    "text": "Flying\nWhen ~ enters, you become the monarch.\nAs long as you're the monarch, damage doesn't cause you to lose life.",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/5KX1eHH.png",
-    "has_bleed_edge": true,
-    "power": 5,
-    "toughness": 5,
-    "notes": [
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Added notes and flavor to json"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Uploaded art with CN and bleed edge"
-      },
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Copilot Designer, not Illustrator, needs to be changed // Updated artist credit"
-      }
-    ],
-    "tags": {
-      "reprint": true
     }
   },
   {
@@ -4825,207 +5860,8 @@
     }
   },
   {
-    "name": "Inquisitorial Knight",
-    "cost": "{3}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "",
-    "flavor": "The inquisition stands as a symbol of holy justice. Bastions of charity and support, their holy oath binds them to church, populous, and state.",
-    "power": 3,
-    "toughness": 5,
-    "rarity": "C",
-    "cn": 19,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/p5obOhP.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "New art, added bleed and CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Judge Unworthy",
-    "set": "MTD",
-    "cn": 21,
-    "id": "W",
-    "cost": "{1}{W}",
-    "type": "Instant",
-    "text": "Choose target attacking or blocking creature. Scry 3, then reveal the top card of your library. ~ deals damage equal to that card's mana value to that creature.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/CqCZmpG.png",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Given bleed edge and CN"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Arrest",
-    "cost": "{2}{W}",
-    "type": "Enchantment - Aura",
-    "text": "Enchant creature\nEnchanted creature can't attack or block, and its activated abilities can't be activated.",
-    "flavor": "Lay still in the name of the Holy Order.",
-    "rarity": "C",
-    "cn": 7,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/K5d9KcJ.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Given bleed edge and CN"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Thys",
-        "notes": "New render with Nyx border"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["removal"],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Condemn",
-    "cost": "{W}",
-    "type": "Instant",
-    "text": "Put target attacking creature on the bottom of its owner's library. Its controller gains life equal to its toughness.",
-    "flavor": "“In the name of the Inquisition, you will stand down!” {lns}{-}Clairmont",
-    "rarity": "U",
-    "cn": 11,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/FIzy6Xm.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Added CN and bleed, updated flavor display to work with flavor off of cardconjurer"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Thys",
-        "notes": "Fixed art framing"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Throne Warden",
-    "cost": "{1}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "At the beginning of your end step, if you're the monarch, put a +1/+1 counter on ~.",
-    "flavor": "My loyalty is to the throne.",
-    "power": 2,
-    "toughness": 2,
-    "rarity": "C",
-    "cn": 41,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/rUIjiBO.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Thys",
-        "notes": "Added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "reprint": true
-    }
-  },
-  {
-    "name": "Palace Sentinels",
-    "cost": "{3}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "When ~ enters, you become the monarch.",
-    "flavor": "While the church has power throughout the city, that reach ends at the end of their pikes.",
-    "power": 2,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 27,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/WySUcMB.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Added new render, CN, bleed edge, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": true
-    }
-  },
-  {
-    "name": "Astral Confrontation",
-    "cost": "{4}{W}",
-    "type": "Instant",
-    "text": "This spell costs {1} less to cast for each opponent you're attacking.\nExile target creature.",
-    "flavor": "“You are not made in God's image.”",
-    "rarity": "U",
-    "cn": 8,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/fgTIIPQ.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "upshift astral confrontation"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "Added new art, added new flavor text, changed rarity, added CN, added bleed edge"
-      },
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Needs artist notes, I believe Midjourney"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Added artist credit"
-      }
-    ],
-    "tags": {}
-  },
-  {
     "name": "Raise the Alarm",
-    "set": "MTD",
+    "set": "MTC",
     "cn": 33,
     "id": "W",
     "cost": "{1}{W}",
@@ -5040,6 +5876,11 @@
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Fixed flavor text // added bleed and CN"
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Removed to MTC to make room for Brotherhood's Call"
       }
     ],
     "tags": {}
@@ -5085,230 +5926,6 @@
     "tags": {}
   },
   {
-    "name": "Martial Coup",
-    "cost": "{X}{W}{W}",
-    "type": "Sorcery",
-    "text": "Create X 1/1 white Soldier creature tokens. If X is 5 or more, destroy all creatures.",
-    "flavor": "And so the crown returned to the king, the church finally bending the knee.",
-    "rarity": "R",
-    "cn": 24,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/dpbH5dT.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "New art, added bleed and CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Apostle of Purifying Light",
-    "set": "MTD",
-    "cn": 5,
-    "id": "W",
-    "cost": "{1}{W}",
-    "type": "Creature - Human Cleric",
-    "text": "Protection from black\n{2}: Exile target card from a graveyard.",
-    "flavor": "\"Exorcizamus te, omnis immundus spoiritus, omnis satanica potestas, omnis incursio infernalis adversarii...\"",
-    "rarity": "U",
-    "img": "https://i.imgur.com/EPKLa1r.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 1,
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Needs artist notes and bleed edge and CN // Added bleed and CN"
-      }
-    ],
-    "tags": {
-      "reprint": true
-    }
-  },
-  {
-    "name": "Fortified Rampart",
-    "cost": "{1}{W}",
-    "type": "Creature - Wall",
-    "text": "Defender",
-    "flavor": "“Today we hold, today we stand, today we prove to our fathers the metal of our hearts and the steel of our blades!”",
-    "power": 0,
-    "toughness": 6,
-    "rarity": "C",
-    "cn": 13,
-    "set": "MTD",
-    "artist": "",
-    "img": "https://i.imgur.com/3MCVM6m.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "New art, added bleed and CN"
-      }
-    ],
-    "tags": {
-      "reprint": true
-    }
-  },
-  {
-    "name": "Goliath Protector",
-    "cost": "{4}{W}",
-    "type": "Creature - Giant",
-    "text": "When ~ enters, choose one:\n• Destroy target artifact.\n• Destroy target enchantment.\n• Put two +1/+1 counters on ~.",
-    "flavor": "",
-    "power": 2,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 14,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/wGGDNAY.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "New art, added bleed and CN"
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
-    "name": "Paladin of the Holy Order",
-    "cost": "{5}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "When ~ enters, you become the monarch.\nAt the beginning of combat on each opponent's turn, if you're the monarch, that opponent may pay {X}, where X is the number of cards in their hand. If they don't, they can't attack you this combat.",
-    "flavor": "",
-    "power": 4,
-    "toughness": 6,
-    "rarity": "R",
-    "cn": 28,
-    "note": "=LTC 10",
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/whfCPwf.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Changed cn to 28 instead of 26 // New render, added CN, bleed edge, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": true
-    }
-  },
-  {
-    "name": "Palace Jailer",
-    "cost": "{2}{W}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "When ~ enters, you become the monarch.\nWhen ~ enters, exile target creature an opponent controls until an opponent becomes the monarch.",
-    "flavor": "",
-    "power": 2,
-    "toughness": 2,
-    "rarity": "U",
-    "cn": 26,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/YgsNsiv.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["removal"],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Protector of the Crown",
-    "cost": "{5}{W}",
-    "type": "Creature - Giant Soldier",
-    "text": "When ~ enters, you become the monarch.\nAll damage that would be dealt to you is dealt to ~ instead.",
-    "flavor": "“I gladly offer my weapon and my life to the glory of my sovereign.”",
-    "power": 2,
-    "toughness": 5,
-    "rarity": "R",
-    "cn": 32,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/Do1VPiT.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "remove protector of the crown"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "protector of the crown, commander set you go :)"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "Re-adding Protector of the Crown, only displaces 3 cards."
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "reprint": true
-    }
-  },
-  {
-    "name": "Sephara, Sky's Blade",
-    "set": "MTD",
-    "cn": 39,
-    "id": "W",
-    "cost": "{4}{W}{W}{W}",
-    "type": "Legendary Creature - Angel",
-    "text": "You may pay {W} and tap four untapped creatures you control with flying rather than pay this spell's mana cost.\nFlying, lifelink\nOther creatures you control with flying have indestructible.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/HHSoryZ.png",
-    "has_bleed_edge": true,
-    "power": 7,
-    "toughness": 7,
-    "art-remarks": "",
-    "flavor": "",
-    "notes": [
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Added bleed and CN"
-      }
-    ],
-    "tags": {
-      "reprint": true
-    }
-  },
-  {
     "name": "Sephara, Sky's Blade",
     "set": "MTD",
     "cn": 287,
@@ -5337,373 +5954,6 @@
     }
   },
   {
-    "name": "Skyhoof Pegasus",
-    "cost": "{1}{W}",
-    "type": "Creature - Pegasus",
-    "text": "Whenever you gain life, ~ gains flying until end of turn.\n{3}: You gain 2 life.",
-    "flavor": "The sky shone with a brilliant hope, how can the world be so dire with such beauty?",
-    "power": 2,
-    "toughness": 2,
-    "rarity": "C",
-    "cn": 40,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/J96DG1Z.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "New art, added bleed and CN"
-      }
-    ],
-    "tags": {
-      "reprint": false
-    }
-  },
-  {
-    "name": "No Fun Allowed",
-    "cost": "{W}",
-    "type": "Instant",
-    "text": "Counter target spell or activated ability that would force a player to take a shot.\nDraw a card.",
-    "flavor": "“The Lord wills it not”",
-    "rarity": "U",
-    "cn": 25,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/zeDcu7u.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Collectors info needs to be updated to U for rarity"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "New art, added bleed and CN"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Peace Accord",
-    "cost": "{1}{W}{W}",
-    "type": "Enchantment",
-    "text": "Creatures controlled by the player whose turn it is get -1/-0.\nCreatures controlled by each opponent of the player whose turn it is get +0/+1.",
-    "flavor": "The age of the new monarch has begun, let there be peace and prosperity.",
-    "rarity": "R",
-    "cn": 30,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/zTbxkcg.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Updated and added bleed and cn etc."
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Changed name to Peace Accord, new art and flavor text, added Nyx frame"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Royal Privilege",
-    "cost": "{2}{W}{W}{W}",
-    "type": "Enchantment",
-    "text": "When ~ enters, you become the monarch.\nAs long as you are the monarch, your life total can't change as a result of you taking a shot.",
-    "flavor": "“Do you know who I am”",
-    "rarity": "R",
-    "cn": 36,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/eL655sO.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Updated and added bleed and cn etc."
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "New render with Nyx border"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Sales Tax",
-    "cost": "{2}{W}{W}",
-    "type": "Enchantment",
-    "text": "Whenever a spell or ability an opponent controls forces you to take a shot, that player may pay {2}. If the player doesn't, you create a Treasure token.",
-    "flavor": "Bureaucracy.",
-    "rarity": "R",
-    "cn": 37,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/UN4AqdS.png",
-    "id": "W",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "29-07-2024",
-        "creator": "Thys",
-        "notes": "Changed from punishing people taking shots to punishing the people that force you to take shots. Also, changed flavor text to a damn unspellable word"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "New render with Nyx border"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "High Ground",
-    "cost": "{W}",
-    "type": "Enchantment",
-    "text": "Each creature you control can block an additional creature each combat.",
-    "flavor": "“You were like a brother to me!” {lns}{-}A legendary duel",
-    "rarity": "U",
-    "cn": 17,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/MD48oB3.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Here are my submissions for white reprints"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "Love"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "New art, added bleed edge and CN info"
-      },
-      {
-        "date": "15-08-2024",
-        "creator": "Sam",
-        "notes": "Fixed CN from 16 to 17"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Thys",
-        "notes": "New render with Nyx border"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Thys",
-        "notes": "Fixed having a holo stamp and rarity symbol"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Sentinel of the Eternal Watch",
-    "cost": "{5}{W}",
-    "type": "Creature - Giant Soldier",
-    "text": "Vigilance\nAt the beginning of combat on each opponent's turn, tap target creature that player controls.",
-    "flavor": "",
-    "power": 4,
-    "toughness": 6,
-    "rarity": "U",
-    "cn": 38,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/Lh6dJ1h.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added image with correct bleed edge and CN. Might need flavor text"
-      }
-    ],
-    "tags": {
-      "reprint": true
-    }
-  },
-  {
-    "name": "Ancestral Thurbile",
-    "cost": "{2}{W}{W}",
-    "type": "Artifact - Equipment",
-    "text": "When ~ enters, create a 1/1 white Cleric creature token with vigilance, then attach ~ to it.\nEquipped creature gets +1/+1 and lifelink.\nEquip {2}",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 2,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/AEuxeid.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "Added new art, added CN and bleed edge"
-      },
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Needs artist notes, pretty sure this was on Midjourney"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Added artist credit"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Light of God",
-    "cost": "{1}{W}",
-    "type": "Enchantment - Aura",
-    "text": "Flash\nEnchant creature\nWhen ~ enters, untap enchanted creature.\nEnchanted creature has flying.",
-    "flavor": "The council of heaven delivers light to the faithful, to torment the faithless.",
-    "rarity": "C",
-    "cn": 22,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/r1v7Npf.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "this is genius i love it"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Sam",
-        "notes": "Added bleed, CN, etc."
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Thys",
-        "notes": "New render with Nyx border"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Mandate of Sobriety",
-    "cost": "{2}{W}",
-    "type": "Enchantment",
-    "text": "{2}: Prevent the next shot you would take this turn.",
-    "flavor": "“As of this day, not a drop of alcohol shall defile your lips, nor a whiff of devil weed taint your lungs, arise child of light and be whole.” {-}Sephara",
-    "rarity": "U",
-    "cn": 23,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/D15eEB9.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "That card is a token now. The enchantment is defunct. Or are you suggesting making it a different card with that name"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "different card, same name"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "Good idea"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "see this. you suggested it. forever ago"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "Lmao yeah. Good call back"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Sam",
-        "notes": "Card rename to: Mandate of Sobriety. Reason: new token with same name [Excuse token]"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added new card art and name"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Change skip next shot to prevent next shot"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changed art and added CN and bleed edge"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Changed flavor text, added Nyx border"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
     "name": "Bog Witch",
     "set": "MTC",
     "cn": 27,
@@ -5725,139 +5975,6 @@
       }
     ],
     "tags": {}
-  },
-  {
-    "name": "Inspector General",
-    "cost": "{1}{W}",
-    "type": "Creature - Human Soldier",
-    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at any unopened booster pack in the draft or any booster pack not being looked at by another player.",
-    "flavor": "",
-    "power": 1,
-    "toughness": 2,
-    "rarity": "C",
-    "cn": 20,
-    "set": "MTD",
-    "artist": "",
-    "id": "W",
-    "img": "https://i.imgur.com/rAJeATa.png",
-    "has_bleed_edge": true,
-    "watermark": "draft",
-    "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Inspired from Whispergear Sneak, same effect on a white body"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added image with correct bleed edge and CN"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Added artist credit"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": false
-    }
-  },
-  {
-    "name": "Anointed Chorister",
-    "cost": "{W}",
-    "type": "Creature - Human Cleric",
-    "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
-    "flavor": "Dies irae, dies illa\nSolvet sæclum in favilla,\nTeste David cum Sibylla.",
-    "power": 1,
-    "toughness": 1,
-    "rarity": "C",
-    "cn": 4,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/OFShq0W.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Sam",
-        "notes": "Needs flavor text, I'll work on that"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "Updated flavor text and art"
-      },
-      {
-        "date": "27-07-2024",
-        "creator": "Thys",
-        "notes": "Needs artist notes"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Added artist credit"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Thys",
-        "notes": "Fixed art framing"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Harvester Giant",
-    "cost": "{4}{W}",
-    "type": "Creature - Giant",
-    "text": "When ~ enters, you gain 3 life.\nPlainscycling {2}",
-    "flavor": "As crop tithes increased, lords chose to look past their prejudices in favor of profit.",
-    "power": 3,
-    "toughness": 5,
-    "rarity": "C",
-    "cn": 16,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/Hh71NKP.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Added image with correct bleed edge and CN. Probably will need flavor text"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Sam",
-        "notes": "Cooking up new art"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "Added flavor and new artwork"
-      },
-      {
-        "date": "15-08-2024",
-        "creator": "Thys",
-        "notes": "Fixed CN from 17 to 16"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": false
-    }
   },
   {
     "name": "Ossify",
@@ -6166,7 +6283,7 @@
     "name": "Zanhor, Keeper of Knowledge",
     "cost": "{3}{U}{U}",
     "type": "Legendary Creature - Sphinx Noble",
-    "text": "Flying\nWhenever a creature enters, that creature's controller takes a shot.\nStupor - Once per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.",
+    "text": "Flying\nWhenever a creature enters, that creature's controller takes a shot.\nOnce per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.",
     "flavor": "",
     "power": 4,
     "toughness": 4,
@@ -6188,6 +6305,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Removed Stupor from Zanhor given that we only use it once in MTD"
       }
     ],
     "tags": {}
@@ -9520,34 +9642,6 @@
     }
   },
   {
-    "name": "Guardian Broadwing",
-    "cost": "{1}{W}",
-    "type": "Creature - Bird",
-    "text": "Flying\nWhenever ~ attacks, it gets +2/-1 until end of turn.",
-    "flavor": "",
-    "power": 3,
-    "toughness": 3,
-    "rarity": "C",
-    "cn": 15,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/lyfUf8z.png",
-    "id": "W",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added render and art"
-      }
-    ],
-    "tags": {
-      "function": [],
-      "reprint": false,
-      "frame": "normal"
-    }
-  },
-  {
     "name": "Key to the City",
     "cost": "{2}",
     "type": "Artifact",
@@ -9972,6 +10066,151 @@
         "date": "22-10-2024",
         "creator": "Thys",
         "notes": "Added render, missing holo stamp"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Royal Merchant",
+    "cost": "{3}{G}",
+    "type": "Creature - Elf",
+    "text": "When ~ enters, you become the monarch.\nAt the beginning of the monarch's end step, that player puts a beer counter on target permanent they control.",
+    "flavor": "I serve the king of the day.",
+    "rarity": "C",
+    "cn": 200,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/ttfjdGH.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      },
+      {
+        "date": "16-10-2024",
+        "creator": "Sam",
+        "notes": "Changed wording from that player puts a counter on a permanent they control to target permanent they control."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Leaping Ambush",
+    "cost": "{G}",
+    "type": "Instant",
+    "text": "Target creature gets +1/+3 and gains reach until end of turn. Untap it.",
+    "flavor": "Clever girl.",
+    "rarity": "C",
+    "cn": 200,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/legoOS3.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Spidersilk Net",
+    "cost": "{0}",
+    "type": "Artifact - Equipment",
+    "text": "Equipped creature gets +0/+2 and has reach.\nEquip {2}",
+    "flavor": "Finer than steel, stickier than tar, light as a feather—in short, deadly.",
+    "rarity": "C",
+    "cn": 245,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/wcEs5Hq.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Spidersilk Armor",
+    "cost": "{2}{G}",
+    "type": "Enchantment",
+    "text": "Creatures you control get +0/+1 and have reach.",
+    "flavor": "It hardly weighs anything, but it takes all day to remove.",
+    "rarity": "C",
+    "cn": 200,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/pmW49mb.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created render"
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "We need to talk about possibly upshifting this card to uncommon, or giving blue/white the tools to deal with it"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Loam of Life",
+    "cost": "{1}{G}{G}",
+    "type": "Enchantment",
+    "text": "Whenever a permanent card is put into your graveyard, put a beer counter on target permanent you control.",
+    "flavor": "To the earth all things return, from the earth all things are found.",
+    "rarity": "U",
+    "cn": 200,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/rQiuyXZ.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card // Updated cost from {G}{G}{G} to {1}{G}{G}"
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Changed wording from \"Whenever a permanent enters the graveyard from anywhere\" to \"Whenever a permanent card is put into your graveyard"
       }
     ],
     "tags": {

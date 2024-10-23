@@ -10,8 +10,12 @@ const set = "MTD";
 //const endCn = 210;
 
 // Multicolor
-const beginCn = 211;
-const endCn = 244;
+// const beginCn = 211;
+// const endCn = 244;
+
+// White
+const beginCn = 1;
+const endCn = 42;
 
 // Filter and get the relevant cards
 let filteredData = data.filter((card) => {
