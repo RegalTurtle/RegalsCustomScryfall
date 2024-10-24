@@ -7,15 +7,6 @@ dotenv.config(); // Loads the variables from .env file
 let _connection = undefined;
 let _db = undefined;
 
-// export const dbConnection = async () => {
-//   if (!_connection) {
-//     _connection = await MongoClient.connect(mongoConfig.serverUrl);
-//     _db = _connection.db(mongoConfig.database);
-//   }
-
-//   return _db;
-// };
-
 export const dbConnection = async () => {
   if (!_connection) {
     _connection = await MongoClient.connect(process.env.MONGO_URL); // Use environment variable
