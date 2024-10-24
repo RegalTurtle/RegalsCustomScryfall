@@ -2,12 +2,18 @@ import { cards } from "../config/mongoCollections.js"; // Adjust path if needed
 import { dbConnection, closeConnection } from "../config/mongoConnections.js";
 import fs from "fs/promises"; // For file operations
 import path from "path"; // To resolve the path to customcards.json
+import { sortMTD } from "./set-cn.js";
 
 const loadCardsIntoDB = async () => {
+  sortMTD();
   let db;
   try {
     db = await dbConnection(); // Connect to DB
     const cardCollection = await cards();
+
+    // Drop only the 'cards' collection before adding new cards
+    await cardCollection.drop();
+    console.log("Cards collection dropped successfully");
 
     // Read and parse the customcards.json file
     const filePath = path.resolve("customcards.json");
