@@ -12,17 +12,13 @@ const constructorMethod = (app) => {
 
   app.use("/cardjson", cardRoutes);
   // similar to switch, always does top to bottom
+
   app.use("*/customcards.json", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "customcards.json"));
   });
 
   app.use("*/style.css", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/style.css"));
-  });
-
-  // Serve the main index.html file
-  app.use("/", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/index.html"));
   });
 
   app.use("/card/*", async (req, res) => {
@@ -32,6 +28,12 @@ const constructorMethod = (app) => {
   app.get("/search/*", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/search.html"));
   });
+
+  // Serve the main index.html file
+  app.use("/", async (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client/index.html"));
+  });
+
   app.use("*", (req, res) => {
     return res.status(404).json({ error: "Not found" });
   });
