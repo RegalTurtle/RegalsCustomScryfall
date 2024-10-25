@@ -10009,6 +10009,8 @@
     "type": "Creature — Alien Zombie Horror",
     "text": "Islandwalk\n{i}Water Always Wins{/i} — Whenever ~ attacks, put a flood counter on another target creature or land. If it's a creature, it becomes a copy of ~. If it's a land, it becomes an Island in addition to its other types.",
     "flavor": "",
+    "power": 3,
+    "toughness": 3,
     "rarity": "R",
     "cn": 7,
     "note": "=WHO 45",
