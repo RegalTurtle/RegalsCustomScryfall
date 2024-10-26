@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
 
     <title>Regal's Custom Cards</title>
   </head>
@@ -11,29 +11,34 @@
   <body>
     <div class="topnav">
       <form class="searchbar" action="/search/" method="GET">
-        <input type="text" placeholder="Search" style="font-weight: bold;" name="q">
+        <input
+          type="text"
+          placeholder="Search"
+          style="font-weight: bold"
+          name="q"
+        />
       </form>
     </div>
 
     <div class="card-grid">
-      <div class="card-grid-inner" id="card-grid-id">
-      </div>
+      <div class="card-grid-inner" id="card-grid-id"></div>
     </div>
-    
+
     <script>
-      fetch('./customcards.json').then((response) => response.json()).then((all_cards) => {
-        // object.sort
-        all_cards.sort((a,b) => {
-          if (a["set"].localeCompare(b["set"]) == 0) {
-            return a["cn"] - b["cn"]
-          }
-          return a["set"].localeCompare(b["set"])
-        })
-        var cardsElem = document.getElementById('card-grid-id')
-        var htmlOut = ''
-        for (i=0; i<all_cards.length; i++)
-        {
-          htmlOut += `<div class="card-grid-item ">
+      fetch("./customcards.json")
+        .then((response) => response.json())
+        .then((all_cards) => {
+          // object.sort
+          all_cards.sort((a, b) => {
+            if (a["set"].localeCompare(b["set"]) == 0) {
+              return a["cn"] - b["cn"];
+            }
+            return a["set"].localeCompare(b["set"]);
+          });
+          var cardsElem = document.getElementById("card-grid-id");
+          var htmlOut = "";
+          for (i = 0; i < all_cards.length; i++) {
+            htmlOut += `<div class="card-grid-item ">
                         <a class="card-grid-item-card" href="/card/${all_cards[i]["set"]}_${all_cards[i]["cn"]}">
                           <span class="card-grid-item-invisible-label" aria-hidden="true">${all_cards[i]["name"]}</span>
                           <div class="card-grid-item-card-faces">
@@ -43,9 +48,13 @@
                           </div>
                         </a>
                       </div>`;
-        }
-        cardsElem.innerHTML = htmlOut + `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>` + `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>` + `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>`
-      })
+          }
+          cardsElem.innerHTML =
+            htmlOut +
+            `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>` +
+            `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>` +
+            `<div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>`;
+        });
     </script>
   </body>
 </html>
