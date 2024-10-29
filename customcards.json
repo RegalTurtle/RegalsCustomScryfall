@@ -10,7 +10,7 @@
     "flavor": "\"Dark times require even the most solitary hunters to work together\"\n-Bunder Diedreck, ex-ornithologist",
     "rarity": "C",
     "img": "https://i.imgur.com/qtykpRG.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-07-2024",
@@ -40,7 +40,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/AEuxeid.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "13-07-2024",
@@ -73,7 +73,7 @@
     "id": "W",
     "rarity": "U",
     "img": "https://i.imgur.com/9LW33FX.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 3,
     "notes": [
@@ -106,7 +106,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/OFShq0W.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "11-07-2024",
@@ -181,7 +181,7 @@
     "flavor": "",
     "rarity": "M",
     "img": "https://i.imgur.com/5KX1eHH.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 5,
     "toughness": 5,
     "notes": [
@@ -217,7 +217,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/K5d9KcJ.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "27-07-2024",
@@ -248,7 +248,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/fgTIIPQ.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -285,7 +285,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/gk94a1O.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "23-10-2024",
@@ -429,7 +429,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/oiEgVbb.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "27-07-2024",
@@ -493,7 +493,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/wGGDNAY.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -527,7 +527,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lyfUf8z.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "18-08-2024",
@@ -555,7 +555,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Hh71NKP.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "11-07-2024",
@@ -595,7 +595,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/MD48oB3.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -648,7 +648,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/KQFMNoW.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "05-08-2024",
@@ -675,7 +675,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/p5obOhP.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -701,7 +701,7 @@
     "artist": "",
     "id": "W",
     "img": "https://i.imgur.com/rAJeATa.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "watermark": "draft",
     "notes": [
       {
@@ -736,7 +736,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/CqCZmpG.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "27-07-2024",
@@ -758,7 +758,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/r1v7Npf.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -799,7 +799,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/D15eEB9.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -923,7 +923,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/YgsNsiv.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "13-08-2024",
@@ -951,7 +951,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/WySUcMB.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "05-08-2024",
@@ -1003,7 +1003,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/OuIOoDu.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
     "notes": [
@@ -1070,7 +1070,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Z2xDrsb.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "27-07-2024",
@@ -1118,7 +1118,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/Do1VPiT.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -1156,7 +1156,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/zRH03Js.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "27-07-2024",
@@ -1209,7 +1209,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/eL655sO.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "13-08-2024",
@@ -1273,7 +1273,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Lh6dJ1h.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "11-07-2024",
@@ -1295,7 +1295,7 @@
     "text": "You may pay {W} and tap four untapped creatures you control with flying rather than pay this spell's mana cost.\nFlying, lifelink\nOther creatures you control with flying have indestructible.",
     "rarity": "R",
     "img": "https://i.imgur.com/HHSoryZ.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 7,
     "toughness": 7,
     "art-remarks": "",
@@ -1325,7 +1325,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/J96DG1Z.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -1351,7 +1351,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/rUIjiBO.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -1377,7 +1377,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/k6rfdnm.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "13-08-2024",
@@ -1400,7 +1400,7 @@
     "flavor": "Creation comes from all places, even destruction.",
     "rarity": "R",
     "img": "https://i.imgur.com/m3eUNr0.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -1503,7 +1503,7 @@
     "flavor": "\"What isss it you requirrre?\"",
     "rarity": "U",
     "img": "https://i.imgur.com/vcRzIMU.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -1614,7 +1614,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/H0dV8FR.png",
     "id": "WUBRG",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -1717,7 +1717,7 @@
     "flavor": "",
     "rarity": "M",
     "img": "https://i.imgur.com/Lz9tf9M.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -1739,7 +1739,7 @@
     "flavor": "",
     "rarity": "M",
     "img": "https://i.imgur.com/XlaUoFv.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 6,
     "toughness": 6,
     "art-remarks": "",
@@ -1875,7 +1875,7 @@
     "flavor": "",
     "rarity": "M",
     "img": "https://i.imgur.com/0JA2xJx.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "A shot glass on a scroll or spellbook",
     "notes": [
       {
@@ -1941,7 +1941,7 @@
     "flavor": "One can only shudder to think what it sees.",
     "rarity": "M",
     "img": "https://i.imgur.com/L6adwRq.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 3,
     "toughness": 5,
     "art-remarks": "",
@@ -2183,7 +2183,7 @@
     "flavor": "If you see the trees shake, run. If you smell the rank, flee. If you see its fur, it's too late.",
     "rarity": "C",
     "img": "https://i.imgur.com/PrdtuSI.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 6,
     "toughness": 6,
     "art-remarks": "",
@@ -2270,7 +2270,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/1YESVuv.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -2317,7 +2317,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/dJCA2ZU.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
     "art-remarks": "",
@@ -2346,7 +2346,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/NBte17x.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
     "art-remarks": "",
@@ -2375,7 +2375,7 @@
     "flavor": "",
     "rarity": "M",
     "img": "https://i.imgur.com/jDbg9rJ.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 4,
     "toughness": 7,
     "art-remarks": "",
@@ -2491,7 +2491,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/9XZjEVw.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
     "art-remarks": "",
@@ -2584,7 +2584,7 @@
     "flavor": "She was bestowed the heights of honors, and she delivered with pride.",
     "rarity": "R",
     "img": "https://i.imgur.com/K8FYWUw.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
     "notes": [
@@ -2675,7 +2675,7 @@
     "artist": "",
     "img": "https://i.imgur.com/YIGD2sp.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "16-08-2024",
@@ -2701,7 +2701,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/vD05wbh.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-12-2023",
@@ -2796,7 +2796,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/Awh26WC.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
     "art-remarks": "",
@@ -2825,7 +2825,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/3OIBR5S.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
     "art-remarks": "",
@@ -2883,7 +2883,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/9tAMBOS.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -2925,7 +2925,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/jSzVzhz.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -2981,7 +2981,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/6pFSFTP.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 2,
     "art-remarks": "",
@@ -3016,7 +3016,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/bbTfYvG.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3042,7 +3042,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/dUB6ZMW.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3078,7 +3078,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/RExCihB.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3113,7 +3113,7 @@
     "flavor": "While uncommon, some elves have chosen an avian life.",
     "rarity": "U",
     "img": "https://i.imgur.com/FXA8Msp.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
     "art-remarks": "",
@@ -3182,7 +3182,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/w6oY2uz.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -3247,7 +3247,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Q0YwlQr.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3326,7 +3326,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/4mWNr78.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -3352,7 +3352,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/fWGlFvs.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3436,7 +3436,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/L4rpGIo.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3461,7 +3461,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/G9V03st.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 4,
     "toughness": 3,
     "art-remarks": "",
@@ -3543,7 +3543,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/byNmSeX.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3625,7 +3625,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/vDrGxFJ.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3671,7 +3671,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Om46C6T.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -3883,7 +3883,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/extFu6m.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -3953,7 +3953,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/ewxaDEY.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -4063,7 +4063,7 @@
     "flavor": "Hell is a party best experienced on Earth.",
     "rarity": "C",
     "img": "https://i.imgur.com/CyFcWWp.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 7,
     "toughness": 3,
     "art-remarks": "",
@@ -4157,7 +4157,7 @@
     "flavor": "The Carnarium burned but the party never stopped.",
     "rarity": "C",
     "img": "https://i.imgur.com/3QR3gKQ.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -4185,7 +4185,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/L6RwsX7.png",
     "id": "R",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "16-09-2024",
@@ -4215,7 +4215,7 @@
     "flavor": "At the court of high king Torbran of Red Fell, refusing a drink was the highest of blasphemies.",
     "rarity": "R",
     "img": "https://i.imgur.com/FOPPDhZ.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 4,
     "art-remarks": "",
@@ -4345,7 +4345,7 @@
     "artist": "Microsoft Copilot",
     "rarity": "C",
     "img": "https://i.imgur.com/idxnbj0.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
     "notes": [
@@ -4389,7 +4389,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/mXNjkA4.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -4422,7 +4422,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/qxX39jK.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "18-08-2024",
@@ -4452,7 +4452,7 @@
     "flavor": "Whenever the eternal party reaches the surface, it makes itself known.",
     "rarity": "R",
     "img": "https://i.imgur.com/K8aQCEY.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 5,
     "toughness": 4,
     "art-remarks": "",
@@ -4487,7 +4487,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/wygpZxx.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "21-08-2024",
@@ -4518,7 +4518,7 @@
     "artist": "Midjourney",
     "rarity": "U",
     "img": "https://i.imgur.com/YsLwU4f.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -4605,7 +4605,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/qz0BZeu.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -4708,7 +4708,7 @@
     "artist": "",
     "img": "https://i.imgur.com/TqsO6L1.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -4761,7 +4761,7 @@
     "artist": "Microsoft Copilot",
     "rarity": "M",
     "img": "https://i.imgur.com/e0SXexL.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 3,
     "notes": [
@@ -4791,7 +4791,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/6JmMi55.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -4818,7 +4818,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/koAwRKB.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "21-08-2024",
@@ -4846,7 +4846,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/8jIgaO1.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "29-07-2024",
@@ -4889,7 +4889,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/qaHWtCl.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-09-2024",
@@ -4917,7 +4917,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/L7hClND.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "18-08-2024",
@@ -4945,7 +4945,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/zskqtDi.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -4976,7 +4976,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/THYDcDR.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "21-08-2024",
@@ -5002,7 +5002,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/x9MaEwe.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "18-08-2024",
@@ -5028,7 +5028,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/O9ecPa7.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "21-08-2024",
@@ -5056,7 +5056,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/1Tj8e2y.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -5081,7 +5081,7 @@
     "flavor": "Your mind is an Escher painting and I am an artist.",
     "rarity": "R",
     "img": "https://i.imgur.com/BK6qaB3.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 4,
     "art-remarks": "",
@@ -5215,7 +5215,7 @@
     "artist": "Microsoft Copilot",
     "rarity": "R",
     "img": "https://i.imgur.com/LkeQoQo.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -5286,7 +5286,7 @@
     "artist": "Microsoft Copilot",
     "rarity": "U",
     "img": "https://i.imgur.com/bjcgFpR.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -5321,7 +5321,7 @@
     "flavor": "Brought back to serve a purpose, kept around for entertainment.",
     "rarity": "U",
     "img": "https://i.imgur.com/rC55WaC.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -5380,7 +5380,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/8GudArw.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "21-08-2024",
@@ -5413,7 +5413,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/O6U3irg.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "21-08-2024",
@@ -5446,7 +5446,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Fn04nDg.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "18-07-2024",
@@ -5489,7 +5489,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/E1NiQYc.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -5517,7 +5517,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/NXmjHPZ.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "18-08-2024",
@@ -5548,7 +5548,7 @@
     "artist": "Midjourney",
     "rarity": "C",
     "img": "https://i.imgur.com/Mcv3ujz.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 3,
     "toughness": 4,
     "watermark": "draft",
@@ -5647,7 +5647,7 @@
     "flavor": "You did not pass, it is now time to face the flames, goodbye.",
     "rarity": "C",
     "img": "https://i.imgur.com/NHemTM6.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -5708,7 +5708,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/m478NXo.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -5768,7 +5768,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/2kVTf8V.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-07-2024",
@@ -5880,7 +5880,7 @@
     "flavor": "Alarm bells set the tone for the city's great defenders.",
     "rarity": "C",
     "img": "https://i.imgur.com/ziiG6vB.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "27-07-2024",
@@ -5945,7 +5945,7 @@
     "text": "You may pay {W} and tap four untapped creatures you control with flying rather than pay this spell's mana cost.\nFlying, lifelink\nOther creatures you control with flying have indestructible.",
     "rarity": "R",
     "img": "https://i.imgur.com/4S4KmT3.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 7,
     "toughness": 7,
     "art-remarks": "",
@@ -5997,7 +5997,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/BsZYRmZ.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -6098,7 +6098,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/n3zEHDs.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "17-08-2024",
@@ -6122,7 +6122,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/AWv1Ogr.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -6154,7 +6154,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/sQnJ8hW.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 6,
     "toughness": 1,
     "art-remarks": "",
@@ -6191,7 +6191,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/HWFjT7e.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -6229,7 +6229,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/LXyA16J.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "13-07-2024",
@@ -6265,7 +6265,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/fPCif61.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6303,7 +6303,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/1HFgmbt.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -6338,7 +6338,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/U2V0oYZ.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6364,7 +6364,7 @@
     "flavor": "The magic of Aphelion seeps into all things, lying dormant until their ancient triggers are activated.",
     "rarity": "U",
     "img": "https://i.imgur.com/v2YP34V.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 1,
     "art-remarks": "",
@@ -6434,7 +6434,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/wNuSnOM.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6485,7 +6485,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/EzK8f8u.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6516,7 +6516,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/m4N51cL.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6549,7 +6549,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/f5Yeb30.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6580,7 +6580,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/a8POFaG.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6610,7 +6610,7 @@
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/gaL2PrZ.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "id": "U",
     "notes": [
       {
@@ -6644,7 +6644,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/FOISzID.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "watermark": "draft",
     "notes": [
       {
@@ -6676,7 +6676,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/0nwqxVD.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -6708,7 +6708,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/ppfsGcl.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-12-2023",
@@ -6745,7 +6745,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/4QN9HX4.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -6849,7 +6849,7 @@
     "set": "MTD",
     "img": "https://i.imgur.com/vqGq0MV.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6907,7 +6907,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/7Ss5UcM.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-07-2024",
@@ -6953,7 +6953,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/IbrGdpw.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "26-06-2024",
@@ -7001,7 +7001,7 @@
     "artist": "",
     "img": "https://i.imgur.com/mJs00YH.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "Art is of an owl, similar to Harrier Strix. It's a familiar flying or standing near an Aphelion scholar",
     "notes": [
       {
@@ -7078,7 +7078,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/PprrZqI.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -7128,7 +7128,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/A840KNa.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -7181,7 +7181,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/FBdc0Ya.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -7227,7 +7227,7 @@
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/pD4O8J5.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "Dark corridor of a library, closing in and converging on a closed door. The hall is dark",
     "notes": [
       {
@@ -7320,7 +7320,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/tCdsg1D.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -7533,7 +7533,7 @@
     "flavor": "The highest throne of human kind, the pinnacle of royal might",
     "rarity": "R",
     "img": "https://i.imgur.com/PgKeU8t.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -7768,7 +7768,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/GE1Ch3V.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -7805,7 +7805,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/6mwBqMR.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -7842,7 +7842,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/YywEybu.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -7916,7 +7916,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/aqpYOxY.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8131,7 +8131,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/ux6dDEf.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8409,7 +8409,7 @@
     "flavor": "",
     "rarity": "T",
     "img": "https://i.imgur.com/udnSfZY.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 6,
     "toughness": 6,
     "art-remarks": "",
@@ -8436,7 +8436,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/sMI24CW.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "16-07-2024",
@@ -8504,7 +8504,7 @@
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/DSuYMVm.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 4,
     "toughness": 3,
     "art-remarks": "",
@@ -8531,7 +8531,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/5h6VvJv.png",
     "id": "WU",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "17-07-2024",
@@ -8561,7 +8561,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/dNeydTJ.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8588,7 +8588,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/SLcxEps.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8615,7 +8615,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/J6ddjSo.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8642,7 +8642,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/BsL8fi7.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8697,7 +8697,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/CdaVCqo.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "26-06-2024",
@@ -8728,7 +8728,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/w9fHqkt.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8755,7 +8755,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/5d3Tg8n.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8777,7 +8777,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/aRtkhaP.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "Bookshelves/library feel",
     "notes": [
       {
@@ -8804,7 +8804,7 @@
     "flavor": "Those who have seen it never forget it.",
     "rarity": "R",
     "img": "https://i.imgur.com/x3WIGWK.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -8828,7 +8828,7 @@
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/OC1FbNi.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "id": "U",
     "notes": [
       {
@@ -8859,7 +8859,7 @@
     "flavor": "Storm crow descending, winter unending. Storm crow departing summer is starting.",
     "rarity": "C",
     "img": "https://i.imgur.com/7pURnvy.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 2,
     "art-remarks": "",
@@ -8888,7 +8888,7 @@
     "flavor": "\"Gaze into the orb, everyone learns something, at a price...\"",
     "rarity": "C",
     "img": "https://i.imgur.com/eYwfl8Q.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 1,
     "toughness": 2,
     "art-remarks": "",
@@ -8922,7 +8922,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/O9VyNV1.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 3,
     "toughness": 3,
     "art-remarks": "",
@@ -8956,7 +8956,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/fe6tCrv.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 1,
     "art-remarks": "",
@@ -8995,7 +8995,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/apRg67X.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 2,
     "toughness": 1,
     "art-remarks": "",
@@ -9034,7 +9034,7 @@
     "flavor": "Your mind is an Escher painting and I am an artist.",
     "rarity": "R",
     "img": "https://i.imgur.com/HLSXqnn.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "power": 3,
     "toughness": 5,
     "art-remarks": "",
@@ -9061,7 +9061,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/aIFR6nP.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "26-07-2024",
@@ -9104,7 +9104,7 @@
     "artist": "Midjourney",
     "id": "B",
     "img": "https://i.imgur.com/XEn6jk3.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -9136,7 +9136,7 @@
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/fNMMJsP.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -9164,7 +9164,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/hPJebdN.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -9192,7 +9192,7 @@
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/DQ1pJin.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
       {
@@ -9220,7 +9220,7 @@
     "flavor": "",
     "rarity": "M",
     "img": "https://i.imgur.com/bM3oQjN.png",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "artist": "Midjourney",
     "power": 4,
     "toughness": 5,
@@ -9316,7 +9316,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/9oZbVvN.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "09-07-2024",
@@ -9362,7 +9362,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/hoaAUp1.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9384,7 +9384,7 @@
     "artist": "",
     "img": "https://i.imgur.com/KiVu7Bc.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9414,7 +9414,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/DtQ4Lmy.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9443,7 +9443,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/leUmDi4.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9465,7 +9465,7 @@
     "artist": "Stable Diffusion",
     "img": "https://i.imgur.com/IHBbRJr.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9501,7 +9501,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/SDdFFjh.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "16-08-2024",
@@ -9532,7 +9532,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Q0jLqFa.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9563,7 +9563,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/WPXIfsV.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "17-07-2024",
@@ -9599,7 +9599,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/aXrhjd3.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "16-08-2024",
@@ -9627,7 +9627,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/GNprdax.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9663,7 +9663,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/vB54djU.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-09-2024",
@@ -9689,7 +9689,7 @@
     "artist": "Mark Tedin",
     "img": "https://i.imgur.com/sjamWuq.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-10-2024",
@@ -9717,7 +9717,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/gVKq2Xi.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-10-2024",
@@ -9745,7 +9745,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/9AXa3VC.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-10-2024",
@@ -9771,7 +9771,7 @@
     "artist": "Greg Opalinski",
     "img": "https://i.imgur.com/3I5dETY.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-10-2024",
@@ -9797,7 +9797,7 @@
     "artist": "Julie Dillon",
     "img": "https://i.imgur.com/Szf3huV.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-10-2024",
@@ -9823,7 +9823,7 @@
     "artist": "Greg Hildebrandt & Tim Hildebrandt",
     "img": "https://i.imgur.com/T2yHLmL.png",
     "id": "W",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-10-2024",
@@ -9849,7 +9849,7 @@
     "artist": "Andrew Mar",
     "img": "https://i.imgur.com/WSQnu3S.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "06-10-2024",
@@ -9903,7 +9903,7 @@
     "artist": "Cyril Van Der Haegen",
     "img": "https://i.imgur.com/PikILCL.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -9934,7 +9934,7 @@
     "artist": "",
     "img": "https://i.imgur.com/zQZp4ug.png",
     "id": "B",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "14-10-2024",
@@ -9960,7 +9960,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/LrQSqdz.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -9988,7 +9988,7 @@
     "artist": "Azot2022",
     "img": "https://i.imgur.com/HHV4ENu.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "22-10-2024",
@@ -10018,7 +10018,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lEYaarY.png",
     "id": "U",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "22-10-2024",
@@ -10046,7 +10046,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/x0hezRS.png",
     "id": "UB",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "22-10-2024",
@@ -10072,7 +10072,7 @@
     "artist": "David Palumbo",
     "img": "https://i.imgur.com/m6kYeDs.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "22-10-2024",
@@ -10098,7 +10098,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/ttfjdGH.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -10129,7 +10129,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/legoOS3.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -10155,7 +10155,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/wcEs5Hq.png",
     "id": "C",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -10181,7 +10181,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/pmW49mb.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
@@ -10212,7 +10212,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/rQiuyXZ.png",
     "id": "G",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "15-10-2024",
