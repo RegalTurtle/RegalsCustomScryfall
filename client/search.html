@@ -220,6 +220,13 @@
                 return false;
               }
             }
+            if (cur_param == "has:bleed") {
+              if (card["has_bleed_edge"]) {
+                continue;
+              } else {
+                return false;
+              }
+            }
             // if all other checks fail, turn it into a name check
             if (card["name"].toLowerCase().includes(cur_param) || (card["nickname"] && card["nickname"].toLowerCase().includes(cur_param))) {
               continue;
