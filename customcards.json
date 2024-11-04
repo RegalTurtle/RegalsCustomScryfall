@@ -1,16 +1,17 @@
 [
   {
     "name": "Aerial Assault",
+    "cost": "{2}{W}",
     "set": "MTD",
     "cn": 1,
     "id": "W",
-    "cost": "{2}{W}",
     "type": "Sorcery",
     "text": "Destroy target tapped creature. You gain 1 life for each creature you control with flying.",
-    "flavor": "\"Dark times require even the most solitary hunters to work together\"\n-Bunder Diedreck, ex-ornithologist",
+    "flavor": "“Dark times require even the most solitary hunters to work together”{lns}{-}Bunder Diedreck, ex-ornithologist",
     "rarity": "C",
-    "img": "https://i.imgur.com/qtykpRG.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/aYJKQg8.png",
+    "has_bleed_edge": true,
+    "artist": "Copilot Designer",
     "notes": [
       {
         "date": "15-07-2024",
@@ -21,6 +22,11 @@
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Fixed flavor text, added bleed and CN"
+      },
+      {
+        "date": "4-11-2024",
+        "creator": "Thys",
+        "notes": "New render with correct proportions"
       }
     ],
     "tags": {
