@@ -10040,7 +10040,6 @@
   },
   {
     "name": "Contaminated Drink",
-    "nickname": "Draft of the Dreamer",
     "cost": "{X}{U}{B}",
     "type": "Instant",
     "text": "Draw X cards, then you get half X rad counters, rounded up.",
@@ -10050,14 +10049,19 @@
     "note": "=PIP 99",
     "set": "REGT",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/x0hezRS.png",
+    "img": "https://i.imgur.com/DOAGQki.png",
     "id": "UB",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "22-10-2024",
         "creator": "Thys",
         "notes": "Added render"
+      },
+      {
+        "date": "13-11-2024",
+        "creator": "Thys",
+        "notes": "Removed nickname Draft of the Dreamer and added new render with correct bleed"
       }
     ],
     "tags": {
