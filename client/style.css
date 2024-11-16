@@ -15,6 +15,7 @@ body {
 .searchbar{
   margin: auto;
   width: 50%;
+  min-width: 25em;
 }
 
 /* Add a color to the active/current link */
@@ -70,6 +71,7 @@ input:focus {
 .column {
   float: left;
   width: 50%;
+  min-width: 23em;
 }
 
 /* Clear floats after the columns */
