@@ -5,7 +5,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename).replace("/routes", "");
+const __dirname = path
+  .dirname(__filename)
+  .replace("/routes", "")
+  .replace("\\routes", "");
 
 const constructorMethod = (app) => {
   app.use(express.static(path.join(__dirname, "client")));
@@ -22,7 +25,8 @@ const constructorMethod = (app) => {
   });
 
   app.use("/card/*", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/card.html"));
+    res.render("pages/card");
+    // res.sendFile(path.resolve(__dirname, "client/card.html"));
   });
 
   app.get("/search/*", async (req, res) => {
@@ -31,7 +35,8 @@ const constructorMethod = (app) => {
 
   // Serve the main index.html file
   app.use("/", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/index.html"));
+    res.render("pages/index");
+    // res.sendFile(path.resolve(__dirname, "client/index.html"));
   });
 
   app.use("*", (req, res) => {

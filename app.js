@@ -53,10 +53,11 @@ const app = express();
 import configRoutes from "./routes/index.js";
 
 app.use(express.json());
+app.set("view engine", "ejs");
 
 configRoutes(app);
 
 app.listen(5000, () => {
   console.log("We've now got a server!");
-  console.log("Your routes will be running on http://localhost:3000");
+  console.log("Your routes will be running on http://localhost:5000");
 });
