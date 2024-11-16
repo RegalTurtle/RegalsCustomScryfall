@@ -9827,14 +9827,19 @@
     "cn": 25,
     "set": "7ED",
     "artist": "Greg Hildebrandt & Tim Hildebrandt",
-    "img": "https://i.imgur.com/T2yHLmL.png",
+    "img": "https://i.imgur.com/P7oXEse.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-10-2024",
         "creator": "Thys",
         "notes": "Created render"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Thys",
+        "notes": "Updated with correct frame"
       }
     ],
     "tags": {
@@ -10024,12 +10029,18 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lEYaarY.png",
     "id": "U",
+    "invisible": true,
     "has_bleed_edge": false,
     "notes": [
       {
         "date": "22-10-2024",
         "creator": "Thys",
         "notes": "Added render"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Thys",
+        "notes": "Removed visibility because I have the other version"
       }
     ],
     "tags": {
@@ -10256,11 +10267,18 @@
     "img": "https://i.imgur.com/C4l1B19.png",
     "id": "U",
     "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 3,
     "notes": [
       {
         "date": "01-11-2024",
         "creator": "Thys",
         "notes": "Updated render to WWHO"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Thys",
+        "notes": "Will probably redo at some point to have a different set symbol"
       }
     ],
     "tags": {
