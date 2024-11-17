@@ -3830,7 +3830,7 @@
     "text": "Choose one -\n• Target player takes a shot.\n• ~ deals 3 damage to target creature.\nMadness {R}",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/lyaNNRO.png",
+    "img": "https://i.imgur.com/FS39emJ.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
@@ -3843,6 +3843,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob, fixed card templating"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updtaed card"
       }
     ],
     "tags": {}
