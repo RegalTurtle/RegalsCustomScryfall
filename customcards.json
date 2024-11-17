@@ -2621,8 +2621,8 @@
     "text": "When ~ enters, create a tapped Excuse token.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/OuIOoDu.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/XnMCChr.png",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
     "notes": [
@@ -2640,6 +2640,11 @@
         "date": "23-10-2024",
         "creator": "Thys",
         "notes": "Needs a proper typeline, currently just \"Creature\""
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated card"
       }
     ],
     "tags": {
