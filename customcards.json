@@ -1959,7 +1959,7 @@
     "text": "At the beginning of your end step, if you gained 2 or more life this turn, create an Excuse token.",
     "flavor": "“If the Inquisition is the pen, then I am their sword.”",
     "rarity": "U",
-    "img": "https://i.imgur.com/Yfdfldb.png",
+    "img": "https://i.imgur.com/58hQrgG.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 3,
@@ -1994,6 +1994,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped // Changed the actual json"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated card"
       }
     ],
     "tags": {
@@ -6540,9 +6545,9 @@
     "cn": 85,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/1HFgmbt.png",
+    "img": "https://i.imgur.com/KlhhgVc.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -6559,6 +6564,11 @@
         "date": "23-10-2024",
         "creator": "Thys",
         "notes": "Removed Stupor from Zanhor given that we only use it once in MTD"
+      },
+      {
+        "date": "16-1-2024",
+        "creator": "Sam",
+        "notes": "Updated card"
       }
     ],
     "tags": {}
