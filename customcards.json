@@ -3982,7 +3982,7 @@
     "text": "Haste\nWhenever ~ deals combat damage to a player, you may sacrifice ~. If you do, that player takes a shot.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/jgAdbaJ.png",
+    "img": "https://i.imgur.com/UGVD3rx.png",
     "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
@@ -4002,6 +4002,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Made it so it has to sac to have the player take a shot"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated card art."
       }
     ],
     "tags": {}
