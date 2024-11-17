@@ -2796,8 +2796,8 @@
     "rarity": "U",
     "cn": 36,
     "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/N4j31AP.png",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/lmnEcJT.png",
     "id": "W",
     "has_bleed_edge": false,
     "notes": [
@@ -2810,6 +2810,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Changed from remove a beer counter from any permanent to just itself"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "New art and updated card text."
       }
     ],
     "tags": {
