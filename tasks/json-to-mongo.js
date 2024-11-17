@@ -5,7 +5,7 @@ import path from "path"; // To resolve the path to customcards.json
 import { sortMTD } from "./set-cn.js";
 
 const loadCardsIntoDB = async () => {
-  sortMTD();
+  // sortMTD();
   let db;
   try {
     db = await dbConnection(); // Connect to DB
