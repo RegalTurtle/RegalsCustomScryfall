@@ -319,10 +319,10 @@
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Legendary Creature - Turtle",
-    "text": "~ enters with nine beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove two beer counters from ~: Put a +1/+1 counter on target creature.\nRemove five beer counters from ~: Creatures you control get +2/+2 until end of turn.",
+    "text": "~ enters with six beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove two beer counters from ~: Put a +1/+1 counter on target creature.\nRemove four beer counters from ~: Creatures you control get +2/+2 until end of turn.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/jDbg9rJ.png",
+    "img": "https://i.imgur.com/Qu7BxnV.png",
     "has_bleed_edge": false,
     "power": 4,
     "toughness": 7,
@@ -337,6 +337,11 @@
         "date": "29-07-2024",
         "creator": "Sam",
         "notes": "Added art"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Balances changes, 9 -> 6 beer counter etb, reduced cost of third mode to four beer counters"
       }
     ],
     "tags": {}
