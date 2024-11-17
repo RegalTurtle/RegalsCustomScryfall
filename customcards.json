@@ -10364,7 +10364,7 @@
   {
     "name": "Law of Equivalent Exchange",
     "set": "MTD",
-    "cn": 2,
+    "cn": 1,
     "id": "C",
     "cost": "{0}",
     "type": "Instant",
@@ -10372,6 +10372,28 @@
     "flavor": "In order to obtain a particular something, something else of equivalent value must be in given exchange or lost.",
     "rarity": "M",
     "img": "https://i.imgur.com/xtTbVnR.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Finally added the card to the json"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Gut Blast",
+    "set": "MTD",
+    "cn": 154,
+    "id": "R",
+    "cost": "{0}",
+    "type": "Instant",
+    "text": "As an additional cost to cast this spell, pay {r} or take a shot.\nGut Blast deals 1 damage to any target. If a permanent dealt damage this way would die this turn, exile it instead.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/S4CtI8B.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
