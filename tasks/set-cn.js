@@ -42,19 +42,21 @@ export const setCnBetweenCns = (beginCn, endCn, set) => {
 
 export const sortMTD = () => {
   // White
-  setCnBetweenCns(1, 42, "MTD");
+  // setCnBetweenCns(1, 42, "MTD");
   // Blue
-  setCnBetweenCns(43, 84, "MTD");
+  // setCnBetweenCns(43, 84, "MTD");
   // Black
-  setCnBetweenCns(85, 126, "MTD");
+  // setCnBetweenCns(85, 126, "MTD");
   // Red
-  setCnBetweenCns(127, 168, "MTD");
+  // setCnBetweenCns(127, 168, "MTD");
   // Green
   setCnBetweenCns(169, 210, "MTD");
   // Multicolor
-  setCnBetweenCns(211, 244, "MTD");
+  // setCnBetweenCns(211, 244, "MTD");
   // Artifact
-  setCnBetweenCns(245, 265, "MTD");
+  // setCnBetweenCns(245, 265, "MTD");
   // Land
-  setCnBetweenCns(266, 286, "MTD");
+  // setCnBetweenCns(266, 286, "MTD");
 };
+
+sortMTD();
