@@ -4448,10 +4448,10 @@
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
-    "text": "You may choose new targets for target instant or sorcery spell unless its controller takes a shot.",
-    "flavor": "",
+    "text": "You may choose new targets for target spell or ability unless its controller takes a shot.",
+    "flavor": "I'll drink to that.",
     "rarity": "U",
-    "img": "https://i.imgur.com/0TvmGes.png",
+    "img": "https://i.imgur.com/3S3VRua.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
@@ -4464,6 +4464,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Thys",
+        "notes": "Buffed card to be more similar to deflecting swat"
       }
     ],
     "tags": {}
