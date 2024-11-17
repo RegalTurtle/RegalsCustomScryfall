@@ -4386,9 +4386,9 @@
     "cost": "{2}{R}",
     "type": "Creature - Goblin",
     "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, target player passes the last card from their booster pack to you.",
-    "flavor": "",
+    "flavor": "What ya lookin for missy?",
     "rarity": "C",
-    "img": "https://i.imgur.com/ZTsVB7N.png",
+    "img": "https://i.imgur.com/KHJLn9j.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
@@ -4414,6 +4414,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Fixed wording around booster packs"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated art & added flavor text"
       }
     ],
     "tags": {}
