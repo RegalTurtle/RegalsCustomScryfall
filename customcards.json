@@ -3892,7 +3892,7 @@
     "cost": "{3}{R}",
     "type": "Creature - Goblin Alcoholic",
     "text": "Whenever you cast an instant or sorcery spell, target opponent takes a shot.",
-    "flavor": "",
+    "flavor": "Boom, Headshot",
     "rarity": "U",
     "img": "https://i.imgur.com/3E4n5fJ.png",
     "has_bleed_edge": false,
