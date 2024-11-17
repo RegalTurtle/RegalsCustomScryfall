@@ -3699,11 +3699,11 @@
     "id": "R",
     "cost": "{R}",
     "type": "Artifact",
-    "text": "At the beginning of your upkeep, put a beer counter on target creature you control.\n{2}, {T}: Create a 1/1 red Crazed Elf creature token. Activate only if a beer counter was removed from a creature you control this turn or a creature with a beer counter on it was put into your graveyard this turn.",
+    "text": "At the beginning of your upkeep, put a beer counter on target creature you control.\n{2}, {T}: Create a 1/1 red Elf Alcoholic creature token. Activate only if a beer counter was removed from a creature you control this turn or a creature with a beer counter on it was put into your graveyard this turn.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/65mw2sK.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/PdaeYiq.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -3715,6 +3715,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob, fixed a couple of oracle things"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Changed name of token & Updated the art"
       }
     ],
     "tags": {}
