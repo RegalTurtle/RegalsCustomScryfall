@@ -394,6 +394,11 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Changed from artifact to a sorcery that gives an emblem"
+      },
+      {
+        "date": "17-11-2024",
+        "creator": "Thys",
+        "notes": "Needs holostamp"
       }
     ],
     "tags": {}
@@ -1062,7 +1067,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -1534,6 +1541,11 @@
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "wall is on cost for a 0/8, ill up it to 4 cmc // Changed cost from {2}{G} to {2}{G}{G}"
+      },
+      {
+        "date": "17-11-2024",
+        "creator": "Thys",
+        "notes": "JSON for this needs to get power and toughness"
       }
     ],
     "tags": {
@@ -1638,7 +1650,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -1846,7 +1860,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -2552,7 +2568,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -3331,6 +3349,11 @@
         "date": "17-10-2024",
         "creator": "Thys",
         "notes": "Removed Entwine {3}"
+      },
+      {
+        "date": "17-11-2024",
+        "creator": "Thys",
+        "notes": "This feels like the render might be off, we'll have to check when we redo it"
       }
     ],
     "tags": {}
@@ -3411,7 +3434,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -3890,7 +3915,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [
+        "Removal"
+      ],
       "reprint": false
     }
   },
@@ -4779,7 +4806,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["wheel"],
+      "function": [
+        "wheel"
+      ],
       "reprint": false
     }
   },
@@ -5178,7 +5207,10 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal", "discard-outlet"],
+      "function": [
+        "removal",
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -5214,7 +5246,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5245,7 +5279,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -5390,7 +5426,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"]
+      "function": [
+        "recursion"
+      ]
     }
   },
   {
@@ -5460,7 +5498,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5549,7 +5589,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard-outlet"],
+      "function": [
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -5575,7 +5617,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5600,7 +5644,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -5741,7 +5787,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
+      "function": [
+        "discard",
+        "thoughtseize",
+        "discard-outlet",
+        "pact"
+      ],
       "reprint": false
     }
   },
@@ -5859,7 +5910,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -6088,7 +6141,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -6647,7 +6702,9 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": ["counterspell"]
+      "function": [
+        "counterspell"
+      ]
     }
   },
   {
@@ -6730,7 +6787,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -6761,7 +6820,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": true
     }
   },
@@ -6922,7 +6983,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": false
     }
   },
@@ -7094,7 +7157,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -7186,7 +7251,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -7419,6 +7486,11 @@
         "date": "16-08-2024",
         "creator": "Thys",
         "notes": "New render"
+      },
+      {
+        "date": "17-11-2024",
+        "creator": "Kenneth",
+        "notes": "this one needs to go, this is so much worse than unsummon and you already have unexplained disappearance at common in the set. i would never draft this card ever"
       }
     ],
     "tags": {}
@@ -7495,7 +7567,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": true
     }
   },
@@ -7847,7 +7921,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -8029,7 +8105,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -8525,7 +8603,9 @@
       }
     ],
     "tags": {
-      "function": ["tutor"],
+      "function": [
+        "tutor"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -9994,7 +10074,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10076,7 +10158,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10102,7 +10186,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10159,7 +10245,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["ramp"],
+      "function": [
+        "ramp"
+      ],
       "reprint": true
     }
   },
@@ -10272,7 +10360,11 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "repeatable-draw", "card-advantage"],
+      "function": [
+        "draw",
+        "repeatable-draw",
+        "card-advantage"
+      ],
       "reprint": true
     }
   },
@@ -10340,7 +10432,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "function": [
+        "draw",
+        "card-advantage",
+        "mill",
+        "mill-self"
+      ],
       "reprint": true
     }
   },
