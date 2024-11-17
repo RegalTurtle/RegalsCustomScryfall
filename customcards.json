@@ -3619,7 +3619,7 @@
     "text": "Whenever you take a shot, you may have target player take a shot.",
     "flavor": "Dwarvish mead is never meant to be sipped alone.",
     "rarity": "U",
-    "img": "https://i.imgur.com/0qfpvXN.png",
+    "img": "https://i.imgur.com/cDPWbvF.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
@@ -3662,6 +3662,11 @@
         "date": "15-07-2024",
         "creator": "Thys",
         "notes": "I'm fine with it changing or staying the same"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated card text."
       }
     ],
     "tags": {}
