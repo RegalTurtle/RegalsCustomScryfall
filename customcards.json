@@ -2799,7 +2799,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lmnEcJT.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-08-2024",
