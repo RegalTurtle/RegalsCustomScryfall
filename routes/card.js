@@ -17,7 +17,6 @@ router.route("/:setcn").patch(async (req, res) => {
   }
   // if the user isn't one of the three of us, don't continue
   if (!["Thys", "Sam", "Kenneth"].includes(userName)) {
-    console.log("name failed");
     return res.status(302).redirect(`/card/${setcn}`);
   }
   // get the set code
