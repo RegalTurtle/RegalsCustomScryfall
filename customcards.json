@@ -319,10 +319,10 @@
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Legendary Creature - Turtle",
-    "text": "~ enters with nine beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove two beer counters from ~: Put a +1/+1 counter on target creature.\nRemove five beer counters from ~: Creatures you control get +2/+2 until end of turn.",
+    "text": "~ enters with six beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove two beer counters from ~: Put a +1/+1 counter on target creature.\nRemove four beer counters from ~: Creatures you control get +2/+2 until end of turn.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/jDbg9rJ.png",
+    "img": "https://i.imgur.com/Qu7BxnV.png",
     "has_bleed_edge": false,
     "power": 4,
     "toughness": 7,
@@ -337,6 +337,11 @@
         "date": "29-07-2024",
         "creator": "Sam",
         "notes": "Added art"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Balances changes, 9 -> 6 beer counter etb, reduced cost of third mode to four beer counters"
       }
     ],
     "tags": {}
@@ -1018,7 +1023,7 @@
     "text": "This spell costs {1} less to cast for each counter among players and permanents.\nTrample\n~ enters tapped.",
     "flavor": "Tall and elegant as she is fierce and unyielding, mother nature's hand.",
     "rarity": "U",
-    "img": "https://i.imgur.com/Y0d007e.png",
+    "img": "https://i.imgur.com/tNoY8Wp.png",
     "has_bleed_edge": false,
     "power": 8,
     "toughness": 8,
@@ -1033,6 +1038,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated Image"
       }
     ],
     "tags": {}
@@ -3882,9 +3892,9 @@
     "cost": "{3}{R}",
     "type": "Creature - Goblin Alcoholic",
     "text": "Whenever you cast an instant or sorcery spell, target opponent takes a shot.",
-    "flavor": "",
+    "flavor": "Boom, Headshot",
     "rarity": "U",
-    "img": "https://i.imgur.com/3E4n5fJ.png",
+    "img": "https://i.imgur.com/5tGnje1.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
@@ -3914,6 +3924,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Changed magecraft to just instant and sorcery casts"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Updated"
       }
     ],
     "tags": {}
@@ -3972,7 +3987,7 @@
     "text": "Haste\nWhenever ~ deals combat damage to a player, you may sacrifice ~. If you do, that player takes a shot.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/jgAdbaJ.png",
+    "img": "https://i.imgur.com/UGVD3rx.png",
     "has_bleed_edge": false,
     "power": 1,
     "toughness": 1,
@@ -3992,6 +4007,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Made it so it has to sac to have the player take a shot"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated card art."
       }
     ],
     "tags": {}
@@ -4376,9 +4396,9 @@
     "cost": "{2}{R}",
     "type": "Creature - Goblin",
     "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, target player passes the last card from their booster pack to you.",
-    "flavor": "",
+    "flavor": "What ya lookin for missy?",
     "rarity": "C",
-    "img": "https://i.imgur.com/ZTsVB7N.png",
+    "img": "https://i.imgur.com/KHJLn9j.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
@@ -4404,6 +4424,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Fixed wording around booster packs"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated art & added flavor text"
       }
     ],
     "tags": {}
@@ -4438,10 +4463,10 @@
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
-    "text": "You may choose new targets for target instant or sorcery spell unless its controller takes a shot.",
-    "flavor": "",
+    "text": "You may choose new targets for target spell or ability unless its controller takes a shot.",
+    "flavor": "I'll drink to that.",
     "rarity": "U",
-    "img": "https://i.imgur.com/0TvmGes.png",
+    "img": "https://i.imgur.com/3S3VRua.png",
     "has_bleed_edge": false,
     "art-remarks": "",
     "notes": [
@@ -4454,6 +4479,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Buffed card to be more similar to deflecting swat"
       }
     ],
     "tags": {}
