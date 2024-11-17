@@ -1960,7 +1960,7 @@
     "flavor": "“If the Inquisition is the pen, then I am their sword.”",
     "rarity": "U",
     "img": "https://i.imgur.com/58hQrgG.png",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
     "artist": "Copilot Designer",
