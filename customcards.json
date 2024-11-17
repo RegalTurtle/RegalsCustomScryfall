@@ -7981,13 +7981,12 @@
     "cn": 248,
     "id": "C",
     "cost": "{9}",
-    "type": "Artifact",
-    "text": "When you cast ~, starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.\nIf you were to lose life as a result of taking a shot, instead you lose 2 less life.",
-    "flavor": "The ultimate challenge. The ultimate price.",
+    "type": "Sorcery",
+    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.\nYou get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
+    "flavor": "",
     "rarity": "M",
     "img": "https://i.imgur.com/kPNCcOJ.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-11-2023",
