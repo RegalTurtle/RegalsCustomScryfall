@@ -1959,7 +1959,7 @@
     "text": "At the beginning of your end step, if you gained 2 or more life this turn, create an Excuse token.",
     "flavor": "“If the Inquisition is the pen, then I am their sword.”",
     "rarity": "U",
-    "img": "https://i.imgur.com/Yfdfldb.png",
+    "img": "https://i.imgur.com/58hQrgG.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 3,
@@ -1994,6 +1994,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Changed 3 life threshold to 2, Excuse tokens enter untapped // Changed the actual json"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated card"
       }
     ],
     "tags": {
