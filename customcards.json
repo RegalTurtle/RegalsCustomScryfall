@@ -1,5 +1,404 @@
 [
   {
+    "name": "Agent of Acquisitions",
+    "set": "MTD",
+    "cn": 245,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact Creature - Construct",
+    "text": "Draft ~ face up.\nInstead of drafting a card from a booster pack, you may draft each card in that booster pack, one at a time. If you do, turn ~ face down and you can't draft cards for the rest of this draft round.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/OyqYQg5.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Banner of Assimilation",
+    "cost": "{3}",
+    "type": "Artifact",
+    "text": "Equipped creature gets +1/+1.\nCreatures that share a creature type with equipped creature also get +1/+1.\nEquip {2}",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 246,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/LrQSqdz.png",
+    "id": "C",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Blessed Bread",
+    "set": "MTD",
+    "cn": 247,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact Food",
+    "text": "When ~ enters, scry 1, then draw a card.\n{2}, {T}, Sacrifice ~: You gain 3 life.\nWhen ~ is put into a graveyard from the battlefield, its owner shuffles it into their library.",
+    "flavor": "Every culture has their bread.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/z0sqxE7.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, might be good to do this without the nickname and have = in the notes"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Changed from nickname to note, uploaded new image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Cogwork Librarian",
+    "set": "MTD",
+    "cn": 248,
+    "id": "C",
+    "cost": "{4}",
+    "type": "Artifact Creature - Construct",
+    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that booster pack. If you do, put ~ into that booster pack.",
+    "flavor": "Why wait for answers?",
+    "rarity": "C",
+    "img": "https://i.imgur.com/uyn0v4K.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 3,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Deal Broker",
+    "set": "MTD",
+    "cn": 249,
+    "id": "C",
+    "cost": "{3}",
+    "type": "Artifact Creature - Construct",
+    "text": "Draft ~ face up.\nImmediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.\n{T}: Draw a card, then discard a card.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/o08H6PH.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 3,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Drinking Challenge",
+    "set": "MTD",
+    "cn": 250,
+    "id": "C",
+    "cost": "{9}",
+    "type": "Sorcery",
+    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.\nYou get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/kPNCcOJ.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed wording"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "id like to give this hexproof"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "That card is a conversation of its own lol // But I agree // With the idea of your statement // It honestly feels like a sorcery which should make a custom token or emblem // The fact that it is an artifact is so bank"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "i guess // idk i think it's fine as an artifact but it needs hexproof"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "I disagree, but I agree it should have hexproof"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "do you think it should be colored?"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "No it should be colorless // The ultimate meme card"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I guess it could work as a sorcery, but I feel like the end '2 life less' thing is an artifact"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Or we could make it gain you a ton of life, and avoid adding a permanent necessary clause to it"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "we'll stick with that // i want to talk about making a token tho // since the effect is very much a spell or a challenge"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "mayyyyybe it could give an emblem"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "or just maybe like, make an artifact token with hexproof and indestructible that has the same effect // or just an emblem lol"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Changed from artifact to a sorcery that gives an emblem"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Freyan's Keg",
+    "set": "MTD",
+    "cn": 251,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "Equipped creature gets +1/+1 for each beer counter on it.\nEquip {2}",
+    "flavor": "Whilst their Southern counterparts value peace and prosperity, the brews of the North represent a much more passionate culture.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/C3Pz1dP.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Key to the City",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.\nWhenever ~ becomes untapped, you may pay {2}. If you do, draw a card.",
+    "flavor": "Many doors are open to you, my friend.",
+    "rarity": "R",
+    "cn": 252,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/vB54djU.png",
+    "id": "C",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-09-2024",
+        "creator": "Sam",
+        "notes": "Found card, added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Orbs of Warding",
+    "set": "MTD",
+    "cn": 253,
+    "id": "C",
+    "cost": "{5}",
+    "type": "Artifact",
+    "text": "You have hexproof.\nIf a creature would deal damage to you, prevent 1 of that damage.",
+    "flavor": "The body, the mind, the soul.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/IALjUkh.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Overflowing Cellar",
+    "set": "MTD",
+    "cn": 254,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "~ enters with two battlefield with two beer counters on it.\n{T}, Remove a beer counter from ~: Put a beer counter on target creature you control.\n{T}: Put a beer counter on ~.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/0DNjAxe.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Spidersilk Net",
+    "cost": "{0}",
+    "type": "Artifact - Equipment",
+    "text": "Equipped creature gets +0/+2 and has reach.\nEquip {2}",
+    "flavor": "Finer than steel, stickier than tar, light as a feather—in short, deadly.",
+    "rarity": "C",
+    "cn": 255,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/wcEs5Hq.png",
+    "id": "C",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Urn of Godfire",
+    "set": "MTD",
+    "cn": 256,
+    "id": "C",
+    "cost": "{1}",
+    "type": "Artifact",
+    "text": "{2}: Add one mana of any color.\n{6}, {T}, Sacrifice ~: Destroy target creature or enchantment.",
+    "flavor": "Blessed by gods long forgotten, these relics are coveted for their innate magical properties by all peoples across the plane.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/yUqJjzr.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
     "name": "Battle Caravan",
     "set": "MTD",
     "cn": 169,
@@ -663,7 +1062,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -1239,7 +1640,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -1447,7 +1850,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -2148,7 +2553,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -2992,7 +3399,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -3471,7 +3880,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [
+        "Removal"
+      ],
       "reprint": false
     }
   },
@@ -4360,7 +4771,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["wheel"],
+      "function": [
+        "wheel"
+      ],
       "reprint": false
     }
   },
@@ -4759,7 +5172,10 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal", "discard-outlet"],
+      "function": [
+        "removal",
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -4795,7 +5211,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -4826,7 +5244,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -4870,7 +5290,7 @@
     "name": "Demonic Insight",
     "cost": "{B}",
     "type": "Instant",
-    "text": "Pact\nScry 2, then if you accepted ~'s pact, choose one:\n• Draw a card.\n• You gain three life.",
+    "text": "Pact\nScry 2, then if you accepted ~'s pact, choose one:\n• Draw a card.\n• You gain 3 life.",
     "flavor": "",
     "rarity": "C",
     "cn": 94,
@@ -4971,7 +5391,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"]
+      "function": [
+        "recursion"
+      ]
     }
   },
   {
@@ -5041,7 +5463,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5130,7 +5554,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard-outlet"],
+      "function": [
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -5156,7 +5582,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5181,7 +5609,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -5322,7 +5752,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
+      "function": [
+        "discard",
+        "thoughtseize",
+        "discard-outlet",
+        "pact"
+      ],
       "reprint": false
     }
   },
@@ -5440,7 +5875,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5669,7 +6106,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -5958,7 +6397,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -6553,7 +6994,9 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": ["counterspell"]
+      "function": [
+        "counterspell"
+      ]
     }
   },
   {
@@ -6670,7 +7113,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -6701,7 +7146,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": true
     }
   },
@@ -6862,7 +7309,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": false
     }
   },
@@ -7034,7 +7483,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -7153,7 +7604,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -7604,7 +8057,9 @@
       }
     ],
     "tags": {
-      "function": ["tutor"],
+      "function": [
+        "tutor"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -7720,209 +8175,6 @@
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Updated with CN and bleed"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Overflowing Cellar",
-    "set": "MTD",
-    "cn": 245,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact",
-    "text": "~ enters with two battlefield with two beer counters on it.\n{T}, Remove a beer counter from ~: Put a beer counter on target creature you control.\n{T}: Put a beer counter on ~.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/0DNjAxe.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-02-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Orbs of Warding",
-    "set": "MTD",
-    "cn": 245,
-    "id": "C",
-    "cost": "{5}",
-    "type": "Artifact",
-    "text": "You have hexproof.\nIf a creature would deal damage to you, prevent 1 of that damage.",
-    "flavor": "The body, the mind, the soul.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/IALjUkh.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Urn of Godfire",
-    "set": "MTD",
-    "cn": 245,
-    "id": "C",
-    "cost": "{1}",
-    "type": "Artifact",
-    "text": "{2}: Add one mana of any color.\n{6}, {T}, Sacrifice ~: Destroy target creature or enchantment.",
-    "flavor": "Blessed by gods long forgotten, these relics are coveted for their innate magical properties by all peoples across the plane.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/yUqJjzr.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Agent of Acquisitions",
-    "set": "MTD",
-    "cn": 245,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nInstead of drafting a card from a booster pack, you may draft each card in that booster pack, one at a time. If you do, turn ~ face down and you can't draft cards for the rest of this draft round.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/OyqYQg5.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 1,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Deal Broker",
-    "set": "MTD",
-    "cn": 245,
-    "id": "C",
-    "cost": "{3}",
-    "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nImmediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.\n{T}: Draw a card, then discard a card.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/o08H6PH.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 3,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Cogwork Librarian",
-    "set": "MTD",
-    "cn": 245,
-    "id": "C",
-    "cost": "{4}",
-    "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that booster pack. If you do, put ~ into that booster pack.",
-    "flavor": "Why wait for answers?",
-    "rarity": "C",
-    "img": "https://i.imgur.com/uyn0v4K.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 3,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Blessed Bread",
-    "set": "MTD",
-    "cn": 246,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact Food",
-    "text": "When ~ enters, scry 1, then draw a card.\n{2}, {T}, Sacrifice ~: You gain 3 life.\nWhen ~ is put into a graveyard from the battlefield, its owner shuffles it into their library.",
-    "flavor": "Every culture has their bread.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/z0sqxE7.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, might be good to do this without the nickname and have = in the notes"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Changed from nickname to note, uploaded new image"
       }
     ],
     "tags": {}
@@ -8108,124 +8360,6 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Added stamp"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Freyan's Keg",
-    "set": "MTD",
-    "cn": 245,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact",
-    "text": "Equipped creature gets +1/+1 for each beer counter on it.\nEquip {2}",
-    "flavor": "Whilst their Southern counterparts value peace and prosperity, the brews of the North represent a much more passionate culture.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/C3Pz1dP.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "05-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Drinking Challenge",
-    "set": "MTD",
-    "cn": 248,
-    "id": "C",
-    "cost": "{9}",
-    "type": "Sorcery",
-    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.\nYou get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/kPNCcOJ.png",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, fixed wording"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "id like to give this hexproof"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "That card is a conversation of its own lol // But I agree // With the idea of your statement // It honestly feels like a sorcery which should make a custom token or emblem // The fact that it is an artifact is so bank"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "i guess // idk i think it's fine as an artifact but it needs hexproof"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "I disagree, but I agree it should have hexproof"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "do you think it should be colored?"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "No it should be colorless // The ultimate meme card"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "I guess it could work as a sorcery, but I feel like the end '2 life less' thing is an artifact"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "Or we could make it gain you a ton of life, and avoid adding a permanent necessary clause to it"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "we'll stick with that // i want to talk about making a token tho // since the effect is very much a spell or a challenge"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "mayyyyybe it could give an emblem"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "or just maybe like, make an artifact token with hexproof and indestructible that has the same effect // or just an emblem lol"
-      },
-      {
-        "date": "16-11-2024",
-        "creator": "Sam",
-        "notes": "Changed from artifact to a sorcery that gives an emblem"
       }
     ],
     "tags": {}
@@ -8625,7 +8759,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": true
     }
   },
@@ -9689,7 +9825,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -9826,32 +9964,6 @@
     }
   },
   {
-    "name": "Key to the City",
-    "cost": "{2}",
-    "type": "Artifact",
-    "text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.\nWhenever ~ becomes untapped, you may pay {2}. If you do, draw a card.",
-    "flavor": "Many doors are open to you, my friend.",
-    "rarity": "R",
-    "cn": 251,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/vB54djU.png",
-    "id": "C",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "15-09-2024",
-        "creator": "Sam",
-        "notes": "Found card, added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
     "name": "Braingeyser",
     "cost": "{X}{U}{U}",
     "type": "Sorcery",
@@ -9873,7 +9985,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -9955,7 +10069,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -9981,7 +10097,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10038,7 +10156,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["ramp"],
+      "function": [
+        "ramp"
+      ],
       "reprint": true
     }
   },
@@ -10128,32 +10248,6 @@
     }
   },
   {
-    "name": "Banner of Assimilation",
-    "cost": "{3}",
-    "type": "Artifact",
-    "text": "Equipped creature gets +1/+1.\nCreatures that share a creature type with equipped creature also get +1/+1.\nEquip {2}",
-    "flavor": "",
-    "rarity": "U",
-    "cn": 245,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/LrQSqdz.png",
-    "id": "C",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "15-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
     "name": "The One Ring",
     "nickname": "The Mirari Awoken",
     "cost": "{4}",
@@ -10177,7 +10271,11 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "repeatable-draw", "card-advantage"],
+      "function": [
+        "draw",
+        "repeatable-draw",
+        "card-advantage"
+      ],
       "reprint": true
     }
   },
@@ -10245,7 +10343,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "function": [
+        "draw",
+        "card-advantage",
+        "mill",
+        "mill-self"
+      ],
       "reprint": true
     }
   },
@@ -10267,32 +10370,6 @@
         "date": "22-10-2024",
         "creator": "Thys",
         "notes": "Added render, missing holo stamp"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Spidersilk Net",
-    "cost": "{0}",
-    "type": "Artifact - Equipment",
-    "text": "Equipped creature gets +0/+2 and has reach.\nEquip {2}",
-    "flavor": "Finer than steel, stickier than tar, light as a feather—in short, deadly.",
-    "rarity": "C",
-    "cn": 245,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/wcEs5Hq.png",
-    "id": "C",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "15-10-2024",
-        "creator": "Sam",
-        "notes": "Created render"
       }
     ],
     "tags": {
