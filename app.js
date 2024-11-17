@@ -11,7 +11,7 @@ const rewriteUnsupportedBrowserMethods = (req, res, next) => {
 };
 
 app.use(express.json());
-app.use(express.json({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(rewriteUnsupportedBrowserMethods);
 app.set("view engine", "ejs");
 

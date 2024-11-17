@@ -483,6 +483,8 @@ hr {
   box-sizing: border-box;
 }
 
+
+
 body.homepage {
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -535,4 +537,56 @@ body.homepage form{
 footer {
   height: 15dvh; /* Reserve 20% of viewport height for the footer */
   background: #113847;
+}
+
+.commentForm {
+  display: flex;
+  justify-content: center; /* Center the form in the parent container */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 12fr; /* Two equal columns for label and input */
+  column-gap: 10px; /* Spacing between label and input */
+  row-gap: 0px; /* Spacing between rows */
+  width: 100%;
+  text-align: left; /* Align text in labels to the left */
+}
+
+.commentForm label {
+  text-align: left;
+  grid-column: 1; /* Ensures labels stay in the first column */
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  color: #0f1327;
+  font-weight: bold;
+  align-self: center;
+}
+
+.commentForm input[type="text"] {
+  grid-column: 2; /* Ensures inputs stay in the second column */
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: #2f9288;
+  padding: 12px 14px 12px 14px;
+  border: 2px solid #daddf5;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.commentForm input[type="submit"] {
+  grid-column: span 2; /* Make the button span both columns */
+  justify-self: center; /* Center the button horizontally */
+
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: #2f9288;
+  padding: 12px 14px 12px 14px;
+  border: 2px solid #daddf5;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.cardForm {
+  margin-top: 5dvh;
 }

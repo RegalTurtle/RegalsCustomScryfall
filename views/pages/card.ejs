@@ -33,6 +33,19 @@
         </div>
       </div>
     </div>
+    <div class="cardForm">
+      <form class="commentForm" method="post">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="name" />
+        <br />
+        <label for="userComment">Comment:</label>
+        <input type="text" id="userComment" name="comment" />
+        <br />
+        <input type="submit" ></input>
+
+        <input type="hidden" name="_method" id="_method" value="PATCH" />
+      </form>
+    </div>
     <script>
       fetch("./customcards.json")
         .then((response) => response.json())

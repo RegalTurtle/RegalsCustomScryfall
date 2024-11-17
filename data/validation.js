@@ -26,6 +26,7 @@ const checkObj = (obj, type) => {
 };
 
 const exportedMethods = {
+  checkStr,
   checkObjId(id) {
     id = checkStr(id, "object id");
     if (!ObjectId.isValid(id))
