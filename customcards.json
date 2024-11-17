@@ -3345,14 +3345,19 @@
     "text": "Exile all opponents' graveyards. You may cast spells from among those cards this turn, and mana of any type can be spent to cast them. At the beginning of the next end step, if any of those cards remain exiled, return them to their owners' graveyards.\nExile ~.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/Lz9tf9M.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/LEKFZQu.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
         "date": "26-07-2024",
         "creator": "Thys",
         "notes": "Added card json from backpacking trip"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Updated card"
       }
     ],
     "tags": {}
