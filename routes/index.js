@@ -1,5 +1,5 @@
 import cardJsonRoutes from "./cards.js";
-import cardRouts from "./card.js";
+import cardRoutes from "./card.js";
 
 import express from "express";
 import path from "path";
@@ -18,7 +18,7 @@ const constructorMethod = (app) => {
 
   app.use("/card", cardRoutes);
 
-  app.app.get("*/customcards.json", async (req, res) => {
+  app.get("*/customcards.json", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "customcards.json"));
   });
 
