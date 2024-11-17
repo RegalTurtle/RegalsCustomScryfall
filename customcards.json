@@ -3894,7 +3894,7 @@
     "text": "Whenever you cast an instant or sorcery spell, target opponent takes a shot.",
     "flavor": "Boom, Headshot",
     "rarity": "U",
-    "img": "https://i.imgur.com/3E4n5fJ.png",
+    "img": "https://i.imgur.com/5tGnje1.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 2,
@@ -3924,6 +3924,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Changed magecraft to just instant and sorcery casts"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Updated"
       }
     ],
     "tags": {}
