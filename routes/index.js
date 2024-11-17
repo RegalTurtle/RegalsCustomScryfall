@@ -1,4 +1,5 @@
-import cardRoutes from "./cards.js";
+import cardJsonRoutes from "./cards.js";
+import cardRouts from "./card.js";
 
 import express from "express";
 import path from "path";
@@ -11,20 +12,21 @@ const __dirname = path
   .replace("\\routes", "");
 
 const constructorMethod = (app) => {
-  app.use(express.static(path.join(__dirname, "client")));
+  app.get(express.static(path.join(__dirname, "client")));
 
-  app.use("/cardjson", cardRoutes);
-  // similar to switch, always does top to bottom
+  app.use("/cardjson", cardJsonRoutes);
 
-  app.use("*/customcards.json", async (req, res) => {
+  app.use("/card", cardRoutes);
+
+  app.app.get("*/customcards.json", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "customcards.json"));
   });
 
-  app.use("*/style.css", async (req, res) => {
+  app.get("*/style.css", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/style.css"));
   });
 
-  app.use("/card/*", async (req, res) => {
+  app.get("/card/*", async (req, res) => {
     res.render("pages/card");
     // res.sendFile(path.resolve(__dirname, "client/card.html"));
   });
@@ -34,7 +36,7 @@ const constructorMethod = (app) => {
   });
 
   // Serve the main index.html file
-  app.use("/", async (req, res) => {
+  app.get("/", async (req, res) => {
     res.render("pages/index");
     // res.sendFile(path.resolve(__dirname, "client/index.html"));
   });

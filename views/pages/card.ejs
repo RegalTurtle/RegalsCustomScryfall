@@ -33,6 +33,17 @@
         </div>
       </div>
     </div>
+    <div class="cardForm">
+      <form action="" class="commentForm" method="PATCH">
+        <label for="name">Name:</label>
+        <input class="" type="text" name="name" />
+        <br />
+        <label for="name">Comment:</label>
+        <input class="" type="text" name="comment" />
+        <br />
+        <input type="submit" ></input>
+      </form>
+    </div>
     <script>
       fetch("./customcards.json")
         .then((response) => response.json())
