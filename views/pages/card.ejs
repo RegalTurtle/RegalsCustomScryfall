@@ -34,14 +34,16 @@
       </div>
     </div>
     <div class="cardForm">
-      <form action="" class="commentForm" method="PATCH">
-        <label for="name">Name:</label>
-        <input class="" type="text" name="name" />
+      <form class="commentForm" method="post">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="name" />
         <br />
-        <label for="name">Comment:</label>
-        <input class="" type="text" name="comment" />
+        <label for="userComment">Comment:</label>
+        <input type="text" id="userComment" name="comment" />
         <br />
         <input type="submit" ></input>
+
+        <input type="hidden" name="_method" id="_method" value="PATCH" />
       </form>
     </div>
     <script>

@@ -28,7 +28,6 @@ const constructorMethod = (app) => {
 
   app.get("/card/*", async (req, res) => {
     res.render("pages/card");
-    // res.sendFile(path.resolve(__dirname, "client/card.html"));
   });
 
   app.get("/search/*", async (req, res) => {
@@ -42,7 +41,7 @@ const constructorMethod = (app) => {
   });
 
   app.use("*", (req, res) => {
-    return res.status(404).json({ error: "Not found" });
+    return res.status(404).json({ error: "Route not found" });
   });
 };
 
