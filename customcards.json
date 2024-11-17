@@ -2,7 +2,7 @@
   {
     "name": "Agent of Acquisitions",
     "set": "MTD",
-    "cn": 246,
+    "cn": 247,
     "id": "C",
     "cost": "{2}",
     "type": "Artifact Creature - Construct",
@@ -36,7 +36,7 @@
     "text": "Equipped creature gets +1/+1.\nCreatures that share a creature type with equipped creature also get +1/+1.\nEquip {2}",
     "flavor": "",
     "rarity": "U",
-    "cn": 247,
+    "cn": 248,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/LrQSqdz.png",
@@ -58,7 +58,7 @@
   {
     "name": "Blessed Bread",
     "set": "MTD",
-    "cn": 248,
+    "cn": 249,
     "id": "C",
     "cost": "{2}",
     "type": "Artifact Food",
@@ -90,7 +90,7 @@
   {
     "name": "Cogwork Librarian",
     "set": "MTD",
-    "cn": 249,
+    "cn": 250,
     "id": "C",
     "cost": "{4}",
     "type": "Artifact Creature - Construct",
@@ -120,7 +120,7 @@
   {
     "name": "Deal Broker",
     "set": "MTD",
-    "cn": 250,
+    "cn": 251,
     "id": "C",
     "cost": "{3}",
     "type": "Artifact Creature - Construct",
@@ -143,97 +143,6 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Drinking Challenge",
-    "set": "MTD",
-    "cn": 1,
-    "id": "C",
-    "cost": "{9}",
-    "type": "Sorcery",
-    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.\nYou get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
-    "flavor": "",
-    "rarity": "M",
-    "img": "https://i.imgur.com/kPNCcOJ.png",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "13-11-2023",
-        "creator": "Thys",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, fixed wording"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "id like to give this hexproof"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "That card is a conversation of its own lol // But I agree // With the idea of your statement // It honestly feels like a sorcery which should make a custom token or emblem // The fact that it is an artifact is so bank"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "i guess // idk i think it's fine as an artifact but it needs hexproof"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "I disagree, but I agree it should have hexproof"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "do you think it should be colored?"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "No it should be colorless // The ultimate meme card"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "I guess it could work as a sorcery, but I feel like the end '2 life less' thing is an artifact"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "Or we could make it gain you a ton of life, and avoid adding a permanent necessary clause to it"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "we'll stick with that // i want to talk about making a token tho // since the effect is very much a spell or a challenge"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "mayyyyybe it could give an emblem"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Sam",
-        "notes": "or just maybe like, make an artifact token with hexproof and indestructible that has the same effect // or just an emblem lol"
-      },
-      {
-        "date": "16-11-2024",
-        "creator": "Sam",
-        "notes": "Changed from artifact to a sorcery that gives an emblem"
       }
     ],
     "tags": {}
@@ -399,9 +308,100 @@
     "tags": {}
   },
   {
+    "name": "Drinking Challenge",
+    "set": "MTD",
+    "cn": 2,
+    "id": "C",
+    "cost": "{9}",
+    "type": "Sorcery",
+    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.\nYou get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
+    "flavor": "",
+    "rarity": "M",
+    "img": "https://i.imgur.com/kPNCcOJ.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "13-11-2023",
+        "creator": "Thys",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, fixed wording"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "id like to give this hexproof"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "That card is a conversation of its own lol // But I agree // With the idea of your statement // It honestly feels like a sorcery which should make a custom token or emblem // The fact that it is an artifact is so bank"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "i guess // idk i think it's fine as an artifact but it needs hexproof"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "I disagree, but I agree it should have hexproof"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "do you think it should be colored?"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "No it should be colorless // The ultimate meme card"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I guess it could work as a sorcery, but I feel like the end '2 life less' thing is an artifact"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "Or we could make it gain you a ton of life, and avoid adding a permanent necessary clause to it"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "I don't love the gain a bunch of life approach tbh, I think it being a permanent advantage is good"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "we'll stick with that // i want to talk about making a token tho // since the effect is very much a spell or a challenge"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "mayyyyybe it could give an emblem"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Sam",
+        "notes": "or just maybe like, make an artifact token with hexproof and indestructible that has the same effect // or just an emblem lol"
+      },
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Changed from artifact to a sorcery that gives an emblem"
+      }
+    ],
+    "tags": {}
+  },
+  {
     "name": "Battle Caravan",
     "set": "MTD",
-    "cn": 170,
+    "cn": 171,
     "id": "G",
     "cost": "{5}{G}",
     "type": "Creature - Elf Warrior",
@@ -430,7 +430,7 @@
   {
     "name": "Brewery Guard",
     "set": "MTD",
-    "cn": 171,
+    "cn": 172,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf Soldier",
@@ -464,7 +464,7 @@
   {
     "name": "Brewery Shaman",
     "set": "MTD",
-    "cn": 172,
+    "cn": 173,
     "id": "G",
     "cost": "{G}",
     "type": "Creature - Elf Shaman",
@@ -493,7 +493,7 @@
   {
     "name": "Cellar Assistant",
     "set": "MTD",
-    "cn": 173,
+    "cn": 174,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf",
@@ -522,7 +522,7 @@
   {
     "name": "Colossal Dreadbeast",
     "set": "MTD",
-    "cn": 174,
+    "cn": 175,
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Creature - Beast",
@@ -551,7 +551,7 @@
   {
     "name": "Elven Bartender",
     "set": "MTD",
-    "cn": 175,
+    "cn": 176,
     "id": "G",
     "cost": "{2}{G}",
     "type": "Creature - Elf",
@@ -580,7 +580,7 @@
   {
     "name": "Elven Mixologist",
     "set": "MTD",
-    "cn": 176,
+    "cn": 177,
     "id": "G",
     "cost": "{2}{G}",
     "type": "Creature - Elf",
@@ -609,7 +609,7 @@
   {
     "name": "Elvish Beer",
     "set": "MTD",
-    "cn": 177,
+    "cn": 178,
     "id": "G",
     "cost": "{3}{G}",
     "type": "Enchantment",
@@ -656,7 +656,7 @@
   {
     "name": "Elvish Visionary",
     "set": "MTD",
-    "cn": 178,
+    "cn": 179,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf Shaman",
@@ -685,7 +685,7 @@
   {
     "name": "Elvish Warmaster",
     "set": "MTD",
-    "cn": 179,
+    "cn": 180,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf Warrior",
@@ -714,7 +714,7 @@
   {
     "name": "Enti, the Worldshaker",
     "set": "MTD",
-    "cn": 180,
+    "cn": 181,
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Legendary Creature - Turtle",
@@ -748,7 +748,7 @@
   {
     "name": "Entourage of Trest",
     "set": "MTD",
-    "cn": 181,
+    "cn": 182,
     "id": "G",
     "cost": "{4}{G}",
     "type": "Creature - Elf Soldier",
@@ -777,7 +777,7 @@
   {
     "name": "Evolving Culture",
     "set": "MTD",
-    "cn": 182,
+    "cn": 183,
     "id": "G",
     "cost": "{G}",
     "type": "Creature - Elemental",
@@ -806,7 +806,7 @@
   {
     "name": "Fervent Acolyte",
     "set": "MTD",
-    "cn": 183,
+    "cn": 184,
     "id": "G",
     "cost": "{G}",
     "type": "Creature - Elf Alcoholic",
@@ -835,7 +835,7 @@
   {
     "name": "Generous Host",
     "set": "MTD",
-    "cn": 184,
+    "cn": 185,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf",
@@ -874,7 +874,7 @@
   {
     "name": "Gifts for the Host",
     "set": "MTD",
-    "cn": 185,
+    "cn": 186,
     "id": "G",
     "cost": "{2}{G}{G}",
     "type": "Sorcery",
@@ -901,7 +901,7 @@
   {
     "name": "Ginger Beer",
     "set": "MTD",
-    "cn": 186,
+    "cn": 187,
     "id": "G",
     "cost": "{G}",
     "type": "Artifact - Food",
@@ -928,7 +928,7 @@
   {
     "name": "High Priestess",
     "set": "MTD",
-    "cn": 187,
+    "cn": 188,
     "id": "G",
     "cost": "{2}{G}{G}",
     "type": "Creature - Elf Shaman",
@@ -961,7 +961,7 @@
   {
     "name": "Invigorating Brew",
     "set": "MTD",
-    "cn": 188,
+    "cn": 189,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Instant",
@@ -992,7 +992,7 @@
     "text": "Target creature gets +1/+3 and gains reach until end of turn. Untap it.",
     "flavor": "Clever girl.",
     "rarity": "C",
-    "cn": 189,
+    "cn": 190,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/legoOS3.png",
@@ -1014,7 +1014,7 @@
   {
     "name": "Leovold's Operative",
     "set": "MTD",
-    "cn": 190,
+    "cn": 191,
     "id": "G",
     "cost": "{2}{G}",
     "type": "Creature - Elf Rogue",
@@ -1048,7 +1048,7 @@
     "text": "As an additional cost to cast this spell, take a shot.\nReturn target card from a graveyard to its owner's hand.",
     "flavor": "“Here is your chance to turn a new leaf”",
     "rarity": "U",
-    "cn": 191,
+    "cn": 192,
     "set": "MTD",
     "artist": "",
     "img": "https://i.imgur.com/YIGD2sp.png",
@@ -1062,7 +1062,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -1074,7 +1076,7 @@
     "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch.",
     "flavor": "Those who make us happy, often have our true loyalty.",
     "rarity": "U",
-    "cn": 192,
+    "cn": 193,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/vD05wbh.png",
@@ -1131,7 +1133,7 @@
     "text": "Whenever a permanent card is put into your graveyard, put a beer counter on target permanent you control.",
     "flavor": "To the earth all things return, from the earth all things are found.",
     "rarity": "U",
-    "cn": 193,
+    "cn": 194,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/rQiuyXZ.png",
@@ -1158,7 +1160,7 @@
   {
     "name": "Lys Alana Huntmaster",
     "set": "MTD",
-    "cn": 194,
+    "cn": 195,
     "id": "G",
     "cost": "{2}{G}{G}",
     "type": "Creature - Elf Warrior",
@@ -1197,7 +1199,7 @@
   {
     "name": "Priest of Titania",
     "set": "MTD",
-    "cn": 195,
+    "cn": 196,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf Druid",
@@ -1226,7 +1228,7 @@
   {
     "name": "Prosperous Innkeeper",
     "set": "MTD",
-    "cn": 196,
+    "cn": 197,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature — Halfling Citizen",
@@ -1255,7 +1257,7 @@
   {
     "name": "Regal Behemoth",
     "set": "MTD",
-    "cn": 197,
+    "cn": 198,
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Creature - Dinosaur",
@@ -1284,7 +1286,7 @@
   {
     "name": "Return to Soil",
     "set": "MTD",
-    "cn": 198,
+    "cn": 199,
     "id": "G",
     "cost": "{1}{G}{G}",
     "type": "Sorcery",
@@ -1326,7 +1328,7 @@
   {
     "name": "Return to the Earth",
     "set": "MTD",
-    "cn": 199,
+    "cn": 200,
     "id": "G",
     "cost": "{3}{G}",
     "type": "Instant",
@@ -1357,7 +1359,7 @@
     "text": "When ~ enters, you become the monarch.\nAt the beginning of the monarch's end step, that player puts a beer counter on target permanent they control.",
     "flavor": "I serve the king of the day.",
     "rarity": "C",
-    "cn": 200,
+    "cn": 201,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/ttfjdGH.png",
@@ -1388,7 +1390,7 @@
     "text": "Creatures you control get +0/+1 and have reach.",
     "flavor": "It hardly weighs anything, but it takes all day to remove.",
     "rarity": "C",
-    "cn": 201,
+    "cn": 202,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/pmW49mb.png",
@@ -1415,7 +1417,7 @@
   {
     "name": "Spirit of the Glade",
     "set": "MTD",
-    "cn": 202,
+    "cn": 203,
     "id": "G",
     "cost": "{10}{G}{G}",
     "type": "Creature - Elemental Spirit",
@@ -1449,7 +1451,7 @@
   {
     "name": "Timberwatch Elf",
     "set": "MTD",
-    "cn": 203,
+    "cn": 204,
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature — Elf",
@@ -1487,7 +1489,7 @@
     "text": "",
     "flavor": "\"I have been on many hunts, I have felled many a beast, but lately, it is I who have felt hunted. The woods aren't what they used to be, something has been let loose and it is finally making itself known.\"",
     "rarity": "C",
-    "cn": 204,
+    "cn": 205,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/bbTfYvG.png",
@@ -1513,7 +1515,7 @@
     "text": "Defender, reach\n~ can block one additional creature each combat for each beer counter on it.",
     "flavor": "The forest gives back to those who nurture it.",
     "rarity": "U",
-    "cn": 205,
+    "cn": 206,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/RExCihB.png",
@@ -1545,7 +1547,7 @@
   {
     "name": "Windrider Elf",
     "set": "MTD",
-    "cn": 206,
+    "cn": 207,
     "id": "G",
     "cost": "{2}{G}{G}",
     "type": "Creature - Bird",
@@ -1578,7 +1580,7 @@
     "text": "Equipped creature gets +0/+2 and gains \"Whenever this creature blocks a creature, put a beer counter on target permanent you control.\"\n{G}{G}{G}{G}{G}, Remove six beer counters from among permanents you control: Your life total becomes 20. Untap all permanents you control. Activate only once.\nEquip {G}{G}",
     "flavor": "",
     "rarity": "R",
-    "cn": 207,
+    "cn": 208,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/dUB6ZMW.png",
@@ -1611,7 +1613,7 @@
     "name": "Aerial Assault",
     "cost": "{2}{W}",
     "set": "MTD",
-    "cn": 2,
+    "cn": 3,
     "id": "W",
     "type": "Sorcery",
     "text": "Destroy target tapped creature. You gain 1 life for each creature you control with flying.",
@@ -1638,7 +1640,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -1649,7 +1653,7 @@
     "text": "When ~ enters, create a 1/1 white Cleric creature token with vigilance, then attach ~ to it.\nEquipped creature gets +1/+1 and lifelink.\nEquip {2}",
     "flavor": "",
     "rarity": "C",
-    "cn": 3,
+    "cn": 4,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/AEuxeid.png",
@@ -1683,7 +1687,7 @@
     "text": "Vigilance\nWhenever one or more other creatures enter the battlefield under your control, create a 1/1 white Human Soldier creature token. This ability triggers only once each turn.",
     "flavor": "",
     "set": "MTD",
-    "cn": 4,
+    "cn": 5,
     "id": "W",
     "rarity": "U",
     "img": "https://i.imgur.com/9LW33FX.png",
@@ -1715,7 +1719,7 @@
     "power": 1,
     "toughness": 1,
     "rarity": "C",
-    "cn": 5,
+    "cn": 6,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/OFShq0W.png",
@@ -1762,7 +1766,7 @@
   {
     "name": "Apostle of Purifying Light",
     "set": "MTD",
-    "cn": 6,
+    "cn": 7,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Creature - Human Cleric",
@@ -1787,7 +1791,7 @@
   {
     "name": "Archon of Coronation",
     "set": "MTD",
-    "cn": 7,
+    "cn": 8,
     "id": "W",
     "cost": "{4}{W}{W}",
     "type": "Creature - Archon",
@@ -1826,7 +1830,7 @@
     "text": "Enchant creature\nEnchanted creature can't attack or block, and its activated abilities can't be activated.",
     "flavor": "Lay still in the name of the Holy Order.",
     "rarity": "C",
-    "cn": 8,
+    "cn": 9,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/K5d9KcJ.png",
@@ -1846,7 +1850,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -1857,7 +1863,7 @@
     "text": "This spell costs {1} less to cast for each opponent you're attacking.\nExile target creature.",
     "flavor": "“You are not made in God's image.”",
     "rarity": "U",
-    "cn": 9,
+    "cn": 10,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/fgTIIPQ.png",
@@ -1894,7 +1900,7 @@
     "text": "Choose one -\n• {indent}Create two 1/1 white Cleric creature tokens.\n• {indent}Destroy target artifact or enchantment.",
     "flavor": "Begotten, not made, consubstantial with the Father.",
     "rarity": "C",
-    "cn": 10,
+    "cn": 11,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/gk94a1O.png",
@@ -1927,7 +1933,7 @@
   {
     "name": "Champion of Light",
     "set": "MTD",
-    "cn": 11,
+    "cn": 12,
     "id": "W",
     "cost": "{3}{W}",
     "type": "Creature - Human Angel",
@@ -1952,7 +1958,7 @@
   {
     "name": "Clairmont, Vicious Arbiter",
     "set": "MTD",
-    "cn": 12,
+    "cn": 13,
     "id": "W",
     "cost": "{2}{W}",
     "type": "Legendary Creature - Human Noble",
@@ -2012,7 +2018,7 @@
     "text": "Put target attacking creature on the bottom of its owner's library. Its controller gains life equal to its toughness.",
     "flavor": "“In the name of the Inquisition, you will stand down!” {lns}{-}Clairmont",
     "rarity": "U",
-    "cn": 13,
+    "cn": 14,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/FIzy6Xm.png",
@@ -2043,7 +2049,7 @@
     "text": "Whenever you gain life, you may pay {2}. If you do, draw a card.\n{3}{W}: Create a 1/1 Soldier creature token with lifelink.",
     "flavor": "My people need hope, it's time to make a change.",
     "rarity": "R",
-    "cn": 14,
+    "cn": 15,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/oiEgVbb.png",
@@ -2081,7 +2087,7 @@
     "power": 0,
     "toughness": 6,
     "rarity": "C",
-    "cn": 15,
+    "cn": 16,
     "set": "MTD",
     "artist": "",
     "img": "https://i.imgur.com/3MCVM6m.png",
@@ -2107,7 +2113,7 @@
     "power": 2,
     "toughness": 4,
     "rarity": "C",
-    "cn": 16,
+    "cn": 17,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/wGGDNAY.png",
@@ -2141,7 +2147,7 @@
     "power": 3,
     "toughness": 3,
     "rarity": "C",
-    "cn": 17,
+    "cn": 18,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lyfUf8z.png",
@@ -2169,7 +2175,7 @@
     "power": 3,
     "toughness": 5,
     "rarity": "C",
-    "cn": 18,
+    "cn": 19,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Hh71NKP.png",
@@ -2209,7 +2215,7 @@
     "text": "Each creature you control can block an additional creature each combat.",
     "flavor": "“You were like a brother to me!” {lns}{-}A legendary duel",
     "rarity": "U",
-    "cn": 19,
+    "cn": 20,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/MD48oB3.png",
@@ -2262,7 +2268,7 @@
     "power": 1,
     "toughness": 1,
     "rarity": "C",
-    "cn": 20,
+    "cn": 21,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/KQFMNoW.png",
@@ -2289,7 +2295,7 @@
     "power": 3,
     "toughness": 5,
     "rarity": "C",
-    "cn": 21,
+    "cn": 22,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/p5obOhP.png",
@@ -2315,7 +2321,7 @@
     "power": 1,
     "toughness": 2,
     "rarity": "C",
-    "cn": 22,
+    "cn": 23,
     "set": "MTD",
     "artist": "",
     "id": "W",
@@ -2347,7 +2353,7 @@
   {
     "name": "Judge Unworthy",
     "set": "MTD",
-    "cn": 23,
+    "cn": 24,
     "id": "W",
     "cost": "{1}{W}",
     "type": "Instant",
@@ -2372,7 +2378,7 @@
     "text": "Flash\nEnchant creature\nWhen ~ enters, untap enchanted creature.\nEnchanted creature has flying.",
     "flavor": "The council of heaven delivers light to the faithful, to torment the faithless.",
     "rarity": "C",
-    "cn": 24,
+    "cn": 25,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/r1v7Npf.png",
@@ -2413,7 +2419,7 @@
     "text": "{2}: Prevent the next shot you would take this turn.",
     "flavor": "“As of this day, not a drop of alcohol shall defile your lips, nor a whiff of devil weed taint your lungs, arise child of light and be whole.” {-}Sephara",
     "rarity": "U",
-    "cn": 25,
+    "cn": 26,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/D15eEB9.png",
@@ -2484,7 +2490,7 @@
     "text": "Create X 1/1 white Soldier creature tokens. If X is 5 or more, destroy all creatures.",
     "flavor": "And so the crown returned to the king, the church finally bending the knee.",
     "rarity": "R",
-    "cn": 26,
+    "cn": 27,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/dpbH5dT.png",
@@ -2508,7 +2514,7 @@
     "text": "Counter target spell or activated ability that would force a player to take a shot.\nDraw a card.",
     "flavor": "“The Lord wills it not”",
     "rarity": "U",
-    "cn": 27,
+    "cn": 28,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/zeDcu7u.png",
@@ -2537,7 +2543,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "U",
-    "cn": 28,
+    "cn": 29,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/YgsNsiv.png",
@@ -2552,7 +2558,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -2565,7 +2573,7 @@
     "power": 2,
     "toughness": 4,
     "rarity": "C",
-    "cn": 29,
+    "cn": 30,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/WySUcMB.png",
@@ -2592,7 +2600,7 @@
     "power": 4,
     "toughness": 6,
     "rarity": "R",
-    "cn": 30,
+    "cn": 31,
     "note": "=LTC 10",
     "set": "MTD",
     "artist": "Copilot Designer",
@@ -2614,7 +2622,7 @@
   {
     "name": "Parishioner",
     "set": "MTD",
-    "cn": 31,
+    "cn": 32,
     "id": "W",
     "cost": "{W}",
     "type": "Creature - Human Citizen",
@@ -2658,7 +2666,7 @@
     "text": "Creatures controlled by the player whose turn it is get -1/-0.\nCreatures controlled by each opponent of the player whose turn it is get +0/+1.",
     "flavor": "The age of the new monarch has begun, let there be peace and prosperity.",
     "rarity": "R",
-    "cn": 32,
+    "cn": 33,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/zTbxkcg.png",
@@ -2689,7 +2697,7 @@
     "text": "Each player can't take more than one shot each turn.",
     "flavor": "“But drinking brought us together, this fragile peace with the elves, why did you have to find that old tome Simon. Why!” {-}Archivist of the Ecclesiarch",
     "rarity": "U",
-    "cn": 33,
+    "cn": 34,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Z2xDrsb.png",
@@ -2737,7 +2745,7 @@
     "power": 2,
     "toughness": 5,
     "rarity": "R",
-    "cn": 34,
+    "cn": 35,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/Do1VPiT.png",
@@ -2772,7 +2780,7 @@
   {
     "name": "Rally the People",
     "set": "MTD",
-    "cn": 35,
+    "cn": 36,
     "id": "W",
     "cost": "{5}{W}{W}",
     "type": "Sorcery",
@@ -2799,7 +2807,7 @@
     "power": 1,
     "toughness": 2,
     "rarity": "U",
-    "cn": 36,
+    "cn": 37,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/lmnEcJT.png",
@@ -2833,7 +2841,7 @@
     "text": "When ~ enters, you become the monarch.\nAs long as you are the monarch, your life total can't change as a result of you taking a shot.",
     "flavor": "“Do you know who I am”",
     "rarity": "R",
-    "cn": 37,
+    "cn": 38,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/eL655sO.png",
@@ -2864,7 +2872,7 @@
     "text": "Whenever a spell or ability an opponent controls forces you to take a shot, that player may pay {2}. If the player doesn't, you create a Treasure token.",
     "flavor": "Bureaucracy.",
     "rarity": "R",
-    "cn": 38,
+    "cn": 39,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/UN4AqdS.png",
@@ -2897,7 +2905,7 @@
     "power": 4,
     "toughness": 6,
     "rarity": "U",
-    "cn": 39,
+    "cn": 40,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Lh6dJ1h.png",
@@ -2917,7 +2925,7 @@
   {
     "name": "Sephara, Sky's Blade",
     "set": "MTD",
-    "cn": 40,
+    "cn": 41,
     "id": "W",
     "cost": "{4}{W}{W}{W}",
     "type": "Legendary Creature - Angel",
@@ -2949,7 +2957,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "C",
-    "cn": 41,
+    "cn": 42,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/J96DG1Z.png",
@@ -2975,7 +2983,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "C",
-    "cn": 42,
+    "cn": 43,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/rUIjiBO.png",
@@ -3001,7 +3009,7 @@
     "power": 2,
     "toughness": 1,
     "rarity": "C",
-    "cn": 43,
+    "cn": 44,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/k6rfdnm.png",
@@ -3021,7 +3029,7 @@
   {
     "name": "Absorb",
     "set": "MTD",
-    "cn": 212,
+    "cn": 213,
     "id": "WU",
     "cost": "{W}{U}{U}",
     "type": "Instant",
@@ -3048,7 +3056,7 @@
   {
     "name": "Ariel, Architect of Aphelion",
     "set": "MTD",
-    "cn": 213,
+    "cn": 214,
     "id": "WU",
     "cost": "{3}{W}{U}",
     "type": "Legendary Creature - Bird Wizard",
@@ -3097,7 +3105,7 @@
   {
     "name": "Battle Preparations",
     "set": "MTD",
-    "cn": 214,
+    "cn": 215,
     "id": "WG",
     "cost": "{2}{G}{W}",
     "type": "Instant",
@@ -3124,7 +3132,7 @@
   {
     "name": "Consult the Necrosages",
     "set": "MTD",
-    "cn": 215,
+    "cn": 216,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Sorcery",
@@ -3146,7 +3154,7 @@
   {
     "name": "Coy Reversal",
     "set": "MTD",
-    "cn": 216,
+    "cn": 217,
     "id": "UB",
     "cost": "{2}{U}{B}",
     "type": "Instant",
@@ -3173,7 +3181,7 @@
   {
     "name": "Daughter of Moonshine",
     "set": "MTD",
-    "cn": 217,
+    "cn": 218,
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Creature — Vampire Devil",
@@ -3207,7 +3215,7 @@
   {
     "name": "Demonic Party",
     "set": "MTD",
-    "cn": 218,
+    "cn": 219,
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Legendary Artifact",
@@ -3238,7 +3246,7 @@
     "text": "Surveil 3, then draw three cards.\nExile any number of target cards from your graveyard. Until end of turn, you may play those cards.\nEach opponent may discard a card or sacrifice a nonland permanent. If they don't, they lose 3 life. Repeat this process five more times.\nYou get an emblem with “Whenever you draw a card, you take a shot.”",
     "flavor": "",
     "rarity": "R",
-    "cn": 219,
+    "cn": 220,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/H0dV8FR.png",
@@ -3272,7 +3280,7 @@
   {
     "name": "Freyan the Crazed Lord",
     "set": "MTD",
-    "cn": 220,
+    "cn": 221,
     "id": "RG",
     "cost": "{2}{R}{G}",
     "type": "Legendary Creature - Elf Alcoholic",
@@ -3301,7 +3309,7 @@
   {
     "name": "Freyan's Warpath",
     "set": "MTD",
-    "cn": 221,
+    "cn": 222,
     "id": "RG",
     "cost": "{4}{R}{G}",
     "type": "Sorcery",
@@ -3338,7 +3346,7 @@
   {
     "name": "Mnemonic Betrayal",
     "set": "MTD",
-    "cn": 222,
+    "cn": 223,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Sorcery",
@@ -3365,7 +3373,7 @@
   {
     "name": "Nepenthe, Titan of Mind's Deisre",
     "set": "MTD",
-    "cn": 223,
+    "cn": 224,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Legendary Creature - Elder Giant",
@@ -3411,14 +3419,16 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
   {
     "name": "Radha, Victorious Queen",
     "set": "MTD",
-    "cn": 224,
+    "cn": 225,
     "id": "RG",
     "cost": "{R}{G}",
     "type": "Legendary Creature - Elf Alcoholic",
@@ -3447,7 +3457,7 @@
   {
     "name": "Reach into Hell",
     "set": "MTD",
-    "cn": 225,
+    "cn": 226,
     "id": "BR",
     "cost": "{B}{R}",
     "type": "Sorcery",
@@ -3474,7 +3484,7 @@
   {
     "name": "Rest Well Deserved",
     "set": "MTD",
-    "cn": 226,
+    "cn": 227,
     "id": "WG",
     "cost": "{G}{W}",
     "type": "Instant",
@@ -3501,7 +3511,7 @@
   {
     "name": "Shot of Wisdom",
     "set": "MTD",
-    "cn": 227,
+    "cn": 228,
     "id": "UR",
     "cost": "{1}{U}{R}",
     "type": "Legendary Enchantment Artifact",
@@ -3538,7 +3548,7 @@
   {
     "name": "Strefan, Wrathful Reagent",
     "set": "MTD",
-    "cn": 228,
+    "cn": 229,
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Legendary Creature — Vampire Noble",
@@ -3567,7 +3577,7 @@
   {
     "name": "The Watcher",
     "set": "MTD",
-    "cn": 229,
+    "cn": 230,
     "id": "WR",
     "cost": "{3}{R}{W}",
     "type": "Legendary Creature - God",
@@ -3596,7 +3606,7 @@
   {
     "name": "Thunderclap Wyvern",
     "set": "MTD",
-    "cn": 230,
+    "cn": 231,
     "id": "WU",
     "cost": "{2}{W}{U}",
     "type": "Creature - Drake",
@@ -3630,7 +3640,7 @@
   {
     "name": "Twilight Harbinger",
     "set": "MTD",
-    "cn": 231,
+    "cn": 232,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Creature - Nightmare",
@@ -3654,7 +3664,7 @@
   {
     "name": "Vanguard Berserker",
     "set": "MTD",
-    "cn": 232,
+    "cn": 233,
     "id": "RG",
     "cost": "{R}{G}",
     "type": "Creature - Elf Alcoholic",
@@ -3688,7 +3698,7 @@
   {
     "name": "Ancient Grudge",
     "set": "MTD",
-    "cn": 128,
+    "cn": 129,
     "id": "RG",
     "cost": "{1}{R}",
     "type": "Instant",
@@ -3715,7 +3725,7 @@
   {
     "name": "Blood Party",
     "set": "MTD",
-    "cn": 129,
+    "cn": 130,
     "id": "R",
     "cost": "{1}{R}",
     "type": "Enchantment",
@@ -3728,7 +3738,7 @@
   {
     "name": "Bloody Retribution",
     "set": "MTD",
-    "cn": 130,
+    "cn": 131,
     "id": "R",
     "cost": "{1}{R}",
     "type": "Instant",
@@ -3750,7 +3760,7 @@
   {
     "name": "Boon of Vigor",
     "set": "MTD",
-    "cn": 131,
+    "cn": 132,
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
@@ -3796,7 +3806,7 @@
     "text": "Flying\n~ enters with two beer counters.\nRemove a beer counter from ~: ~ gets +1/+0 until end of turn.",
     "flavor": "",
     "rarity": "U",
-    "cn": 132,
+    "cn": 133,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Q0YwlQr.png",
@@ -3818,7 +3828,7 @@
   {
     "name": "Connoisseur of Apathy",
     "set": "MTD",
-    "cn": 133,
+    "cn": 134,
     "id": "R",
     "cost": "{2}{R}",
     "type": "Creature - Vampire",
@@ -3842,7 +3852,7 @@
   {
     "name": "Crazed Fanatic",
     "set": "MTD",
-    "cn": 134,
+    "cn": 135,
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Elf Alcoholic",
@@ -3875,7 +3885,7 @@
     "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~'s pact, draw a card.",
     "flavor": "",
     "rarity": "R",
-    "cn": 135,
+    "cn": 136,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/4mWNr78.png",
@@ -3890,7 +3900,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [
+        "Removal"
+      ],
       "reprint": false
     }
   },
@@ -3901,7 +3913,7 @@
     "text": "{1}, Remove a beer counter from a permanent you control: Exile the top card of your library. You may play that card this turn.",
     "flavor": "\"Come child, sit, and take a sip of your destiny.\"",
     "rarity": "U",
-    "cn": 136,
+    "cn": 137,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/fWGlFvs.png",
@@ -3923,7 +3935,7 @@
   {
     "name": "Delina, Wild Mage",
     "set": "MTD",
-    "cn": 137,
+    "cn": 138,
     "id": "R",
     "cost": "{3}{R}",
     "type": "Creature - Elf Shaman",
@@ -3952,7 +3964,7 @@
   {
     "name": "Drunken Warrior",
     "set": "MTD",
-    "cn": 138,
+    "cn": 139,
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Human Alcoholic",
@@ -3985,7 +3997,7 @@
     "text": "Changeling\nSacrifice a creature: Put a beer counter on target permanent you control.",
     "flavor": "Would you trust him... it?",
     "rarity": "C",
-    "cn": 139,
+    "cn": 140,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/L4rpGIo.png",
@@ -4007,7 +4019,7 @@
   {
     "name": "Duchess of Silver Moor",
     "set": "MTD",
-    "cn": 140,
+    "cn": 141,
     "id": "R",
     "cost": "{4}{R}",
     "type": "Creature - Vampire Devil",
@@ -4031,7 +4043,7 @@
   {
     "name": "Dwarven Mead",
     "set": "MTD",
-    "cn": 141,
+    "cn": 142,
     "id": "R",
     "cost": "{3}{R}",
     "type": "Enchantment",
@@ -4097,7 +4109,7 @@
     "text": "",
     "flavor": "Summoning demons is not so easy as one might assume, you might attract something much more aggressive and volatile.",
     "rarity": "C",
-    "cn": 142,
+    "cn": 143,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/byNmSeX.png",
@@ -4119,7 +4131,7 @@
   {
     "name": "Elven Beer Still",
     "set": "MTD",
-    "cn": 143,
+    "cn": 144,
     "id": "R",
     "cost": "{R}",
     "type": "Artifact",
@@ -4151,7 +4163,7 @@
   {
     "name": "Elven Moonshiner",
     "set": "MTD",
-    "cn": 144,
+    "cn": 145,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Elf Alcoholic",
@@ -4184,7 +4196,7 @@
     "text": "Ward {1}\nOther creatures you control have haste.",
     "flavor": "Built for peace, equipped for war.",
     "rarity": "U",
-    "cn": 145,
+    "cn": 146,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/vDrGxFJ.png",
@@ -4211,7 +4223,7 @@
   {
     "name": "Falkenrath Celebrants",
     "set": "MTD",
-    "cn": 146,
+    "cn": 147,
     "id": "R",
     "cost": "{4}{R}",
     "type": "Creature - Vampire",
@@ -4230,7 +4242,7 @@
     "text": "{r},{t}, Discard a card, Exile a creature card from your graveyard: Create a token that’s a copy of the exiled card, except it’s an artifact in addition to its other types. It gains haste and “When this creature dies, draw a card.” Sacrifice it at the beginning of the next end step. ",
     "flavor": "",
     "rarity": "R",
-    "cn": 147,
+    "cn": 148,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Om46C6T.png",
@@ -4252,7 +4264,7 @@
   {
     "name": "Fiery Brew",
     "set": "MTD",
-    "cn": 148,
+    "cn": 149,
     "id": "R",
     "cost": "{1}{R}{R}",
     "type": "Instant",
@@ -4284,7 +4296,7 @@
   {
     "name": "Fiery Shot",
     "set": "MTD",
-    "cn": 149,
+    "cn": 150,
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
@@ -4321,7 +4333,7 @@
   {
     "name": "Goblin Anarchist",
     "set": "MTD",
-    "cn": 150,
+    "cn": 151,
     "id": "R",
     "cost": "{3}{R}",
     "type": "Creature - Goblin Alcoholic",
@@ -4370,7 +4382,7 @@
   {
     "name": "Goblin Beer Brawler",
     "set": "MTD",
-    "cn": 151,
+    "cn": 152,
     "id": "R",
     "cost": "{2}{R}",
     "type": "Creature - Goblin Alcoholic",
@@ -4385,7 +4397,7 @@
   {
     "name": "Goblin Beer Launcher",
     "set": "MTD",
-    "cn": 152,
+    "cn": 153,
     "id": "R",
     "cost": "{2}{R}",
     "type": "Artifact Creature - Wall",
@@ -4414,7 +4426,7 @@
   {
     "name": "Goblin Booze Runner",
     "set": "MTD",
-    "cn": 153,
+    "cn": 154,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Goblin",
@@ -4457,7 +4469,7 @@
     "text": "Pact {i}(You may take a shot or discard a card as you cast this spell.){/i}\nAs an additional cost to cast this spell, discard a card.\nDraw two cards. If you accepted ~’s pact, create a 3/1 red Elemental creature token with trample and haste. Exile it at the beginning of the next end step.",
     "flavor": "",
     "rarity": "C",
-    "cn": 154,
+    "cn": 155,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/extFu6m.png",
@@ -4479,7 +4491,7 @@
   {
     "name": "Impatiant Swindler",
     "set": "MTD",
-    "cn": 155,
+    "cn": 156,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Goblin Alcoholic",
@@ -4527,7 +4539,7 @@
     "text": "Echo {r}\nBattle cry {i}\nFlying, haste",
     "flavor": "",
     "rarity": "R",
-    "cn": 156,
+    "cn": 157,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/ewxaDEY.png",
@@ -4549,7 +4561,7 @@
   {
     "name": "Pact Devil",
     "set": "MTD",
-    "cn": 157,
+    "cn": 158,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Devil",
@@ -4578,7 +4590,7 @@
   {
     "name": "Play with Fire",
     "set": "MTD",
-    "cn": 158,
+    "cn": 159,
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
@@ -4605,7 +4617,7 @@
   {
     "name": "Raging Quartermaster",
     "set": "MTD",
-    "cn": 159,
+    "cn": 160,
     "id": "R",
     "cost": "{3}{R}",
     "type": "Creature - Elf Alcoholic",
@@ -4634,7 +4646,7 @@
   {
     "name": "Rampage Devil",
     "set": "MTD",
-    "cn": 160,
+    "cn": 161,
     "id": "R",
     "cost": "{3}{R}{R}",
     "type": "Creature - Devil",
@@ -4663,7 +4675,7 @@
   {
     "name": "Red Solo Cup",
     "set": "MTD",
-    "cn": 161,
+    "cn": 162,
     "id": "R",
     "cost": "{R}",
     "type": "Artifact - Equipment",
@@ -4690,7 +4702,7 @@
   {
     "name": "Rummager Elf",
     "set": "MTD",
-    "cn": 162,
+    "cn": 163,
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Elf Alcoholic",
@@ -4728,7 +4740,7 @@
   {
     "name": "Scorching Blast",
     "set": "MTD",
-    "cn": 163,
+    "cn": 164,
     "id": "R",
     "cost": "{3}{R}",
     "type": "Sorcery",
@@ -4759,7 +4771,7 @@
     "text": "Discard your hand, then draw three cards.",
     "flavor": "“Back! Back! We'll come at them from a different angle!”",
     "rarity": "C",
-    "cn": 164,
+    "cn": 165,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/L6RwsX7.png",
@@ -4779,14 +4791,16 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["wheel"],
+      "function": [
+        "wheel"
+      ],
       "reprint": false
     }
   },
   {
     "name": "Torbran, Before the Fall",
     "set": "MTD",
-    "cn": 165,
+    "cn": 166,
     "id": "R",
     "cost": "{1}{R}{R}{R}",
     "type": "Legendary Creature - Dwarf Noble",
@@ -4825,7 +4839,7 @@
   {
     "name": "Trash Broker",
     "set": "MTD",
-    "cn": 166,
+    "cn": 167,
     "id": "R",
     "cost": "{2}{R}",
     "type": "Creature - Goblin",
@@ -4870,7 +4884,7 @@
   {
     "name": "Voldaren Epicure",
     "set": "MTD",
-    "cn": 167,
+    "cn": 168,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Vampire",
@@ -4893,7 +4907,7 @@
   {
     "name": "Wizard's Shot",
     "set": "MTD",
-    "cn": 168,
+    "cn": 169,
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
@@ -4925,7 +4939,7 @@
   {
     "name": "Audacious Thief",
     "set": "MTD",
-    "cn": 86,
+    "cn": 87,
     "id": "B",
     "cost": "{2}{B}",
     "type": "Creature - Human Rogue",
@@ -4973,7 +4987,7 @@
     "text": "Will of the Council — Starting with you, each player votes for sickness or psychosis. If sickness gets more votes, creatures your opponents control get -2/-2 until end of turn. If psychosis gets more votes or the vote is tied, each opponent discards two cards.",
     "flavor": "",
     "rarity": "U",
-    "cn": 87,
+    "cn": 88,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/mXNjkA4.png",
@@ -5006,7 +5020,7 @@
     "power": 3,
     "toughness": 3,
     "rarity": "C",
-    "cn": 88,
+    "cn": 89,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/qxX39jK.png",
@@ -5033,7 +5047,7 @@
   {
     "name": "Bloodgift Demon",
     "set": "MTD",
-    "cn": 89,
+    "cn": 90,
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Creature — Demon",
@@ -5071,7 +5085,7 @@
     "text": "You draw a card and you lose 1 life.\nMadness {B}",
     "flavor": "The question strained his sanity. The answer snapped it in half.",
     "rarity": "C",
-    "cn": 90,
+    "cn": 91,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/wygpZxx.png",
@@ -5098,7 +5112,7 @@
   {
     "name": "Costly Torment",
     "set": "MTD",
-    "cn": 91,
+    "cn": 92,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Instant",
@@ -5178,7 +5192,10 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal", "discard-outlet"],
+      "function": [
+        "removal",
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -5189,7 +5206,7 @@
     "text": "Put target creature card from a graveyard onto the battlefield under your control. Take a shot.",
     "flavor": "So strong it can wake the dead.",
     "rarity": "U",
-    "cn": 92,
+    "cn": 93,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/qz0BZeu.png",
@@ -5214,7 +5231,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5225,7 +5244,7 @@
     "text": "Pact\nYou draw two cards and you lose 2 life.\nIf you accepted ~' pact, each player discards a card.",
     "flavor": "",
     "rarity": "C",
-    "cn": 93,
+    "cn": 94,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/6hTOLMD.png",
@@ -5245,14 +5264,16 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
   {
     "name": "Dead Weight",
     "set": "MTD",
-    "cn": 94,
+    "cn": 95,
     "id": "B",
     "cost": "{B}",
     "type": "Enchantment - Aura",
@@ -5292,7 +5313,7 @@
     "text": "Pact\nScry 2, then if you accepted ~'s pact, choose one:\n• Draw a card.\n• You gain 3 life.",
     "flavor": "",
     "rarity": "C",
-    "cn": 95,
+    "cn": 96,
     "set": "MTD",
     "artist": "",
     "img": "https://i.imgur.com/TqsO6L1.png",
@@ -5314,7 +5335,7 @@
   {
     "name": "Demonic Rite",
     "set": "MTD",
-    "cn": 96,
+    "cn": 97,
     "id": "B",
     "cost": "{1}{B}{B}",
     "type": "Enchantment",
@@ -5341,7 +5362,7 @@
   {
     "name": "Drana, Liberator of Malakir",
     "set": "MTD",
-    "cn": 97,
+    "cn": 98,
     "id": "B",
     "cost": "{1}{B}{B}",
     "type": "Legendary Creature - Vampire Ally",
@@ -5372,7 +5393,7 @@
   {
     "name": "Edgar's Awakening",
     "set": "MTD",
-    "cn": 98,
+    "cn": 99,
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Sorcery",
@@ -5390,7 +5411,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"]
+      "function": [
+        "recursion"
+      ]
     }
   },
   {
@@ -5402,7 +5425,7 @@
     "power": 5,
     "toughness": 4,
     "rarity": "C",
-    "cn": 99,
+    "cn": 100,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/koAwRKB.png",
@@ -5430,7 +5453,7 @@
     "power": 2,
     "toughness": 3,
     "rarity": "U",
-    "cn": 100,
+    "cn": 101,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/8jIgaO1.png",
@@ -5460,7 +5483,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5473,7 +5498,7 @@
     "power": 2,
     "toughness": 1,
     "rarity": "U",
-    "cn": 101,
+    "cn": 102,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/qaHWtCl.png",
@@ -5501,7 +5526,7 @@
     "power": 1,
     "toughness": 4,
     "rarity": "C",
-    "cn": 102,
+    "cn": 103,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/L7hClND.png",
@@ -5529,7 +5554,7 @@
     "power": 3,
     "toughness": 3,
     "rarity": "C",
-    "cn": 103,
+    "cn": 104,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/zskqtDi.png",
@@ -5549,7 +5574,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard-outlet"],
+      "function": [
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -5560,7 +5587,7 @@
     "text": "Madness {1}{B}\nWhen ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
     "flavor": "There will always be a seeker.",
     "rarity": "C",
-    "cn": 104,
+    "cn": 105,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/THYDcDR.png",
@@ -5575,7 +5602,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5586,7 +5615,7 @@
     "text": "Destroy target creature or planeswalker. Create two Blood tokens.",
     "flavor": "“See what's left of you in Hell.”",
     "rarity": "C",
-    "cn": 105,
+    "cn": 106,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/x9MaEwe.png",
@@ -5600,7 +5629,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -5612,7 +5643,7 @@
     "text": "Pact\nTarget creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
     "flavor": "",
     "rarity": "C",
-    "cn": 106,
+    "cn": 107,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/O9ecPa7.png",
@@ -5640,7 +5671,7 @@
     "power": 4,
     "toughness": 3,
     "rarity": "C",
-    "cn": 107,
+    "cn": 108,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/1Tj8e2y.png",
@@ -5662,7 +5693,7 @@
   {
     "name": "Hypnostatic Architect",
     "set": "MTD",
-    "cn": 108,
+    "cn": 109,
     "id": "UB",
     "cost": "{1}{B}{B}",
     "type": "Creature - Nightmare Wizard",
@@ -5710,7 +5741,7 @@
     "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
     "flavor": "",
     "rarity": "U",
-    "cn": 109,
+    "cn": 110,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/KysDdt0.png",
@@ -5741,7 +5772,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
+      "function": [
+        "discard",
+        "thoughtseize",
+        "discard-outlet",
+        "pact"
+      ],
       "reprint": false
     }
   },
@@ -5752,7 +5788,7 @@
     "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
     "flavor": "",
     "rarity": "R",
-    "cn": 110,
+    "cn": 111,
     "set": "MTD",
     "artist": "",
     "id": "B",
@@ -5771,7 +5807,7 @@
   {
     "name": "Kitesail Freebooter",
     "set": "MTD",
-    "cn": 111,
+    "cn": 112,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Creature - Human Pirate",
@@ -5795,7 +5831,7 @@
   {
     "name": "Larceny",
     "set": "MTD",
-    "cn": 112,
+    "cn": 113,
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Enchantment",
@@ -5829,7 +5865,7 @@
     "text": "As an additional cost to cast ~, discard X cards.\nReturn X target creature cards from graveyards to the battlefield under your control.",
     "flavor": "",
     "rarity": "R",
-    "cn": 113,
+    "cn": 114,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/v9a5Dsf.png",
@@ -5859,14 +5895,16 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
   {
     "name": "Lonely Crypt",
     "set": "MTD",
-    "cn": 114,
+    "cn": 115,
     "id": "B",
     "cost": "{3}{B}",
     "type": "Enchantment",
@@ -5902,7 +5940,7 @@
   {
     "name": "Necromancer's Puppet",
     "set": "MTD",
-    "cn": 115,
+    "cn": 116,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Zombie",
@@ -5929,7 +5967,7 @@
   {
     "name": "Pact Broker",
     "set": "MTD",
-    "cn": 116,
+    "cn": 117,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Creature - Vampire Devil",
@@ -5964,7 +6002,7 @@
     "power": 1,
     "toughness": 1,
     "rarity": "U",
-    "cn": 117,
+    "cn": 118,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/8GudArw.png",
@@ -5997,7 +6035,7 @@
     "power": 4,
     "toughness": 4,
     "rarity": "C",
-    "cn": 118,
+    "cn": 119,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/O6U3irg.png",
@@ -6030,7 +6068,7 @@
     "rarity": "C",
     "power": 1,
     "toughness": 1,
-    "cn": 119,
+    "cn": 120,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Fn04nDg.png",
@@ -6073,7 +6111,7 @@
     "power": 3,
     "toughness": 1,
     "rarity": "U",
-    "cn": 120,
+    "cn": 121,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/E1NiQYc.png",
@@ -6088,7 +6126,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -6101,7 +6141,7 @@
     "power": 3,
     "toughness": 2,
     "rarity": "R",
-    "cn": 121,
+    "cn": 122,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/NXmjHPZ.png",
@@ -6128,7 +6168,7 @@
   {
     "name": "The False Prophet",
     "set": "MTD",
-    "cn": 122,
+    "cn": 123,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Demon",
@@ -6179,7 +6219,7 @@
     "power": 1,
     "toughness": 1,
     "rarity": "U",
-    "cn": 123,
+    "cn": 124,
     "set": "MTD",
     "artist": "",
     "img": "https://i.imgur.com/sRGNMgg.png",
@@ -6206,7 +6246,7 @@
   {
     "name": "Vampiric Brew",
     "set": "MTD",
-    "cn": 124,
+    "cn": 125,
     "id": "B",
     "cost": "{2}{B}",
     "type": "Sorcery",
@@ -6228,7 +6268,7 @@
   {
     "name": "Vibe Check",
     "set": "MTD",
-    "cn": 125,
+    "cn": 126,
     "id": "B",
     "cost": "{1}{B}",
     "type": "Instant",
@@ -6259,7 +6299,7 @@
     "text": "~ deals 1 damage to each opponent. Each opponent discards a card, then mills a card. You gain 1 life.",
     "flavor": "A dark mockery of the soul.",
     "rarity": "U",
-    "cn": 126,
+    "cn": 127,
     "set": "MTD",
     "artist": "Microsoft Copilot",
     "id": "B",
@@ -6292,7 +6332,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "C",
-    "cn": 127,
+    "cn": 128,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/m478NXo.png",
@@ -6314,7 +6354,7 @@
   {
     "name": "Ossify",
     "set": "MTD",
-    "cn": 67,
+    "cn": 68,
     "id": "U",
     "cost": "{2}{U}",
     "type": "Instant",
@@ -6375,7 +6415,7 @@
     "text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
     "flavor": "Crackling magic shatters the air, a cleft of glorious power.",
     "rarity": "U",
-    "cn": 73,
+    "cn": 74,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/9ReQN4M.png",
@@ -6418,7 +6458,7 @@
     "power": 4,
     "toughness": 5,
     "rarity": "R",
-    "cn": 47,
+    "cn": 48,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/n3zEHDs.png",
@@ -6445,7 +6485,7 @@
     "power": 0,
     "toughness": 3,
     "rarity": "R",
-    "cn": 60,
+    "cn": 61,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/HWFjT7e.png",
@@ -6483,7 +6523,7 @@
     "power": 3,
     "toughness": 2,
     "rarity": "U",
-    "cn": 81,
+    "cn": 82,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/LXyA16J.png",
@@ -6519,7 +6559,7 @@
     "text": "Creatures your opponents control get -4/-0 until end of turn.",
     "flavor": "For just but a moment, the townspeople got a glimpse of the other side. The screaming began shortly after.",
     "rarity": "U",
-    "cn": 63,
+    "cn": 64,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/fPCif61.png",
@@ -6557,7 +6597,7 @@
     "power": 4,
     "toughness": 4,
     "rarity": "M",
-    "cn": 85,
+    "cn": 86,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/KlhhgVc.png",
@@ -6597,7 +6637,7 @@
     "power": 2,
     "toughness": 1,
     "rarity": "C",
-    "cn": 52,
+    "cn": 53,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/U2V0oYZ.png",
@@ -6620,7 +6660,7 @@
   {
     "name": "Cerulean Drake",
     "set": "MTD",
-    "cn": 51,
+    "cn": 52,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Creature - Drake",
@@ -6647,7 +6687,9 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": ["counterspell"]
+      "function": [
+        "counterspell"
+      ]
     }
   },
   {
@@ -6659,7 +6701,7 @@
     "power": 3,
     "toughness": 4,
     "rarity": "C",
-    "cn": 50,
+    "cn": 51,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/wNuSnOM.png",
@@ -6710,7 +6752,7 @@
     "text": "Draw two cards. Then discard a card unless you return a land you control to its owner's hand.",
     "flavor": "She had finally done it. In her palm was a small glimmering point of magical heat and warmth, her joy at finally casting a spell quickly turned to despair as she watched that flame burn her life to the ground.",
     "rarity": "C",
-    "cn": 77,
+    "cn": 78,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/EzK8f8u.png",
@@ -6730,7 +6772,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -6741,7 +6785,7 @@
     "text": "Counter target spell unless its controller pays {1}. If you control a creature with flying, counter that spell unless its controller pays {4} instead.",
     "flavor": "The bird wizards of Aphelion are adept in the art of misdirection and deception.",
     "rarity": "C",
-    "cn": 65,
+    "cn": 66,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/m4N51cL.png",
@@ -6761,7 +6805,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": true
     }
   },
@@ -6774,7 +6820,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "U",
-    "cn": 79,
+    "cn": 80,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/f5Yeb30.png",
@@ -6805,7 +6851,7 @@
     "text": "This spell costs {1} less to cast if control a creature with flying.\nDraw two cards.",
     "flavor": "It is the weird of a wizard to want their messages carried by a beast akin to their own heart. In short, magical pigeons.",
     "rarity": "C",
-    "cn": 83,
+    "cn": 84,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/a8POFaG.png",
@@ -6836,7 +6882,7 @@
     "text": "Return target creature to its owner's hand.\nSurveil 1.",
     "flavor": "",
     "rarity": "C",
-    "cn": 78,
+    "cn": 79,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/gaL2PrZ.png",
@@ -6869,7 +6915,7 @@
     "power": 1,
     "toughness": 3,
     "rarity": "C",
-    "cn": 64,
+    "cn": 65,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/FOISzID.png",
@@ -6901,7 +6947,7 @@
     "text": "Counter target noncreature spell. Its controller takes a shot.",
     "flavor": "Be careful, or someone might just put something in your spell.",
     "rarity": "C",
-    "cn": 74,
+    "cn": 75,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/0nwqxVD.png",
@@ -6922,7 +6968,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": false
     }
   },
@@ -6933,7 +6981,7 @@
     "text": "Whenever you take a shot, put a beer counter on ~.\nInstant and Sorcery spells you cast cost {1} less for each beer counter on ~.",
     "flavor": "",
     "rarity": "R",
-    "cn": 84,
+    "cn": 85,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/ppfsGcl.png",
@@ -6970,7 +7018,7 @@
     "text": "Pact\nReturn target creature you don't control to its owners hand. If you accepted ~'s pact, that creature's controller discards a card.",
     "flavor": "",
     "rarity": "C",
-    "cn": 56,
+    "cn": 57,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/4QN9HX4.png",
@@ -7011,7 +7059,7 @@
     "text": "For each opponent with an instant card in their graveyard, return target nonland permanent to its owners hand.",
     "flavor": "The ancient ways of detecting witchcraft serve both the persecutors and the modern sorceress looking to get an edge.",
     "rarity": "U",
-    "cn": 69,
+    "cn": 70,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/uLcvYlM.png",
@@ -7044,7 +7092,7 @@
     "text": "Discard three cards, then return up to two cards from your graveyard to your hand.",
     "flavor": "“Ughhhh”",
     "rarity": "R",
-    "cn": 49,
+    "cn": 50,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/bK4Lq2U.png",
@@ -7075,7 +7123,7 @@
     "text": "Enchant creature\nWhen ~ enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nAt the beginning of the upkeep of enchanted creature's controller, that player may take a shot. If they do, untap enchanted creature.",
     "flavor": "",
     "rarity": "U",
-    "cn": 62,
+    "cn": 63,
     "set": "MTD",
     "img": "https://i.imgur.com/vqGq0MV.png",
     "id": "U",
@@ -7094,7 +7142,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -7105,7 +7155,7 @@
     "text": "Whenever you take a shot, draw a card, then discard a card.",
     "flavor": "Wizards are known for their curiously strong brews. Never the traditionalist, their brews are at the forefront of innovation.",
     "rarity": "U",
-    "cn": 54,
+    "cn": 55,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/7Ss5UcM.png",
@@ -7151,7 +7201,7 @@
     "text": "Draw a card for each player you attacked this turn.",
     "flavor": "Because knowing is half the battle.",
     "rarity": "U",
-    "cn": 76,
+    "cn": 77,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/IbrGdpw.png",
@@ -7186,7 +7236,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -7199,7 +7251,7 @@
     "power": 1,
     "toughness": 3,
     "rarity": "U",
-    "cn": 71,
+    "cn": 72,
     "set": "MTD",
     "artist": "",
     "img": "https://i.imgur.com/mJs00YH.png",
@@ -7273,7 +7325,7 @@
   {
     "name": "Mirror into the Abyss",
     "set": "MTD",
-    "cn": 66,
+    "cn": 67,
     "id": "U",
     "cost": "{1}{U}",
     "type": "Artifact",
@@ -7326,7 +7378,7 @@
     "power": 4,
     "toughness": 5,
     "rarity": "U",
-    "cn": 55,
+    "cn": 56,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/A840KNa.png",
@@ -7377,7 +7429,7 @@
     "text": "Remove target creature from combat.",
     "flavor": "The pursuit of knowledge often results in frustration and burnout.",
     "rarity": "U",
-    "cn": 57,
+    "cn": 58,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/pD4O8J5.png",
@@ -7432,7 +7484,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "U",
-    "cn": 68,
+    "cn": 69,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/tCdsg1D.png",
@@ -7475,7 +7527,7 @@
     "power": 1,
     "toughness": 2,
     "rarity": "C",
-    "cn": 45,
+    "cn": 46,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/sMI24CW.png",
@@ -7495,7 +7547,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": true
     }
   },
@@ -7508,7 +7562,7 @@
     "power": 2,
     "toughness": 1,
     "rarity": "C",
-    "cn": 46,
+    "cn": 47,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/5h6VvJv.png",
@@ -7539,7 +7593,7 @@
     "text": "This spell costs {1} less to cast for each Wizard you control.\nReturn X target nonland permanents to their owners hands.",
     "flavor": "Being selected to apprentice is a brutal and competitive process.",
     "rarity": "R",
-    "cn": 70,
+    "cn": 71,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/CdaVCqo.png",
@@ -7573,7 +7627,7 @@
     "power": 2,
     "toughness": 2,
     "rarity": "U",
-    "cn": 82,
+    "cn": 83,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/OC1FbNi.png",
@@ -7606,7 +7660,7 @@
     "power": 5,
     "toughness": 4,
     "rarity": "C",
-    "cn": 59,
+    "cn": 60,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/aIFR6nP.png",
@@ -7647,7 +7701,7 @@
     "text": "Draw two cards, then discard two cards. Untap up to three lands.",
     "flavor": "“We've almost found it, just keep looking, the next stack has to have it”",
     "rarity": "C",
-    "cn": 61,
+    "cn": 62,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/h0JukHx.png",
@@ -7683,7 +7737,7 @@
     "text": "Prevent all shots target player would take this turn.",
     "flavor": "Every eventuality can be metered with careful planning and preparation.",
     "rarity": "C",
-    "cn": 80,
+    "cn": 81,
     "set": "MTD",
     "artist": "Copilot Designer",
     "img": "https://i.imgur.com/67xsWG4.png",
@@ -7717,7 +7771,7 @@
     "power": 1,
     "toughness": 1,
     "rarity": "C",
-    "cn": 75,
+    "cn": 76,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/9oZbVvN.png",
@@ -7765,7 +7819,7 @@
     "power": 4,
     "toughness": 4,
     "rarity": "R",
-    "cn": 44,
+    "cn": 45,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/DtQ4Lmy.png",
@@ -7792,7 +7846,7 @@
     "text": "Delve\nTarget opponent mills nine cards, then you may cast an instant or sorcery spell from that player's graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
     "flavor": "",
     "rarity": "R",
-    "cn": 72,
+    "cn": 73,
     "set": "MTD",
     "artist": "Stable Diffusion",
     "img": "https://i.imgur.com/IHBbRJr.png",
@@ -7828,7 +7882,7 @@
     "text": "Target nonland permanent's owner puts it on the top or bottom of their library. Scry 2.",
     "flavor": "Reality shattered on his craven wings, the broken mirror no longer chained the sleeping god.",
     "rarity": "C",
-    "cn": 58,
+    "cn": 59,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/SDdFFjh.png",
@@ -7847,7 +7901,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -7859,7 +7915,7 @@
     "text": "You may cast spells this turn as though they had flash.\nDraw a card.",
     "flavor": "Expeditions through the glaciers of Aphelion yielded insight into the origins of both the world and the magic that shaped it.",
     "rarity": "R",
-    "cn": 48,
+    "cn": 49,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/Q0jLqFa.png",
@@ -7890,7 +7946,7 @@
     "text": "Target player shuffles their graveyard into their library.\nDraw a card.",
     "flavor": "A moment of peace is worth a year of noise.",
     "rarity": "C",
-    "cn": 53,
+    "cn": 54,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/WPXIfsV.png",
@@ -7918,6 +7974,50 @@
       "reprint": true,
       "frame": "normal"
     }
+  },
+  {
+    "name": "Law of Equivalent Exchange",
+    "set": "MTD",
+    "cn": 2,
+    "id": "C",
+    "cost": "{0}",
+    "type": "Instant",
+    "text": "As an additional cost to cast this spell, take a shot.\nEach opponent takes a shot.",
+    "flavor": "In order to obtain a particular something, something else of equivalent value must be in given exchange or lost.",
+    "rarity": "M",
+    "img": "https://i.imgur.com/xtTbVnR.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Finally added the card to the json"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Gut Blast",
+    "set": "MTD",
+    "cn": 155,
+    "id": "R",
+    "cost": "{0}",
+    "type": "Instant",
+    "text": "As an additional cost to cast this spell, pay {r} or take a shot.\nGut Blast deals 1 damage to any target. If a permanent dealt damage this way would die this turn, exile it instead.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/pulN4EL.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "16-11-2024",
+        "creator": "Sam",
+        "notes": "Finally added the card to the json"
+      }
+    ],
+    "tags": {}
   },
   {
     "name": "Typhoid Devil",
@@ -7985,7 +8085,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -8481,7 +8583,9 @@
       }
     ],
     "tags": {
-      "function": ["tutor"],
+      "function": [
+        "tutor"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -9950,7 +10054,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10032,7 +10138,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10058,7 +10166,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10115,7 +10225,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["ramp"],
+      "function": [
+        "ramp"
+      ],
       "reprint": true
     }
   },
@@ -10228,7 +10340,11 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "repeatable-draw", "card-advantage"],
+      "function": [
+        "draw",
+        "repeatable-draw",
+        "card-advantage"
+      ],
       "reprint": true
     }
   },
@@ -10296,7 +10412,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "function": [
+        "draw",
+        "card-advantage",
+        "mill",
+        "mill-self"
+      ],
       "reprint": true
     }
   },
@@ -10360,49 +10481,5 @@
       "function": [],
       "reprint": true
     }
-  },
-  {
-    "name": "Law of Equivalent Exchange",
-    "set": "MTD",
-    "cn": 1,
-    "id": "C",
-    "cost": "{0}",
-    "type": "Instant",
-    "text": "As an additional cost to cast this spell, take a shot.\nEach opponent takes a shot.",
-    "flavor": "In order to obtain a particular something, something else of equivalent value must be in given exchange or lost.",
-    "rarity": "M",
-    "img": "https://i.imgur.com/xtTbVnR.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "16-11-2024",
-        "creator": "Sam",
-        "notes": "Finally added the card to the json"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Gut Blast",
-    "set": "MTD",
-    "cn": 154,
-    "id": "R",
-    "cost": "{0}",
-    "type": "Instant",
-    "text": "As an additional cost to cast this spell, pay {r} or take a shot.\nGut Blast deals 1 damage to any target. If a permanent dealt damage this way would die this turn, exile it instead.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/pulN4EL.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "16-11-2024",
-        "creator": "Sam",
-        "notes": "Finally added the card to the json"
-      }
-    ],
-    "tags": {}
   }
 ]
