@@ -27,6 +27,7 @@ const constructorMethod = (app) => {
   });
 
   app.get("/card/*", async (req, res) => {
+    console.log("WHY");
     res.render("pages/card");
   });
 
