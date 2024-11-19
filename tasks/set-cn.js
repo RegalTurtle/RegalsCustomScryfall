@@ -40,21 +40,50 @@ export const setCnBetweenCns = (beginCn, endCn, set) => {
   );
 };
 
+export const incAllCns = (set) => {
+  let filteredData = data.filter((card) => {
+    if (card["set"] !== set) return false;
+    if (card["cn"] >= 266) return false;
+    return true;
+  });
+
+  for (let i = 0; i < filteredData.length; i++) {
+    filteredData[i]["cn"] = filteredData[i]["cn"] + 1;
+  }
+
+  dataCopy = dataCopy.filter((card) => {
+    if (card["set"] !== set) return true;
+    if (card["cn"] >= 266) return true;
+    return false;
+  });
+
+  let mergedArray = [...filteredData, ...dataCopy];
+
+  fs.writeFileSync(
+    "../customcards.json",
+    JSON.stringify(mergedArray, null, 2),
+    "utf8"
+  );
+};
+
 export const sortMTD = () => {
   // White
-  setCnBetweenCns(1, 42, "MTD");
+  // setCnBetweenCns(3, 44, "MTD");
   // Blue
-  setCnBetweenCns(43, 84, "MTD");
+  // setCnBetweenCns(45, 86, "MTD");
   // Black
-  setCnBetweenCns(85, 126, "MTD");
+  // setCnBetweenCns(87, 128, "MTD");
   // Red
-  setCnBetweenCns(127, 168, "MTD");
+  // setCnBetweenCns(129, 170, "MTD");
   // Green
-  setCnBetweenCns(169, 210, "MTD");
+  // setCnBetweenCns(171, 212, "MTD");
   // Multicolor
-  setCnBetweenCns(211, 244, "MTD");
+  // setCnBetweenCns(213, 246, "MTD");
   // Artifact
-  setCnBetweenCns(245, 265, "MTD");
+  setCnBetweenCns(247, 265, "MTD");
   // Land
-  setCnBetweenCns(266, 286, "MTD");
+  // setCnBetweenCns(266, 286, "MTD");
 };
+
+// incAllCns("MTD");
+sortMTD();

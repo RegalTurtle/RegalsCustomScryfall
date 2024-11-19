@@ -1,28 +1,33 @@
-import cardRoutes from "./cards.js";
+import cardJsonRoutes from "./cards.js";
+import cardRoutes from "./card.js";
 
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename).replace("/routes", "");
+const __dirname = path
+  .dirname(__filename)
+  .replace("/routes", "")
+  .replace("\\routes", "");
 
 const constructorMethod = (app) => {
-  app.use(express.static(path.join(__dirname, "client")));
+  app.get(express.static(path.join(__dirname, "client")));
 
-  app.use("/cardjson", cardRoutes);
-  // similar to switch, always does top to bottom
+  app.use("/cardjson", cardJsonRoutes);
 
-  app.use("*/customcards.json", async (req, res) => {
+  app.use("/card", cardRoutes);
+
+  app.get("*/customcards.json", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "customcards.json"));
   });
 
-  app.use("*/style.css", async (req, res) => {
+  app.get("*/style.css", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/style.css"));
   });
 
-  app.use("/card/*", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/card.html"));
+  app.get("/card/*", async (req, res) => {
+    res.render("pages/card");
   });
 
   app.get("/search/*", async (req, res) => {
@@ -30,12 +35,13 @@ const constructorMethod = (app) => {
   });
 
   // Serve the main index.html file
-  app.use("/", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/index.html"));
+  app.get("/", async (req, res) => {
+    res.render("pages/index");
+    // res.sendFile(path.resolve(__dirname, "client/index.html"));
   });
 
   app.use("*", (req, res) => {
-    return res.status(404).json({ error: "Not found" });
+    return res.status(404).json({ error: "Route not found" });
   });
 };
 
