@@ -17,7 +17,7 @@ router.route("/:setcn").patch(async (req, res) => {
   }
   // if the user isn't one of the three of us, don't continue
   if (!["Thys", "Sam", "Kenneth"].includes(userName)) {
-    return res.status(302).redirect(`/card/${setcn}`);
+    return res.status(302).redirect(`/card/${req.params.setcn}`);
   }
   // get the set code
   let setcn = req.params.setcn;
@@ -65,19 +65,32 @@ router.route("/:setcn").patch(async (req, res) => {
     return res.status(500).json({ message: "Failed to write data to file" });
   }
 
-  // write the data back to disk
-  // try {
-  //   fs.writeFileSync(
-  //     "../customcards.json",
-  //     JSON.stringify(data, null, 2),
-  //     "utf8"
-  //   );
-  //   console.log("File written successfully");
-  // } catch (err) {
-  //   console.error("Error writing file:", err);
-  // }
-
   return res.status(302).redirect(`/card/${setcn}`);
+});
+
+router.route("/:set/:cn").get(async (req, res) => {
+  // Get all values
+  let set = req.params.set;
+  let cn = req.params.cn;
+  // Verify all values
+  try {
+    set = validation.checkSet(set);
+    cn = Number(cn);
+    cn = validation.checkCn(cn);
+  } catch (e) {
+    return res.status(400).json({ error: e.message });
+  }
+  // find the card
+  try {
+    const data = JSON.parse(fs.readFileSync("customcards.json", "utf8"));
+    const cardData = data.find((item) => item.set === set && item.cn === cn);
+
+    if (!cardData) return res.status(404).json({ error: "Card not found" });
+
+    res.status(200).render(`pages/card`, { card: cardData });
+  } catch (e) {
+    return res.status(500).json({ error: e });
+  }
 });
 
 export default router;

@@ -286,7 +286,7 @@
           });
 
           if (all_cards.length == 1) {
-            window.location.href = `/card/${all_cards[0]["set"]}_${all_cards[0]["cn"]}`;
+            window.location.href = `/card/${all_cards[0]["set"]}/${all_cards[0]["cn"]}`;
           }
 
           // object.sort
@@ -310,7 +310,7 @@
               continue;
             }
             htmlOut += `<div class="card-grid-item ">
-                        <a class="card-grid-item-card" href="/card/${all_cards[i]["set"]}_${all_cards[i]["cn"]}">
+                        <a class="card-grid-item-card" href="/card/${all_cards[i]["set"]}/${all_cards[i]["cn"]}">
                           <span class="card-grid-item-invisible-label" aria-hidden="true">${all_cards[i]["name"]}</span>
                           <div class="card-grid-item-card-faces">
                               <div class="card-grid-item-card-front">
