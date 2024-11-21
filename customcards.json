@@ -2162,6 +2162,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Found card, added render and art"
+      },
+      {
+        "date": "20-11-2024",
+        "creator": "Thys",
+        "notes": "It's possible this should be +2/-2 instead of +2/-1"
       }
     ],
     "tags": {
