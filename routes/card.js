@@ -4,7 +4,7 @@ import cardData from "../data/cards.js";
 import validation from "../data/validation.js";
 import fs from "fs";
 
-router.route("/:setcn").patch(async (req, res) => {
+router.route("/:set/:cn").patch(async (req, res) => {
   // get the user name and comment
   let userName = req.body.name;
   let userComment = req.body.comment;
