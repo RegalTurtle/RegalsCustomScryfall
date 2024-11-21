@@ -65,7 +65,7 @@ router.route("/:set/:cn").patch(async (req, res) => {
     return res.status(500).json({ message: "Failed to write data to file" });
   }
 
-  return res.status(302).redirect(`/card/${setcn}`);
+  return res.status(302).redirect(`/card/${set}/${cn}`);
 });
 
 router.route("/:set/:cn").get(async (req, res) => {
