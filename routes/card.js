@@ -17,11 +17,11 @@ router.route("/:set/:cn").patch(async (req, res) => {
   }
   // if the user isn't one of the three of us, don't continue
   if (!["Thys", "Sam", "Kenneth"].includes(userName)) {
-    return res.status(302).redirect(`/card/${req.params.setcn}`);
+    return res.status(302).redirect(`/card/${req.params.set}/${req.params.cn}`);
   }
   // get the set code
-  let setcn = req.params.setcn;
-  let [set, cn] = setcn.split("_");
+  let set = req.params.set;
+  let cn = req.params.cn;
   try {
     set = validation.checkSet(set);
   } catch (e) {
