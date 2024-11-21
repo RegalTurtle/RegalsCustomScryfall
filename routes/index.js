@@ -12,7 +12,9 @@ const __dirname = path
   .replace("\\routes", "");
 
 const constructorMethod = (app) => {
-  app.get(express.static(path.join(__dirname, "client")));
+  app.get("/", async (req, res) => {
+    res.render("pages/home");
+  });
 
   app.use("/cardjson", cardJsonRoutes);
 
@@ -30,14 +32,14 @@ const constructorMethod = (app) => {
     res.render("pages/card");
   });
 
-  app.get("/search/*", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/search.html"));
+  // Serve the main index.html file
+  app.get("/search", async (req, res) => {
+    res.render("pages/custom/searchHome");
+    // res.sendFile(path.resolve(__dirname, "client/index.html"));
   });
 
-  // Serve the main index.html file
-  app.get("/", async (req, res) => {
-    res.render("pages/index");
-    // res.sendFile(path.resolve(__dirname, "client/index.html"));
+  app.get("/search/*", async (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client/search.html"));
   });
 
   app.use("*", (req, res) => {

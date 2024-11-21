@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  height: 100dvh; /* Full viewport height */
+  background: linear-gradient(to bottom, #2f9288, #135750);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: center; /* Align children vertically */
+  align-items: center; /* Align children horizontally */
+  height: 100%; /* Ensure it fills the parent container */
+}
+
+body main h1{
+  margin-bottom: 0px;
+  font-size: 36pt;
+  font-family: Verdana, sans-serif;
+  color: #daddf5;
+}
+
+body main h3{
+  font-size: 18pt;
+  font-family: Verdana, sans-serif;
+  color: #daddf5;
+}
+
+footer {
+  height: 10dvh; /* Reserve 20% of viewport height for the footer */
+  background: #113847;
+  text-align: center;
+  border-top: solid;
+}
+
+header {
+  height: 10dvh; /* Reserve 20% of viewport height for the footer */
+  background: #26746c;
+  text-align: center;
+  border-bottom: solid;
+  display: flex;
+}
+
+header h1 {
+  margin: auto;
+}

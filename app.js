@@ -13,6 +13,7 @@ const rewriteUnsupportedBrowserMethods = (req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(rewriteUnsupportedBrowserMethods);
+app.use("/public", express.static("public"));
 app.set("view engine", "ejs");
 
 configRoutes(app);
