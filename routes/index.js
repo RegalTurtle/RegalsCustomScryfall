@@ -18,7 +18,8 @@ const constructorMethod = (app) => {
 
   app.use("/cardjson", cardJsonRoutes);
 
-  app.use("/card", cardRoutes);
+  // Routes for the custom card searcher
+  app.use("/custom", cardRoutes);
 
   app.get("*/customcards.json", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "customcards.json"));
@@ -30,12 +31,6 @@ const constructorMethod = (app) => {
 
   app.get("/card/*", async (req, res) => {
     res.render("pages/card");
-  });
-
-  // Serve the main index.html file
-  app.get("/search", async (req, res) => {
-    res.render("pages/custom/searchHome");
-    // res.sendFile(path.resolve(__dirname, "client/index.html"));
   });
 
   app.get("/search/*", async (req, res) => {

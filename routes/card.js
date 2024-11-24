@@ -4,6 +4,10 @@ import cardData from "../data/cards.js";
 import validation from "../data/validation.js";
 import fs from "fs";
 
+router.route("/").get(async (req, res) => {
+  return res.render("pages/custom/searchHome");
+});
+
 router.route("/:set/:cn").patch(async (req, res) => {
   // get the user name and comment
   let userName = req.body.name;
