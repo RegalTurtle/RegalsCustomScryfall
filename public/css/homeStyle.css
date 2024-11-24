@@ -75,7 +75,8 @@ a {
   border-radius: 10px;
   color: white;
   font-weight: bold;
-  width: 100%;
   text-align: center;
   text-decoration: none;
+  min-width: 15dvw;
+  width: 100%;
 }
