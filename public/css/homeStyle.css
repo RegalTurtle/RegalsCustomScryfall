@@ -16,28 +16,28 @@ main {
   height: 100%; /* Ensure it fills the parent container */
 }
 
-body main h1{
+body main h1 {
   margin-bottom: 0px;
   font-size: 36pt;
   font-family: Verdana, sans-serif;
   color: #daddf5;
 }
 
-body main h3{
+body main h3 {
   font-size: 18pt;
   font-family: Verdana, sans-serif;
   color: #daddf5;
 }
 
 footer {
-  height: 10dvh; /* Reserve 20% of viewport height for the footer */
+  height: 10dvh;
   background: #113847;
   text-align: center;
   border-top: solid;
 }
 
 header {
-  height: 10dvh; /* Reserve 20% of viewport height for the footer */
+  height: 10dvh;
   background: #26746c;
   text-align: center;
   border-bottom: solid;
@@ -46,4 +46,36 @@ header {
 
 header h1 {
   margin: auto;
+}
+
+.customClass { grid-area: custom; }
+.decksClass { grid-area: decks; }
+.gamesClass { grid-area: games; }
+.loginClass { grid-area: login; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'login login'
+    'custom custom'
+    'decks games';
+  /* background-color: #2196F3; */
+  padding: 10px;
+  gap: 5dvh;
+}
+
+a {
+  justify-self: center; /* Center the button horizontally */
+
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  padding: 12px 7px 12px 7px;
+  border: 2px solid #daddf5;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
 }
