@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/css/decksStyle.css" />
+
+    <title>Regal's Magic</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>My Decks</h1>
+    </header>
+
+    <main>
+      <div>
+        <% decks.forEach(deck => { %>
+        <a href="/decks/<%= deck.id %>" class="customClass"
+          ><%= deck.deckName %></a
+        >
+        <% }); %>
+      </div>
+    </main>
+
+    <footer>
+      <h1>456</h1>
+    </footer>
+  </body>
+</html>

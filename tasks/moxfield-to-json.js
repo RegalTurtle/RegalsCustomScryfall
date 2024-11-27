@@ -35,89 +35,102 @@ function parseCardList(input) {
 }
 
 // Example Input
-const input = `1 Ancient Animus (CMR) 215 *F* #!Removal
-1 Arbor Elf (A25) 160 #!Ramp
-1 Archon of Valor's Reach (BBD) 74 *F*
-1 Ash Barrens (CMM) 419 #!Land
-1 Avacyn, Angel of Hope (2XM) 8
-1 Bitter Triumph (LCI) 91 #Discard #!Removal
-1 Black Dragon Gate (CLB) 347 #!Land
-1 Buried Alive (UMA) 88 #!Tutor
-1 Carnage Tyrant (XLN) 179
-1 Citadel Gate (CLB) 349 #!Land
-1 Corrupted Grafstone (SOI) 253 #!Ramp
-1 Crawling Infestation (VOW) 193 #Mill
-1 Crawling Sensation (SOI) 199 *F* #Mill
-1 Dakmor Salvage (UMA) 240 #!Land
-1 Damn (LCC) 191 #!Removal #!Wrath
-1 Darkstar Augur (BLB) 90 #Draw
-1 Deceptive Landscape (MH3) 219 #!Land
-1 Demolition Field (BRO) 260 #!Land
-1 Despark (STA) 59 #!Removal
-1 Doom Whisperer (GRN) 69 #Mill
-1 Drana and Linvala (MOM) 222
-1 Emrakul, the Promised End (SLD) 1160
-1 Erebos, God of the Dead (SLD) 74 *F* #!Draw
-1 Escape Tunnel (MKM) 261 #!Land
-1 Evolving Wilds (CLB) 352 #!Land
-1 Farewell (NEO) 365 #!Wrath
-10 Forest (AKH) 268 #!Land
-1 Get Lost (LCI) 14 #!Removal
-1 Godless Shrine (RVR) 277 #!Land
-1 Goldvein Hydra (OTJ) 167
-1 Grimoire of the Dead (ISD) 226 #Discard
-1 Grow from the Ashes (DOM) 164 #!Ramp
-1 Guardian Project (RVR) 146 *F* #!Draw
-1 Helm of the Host (BRR) 19
-1 Hornet Queen (P30A) 19 *F*
-1 Invasion of Ikoria / Zilortha, Apex of Ikoria (MOM) 190 #!Tutor
-1 Key to the City (BRR) 27 #Discard
-1 Khalni Ambush / Khalni Territory (ZNR) 192 #!Land #!Removal
-1 Krosan Grip (STA) 53 #!Removal
-1 Krosan Restorer (DMR) 168 #!Ramp
-1 Krosan Verge (C19) 257 #!Land
-1 Llanowar Elves (DOM) 168 #!Ramp
-1 Manor Gate (CLB) 356 #!Land
-1 Medicine Bag (EXO) 133 #Discard #Protection
-1 Millikin (DMR) 231 #!Ramp
-1 Mind Stone (C15) 259 #!Ramp
-1 Mind's Eye (BRR) 33 #Draw
-1 Natural Order (STA) 54 #!Tutor
-1 Nesting Grounds (MH3) 302 #!Land
-1 Odric, Lunarch Marshal (PLST) SOI-31
-1 Oppression (WOT) 32 #Discard
-1 Outrageous Robbery (MKM) 97 #!Draw
-1 Panharmonicon (SLD) 605 *F*
-1 Path of Ancestry (PLG21) C3 #!Land
-1 Path to Exile (2XM) 25 #!Removal
-1 Pattern of Rebirth (UMA) 176 #Tutor
-1 Peerless Recycling (BLB) 188 #Recursion
-5 Plains (MKM) 277 #!Land
-1 Primal Command (STA) 55 #Graveyard Hate #!Graveyard Hate #Recursion #Removal #Tutor #!Tutor
-1 Return to Nature (THB) 197 #!Graveyard Hate #!Removal
-1 Ripples of Undeath (MH3) 107 #Draw
-1 Ruin-Lurker Bat (LCI) 33
-1 Sejiri Shelter / Sejiri Glacier (ZNR) 37 #!Land #Protection
-1 Sheoldred / The True Scriptures (MOM) 125 *F*
-1 Sol Ring (SLD) 1074 *E* #!Ramp
-1 Stonespeaker Crystal (CLB) 450 #!Graveyard Hate #!Ramp
-4 Swamp (MKM) 282 #!Land
-1 Swiftfoot Boots (A25) 234 #!Protection
-1 Takenuma, Abandoned Mire (NEO) 278 #!Land #Mill #Recursion #!Recursion
-1 Tangled Florahedron / Tangled Vale (ZNR) 211 #!Land #!Ramp
-1 Thespian's Stage (2XM) 327 #!Land
-1 Toxic Deluge (CMM) 191 #!Wrath
-1 Underrealm Lich (GRN) 211 #Mill
-1 Vampire Nighthawk (M13) 112
-1 Wand of Vertebrae (GRN) 242 *F* #Mill #Recursion
-1 Whisperer of the Wilds (FRF) 144 #!Ramp
-1 Winding Way (MH1) 193 #Draw
-1 Wojek Investigator (MKM) 36 #!Draw
-1 Woodland Cemetery (DOM) 248 #!Land
-1 World Shaper (RIX) 151 #Mill
-1 Wrenn and Realmbreaker (MOM) 217 #Draw
-1 Zendikar Resurgent (OGW) 147 #!Draw
-1 Zetalpa, Primal Dawn (CMM) 478 *E*`;
+const input = `1 Ajani, the Greathearted (WAR) 184
+1 Ancient Brass Dragon (CLB) 111 *F* #Dragon
+1 Anguished Unmaking (SOI) 242 #Removal #!Removal
+1 Arcane Sanctum (MM3) 228 #!Land
+1 Atarka, World Render (FRF) 149 #Dragon
+1 Atsushi, the Blazing Sky (NEO) 134 #Dragon
+1 Backdraft Hellkite (C19) 23 #Dragon
+1 Beast Within (CLB) 820 #Removal #!Removal
+1 Blackblade Reforged (DOM) 211
+1 Bladewing the Risen (C17) 163 #Dragon #Recursion
+1 Bridgeworks Battle / Tanglespan Bridgeworks (MH3) 249 #Land #Removal
+1 Chromatic Lantern (RTR) 226 *F* #Ramp #!Ramp
+1 Command Tower (C18) 240 #!Land
+1 Counterspell (A25) 50 #Interaction #!Interaction
+1 Crucible of the Spirit Dragon (C17) 243 #!Land
+1 Crux of Fate (C17) 107 #Wrath
+1 Deathbringer Regent (NCC) 246 #Dragon #Wrath
+1 Descendants' Path (AVR) 173
+1 Despark (WAR) 190 #Removal #!Removal
+1 Draconic Lore (CLB) 64 #Draw
+1 Dragon Tempest (DTK) 136 #Removal
+1 Dragon's Hoard (M19) 232 #Draw #Ramp #!Ramp
+1 Dragonlord Ojutai (DTK) 219 #Dragon #Draw
+1 Dragonlord's Servant (PL24) 1 *F* #Ramp
+1 Dragonspeaker Shaman (DDG) 53 #Ramp
+1 Earthquake Dragon (CLB) 588 *F* #Dragon
+1 Elemental Bond (C19) 163 #Draw #!Draw
+1 Emergence Zone (WAR) 245 #!Land
+1 Evolving Wilds (AKH) 242 #!Land
+1 Forbidden Orchard (2X2) 323 #!Land
+2 Forest (3ED) 304 #!Land
+1 Frontier Bivouac (C16) 297 #!Land
+1 Ganax, Astral Hunter (CLB) 398 #Dragon
+1 Generous Gift (NEC) 84 #Removal #!Removal
+1 Haven of the Spirit Dragon (C17) 255 #!Land
+1 Intet, the Dreamer (CMD) 204 #Dragon
+1 Island (M20) 267 #!Land
+1 Island (3ED) 297 #!Land
+1 Jungle Shrine (C16) 304 #!Land
+1 Korlessa, Scale Singer (CLB) 280 #Dragon #Draw
+1 Lathliss, Dragon Queen (M19) 149 #Dragon
+1 Lightning Greaves (2XM) 267 #Protection #!Protection
+1 Lozhan, Dragons' Legacy (CLB) 281 *F* #Dragon #Removal
+1 Mana Confluence (JOU) 163 #!Land
+1 Miirym, Sentinel Wyrm (CLB) 284 #Dragon
+2 Mountain (XLN) 275 #!Land
+1 Mystic Monastery (C19) 262 #!Land
+1 Nimbleclaw Adept (CLB) 86 #Dragon #Ramp
+1 Nomad Outpost (DDN) 34 #!Land
+1 Ojutai, Soul of Winter (C17) 187 #Dragon #Removal
+1 Old Gnawbone (AFR) 296 *F* #Dragon #Ramp
+1 Ondu Inversion / Ondu Skyruins (ZNR) 30 *F* #!Land #!Wrath
+1 Opulent Palace (C16) 313 #!Land
+1 Orb of Dragonkind (PAFR) 157a *F* #Ramp
+1 Path of Ancestry (C17) 56 #!Land
+1 Path to Exile (MM3) 17 #Removal #!Removal
+1 Pillar of Origins (XLN) 241 #Ramp
+1 Plains (WAR) 250 #!Land
+1 Plains (ELD) 251 #!Land
+1 Pull from Tomorrow (AKH) 65 #Draw #!Draw
+1 Renari, Merchant of Marvels (CLB) 386 *F* #Dragon
+1 Resculpt (STX) 51 #Removal #!Removal
+1 Return of the Wildspeaker (ELD) 172 #Draw #!Draw
+1 Rivaz of the Claw (DMU) 215 #Ramp #Recursion
+1 Rush of Knowledge (C14) 123 #Draw
+1 Sandsteppe Citadel (KTK) 241 #!Land
+1 Sarkhan's Triumph (DTK) 154 #Tutor
+1 Savage Lands (ALA) 228 #!Land
+1 Scaled Nurturer (CLB) 252 #Dragon #Ramp
+1 Scalelord Reckoner (C17) 6 #Dragon #Removal
+1 Scourge of Valkas (IMA) 145 #Dragon #Removal
+1 Seaside Citadel (C16) 322 #!Land
+1 Shadrix Silverquill (STX) 230 #Dragon #Draw
+1 Smothering Tithe (RNA) 22 #Ramp
+1 Sol Ring (C18) 222 #Ramp #!Ramp
+1 Soul-Guide Lantern (BRR) 54 #!Graveyard Hate
+1 Sunscorch Regent (C17) 74 #Dragon
+2 Swamp (M19) 270 #!Land
+1 Swiftfoot Boots (PW22) 4 *F* #Protection #!Protection
+1 Swords to Plowshares (C16) 78 #Removal #!Removal
+1 Sylvia Brightspear (BBD) 10
+1 Taiga (3ED) 287 #!Land
+1 Temple of the Dragon Queen (AFR) 357 #!Land
+1 Temur Ascendancy (KTK) 207 #Draw
+1 Terramorphic Expanse (C18) 286 #!Land
+1 Terror of the Peaks (OTJ) 149 #Dragon #Removal
+1 Tiamat (AFR) 235 #Dragon #Tutor
+1 Twinflame Tyrant (FDN) 97 #Dragon
+1 Unclaimed Territory (XLN) 258 #!Land
+1 Unwind (DOM) 72 #Interaction #!Interaction
+1 Vivid Grove (C15) 318 #!Land
+1 Vivid Marsh (MMA) 228 #!Land
+1 Vivid Meadow (MMA) 229 #!Land
+1 Volcanic Island (3ED) 291 #!Land
+1 Xander's Lounge (SNC) 260 #!Land
+1 Zendikar Resurgent (POGW) 147p #!Draw #Ramp`;
 
 // Parse the input and print the output
 const parsedOutput = parseCardList(input);

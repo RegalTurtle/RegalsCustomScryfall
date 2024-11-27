@@ -1,5 +1,6 @@
 import cardJsonRoutes from "./cards.js";
 import cardRoutes from "./card.js";
+import deckRoutes from "./decks/deckList.js";
 
 import express from "express";
 import path from "path";
@@ -20,6 +21,9 @@ const constructorMethod = (app) => {
 
   // Routes for the custom card searcher
   app.use("/custom", cardRoutes);
+
+  // Routes for deck lists
+  app.use("/decks", deckRoutes);
 
   app.get("*/customcards.json", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "customcards.json"));
