@@ -10532,33 +10532,5 @@
       "function": [],
       "reprint": true
     }
-  },
-  {
-    "name": "",
-    "cost": "",
-    "type": "",
-    "text": "",
-    "flavor": "",
-    "rarity": "",
-    "cn": 1,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/C4l1B19.png",
-    "id": "",
-    "has_bleed_edge": true,
-    "power": 3,
-    "toughness": 3,
-    "notes": [
-      {
-        "date": "01-11-2024",
-        "creator": "Thys",
-        "notes": "Updated render to WWHO"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
   }
 ]
