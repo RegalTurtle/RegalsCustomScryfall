@@ -1072,9 +1072,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false,
       "frame": "normal"
     }
@@ -1672,9 +1670,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -1882,9 +1878,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -2600,9 +2594,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -3471,9 +3463,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -3957,9 +3947,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "Removal"
-      ],
+      "function": ["Removal"],
       "reprint": false
     }
   },
@@ -4853,9 +4841,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "wheel"
-      ],
+      "function": ["wheel"],
       "reprint": false
     }
   },
@@ -5254,10 +5240,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal",
-        "discard-outlet"
-      ],
+      "function": ["removal", "discard-outlet"],
       "reprint": false
     }
   },
@@ -5293,9 +5276,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -5326,9 +5307,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -5473,9 +5452,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ]
+      "function": ["recursion"]
     }
   },
   {
@@ -5545,9 +5522,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -5636,9 +5611,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard-outlet"
-      ],
+      "function": ["discard-outlet"],
       "reprint": false
     }
   },
@@ -5664,9 +5637,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -5691,9 +5662,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -5834,12 +5803,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard",
-        "thoughtseize",
-        "discard-outlet",
-        "pact"
-      ],
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
       "reprint": false
     }
   },
@@ -5957,9 +5921,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -6188,9 +6150,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -6749,9 +6709,7 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ]
+      "function": ["counterspell"]
     }
   },
   {
@@ -6834,9 +6792,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -6867,9 +6823,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": true
     }
   },
@@ -7030,9 +6984,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": false
     }
   },
@@ -7204,9 +7156,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -7298,9 +7248,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -7619,9 +7567,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": true
     }
   },
@@ -7973,9 +7919,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -8158,9 +8102,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -8656,9 +8598,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "tutor"
-      ],
+      "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
@@ -10127,9 +10067,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10211,9 +10149,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10239,9 +10175,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10298,9 +10232,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "ramp"
-      ],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -10418,11 +10350,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "repeatable-draw",
-        "card-advantage"
-      ],
+      "function": ["draw", "repeatable-draw", "card-advantage"],
       "reprint": true
     }
   },
@@ -10490,12 +10418,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "card-advantage",
-        "mill",
-        "mill-self"
-      ],
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
       "reprint": true
     }
   },
@@ -10706,6 +10629,32 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/keGvbyS.png",
     "id": "",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Gaea's Grasp",
+    "cost": "{1}{G}{G}",
+    "type": "Legendary Enchantment",
+    "text": "Hexproof\nIf you were to take a shot, prevent that shot and put a beer counter on ~.\nWhen there are seven or more beer counters on ~, exile it.\nWhen ~ leaves the battlefield, you lose the game.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 200,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/YY1KPkx.png",
+    "id": "G",
     "has_bleed_edge": true,
     "notes": [
       {
