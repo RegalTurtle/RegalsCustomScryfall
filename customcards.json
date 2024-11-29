@@ -8402,7 +8402,7 @@
   {
     "name": "Apprentice Flightcaster",
     "cost": "{1}{U}",
-    "type": "Creature",
+    "type": "Creature - Human Wizard",
     "text": "{2}: ~ gains flying until end of turn.",
     "flavor": "",
     "power": 2,
