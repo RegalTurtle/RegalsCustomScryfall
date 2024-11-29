@@ -1368,6 +1368,8 @@
     "img": "https://i.imgur.com/ttfjdGH.png",
     "id": "G",
     "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 3,
     "notes": [
       {
         "date": "15-10-2024",
@@ -1378,6 +1380,11 @@
         "date": "16-10-2024",
         "creator": "Sam",
         "notes": "Changed wording from that player puts a counter on a permanent they control to target permanent they control."
+      },
+      {
+        "date": "28-11-2024",
+        "creator": "Sam",
+        "notes": "Added pow/tou to json"
       }
     ],
     "tags": {
