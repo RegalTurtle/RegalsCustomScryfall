@@ -10550,5 +10550,33 @@
       "function": [],
       "reprint": true
     }
+  },
+  {
+    "name": "Accomplished Alchemist",
+    "cost": "{3}{G}",
+    "type": "Creature - Elf Druid",
+    "text": "{T}: Add one mana of any color.\n{T}: Add X mana of any one color, where X is the amount of life you gained this turn.{flavor} The esoteric arts bend to my will alone.",
+    "flavor": "The esoteric arts bend to my will alone.",
+    "rarity": "R",
+    "cn": 169,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Q0PYA7C.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 5,
+    "notes": [
+      {
+        "date": "28-11-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   }
 ]
