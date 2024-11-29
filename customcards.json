@@ -10732,5 +10732,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Fell the Pheasant",
+    "cost": "{1}{G}",
+    "type": "Instant",
+    "text": "~ deals 5 damage to target creature with flying. Create a Food token.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 185,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/OO6T329.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   }
 ]
