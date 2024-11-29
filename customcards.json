@@ -10557,10 +10557,38 @@
     }
   },
   {
+    "name": "Deathgorge Scavenger",
+    "cost": "{2}{G}",
+    "type": "Creature — Dinosaur",
+    "text": "Whenever ~ enters or attacks, you may exile target card from a graveyard. If a creature card is exiled this way, you gain 2 life. If a noncreature card is exiled this way, ~ gets +1/+1 until end of turn.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 175,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/6RVOy1G.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 2,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card to MTD"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
     "name": "Accomplished Alchemist",
     "cost": "{3}{G}",
     "type": "Creature - Elf Druid",
-    "text": "{T}: Add one mana of any color.\n{T}: Add X mana of any one color, where X is the amount of life you gained this turn.{flavor} The esoteric arts bend to my will alone.",
+    "text": "{T}: Add one mana of any color.\n{T}: Add X mana of any one color, where X is the amount of life you gained this turn.",
     "flavor": "The esoteric arts bend to my will alone.",
     "rarity": "R",
     "cn": 169,
