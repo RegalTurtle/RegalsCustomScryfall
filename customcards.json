@@ -10681,7 +10681,7 @@
     "text": "Flash\nMultikicker{-}Take a shot.\nVigilance, reach, trample\n~ enters with a beer counter on it for each time it was kicked.\n~ gets +1/+1 for each beer counter on it.",
     "flavor": "",
     "rarity": "R",
-    "cn": 201,
+    "cn": 198,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/aARq80z.png",
@@ -10699,6 +10699,32 @@
         "date": "29-11-2024",
         "creator": "Sam",
         "notes": "rip fucker moose"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Rejuvinating Ale",
+    "cost": "{3}{G}",
+    "type": "Artifact",
+    "text": "Whenever you take a shot, put a beer counter on target permanent you control.{line}At the beginning of your upkeep, gain 1 life for each beer counter on target permanent you control.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 200,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/9CNh2j5.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Created card"
       }
     ],
     "tags": {
