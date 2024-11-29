@@ -10454,5 +10454,111 @@
       "function": [],
       "reprint": true
     }
+  },
+  {
+    "name": "Righteous Bite",
+    "cost": "{3}{G}",
+    "type": "Instant",
+    "text": "Target creature you control gains lifelink until end of turn, and it deals damage equal to its power to target creature you don't control.",
+    "flavor": "Nom Nom.",
+    "rarity": "C",
+    "cn": 200,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/2y7uCF2.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "28-11-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Drunken Brawl",
+    "cost": "{G}",
+    "type": "Sorcery",
+    "text": "Target creature gets +X/+0 until end of turn, where X is the number of beer counters on it. Then it fights up to one target creature you don't control.",
+    "flavor": "Margaret give it back!",
+    "rarity": "U",
+    "cn": 201,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/ZoWNu0D.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "28-11-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Life Goes On",
+    "cost": "{G}",
+    "type": "Instant",
+    "text": "You gain 4 life. If a creature died this turn, you gain 8 life instead.",
+    "flavor": "God's in his heaven, all's right with the world.",
+    "rarity": "C",
+    "cn": 202,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/p2Gn6Kw.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "28-11-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "",
+    "cost": "",
+    "type": "",
+    "text": "",
+    "flavor": "",
+    "rarity": "",
+    "cn": 1,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/C4l1B19.png",
+    "id": "",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 3,
+    "notes": [
+      {
+        "date": "01-11-2024",
+        "creator": "Thys",
+        "notes": "Updated render to WWHO"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
