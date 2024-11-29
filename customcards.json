@@ -10673,5 +10673,38 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Rager Moose",
+    "cost": "{4}{G}{G}",
+    "type": "Creature - Elk Alcoholic",
+    "text": "Flash\nMultikicker{-}Take a shot.\nVigilance, reach, trample\n~ enters with a beer counter on it for each time it was kicked.\n~ gets +1/+1 for each beer counter on it.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 201,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/aARq80z.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "power": 4,
+    "toughness": 4,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      },
+      {
+        "date": "29-11-2024",
+        "creator": "Sam",
+        "notes": "rip fucker moose"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
