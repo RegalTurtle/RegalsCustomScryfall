@@ -27,7 +27,7 @@
           <p id="cardType" style="color: #fff; font-weight: bold"><%= card.type %></p>
           <% if (card.text) { %>
             <hr />
-            <p id="cardOracle" style="color: #fff; font-weight: bold"><%= card.text.replace(/~/g, card.name); %></p>
+            <p id="cardOracle" style="color: #fff; font-weight: bold"><%- card.text.replace(/~/g, card.name).replace(/\n/g, "<br />"); %></p>
           <% } %>
           <% if (card.type.includes("Creature")) { %>
             <hr />
