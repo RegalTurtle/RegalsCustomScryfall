@@ -1951,7 +1951,7 @@
     "set": "MTD",
     "cn": 12,
     "id": "W",
-    "cost": "{3}{W}",
+    "cost": "{3}{W}{W}",
     "type": "Creature - Human Angel",
     "text": "Flying, vigilance\nWhen ~ enters, you become the monarch.",
     "flavor": "The ultimate union of mortal and the divine.",
