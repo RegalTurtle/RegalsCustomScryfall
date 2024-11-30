@@ -1414,7 +1414,7 @@
     "type": "Enchantment",
     "text": "Creatures you control get +0/+1 and have reach.",
     "flavor": "It hardly weighs anything, but it takes all day to remove.",
-    "rarity": "C",
+    "rarity": "U",
     "cn": 202,
     "set": "MTD",
     "artist": "Midjourney",
@@ -1431,6 +1431,11 @@
         "date": "23-10-2024",
         "creator": "Thys",
         "notes": "We need to talk about possibly upshifting this card to uncommon, or giving blue/white the tools to deal with it // Added another removal spell to white, leaving this as is"
+      },
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Upshifted from Common to Uncommon"
       }
     ],
     "tags": {
@@ -1475,7 +1480,7 @@
   },
   {
     "name": "Timberwatch Elf",
-    "set": "MTD",
+    "set": "MTC",
     "cn": 204,
     "id": "G",
     "cost": "{1}{G}",
@@ -1503,6 +1508,11 @@
         "date": "16-07-2024",
         "creator": "Sam",
         "notes": "New image"
+      },
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Moved from MTD to MTC"
       }
     ],
     "tags": {}
