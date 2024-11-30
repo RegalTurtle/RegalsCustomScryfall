@@ -1,5 +1,439 @@
 [
   {
+    "name": "Agent of Acquisitions",
+    "set": "MTD",
+    "cn": 247,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact Creature - Construct",
+    "text": "Draft ~ face up.\nInstead of drafting a card from a booster pack, you may draft each card in that booster pack, one at a time. If you do, turn ~ face down and you can't draft cards for the rest of this draft round.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/OyqYQg5.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Banner of Assimilation",
+    "cost": "{3}",
+    "type": "Artifact",
+    "text": "Equipped creature gets +1/+1.\nCreatures that share a creature type with equipped creature also get +1/+1.\nEquip {2}",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 248,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/LrQSqdz.png",
+    "id": "C",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Blessed Bread",
+    "set": "MTD",
+    "cn": 249,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact Food",
+    "text": "When ~ enters, scry 1, then draw a card.\n{2}, {T}, Sacrifice ~: You gain 3 life.\nWhen ~ is put into a graveyard from the battlefield, its owner shuffles it into their library.",
+    "flavor": "Every culture has their bread.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/z0sqxE7.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "13-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob, might be good to do this without the nickname and have = in the notes"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Changed from nickname to note, uploaded new image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Chimil, the Inner Sun",
+    "cost": "{6}",
+    "type": "Legendary Artifact",
+    "text": "Spells you control can't be countered.{line}At the beginning of your end step, discover 5.",
+    "flavor": "",
+    "rarity": "M",
+    "cn": 250,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4u1qYnf.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Cogwork Librarian",
+    "set": "MTD",
+    "cn": 251,
+    "id": "C",
+    "cost": "{4}",
+    "type": "Artifact Creature - Construct",
+    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that booster pack. If you do, put ~ into that booster pack.",
+    "flavor": "Why wait for answers?",
+    "rarity": "C",
+    "img": "https://i.imgur.com/uyn0v4K.png",
+    "has_bleed_edge": false,
+    "power": 3,
+    "toughness": 3,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Deal Broker",
+    "set": "MTD",
+    "cn": 252,
+    "id": "C",
+    "cost": "{3}",
+    "type": "Artifact Creature - Construct",
+    "text": "Draft ~ face up.\nImmediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.\n{T}: Draw a card, then discard a card.",
+    "flavor": "",
+    "rarity": "R",
+    "img": "https://i.imgur.com/o08H6PH.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 3,
+    "watermark": "draft",
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Feldon's Cane",
+    "cost": "{1}",
+    "type": "Artifact",
+    "text": "{T}, Exile ~: Shuffle your graveyard into your library.",
+    "flavor": "Time is a funny thing; start messing with things you don’t understand, and you’ll see results—you just might not appreciate the consequences.",
+    "rarity": "U",
+    "cn": 253,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": ".png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art and flavor"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Freyan's Keg",
+    "set": "MTD",
+    "cn": 254,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "Equipped creature gets +1/+1 for each beer counter on it.\nEquip {2}",
+    "flavor": "Whilst their Southern counterparts value peace and prosperity, the brews of the North represent a much more passionate culture.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/C3Pz1dP.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "05-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Heraldic Banner",
+    "cost": "{3}",
+    "type": "Artifact",
+    "text": "As ~ enters, choose a color.{line}Creatures you control of the chosen color get +1/+0.{line}{T}: Add one mana of the chosen color.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 255,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/tQwtISQ.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Key to the City",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.\nWhenever ~ becomes untapped, you may pay {2}. If you do, draw a card.",
+    "flavor": "Many doors are open to you, my friend.",
+    "rarity": "R",
+    "cn": 256,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/vB54djU.png",
+    "id": "C",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-09-2024",
+        "creator": "Sam",
+        "notes": "Found card, added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Meteor Golem",
+    "cost": "{7}",
+    "type": "Artifact Creature — Golem",
+    "text": "When ~ enters, destroy target nonland permanent an opponent controls.",
+    "flavor": "Born of fire, it seeks to return all to ashes.",
+    "rarity": "U",
+    "cn": 257,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/T4OZDvE.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 3,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Orbs of Warding",
+    "set": "MTD",
+    "cn": 258,
+    "id": "C",
+    "cost": "{5}",
+    "type": "Artifact",
+    "text": "You have hexproof.\nIf a creature would deal damage to you, prevent 1 of that damage.",
+    "flavor": "The body, the mind, the soul.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/IALjUkh.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Overflowing Cellar",
+    "set": "MTD",
+    "cn": 259,
+    "id": "C",
+    "cost": "{2}",
+    "type": "Artifact",
+    "text": "~ enters with two battlefield with two beer counters on it.\n{T}, Remove a beer counter from ~: Put a beer counter on target creature you control.\n{T}: Put a beer counter on ~.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/0DNjAxe.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "06-02-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Spidersilk Net",
+    "cost": "{0}",
+    "type": "Artifact - Equipment",
+    "text": "Equipped creature gets +0/+2 and has reach.\nEquip {2}",
+    "flavor": "Finer than steel, stickier than tar, light as a feather—in short, deadly.",
+    "rarity": "C",
+    "cn": 260,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/wcEs5Hq.png",
+    "id": "C",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-10-2024",
+        "creator": "Sam",
+        "notes": "Created render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Urn of Godfire",
+    "set": "MTD",
+    "cn": 261,
+    "id": "C",
+    "cost": "{1}",
+    "type": "Artifact",
+    "text": "{2}: Add one mana of any color.\n{6}, {T}, Sacrifice ~: Destroy target creature or enchantment.",
+    "flavor": "Blessed by gods long forgotten, these relics are coveted for their innate magical properties by all peoples across the plane.",
+    "rarity": "C",
+    "img": "https://i.imgur.com/yUqJjzr.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "12-01-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
     "name": "Battle Caravan",
     "set": "MTD",
     "cn": 171,
@@ -2328,314 +2762,6 @@
       "function": [],
       "reprint": true
     }
-  },
-  {
-    "name": "Agent of Acquisitions",
-    "set": "MTD",
-    "cn": 247,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nInstead of drafting a card from a booster pack, you may draft each card in that booster pack, one at a time. If you do, turn ~ face down and you can't draft cards for the rest of this draft round.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/OyqYQg5.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 1,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Banner of Assimilation",
-    "cost": "{3}",
-    "type": "Artifact",
-    "text": "Equipped creature gets +1/+1.\nCreatures that share a creature type with equipped creature also get +1/+1.\nEquip {2}",
-    "flavor": "",
-    "rarity": "U",
-    "cn": 248,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/LrQSqdz.png",
-    "id": "C",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "15-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Blessed Bread",
-    "set": "MTD",
-    "cn": 249,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact Food",
-    "text": "When ~ enters, scry 1, then draw a card.\n{2}, {T}, Sacrifice ~: You gain 3 life.\nWhen ~ is put into a graveyard from the battlefield, its owner shuffles it into their library.",
-    "flavor": "Every culture has their bread.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/z0sqxE7.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "13-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob, might be good to do this without the nickname and have = in the notes"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Changed from nickname to note, uploaded new image"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Cogwork Librarian",
-    "set": "MTD",
-    "cn": 250,
-    "id": "C",
-    "cost": "{4}",
-    "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that booster pack. If you do, put ~ into that booster pack.",
-    "flavor": "Why wait for answers?",
-    "rarity": "C",
-    "img": "https://i.imgur.com/uyn0v4K.png",
-    "has_bleed_edge": false,
-    "power": 3,
-    "toughness": 3,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Deal Broker",
-    "set": "MTD",
-    "cn": 251,
-    "id": "C",
-    "cost": "{3}",
-    "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nImmediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.\n{T}: Draw a card, then discard a card.",
-    "flavor": "",
-    "rarity": "R",
-    "img": "https://i.imgur.com/o08H6PH.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 3,
-    "watermark": "draft",
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Freyan's Keg",
-    "set": "MTD",
-    "cn": 252,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact",
-    "text": "Equipped creature gets +1/+1 for each beer counter on it.\nEquip {2}",
-    "flavor": "Whilst their Southern counterparts value peace and prosperity, the brews of the North represent a much more passionate culture.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/C3Pz1dP.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "05-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Key to the City",
-    "cost": "{2}",
-    "type": "Artifact",
-    "text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.\nWhenever ~ becomes untapped, you may pay {2}. If you do, draw a card.",
-    "flavor": "Many doors are open to you, my friend.",
-    "rarity": "R",
-    "cn": 253,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/vB54djU.png",
-    "id": "C",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "15-09-2024",
-        "creator": "Sam",
-        "notes": "Found card, added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Orbs of Warding",
-    "set": "MTD",
-    "cn": 254,
-    "id": "C",
-    "cost": "{5}",
-    "type": "Artifact",
-    "text": "You have hexproof.\nIf a creature would deal damage to you, prevent 1 of that damage.",
-    "flavor": "The body, the mind, the soul.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/IALjUkh.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Overflowing Cellar",
-    "set": "MTD",
-    "cn": 255,
-    "id": "C",
-    "cost": "{2}",
-    "type": "Artifact",
-    "text": "~ enters with two battlefield with two beer counters on it.\n{T}, Remove a beer counter from ~: Put a beer counter on target creature you control.\n{T}: Put a beer counter on ~.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/0DNjAxe.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "06-02-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Spidersilk Net",
-    "cost": "{0}",
-    "type": "Artifact - Equipment",
-    "text": "Equipped creature gets +0/+2 and has reach.\nEquip {2}",
-    "flavor": "Finer than steel, stickier than tar, light as a feather—in short, deadly.",
-    "rarity": "C",
-    "cn": 256,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/wcEs5Hq.png",
-    "id": "C",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "15-10-2024",
-        "creator": "Sam",
-        "notes": "Created render"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Urn of Godfire",
-    "set": "MTD",
-    "cn": 257,
-    "id": "C",
-    "cost": "{1}",
-    "type": "Artifact",
-    "text": "{2}: Add one mana of any color.\n{6}, {T}, Sacrifice ~: Destroy target creature or enchantment.",
-    "flavor": "Blessed by gods long forgotten, these relics are coveted for their innate magical properties by all peoples across the plane.",
-    "rarity": "C",
-    "img": "https://i.imgur.com/yUqJjzr.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "12-01-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
   },
   {
     "name": "Drinking Challenge",
@@ -10977,132 +11103,6 @@
       "frame": "normal",
       "function": [],
       "reprint": false
-    }
-  },
-  {
-    "name": "Heraldic Banner",
-    "cost": "{3}",
-    "type": "Artifact",
-    "text": "As ~ enters, choose a color.{line}Creatures you control of the chosen color get +1/+0.{line}{T}: Add one mana of the chosen color.",
-    "flavor": "",
-    "rarity": "U",
-    "cn": 254,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/tQwtISQ.png",
-    "id": "C",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "29-11-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      },
-      {
-        "date": "30-11-2024",
-        "creator": "Sam",
-        "notes": "Added art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Meteor Golem",
-    "cost": "{7}",
-    "type": "Artifact Creature — Golem",
-    "text": "When ~ enters, destroy target nonland permanent an opponent controls.",
-    "flavor": "Born of fire, it seeks to return all to ashes.",
-    "rarity": "U",
-    "cn": 256,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/T4OZDvE.png",
-    "id": "C",
-    "has_bleed_edge": true,
-    "power": 3,
-    "toughness": 3,
-    "notes": [
-      {
-        "date": "29-11-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      },
-      {
-        "date": "30-11-2024",
-        "creator": "Sam",
-        "notes": "Added art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Feldon's Cane",
-    "cost": "{1}",
-    "type": "Artifact",
-    "text": "{T}, Exile ~: Shuffle your graveyard into your library.",
-    "flavor": "Time is a funny thing; start messing with things you don’t understand, and you’ll see results—you just might not appreciate the consequences.",
-    "rarity": "U",
-    "cn": 252,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": ".png",
-    "id": "C",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "29-11-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      },
-      {
-        "date": "30-11-2024",
-        "creator": "Sam",
-        "notes": "Added art and flavor"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Chimil, the Inner Sun",
-    "cost": "{6}",
-    "type": "Legendary Artifact",
-    "text": "Spells you control can't be countered.{line}At the beginning of your end step, discover 5.",
-    "flavor": "",
-    "rarity": "M",
-    "cn": 0,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/4u1qYnf.png",
-    "id": "C",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "29-11-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      },
-      {
-        "date": "30-11-2024",
-        "creator": "Sam",
-        "notes": "Added art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
     }
   }
 ]
