@@ -10744,6 +10744,7 @@
     }
   },
   {
+    "invisible": true,
     "name": "Fell the Pheasant",
     "cost": "{1}{G}",
     "type": "Instant",
@@ -10751,7 +10752,7 @@
     "flavor": "",
     "rarity": "C",
     "cn": 185,
-    "set": "MTD",
+    "set": "MTC",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/OO6T329.png",
     "id": "G",
@@ -10761,6 +10762,11 @@
         "date": "29-11-2024",
         "creator": "Thys",
         "notes": "Added card"
+      },
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Moved card from MTD to MTC"
       }
     ],
     "tags": {
