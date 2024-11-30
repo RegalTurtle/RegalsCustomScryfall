@@ -10901,5 +10901,69 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Heraldic Banner",
+    "cost": "{3}",
+    "type": "Artifact",
+    "text": "As ~ enters, choose a color.{line}Creatures you control of the chosen color get +1/+0.{line}{T}: Add one mana of the chosen color.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 0,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/tQwtISQ.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Meteor Golem",
+    "cost": "{7}",
+    "type": "Artifact Creature — Golem",
+    "text": "When ~ enters, destroy target nonland permanent an opponent controls.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 0,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/T4OZDvE.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "power": 3,
+    "toughness": 3,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   }
 ]
