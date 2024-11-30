@@ -745,9 +745,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false,
       "frame": "normal"
     }
@@ -1933,9 +1931,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "tutor"
-      ],
+      "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
@@ -2764,9 +2760,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -2974,9 +2968,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -3692,9 +3684,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -4563,9 +4553,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -5049,9 +5037,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "Removal"
-      ],
+      "function": ["Removal"],
       "reprint": false
     }
   },
@@ -5388,7 +5374,7 @@
     "name": "Feldon and Jaxis",
     "cost": "{1}{R}{R}",
     "type": "Legendary Creature - Human",
-    "text": "{r},{t}, Discard a card, Exile a creature card from your graveyard: Create a token that’s a copy of the exiled card, except it’s an artifact in addition to its other types. It gains haste and “When this creature dies, draw a card.” Sacrifice it at the beginning of the next end step. ",
+    "text": "{r},{t}, Discard a card, Exile a creature card from your graveyard: Create a token that's a copy of the exiled card, except it’s an artifact in addition to its other types. It gains haste and “When this creature dies, draw a card.” Sacrifice it at the beginning of the next end step. ",
     "flavor": "",
     "rarity": "R",
     "cn": 148,
@@ -5945,9 +5931,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "wheel"
-      ],
+      "function": ["wheel"],
       "reprint": false
     }
   },
@@ -6346,10 +6330,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal",
-        "discard-outlet"
-      ],
+      "function": ["removal", "discard-outlet"],
       "reprint": false
     }
   },
@@ -6385,9 +6366,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -6418,9 +6397,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -6565,9 +6542,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ]
+      "function": ["recursion"]
     }
   },
   {
@@ -6637,9 +6612,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -6728,9 +6701,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard-outlet"
-      ],
+      "function": ["discard-outlet"],
       "reprint": false
     }
   },
@@ -6756,9 +6727,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -6783,9 +6752,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -6926,12 +6893,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard",
-        "thoughtseize",
-        "discard-outlet",
-        "pact"
-      ],
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
       "reprint": false
     }
   },
@@ -7049,9 +7011,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7280,9 +7240,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -7841,9 +7799,7 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ]
+      "function": ["counterspell"]
     }
   },
   {
@@ -7926,9 +7882,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -7959,9 +7913,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": true
     }
   },
@@ -8122,9 +8074,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": false
     }
   },
@@ -8296,9 +8246,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -8390,9 +8338,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -8648,9 +8594,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": true
     }
   },
@@ -9002,9 +8946,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -9153,9 +9095,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -10391,9 +10331,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10475,9 +10413,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10503,9 +10439,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10562,9 +10496,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "ramp"
-      ],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -10656,11 +10588,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "repeatable-draw",
-        "card-advantage"
-      ],
+      "function": ["draw", "repeatable-draw", "card-advantage"],
       "reprint": true
     }
   },
@@ -10728,12 +10656,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "card-advantage",
-        "mill",
-        "mill-self"
-      ],
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
       "reprint": true
     }
   },
@@ -11015,7 +10938,7 @@
     "cost": "{7}",
     "type": "Artifact Creature — Golem",
     "text": "When ~ enters, destroy target nonland permanent an opponent controls.",
-    "flavor": "",
+    "flavor": "Born of fire, it seeks to return all to ashes.",
     "rarity": "U",
     "cn": 256,
     "set": "MTD",
@@ -11025,6 +10948,68 @@
     "has_bleed_edge": true,
     "power": 3,
     "toughness": 3,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Feldon's Cane",
+    "cost": "{1}",
+    "type": "Artifact",
+    "text": "{T}, Exile ~: Shuffle your graveyard into your library.",
+    "flavor": "Time is a funny thing; start messing with things you don’t understand, and you’ll see results—you just might not appreciate the consequences.",
+    "rarity": "U",
+    "cn": 252,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": ".png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art and flavor"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Chimil, the Inner Sun",
+    "cost": "{6}",
+    "type": "Legendary Artifact",
+    "text": "Spells you control can't be countered.{line}At the beginning of your end step, discover 5.",
+    "flavor": "",
+    "rarity": "M",
+    "cn": 0,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4u1qYnf.png",
+    "id": "C",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "29-11-2024",
