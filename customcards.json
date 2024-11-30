@@ -10836,5 +10836,39 @@
       "function": [],
       "reprint": true
     }
+  },
+  {
+    "name": "Saint Marcus XVII",
+    "cost": "{G}{W}{W}",
+    "type": "Legendary Creature - Human Priest",
+    "text": "Whenever a creature you control dies during combat, create an excuse token.{line}{T}, Sacrifice three Excuse tokens: Return target creature card from your graveyard to the battlefield. Activate only as a sorcery.",
+    "flavor": "",
+    "rarity": "M",
+    "cn": 0,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "art-remarks": "its the pope or like an archbishop of the city",
+    "img": "https://i.imgur.com/CUHS0Pg.png",
+    "id": "WG",
+    "has_bleed_edge": true,
+    "power": 0,
+    "toughness": 2,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Thys",
+        "notes": "Made it a 0/2 for GWW, made it Saint Marcus"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
