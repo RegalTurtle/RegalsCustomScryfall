@@ -85,5 +85,5 @@ export const sortMTD = () => {
   // setCnBetweenCns(266, 286, "MTD");
 };
 
-incAllCns("MTC", 4);
-// sortMTD();
+// incAllCns("MTC", 4);
+sortMTD();
