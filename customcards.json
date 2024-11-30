@@ -10774,5 +10774,67 @@
       "function": [],
       "reprint": true
     }
+  },
+  {
+    "name": "Glint-Blade Infiltrator",
+    "cost": "{2}{G}{W}",
+    "type": "Creature - Elf Assassin",
+    "text": "When ~ enters, you become the monarch.{line}~ has deathtouch and trample as long as defending player is the monarch.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 0,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "art-remarks": "elvish assasins sent to kill the king and take back the throne, espionage",
+    "img": "https://i.imgur.com/BxcDRRs.png",
+    "id": "WG",
+    "has_bleed_edge": true,
+    "power": 4,
+    "toughness": 3,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      },
+      {
+        "date": "29-11-2024",
+        "creator": "Sam",
+        "notes": "Made name and art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Elderwood Scion",
+    "cost": "{3}{G}{W}",
+    "type": "Creature - Elemental",
+    "text": "Trample, lifelink{line}Spells you cast that target ~ cost {2} less to cast.{line}Spells your opponents cast that target ~ cost {2} more to cast.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 0,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/H6qtxwC.png",
+    "id": "WG",
+    "has_bleed_edge": true,
+    "power": 4,
+    "toughness": 4,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   }
 ]
