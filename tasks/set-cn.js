@@ -40,10 +40,10 @@ export const setCnBetweenCns = (beginCn, endCn, set) => {
   );
 };
 
-export const incAllCns = (set) => {
+export const incAllCns = (set, startingCn) => {
   let filteredData = data.filter((card) => {
     if (card["set"] !== set) return false;
-    if (card["cn"] >= 266) return false;
+    if (card["cn"] < startingCn) return false;
     return true;
   });
 
@@ -53,7 +53,7 @@ export const incAllCns = (set) => {
 
   dataCopy = dataCopy.filter((card) => {
     if (card["set"] !== set) return true;
-    if (card["cn"] >= 266) return true;
+    if (card["cn"] < startingCn) return true;
     return false;
   });
 
@@ -76,14 +76,14 @@ export const sortMTD = () => {
   // Red
   // setCnBetweenCns(129, 170, "MTD");
   // Green
-  setCnBetweenCns(171, 212, "MTD");
+  // setCnBetweenCns(171, 212, "MTD");
   // Multicolor
   // setCnBetweenCns(213, 246, "MTD");
   // Artifact
-  //setCnBetweenCns(247, 265, "MTD");
+  // setCnBetweenCns(247, 265, "MTD");
   // Land
   // setCnBetweenCns(266, 286, "MTD");
 };
 
-// incAllCns("MTD");
-sortMTD();
+// incAllCns("MTC", 4);
+// sortMTD();
