@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb";
-import { mongoConfig } from "./settings.js";
 import dotenv from "dotenv"; // Import dotenv to load environment variables
 
 dotenv.config(); // Loads the variables from .env file

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/css/loginStyle.css" />
+
+    <title>Log In</title>
+  </head>
+  <body>
+    <main>
+      <div class="login-container">
+        <h1>Log In</h1>
+        <form action="/login" method="POST">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+            autocomplete="off"
+            value="<%= formData ? formData.username : '' %>"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            autocomplete="off"
+            value="<%= formData ? formData.password : '' %>"
+            required
+          />
+          <button type="submit">Log In</button>
+        </form>
+        <a href="/signup">Don't have an account? Sign up</a>
+      </div>
+    </main>
+  </body>
+</html>
