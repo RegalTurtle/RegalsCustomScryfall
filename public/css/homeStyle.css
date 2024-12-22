@@ -17,10 +17,10 @@ main {
 }
 
 body main h1 {
-  margin-bottom: 0px;
   font-size: 36pt;
   font-family: Verdana, sans-serif;
   color: #daddf5;
+  text-decoration: underline;
 }
 
 body main h3 {
@@ -42,24 +42,39 @@ header {
   text-align: center;
   border-bottom: solid;
   display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space out elements */
+  padding: 10px 20px;
 }
 
 header h1 {
-  margin: auto;
   font-weight: bold;
+  margin: 0; /* Remove default margin */
+  text-align: center;
+  flex: 1; /* Allow the h1 to take up available space */
+  position: absolute;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 0); /* Adjust for the element's size */
+  margin: 0; /* Remove default margin */
+  font-size: xxx-large;
+  color: white;
 }
 
-.customClass { grid-area: custom; }
-.decksClass { grid-area: decks; }
-.gamesClass { grid-area: games; }
-.loginClass { grid-area: login; }
+.customClass {
+  grid-area: custom;
+}
+.decksClass {
+  grid-area: decks;
+}
+.gamesClass {
+  grid-area: games;
+}
 
 .grid-container {
   display: grid;
-  grid-template-areas: 
-    'login login'
-    'custom custom'
-    'decks games';
+  grid-template-areas:
+    "custom custom"
+    "decks games";
   /* background-color: #2196F3; */
   padding: 10px;
   gap: 5dvh;
@@ -79,5 +94,15 @@ a {
   text-align: center;
   text-decoration: none;
   min-width: 15dvw;
+}
+
+main a {
   width: 100%;
+}
+
+.loginButton {
+  position: absolute;
+  right: 20px; /* Keep some spacing from the right edge */
+  padding: 12px 7px 12px 7px;
+  min-width: 5em;
 }

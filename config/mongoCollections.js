@@ -13,4 +13,5 @@ const getCollectionFn = (collection) => {
   };
 };
 
-export const cards = getCollectionFn("cards");
+export const users = getCollectionFn("users");
+export const cards = null;

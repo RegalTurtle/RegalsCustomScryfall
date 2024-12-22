@@ -91,7 +91,7 @@ router.route("/:set/:cn").get(async (req, res) => {
 
     if (!cardData) return res.status(404).json({ error: "Card not found" });
 
-    res.status(200).render(`pages/card`, { card: cardData });
+    res.status(200).render(`pages/custom/card`, { card: cardData });
   } catch (e) {
     return res.status(500).json({ error: e });
   }
