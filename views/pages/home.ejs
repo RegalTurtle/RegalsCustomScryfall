@@ -13,6 +13,8 @@
       <h1>Regal's Magic</h1>
       <% if( !user || !user.username ) { %>
       <a href="/login" class="loginButton">Log In</a>
+      <% } else { %>
+      <a href="/logout" class="loginButton">Log Out</a>
       <% } %>
     </header>
 

@@ -44,6 +44,23 @@ const constructorMethod = (app) => {
     signupRoutes
   );
 
+  // Logout route, when hit, logs user out and redirects to home
+  // If hit while not logged in, redirect to login
+  // This doesn't seem relevant enought to create a whole file for
+  app.use(
+    "/logout",
+    (req, res, next) => {
+      if (!req.session || !req.session.userInfo) {
+        return res.redirect("/login");
+      }
+      next();
+    },
+    async (req, res) => {
+      req.session.destroy();
+      return res.redirect("/");
+    }
+  );
+
   app.use("/cardjson", cardJsonRoutes);
 
   // Routes for the custom card searcher
