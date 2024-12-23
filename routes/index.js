@@ -2,6 +2,8 @@ import cardJsonRoutes from "./cards.js";
 import cardRoutes from "./card.js";
 import deckRoutes from "./decks/deckList.js";
 import loginRoutes from "./login.js";
+import signupRoutes from "./signup.js";
+import session from "express-session";
 
 import express from "express";
 import path from "path";
@@ -15,7 +17,7 @@ const __dirname = path
 
 const constructorMethod = (app) => {
   app.get("/", async (req, res) => {
-    res.render("pages/home", { user: undefined });
+    res.render("pages/home", { user: req.session.userInfo });
   });
 
   // Use login routes, but redirect any users that are already signed in to the profile page
@@ -28,6 +30,18 @@ const constructorMethod = (app) => {
       next();
     },
     loginRoutes
+  );
+
+  // Use signup routes, but redirect any users that are already signed in to the profile page
+  app.use(
+    "/signup",
+    (req, res, next) => {
+      if (req.session && req.session.userInfo) {
+        return res.redirect("/profile");
+      }
+      next();
+    },
+    signupRoutes
   );
 
   app.use("/cardjson", cardJsonRoutes);

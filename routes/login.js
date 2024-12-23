@@ -1,6 +1,7 @@
 import { Router } from "express";
 import xss from "xss";
 import validation from "../validation.js";
+import usersData from "../data/users.js";
 const router = Router();
 
 router
@@ -22,7 +23,7 @@ router
     try {
       username = validation.verifyUsername(username);
     } catch (e) {
-      return res.status(400).render("pages/signin", {
+      return res.status(400).render("pages/login", {
         errors: [
           "Username must be between 5 and 25 characters, without spaces",
         ],
@@ -33,12 +34,13 @@ router
       });
     }
     // Now we try the password, and report back to the user
+    let userInfo;
     try {
       password = validation.verifyPassword(password);
-      userInfo = await usersData.validateUserCredentials(username, password);
+      userInfo = await usersData.verifyUser(username, password);
     } catch (e) {
-      return res.status(400).render("pages/signin", {
-        errors: ["Username and password don't match"],
+      return res.status(400).render("pages/login", {
+        errors: [`Username and password don't match`],
         formData: {
           username,
           password,
@@ -48,7 +50,7 @@ router
 
     req.session.userInfo = userInfo;
 
-    return res.redirect("/profile");
+    return res.redirect("/");
   });
 
 export default router;

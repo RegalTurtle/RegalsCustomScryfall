@@ -2,55 +2,20 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  height: 100dvh; /* Full viewport height */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
   background: linear-gradient(to bottom, #2f9288, #135750);
 }
 
 main {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   align-items: center;
-}
-
-.login-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-container input {
-  justify-self: center; /* Center the button horizontally */
-
-  font-size: 16pt;
-  font-family: Verdana, sans-serif;
-  background-color: transparent;
-  padding: 12px 7px 12px 7px;
-  border: 2px solid #daddf5;
-  border-radius: 10px;
-  color: #333333;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  min-width: 15dvw;
-}
-
-.login-container input::placeholder {
-  color: #6c6c6c;
-}
-
-/* Chat starts here */
-
-body {
-  background-color: #f4f4f4;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .login-container {
@@ -58,9 +23,10 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 25dvw;
-  min-width: 10em;
+  width: 100%;
   text-align: center;
+  width: 80dvw;
+  min-width: 10em;
 }
 
 .login-container h1 {
@@ -68,21 +34,25 @@ body {
   color: #333;
 }
 
-.login-container form {
-  display: flex;
-  flex-direction: column;
+.login-container input {
+  padding: 15px;
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  border: 2px solid #daddf5;
+  border-radius: 10px;
+  color: #333333;
+  font-weight: bold;
+  text-align: center;
 }
 
-.login-container input {
-  margin-bottom: 20px;
-  padding: 15px;
-  font-size: 20px;
-  border: 4px solid #cccccc;
-  border-radius: 4px;
+.login-container input::placeholder {
+  color: #6c6c6c;
 }
 
 .login-container input:focus {
   outline: none;
+  border-color: #9b4dca;
 }
 
 .login-container button {
@@ -110,4 +80,24 @@ body {
 
 .login-container a:hover {
   text-decoration: underline;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-form div {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-form button {
+  grid-column: span 2;
+  margin-top: 20px;
+}
+
+.errorList {
+  grid-column: span 2;
 }

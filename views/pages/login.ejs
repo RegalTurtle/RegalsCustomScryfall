@@ -30,9 +30,19 @@
             value="<%= formData ? formData.password : '' %>"
             required
           />
+          <% if (errors && errors.length > 0) { %>
+          <ul class="errorList">
+            <% errors.forEach(e => { %>
+            <li><%= e %></li>
+            <% }); %>
+          </ul>
+          <% } %>
           <button type="submit">Log In</button>
         </form>
+        <% if (false) { %>
+        <!-- Change this to reintroduce signup -->
         <a href="/signup">Don't have an account? Sign up</a>
+        <% } %>
       </div>
     </main>
   </body>

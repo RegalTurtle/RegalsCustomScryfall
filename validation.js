@@ -31,7 +31,7 @@ const verifyUsername = (username) => {
 };
 
 /**
- * Verifies that a given username fits the username parameters
+ * Verifies that a given password fits the password parameters
  * @param {string} password - password to be checked
  * @returns {string} the given password, trimmed
  */
@@ -53,4 +53,46 @@ const verifyPassword = (password) => {
   return password;
 };
 
-export default { verifyStr, verifyUsername, verifyPassword };
+/**
+ * Verifies an email to be an actual email
+ * @param {string} email - email to be checked
+ * @returns {string} the given email, trimmed
+ */
+const verifyEmail = (email) => {
+  email = verifyStr(email, `email`);
+
+  // ^ - Start of string
+  // .+ - Some characters
+  // @
+  // .+ - Some characters
+  // \. - A period
+  // .+ - Some characters
+  // $ - End string
+  let emailRegex = /^.+@.+\..+$/;
+  if (!emailRegex.test(email))
+    throw new Error(`Email must be a string with an @ and a .`);
+
+  return email;
+};
+
+const verifyPermissionLevel = (permissionLevel) => {
+  const permissionLevels = ["owner", "user"];
+
+  permissionLevel = verifyStr(permissionLevel, `permissionLevel`);
+  // cast all permissionLevels to lowercase
+  permissionLevel = permissionLevel.toLowerCase();
+
+  if (!permissionLevels.includes(permissionLevel))
+    throw new Error(
+      `permissionLevel must be one of the defined permission levels`
+    );
+  return permissionLevel;
+};
+
+export default {
+  verifyStr,
+  verifyUsername,
+  verifyPassword,
+  verifyEmail,
+  verifyPermissionLevel,
+};
