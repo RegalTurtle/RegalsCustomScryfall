@@ -11070,7 +11070,7 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/cXY9Sp4.png",
     "id": "UB",
-    "has_bleed_edge": true,
+    "has_bleed_edge": false,
     "notes": [
       {
         "date": "02-12-2024",
