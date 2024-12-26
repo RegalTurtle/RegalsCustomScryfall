@@ -7909,6 +7909,16 @@
         "date": "16-1-2024",
         "creator": "Sam",
         "notes": "Updated card"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Thys",
+        "notes": "2nd ability needs to be reworded"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Thys",
+        "notes": "Change from \"Once per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.\" to \"{0}: Prevent the next shot you would take this turn. Activate only once each turn and only if you have 10 or less life.\""
       }
     ],
     "tags": {}
