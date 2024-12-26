@@ -678,7 +678,7 @@
     "id": "G",
     "cost": "{3}{G}",
     "type": "Enchantment",
-    "text": "Whenever you become the target of a spell or ability that would force you to take a shot, put a beer counter on ~.\nRemove two beer counters from ~: Prevent the next shot you would take.",
+    "text": "Whenever you become the target of a spell or ability that would force you to take a shot, put a beer counter on ~.\nRemove two beer counters from ~: Prevent the next shot you would take this turn.",
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/1YESVuv.png",
@@ -714,6 +714,11 @@
         "date": "14-07-2024",
         "creator": "Sam",
         "notes": "Changed art, added bleed edge"
+      },
+      {
+        "date": "25-11-2024",
+        "creator": "Thys",
+        "notes": "Added \"this turn\" to the second ability."
       }
     ],
     "tags": {}
@@ -1190,7 +1195,7 @@
     "name": "Lively Tavern",
     "cost": "{2}{G}{G}",
     "type": "Artifact",
-    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch.",
+    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch. Activate only as a sorcery.",
     "flavor": "Those who make us happy, often have our true loyalty.",
     "rarity": "U",
     "cn": 196,
@@ -1239,6 +1244,11 @@
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Shifted to green and updated to better fit the color"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Thys",
+        "notes": "Added \"only as a sorcery\" to the second ability"
       }
     ],
     "tags": {}
@@ -4702,7 +4712,7 @@
     "id": "RG",
     "cost": "{R}{G}",
     "type": "Legendary Creature - Elf Alcoholic",
-    "text": "Haste\nRemove a beer counter from ~: Add {R}{G}. Activate only if ~ has attacked this turn, and only once each turn.",
+    "text": "Haste{line}Whenever ~ attacks, put a beer counter on target permanent you control.{line}Remove a beer counter from ~: Add {R}{G}. Activate only once each turn.",
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/dsDG17l.png",
@@ -4720,6 +4730,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob, second cardname should probably just be first name"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Thys",
+        "notes": "Changed abilities from \"Remove a beer counter from ~: Add {R}{G}. Activate only if ~ has attacked this turn, and only once each turn.\" to \"Whenever ~ attacks, put a beer counter on target permanent you control.{line}Remove a beer counter from ~: Add {R}{G}. Activate only once each turn.\""
       }
     ],
     "tags": {}
