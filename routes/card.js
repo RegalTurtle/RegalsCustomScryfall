@@ -16,7 +16,7 @@ router.route("/:set/:cn").patch(async (req, res) => {
     return res.status(400).json({ error: e.message });
   }
   // if the user isn't one of the three of us, don't continue
-  if (!["Thys", "Sam", "Kenneth"].includes(userName)) {
+  if (!["Thys", "Sam", "Kenneth", "David"].includes(userName)) {
     return res.status(302).redirect(`/card/${req.params.set}/${req.params.cn}`);
   }
   // get the set code
