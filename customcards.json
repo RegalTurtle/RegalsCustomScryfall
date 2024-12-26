@@ -11088,5 +11088,36 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Artful Dodge",
+    "cost": "{U}",
+    "type": "Sorcery",
+    "text": "Target creature can't be blocked this turn.{line}Flashback {U}",
+    "flavor": "Ribbbbit",
+    "rarity": "U",
+    "cn": 48,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/nZv41bD.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "02-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
   }
 ]
