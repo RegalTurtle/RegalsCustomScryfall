@@ -11094,7 +11094,7 @@
     "cost": "{U}",
     "type": "Sorcery",
     "text": "Target creature can't be blocked this turn.{line}Flashback {U}",
-    "flavor": "Ribbbbit",
+    "flavor": "“Ribbbbit”",
     "rarity": "U",
     "cn": 48,
     "set": "MTD",
