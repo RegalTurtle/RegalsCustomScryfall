@@ -11313,5 +11313,31 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Brewery Bombing",
+    "cost": "{X}{R}{G}",
+    "type": "Sorcery",
+    "text": "Each creature you control gets +0/+1 until end of turn for each beer counter on it.{line}~ deals X damage to each creature.",
+    "flavor": "Kaboom",
+    "rarity": "U",
+    "cn": 226,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/TrlnIRB.png",
+    "id": "RG",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "26-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
