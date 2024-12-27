@@ -8755,6 +8755,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "Thys",
+        "notes": "David suggested moving mana cost from 2U -> 1U"
       }
     ],
     "tags": {
