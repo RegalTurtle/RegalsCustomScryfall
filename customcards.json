@@ -411,6 +411,11 @@
         "date": "30-11-2024",
         "creator": "Sam",
         "notes": "Added art and name"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Capitalize \"beasts\", and add \"creature tokens\"."
       }
     ],
     "tags": {
@@ -7369,6 +7374,11 @@
         "date": "05-08-2024",
         "creator": "Sam",
         "notes": "I'll put flavor text on it // But yeah ship it"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Change from \"from graveyards\" to \"From any graveyard\""
       }
     ],
     "tags": {
@@ -7496,6 +7506,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Common to Uncommon"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Madness needs reminder text"
       }
     ],
     "tags": {
@@ -7600,6 +7615,11 @@
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "add \"sacrifices a creature of their choice.\""
       }
     ],
     "tags": {
@@ -7684,6 +7704,16 @@
         "date": "15-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "Thys",
+        "notes": "Either change this from 2BB to 1BB or change from 3/4 to 4/4 orrrrrr BBB for a 4/4"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "Thys",
+        "notes": "Potentially change name from The False Prophet to False Prophet"
       }
     ],
     "tags": {}
@@ -8569,6 +8599,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Maybe change to \"For each opponent with an instant card in their graveyard, choose target nonland permanent. Return each card chosen this way to their owners hand."
       }
     ],
     "tags": {}
