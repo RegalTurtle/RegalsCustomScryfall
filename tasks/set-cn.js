@@ -78,7 +78,7 @@ export const sortMTD = () => {
   // Green
   // setCnBetweenCns(171, 212, "MTD");
   // Multicolor
-  // setCnBetweenCns(213, 246, "MTD");
+  setCnBetweenCns(213, 246, "MTD");
   // Artifact
   // setCnBetweenCns(247, 265, "MTD");
   // Land
@@ -86,4 +86,4 @@ export const sortMTD = () => {
 };
 
 // incAllCns("MTC", 4);
-// sortMTD();
+sortMTD();
