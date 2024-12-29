@@ -35,102 +35,98 @@ function parseCardList(input) {
 }
 
 // Example Input
-const input = `1 Ajani, the Greathearted (WAR) 184
-1 Ancient Brass Dragon (CLB) 111 *F* #Dragon
-1 Anguished Unmaking (SOI) 242 #Removal #!Removal
-1 Arcane Sanctum (MM3) 228 #!Land
-1 Atarka, World Render (FRF) 149 #Dragon
-1 Atsushi, the Blazing Sky (NEO) 134 #Dragon
-1 Backdraft Hellkite (C19) 23 #Dragon
-1 Beast Within (CLB) 820 #Removal #!Removal
-1 Blackblade Reforged (DOM) 211
-1 Bladewing the Risen (C17) 163 #Dragon #Recursion
-1 Bridgeworks Battle / Tanglespan Bridgeworks (MH3) 249 #Land #Removal
-1 Chromatic Lantern (RTR) 226 *F* #Ramp #!Ramp
-1 Command Tower (C18) 240 #!Land
-1 Counterspell (A25) 50 #Interaction #!Interaction
-1 Crucible of the Spirit Dragon (C17) 243 #!Land
-1 Crux of Fate (C17) 107 #Wrath
-1 Deathbringer Regent (NCC) 246 #Dragon #Wrath
-1 Descendants' Path (AVR) 173
-1 Despark (WAR) 190 #Removal #!Removal
-1 Draconic Lore (CLB) 64 #Draw
-1 Dragon Tempest (DTK) 136 #Removal
-1 Dragon's Hoard (M19) 232 #Draw #Ramp #!Ramp
-1 Dragonlord Ojutai (DTK) 219 #Dragon #Draw
-1 Dragonlord's Servant (PL24) 1 *F* #Ramp
-1 Dragonspeaker Shaman (DDG) 53 #Ramp
-1 Earthquake Dragon (CLB) 588 *F* #Dragon
-1 Elemental Bond (C19) 163 #Draw #!Draw
-1 Emergence Zone (WAR) 245 #!Land
-1 Evolving Wilds (AKH) 242 #!Land
-1 Forbidden Orchard (2X2) 323 #!Land
-2 Forest (3ED) 304 #!Land
-1 Frontier Bivouac (C16) 297 #!Land
-1 Ganax, Astral Hunter (CLB) 398 #Dragon
-1 Generous Gift (NEC) 84 #Removal #!Removal
-1 Haven of the Spirit Dragon (C17) 255 #!Land
-1 Intet, the Dreamer (CMD) 204 #Dragon
-1 Island (M20) 267 #!Land
-1 Island (3ED) 297 #!Land
-1 Jungle Shrine (C16) 304 #!Land
-1 Korlessa, Scale Singer (CLB) 280 #Dragon #Draw
-1 Lathliss, Dragon Queen (M19) 149 #Dragon
-1 Lightning Greaves (2XM) 267 #Protection #!Protection
-1 Lozhan, Dragons' Legacy (CLB) 281 *F* #Dragon #Removal
+const input = `1 Abandoned Sarcophagus (C20) 236 #Cycle Synergy #Recursion
+1 Akroma's Vengeance (C20) 74 #Cycling #!Wrath
+1 Alhammarret's Archive (ORI) 221 #Draw
+1 Arcane Signet (C20) 237 #Ramp #!Ramp
+1 Arid Mesa (MH2) 244 #!Land
+1 Ash Barrens (C20) 255 #Cycling #!Land
+1 Astral Drift (C20) 76 #Cycle Synergy #Cycling
+1 Azorius Signet (C20) 238 #Ramp #!Ramp
+1 Boon of the Wish-Giver (IKO) 43 #Cycling #Draw
+1 Boros Signet (C20) 239 #Ramp #!Ramp
+1 Brallin, Skyshark Rider (C20) 4 *F* #Discard Synergy
+1 Cast Out (C20) 79 #Cycling #!Removal {Artifact} #!Removal {Creature} #!Removal {Enchantment}
+1 Cathars' Crusade (AVR) 10 #Anthem #!Anthem
+1 Chandra, Flamecaller (C20) 145 #Draw #Wrath
+1 Chaos Warp (CLB) 785 #!Removal {Artifact} #!Removal {Creature} #!Removal {Enchantment} #!Removal {Land}
+1 Cloud of Faeries (DMR) 43 #Cycling
+1 Command Tower (C20) 264 #!Land
+1 Countervailing Winds (HOU) 32 #Cycling #Interaction
+1 Crystalline Resonance (C20) 31 #Cycle Synergy
+1 Curator of Mysteries (C20) 109 #Cycle Synergy #Cycling #Discard Synergy
+1 Decree of Justice (C20) 85 #Cycling #Token Producer
+1 Desert of the Fervent (C20) 266 #Cycling #!Land
+1 Desert of the Mindful (C20) 267 #Cycling #!Land
+1 Desert of the True (C20) 268 #Cycling #!Land
+1 Dismantling Wave (C20) 25 #Cycling #!Removal {Artifact} #!Removal {Enchantment}
+1 Dollmaker's Shop / Porcelain Gallery (DSK) 4 #Anthem #Token Producer
+1 Drake Haven (C20) 110 #Cycle Synergy #Discard Synergy #Token Producer
+1 Drifting Meadow (C20) 271 #Cycling #!Land
+1 Eldrazi Monument (SLD) 603 *F* #Anthem
+1 Ephara, God of the Polis (BNG) 145 #Draw
+1 Esper Sentinel (MH2) 12 #Draw #!Draw
+1 Exotic Orchard (C20) 273 #!Land
+1 Felidar Retreat (ONC) 66 #Anthem
+1 Fellwar Stone (NCC) 367 #Ramp #!Ramp
+1 Fierce Guardianship (C20) 35 #!Interaction
+1 Flooded Strand (MH3) 220 #!Land
+1 Fluctuator (C20) 241 #Cycle Synergy
+1 Forgotten Cave (C20) 274 #Cycling #!Land
+1 Forsake the Worldly (AKH) 13 #Cycling #!Removal {Artifact} #!Removal {Enchantment}
+1 Glacial Fortress (M12) 227 #!Land
+1 Herald of the Forgotten (C20) 27 #Cycle Synergy #Recursion
+1 Hieroglyphic Illumination (C20) 112 #Cycling #Draw
+1 Hollow One (HOU) 163 #Cycling
+1 Idyllic Tutor (THB) 24 #!Tutor
+1 Irrigated Farmland (C20) 282 #Cycling #!Land
+4 Island (IKO) 264 #!Land
+1 Izzet Signet (C20) 243 #Ramp #!Ramp
+1 Lonely Sandbar (C20) 287 #Cycling #!Land
 1 Mana Confluence (JOU) 163 #!Land
-1 Miirym, Sentinel Wyrm (CLB) 284 #Dragon
-2 Mountain (XLN) 275 #!Land
-1 Mystic Monastery (C19) 262 #!Land
-1 Nimbleclaw Adept (CLB) 86 #Dragon #Ramp
-1 Nomad Outpost (DDN) 34 #!Land
-1 Ojutai, Soul of Winter (C17) 187 #Dragon #Removal
-1 Old Gnawbone (AFR) 296 *F* #Dragon #Ramp
-1 Ondu Inversion / Ondu Skyruins (ZNR) 30 *F* #!Land #!Wrath
-1 Opulent Palace (C16) 313 #!Land
-1 Orb of Dragonkind (PAFR) 157a *F* #Ramp
-1 Path of Ancestry (C17) 56 #!Land
-1 Path to Exile (MM3) 17 #Removal #!Removal
-1 Pillar of Origins (XLN) 241 #Ramp
-1 Plains (WAR) 250 #!Land
-1 Plains (ELD) 251 #!Land
-1 Pull from Tomorrow (AKH) 65 #Draw #!Draw
-1 Renari, Merchant of Marvels (CLB) 386 *F* #Dragon
-1 Resculpt (STX) 51 #Removal #!Removal
-1 Return of the Wildspeaker (ELD) 172 #Draw #!Draw
-1 Rivaz of the Claw (DMU) 215 #Ramp #Recursion
-1 Rush of Knowledge (C14) 123 #Draw
-1 Sandsteppe Citadel (KTK) 241 #!Land
-1 Sarkhan's Triumph (DTK) 154 #Tutor
-1 Savage Lands (ALA) 228 #!Land
-1 Scaled Nurturer (CLB) 252 #Dragon #Ramp
-1 Scalelord Reckoner (C17) 6 #Dragon #Removal
-1 Scourge of Valkas (IMA) 145 #Dragon #Removal
-1 Seaside Citadel (C16) 322 #!Land
-1 Shadrix Silverquill (STX) 230 #Dragon #Draw
-1 Smothering Tithe (RNA) 22 #Ramp
-1 Sol Ring (C18) 222 #Ramp #!Ramp
-1 Soul-Guide Lantern (BRR) 54 #!Graveyard Hate
-1 Sunscorch Regent (C17) 74 #Dragon
-2 Swamp (M19) 270 #!Land
-1 Swiftfoot Boots (PW22) 4 *F* #Protection #!Protection
-1 Swords to Plowshares (C16) 78 #Removal #!Removal
-1 Sylvia Brightspear (BBD) 10
-1 Taiga (3ED) 287 #!Land
-1 Temple of the Dragon Queen (AFR) 357 #!Land
-1 Temur Ascendancy (KTK) 207 #Draw
-1 Terramorphic Expanse (C18) 286 #!Land
-1 Terror of the Peaks (OTJ) 149 #Dragon #Removal
-1 Tiamat (AFR) 235 #Dragon #Tutor
-1 Twinflame Tyrant (FDN) 97 #Dragon
-1 Unclaimed Territory (XLN) 258 #!Land
-1 Unwind (DOM) 72 #Interaction #!Interaction
-1 Vivid Grove (C15) 318 #!Land
-1 Vivid Marsh (MMA) 228 #!Land
-1 Vivid Meadow (MMA) 229 #!Land
-1 Volcanic Island (3ED) 291 #!Land
-1 Xander's Lounge (SNC) 260 #!Land
-1 Zendikar Resurgent (POGW) 147p #!Draw #Ramp`;
+1 Mana Drain (OTP) 11 #!Interaction
+1 Mind Stone (CLB) 325 #Ramp #!Ramp
+1 Mind's Eye (BRR) 96 #Draw
+3 Mountain (IKO) 269 #!Land
+1 Mystic Monastery (C20) 293 #!Land
+1 Neutralize (IKO) 59 #Cycling #!Interaction
+1 New Perspectives (C20) 119 #Cycle Synergy #Draw
+1 Nimble Obstructionist (C20) 121 #Cycling #Interaction
+1 Niv-Mizzet, the Firemind (C20) 225 #Draw #Draw Synergy
+1 Ominous Seas (IKO) 61 #Cycling #Draw Synergy
+1 Ondu Inversion / Ondu Skyruins (ZNR) 30 #!Land #!Wrath
+1 Path to Exile (MD1) 3 #!Removal {Creature}
+3 Plains (IKO) 262 #!Land
+1 Prairie Stream (C20) 299 #!Land
+1 Psychosis Crawler (C20) 248 #Draw Synergy
+1 Quakefoot Cyclops (PLST) MH1-142 #Cycling
+1 Raugrin Crystal (IKO) 238 #Cycling #!Ramp
+1 Reconnaissance Mission (IKO) 65 #Cycling #Draw #!Draw
+1 Reliquary Tower (C20) 301 #!Land
+1 Remote Isle (C20) 302 #Cycling #!Land
+1 Resculpt (STX) 51 #!Removal {Artifact} #!Removal {Creature}
+1 Rhystic Study (PCY) 45 #Draw #!Draw
+1 Rooting Moloch (IKO) 133 #Cycle Synergy #Cycling
+1 Scalding Tarn (MH2) 254 #!Land
+1 Sea of Clouds (CLB) 360 #!Land
+1 Secluded Steppe (C20) 307 #Cycling #!Land
+1 Shabraz, the Skyshark (C20) 14 *F* #Draw Synergy
+1 Shivan Reef (C20) 310 #!Land
+1 Smoldering Crater (C20) 313 #Cycling #!Land
+1 Smothering Tithe (CMM) 57 #Ramp
+1 Sol Ring (C20) 252 #Ramp #!Ramp
+1 Stroke of Midnight (WOE) 33 *F* #!Removal {Artifact} #!Removal {Creature} #!Removal {Enchantment}
+1 Sun Titan (C20) 101 #!Recursion
+1 Sundown Pass (VOW) 285 #!Land
+1 Surly Badgersaur (C20) 57 #Discard Synergy
+1 Swiftfoot Boots (CLB) 339 #!Protection
+1 Tectonic Reformation (C20) 162 #Cycling
+1 The Locust God (C20) 219 #Draw Synergy #Token Producer
+1 Thought Vessel (PLST) C15-55 #Ramp #!Ramp
+1 Valiant Rescuer (IKO) 36 #Cycle Synergy #Cycling #Token Producer
+1 Vanquish the Horde (PMID) 41p #!Wrath
+1 Vizier of Tumbling Sands (C20) 126 #Cycling #Ramp #!Ramp
+1 Volcanic Island (3ED) 291 #!Land`;
 
 // Parse the input and print the output
 const parsedOutput = parseCardList(input);
