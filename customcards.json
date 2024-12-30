@@ -3745,7 +3745,7 @@
     "text": "Destroy target tapped creature. You gain 1 life for each creature you control with flying.",
     "flavor": "“Dark times require even the most solitary hunters to work together”{lns}{-}Bunder Diedreck, ex-ornithologist",
     "rarity": "C",
-    "img": "https://i.imgur.com/j5XVVBE.png",
+    "img": "https://i.imgur.com/zviBrJF.png",
     "has_bleed_edge": true,
     "artist": "Copilot Designer",
     "notes": [
@@ -3786,7 +3786,7 @@
     "cn": 4,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Efygf0W.png",
+    "img": "https://i.imgur.com/5SRgxDx.png",
     "id": "W",
     "has_bleed_edge": true,
     "notes": [
@@ -3827,8 +3827,8 @@
     "cn": 5,
     "id": "W",
     "rarity": "U",
-    "img": "https://i.imgur.com/wEPONei.png",
-    "artist": "Microsoft Copilot",
+    "img": "https://i.imgur.com/h1zSFVf.png",
+    "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
@@ -3949,11 +3949,11 @@
     "id": "W",
     "cost": "{4}{W}{W}",
     "type": "Creature - Archon",
-    "text": "Flying\nWhen ~ enters, you become the monarch.\nAs long as you're the monarch, damage doesn't cause you to lose life.",
+    "text": "Flying{line}When ~ enters, you become the monarch.{line}As long as you're the monarch, damage doesn't cause you to lose life.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/NIYXt1w.png",
-    "artist": "Microsoft Copilot",
+    "img": "https://i.imgur.com/BHhLbsf.png",
+    "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "power": 5,
     "toughness": 5,
@@ -3987,15 +3987,15 @@
     "name": "Arrest",
     "cost": "{2}{W}",
     "type": "Enchantment - Aura",
-    "text": "Enchant creature\nEnchanted creature can't attack or block, and its activated abilities can't be activated.",
+    "text": "Enchant creature{line}Enchanted creature can't attack or block, and its activated abilities can't be activated.",
     "flavor": "Lay still in the name of the Holy Order.",
     "rarity": "C",
     "cn": 9,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/K5d9KcJ.png",
+    "img": "https://i.imgur.com/ivW3kbN.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "27-07-2024",
@@ -4006,6 +4006,11 @@
         "date": "18-08-2024",
         "creator": "Thys",
         "notes": "New render with Nyx border"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -4018,15 +4023,15 @@
     "name": "Astral Confrontation",
     "cost": "{4}{W}",
     "type": "Instant",
-    "text": "This spell costs {1} less to cast for each opponent you're attacking.\nExile target creature.",
+    "text": "This spell costs {1} less to cast for each opponent you're attacking.{line}Exile target creature.",
     "flavor": "“You are not made in God's image.”",
     "rarity": "U",
     "cn": 10,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/fgTIIPQ.png",
+    "img": "https://i.imgur.com/73r30P8.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -4047,15 +4052,24 @@
         "date": "13-08-2024",
         "creator": "Thys",
         "notes": "Added artist credit"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": ["removal"],
+      "reprint": true
+    }
   },
   {
     "name": "Brotherhood's Call",
     "cost": "{2}{W}",
     "type": "Instant",
-    "text": "Choose one -\n• {indent}Create two 1/1 white Cleric creature tokens.\n• {indent}Destroy target artifact or enchantment.",
+    "text": "Choose one -{line}• {indent}Create two 1/1 white Cleric creature tokens.{line}• {indent}Destroy target artifact or enchantment.",
     "flavor": "Begotten, not made, consubstantial with the Father.",
     "rarity": "C",
     "cn": 11,
@@ -6448,7 +6462,7 @@
     "type": "Creature - Human Rogue",
     "text": "Whenever ~ attacks, you draw a card and you lose 1 life.",
     "flavor": "“Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.”",
-    "artist": "Microsoft Copilot",
+    "artist": "Copilot Designer",
     "rarity": "C",
     "img": "https://i.imgur.com/idxnbj0.png",
     "has_bleed_edge": false,
@@ -6864,7 +6878,7 @@
     "type": "Legendary Creature - Vampire Ally",
     "text": "Flying, first strike\nWhenever ~ deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
     "flavor": "“I will be chained to the shadows no longer.”",
-    "artist": "Microsoft Copilot",
+    "artist": "Copilot Designer",
     "rarity": "M",
     "img": "https://i.imgur.com/e0SXexL.png",
     "has_bleed_edge": false,
@@ -7318,7 +7332,7 @@
     "type": "Enchantment",
     "text": "Whenever a creature you control deals combat damage to a player, that player discards a card.",
     "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
-    "artist": "Microsoft Copilot",
+    "artist": "Copilot Designer",
     "rarity": "R",
     "img": "https://i.imgur.com/LkeQoQo.png",
     "has_bleed_edge": false,
@@ -7394,7 +7408,7 @@
     "type": "Enchantment",
     "text": "If you would take a shot, you may discard a card instead.",
     "flavor": "Once the burial place of all the great kings, after the lengthening of shadows, it was no longer safe to return to those ancient of places.",
-    "artist": "Microsoft Copilot",
+    "artist": "Copilot Designer",
     "rarity": "U",
     "img": "https://i.imgur.com/bjcgFpR.png",
     "has_bleed_edge": false,
@@ -7803,7 +7817,7 @@
     "rarity": "U",
     "cn": 127,
     "set": "MTD",
-    "artist": "Microsoft Copilot",
+    "artist": "Copilot Designer",
     "id": "B",
     "img": "https://i.imgur.com/6mAOODh.png",
     "has_bleed_edge": false,
