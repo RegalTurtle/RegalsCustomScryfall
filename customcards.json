@@ -500,9 +500,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -2046,9 +2044,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false,
       "frame": "normal"
     }
@@ -3249,9 +3245,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "tutor"
-      ],
+      "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
@@ -3749,9 +3743,9 @@
     "id": "W",
     "type": "Sorcery",
     "text": "Destroy target tapped creature. You gain 1 life for each creature you control with flying.",
-    "flavor": "“Dark times require even the most solitary hunters to work together”\n-Bunder Diedreck, ex-ornithologist",
+    "flavor": "“Dark times require even the most solitary hunters to work together”{lns}{-}Bunder Diedreck, ex-ornithologist",
     "rarity": "C",
-    "img": "https://i.imgur.com/aYJKQg8.png",
+    "img": "https://i.imgur.com/j5XVVBE.png",
     "has_bleed_edge": true,
     "artist": "Copilot Designer",
     "notes": [
@@ -3769,28 +3763,32 @@
         "date": "4-11-2024",
         "creator": "Thys",
         "notes": "New render with correct proportions"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
-      "reprint": true
+      "function": ["removal"],
+      "reprint": true,
+      "frame": "normal"
     }
   },
   {
     "name": "Ancestral Thurbile",
     "cost": "{2}{W}{W}",
     "type": "Artifact - Equipment",
-    "text": "When ~ enters, create a 1/1 white Cleric creature token with vigilance, then attach ~ to it.\nEquipped creature gets +1/+1 and lifelink.\nEquip {2}",
+    "text": "When ~ enters, create a 1/1 white Cleric creature token with vigilance, then attach ~ to it.{line}Equipped creature gets +1/+1 and lifelink.{line}Equip {2}",
     "flavor": "",
     "rarity": "C",
     "cn": 4,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/AEuxeid.png",
+    "img": "https://i.imgur.com/Efygf0W.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-07-2024",
@@ -3806,24 +3804,32 @@
         "date": "13-08-2024",
         "creator": "Thys",
         "notes": "Added artist credit"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "reprint": false
+      "reprint": false,
+      "frame": "normal",
+      "function": []
     }
   },
   {
     "name": "Anointed Captain",
     "cost": "{2}{W}",
     "type": "Creature - Human Soldier",
-    "text": "Vigilance\nWhenever one or more other creatures enter the battlefield under your control, create a 1/1 white Human Soldier creature token. This ability triggers only once each turn.",
+    "text": "Vigilance{line}Whenever one or more other creatures enter the battlefield under your control, create a 1/1 white Human Soldier creature token. This ability triggers only once each turn.",
     "flavor": "",
     "set": "MTD",
     "cn": 5,
     "id": "W",
     "rarity": "U",
-    "img": "https://i.imgur.com/9LW33FX.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/wEPONei.png",
+    "artist": "Microsoft Copilot",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
     "notes": [
@@ -3836,6 +3842,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "New render with corrected token"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -3846,17 +3857,17 @@
     "name": "Anointed Chorister",
     "cost": "{W}",
     "type": "Creature - Human Cleric",
-    "text": "Lifelink\n{4}{W}: ~ gets +3/+3 until end of turn.",
-    "flavor": "Dies irae, dies illa\nSolvet sæclum in favilla,\nTeste David cum Sibylla.",
+    "text": "Lifelink{line}{4}{W}: ~ gets +3/+3 until end of turn.",
+    "flavor": "Dies irae, dies illa{lns}Solvet sæclum in favilla,{lns}Teste David cum Sibylla.",
     "power": 1,
     "toughness": 1,
     "rarity": "C",
     "cn": 6,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/OFShq0W.png",
+    "img": "https://i.imgur.com/XS3Qo2B.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "11-07-2024",
@@ -3887,6 +3898,11 @@
         "date": "19-08-2024",
         "creator": "Thys",
         "notes": "Fixed art framing"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -3903,10 +3919,11 @@
     "cost": "{1}{W}",
     "type": "Creature - Human Cleric",
     "text": "Protection from black\n{2}: Exile target card from a graveyard.",
-    "flavor": "\"Exorcizamus te, omnis immundus spoiritus, omnis satanica potestas, omnis incursio infernalis adversarii...\"",
+    "flavor": "“Exorcizamus te, omnis immundus spoiritus, omnis satanica potestas, omnis incursio infernalis adversarii...”",
     "rarity": "U",
-    "img": "https://i.imgur.com/EPKLa1r.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/MZvW4BI.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 1,
     "notes": [
@@ -3914,6 +3931,11 @@
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Needs artist notes and bleed edge and CN // Added bleed and CN"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -3930,8 +3952,9 @@
     "text": "Flying\nWhen ~ enters, you become the monarch.\nAs long as you're the monarch, damage doesn't cause you to lose life.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/5KX1eHH.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/NIYXt1w.png",
+    "artist": "Microsoft Copilot",
+    "has_bleed_edge": true,
     "power": 5,
     "toughness": 5,
     "notes": [
@@ -3949,6 +3972,11 @@
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Copilot Designer, not Illustrator, needs to be changed // Updated artist credit"
+      },
+      {
+        "date": "29-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -3982,9 +4010,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -4700,9 +4726,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -5378,9 +5402,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "Removal"
-      ],
+      "function": ["Removal"],
       "reprint": false
     }
   },
@@ -6274,9 +6296,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "wheel"
-      ],
+      "function": ["wheel"],
       "reprint": false
     }
   },
@@ -6675,10 +6695,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal",
-        "discard-outlet"
-      ],
+      "function": ["removal", "discard-outlet"],
       "reprint": false
     }
   },
@@ -6714,9 +6731,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -6747,9 +6762,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -6894,9 +6907,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ]
+      "function": ["recursion"]
     }
   },
   {
@@ -6966,9 +6977,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7057,9 +7066,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard-outlet"
-      ],
+      "function": ["discard-outlet"],
       "reprint": false
     }
   },
@@ -7085,9 +7092,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7112,9 +7117,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -7255,12 +7258,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard",
-        "thoughtseize",
-        "discard-outlet",
-        "pact"
-      ],
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
       "reprint": false
     }
   },
@@ -7383,9 +7381,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7624,9 +7620,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -8205,9 +8199,7 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ]
+      "function": ["counterspell"]
     }
   },
   {
@@ -8290,9 +8282,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -8323,9 +8313,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": true
     }
   },
@@ -8486,9 +8474,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": false
     }
   },
@@ -8665,9 +8651,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -8764,9 +8748,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -9022,9 +9004,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": true
     }
   },
@@ -9381,9 +9361,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -9532,9 +9510,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -10770,9 +10746,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10854,9 +10828,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10882,9 +10854,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -10941,9 +10911,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "ramp"
-      ],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -11035,11 +11003,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "repeatable-draw",
-        "card-advantage"
-      ],
+      "function": ["draw", "repeatable-draw", "card-advantage"],
       "reprint": true
     }
   },
@@ -11107,12 +11071,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "card-advantage",
-        "mill",
-        "mill-self"
-      ],
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
       "reprint": true
     }
   },
