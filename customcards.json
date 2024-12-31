@@ -76,9 +76,35 @@
     "tags": {}
   },
   {
+    "name": "At All Costs",
+    "cost": "{X}{B}{B}{R}",
+    "type": "Sorcery",
+    "text": "Pact{line}Each player discards X cards at random.{line}If you accepted ~'s pact, draw half X cards, rounded down.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 215,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/iOUFykr.png",
+    "id": "BR",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
     "name": "Battle Preparations",
     "set": "MTD",
-    "cn": 215,
+    "cn": 216,
     "id": "WG",
     "cost": "{2}{G}{W}",
     "type": "Instant",
@@ -109,7 +135,7 @@
     "text": "Each creature you control gets +0/+1 until end of turn for each beer counter on it.{line}~ deals X damage to each creature.",
     "flavor": "Kaboom",
     "rarity": "U",
-    "cn": 216,
+    "cn": 217,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/TrlnIRB.png",
@@ -131,7 +157,7 @@
   {
     "name": "Consult the Necrosages",
     "set": "MTD",
-    "cn": 217,
+    "cn": 218,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Sorcery",
@@ -153,7 +179,7 @@
   {
     "name": "Coy Reversal",
     "set": "MTD",
-    "cn": 218,
+    "cn": 219,
     "id": "UB",
     "cost": "{2}{U}{B}",
     "type": "Instant",
@@ -180,7 +206,7 @@
   {
     "name": "Daughter of Moonshine",
     "set": "MTD",
-    "cn": 219,
+    "cn": 220,
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Creature — Vampire Devil",
@@ -221,7 +247,7 @@
     "power": 4,
     "toughness": 3,
     "rarity": "R",
-    "cn": 220,
+    "cn": 221,
     "set": "MTD",
     "artist": "Midjourney // Midjourney",
     "img": "https://i.imgur.com/8zaL9kf.png",
@@ -244,7 +270,7 @@
   {
     "name": "Demonic Party",
     "set": "MTD",
-    "cn": 221,
+    "cn": 222,
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Legendary Artifact",
@@ -275,7 +301,7 @@
     "text": "Trample, lifelink{line}Spells you cast that target ~ cost {2} less to cast.{line}Spells your opponents cast that target ~ cost {2} more to cast.",
     "flavor": "",
     "rarity": "R",
-    "cn": 222,
+    "cn": 223,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/H6qtxwC.png",
@@ -303,7 +329,7 @@
     "text": "Surveil 3, then draw three cards.\nExile any number of target cards from your graveyard. Until end of turn, you may play those cards.\nEach opponent may discard a card or sacrifice a nonland permanent. If they don't, they lose 3 life. Repeat this process five more times.\nYou get an emblem with “Whenever you draw a card, you take a shot.”",
     "flavor": "",
     "rarity": "R",
-    "cn": 223,
+    "cn": 224,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/H0dV8FR.png",
@@ -346,7 +372,7 @@
     "text": "Exile target nonland permanent. Each player other than its controller creates a token that's a copy of it.",
     "flavor": "“Greater men than you have lost themselves in that mirror”{lns}{-}Father Time",
     "rarity": "M",
-    "cn": 224,
+    "cn": 225,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/0g2zmBj.png",
@@ -368,7 +394,7 @@
   {
     "name": "Freyan the Crazed Lord",
     "set": "MTD",
-    "cn": 225,
+    "cn": 226,
     "id": "RG",
     "cost": "{2}{R}{G}",
     "type": "Legendary Creature - Elf Alcoholic",
@@ -397,7 +423,7 @@
   {
     "name": "Freyan's Warpath",
     "set": "MTD",
-    "cn": 226,
+    "cn": 227,
     "id": "RG",
     "cost": "{4}{R}{G}",
     "type": "Sorcery",
@@ -443,7 +469,7 @@
     "text": "When ~ enters, you become the monarch.{line}~ has deathtouch and trample as long as defending player is the monarch.",
     "flavor": "",
     "rarity": "U",
-    "cn": 227,
+    "cn": 228,
     "set": "MTD",
     "artist": "Midjourney",
     "art-remarks": "elvish assasins sent to kill the king and take back the throne, espionage",
@@ -471,38 +497,25 @@
     }
   },
   {
-    "name": "The Sixth Day",
-    "cost": "{1}{G}{W}",
-    "type": "Sorcery",
-    "text": "Spree{line}+ {4}{W} {-} Return each creature card from your graveyard to the battlefield.{line}+ {X}{G} {-} Create X 4/4 green beasts.{line}+ {W} {-} Put a flying counter on each creature you control.",
+    "name": "Katral, Architect of Storms",
+    "cost": "{3}{W}{U}",
+    "type": "Legendary Creature - Bird Wizard",
+    "text": "Flying{line}Whenever one or more creatures with flying you control deal combat damage to a player, choose one —{line}• {indent}Create a 2/2 blue Bird creature token with flying.{line}• {indent}Put a +1/+1 counter on up to two target creatures you control with flying.{line}• {indent}Draw a card.",
     "flavor": "",
+    "power": 4,
+    "toughness": 5,
     "rarity": "M",
-    "cn": 228,
+    "cn": 229,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/lod8bom.png",
-    "id": "WG",
+    "img": "https://i.imgur.com/fAISDlJ.png",
+    "id": "WU",
     "has_bleed_edge": true,
     "notes": [
       {
-        "date": "29-11-2024",
-        "creator": "Thys",
-        "notes": "Created card"
-      },
-      {
-        "date": "30-11-2024",
-        "creator": "Sam",
-        "notes": "Added art and name"
-      },
-      {
-        "date": "27-12-2024",
-        "creator": "David",
-        "notes": "Capitalize \"beasts\", and add \"creature tokens\"."
-      },
-      {
         "date": "31-12-2024",
         "creator": "Thys",
-        "notes": "Change name from Light of God to The Sixth Day"
+        "notes": "Added card"
       }
     ],
     "tags": {
@@ -514,7 +527,7 @@
   {
     "name": "Mnemonic Betrayal",
     "set": "MTD",
-    "cn": 229,
+    "cn": 230,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Sorcery",
@@ -541,7 +554,7 @@
   {
     "name": "Nepenthe, Titan of Mind's Deisre",
     "set": "MTD",
-    "cn": 230,
+    "cn": 231,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Legendary Creature - Elder Giant",
@@ -587,14 +600,16 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
   {
     "name": "Radha, Victorious Queen",
     "set": "MTD",
-    "cn": 231,
+    "cn": 232,
     "id": "RG",
     "cost": "{R}{G}",
     "type": "Legendary Creature - Elf Alcoholic",
@@ -628,7 +643,7 @@
   {
     "name": "Reach into Hell",
     "set": "MTD",
-    "cn": 232,
+    "cn": 233,
     "id": "BR",
     "cost": "{B}{R}",
     "type": "Sorcery",
@@ -655,7 +670,7 @@
   {
     "name": "Rest Well Deserved",
     "set": "MTD",
-    "cn": 233,
+    "cn": 234,
     "id": "WG",
     "cost": "{G}{W}",
     "type": "Instant",
@@ -686,7 +701,7 @@
     "text": "Whenever a creature you control dies during combat, create an excuse token.{line}{T}, Sacrifice three Excuse tokens: Return target creature card from your graveyard to the battlefield. Activate only as a sorcery.",
     "flavor": "",
     "rarity": "M",
-    "cn": 234,
+    "cn": 235,
     "set": "MTD",
     "artist": "Midjourney",
     "art-remarks": "its the pope or like an archbishop of the city",
@@ -714,9 +729,37 @@
     }
   },
   {
+    "name": "Seasoned Embermage",
+    "cost": "{2}{B}{R}",
+    "type": "Creature - Human Warlock",
+    "text": "Whenever you cast a spell from anywhere other than your hand, create a 3/1 red Elemental creature token with haste. Exile it at the beginning of the next end step.",
+    "flavor": "",
+    "power": 1,
+    "toughness": 4,
+    "rarity": "R",
+    "cn": 236,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/2YKmrBw.png",
+    "id": "BR",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
     "name": "Shot of Wisdom",
     "set": "MTD",
-    "cn": 235,
+    "cn": 237,
     "id": "UR",
     "cost": "{1}{U}{R}",
     "type": "Legendary Enchantment Artifact",
@@ -753,7 +796,7 @@
   {
     "name": "Strefan, Wrathful Reagent",
     "set": "MTD",
-    "cn": 236,
+    "cn": 238,
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Legendary Creature — Vampire Noble",
@@ -780,9 +823,76 @@
     "tags": {}
   },
   {
+    "name": "The Foundry",
+    "cost": "{2}{R}{G}",
+    "type": "Legendary Artifact",
+    "text": "{2}: Move a beer counter from target permanent you control onto another target permanent you control.{line}If you were to put a beer counter on a permanent you control, put that many beer counters plus one beer counters on that permanent instead.{line}Creatures you control have: “Remove a beer counter from this creature: This creature gets +1/+1 until end of turn.”",
+    "flavor": "",
+    "rarity": "M",
+    "cn": 239,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/mVrAC3W.png",
+    "id": "RG",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "The Sixth Day",
+    "cost": "{1}{G}{W}",
+    "type": "Sorcery",
+    "text": "Spree{line}+ {4}{W} {-} Return each creature card from your graveyard to the battlefield.{line}+ {X}{G} {-} Create X 4/4 green beasts.{line}+ {W} {-} Put a flying counter on each creature you control.",
+    "flavor": "",
+    "rarity": "M",
+    "cn": 240,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/lod8bom.png",
+    "id": "WG",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "29-11-2024",
+        "creator": "Thys",
+        "notes": "Created card"
+      },
+      {
+        "date": "30-11-2024",
+        "creator": "Sam",
+        "notes": "Added art and name"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Capitalize \"beasts\", and add \"creature tokens\"."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Change name from Light of God to The Sixth Day"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
     "name": "The Watcher",
     "set": "MTD",
-    "cn": 237,
+    "cn": 241,
     "id": "WR",
     "cost": "{3}{R}{W}",
     "type": "Legendary Creature - God",
@@ -811,7 +921,7 @@
   {
     "name": "Thunderclap Wyvern",
     "set": "MTD",
-    "cn": 238,
+    "cn": 242,
     "id": "WU",
     "cost": "{2}{W}{U}",
     "type": "Creature - Drake",
@@ -850,7 +960,7 @@
   {
     "name": "Twilight Harbinger",
     "set": "MTD",
-    "cn": 239,
+    "cn": 243,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Creature - Nightmare",
@@ -883,7 +993,7 @@
     "text": "{1}{u/b}: Umbris gains deathtouch until end of turn. Activate only as a sorcery.{line}Whenever Umbris deals combat damage to a player, as you cast spells from your hand this turn, they gain cipher.",
     "flavor": "",
     "rarity": "R",
-    "cn": 240,
+    "cn": 244,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/cXY9Sp4.png",
@@ -914,7 +1024,7 @@
     "text": "Tap all creatures your opponents control, then put a stun counter on each of those creatures.",
     "flavor": "“Red sky at night, sailors delight. Red sky in the morning, sailors take warning”{lns}{-}Captain Pierce",
     "rarity": "U",
-    "cn": 241,
+    "cn": 245,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/F7eItOd.png",
@@ -936,7 +1046,7 @@
   {
     "name": "Vanguard Berserker",
     "set": "MTD",
-    "cn": 242,
+    "cn": 246,
     "id": "RG",
     "cost": "{R}{G}",
     "type": "Creature - Elf Alcoholic",
@@ -2157,7 +2267,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -3358,7 +3470,9 @@
       }
     ],
     "tags": {
-      "function": ["tutor"],
+      "function": [
+        "tutor"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -3884,7 +3998,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -4128,7 +4244,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -4174,7 +4292,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -4890,7 +5010,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -5566,7 +5688,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [
+        "Removal"
+      ],
       "reprint": false
     }
   },
@@ -6460,7 +6584,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["wheel"],
+      "function": [
+        "wheel"
+      ],
       "reprint": false
     }
   },
@@ -6859,7 +6985,10 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal", "discard-outlet"],
+      "function": [
+        "removal",
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -6895,7 +7024,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -6926,7 +7057,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -7071,7 +7204,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"]
+      "function": [
+        "recursion"
+      ]
     }
   },
   {
@@ -7141,7 +7276,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -7230,7 +7367,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard-outlet"],
+      "function": [
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -7256,7 +7395,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -7281,7 +7422,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -7422,7 +7565,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
+      "function": [
+        "discard",
+        "thoughtseize",
+        "discard-outlet",
+        "pact"
+      ],
       "reprint": false
     }
   },
@@ -7545,7 +7693,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -7784,7 +7934,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -8363,7 +8515,9 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": ["counterspell"]
+      "function": [
+        "counterspell"
+      ]
     }
   },
   {
@@ -8446,7 +8600,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -8477,7 +8633,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": true
     }
   },
@@ -8638,7 +8796,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": false
     }
   },
@@ -8815,7 +8975,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -8912,7 +9074,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -9168,7 +9332,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": true
     }
   },
@@ -9525,7 +9691,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -9674,7 +9842,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -10910,7 +11080,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -10992,7 +11164,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11018,7 +11192,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11075,7 +11251,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["ramp"],
+      "function": [
+        "ramp"
+      ],
       "reprint": true
     }
   },
@@ -11167,7 +11345,11 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "repeatable-draw", "card-advantage"],
+      "function": [
+        "draw",
+        "repeatable-draw",
+        "card-advantage"
+      ],
       "reprint": true
     }
   },
@@ -11235,7 +11417,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "function": [
+        "draw",
+        "card-advantage",
+        "mill",
+        "mill-self"
+      ],
       "reprint": true
     }
   },
@@ -11401,114 +11588,6 @@
     "notes": [
       {
         "date": "26-12-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Katral, Architect of Storms",
-    "cost": "{3}{W}{U}",
-    "type": "Legendary Creature - Bird Wizard",
-    "text": "Flying{line}Whenever one or more creatures with flying you control deal combat damage to a player, choose one —{line}• {indent}Create a 2/2 blue Bird creature token with flying.{line}• {indent}Put a +1/+1 counter on up to two target creatures you control with flying.{line}• {indent}Draw a card.",
-    "flavor": "",
-    "power": 4,
-    "toughness": 5,
-    "rarity": "M",
-    "cn": 229,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/fAISDlJ.png",
-    "id": "WU",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "At All Costs",
-    "cost": "{X}{B}{B}{R}",
-    "type": "Sorcery",
-    "text": "Pact{line}Each player discards X cards at random.{line}If you accepted ~'s pact, draw half X cards, rounded down.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 215,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/iOUFykr.png",
-    "id": "BR",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Seasoned Embermage",
-    "cost": "{2}{B}{R}",
-    "type": "Creature - Human Warlock",
-    "text": "Whenever you cast a spell from anywhere other than your hand, create a 3/1 red Elemental creature token with haste. Exile it at the beginning of the next end step.",
-    "flavor": "",
-    "power": 1,
-    "toughness": 4,
-    "rarity": "R",
-    "cn": 236,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/2YKmrBw.png",
-    "id": "BR",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "The Foundry",
-    "cost": "{2}{R}{G}",
-    "type": "Legendary Artifact",
-    "text": "{2}: Move a beer counter from target permanent you control onto another target permanent you control.{line}If you were to put a beer counter on a permanent you control, put that many beer counters plus one beer counters on that permanent instead.{line}Creatures you control have: “Remove a beer counter from this creature: This creature gets +1/+1 until end of turn.”",
-    "flavor": "",
-    "rarity": "M",
-    "cn": 239,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/mVrAC3W.png",
-    "id": "RG",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "31-12-2024",
         "creator": "Thys",
         "notes": "Added card"
       }
