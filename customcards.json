@@ -4469,17 +4469,17 @@
     "name": "Guardian Broadwing",
     "cost": "{1}{W}",
     "type": "Creature - Bird",
-    "text": "Flying\nWhenever ~ attacks, it gets +2/-1 until end of turn.",
-    "flavor": "",
-    "power": 3,
+    "text": "Flying{line}Whenever ~ attacks, it gets +2/-1 until end of turn.",
+    "flavor": "Though uncommon, coastal cities of the empire have been known to breed broadwing rocs for use as imperial guards.",
+    "power": 0,
     "toughness": 3,
     "rarity": "C",
     "cn": 18,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/lyfUf8z.png",
+    "img": "https://i.imgur.com/F3Jju3T.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "18-08-2024",
@@ -4490,6 +4490,11 @@
         "date": "20-11-2024",
         "creator": "Thys",
         "notes": "It's possible this should be +2/-2 instead of +2/-1"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, dropping power in data to 0 from 3 to match card intention"
       }
     ],
     "tags": {
@@ -4502,7 +4507,7 @@
     "name": "Harvester Giant",
     "cost": "{4}{W}",
     "type": "Creature - Giant",
-    "text": "When ~ enters, you gain 3 life.\nPlainscycling {2}",
+    "text": "When ~ enters, you gain 3 life.{line}Plainscycling {2}",
     "flavor": "As crop tithes increased, lords chose to look past their prejudices in favor of profit.",
     "power": 3,
     "toughness": 5,
@@ -4510,9 +4515,9 @@
     "cn": 19,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Hh71NKP.png",
+    "img": "https://i.imgur.com/N9F6DcG.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "11-07-2024",
@@ -4533,6 +4538,11 @@
         "date": "15-08-2024",
         "creator": "Thys",
         "notes": "Fixed CN from 17 to 16"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added reminder text to cycling"
       }
     ],
     "tags": {
@@ -4550,9 +4560,9 @@
     "cn": 20,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/MD48oB3.png",
+    "img": "https://i.imgur.com/vItSZUi.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -4583,6 +4593,11 @@
         "date": "19-08-2024",
         "creator": "Thys",
         "notes": "Fixed having a holo stamp and rarity symbol"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -4603,14 +4618,19 @@
     "cn": 21,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/KQFMNoW.png",
+    "img": "https://i.imgur.com/PE5nRdv.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-08-2024",
         "creator": "Thys",
         "notes": "Updated render"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -4630,14 +4650,19 @@
     "cn": 22,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/p5obOhP.png",
+    "img": "https://i.imgur.com/feP2SJ9.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-08-2024",
         "creator": "Sam",
         "notes": "New art, added bleed and CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -4648,17 +4673,17 @@
     "name": "Inspector General",
     "cost": "{1}{W}",
     "type": "Creature - Human Soldier",
-    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at any unopened booster pack in the draft or any booster pack not being looked at by another player.",
+    "text": "Draft ~ face up.{line}During the draft, you may turn ~ face down. If you do, look at any unopened booster pack in the draft or any booster pack not being looked at by another player.",
     "flavor": "",
     "power": 1,
     "toughness": 2,
     "rarity": "C",
     "cn": 23,
     "set": "MTD",
-    "artist": "",
+    "artist": "Copilot Designer",
     "id": "W",
-    "img": "https://i.imgur.com/rAJeATa.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/pPxm8LS.png",
+    "has_bleed_edge": true,
     "watermark": "draft",
     "notes": [
       {
@@ -4675,6 +4700,11 @@
         "date": "05-08-2024",
         "creator": "Thys",
         "notes": "Added artist credit"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
