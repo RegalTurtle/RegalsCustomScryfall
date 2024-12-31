@@ -471,7 +471,7 @@
     }
   },
   {
-    "name": "Light of God",
+    "name": "The Sixth Day",
     "cost": "{1}{G}{W}",
     "type": "Sorcery",
     "text": "Spree{line}+ {4}{W} {-} Return each creature card from your graveyard to the battlefield.{line}+ {X}{G} {-} Create X 4/4 green beasts.{line}+ {W} {-} Put a flying counter on each creature you control.",
@@ -498,6 +498,11 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "Capitalize \"beasts\", and add \"creature tokens\"."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Change name from Light of God to The Sixth Day"
       }
     ],
     "tags": {
@@ -11420,6 +11425,86 @@
     "artist": "Midjourney",
     "img": "https://i.imgur.com/fAISDlJ.png",
     "id": "WU",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "At All Costs",
+    "cost": "{X}{B}{B}{R}",
+    "type": "Sorcery",
+    "text": "Pact{line}Each player discards X cards at random.{line}If you accepted ~'s pact, draw half X cards, rounded down.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 215,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/iOUFykr.png",
+    "id": "BR",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Seasoned Embermage",
+    "cost": "{2}{B}{R}",
+    "type": "Creature - Human Warlock",
+    "text": "Whenever you cast a spell from anywhere other than your hand, create a 3/1 red Elemental creature token with haste. Exile it at the beginning of the next end step.",
+    "flavor": "",
+    "power": 1,
+    "toughness": 4,
+    "rarity": "R",
+    "cn": 236,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/2YKmrBw.png",
+    "id": "BR",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "The Foundry",
+    "cost": "{2}{R}{G}",
+    "type": "Legendary Artifact",
+    "text": "{2}: Move a beer counter from target permanent you control onto another target permanent you control.{line}If you were to put a beer counter on a permanent you control, put that many beer counters plus one beer counters on that permanent instead.{line}Creatures you control have: “Remove a beer counter from this creature: This creature gets +1/+1 until end of turn.”",
+    "flavor": "",
+    "rarity": "M",
+    "cn": 239,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/mVrAC3W.png",
+    "id": "RG",
     "has_bleed_edge": true,
     "notes": [
       {
