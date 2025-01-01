@@ -135,7 +135,7 @@
     "rarity": "R",
     "img": "https://i.imgur.com/hQlXD4t.png",
     "artist": "Midjourney",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "power": 5,
     "toughness": 4,
     "art-remarks": "",
@@ -485,7 +485,7 @@
     "artist": "Copilot Designer",
     "rarity": "M",
     "img": "https://i.imgur.com/UbwNMmY.png",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
     "notes": [
