@@ -541,9 +541,9 @@
     "cn": 58,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/4QN9HX4.png",
+    "img": "https://i.imgur.com/jlV3PEH.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -564,6 +564,11 @@
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "New Art, New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
