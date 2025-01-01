@@ -1421,7 +1421,7 @@
     "cn": 77,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/ywdUhx9.png",
+    "img": "https://i.imgur.com/RolKLSD.png",
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
@@ -1477,9 +1477,9 @@
     "cn": 78,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/EzK8f8u.png",
+    "img": "https://i.imgur.com/D19Nu7M.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -1490,6 +1490,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1508,8 +1513,8 @@
     "cn": 79,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/gaL2PrZ.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/BCjebh1.png",
+    "has_bleed_edge": true,
     "id": "U",
     "notes": [
       {
@@ -1521,6 +1526,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1533,7 +1543,7 @@
     "name": "Warden of Evos Isle",
     "cost": "{2}{U}",
     "type": "Creature - Bird Wizard",
-    "text": "Flying\nCreature spells with flying you cast cost {1} less to cast.",
+    "text": "Flying{line}Creature spells with flying you cast cost {1} less to cast.",
     "flavor": "Birds of a feather flock together, normally an innocuous fact, until you realize the birds know fireball.",
     "power": 2,
     "toughness": 2,
@@ -1541,9 +1551,9 @@
     "cn": 80,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/f5Yeb30.png",
+    "img": "https://i.imgur.com/C8QnCwz.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -1554,6 +1564,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1572,9 +1587,9 @@
     "cn": 81,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/67xsWG4.png",
+    "img": "https://i.imgur.com/HJfsHZO.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-08-2024",
@@ -1590,25 +1605,33 @@
         "date": "16-08-2024",
         "creator": "Thys",
         "notes": "Uploaded new render"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Whispering Wizard",
     "cost": "{3}{U}",
     "type": "Creature - Human Wizard",
     "text": "Whenever you cast a noncreature spell, creatre a 1/1 white Spirit creature token with flying. This ability triggers only once each turn.",
-    "flavor": "“Sometimes the remnants of spells manifest in the corporeal, I simply coax a little more order.” {-}Spell Singer",
+    "flavor": "“Sometimes the remnants of spells manifest in the corporeal, I simply coax a little more order.”{lns}{-}Spell Singer",
     "power": 3,
     "toughness": 2,
     "rarity": "U",
     "cn": 82,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/LXyA16J.png",
+    "img": "https://i.imgur.com/VHigaQ3.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-07-2024",
@@ -1624,6 +1647,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1636,7 +1664,7 @@
     "name": "Windrider Wizard",
     "cost": "{2}{U}",
     "type": "Creature - Human Wizard",
-    "text": "Flying\nWhenever you cast an instant, sorcery, or Wizard spell, you may draw a card. If you do, discard a card.",
+    "text": "Flying{line}Whenever you cast an instant, sorcery, or Wizard spell, you may draw a card. If you do, discard a card.",
     "flavor": "The combination of ingenuity and irritability.",
     "power": 2,
     "toughness": 2,
@@ -1644,8 +1672,8 @@
     "cn": 83,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/OC1FbNi.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/fTvTcU1.png",
+    "has_bleed_edge": true,
     "id": "U",
     "notes": [
       {
@@ -1657,6 +1685,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1669,15 +1702,15 @@
     "name": "Winged Words",
     "cost": "{2}{U}",
     "type": "Sorcery",
-    "text": "This spell costs {1} less to cast if control a creature with flying.\nDraw two cards.",
+    "text": "This spell costs {1} less to cast if control a creature with flying.{line}Draw two cards.",
     "flavor": "It is the weird of a wizard to want their messages carried by a beast akin to their own heart. In short, magical pigeons.",
     "rarity": "C",
     "cn": 84,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/a8POFaG.png",
+    "img": "https://i.imgur.com/ohY1D5Y.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -1688,6 +1721,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1700,15 +1738,15 @@
     "name": "Wizard's Hipflask",
     "cost": "{3}{U}",
     "type": "Artifact",
-    "text": "Whenever you take a shot, put a beer counter on ~.\nInstant and Sorcery spells you cast cost {1} less for each beer counter on ~.",
+    "text": "Whenever you take a shot, put a beer counter on ~.{line}Instant and Sorcery spells you cast cost {1} less for each beer counter on ~.",
     "flavor": "",
     "rarity": "R",
     "cn": 85,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/ppfsGcl.png",
+    "img": "https://i.imgur.com/PhjWSUG.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-12-2023",
@@ -1729,15 +1767,23 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Zanhor, Keeper of Knowledge",
     "cost": "{3}{U}{U}",
     "type": "Legendary Creature - Sphinx Noble",
-    "text": "Flying\nWhenever a creature enters, that creature's controller takes a shot.\nOnce per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.",
+    "text": "Flying{line}Whenever a creature enters, that creature's controller takes a shot.{line}{0}: Prevent the next shot you would take this turn. Activate only once each turn and only if you have 10 or less life.",
     "flavor": "",
     "power": 4,
     "toughness": 4,
@@ -1745,7 +1791,7 @@
     "cn": 86,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/KlhhgVc.png",
+    "img": "https://i.imgur.com/B8cBB9J.png",
     "id": "U",
     "has_bleed_edge": true,
     "art-remarks": "",
@@ -1773,15 +1819,18 @@
       {
         "date": "25-12-2024",
         "creator": "Thys",
-        "notes": "2nd ability needs to be reworded"
+        "notes": "2nd ability needs to be reworded // Change from \"Once per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.\" to \"{0}: Prevent the next shot you would take this turn. Activate only once each turn and only if you have 10 or less life.\""
       },
       {
-        "date": "25-12-2024",
+        "date": "31-12-2024",
         "creator": "Thys",
-        "notes": "Change from \"Once per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.\" to \"{0}: Prevent the next shot you would take this turn. Activate only once each turn and only if you have 10 or less life.\""
+        "notes": "Final pre-print pass, updated 3rd ability per David suggestion"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Absorb",
