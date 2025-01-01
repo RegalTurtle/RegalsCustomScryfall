@@ -285,7 +285,10 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal", "discard-outlet"],
+      "function": [
+        "removal",
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -321,7 +324,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -352,7 +357,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -510,779 +517,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"]
-    }
-  },
-  {
-    "name": "First-Sphere Gargantua",
-    "cost": "{4}{B}{B}",
-    "type": "Creature - Phyrexian Horror",
-    "text": "When ~ enters, you draw a card and you lose 1 life.\nUnearth {2}{B}",
-    "flavor": "",
-    "power": 5,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 100,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/koAwRKB.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Fleshweaver Savant",
-    "cost": "{2}{B}",
-    "type": "Creature - Human Spellshaper",
-    "text": "{4}{B}, {T}, Discard a card: Put target creature card from a graveyard onto the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
-    "flavor": "",
-    "power": 2,
-    "toughness": 3,
-    "rarity": "U",
-    "cn": 101,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/8jIgaO1.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Came up with name to be used with another card"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Created card from the name"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Removed the wizard subtype because none of the other spellshapers are wizards"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "New render with new art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Forgotten Nemesis",
-    "cost": "{B}",
-    "type": "Creature - Zombie Wizard",
-    "text": "~ can't block.\n{1}{B}: Return ~ from your graveyard to the battlefield. Activate only if you've discarded a nonland card this turn.",
-    "flavor": "Death rarely stops hatred.",
-    "power": 2,
-    "toughness": 1,
-    "rarity": "U",
-    "cn": 102,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/qaHWtCl.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "15-09-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Gluttonous Guest",
-    "cost": "{2}{B}",
-    "type": "Creature - Vampire",
-    "text": "When ~ enters, create a Blood token.\nWhenever you sacrifice a Blood token, you gain 1 life.",
-    "flavor": "“Darling, it's 5 o'clock somewhere.”",
-    "power": 1,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 103,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/L7hClND.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added render and art"
-      }
-    ],
-    "tags": {
-      "function": [],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Gracious Hostess",
-    "cost": "{2}{B}",
-    "type": "Creature - Vampire Wizard",
-    "text": "Discard a card: ~ gets +1/+1 until end of turn.",
-    "flavor": "“Come in! I found plenty of food for everyone.”{lns}{-}Circe, Vampire Hemomancer",
-    "power": 3,
-    "toughness": 3,
-    "rarity": "C",
-    "cn": 104,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/zskqtDi.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Updtaed render"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["discard-outlet"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Grave Scrabbler",
-    "cost": "{3}{B}",
-    "type": "Creature - Zombie",
-    "text": "Madness {1}{B}\nWhen ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
-    "flavor": "There will always be a seeker.",
-    "rarity": "C",
-    "cn": 105,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/THYDcDR.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Grisly Ritual",
-    "cost": "{5}{B}",
-    "type": "Sorcery",
-    "text": "Destroy target creature or planeswalker. Create two Blood tokens.",
-    "flavor": "“See what's left of you in Hell.”",
-    "rarity": "C",
-    "cn": 106,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/x9MaEwe.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Found card, added render and art"
-      }
-    ],
-    "tags": {
-      "function": ["removal"],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Hell Boon",
-    "cost": "{B}",
-    "type": "Instant",
-    "text": "Pact\nTarget creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 107,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/O9ecPa7.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Highborn Vampire",
-    "cost": "{3}{B}",
-    "type": "Creature — Vampire Warrior",
-    "text": "",
-    "flavor": "The Markov family arrived four hundred years ago and settled in the northern reaches of the spine. The southern splinter group lacked none of their restraint, in their bloodlust they opened a portal to hell, and threw the world into a second eternal chaos.",
-    "power": 4,
-    "toughness": 3,
-    "rarity": "C",
-    "cn": 108,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/1Tj8e2y.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Added Card"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Hypnostatic Architect",
-    "set": "MTD",
-    "cn": 109,
-    "id": "UB",
-    "cost": "{1}{B}{B}",
-    "type": "Creature - Nightmare Wizard",
-    "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card. Activate only as sorcery.",
-    "flavor": "Your mind is an Escher painting and I am an artist.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/BK6qaB3.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 4,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip // this card is kinda rediculous at 3 mana why is it a 3/5"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added art and name and flavor"
-      },
-      {
-        "date": "30-07-2024",
-        "creator": "Kenneth",
-        "notes": "Suggested changing to 2/3 and making first ability 'This creature gains flying and “Whenever this creature deals combat damage to a player, you draw a card” until end of turn.'"
-      },
-      {
-        "date": "31-07-2024",
-        "creator": "Thys",
-        "notes": "Added 'activate only sorc' to the discard half"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "3/5 to 2/4"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Infernal Whispers",
-    "cost": "{1}{B}",
-    "type": "Sorcery",
-    "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
-    "flavor": "",
-    "rarity": "U",
-    "cn": 110,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/KysDdt0.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Renamed from Black out to Infernal Whispers"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Updated image, needs to have pact reminder text"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Updated card render, added reminder txt and CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Intoxicating Deluge",
-    "cost": "{2}{B}",
-    "type": "Sorcery",
-    "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 111,
-    "set": "MTD",
-    "artist": "",
-    "id": "B",
-    "img": "https://i.imgur.com/qDYqNzt.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Kitesail Freebooter",
-    "set": "MTD",
-    "cn": 112,
-    "id": "B",
-    "cost": "{1}{B}",
-    "type": "Creature - Human Pirate",
-    "text": "Flying{line}When ~ enters, target opponent reveals their hand. You choose a noncreature, nonland card from it. Exile that card until ~ leaves the battlefield.",
-    "flavor": "",
-    "rarity": "U",
-    "img": "https://i.imgur.com/OAuMaXG.png",
-    "artist": "Copilot Designer",
-    "has_bleed_edge": true,
-    "power": 1,
-    "toughness": 2,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Final pre-print pass"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": true
-    }
-  },
-  {
-    "name": "Larceny",
-    "set": "MTD",
-    "cn": 113,
-    "id": "B",
-    "cost": "{3}{B}{B}",
-    "type": "Enchantment",
-    "text": "Whenever a creature you control deals combat damage to a player, that player discards a card.",
-    "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
-    "artist": "Copilot Designer",
-    "rarity": "R",
-    "img": "https://i.imgur.com/cWgeVMS.png",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Added CN"
-      },
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Final pre-print pass"
-      }
-    ],
-    "tags": {
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Lich's Conquest",
-    "cost": "{2}{B}{B}",
-    "type": "Sorcery",
-    "text": "As an additional cost to cast ~, discard X cards.{line}Return X target creature cards from graveyards to the battlefield under your control.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 114,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/23CKF0a.png",
-    "id": "B",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Created card concept"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Sam",
-        "notes": "Yesssss // Fuck yes"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Balance changes or just put 1/8th on it and ship it?"
-      },
-      {
-        "date": "05-08-2024",
-        "creator": "Sam",
-        "notes": "I'll put flavor text on it // But yeah ship it"
-      },
-      {
-        "date": "27-12-2024",
-        "creator": "David",
-        "notes": "Change from \"from graveyards\" to \"From any graveyard\""
-      },
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Final pre-print pass, not using David's comment because I believe this was is correct"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Lonely Crypt",
-    "set": "MTD",
-    "cn": 115,
-    "id": "B",
-    "cost": "{3}{B}",
-    "type": "Enchantment",
-    "text": "If you would take a shot, you may discard a card instead.",
-    "flavor": "Once the burial place of all the great kings, after the lengthening of shadows, it was no longer safe to return to those ancient of places.",
-    "artist": "Copilot Designer",
-    "rarity": "U",
-    "img": "https://i.imgur.com/59gJV6a.png",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "23-08-2024",
-        "creator": "Sam",
-        "notes": "Changed card name from Forgotten Barrows to Lonely Crypt"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Updated frame, added bleed, cn // Updated again with correct CN"
-      },
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Final pre-print pass"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Necromancer's Puppet",
-    "set": "MTD",
-    "cn": 116,
-    "id": "B",
-    "cost": "{2}{B}{B}",
-    "type": "Creature - Zombie",
-    "text": "Whenever ~ deals combat damage to a player, each player discards a card.",
-    "flavor": "Brought back to serve a purpose, kept around for entertainment.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/rC55WaC.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "26-06-2024",
-        "creator": "Thys",
-        "notes": "Posted card idea"
-      },
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Pact Broker",
-    "set": "MTD",
-    "cn": 117,
-    "id": "B",
-    "cost": "{1}{B}",
-    "type": "Creature - Vampire Devil",
-    "text": "Whenever you accept a pact, ~ deals 1 damage to each opponent and you gain 1 life.",
-    "flavor": "The scourge of the weak.",
-    "rarity": "R",
-    "img": "https://i.imgur.com/2PZ7bnA.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "change to you only gain 1 life"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Quickblade Devilkin",
-    "cost": "{1}{B}",
-    "type": "Creature - Devil Assassin",
-    "text": "Deathtouch\nMadness {1}{B}",
-    "flavor": "An unshakable malice.",
-    "power": 1,
-    "toughness": 1,
-    "rarity": "U",
-    "cn": 118,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/8GudArw.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Thys",
-        "notes": "Common to Uncommon"
-      },
-      {
-        "date": "27-12-2024",
-        "creator": "David",
-        "notes": "Madness needs reminder text"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Remnant Hulk",
-    "cost": "{6}{B}",
-    "type": "Creature - Zombie Giant",
-    "text": "When ~ enters, it deals 1 damage to target opponent for each instant and sorcery card in your graveyard.\nSwampcycling {2}",
-    "flavor": "Born of an ancient war, held together by a single minded will to live.",
-    "power": 4,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 119,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/O6U3irg.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      },
-      {
-        "date": "23-08-2024",
-        "creator": "Sam",
-        "notes": "Added swampcycling, removed p/t, new render"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Rotting Rats",
-    "cost": "{1}{B}",
-    "type": "Creature - Zombie Rat",
-    "text": "When ~ enters, each player discards a card.\nUnearth {1}{B}",
-    "flavor": "",
-    "rarity": "C",
-    "power": 1,
-    "toughness": 1,
-    "cn": 120,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/Fn04nDg.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "i think we should add it tbh"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "definitely should have reminder if we choose to add it"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Sam",
-        "notes": "New render with new art"
-      },
-      {
-        "date": "21-08-2024",
-        "creator": "Sam",
-        "notes": "Fixed art framing"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Sower of Chaos",
-    "cost": "{2}{B}",
-    "type": "Creature - Human Wizard",
-    "text": "When ~ enters, each player sacrifices a creature. Each player who can't discards a card.",
-    "flavor": "“Purge the unclean ones, in the name of our new father!”",
-    "power": 3,
-    "toughness": 1,
-    "rarity": "U",
-    "cn": 121,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/E1NiQYc.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "Created card"
-      },
-      {
-        "date": "27-12-2024",
-        "creator": "David",
-        "notes": "add \"sacrifices a creature of their choice.\""
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["removal"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Tess, Necromancer Prodigy",
-    "cost": "{2}{B}",
-    "type": "Legendary Creature - Human Wizard",
-    "text": "Lifelink\nWard{-}Pay 3 life.\nWhenever you cast an instant or sorcery spell, create a 1/1 black Zombie Wizard creature token.",
-    "flavor": "",
-    "power": 3,
-    "toughness": 2,
-    "rarity": "R",
-    "cn": 122,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/NXmjHPZ.png",
-    "id": "B",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "Wanted Sedgemoor Witch to be a wizard so we created a legendary creature that does a similar thing"
-      },
-      {
-        "date": "15-10-2024",
-        "creator": "Thys",
-        "notes": "Added CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
+      "function": [
+        "recursion"
+      ]
     }
   },
   {
@@ -1345,6 +582,795 @@
     ],
     "tags": {
       "frame": "normal",
+      "reprint": false
+    }
+  },
+  {
+    "name": "First-Sphere Gargantua",
+    "cost": "{4}{B}{B}",
+    "type": "Creature - Phyrexian Horror",
+    "text": "When ~ enters, you draw a card and you lose 1 life.\nUnearth {2}{B}",
+    "flavor": "",
+    "power": 5,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 101,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/koAwRKB.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Fleshweaver Savant",
+    "cost": "{2}{B}",
+    "type": "Creature - Human Spellshaper",
+    "text": "{4}{B}, {T}, Discard a card: Put target creature card from a graveyard onto the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
+    "flavor": "",
+    "power": 2,
+    "toughness": 3,
+    "rarity": "U",
+    "cn": 102,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/8jIgaO1.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Came up with name to be used with another card"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Created card from the name"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Removed the wizard subtype because none of the other spellshapers are wizards"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "New render with new art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "recursion"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Forgotten Nemesis",
+    "cost": "{B}",
+    "type": "Creature - Zombie Wizard",
+    "text": "~ can't block.\n{1}{B}: Return ~ from your graveyard to the battlefield. Activate only if you've discarded a nonland card this turn.",
+    "flavor": "Death rarely stops hatred.",
+    "power": 2,
+    "toughness": 1,
+    "rarity": "U",
+    "cn": 103,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/qaHWtCl.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "15-09-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Gluttonous Guest",
+    "cost": "{2}{B}",
+    "type": "Creature - Vampire",
+    "text": "When ~ enters, create a Blood token.\nWhenever you sacrifice a Blood token, you gain 1 life.",
+    "flavor": "“Darling, it's 5 o'clock somewhere.”",
+    "power": 1,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 104,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/L7hClND.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added render and art"
+      }
+    ],
+    "tags": {
+      "function": [],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Gracious Hostess",
+    "cost": "{2}{B}",
+    "type": "Creature - Vampire Wizard",
+    "text": "Discard a card: ~ gets +1/+1 until end of turn.",
+    "flavor": "“Come in! I found plenty of food for everyone.”{lns}{-}Circe, Vampire Hemomancer",
+    "power": 3,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 105,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/zskqtDi.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Updtaed render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "discard-outlet"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Grave Scrabbler",
+    "cost": "{3}{B}",
+    "type": "Creature - Zombie",
+    "text": "Madness {1}{B}\nWhen ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
+    "flavor": "There will always be a seeker.",
+    "rarity": "C",
+    "cn": 106,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/THYDcDR.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "recursion"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Grisly Ritual",
+    "cost": "{5}{B}",
+    "type": "Sorcery",
+    "text": "Destroy target creature or planeswalker. Create two Blood tokens.",
+    "flavor": "“See what's left of you in Hell.”",
+    "rarity": "C",
+    "cn": 107,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/x9MaEwe.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Found card, added render and art"
+      }
+    ],
+    "tags": {
+      "function": [
+        "removal"
+      ],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Hell Boon",
+    "cost": "{B}",
+    "type": "Instant",
+    "text": "Pact\nTarget creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 108,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/O9ecPa7.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Highborn Vampire",
+    "cost": "{3}{B}",
+    "type": "Creature — Vampire Warrior",
+    "text": "",
+    "flavor": "The Markov family arrived four hundred years ago and settled in the northern reaches of the spine. The southern splinter group lacked none of their restraint, in their bloodlust they opened a portal to hell, and threw the world into a second eternal chaos.",
+    "power": 4,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 109,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/1Tj8e2y.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Added Card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Hypnostatic Architect",
+    "set": "MTD",
+    "cn": 110,
+    "id": "UB",
+    "cost": "{1}{B}{B}",
+    "type": "Creature - Nightmare Wizard",
+    "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card. Activate only as sorcery.",
+    "flavor": "Your mind is an Escher painting and I am an artist.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/BK6qaB3.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 4,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip // this card is kinda rediculous at 3 mana why is it a 3/5"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added art and name and flavor"
+      },
+      {
+        "date": "30-07-2024",
+        "creator": "Kenneth",
+        "notes": "Suggested changing to 2/3 and making first ability 'This creature gains flying and “Whenever this creature deals combat damage to a player, you draw a card” until end of turn.'"
+      },
+      {
+        "date": "31-07-2024",
+        "creator": "Thys",
+        "notes": "Added 'activate only sorc' to the discard half"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "3/5 to 2/4"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Infernal Whispers",
+    "cost": "{1}{B}",
+    "type": "Sorcery",
+    "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 111,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/KysDdt0.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Renamed from Black out to Infernal Whispers"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Updated image, needs to have pact reminder text"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Updated card render, added reminder txt and CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "discard",
+        "thoughtseize",
+        "discard-outlet",
+        "pact"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Intoxicating Deluge",
+    "cost": "{2}{B}",
+    "type": "Sorcery",
+    "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 112,
+    "set": "MTD",
+    "artist": "",
+    "id": "B",
+    "img": "https://i.imgur.com/qDYqNzt.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Kitesail Freebooter",
+    "set": "MTD",
+    "cn": 113,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Creature - Human Pirate",
+    "text": "Flying{line}When ~ enters, target opponent reveals their hand. You choose a noncreature, nonland card from it. Exile that card until ~ leaves the battlefield.",
+    "flavor": "",
+    "rarity": "U",
+    "img": "https://i.imgur.com/OAuMaXG.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
+    "power": 1,
+    "toughness": 2,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
+  },
+  {
+    "name": "Larceny",
+    "set": "MTD",
+    "cn": 114,
+    "id": "B",
+    "cost": "{3}{B}{B}",
+    "type": "Enchantment",
+    "text": "Whenever a creature you control deals combat damage to a player, that player discards a card.",
+    "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
+    "artist": "Copilot Designer",
+    "rarity": "R",
+    "img": "https://i.imgur.com/cWgeVMS.png",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
+      }
+    ],
+    "tags": {
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Lich's Conquest",
+    "cost": "{2}{B}{B}",
+    "type": "Sorcery",
+    "text": "As an additional cost to cast ~, discard X cards.{line}Return X target creature cards from graveyards to the battlefield under your control.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 115,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/23CKF0a.png",
+    "id": "B",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Created card concept"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Sam",
+        "notes": "Yesssss // Fuck yes"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Balance changes or just put 1/8th on it and ship it?"
+      },
+      {
+        "date": "05-08-2024",
+        "creator": "Sam",
+        "notes": "I'll put flavor text on it // But yeah ship it"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Change from \"from graveyards\" to \"From any graveyard\""
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, not using David's comment because I believe this was is correct"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "recursion"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Lonely Crypt",
+    "set": "MTD",
+    "cn": 116,
+    "id": "B",
+    "cost": "{3}{B}",
+    "type": "Enchantment",
+    "text": "If you would take a shot, you may discard a card instead.",
+    "flavor": "Once the burial place of all the great kings, after the lengthening of shadows, it was no longer safe to return to those ancient of places.",
+    "artist": "Copilot Designer",
+    "rarity": "U",
+    "img": "https://i.imgur.com/59gJV6a.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "23-08-2024",
+        "creator": "Sam",
+        "notes": "Changed card name from Forgotten Barrows to Lonely Crypt"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Updated frame, added bleed, cn // Updated again with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Necromancer's Puppet",
+    "set": "MTD",
+    "cn": 117,
+    "id": "B",
+    "cost": "{2}{B}{B}",
+    "type": "Creature - Zombie",
+    "text": "Whenever ~ deals combat damage to a player, each player discards a card.",
+    "flavor": "Brought back to serve a purpose, kept around for entertainment.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/rC55WaC.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Posted card idea"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Pact Broker",
+    "set": "MTD",
+    "cn": 118,
+    "id": "B",
+    "cost": "{1}{B}",
+    "type": "Creature - Vampire Devil",
+    "text": "Whenever you accept a pact, ~ deals 1 damage to each opponent and you gain 1 life.",
+    "flavor": "The scourge of the weak.",
+    "rarity": "R",
+    "img": "https://i.imgur.com/2PZ7bnA.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "change to you only gain 1 life"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Quickblade Devilkin",
+    "cost": "{1}{B}",
+    "type": "Creature - Devil Assassin",
+    "text": "Deathtouch\nMadness {1}{B}",
+    "flavor": "An unshakable malice.",
+    "power": 1,
+    "toughness": 1,
+    "rarity": "U",
+    "cn": 119,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/8GudArw.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Thys",
+        "notes": "Common to Uncommon"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Madness needs reminder text"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Remnant Hulk",
+    "cost": "{6}{B}",
+    "type": "Creature - Zombie Giant",
+    "text": "When ~ enters, it deals 1 damage to target opponent for each instant and sorcery card in your graveyard.\nSwampcycling {2}",
+    "flavor": "Born of an ancient war, held together by a single minded will to live.",
+    "power": 4,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 120,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/O6U3irg.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "23-08-2024",
+        "creator": "Sam",
+        "notes": "Added swampcycling, removed p/t, new render"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Rotting Rats",
+    "cost": "{1}{B}",
+    "type": "Creature - Zombie Rat",
+    "text": "When ~ enters, each player discards a card.\nUnearth {1}{B}",
+    "flavor": "",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 1,
+    "cn": 121,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Fn04nDg.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "i think we should add it tbh"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "definitely should have reminder if we choose to add it"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Sam",
+        "notes": "New render with new art"
+      },
+      {
+        "date": "21-08-2024",
+        "creator": "Sam",
+        "notes": "Fixed art framing"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Sower of Chaos",
+    "cost": "{2}{B}",
+    "type": "Creature - Human Wizard",
+    "text": "When ~ enters, each player sacrifices a creature. Each player who can't discards a card.",
+    "flavor": "“Purge the unclean ones, in the name of our new father!”",
+    "power": 3,
+    "toughness": 1,
+    "rarity": "U",
+    "cn": 122,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/E1NiQYc.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "Created card"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "add \"sacrifices a creature of their choice.\""
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "removal"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Tess, Necromancer Prodigy",
+    "cost": "{2}{B}",
+    "type": "Legendary Creature - Human Wizard",
+    "text": "Lifelink\nWard{-}Pay 3 life.\nWhenever you cast an instant or sorcery spell, create a 1/1 black Zombie Wizard creature token.",
+    "flavor": "",
+    "power": 3,
+    "toughness": 2,
+    "rarity": "R",
+    "cn": 123,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/NXmjHPZ.png",
+    "id": "B",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "Wanted Sedgemoor Witch to be a wizard so we created a legendary creature that does a similar thing"
+      },
+      {
+        "date": "15-10-2024",
+        "creator": "Thys",
+        "notes": "Added CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
       "reprint": false
     }
   },
@@ -1568,7 +1594,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": true
     }
   },
@@ -1839,7 +1867,9 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": ["counterspell"]
+      "function": [
+        "counterspell"
+      ]
     }
   },
   {
@@ -2106,7 +2136,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -2280,7 +2312,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -2396,7 +2430,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": true
     }
   },
@@ -2862,7 +2898,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["counterspell"],
+      "function": [
+        "counterspell"
+      ],
       "reprint": false
     }
   },
@@ -2971,7 +3009,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -3007,7 +3047,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -3941,7 +3983,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -5606,7 +5650,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -6807,7 +6853,9 @@
       }
     ],
     "tags": {
-      "function": ["tutor"],
+      "function": [
+        "tutor"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -7333,7 +7381,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -7577,7 +7627,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -7623,7 +7675,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -8406,7 +8460,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -9162,7 +9218,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [
+        "Removal"
+      ],
       "reprint": false
     }
   },
@@ -10056,7 +10114,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["wheel"],
+      "function": [
+        "wheel"
+      ],
       "reprint": false
     }
   },
@@ -10276,7 +10336,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -11512,7 +11574,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11594,7 +11658,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11620,7 +11686,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11677,7 +11745,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["ramp"],
+      "function": [
+        "ramp"
+      ],
       "reprint": true
     }
   },
@@ -11769,7 +11839,11 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "repeatable-draw", "card-advantage"],
+      "function": [
+        "draw",
+        "repeatable-draw",
+        "card-advantage"
+      ],
       "reprint": true
     }
   },
@@ -11837,7 +11911,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "function": [
+        "draw",
+        "card-advantage",
+        "mill",
+        "mill-self"
+      ],
       "reprint": true
     }
   },
