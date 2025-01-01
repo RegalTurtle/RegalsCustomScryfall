@@ -1,5 +1,1645 @@
 [
   {
+    "name": "Aphelion Frost Speaker",
+    "cost": "{4}{U}",
+    "type": "Creature - Bird Wizard",
+    "text": "Whenever ~ attacks, put a stun counter on target permanent.{line}Whenever you cast an instant or sorcery spell, you may tap or untap target permanent.",
+    "flavor": "",
+    "power": 4,
+    "toughness": 4,
+    "rarity": "R",
+    "cn": 45,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Xoeozjw.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added card to MTX"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Changed name from Explorer to Frost Speaker, changed type from Scout to Wizard, changed to tap or untap permanents on instant or sorcery cast"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
+  },
+  {
+    "name": "Archaeomancer",
+    "cost": "{2}{U}{U}",
+    "type": "Creature - Human Wizard",
+    "text": "When ~ enters, return target instant or sorcery card from your graveyard to your hand.",
+    "flavor": "“Much has been lost, which is great because I can be the one to find it.”{lns}{-}Clarissa, Arcane Archeologist",
+    "power": 1,
+    "toughness": 2,
+    "rarity": "C",
+    "cn": 46,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/n6D87K9.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "Added to MTD, created blob"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "recursion"
+      ],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Arctic Aven",
+    "cost": "{2}{U}",
+    "type": "Creature - Bird Wizard",
+    "text": "Flying\n~ gets +1/+1 as long as you control a Plains.\n{W}: ~ gains lifelink until end of turn.",
+    "flavor": "While Aphelion is the least inhabited region, it is by far the largest.",
+    "power": 2,
+    "toughness": 1,
+    "rarity": "C",
+    "cn": 47,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/5h6VvJv.png",
+    "id": "WU",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Posted card image // either this card exactly or an inversed version where it gains flying? // i kind of love this card tbh // it checks all the boxes for the set"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Artful Dodge",
+    "cost": "{U}",
+    "type": "Sorcery",
+    "text": "Target creature can't be blocked this turn.{line}Flashback {U}",
+    "flavor": "“Ribbbbit”",
+    "rarity": "U",
+    "cn": 48,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/nZv41bD.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "02-12-2024",
+        "creator": "Thys",
+        "notes": "Added card"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Atemsis, All-Seeing",
+    "cost": "{3}{U}{U}{U}",
+    "type": "Legendary Creature - Sphinx",
+    "text": "Flying\n{2}{U}, {T}: Draw two cards, then discard a card.\nWhenever ~ deals damage to an opponent, you may reveal your hand. If cards with at least six different mana values are revealed this way, that player loses the game.",
+    "flavor": "",
+    "power": 4,
+    "toughness": 5,
+    "rarity": "R",
+    "cn": 49,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/n3zEHDs.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Borne Upon a Wind",
+    "cost": "{1}{U}",
+    "type": "Instant",
+    "text": "You may cast spells this turn as though they had flash.\nDraw a card.",
+    "flavor": "Expeditions through the glaciers of Aphelion yielded insight into the origins of both the world and the magic that shaped it.",
+    "rarity": "R",
+    "cn": 50,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/Q0jLqFa.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Given art"
+      }
+    ],
+    "tags": {
+      "function": [],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Brain Fog",
+    "cost": "{U}",
+    "type": "Instant",
+    "text": "Discard three cards, then return up to two cards from your graveyard to your hand.",
+    "flavor": "“Ughhhh”",
+    "rarity": "R",
+    "cn": 51,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/bK4Lq2U.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, fixed wording, upshifted to Uncommon"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Upshifted to Rare"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
+  },
+  {
+    "name": "Broadwing Seabird",
+    "cost": "{4}{U}",
+    "type": "Creature - Bird",
+    "text": "Flying\nWard{-}Take a shot.",
+    "flavor": "Aphelion is home to an ancient race of Rocs who make their home far away from shore.",
+    "power": 3,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 52,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/wNuSnOM.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Art is slightly misaligned, so there is white peeking through"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Thys",
+        "notes": "Fixed name in json"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Fixed art and new flavor"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Sam",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "19-08-2024",
+        "creator": "Sam",
+        "notes": "Fixed ward cost"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Cerulean Drake",
+    "set": "MTD",
+    "cn": 53,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Creature - Drake",
+    "text": "Flying\nProtection from red\nSacrifice ~: Counter target spell that targets you.",
+    "flavor": "The magic of Aphelion seeps into all things, lying dormant until their ancient triggers are activated.",
+    "rarity": "U",
+    "img": "https://i.imgur.com/v2YP34V.png",
+    "has_bleed_edge": false,
+    "power": 2,
+    "toughness": 1,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Sam",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "reprint": true,
+      "frame": "normal",
+      "function": [
+        "counterspell"
+      ]
+    }
+  },
+  {
+    "name": "Challenger Penguin",
+    "cost": "{1}{U}",
+    "type": "Creature - Bird",
+    "text": "",
+    "flavor": "“Birds of the north are of a different breed. Unlike their lofty southern counterparts, these species lack the ability of flight. A group of them mobbed my colleague this morning, it seems being flightless has given them something to prove” {-}Jhonsmith, biologist",
+    "power": 2,
+    "toughness": 1,
+    "rarity": "C",
+    "cn": 54,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/U2V0oYZ.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Clear the Mind",
+    "cost": "{2}{U}",
+    "type": "Sorcery",
+    "text": "Target player shuffles their graveyard into their library.\nDraw a card.",
+    "flavor": "A moment of peace is worth a year of noise.",
+    "rarity": "C",
+    "cn": 55,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/WPXIfsV.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Suggested Reshuffle"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested Clear the Mind as a different option"
+      },
+      {
+        "date": "17-07-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      }
+    ],
+    "tags": {
+      "function": [],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Crackpot Moonshine",
+    "cost": "{3}{U}",
+    "type": "Enchantment",
+    "text": "Whenever you take a shot, draw a card, then discard a card.",
+    "flavor": "Wizards are known for their curiously strong brews. Never the traditionalist, their brews are at the forefront of innovation.",
+    "rarity": "U",
+    "cn": 56,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/7Ss5UcM.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed draw to be looting instead, tbd change name and art"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Changed mana cost from 2U to 3U, changed art, and changed name from Pirate's Grog to Crackpot Moonshine, changed flavor text"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with Nyx border"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "New CN, New render with correct CN"
+      }
+    ],
+    "tags": {
+      "reprint": false,
+      "frame": "normal",
+      "function": []
+    }
+  },
+  {
+    "name": "Crossroads Sphinx",
+    "cost": "{4}{U}{U}",
+    "type": "Creature - Sphinx",
+    "text": "Flying\nWhen ~ enters, reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
+    "flavor": "",
+    "power": 4,
+    "toughness": 5,
+    "rarity": "U",
+    "cn": 57,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/A840KNa.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Added flying"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Given image"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "New CN, New render with correct CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Cursed Technique",
+    "cost": "{1}{U}",
+    "type": "Instant",
+    "text": "Pact\nReturn target creature you don't control to its owners hand. If you accepted ~'s pact, that creature's controller discards a card.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 58,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/4QN9HX4.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested basically this card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed to be pact instead of just taking a shot"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "14-10-2024",
+        "creator": "Sam",
+        "notes": "New Art, New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "reprint": false,
+      "frame": "normal",
+      "function": []
+    }
+  },
+  {
+    "name": "Desynchronize",
+    "cost": "{4}{U}",
+    "type": "Instant",
+    "text": "Target nonland permanent's owner puts it on the top or bottom of their library. Scry 2.",
+    "flavor": "Reality shattered on his craven wings, the broken mirror no longer chained the sleeping god.",
+    "rarity": "C",
+    "cn": 59,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/SDdFFjh.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Found card"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Given art"
+      }
+    ],
+    "tags": {
+      "function": [
+        "removal"
+      ],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Drifting Skyvagrant",
+    "cost": "{5}{U}{U}",
+    "type": "Creature - Jellyfish",
+    "text": "Flash, flying\nIslandcycling {2}",
+    "flavor": "When the clouds part, dozens of Vagrants can be seen lazily drifting throughout the sky, twinkling like stars.",
+    "power": 5,
+    "toughness": 4,
+    "rarity": "C",
+    "cn": 60,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/aIFR6nP.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "26-07-2024",
+        "creator": "Thys",
+        "notes": "Added card json from backpacking trip"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Sam",
+        "notes": "Added art, flavor, and name"
+      },
+      {
+        "date": "29-07-2024",
+        "creator": "Thys",
+        "notes": "ITS A FUCKIN ROR2 REFERENCE"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Add reminder text for Islandcycling: It's standard for all common cycling cards"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Duelist of the Mind",
+    "cost": "{1}{U}",
+    "type": "Creature - Human Advisor",
+    "text": "Flying, vigilance\n~'s power is equal to the number of cards you've drawn this turn.\nWhenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
+    "flavor": "",
+    "power": 0,
+    "toughness": 3,
+    "rarity": "R",
+    "cn": 61,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/HWFjT7e.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Crime Vigilance Flyer???"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added card with new art"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": true,
+      "function": []
+    }
+  },
+  {
+    "name": "Frantic Search",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Draw two cards, then discard two cards. Untap up to three lands.",
+    "flavor": "“We've almost found it, just keep looking, the next stack has to have it”",
+    "rarity": "C",
+    "cn": 62,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/h0JukHx.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Added card render to MTX"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added to MTD because it's in the spreadsheet"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Made new art"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Hangover",
+    "cost": "{U}{U}",
+    "type": "Enchantment - Aura",
+    "text": "Enchant creature\nWhen ~ enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nAt the beginning of the upkeep of enchanted creature's controller, that player may take a shot. If they do, untap enchanted creature.",
+    "flavor": "",
+    "rarity": "U",
+    "cn": 63,
+    "set": "MTD",
+    "img": "https://i.imgur.com/vqGq0MV.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed etb to enters"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "removal"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Hysterical Blindness",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Creatures your opponents control get -4/-0 until end of turn.",
+    "flavor": "For just but a moment, the townspeople got a glimpse of the other side. The screaming began shortly after.",
+    "rarity": "U",
+    "cn": 64,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/fPCif61.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Sam",
+        "notes": "Added new art for Hysterical Blindness"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Thys",
+        "notes": "Changed flavor text slightly to split into two sentences."
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Illusionary Informant",
+    "cost": "{1}{U}",
+    "type": "Creature - Bird Illusion",
+    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at the next card drafted by a player of your choice.\nFlying",
+    "flavor": "",
+    "power": 1,
+    "toughness": 3,
+    "rarity": "C",
+    "cn": 65,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/FOISzID.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "watermark": "draft",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Lofty Denial",
+    "cost": "{1}{U}",
+    "type": "Instant",
+    "text": "Counter target spell unless its controller pays {1}. If you control a creature with flying, counter that spell unless its controller pays {4} instead.",
+    "flavor": "The bird wizards of Aphelion are adept in the art of misdirection and deception.",
+    "rarity": "C",
+    "cn": 66,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/m4N51cL.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "counterspell"
+      ],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Mirror into the Abyss",
+    "set": "MTD",
+    "cn": 67,
+    "id": "U",
+    "cost": "{1}{U}",
+    "type": "Artifact",
+    "text": "When ~ enters, scry 2.\n{1}, Sacrifice ~: Draw a card.\n{4}: Draw a card.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/PprrZqI.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Maybe could be split into 2 cards, I like the idea of a blue mana sink for card draw, but this cycling thing is interesting"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Changed name from Blue Mana Sink to Mirror into the Abyss, given art, made into an artifact"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Ossify",
+    "set": "MTD",
+    "cn": 68,
+    "id": "U",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Exile target creature. Its controller creates a Bronze Armor token with “Equipped creature gets +X/+0, where X is the exiled card's power.” and equip {2}.",
+    "flavor": "",
+    "rarity": "C",
+    "img": "https://i.imgur.com/BsZYRmZ.png",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Created from idea for Sam's cards"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Sam",
+        "notes": "Name change to ossify"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Maybe shift to uncommon, putting in the set for now"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "Updated art, might need flavor text? But text box also might be fine as is"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "New art"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Changed to not buff toughness"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Redid render"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Portal Mage",
+    "cost": "{2}{U}",
+    "type": "Creature - Human Wizard",
+    "text": "Flash\nWhen ~ enters during the declare attackers step, you may reselect which player or permanent target attacking creature is attacking.",
+    "flavor": "",
+    "power": 2,
+    "toughness": 2,
+    "rarity": "U",
+    "cn": 69,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/tCdsg1D.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "New art"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Return to Immaterial",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "For each opponent with an instant card in their graveyard, return target nonland permanent to its owners hand.",
+    "flavor": "The ancient ways of detecting witchcraft serve both the persecutors and the modern sorceress looking to get an edge.",
+    "rarity": "U",
+    "cn": 70,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/uLcvYlM.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, fixed wording, upshifted to Uncommon"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Sam",
+        "notes": "Added new flavor text"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "David",
+        "notes": "Maybe change to \"For each opponent with an instant card in their graveyard, choose target nonland permanent. Return each card chosen this way to their owners hand."
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Selection Process",
+    "cost": "{X}{1}{U}{U}",
+    "type": "Instant",
+    "text": "This spell costs {1} less to cast for each Wizard you control.\nReturn X target nonland permanents to their owners hands.",
+    "flavor": "Being selected to apprentice is a brutal and competitive process.",
+    "rarity": "R",
+    "cn": 71,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/CdaVCqo.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Posted card idea"
+      },
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "change flying to wizard // Posted card image and chose name"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Silent Companion",
+    "cost": "{2}{U}",
+    "type": "Creature - Bird",
+    "text": "Flying\nWhenever you cast an instant or sorcery spell, you may scry 1.",
+    "flavor": "Aphelion scholars rarely travel alone.",
+    "power": 1,
+    "toughness": 3,
+    "rarity": "U",
+    "cn": 72,
+    "set": "MTD",
+    "artist": "",
+    "img": "https://i.imgur.com/mJs00YH.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "art-remarks": "Art is of an owl, similar to Harrier Strix. It's a familiar flying or standing near an Aphelion scholar",
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Gave card name of Silent Companion, upshifted to uncommon, new render"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "no flying // Hehehe"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added flying, changed to 1/3"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Also make it a wizard I think? // Idk up to you on that"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "but i also like not having it be a wizard bc it's like a familiar"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "I like that flavor a lot"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Thys",
+        "notes": "Added flavor"
+      },
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Added art"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Sorcerous Squall",
+    "cost": "{6}{U}{U}{U}",
+    "type": "Sorcery",
+    "text": "Delve\nTarget opponent mills nine cards, then you may cast an instant or sorcery spell from that player's graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 73,
+    "set": "MTD",
+    "artist": "Stable Diffusion",
+    "img": "https://i.imgur.com/IHBbRJr.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-08-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "15-08-2024",
+        "creator": "Thys",
+        "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {
+      "function": [],
+      "reprint": true,
+      "frame": "normal"
+    }
+  },
+  {
+    "name": "Spell Schism",
+    "cost": "{1}{U}{U}",
+    "type": "Instant",
+    "text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
+    "flavor": "Crackling magic shatters the air, a cleft of glorious power.",
+    "rarity": "U",
+    "cn": 74,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/9ReQN4M.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "11-07-2024",
+        "creator": "Thys",
+        "notes": "It's fork in blue what can I say, seems fun"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Added art to this card and brought it to MTD. Changed name to Spell Schism"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Spiked Spell",
+    "cost": "{1}{U}{U}",
+    "type": "Instant",
+    "text": "Counter target noncreature spell. Its controller takes a shot.",
+    "flavor": "Be careful, or someone might just put something in your spell.",
+    "rarity": "C",
+    "cn": 75,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/0nwqxVD.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "18-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "counterspell"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Storm Chick",
+    "cost": "{U}",
+    "type": "Creature - Bird",
+    "text": "Flying",
+    "flavor": "Storm chick descending, winter unending. Storm chick departing, summer is starting.",
+    "power": 1,
+    "toughness": 1,
+    "rarity": "C",
+    "cn": 76,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/9oZbVvN.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "09-07-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "22-07-2024",
+        "creator": "Thys",
+        "notes": "Created card stub"
+      },
+      {
+        "date": "13-08-2024",
+        "creator": "Sam",
+        "notes": "Made it a Storm Crow reference, added to MTD"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Tides of Battle",
+    "cost": "{2}{U}",
+    "type": "Sorcery",
+    "text": "Draw a card for each player you attacked this turn.",
+    "flavor": "Because knowing is half the battle.",
+    "rarity": "U",
+    "cn": 77,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/IbrGdpw.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "26-06-2024",
+        "creator": "Thys",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Created json blob"
+      },
+      {
+        "date": "15-07-2024",
+        "creator": "Thys",
+        "notes": "Mana cost 3U -> 2U"
+      },
+      {
+        "date": "16-07-2024",
+        "creator": "Sam",
+        "notes": "Name changed to Tides of Battle, added flavor and new card image"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      },
+      {
+        "date": "27-12-2024",
+        "creator": "Thys",
+        "notes": "David suggested moving mana cost from 2U -> 1U"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "draw"
+      ],
+      "reprint": false
+    }
+  },
+  {
+    "name": "Tragic Lesson",
+    "cost": "{2}{U}",
+    "type": "Instant",
+    "text": "Draw two cards. Then discard a card unless you return a land you control to its owner's hand.",
+    "flavor": "She had finally done it. In her palm was a small glimmering point of magical heat and warmth, her joy at finally casting a spell quickly turned to despair as she watched that flame burn her life to the ground.",
+    "rarity": "C",
+    "cn": 78,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/EzK8f8u.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [
+        "draw"
+      ],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Unexplained Disappearance",
+    "cost": "{1}{U}",
+    "type": "Instant",
+    "text": "Return target creature to its owner's hand.\nSurveil 1.",
+    "flavor": "",
+    "rarity": "C",
+    "cn": 79,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/gaL2PrZ.png",
+    "has_bleed_edge": false,
+    "id": "U",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Warden of Evos Isle",
+    "cost": "{2}{U}",
+    "type": "Creature - Bird Wizard",
+    "text": "Flying\nCreature spells with flying you cast cost {1} less to cast.",
+    "flavor": "Birds of a feather flock together, normally an innocuous fact, until you realize the birds know fireball.",
+    "power": 2,
+    "toughness": 2,
+    "rarity": "U",
+    "cn": 80,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/f5Yeb30.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Warding Sigil",
+    "cost": "{2}{U}{U}",
+    "type": "Instant",
+    "text": "Prevent all shots target player would take this turn.",
+    "flavor": "Every eventuality can be metered with careful planning and preparation.",
+    "rarity": "C",
+    "cn": 81,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/67xsWG4.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "05-08-2024",
+        "creator": "Thys",
+        "notes": "Created card concept"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Sam",
+        "notes": "Refined concept to counter shots"
+      },
+      {
+        "date": "16-08-2024",
+        "creator": "Thys",
+        "notes": "Uploaded new render"
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Whispering Wizard",
+    "cost": "{3}{U}",
+    "type": "Creature - Human Wizard",
+    "text": "Whenever you cast a noncreature spell, creatre a 1/1 white Spirit creature token with flying. This ability triggers only once each turn.",
+    "flavor": "“Sometimes the remnants of spells manifest in the corporeal, I simply coax a little more order.” {-}Spell Singer",
+    "power": 3,
+    "toughness": 2,
+    "rarity": "U",
+    "cn": 82,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/LXyA16J.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "13-07-2024",
+        "creator": "Thys",
+        "notes": "Once a turn Murmuring Mystic"
+      },
+      {
+        "date": "13-07-2024",
+        "creator": "Sam",
+        "notes": "Added card with new art"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Windrider Wizard",
+    "cost": "{2}{U}",
+    "type": "Creature - Human Wizard",
+    "text": "Flying\nWhenever you cast an instant, sorcery, or Wizard spell, you may draw a card. If you do, discard a card.",
+    "flavor": "The combination of ingenuity and irritability.",
+    "power": 2,
+    "toughness": 2,
+    "rarity": "U",
+    "cn": 83,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/OC1FbNi.png",
+    "has_bleed_edge": false,
+    "id": "U",
+    "notes": [
+      {
+        "date": "18-07-2024",
+        "creator": "Sam",
+        "notes": "Suggested card"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render with correct CN"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Winged Words",
+    "cost": "{2}{U}",
+    "type": "Sorcery",
+    "text": "This spell costs {1} less to cast if control a creature with flying.\nDraw two cards.",
+    "flavor": "It is the weird of a wizard to want their messages carried by a beast akin to their own heart. In short, magical pigeons.",
+    "rarity": "C",
+    "cn": 84,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/a8POFaG.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Wizard's Hipflask",
+    "cost": "{3}{U}",
+    "type": "Artifact",
+    "text": "Whenever you take a shot, put a beer counter on ~.\nInstant and Sorcery spells you cast cost {1} less for each beer counter on ~.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 85,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/ppfsGcl.png",
+    "id": "U",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "Posted card image"
+      },
+      {
+        "date": "06-12-2023",
+        "creator": "Sam",
+        "notes": "we need to talk about this one, the beer counters, as well as this could replace the 4 mana enchantment because I think the current one is way to strong, it turns each spell you take a shot for into a cantrip"
+      },
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      }
+    ],
+    "tags": {}
+  },
+  {
+    "name": "Zanhor, Keeper of Knowledge",
+    "cost": "{3}{U}{U}",
+    "type": "Legendary Creature - Sphinx Noble",
+    "text": "Flying\nWhenever a creature enters, that creature's controller takes a shot.\nOnce per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.",
+    "flavor": "",
+    "power": 4,
+    "toughness": 4,
+    "rarity": "M",
+    "cn": 86,
+    "set": "MTD",
+    "artist": "Copilot Designer",
+    "img": "https://i.imgur.com/KlhhgVc.png",
+    "id": "U",
+    "has_bleed_edge": true,
+    "art-remarks": "",
+    "notes": [
+      {
+        "date": "14-07-2024",
+        "creator": "Thys",
+        "notes": "Added to json, changed etb to enters"
+      },
+      {
+        "date": "17-08-2024",
+        "creator": "Thys",
+        "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "23-10-2024",
+        "creator": "Thys",
+        "notes": "Removed Stupor from Zanhor given that we only use it once in MTD"
+      },
+      {
+        "date": "16-1-2024",
+        "creator": "Sam",
+        "notes": "Updated card"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Thys",
+        "notes": "2nd ability needs to be reworded"
+      },
+      {
+        "date": "25-12-2024",
+        "creator": "Thys",
+        "notes": "Change from \"Once per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.\" to \"{0}: Prevent the next shot you would take this turn. Activate only once each turn and only if you have 10 or less life.\""
+      }
+    ],
+    "tags": {}
+  },
+  {
     "name": "Absorb",
     "set": "MTD",
     "cn": 213,
@@ -600,7 +2240,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -2265,7 +3907,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -3466,7 +5110,9 @@
       }
     ],
     "tags": {
-      "function": ["tutor"],
+      "function": [
+        "tutor"
+      ],
       "reprint": false,
       "frame": "normal"
     }
@@ -3992,7 +5638,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -4236,7 +5884,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -4282,7 +5932,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -5065,7 +6717,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true
     }
   },
@@ -5821,7 +7475,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["Removal"],
+      "function": [
+        "Removal"
+      ],
       "reprint": false
     }
   },
@@ -6715,7 +8371,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["wheel"],
+      "function": [
+        "wheel"
+      ],
       "reprint": false
     }
   },
@@ -7114,7 +8772,10 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal", "discard-outlet"],
+      "function": [
+        "removal",
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -7150,7 +8811,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -7181,7 +8844,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": false
     }
   },
@@ -7326,7 +8991,9 @@
       }
     ],
     "tags": {
-      "function": ["recursion"]
+      "function": [
+        "recursion"
+      ]
     }
   },
   {
@@ -7396,7 +9063,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -7485,7 +9154,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard-outlet"],
+      "function": [
+        "discard-outlet"
+      ],
       "reprint": false
     }
   },
@@ -7511,7 +9182,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -7536,7 +9209,9 @@
       }
     ],
     "tags": {
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": true,
       "frame": "normal"
     }
@@ -7677,7 +9352,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
+      "function": [
+        "discard",
+        "thoughtseize",
+        "discard-outlet",
+        "pact"
+      ],
       "reprint": false
     }
   },
@@ -7800,7 +9480,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["recursion"],
+      "function": [
+        "recursion"
+      ],
       "reprint": false
     }
   },
@@ -8039,7 +9721,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -8273,1599 +9957,6 @@
     }
   },
   {
-    "name": "Ossify",
-    "set": "MTD",
-    "cn": 68,
-    "id": "U",
-    "cost": "{2}{U}",
-    "type": "Instant",
-    "text": "Exile target creature. Its controller creates a Bronze Armor token with “Equipped creature gets +X/+0, where X is the exiled card's power.” and equip {2}.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/BsZYRmZ.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Created from idea for Sam's cards"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Sam",
-        "notes": "Name change to ossify"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Maybe shift to uncommon, putting in the set for now"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "Updated art, might need flavor text? But text box also might be fine as is"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "New art"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "Added bleed, CN, etc."
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Changed to not buff toughness"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "Redid render"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Spell Schism",
-    "cost": "{1}{U}{U}",
-    "type": "Instant",
-    "text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
-    "flavor": "Crackling magic shatters the air, a cleft of glorious power.",
-    "rarity": "U",
-    "cn": 74,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/9ReQN4M.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "11-07-2024",
-        "creator": "Thys",
-        "notes": "It's fork in blue what can I say, seems fun"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Thys",
-        "notes": "Added art to this card and brought it to MTD. Changed name to Spell Schism"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Atemsis, All-Seeing",
-    "cost": "{3}{U}{U}{U}",
-    "type": "Legendary Creature - Sphinx",
-    "text": "Flying\n{2}{U}, {T}: Draw two cards, then discard a card.\nWhenever ~ deals damage to an opponent, you may reveal your hand. If cards with at least six different mana values are revealed this way, that player loses the game.",
-    "flavor": "",
-    "power": 4,
-    "toughness": 5,
-    "rarity": "R",
-    "cn": 48,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/n3zEHDs.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Duelist of the Mind",
-    "cost": "{1}{U}",
-    "type": "Creature - Human Advisor",
-    "text": "Flying, vigilance\n~'s power is equal to the number of cards you've drawn this turn.\nWhenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
-    "flavor": "",
-    "power": 0,
-    "toughness": 3,
-    "rarity": "R",
-    "cn": 61,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/HWFjT7e.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Crime Vigilance Flyer???"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "Added card with new art"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": true,
-      "function": []
-    }
-  },
-  {
-    "name": "Whispering Wizard",
-    "cost": "{3}{U}",
-    "type": "Creature - Human Wizard",
-    "text": "Whenever you cast a noncreature spell, creatre a 1/1 white Spirit creature token with flying. This ability triggers only once each turn.",
-    "flavor": "“Sometimes the remnants of spells manifest in the corporeal, I simply coax a little more order.” {-}Spell Singer",
-    "power": 3,
-    "toughness": 2,
-    "rarity": "U",
-    "cn": 82,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/LXyA16J.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "13-07-2024",
-        "creator": "Thys",
-        "notes": "Once a turn Murmuring Mystic"
-      },
-      {
-        "date": "13-07-2024",
-        "creator": "Sam",
-        "notes": "Added card with new art"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Hysterical Blindness",
-    "cost": "{2}{U}",
-    "type": "Instant",
-    "text": "Creatures your opponents control get -4/-0 until end of turn.",
-    "flavor": "For just but a moment, the townspeople got a glimpse of the other side. The screaming began shortly after.",
-    "rarity": "U",
-    "cn": 64,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/fPCif61.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Added new art for Hysterical Blindness"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Thys",
-        "notes": "Changed flavor text slightly to split into two sentences."
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Zanhor, Keeper of Knowledge",
-    "cost": "{3}{U}{U}",
-    "type": "Legendary Creature - Sphinx Noble",
-    "text": "Flying\nWhenever a creature enters, that creature's controller takes a shot.\nOnce per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.",
-    "flavor": "",
-    "power": 4,
-    "toughness": 4,
-    "rarity": "M",
-    "cn": 86,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/KlhhgVc.png",
-    "id": "U",
-    "has_bleed_edge": true,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json, changed etb to enters"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      },
-      {
-        "date": "23-10-2024",
-        "creator": "Thys",
-        "notes": "Removed Stupor from Zanhor given that we only use it once in MTD"
-      },
-      {
-        "date": "16-1-2024",
-        "creator": "Sam",
-        "notes": "Updated card"
-      },
-      {
-        "date": "25-12-2024",
-        "creator": "Thys",
-        "notes": "2nd ability needs to be reworded"
-      },
-      {
-        "date": "25-12-2024",
-        "creator": "Thys",
-        "notes": "Change from \"Once per turn, if you would take damage from a shot while at 10 or less life, prevent that damage.\" to \"{0}: Prevent the next shot you would take this turn. Activate only once each turn and only if you have 10 or less life.\""
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Challenger Penguin",
-    "cost": "{1}{U}",
-    "type": "Creature - Bird",
-    "text": "",
-    "flavor": "“Birds of the north are of a different breed. Unlike their lofty southern counterparts, these species lack the ability of flight. A group of them mobbed my colleague this morning, it seems being flightless has given them something to prove” {-}Jhonsmith, biologist",
-    "power": 2,
-    "toughness": 1,
-    "rarity": "C",
-    "cn": 53,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/U2V0oYZ.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Cerulean Drake",
-    "set": "MTD",
-    "cn": 52,
-    "id": "U",
-    "cost": "{1}{U}",
-    "type": "Creature - Drake",
-    "text": "Flying\nProtection from red\nSacrifice ~: Counter target spell that targets you.",
-    "flavor": "The magic of Aphelion seeps into all things, lying dormant until their ancient triggers are activated.",
-    "rarity": "U",
-    "img": "https://i.imgur.com/v2YP34V.png",
-    "has_bleed_edge": false,
-    "power": 2,
-    "toughness": 1,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Sam",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "reprint": true,
-      "frame": "normal",
-      "function": ["counterspell"]
-    }
-  },
-  {
-    "name": "Broadwing Seabird",
-    "cost": "{4}{U}",
-    "type": "Creature - Bird",
-    "text": "Flying\nWard{-}Take a shot.",
-    "flavor": "Aphelion is home to an ancient race of Rocs who make their home far away from shore.",
-    "power": 3,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 51,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/wNuSnOM.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Art is slightly misaligned, so there is white peeking through"
-      },
-      {
-        "date": "18-07-2024",
-        "creator": "Thys",
-        "notes": "Fixed name in json"
-      },
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "Fixed art and new flavor"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Sam",
-        "notes": "New render with correct CN"
-      },
-      {
-        "date": "19-08-2024",
-        "creator": "Sam",
-        "notes": "Fixed ward cost"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Tragic Lesson",
-    "cost": "{2}{U}",
-    "type": "Instant",
-    "text": "Draw two cards. Then discard a card unless you return a land you control to its owner's hand.",
-    "flavor": "She had finally done it. In her palm was a small glimmering point of magical heat and warmth, her joy at finally casting a spell quickly turned to despair as she watched that flame burn her life to the ground.",
-    "rarity": "C",
-    "cn": 78,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/EzK8f8u.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["draw"],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Lofty Denial",
-    "cost": "{1}{U}",
-    "type": "Instant",
-    "text": "Counter target spell unless its controller pays {1}. If you control a creature with flying, counter that spell unless its controller pays {4} instead.",
-    "flavor": "The bird wizards of Aphelion are adept in the art of misdirection and deception.",
-    "rarity": "C",
-    "cn": 66,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/m4N51cL.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["counterspell"],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Warden of Evos Isle",
-    "cost": "{2}{U}",
-    "type": "Creature - Bird Wizard",
-    "text": "Flying\nCreature spells with flying you cast cost {1} less to cast.",
-    "flavor": "Birds of a feather flock together, normally an innocuous fact, until you realize the birds know fireball.",
-    "power": 2,
-    "toughness": 2,
-    "rarity": "U",
-    "cn": 80,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/f5Yeb30.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Winged Words",
-    "cost": "{2}{U}",
-    "type": "Sorcery",
-    "text": "This spell costs {1} less to cast if control a creature with flying.\nDraw two cards.",
-    "flavor": "It is the weird of a wizard to want their messages carried by a beast akin to their own heart. In short, magical pigeons.",
-    "rarity": "C",
-    "cn": 84,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/a8POFaG.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Unexplained Disappearance",
-    "cost": "{1}{U}",
-    "type": "Instant",
-    "text": "Return target creature to its owner's hand.\nSurveil 1.",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 79,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/gaL2PrZ.png",
-    "has_bleed_edge": false,
-    "id": "U",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Illusionary Informant",
-    "cost": "{1}{U}",
-    "type": "Creature - Bird Illusion",
-    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at the next card drafted by a player of your choice.\nFlying",
-    "flavor": "",
-    "power": 1,
-    "toughness": 3,
-    "rarity": "C",
-    "cn": 65,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/FOISzID.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "watermark": "draft",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Spiked Spell",
-    "cost": "{1}{U}{U}",
-    "type": "Instant",
-    "text": "Counter target noncreature spell. Its controller takes a shot.",
-    "flavor": "Be careful, or someone might just put something in your spell.",
-    "rarity": "C",
-    "cn": 75,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/0nwqxVD.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "18-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["counterspell"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Wizard's Hipflask",
-    "cost": "{3}{U}",
-    "type": "Artifact",
-    "text": "Whenever you take a shot, put a beer counter on ~.\nInstant and Sorcery spells you cast cost {1} less for each beer counter on ~.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 85,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/ppfsGcl.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "Posted card image"
-      },
-      {
-        "date": "06-12-2023",
-        "creator": "Sam",
-        "notes": "we need to talk about this one, the beer counters, as well as this could replace the 4 mana enchantment because I think the current one is way to strong, it turns each spell you take a shot for into a cantrip"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Cursed Technique",
-    "cost": "{1}{U}",
-    "type": "Instant",
-    "text": "Pact\nReturn target creature you don't control to its owners hand. If you accepted ~'s pact, that creature's controller discards a card.",
-    "flavor": "",
-    "rarity": "C",
-    "cn": 57,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/4QN9HX4.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested basically this card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json, changed to be pact instead of just taking a shot"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "New Art, New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "reprint": false,
-      "frame": "normal",
-      "function": []
-    }
-  },
-  {
-    "name": "Return to Immaterial",
-    "cost": "{2}{U}",
-    "type": "Instant",
-    "text": "For each opponent with an instant card in their graveyard, return target nonland permanent to its owners hand.",
-    "flavor": "The ancient ways of detecting witchcraft serve both the persecutors and the modern sorceress looking to get an edge.",
-    "rarity": "U",
-    "cn": 70,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/uLcvYlM.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json, fixed wording, upshifted to Uncommon"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Sam",
-        "notes": "Added new flavor text"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      },
-      {
-        "date": "27-12-2024",
-        "creator": "David",
-        "notes": "Maybe change to \"For each opponent with an instant card in their graveyard, choose target nonland permanent. Return each card chosen this way to their owners hand."
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Brain Fog",
-    "cost": "{U}",
-    "type": "Instant",
-    "text": "Discard three cards, then return up to two cards from your graveyard to your hand.",
-    "flavor": "“Ughhhh”",
-    "rarity": "R",
-    "cn": 50,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/bK4Lq2U.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json, fixed wording, upshifted to Uncommon"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "Upshifted to Rare"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": false
-    }
-  },
-  {
-    "name": "Hangover",
-    "cost": "{U}{U}",
-    "type": "Enchantment - Aura",
-    "text": "Enchant creature\nWhen ~ enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nAt the beginning of the upkeep of enchanted creature's controller, that player may take a shot. If they do, untap enchanted creature.",
-    "flavor": "",
-    "rarity": "U",
-    "cn": 63,
-    "set": "MTD",
-    "img": "https://i.imgur.com/vqGq0MV.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json, changed etb to enters"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["removal"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Crackpot Moonshine",
-    "cost": "{3}{U}",
-    "type": "Enchantment",
-    "text": "Whenever you take a shot, draw a card, then discard a card.",
-    "flavor": "Wizards are known for their curiously strong brews. Never the traditionalist, their brews are at the forefront of innovation.",
-    "rarity": "U",
-    "cn": 55,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/7Ss5UcM.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Added to json, changed draw to be looting instead, tbd change name and art"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Sam",
-        "notes": "Changed mana cost from 2U to 3U, changed art, and changed name from Pirate's Grog to Crackpot Moonshine, changed flavor text"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with Nyx border"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "New CN, New render with correct CN"
-      }
-    ],
-    "tags": {
-      "reprint": false,
-      "frame": "normal",
-      "function": []
-    }
-  },
-  {
-    "name": "Tides of Battle",
-    "cost": "{2}{U}",
-    "type": "Sorcery",
-    "text": "Draw a card for each player you attacked this turn.",
-    "flavor": "Because knowing is half the battle.",
-    "rarity": "U",
-    "cn": 77,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/IbrGdpw.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "26-06-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "15-07-2024",
-        "creator": "Thys",
-        "notes": "Mana cost 3U -> 2U"
-      },
-      {
-        "date": "16-07-2024",
-        "creator": "Sam",
-        "notes": "Name changed to Tides of Battle, added flavor and new card image"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      },
-      {
-        "date": "27-12-2024",
-        "creator": "Thys",
-        "notes": "David suggested moving mana cost from 2U -> 1U"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["draw"],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Silent Companion",
-    "cost": "{2}{U}",
-    "type": "Creature - Bird",
-    "text": "Flying\nWhenever you cast an instant or sorcery spell, you may scry 1.",
-    "flavor": "Aphelion scholars rarely travel alone.",
-    "power": 1,
-    "toughness": 3,
-    "rarity": "U",
-    "cn": 72,
-    "set": "MTD",
-    "artist": "",
-    "img": "https://i.imgur.com/mJs00YH.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "art-remarks": "Art is of an owl, similar to Harrier Strix. It's a familiar flying or standing near an Aphelion scholar",
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob // Could do something like Jace's Sanctum, but that would likely be a rare and idk if we want that to be a rare. Alternatively, Prescient Chimera"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "Created card stub"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Thys",
-        "notes": "Gave card name of Silent Companion, upshifted to uncommon, new render"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "no flying // Hehehe"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Thys",
-        "notes": "Added flying, changed to 1/3"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "Also make it a wizard I think? // Idk up to you on that"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Thys",
-        "notes": "but i also like not having it be a wizard bc it's like a familiar"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "I like that flavor a lot"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Thys",
-        "notes": "Added flavor"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "Added art"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Mirror into the Abyss",
-    "set": "MTD",
-    "cn": 67,
-    "id": "U",
-    "cost": "{1}{U}",
-    "type": "Artifact",
-    "text": "When ~ enters, scry 2.\n{1}, Sacrifice ~: Draw a card.\n{4}: Draw a card.",
-    "flavor": "",
-    "rarity": "C",
-    "img": "https://i.imgur.com/PprrZqI.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Maybe could be split into 2 cards, I like the idea of a blue mana sink for card draw, but this cycling thing is interesting"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "Created card stub"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Changed name from Blue Mana Sink to Mirror into the Abyss, given art, made into an artifact"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Crossroads Sphinx",
-    "cost": "{4}{U}{U}",
-    "type": "Creature - Sphinx",
-    "text": "Flying\nWhen ~ enters, reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
-    "flavor": "",
-    "power": 4,
-    "toughness": 5,
-    "rarity": "U",
-    "cn": 56,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/A840KNa.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "Added flying"
-      },
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "Given image"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      },
-      {
-        "date": "14-10-2024",
-        "creator": "Sam",
-        "notes": "New CN, New render with correct CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Portal Mage",
-    "cost": "{2}{U}",
-    "type": "Creature - Human Wizard",
-    "text": "Flash\nWhen ~ enters during the declare attackers step, you may reselect which player or permanent target attacking creature is attacking.",
-    "flavor": "",
-    "power": 2,
-    "toughness": 2,
-    "rarity": "U",
-    "cn": 69,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/tCdsg1D.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "New art"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render, added bleed, CN, etc."
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Archaeomancer",
-    "cost": "{2}{U}{U}",
-    "type": "Creature - Human Wizard",
-    "text": "When ~ enters, return target instant or sorcery card from your graveyard to your hand.",
-    "flavor": "“Much has been lost, which is great because I can be the one to find it.”{lns}{-}Clarissa, Arcane Archeologist",
-    "power": 1,
-    "toughness": 2,
-    "rarity": "C",
-    "cn": 46,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/n6D87K9.png",
-    "id": "U",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "16-07-2024",
-        "creator": "Thys",
-        "notes": "Added to MTD, created blob"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      },
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Final pre-print pass"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": ["recursion"],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Arctic Aven",
-    "cost": "{2}{U}",
-    "type": "Creature - Bird Wizard",
-    "text": "Flying\n~ gets +1/+1 as long as you control a Plains.\n{W}: ~ gains lifelink until end of turn.",
-    "flavor": "While Aphelion is the least inhabited region, it is by far the largest.",
-    "power": 2,
-    "toughness": 1,
-    "rarity": "C",
-    "cn": 47,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/5h6VvJv.png",
-    "id": "WU",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Posted card image // either this card exactly or an inversed version where it gains flying? // i kind of love this card tbh // it checks all the boxes for the set"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Selection Process",
-    "cost": "{X}{1}{U}{U}",
-    "type": "Instant",
-    "text": "This spell costs {1} less to cast for each Wizard you control.\nReturn X target nonland permanents to their owners hands.",
-    "flavor": "Being selected to apprentice is a brutal and competitive process.",
-    "rarity": "R",
-    "cn": 71,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/CdaVCqo.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "26-06-2024",
-        "creator": "Thys",
-        "notes": "Posted card idea"
-      },
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "change flying to wizard // Posted card image and chose name"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Windrider Wizard",
-    "cost": "{2}{U}",
-    "type": "Creature - Human Wizard",
-    "text": "Flying\nWhenever you cast an instant, sorcery, or Wizard spell, you may draw a card. If you do, discard a card.",
-    "flavor": "The combination of ingenuity and irritability.",
-    "power": 2,
-    "toughness": 2,
-    "rarity": "U",
-    "cn": 83,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/OC1FbNi.png",
-    "has_bleed_edge": false,
-    "id": "U",
-    "notes": [
-      {
-        "date": "18-07-2024",
-        "creator": "Sam",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Drifting Skyvagrant",
-    "cost": "{5}{U}{U}",
-    "type": "Creature - Jellyfish",
-    "text": "Flash, flying\nIslandcycling {2}",
-    "flavor": "When the clouds part, dozens of Vagrants can be seen lazily drifting throughout the sky, twinkling like stars.",
-    "power": 5,
-    "toughness": 4,
-    "rarity": "C",
-    "cn": 60,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/aIFR6nP.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "26-07-2024",
-        "creator": "Thys",
-        "notes": "Added card json from backpacking trip"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Sam",
-        "notes": "Added art, flavor, and name"
-      },
-      {
-        "date": "29-07-2024",
-        "creator": "Thys",
-        "notes": "ITS A FUCKIN ROR2 REFERENCE"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      },
-      {
-        "date": "27-12-2024",
-        "creator": "David",
-        "notes": "Add reminder text for Islandcycling: It's standard for all common cycling cards"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Frantic Search",
-    "cost": "{2}{U}",
-    "type": "Instant",
-    "text": "Draw two cards, then discard two cards. Untap up to three lands.",
-    "flavor": "“We've almost found it, just keep looking, the next stack has to have it”",
-    "rarity": "C",
-    "cn": 62,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/h0JukHx.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Added card render to MTX"
-      },
-      {
-        "date": "14-08-2024",
-        "creator": "Thys",
-        "notes": "Added to MTD because it's in the spreadsheet"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Made new art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
-    }
-  },
-  {
-    "name": "Warding Sigil",
-    "cost": "{2}{U}{U}",
-    "type": "Instant",
-    "text": "Prevent all shots target player would take this turn.",
-    "flavor": "Every eventuality can be metered with careful planning and preparation.",
-    "rarity": "C",
-    "cn": 81,
-    "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/67xsWG4.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "05-08-2024",
-        "creator": "Thys",
-        "notes": "Created card concept"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Refined concept to counter shots"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "Uploaded new render"
-      }
-    ],
-    "tags": {}
-  },
-  {
-    "name": "Storm Chick",
-    "cost": "{U}",
-    "type": "Creature - Bird",
-    "text": "Flying",
-    "flavor": "Storm chick descending, winter unending. Storm chick departing, summer is starting.",
-    "power": 1,
-    "toughness": 1,
-    "rarity": "C",
-    "cn": 76,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/9oZbVvN.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "09-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "14-07-2024",
-        "creator": "Thys",
-        "notes": "Created json blob"
-      },
-      {
-        "date": "22-07-2024",
-        "creator": "Thys",
-        "notes": "Created card stub"
-      },
-      {
-        "date": "13-08-2024",
-        "creator": "Sam",
-        "notes": "Made it a Storm Crow reference, added to MTD"
-      },
-      {
-        "date": "17-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": false
-    }
-  },
-  {
-    "name": "Aphelion Frost Speaker",
-    "cost": "{4}{U}",
-    "type": "Creature - Bird Wizard",
-    "text": "Whenever ~ attacks, put a stun counter on target permanent.{line}Whenever you cast an instant or sorcery spell, you may tap or untap target permanent.",
-    "flavor": "",
-    "power": 4,
-    "toughness": 4,
-    "rarity": "R",
-    "cn": 45,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/Xoeozjw.png",
-    "id": "U",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Thys",
-        "notes": "Added card to MTX"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Changed name from Explorer to Frost Speaker, changed type from Scout to Wizard, changed to tap or untap permanents on instant or sorcery cast"
-      },
-      {
-        "date": "31-12-2024",
-        "creator": "Thys",
-        "notes": "Final pre-print pass"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "reprint": false
-    }
-  },
-  {
-    "name": "Sorcerous Squall",
-    "cost": "{6}{U}{U}{U}",
-    "type": "Sorcery",
-    "text": "Delve\nTarget opponent mills nine cards, then you may cast an instant or sorcery spell from that player's graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
-    "flavor": "",
-    "rarity": "R",
-    "cn": 73,
-    "set": "MTD",
-    "artist": "Stable Diffusion",
-    "img": "https://i.imgur.com/IHBbRJr.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "Added card to MTD, created art"
-      },
-      {
-        "date": "15-08-2024",
-        "creator": "Thys",
-        "notes": "Added card to MTD, created art"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "New render with correct CN"
-      }
-    ],
-    "tags": {
-      "function": [],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Desynchronize",
-    "cost": "{4}{U}",
-    "type": "Instant",
-    "text": "Target nonland permanent's owner puts it on the top or bottom of their library. Scry 2.",
-    "flavor": "Reality shattered on his craven wings, the broken mirror no longer chained the sleeping god.",
-    "rarity": "C",
-    "cn": 59,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/SDdFFjh.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "16-08-2024",
-        "creator": "Thys",
-        "notes": "Found card"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Given art"
-      }
-    ],
-    "tags": {
-      "function": ["removal"],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Borne Upon a Wind",
-    "cost": "{1}{U}",
-    "type": "Instant",
-    "text": "You may cast spells this turn as though they had flash.\nDraw a card.",
-    "flavor": "Expeditions through the glaciers of Aphelion yielded insight into the origins of both the world and the magic that shaped it.",
-    "rarity": "R",
-    "cn": 49,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/Q0jLqFa.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "14-08-2024",
-        "creator": "Sam",
-        "notes": "Suggested card"
-      },
-      {
-        "date": "16-08-2024",
-        "creator": "Sam",
-        "notes": "Given art"
-      }
-    ],
-    "tags": {
-      "function": [],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
-    "name": "Clear the Mind",
-    "cost": "{2}{U}",
-    "type": "Sorcery",
-    "text": "Target player shuffles their graveyard into their library.\nDraw a card.",
-    "flavor": "A moment of peace is worth a year of noise.",
-    "rarity": "C",
-    "cn": 54,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/WPXIfsV.png",
-    "id": "U",
-    "has_bleed_edge": false,
-    "notes": [
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Suggested Reshuffle"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Thys",
-        "notes": "Suggested Clear the Mind as a different option"
-      },
-      {
-        "date": "17-07-2024",
-        "creator": "Sam",
-        "notes": "Added art"
-      }
-    ],
-    "tags": {
-      "function": [],
-      "reprint": true,
-      "frame": "normal"
-    }
-  },
-  {
     "name": "Law of Equivalent Exchange",
     "set": "MTD",
     "cn": 2,
@@ -9942,7 +10033,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["removal"],
+      "function": [
+        "removal"
+      ],
       "reprint": false
     }
   },
@@ -11178,7 +11271,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11260,7 +11355,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11286,7 +11383,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw"],
+      "function": [
+        "draw"
+      ],
       "reprint": true
     }
   },
@@ -11343,7 +11442,9 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["ramp"],
+      "function": [
+        "ramp"
+      ],
       "reprint": true
     }
   },
@@ -11435,7 +11536,11 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "repeatable-draw", "card-advantage"],
+      "function": [
+        "draw",
+        "repeatable-draw",
+        "card-advantage"
+      ],
       "reprint": true
     }
   },
@@ -11503,7 +11608,12 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": ["draw", "card-advantage", "mill", "mill-self"],
+      "function": [
+        "draw",
+        "card-advantage",
+        "mill",
+        "mill-self"
+      ],
       "reprint": true
     }
   },
@@ -11620,37 +11730,6 @@
       "frame": "normal",
       "function": [],
       "reprint": false
-    }
-  },
-  {
-    "name": "Artful Dodge",
-    "cost": "{U}",
-    "type": "Sorcery",
-    "text": "Target creature can't be blocked this turn.{line}Flashback {U}",
-    "flavor": "“Ribbbbit”",
-    "rarity": "U",
-    "cn": 48,
-    "set": "MTD",
-    "artist": "Midjourney",
-    "img": "https://i.imgur.com/nZv41bD.png",
-    "id": "U",
-    "has_bleed_edge": true,
-    "notes": [
-      {
-        "date": "02-12-2024",
-        "creator": "Thys",
-        "notes": "Added card"
-      },
-      {
-        "date": "25-12-2024",
-        "creator": "Sam",
-        "notes": "Added art"
-      }
-    ],
-    "tags": {
-      "frame": "normal",
-      "function": [],
-      "reprint": true
     }
   },
   {
