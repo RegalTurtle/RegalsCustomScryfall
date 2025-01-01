@@ -600,9 +600,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -2267,9 +2265,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false,
       "frame": "normal"
     }
@@ -3470,9 +3466,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "tutor"
-      ],
+      "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
@@ -3998,9 +3992,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -4244,9 +4236,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -4292,9 +4282,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -4842,30 +4830,39 @@
     "text": "Choose target attacking or blocking creature. Scry 3, then reveal the top card of your library. ~ deals damage equal to that card's mana value to that creature.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/CqCZmpG.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/aCPeCuc.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Given bleed edge and CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Light of God",
     "cost": "{1}{W}",
     "type": "Enchantment - Aura",
-    "text": "Flash\nEnchant creature\nWhen ~ enters, untap enchanted creature.\nEnchanted creature has flying.",
+    "text": "Flash{line}Enchant creature{line}When ~ enters, untap enchanted creature.{line}Enchanted creature has flying.",
     "flavor": "The council of heaven delivers light to the faithful, to torment the faithless.",
     "rarity": "C",
     "cn": 25,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/r1v7Npf.png",
+    "img": "https://i.imgur.com/Ng340yS.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -4886,6 +4883,11 @@
         "date": "18-08-2024",
         "creator": "Thys",
         "notes": "New render with Nyx border"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -4899,14 +4901,14 @@
     "cost": "{2}{W}",
     "type": "Enchantment",
     "text": "{2}: Prevent the next shot you would take this turn.",
-    "flavor": "“As of this day, not a drop of alcohol shall defile your lips, nor a whiff of devil weed taint your lungs, arise child of light and be whole.” {-}Sephara",
+    "flavor": "“As of this day, not a drop of alcohol shall defile your lips, nor a whiff of devil weed taint your lungs, arise child of light and be whole.”{lns}{-}Sephara",
     "rarity": "U",
     "cn": 26,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/D15eEB9.png",
+    "img": "https://i.imgur.com/VuADdRv.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -4957,6 +4959,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Changed flavor text, added Nyx border"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, fixed flavor text"
       }
     ],
     "tags": {
@@ -4975,14 +4982,19 @@
     "cn": 27,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/dpbH5dT.png",
+    "img": "https://i.imgur.com/N4eLeVl.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-08-2024",
         "creator": "Sam",
         "notes": "New art, added bleed and CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -4993,15 +5005,15 @@
     "name": "No Fun Allowed",
     "cost": "{W}",
     "type": "Instant",
-    "text": "Counter target spell or activated ability that would force a player to take a shot.\nDraw a card.",
+    "text": "Counter target spell or activated ability that would force a player to take a shot.{line}Draw a card.",
     "flavor": "“The Lord wills it not”",
     "rarity": "U",
     "cn": 28,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/zeDcu7u.png",
+    "img": "https://i.imgur.com/eJjjEi9.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-08-2024",
@@ -5012,15 +5024,23 @@
         "date": "14-08-2024",
         "creator": "Sam",
         "notes": "New art, added bleed and CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Palace Jailer",
     "cost": "{2}{W}{W}",
     "type": "Creature - Human Soldier",
-    "text": "When ~ enters, you become the monarch.\nWhen ~ enters, exile target creature an opponent controls until an opponent becomes the monarch.",
+    "text": "When ~ enters, you become the monarch.{line}When ~ enters, exile target creature an opponent controls until an opponent becomes the monarch.",
     "flavor": "",
     "power": 2,
     "toughness": 2,
@@ -5028,21 +5048,24 @@
     "cn": 29,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/YgsNsiv.png",
+    "img": "https://i.imgur.com/cGlUDP8.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-08-2024",
         "creator": "Thys",
         "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -5058,14 +5081,19 @@
     "cn": 30,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/WySUcMB.png",
+    "img": "https://i.imgur.com/V7HuJ3k.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-08-2024",
         "creator": "Thys",
         "notes": "Added new render, CN, bleed edge, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5077,7 +5105,7 @@
     "name": "Paladin of the Holy Order",
     "cost": "{5}{W}",
     "type": "Creature - Human Soldier",
-    "text": "When ~ enters, you become the monarch.\nAt the beginning of combat on each opponent's turn, if you're the monarch, that opponent may pay {X}, where X is the number of cards in their hand. If they don't, they can't attack you this combat.",
+    "text": "When ~ enters, you become the monarch.{line}At the beginning of combat on each opponent's turn, if you're the monarch, that opponent may pay {X}, where X is the number of cards in their hand. If they don't, they can't attack you this combat.",
     "flavor": "",
     "power": 4,
     "toughness": 6,
@@ -5086,14 +5114,19 @@
     "note": "=LTC 10",
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/whfCPwf.png",
+    "img": "https://i.imgur.com/0FPc4tw.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-08-2024",
         "creator": "Thys",
         "notes": "Changed cn to 28 instead of 26 // New render, added CN, bleed edge, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5111,7 +5144,8 @@
     "text": "When ~ enters, create a tapped Excuse token.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/XnMCChr.png",
+    "img": "https://i.imgur.com/fKWeypI.png",
+    "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
@@ -5135,6 +5169,11 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Updated card"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, fixed reminder text"
       }
     ],
     "tags": {
@@ -5145,15 +5184,15 @@
     "name": "Peace Accord",
     "cost": "{1}{W}{W}",
     "type": "Enchantment",
-    "text": "Creatures controlled by the player whose turn it is get -1/-0.\nCreatures controlled by each opponent of the player whose turn it is get +0/+1.",
+    "text": "Creatures controlled by the player whose turn it is get -1/-0.{line}Creatures controlled by each opponent of the player whose turn it is get +0/+1.",
     "flavor": "The age of the new monarch has begun, let there be peace and prosperity.",
     "rarity": "R",
     "cn": 33,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/zTbxkcg.png",
+    "img": "https://i.imgur.com/ngZvYyP.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-08-2024",
@@ -5164,6 +5203,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Changed name to Peace Accord, new art and flavor text, added Nyx frame"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5177,14 +5221,14 @@
     "cost": "{3}{W}",
     "type": "Enchantment",
     "text": "Each player can't take more than one shot each turn.",
-    "flavor": "“But drinking brought us together, this fragile peace with the elves, why did you have to find that old tome Simon. Why!” {-}Archivist of the Ecclesiarch",
+    "flavor": "“But drinking brought us together, this fragile peace with the elves, why did you have to find that old tome Simon. Why!”{lns}{-}Archivist of the Ecclesiarch",
     "rarity": "U",
     "cn": 34,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Z2xDrsb.png",
+    "img": "https://i.imgur.com/eYDZ3Eo.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "27-07-2024",
@@ -5210,6 +5254,11 @@
         "date": "19-08-2024",
         "creator": "Thys",
         "notes": "Fixed flavor text"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, fixed flavor text"
       }
     ],
     "tags": {
@@ -5222,7 +5271,7 @@
     "name": "Protector of the Crown",
     "cost": "{5}{W}",
     "type": "Creature - Giant Soldier",
-    "text": "When ~ enters, you become the monarch.\nAll damage that would be dealt to you is dealt to ~ instead.",
+    "text": "When ~ enters, you become the monarch.{line}All damage that would be dealt to you is dealt to ~ instead.",
     "flavor": "“I gladly offer my weapon and my life to the glory of my sovereign.”",
     "power": 2,
     "toughness": 5,
@@ -5230,9 +5279,9 @@
     "cn": 35,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/Do1VPiT.png",
+    "img": "https://i.imgur.com/tQ1zRv6.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -5253,10 +5302,16 @@
         "date": "13-08-2024",
         "creator": "Thys",
         "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "reprint": true
+      "reprint": true,
+      "frame": "normal"
     }
   },
   {
@@ -5266,19 +5321,28 @@
     "id": "W",
     "cost": "{5}{W}{W}",
     "type": "Sorcery",
-    "text": "Convoke\nCreate X 1/1 green and white Citizen creature tokens, where X is the number of counters on permanents you control.",
+    "text": "Convoke{line}Create X 1/1 green and white Citizen creature tokens, where X is the number of counters on permanents you control.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/zRH03Js.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/g2jp5SJ.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Added CN and bleed"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Reformed Priest",
@@ -5325,15 +5389,15 @@
     "name": "Royal Privilege",
     "cost": "{2}{W}{W}{W}",
     "type": "Enchantment",
-    "text": "When ~ enters, you become the monarch.\nAs long as you are the monarch, your life total can't change as a result of you taking a shot.",
+    "text": "When ~ enters, you become the monarch.{line}As long as you are the monarch, your life total can't change as a result of you taking a shot.",
     "flavor": "“Do you know who I am”",
     "rarity": "R",
     "cn": 38,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/eL655sO.png",
+    "img": "https://i.imgur.com/u3Ahkzm.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-08-2024",
@@ -5344,6 +5408,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "New render with Nyx border"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5361,10 +5430,10 @@
     "rarity": "R",
     "cn": 39,
     "set": "MTD",
-    "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/UN4AqdS.png",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/jRearfT.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "29-07-2024",
@@ -5375,6 +5444,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "New render with Nyx border"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5387,7 +5461,7 @@
     "name": "Sentinel of the Eternal Watch",
     "cost": "{5}{W}",
     "type": "Creature - Giant Soldier",
-    "text": "Vigilance\nAt the beginning of combat on each opponent's turn, tap target creature that player controls.",
+    "text": "Vigilance{line}At the beginning of combat on each opponent's turn, tap target creature that player controls.",
     "flavor": "",
     "power": 4,
     "toughness": 6,
@@ -5395,18 +5469,24 @@
     "cn": 40,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Lh6dJ1h.png",
+    "img": "https://i.imgur.com/LTzoVn6.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "11-07-2024",
         "creator": "Thys",
         "notes": "Added image with correct bleed edge and CN. Might need flavor text"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "reprint": true
+      "reprint": true,
+      "frame": "normal"
     }
   },
   {
@@ -5416,19 +5496,24 @@
     "id": "W",
     "cost": "{4}{W}{W}{W}",
     "type": "Legendary Creature - Angel",
-    "text": "You may pay {W} and tap four untapped creatures you control with flying rather than pay this spell's mana cost.\nFlying, lifelink\nOther creatures you control with flying have indestructible.",
+    "text": "You may pay {W} and tap four untapped creatures you control with flying rather than pay this spell's mana cost.{line}Flying, lifelink{line}Other creatures you control with flying have indestructible.",
+    "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/HHSoryZ.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/tZ9Lh8a.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 7,
     "toughness": 7,
-    "art-remarks": "",
-    "flavor": "",
     "notes": [
       {
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Added bleed and CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5439,7 +5524,7 @@
     "name": "Skyhoof Pegasus",
     "cost": "{1}{W}",
     "type": "Creature - Pegasus",
-    "text": "Whenever you gain life, ~ gains flying until end of turn.\n{3}: You gain 2 life.",
+    "text": "Whenever you gain life, ~ gains flying until end of turn.{line}{3}: You gain 2 life.",
     "flavor": "The sky shone with a brilliant hope, how can the world be so dire with such beauty?",
     "power": 2,
     "toughness": 2,
@@ -5447,18 +5532,24 @@
     "cn": 42,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/J96DG1Z.png",
+    "img": "https://i.imgur.com/9TkTty8.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-08-2024",
         "creator": "Sam",
         "notes": "New art, added bleed and CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "reprint": false
+      "reprint": false,
+      "frame": "normal"
     }
   },
   {
@@ -5473,18 +5564,24 @@
     "cn": 43,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/rUIjiBO.png",
+    "img": "https://i.imgur.com/puY6U2t.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-08-2024",
         "creator": "Thys",
         "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "reprint": true
+      "reprint": true,
+      "frame": "normal"
     }
   },
   {
@@ -5499,18 +5596,24 @@
     "cn": 44,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/k6rfdnm.png",
+    "img": "https://i.imgur.com/Ki5yGXj.png",
     "id": "W",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-08-2024",
         "creator": "Thys",
         "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "reprint": false
+      "reprint": false,
+      "frame": "normal"
     }
   },
   {
@@ -5718,9 +5821,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "Removal"
-      ],
+      "function": ["Removal"],
       "reprint": false
     }
   },
@@ -6614,9 +6715,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "wheel"
-      ],
+      "function": ["wheel"],
       "reprint": false
     }
   },
@@ -7015,10 +7114,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal",
-        "discard-outlet"
-      ],
+      "function": ["removal", "discard-outlet"],
       "reprint": false
     }
   },
@@ -7054,9 +7150,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7087,9 +7181,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -7234,9 +7326,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ]
+      "function": ["recursion"]
     }
   },
   {
@@ -7306,9 +7396,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7397,9 +7485,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard-outlet"
-      ],
+      "function": ["discard-outlet"],
       "reprint": false
     }
   },
@@ -7425,9 +7511,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7452,9 +7536,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -7595,12 +7677,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard",
-        "thoughtseize",
-        "discard-outlet",
-        "pact"
-      ],
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
       "reprint": false
     }
   },
@@ -7723,9 +7800,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -7964,9 +8039,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -8545,9 +8618,7 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ]
+      "function": ["counterspell"]
     }
   },
   {
@@ -8630,9 +8701,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -8663,9 +8732,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": true
     }
   },
@@ -8826,9 +8893,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": false
     }
   },
@@ -9005,9 +9070,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -9104,9 +9167,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -9362,9 +9423,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": true
     }
   },
@@ -9721,9 +9780,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -9872,9 +9929,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -11110,9 +11165,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11194,9 +11247,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11222,9 +11273,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11281,9 +11330,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "ramp"
-      ],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -11375,11 +11422,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "repeatable-draw",
-        "card-advantage"
-      ],
+      "function": ["draw", "repeatable-draw", "card-advantage"],
       "reprint": true
     }
   },
@@ -11447,12 +11490,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "card-advantage",
-        "mill",
-        "mill-self"
-      ],
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
       "reprint": true
     }
   },
