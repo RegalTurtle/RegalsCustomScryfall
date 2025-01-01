@@ -70,7 +70,7 @@ export const sortMTD = () => {
   // White
   // setCnBetweenCns(3, 44, "MTD");
   // Blue
-  // setCnBetweenCns(45, 86, "MTD");
+  setCnBetweenCns(45, 86, "MTD");
   // Black
   // setCnBetweenCns(87, 128, "MTD");
   // Red
@@ -78,7 +78,7 @@ export const sortMTD = () => {
   // Green
   // setCnBetweenCns(171, 212, "MTD");
   // Multicolor
-  setCnBetweenCns(213, 246, "MTD");
+  // setCnBetweenCns(213, 246, "MTD");
   // Artifact
   // setCnBetweenCns(247, 265, "MTD");
   // Land

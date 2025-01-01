@@ -9406,9 +9406,9 @@
     "cn": 46,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/sMI24CW.png",
+    "img": "https://i.imgur.com/n6D87K9.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "16-07-2024",
@@ -9419,6 +9419,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -9693,7 +9698,7 @@
     "name": "Aphelion Frost Speaker",
     "cost": "{4}{U}",
     "type": "Creature - Bird Wizard",
-    "text": "Whenever ~ attacks, put a stun counter on target permanent.\nWhenever you cast an instant or sorcery spell, you may tap or untap target permanent.",
+    "text": "Whenever ~ attacks, put a stun counter on target permanent.{line}Whenever you cast an instant or sorcery spell, you may tap or untap target permanent.",
     "flavor": "",
     "power": 4,
     "toughness": 4,
@@ -9701,9 +9706,9 @@
     "cn": 45,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/DtQ4Lmy.png",
+    "img": "https://i.imgur.com/Xoeozjw.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-08-2024",
@@ -9714,9 +9719,17 @@
         "date": "16-08-2024",
         "creator": "Sam",
         "notes": "Changed name from Explorer to Frost Speaker, changed type from Scout to Wizard, changed to tap or untap permanents on instant or sorcery cast"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Sorcerous Squall",
