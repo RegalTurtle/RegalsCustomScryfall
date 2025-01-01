@@ -176,7 +176,7 @@
     "cn": 91,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/9lFmuOG.png",
+    "img": "https://i.imgur.com/2g3wr65.png",
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
@@ -448,7 +448,7 @@
     "text": "At the beginning of your upkeep, if you have no cards in hand, you may take a shot and draw two cards.{line}Madness {1}{B}",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/U3Z00RC.png",
+    "img": "https://i.imgur.com/0FGwArC.png",
     "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "notes": [
@@ -798,7 +798,7 @@
     "cn": 106,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/quQ3ysH.png",
+    "img": "https://i.imgur.com/p8FCKYL.png",
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
@@ -1283,7 +1283,7 @@
     "cn": 119,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/frPcmuf.png",
+    "img": "https://i.imgur.com/SQW4Jse.png",
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
@@ -1305,7 +1305,7 @@
       {
         "date": "01-01-2025",
         "creator": "Thys",
-        "notes": "Final pre-print pass, madness isn't getting reminder text anywhere"
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1519,9 +1519,9 @@
     "text": "Target opponent take a shot and you gain 3 life.{line}Madness {B}",
     "flavor": "“Leaving so soon? I just want a taste”",
     "rarity": "C",
-    "img": "https://i.imgur.com/jAUHCJx.png",
+    "img": "https://i.imgur.com/ZQOEAz7.png",
     "has_bleed_edge": true,
-    "art-remarks": "",
+    "artist": "Copilot Designer",
     "notes": [
       {
         "date": "14-07-2024",
