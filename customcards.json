@@ -285,10 +285,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal",
-        "discard-outlet"
-      ],
+      "function": ["removal", "discard-outlet"],
       "reprint": false
     }
   },
@@ -302,9 +299,9 @@
     "cn": 93,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/qz0BZeu.png",
+    "img": "https://i.imgur.com/AUY4YuU.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -320,13 +317,16 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -334,15 +334,15 @@
     "name": "Dark Visions",
     "cost": "{1}{B}{B}",
     "type": "Sorcery",
-    "text": "Pact\nYou draw two cards and you lose 2 life.\nIf you accepted ~' pact, each player discards a card.",
+    "text": "Pact{line}You draw two cards and you lose 2 life.{line}If you accepted ~' pact, each player discards a card.",
     "flavor": "",
     "rarity": "C",
     "cn": 94,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/6hTOLMD.png",
+    "img": "https://i.imgur.com/NEQqIsq.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-09-2024",
@@ -353,13 +353,16 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -370,12 +373,12 @@
     "id": "B",
     "cost": "{B}",
     "type": "Enchantment - Aura",
-    "text": "Enchant creature\nEnchanted creature gets -2/-2.",
+    "text": "Enchant creature{line}Enchanted creature gets -2/-2.",
     "flavor": "“Your aid has ceased to be worth your burden”{lns}{-}Drana",
     "rarity": "C",
-    "img": "https://i.imgur.com/UTdDViU.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://imgur.com/i.H4WzFJz.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -391,6 +394,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -403,20 +411,25 @@
     "name": "Demonic Insight",
     "cost": "{B}",
     "type": "Instant",
-    "text": "Pact\nScry 2, then if you accepted ~'s pact, choose one:\n• Draw a card.\n• You gain 3 life.",
+    "text": "Pact{line}Scry 2, then if you accepted ~'s pact, choose one:{line}• {indent}Draw a card.{line}• {indent}You gain 3 life.",
     "flavor": "",
     "rarity": "C",
     "cn": 96,
     "set": "MTD",
-    "artist": "",
-    "img": "https://i.imgur.com/TqsO6L1.png",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/QLixpY3.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Created card"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -517,9 +530,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ]
+      "function": ["recursion"]
     }
   },
   {
@@ -652,9 +663,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -743,9 +752,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard-outlet"
-      ],
+      "function": ["discard-outlet"],
       "reprint": false
     }
   },
@@ -771,9 +778,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -798,9 +803,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -941,12 +944,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard",
-        "thoughtseize",
-        "discard-outlet",
-        "pact"
-      ],
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
       "reprint": false
     }
   },
@@ -1017,7 +1015,7 @@
     "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
     "artist": "Copilot Designer",
     "rarity": "R",
-    "img": "https://i.imgur.com/cWgeVMS.png",
+    "img": "https://i.imgur.com/iMEq6SF.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
@@ -1052,7 +1050,7 @@
     "cn": 115,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/23CKF0a.png",
+    "img": "https://i.imgur.com/iFNbFAK.png",
     "id": "B",
     "has_bleed_edge": true,
     "notes": [
@@ -1089,9 +1087,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -1106,7 +1102,7 @@
     "flavor": "Once the burial place of all the great kings, after the lengthening of shadows, it was no longer safe to return to those ancient of places.",
     "artist": "Copilot Designer",
     "rarity": "U",
-    "img": "https://i.imgur.com/59gJV6a.png",
+    "img": "https://i.imgur.com/gslyXgJ.png",
     "has_bleed_edge": true,
     "notes": [
       {
@@ -1335,9 +1331,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -1462,7 +1456,10 @@
         "notes": "Posted card image and chose name"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Vicious Rumors",
@@ -1475,8 +1472,8 @@
     "set": "MTD",
     "artist": "Copilot Designer",
     "id": "B",
-    "img": "https://i.imgur.com/6mAOODh.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/Mk6ndYL.png",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -1487,6 +1484,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Update rarity to U"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1594,9 +1596,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": true
     }
   },
@@ -1867,9 +1867,7 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ]
+      "function": ["counterspell"]
     }
   },
   {
@@ -2136,9 +2134,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -2312,9 +2308,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -2430,9 +2424,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": true
     }
   },
@@ -2898,9 +2890,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": false
     }
   },
@@ -3009,9 +2999,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -3047,9 +3035,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -3983,9 +3969,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -5650,9 +5634,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false,
       "frame": "normal"
     }
@@ -6853,9 +6835,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "tutor"
-      ],
+      "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
@@ -7381,9 +7361,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -7627,9 +7605,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -7675,9 +7651,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -8460,9 +8434,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -9218,9 +9190,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "Removal"
-      ],
+      "function": ["Removal"],
       "reprint": false
     }
   },
@@ -10114,9 +10084,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "wheel"
-      ],
+      "function": ["wheel"],
       "reprint": false
     }
   },
@@ -10336,9 +10304,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -11574,9 +11540,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11658,9 +11622,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11686,9 +11648,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11745,9 +11705,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "ramp"
-      ],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -11839,11 +11797,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "repeatable-draw",
-        "card-advantage"
-      ],
+      "function": ["draw", "repeatable-draw", "card-advantage"],
       "reprint": true
     }
   },
@@ -11911,12 +11865,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "card-advantage",
-        "mill",
-        "mill-self"
-      ],
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
       "reprint": true
     }
   },
