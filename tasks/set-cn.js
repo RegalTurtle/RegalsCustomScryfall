@@ -70,9 +70,9 @@ export const sortMTD = () => {
   // White
   // setCnBetweenCns(3, 44, "MTD");
   // Blue
-  setCnBetweenCns(45, 86, "MTD");
+  // setCnBetweenCns(45, 86, "MTD");
   // Black
-  // setCnBetweenCns(87, 128, "MTD");
+  setCnBetweenCns(87, 128, "MTD");
   // Red
   // setCnBetweenCns(129, 170, "MTD");
   // Green
