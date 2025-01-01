@@ -516,17 +516,22 @@
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Sorcery",
-    "text": "Return target creature card from your graveyard to the battlefield.\nWhen you discard ~, you may pay {B}. When you do, return target creature card from your graveyard to your hand.",
+    "text": "Return target creature card from your graveyard to the battlefield.{line}When you discard ~, you may pay {B}. When you do, return target creature card from your graveyard to your hand.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/6JmMi55.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/np4EquR.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Posted card image"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "2025 and here we go // Final pre-print pass"
       }
     ],
     "tags": {
@@ -600,7 +605,7 @@
     "name": "First-Sphere Gargantua",
     "cost": "{4}{B}{B}",
     "type": "Creature - Phyrexian Horror",
-    "text": "When ~ enters, you draw a card and you lose 1 life.\nUnearth {2}{B}",
+    "text": "When ~ enters, you draw a card and you lose 1 life.{line}Unearth {2}{B}",
     "flavor": "",
     "power": 5,
     "toughness": 4,
@@ -608,14 +613,19 @@
     "cn": 101,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/koAwRKB.png",
+    "img": "https://i.imgur.com/w05tW7J.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "21-08-2024",
         "creator": "Sam",
         "notes": "Found card, added card to MTD, created art"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -676,7 +686,7 @@
     "name": "Forgotten Nemesis",
     "cost": "{B}",
     "type": "Creature - Zombie Wizard",
-    "text": "~ can't block.\n{1}{B}: Return ~ from your graveyard to the battlefield. Activate only if you've discarded a nonland card this turn.",
+    "text": "~ can't block.{line}{1}{B}: Return ~ from your graveyard to the battlefield. Activate only if you've discarded a nonland card this turn.",
     "flavor": "Death rarely stops hatred.",
     "power": 2,
     "toughness": 1,
@@ -684,14 +694,19 @@
     "cn": 103,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/qaHWtCl.png",
+    "img": "https://i.imgur.com/0FGwArC.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-09-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -745,9 +760,9 @@
     "cn": 105,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/zskqtDi.png",
+    "img": "https://i.imgur.com/3ydvVy4.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
@@ -757,7 +772,12 @@
       {
         "date": "14-10-2024",
         "creator": "Sam",
-        "notes": "Updtaed render"
+        "notes": "Updated render"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -770,20 +790,27 @@
     "name": "Grave Scrabbler",
     "cost": "{3}{B}",
     "type": "Creature - Zombie",
-    "text": "Madness {1}{B}\nWhen ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
+    "text": "Madness {1}{B}{line}When ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
     "flavor": "There will always be a seeker.",
     "rarity": "C",
+    "power": 2,
+    "toughness": 2,
     "cn": 106,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/THYDcDR.png",
+    "img": "https://i.imgur.com/quQ3ysH.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "21-08-2024",
         "creator": "Sam",
         "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added p/t"
       }
     ],
     "tags": {
@@ -802,14 +829,19 @@
     "cn": 107,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/x9MaEwe.png",
+    "img": "https://i.imgur.com/nlmvvUj.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Found card, added render and art"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -854,21 +886,26 @@
     "cost": "{3}{B}",
     "type": "Creature — Vampire Warrior",
     "text": "",
-    "flavor": "The Markov family arrived four hundred years ago and settled in the northern reaches of the spine. The southern splinter group lacked none of their restraint, in their bloodlust they opened a portal to hell, and threw the world into a second eternal chaos.",
+    "flavor": "The Markov family arrived four hundred years ago and settled in the northern reaches of the spine. The southern splinter group lacked none of their restraint, in their bloodlust they opened a portal to hell and threw the world into a second eternal chaos.",
     "power": 4,
     "toughness": 3,
     "rarity": "C",
     "cn": 109,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/1Tj8e2y.png",
+    "img": "https://i.imgur.com/fcya2h0.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "Added Card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, fixed flavor text"
       }
     ],
     "tags": {
@@ -1169,9 +1206,11 @@
     "type": "Creature - Zombie",
     "text": "Whenever ~ deals combat damage to a player, each player discards a card.",
     "flavor": "Brought back to serve a purpose, kept around for entertainment.",
+    "power": 2,
+    "toughness": 4,
     "rarity": "U",
-    "img": "https://i.imgur.com/rC55WaC.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/OHuEmWO.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -1183,9 +1222,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Posted card image"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added p/t"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Pact Broker",
@@ -1228,7 +1275,7 @@
     "name": "Quickblade Devilkin",
     "cost": "{1}{B}",
     "type": "Creature - Devil Assassin",
-    "text": "Deathtouch\nMadness {1}{B}",
+    "text": "Deathtouch{line}Madness {1}{B}",
     "flavor": "An unshakable malice.",
     "power": 1,
     "toughness": 1,
@@ -1236,9 +1283,9 @@
     "cn": 119,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/8GudArw.png",
+    "img": "https://i.imgur.com/frPcmuf.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "21-08-2024",
@@ -1254,6 +1301,11 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "Madness needs reminder text"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, madness isn't getting reminder text anywhere"
       }
     ],
     "tags": {
@@ -1497,9 +1549,9 @@
     "text": "Destroy target non-alcoholic creature.",
     "flavor": "You did not pass, it is now time to face the flames, goodbye.",
     "rarity": "C",
-    "img": "https://i.imgur.com/NHemTM6.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/MqBcGc5.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "26-06-2024",
@@ -1510,6 +1562,11 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Posted card image and chose name"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1557,7 +1614,7 @@
     "name": "Watchful Flittermouse",
     "cost": "{3}{B}",
     "type": "Creature - Bat",
-    "text": "Flying, haste\nMadness {1}{B}",
+    "text": "Flying, haste{line}Madness {1}{B}",
     "flavor": "",
     "power": 2,
     "toughness": 2,
@@ -1565,14 +1622,19 @@
     "cn": 128,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/m478NXo.png",
+    "img": "https://i.imgur.com/uLmX0M2.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
