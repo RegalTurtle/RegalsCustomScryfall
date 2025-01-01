@@ -425,12 +425,12 @@
     "id": "B",
     "cost": "{1}{B}{B}",
     "type": "Enchantment",
-    "text": "At the beginning of your upkeep, if you have no cards in hand, you may take a shot and draw two cards.\nMadness {1}{B}",
+    "text": "At the beginning of your upkeep, if you have no cards in hand, you may take a shot and draw two cards.{line}Madness {1}{B}",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/Q92e6ve.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/U3Z00RC.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -441,9 +441,17 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Drana, Liberator of Malakir",
@@ -452,11 +460,11 @@
     "id": "B",
     "cost": "{1}{B}{B}",
     "type": "Legendary Creature - Vampire Ally",
-    "text": "Flying, first strike\nWhenever ~ deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
+    "text": "Flying, first strike{line}Whenever ~ deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
     "flavor": "“I will be chained to the shadows no longer.”",
     "artist": "Copilot Designer",
     "rarity": "M",
-    "img": "https://i.imgur.com/e0SXexL.png",
+    "img": "https://i.imgur.com/UbwNMmY.png",
     "has_bleed_edge": false,
     "power": 2,
     "toughness": 3,
@@ -470,6 +478,11 @@
         "date": "15-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -882,11 +895,12 @@
     "id": "B",
     "cost": "{1}{B}",
     "type": "Creature - Human Pirate",
-    "text": "Flying\nWhen ~ enters, target opponent reveals their hand. You choose a noncreature, nonland card from it. Exile that card until ~ leaves the battlefield.",
+    "text": "Flying{line}When ~ enters, target opponent reveals their hand. You choose a noncreature, nonland card from it. Exile that card until ~ leaves the battlefield.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/R2bYfMo.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/0oUnrn1.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 2,
     "art-remarks": "",
@@ -895,9 +909,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Larceny",
@@ -910,8 +932,8 @@
     "flavor": "Speakeasy thugs can be identified by their silver tongues and swift fingers.",
     "artist": "Copilot Designer",
     "rarity": "R",
-    "img": "https://i.imgur.com/LkeQoQo.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/cWgeVMS.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -923,25 +945,31 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "reprint": true
+      "reprint": true,
+      "frame": "normal"
     }
   },
   {
     "name": "Lich's Conquest",
     "cost": "{2}{B}{B}",
     "type": "Sorcery",
-    "text": "As an additional cost to cast ~, discard X cards.\nReturn X target creature cards from graveyards to the battlefield under your control.",
+    "text": "As an additional cost to cast ~, discard X cards.{line}Return X target creature cards from graveyards to the battlefield under your control.",
     "flavor": "",
     "rarity": "R",
     "cn": 114,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/v9a5Dsf.png",
+    "img": "https://i.imgur.com/23CKF0a.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-08-2024",
@@ -967,6 +995,11 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "Change from \"from graveyards\" to \"From any graveyard\""
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, not using David's comment because I believe this was is correct"
       }
     ],
     "tags": {
@@ -986,8 +1019,8 @@
     "flavor": "Once the burial place of all the great kings, after the lengthening of shadows, it was no longer safe to return to those ancient of places.",
     "artist": "Copilot Designer",
     "rarity": "U",
-    "img": "https://i.imgur.com/bjcgFpR.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/59gJV6a.png",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -1003,6 +1036,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Updated frame, added bleed, cn // Updated again with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1248,18 +1286,18 @@
     }
   },
   {
-    "name": "The False Prophet",
+    "name": "False Prophet",
     "set": "MTD",
-    "cn": 123,
+    "cn": 100,
     "id": "B",
     "cost": "{2}{B}{B}",
     "type": "Creature - Demon",
-    "text": "Draft ~ face up.\nAs long as ~ is face up during the draft, you can't look at booster packs and must draft cards at random. After you draft one cards this way, turn ~ face down.\nFlying, lifelink",
+    "text": "Draft ~ face up.{line}As long as ~ is face up during the draft, you can't look at booster packs and must draft cards at random. After you draft one card this way, turn ~ face down.{line}Flying, lifelink",
     "flavor": "",
     "artist": "Midjourney",
     "rarity": "C",
-    "img": "https://i.imgur.com/Mcv3ujz.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/brSRbNF.png",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 4,
     "watermark": "draft",
@@ -1298,9 +1336,17 @@
         "date": "27-12-2024",
         "creator": "Thys",
         "notes": "Potentially change name from The False Prophet to False Prophet"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, changed name from The False Prophet to False Prophet, kept at 3/4 because of the flying and lifelink"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Vampiric Bartender",
@@ -1342,20 +1388,28 @@
     "id": "B",
     "cost": "{2}{B}",
     "type": "Sorcery",
-    "text": "Target opponent take a shot and you gain 3 life.\nMadness {B}",
-    "flavor": "",
+    "text": "Target opponent take a shot and you gain 3 life.{line}Madness {B}",
+    "flavor": "“Leaving so soon? I just want a taste”",
     "rarity": "C",
-    "img": "https://i.imgur.com/AyXgyYZ.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/jAUHCJx.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added flavor text"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Vibe Check",
