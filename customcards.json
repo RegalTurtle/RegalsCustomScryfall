@@ -376,7 +376,7 @@
     "text": "Enchant creature{line}Enchanted creature gets -2/-2.",
     "flavor": "“Your aid has ceased to be worth your burden”{lns}{-}Drana",
     "rarity": "C",
-    "img": "https://imgur.com/i.H4WzFJz.png",
+    "img": "https://i.imgur.com/H4WzFJz.png",
     "artist": "Midjourney",
     "has_bleed_edge": true,
     "notes": [
@@ -636,9 +636,9 @@
     "cn": 102,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/8jIgaO1.png",
+    "img": "https://i.imgur.com/5SX9y9s.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "29-07-2024",
@@ -659,6 +659,11 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "New render with new art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -699,7 +704,7 @@
     "name": "Gluttonous Guest",
     "cost": "{2}{B}",
     "type": "Creature - Vampire",
-    "text": "When ~ enters, create a Blood token.\nWhenever you sacrifice a Blood token, you gain 1 life.",
+    "text": "When ~ enters, create a Blood token.{line}Whenever you sacrifice a Blood token, you gain 1 life.",
     "flavor": "“Darling, it's 5 o'clock somewhere.”",
     "power": 1,
     "toughness": 4,
@@ -707,14 +712,19 @@
     "cn": 104,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/L7hClND.png",
+    "img": "https://i.imgur.com/hbVXFIj.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Found card, added render and art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -812,20 +822,25 @@
     "name": "Hell Boon",
     "cost": "{B}",
     "type": "Instant",
-    "text": "Pact\nTarget creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
+    "text": "Pact{line}Target creature gains deathtouch until end of turn. If you accepted ~'s pact, it also gains indestructible until end of turn.",
     "flavor": "",
     "rarity": "C",
     "cn": 108,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/O9ecPa7.png",
+    "img": "https://i.imgur.com/WJmpUqP.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "21-08-2024",
         "creator": "Sam",
         "notes": "Added card to MTD, created art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -869,14 +884,14 @@
     "id": "UB",
     "cost": "{1}{B}{B}",
     "type": "Creature - Nightmare Wizard",
-    "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card. Activate only as sorcery.",
+    "text": "{3}{U}: Target player draws a card.{line}{3}{B}: Target player discards a card. Activate only as sorcery.",
     "flavor": "Your mind is an Escher painting and I am an artist.",
     "rarity": "R",
-    "img": "https://i.imgur.com/BK6qaB3.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/q6weDNe.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 4,
-    "art-remarks": "",
     "notes": [
       {
         "date": "26-07-2024",
@@ -902,23 +917,31 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "3/5 to 2/4"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Infernal Whispers",
     "cost": "{1}{B}",
     "type": "Sorcery",
-    "text": "Pact\nTarget player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
+    "text": "Pact{line}Target player reveals their hand. You may choose a noncreature, nonland card from it. If you accepted ~'s pact, you may instead choose a nonland card from it. That player discards that card.",
     "flavor": "",
     "rarity": "U",
     "cn": 111,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/KysDdt0.png",
+    "img": "https://i.imgur.com/WcJ1Y5V.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -940,6 +963,11 @@
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "Updated card render, added reminder txt and CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1169,8 +1197,8 @@
     "text": "Whenever you accept a pact, ~ deals 1 damage to each opponent and you gain 1 life.",
     "flavor": "The scourge of the weak.",
     "rarity": "R",
-    "img": "https://i.imgur.com/2PZ7bnA.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/KL1WQ7t.png",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 1,
     "art-remarks": "",
@@ -1184,9 +1212,17 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "change to you only gain 1 life"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Quickblade Devilkin",
@@ -1230,7 +1266,7 @@
     "name": "Remnant Hulk",
     "cost": "{6}{B}",
     "type": "Creature - Zombie Giant",
-    "text": "When ~ enters, it deals 1 damage to target opponent for each instant and sorcery card in your graveyard.\nSwampcycling {2}",
+    "text": "When ~ enters, it deals 1 damage to target opponent for each instant and sorcery card in your graveyard.{line}Swampcycling {2}",
     "flavor": "Born of an ancient war, held together by a single minded will to live.",
     "power": 4,
     "toughness": 4,
@@ -1238,9 +1274,9 @@
     "cn": 120,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/O6U3irg.png",
+    "img": "https://i.imgur.com/o0GPxYj.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "21-08-2024",
@@ -1251,6 +1287,11 @@
         "date": "23-08-2024",
         "creator": "Sam",
         "notes": "Added swampcycling, removed p/t, new render"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1263,7 +1304,7 @@
     "name": "Rotting Rats",
     "cost": "{1}{B}",
     "type": "Creature - Zombie Rat",
-    "text": "When ~ enters, each player discards a card.\nUnearth {1}{B}",
+    "text": "When ~ enters, each player discards a card.{line}Unearth {1}{B}",
     "flavor": "",
     "rarity": "C",
     "power": 1,
@@ -1271,9 +1312,9 @@
     "cn": 121,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Fn04nDg.png",
+    "img": "https://i.imgur.com/LHCWnJU.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "18-07-2024",
@@ -1294,6 +1335,11 @@
         "date": "21-08-2024",
         "creator": "Sam",
         "notes": "Fixed art framing"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1306,7 +1352,7 @@
     "name": "Sower of Chaos",
     "cost": "{2}{B}",
     "type": "Creature - Human Wizard",
-    "text": "When ~ enters, each player sacrifices a creature. Each player who can't discards a card.",
+    "text": "When ~ enters, each player sacrifices a creature of their choice. Each player who can't discards a card.",
     "flavor": "“Purge the unclean ones, in the name of our new father!”",
     "power": 3,
     "toughness": 1,
@@ -1314,9 +1360,9 @@
     "cn": 122,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/E1NiQYc.png",
+    "img": "https://i.imgur.com/AEPS2CI.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
@@ -1327,6 +1373,11 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "add \"sacrifices a creature of their choice.\""
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, updated sacrifice wording as per FDN"
       }
     ],
     "tags": {
@@ -1339,7 +1390,7 @@
     "name": "Tess, Necromancer Prodigy",
     "cost": "{2}{B}",
     "type": "Legendary Creature - Human Wizard",
-    "text": "Lifelink\nWard{-}Pay 3 life.\nWhenever you cast an instant or sorcery spell, create a 1/1 black Zombie Wizard creature token.",
+    "text": "Lifelink{line}Ward{-}Pay 3 life.{line}Whenever you cast an instant or sorcery spell, create a 1/1 black Zombie Wizard creature token.",
     "flavor": "",
     "power": 3,
     "toughness": 2,
@@ -1347,9 +1398,9 @@
     "cn": 123,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/NXmjHPZ.png",
+    "img": "https://i.imgur.com/d5Ez9Ul.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "18-08-2024",
@@ -1360,6 +1411,11 @@
         "date": "15-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
