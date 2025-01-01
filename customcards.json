@@ -10,8 +10,8 @@
     "flavor": "“Information can be extorted behind closed doors or in dark alleyways, I prefer a much more direct approach.”",
     "artist": "Copilot Designer",
     "rarity": "C",
-    "img": "https://i.imgur.com/idxnbj0.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/Zf3z0GY.png",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
     "notes": [
@@ -29,6 +29,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -40,7 +45,8 @@
         "synergy-attacker-self",
         "card-advantage",
         "draw"
-      ]
+      ],
+      "reprint": true
     }
   },
   {
@@ -53,9 +59,9 @@
     "cn": 88,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/mXNjkA4.png",
+    "img": "https://i.imgur.com/q8q5NJ3.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
@@ -66,6 +72,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Updated cn"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -78,7 +89,7 @@
     "name": "Bloodcrazed Socialite",
     "cost": "{3}{B}",
     "type": "Creature - Vampire",
-    "text": "Menace\nWhen ~ enters, create a Blood token.\nWhenever ~ attacks, you may sacrifice a Blood token. If you do, it gets +2/+2 until end of turn.",
+    "text": "Menace{line}When ~ enters, create a Blood token.{line}Whenever ~ attacks, you may sacrifice a Blood token. If you do, it gets +2/+2 until end of turn.",
     "flavor": "",
     "power": 3,
     "toughness": 3,
@@ -86,9 +97,9 @@
     "cn": 89,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/qxX39jK.png",
+    "img": "https://i.imgur.com/7eo9Aer.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "18-08-2024",
@@ -99,6 +110,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -114,10 +130,11 @@
     "id": "B",
     "cost": "{3}{B}{B}",
     "type": "Creature — Demon",
-    "text": "Flying\nAt the beginning of your upkeep, target player draws a card and loses 1 life.",
+    "text": "Flying{line}At the beginning of your upkeep, target player draws a card and loses 1 life.",
     "flavor": "Whenever the eternal party reaches the surface, it makes itself known.",
     "rarity": "R",
-    "img": "https://i.imgur.com/K8aQCEY.png",
+    "img": "https://i.imgur.com/hQlXD4t.png",
+    "artist": "Midjourney",
     "has_bleed_edge": false,
     "power": 5,
     "toughness": 4,
@@ -137,23 +154,31 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Costly Search",
     "cost": "{B}",
     "type": "Instant",
-    "text": "You draw a card and you lose 1 life.\nMadness {B}",
+    "text": "You draw a card and you lose 1 life.{line}Madness {B}",
     "flavor": "The question strained his sanity. The answer snapped it in half.",
     "rarity": "C",
     "cn": 91,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/wygpZxx.png",
+    "img": "https://i.imgur.com/9lFmuOG.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "21-08-2024",
@@ -164,6 +189,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "Added CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -255,10 +285,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal",
-        "discard-outlet"
-      ],
+      "function": ["removal", "discard-outlet"],
       "reprint": false
     }
   },
@@ -294,9 +321,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -327,9 +352,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -474,9 +497,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ]
+      "function": ["recursion"]
     }
   },
   {
@@ -546,9 +567,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -637,9 +656,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard-outlet"
-      ],
+      "function": ["discard-outlet"],
       "reprint": false
     }
   },
@@ -665,9 +682,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -692,9 +707,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -835,12 +848,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard",
-        "thoughtseize",
-        "discard-outlet",
-        "pact"
-      ],
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
       "reprint": false
     }
   },
@@ -963,9 +971,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -1204,9 +1210,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -1510,9 +1514,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": true
     }
   },
@@ -1783,9 +1785,7 @@
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ]
+      "function": ["counterspell"]
     }
   },
   {
@@ -2052,9 +2052,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -2228,9 +2226,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -2346,9 +2342,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": true
     }
   },
@@ -2814,9 +2808,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": false
     }
   },
@@ -2832,9 +2824,9 @@
     "cn": 76,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/9oZbVvN.png",
+    "img": "https://i.imgur.com/yGlaYFD.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -2860,6 +2852,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -2920,9 +2917,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -2958,9 +2953,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -3894,9 +3887,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -5561,9 +5552,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false,
       "frame": "normal"
     }
@@ -6764,9 +6753,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "tutor"
-      ],
+      "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
@@ -7292,9 +7279,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -7538,9 +7523,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -7586,9 +7569,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -8371,9 +8352,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -9129,9 +9108,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "Removal"
-      ],
+      "function": ["Removal"],
       "reprint": false
     }
   },
@@ -10025,9 +10002,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "wheel"
-      ],
+      "function": ["wheel"],
       "reprint": false
     }
   },
@@ -10247,9 +10222,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -11485,9 +11458,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11569,9 +11540,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11597,9 +11566,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11656,9 +11623,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "ramp"
-      ],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -11750,11 +11715,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "repeatable-draw",
-        "card-advantage"
-      ],
+      "function": ["draw", "repeatable-draw", "card-advantage"],
       "reprint": true
     }
   },
@@ -11822,12 +11783,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "card-advantage",
-        "mill",
-        "mill-self"
-      ],
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
       "reprint": true
     }
   },
