@@ -70,9 +70,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": true
     }
   },
@@ -80,7 +78,7 @@
     "name": "Arctic Aven",
     "cost": "{2}{U}",
     "type": "Creature - Bird Wizard",
-    "text": "Flying\n~ gets +1/+1 as long as you control a Plains.\n{W}: ~ gains lifelink until end of turn.",
+    "text": "Flying{line}~ gets +1/+1 as long as you control a Plains.{line}{W}: ~ gains lifelink until end of turn.",
     "flavor": "While Aphelion is the least inhabited region, it is by far the largest.",
     "power": 2,
     "toughness": 1,
@@ -88,9 +86,9 @@
     "cn": 47,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/5h6VvJv.png",
+    "img": "https://i.imgur.com/fIUbU4Q.png",
     "id": "WU",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "17-07-2024",
@@ -101,6 +99,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -144,7 +147,7 @@
     "name": "Atemsis, All-Seeing",
     "cost": "{3}{U}{U}{U}",
     "type": "Legendary Creature - Sphinx",
-    "text": "Flying\n{2}{U}, {T}: Draw two cards, then discard a card.\nWhenever ~ deals damage to an opponent, you may reveal your hand. If cards with at least six different mana values are revealed this way, that player loses the game.",
+    "text": "Flying{flavor}{2}{U}, {T}: Draw two cards, then discard a card.{flavor}Whenever ~ deals damage to an opponent, you may reveal your hand. If cards with at least six different mana values are revealed this way, that player loses the game.",
     "flavor": "",
     "power": 4,
     "toughness": 5,
@@ -152,14 +155,19 @@
     "cn": 49,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/n3zEHDs.png",
+    "img": "https://i.imgur.com/Uepm5qo.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -171,15 +179,15 @@
     "name": "Borne Upon a Wind",
     "cost": "{1}{U}",
     "type": "Instant",
-    "text": "You may cast spells this turn as though they had flash.\nDraw a card.",
+    "text": "You may cast spells this turn as though they had flash.{line}Draw a card.",
     "flavor": "Expeditions through the glaciers of Aphelion yielded insight into the origins of both the world and the magic that shaped it.",
     "rarity": "R",
     "cn": 50,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Q0jLqFa.png",
+    "img": "https://i.imgur.com/yUfBBbr.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-08-2024",
@@ -190,6 +198,11 @@
         "date": "16-08-2024",
         "creator": "Sam",
         "notes": "Given art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -208,9 +221,9 @@
     "cn": 51,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/bK4Lq2U.png",
+    "img": "https://i.imgur.com/Zk8A9ad.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -222,6 +235,11 @@
         "date": "16-08-2024",
         "creator": "Thys",
         "notes": "Upshifted to Rare"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -233,7 +251,7 @@
     "name": "Broadwing Seabird",
     "cost": "{4}{U}",
     "type": "Creature - Bird",
-    "text": "Flying\nWard{-}Take a shot.",
+    "text": "Flying{line}Ward{-}Take a shot.",
     "flavor": "Aphelion is home to an ancient race of Rocs who make their home far away from shore.",
     "power": 3,
     "toughness": 4,
@@ -241,9 +259,9 @@
     "cn": 52,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/wNuSnOM.png",
+    "img": "https://i.imgur.com/QxrqGDJ.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -274,6 +292,11 @@
         "date": "19-08-2024",
         "creator": "Sam",
         "notes": "Fixed ward cost"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -289,11 +312,12 @@
     "id": "U",
     "cost": "{1}{U}",
     "type": "Creature - Drake",
-    "text": "Flying\nProtection from red\nSacrifice ~: Counter target spell that targets you.",
+    "text": "Flying{line}Protection from red{line}Sacrifice ~: Counter target spell that targets you.",
     "flavor": "The magic of Aphelion seeps into all things, lying dormant until their ancient triggers are activated.",
     "rarity": "U",
-    "img": "https://i.imgur.com/v2YP34V.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/sClMMyl.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 1,
     "art-remarks": "",
@@ -307,14 +331,17 @@
         "date": "17-08-2024",
         "creator": "Sam",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
       "reprint": true,
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ]
+      "function": ["counterspell"]
     }
   },
   {
@@ -322,16 +349,16 @@
     "cost": "{1}{U}",
     "type": "Creature - Bird",
     "text": "",
-    "flavor": "“Birds of the north are of a different breed. Unlike their lofty southern counterparts, these species lack the ability of flight. A group of them mobbed my colleague this morning, it seems being flightless has given them something to prove” {-}Jhonsmith, biologist",
+    "flavor": "“Birds of the north are of a different breed. Unlike their lofty southern counterparts, these species lack the ability of flight. A group of them mobbed my colleague this morning, it seems being flightless has given them something to prove”{lns}{-}Jhonsmith, biologist",
     "power": 2,
     "toughness": 1,
     "rarity": "C",
     "cn": 54,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/U2V0oYZ.png",
+    "img": "https://i.imgur.com/pNaVqFC.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -342,23 +369,31 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Clear the Mind",
     "cost": "{2}{U}",
     "type": "Sorcery",
-    "text": "Target player shuffles their graveyard into their library.\nDraw a card.",
+    "text": "Target player shuffles their graveyard into their library.{line}Draw a card.",
     "flavor": "A moment of peace is worth a year of noise.",
     "rarity": "C",
     "cn": 55,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/WPXIfsV.png",
+    "img": "https://i.imgur.com/MGte5lq.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "17-07-2024",
@@ -374,6 +409,11 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Added art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -392,9 +432,9 @@
     "cn": 56,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/7Ss5UcM.png",
+    "img": "https://i.imgur.com/4F3sNmB.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -420,6 +460,11 @@
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "New CN, New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -432,7 +477,7 @@
     "name": "Crossroads Sphinx",
     "cost": "{4}{U}{U}",
     "type": "Creature - Sphinx",
-    "text": "Flying\nWhen ~ enters, reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
+    "text": "Flying{line}When ~ enters, reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
     "flavor": "",
     "power": 4,
     "toughness": 5,
@@ -440,9 +485,9 @@
     "cn": 57,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/A840KNa.png",
+    "img": "https://i.imgur.com/X8LPUcg.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -473,6 +518,11 @@
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "New CN, New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -485,7 +535,7 @@
     "name": "Cursed Technique",
     "cost": "{1}{U}",
     "type": "Instant",
-    "text": "Pact\nReturn target creature you don't control to its owners hand. If you accepted ~'s pact, that creature's controller discards a card.",
+    "text": "Pact{line}Return target creature you don't control to its owners hand. If you accepted ~'s pact, that creature's controller discards a card.",
     "flavor": "",
     "rarity": "C",
     "cn": 58,
@@ -532,9 +582,9 @@
     "cn": 59,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/SDdFFjh.png",
+    "img": "https://i.imgur.com/FV0Gx5m.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "16-08-2024",
@@ -545,12 +595,15 @@
         "date": "16-08-2024",
         "creator": "Sam",
         "notes": "Given art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -567,9 +620,9 @@
     "cn": 60,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/aIFR6nP.png",
+    "img": "https://i.imgur.com/wxW5nLX.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "26-07-2024",
@@ -595,6 +648,11 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "Add reminder text for Islandcycling: It's standard for all common cycling cards"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added reminder text to cycling"
       }
     ],
     "tags": {
@@ -607,7 +665,7 @@
     "name": "Duelist of the Mind",
     "cost": "{1}{U}",
     "type": "Creature - Human Advisor",
-    "text": "Flying, vigilance\n~'s power is equal to the number of cards you've drawn this turn.\nWhenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
+    "text": "Flying, vigilance{line}~'s power is equal to the number of cards you've drawn this turn.{line}Whenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
     "flavor": "",
     "power": 0,
     "toughness": 3,
@@ -615,9 +673,9 @@
     "cn": 61,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/HWFjT7e.png",
+    "img": "https://i.imgur.com/XxCQrnK.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -633,6 +691,11 @@
         "date": "16-07-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -651,9 +714,9 @@
     "cn": 62,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/h0JukHx.png",
+    "img": "https://i.imgur.com/xtWgqZH.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-08-2024",
@@ -669,6 +732,11 @@
         "date": "16-08-2024",
         "creator": "Sam",
         "notes": "Made new art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -681,14 +749,15 @@
     "name": "Hangover",
     "cost": "{U}{U}",
     "type": "Enchantment - Aura",
-    "text": "Enchant creature\nWhen ~ enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nAt the beginning of the upkeep of enchanted creature's controller, that player may take a shot. If they do, untap enchanted creature.",
+    "text": "Enchant creature{line}When ~ enters, tap enchanted creature.{line}Enchanted creature doesn't untap during its controller's untap step.{line}At the beginning of the upkeep of enchanted creature's controller, that player may take a shot. If they do, untap enchanted creature.",
     "flavor": "",
     "rarity": "U",
     "cn": 63,
     "set": "MTD",
-    "img": "https://i.imgur.com/vqGq0MV.png",
+    "img": "https://i.imgur.com/AAVvWEe.png",
+    "artist": "Copilot Designer",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -699,13 +768,16 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -719,9 +791,9 @@
     "cn": 64,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/fPCif61.png",
+    "img": "https://i.imgur.com/4Oztf5K.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -737,6 +809,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -749,7 +826,7 @@
     "name": "Illusionary Informant",
     "cost": "{1}{U}",
     "type": "Creature - Bird Illusion",
-    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, look at the next card drafted by a player of your choice.\nFlying",
+    "text": "Draft ~ face up.{line}During the draft, you may turn ~ face down. If you do, look at the next card drafted by a player of your choice.{line}Flying",
     "flavor": "",
     "power": 1,
     "toughness": 3,
@@ -757,9 +834,9 @@
     "cn": 65,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/FOISzID.png",
+    "img": "https://i.imgur.com/9IecKAw.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "watermark": "draft",
     "notes": [
       {
@@ -771,6 +848,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -789,9 +871,9 @@
     "cn": 66,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/m4N51cL.png",
+    "img": "https://i.imgur.com/uyb1Bzi.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -802,13 +884,16 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": true
     }
   },
@@ -819,11 +904,11 @@
     "id": "U",
     "cost": "{1}{U}",
     "type": "Artifact",
-    "text": "When ~ enters, scry 2.\n{1}, Sacrifice ~: Draw a card.\n{4}: Draw a card.",
-    "flavor": "",
+    "text": "When ~ enters, scry 2.{line}{1}, Sacrifice ~: Draw a card.{line}{4}: Draw a card.",
+    "flavor": "Whenever you stare into it, something always stares back.",
     "rarity": "C",
-    "img": "https://i.imgur.com/PprrZqI.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/OcgWNK8.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -855,9 +940,17 @@
         "date": "16-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Ossify",
@@ -869,8 +962,9 @@
     "text": "Exile target creature. Its controller creates a Bronze Armor token with “Equipped creature gets +X/+0, where X is the exiled card's power.” and equip {2}.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/BsZYRmZ.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/CU1jkOE.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -912,15 +1006,23 @@
         "date": "16-08-2024",
         "creator": "Thys",
         "notes": "Redid render"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Portal Mage",
     "cost": "{2}{U}",
     "type": "Creature - Human Wizard",
-    "text": "Flash\nWhen ~ enters during the declare attackers step, you may reselect which player or permanent target attacking creature is attacking.",
+    "text": "Flash{line}When ~ enters during the declare attackers step, you may reselect which player or permanent target attacking creature is attacking.",
     "flavor": "",
     "power": 2,
     "toughness": 2,
@@ -928,9 +1030,9 @@
     "cn": 69,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/tCdsg1D.png",
+    "img": "https://i.imgur.com/mdHvJa7.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -951,6 +1053,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -963,15 +1070,15 @@
     "name": "Return to Immaterial",
     "cost": "{2}{U}",
     "type": "Instant",
-    "text": "For each opponent with an instant card in their graveyard, return target nonland permanent to its owners hand.",
+    "text": "For each opponent with an instant card in their graveyard, choose target nonland permanent. Return each card chosen this way to their owners hand.",
     "flavor": "The ancient ways of detecting witchcraft serve both the persecutors and the modern sorceress looking to get an edge.",
     "rarity": "U",
     "cn": 70,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/uLcvYlM.png",
+    "img": "https://i.imgur.com/BscXAM6.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -992,24 +1099,32 @@
       {
         "date": "27-12-2024",
         "creator": "David",
-        "notes": "Maybe change to \"For each opponent with an instant card in their graveyard, choose target nonland permanent. Return each card chosen this way to their owners hand."
+        "notes": "Maybe change to \"For each opponent with an instant card in their graveyard, choose target nonland permanent. Return each card chosen this way to their owners hand.\""
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, changed to David's suggestion"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Selection Process",
     "cost": "{X}{1}{U}{U}",
     "type": "Instant",
-    "text": "This spell costs {1} less to cast for each Wizard you control.\nReturn X target nonland permanents to their owners hands.",
+    "text": "This spell costs {1} less to cast for each Wizard you control.{line}Return X target nonland permanents to their owners hands.",
     "flavor": "Being selected to apprentice is a brutal and competitive process.",
     "rarity": "R",
     "cn": 71,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/CdaVCqo.png",
+    "img": "https://i.imgur.com/HoE8q93.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "26-06-2024",
@@ -1025,25 +1140,33 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Silent Companion",
     "cost": "{2}{U}",
     "type": "Creature - Bird",
-    "text": "Flying\nWhenever you cast an instant or sorcery spell, you may scry 1.",
+    "text": "Flying{line}Whenever you cast an instant or sorcery spell, you may scry 1.",
     "flavor": "Aphelion scholars rarely travel alone.",
     "power": 1,
     "toughness": 3,
     "rarity": "U",
     "cn": 72,
     "set": "MTD",
-    "artist": "",
-    "img": "https://i.imgur.com/mJs00YH.png",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/eznGNs0.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "art-remarks": "Art is of an owl, similar to Harrier Strix. It's a familiar flying or standing near an Aphelion scholar",
     "notes": [
       {
@@ -1105,23 +1228,31 @@
         "date": "16-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Sorcerous Squall",
     "cost": "{6}{U}{U}{U}",
     "type": "Sorcery",
-    "text": "Delve\nTarget opponent mills nine cards, then you may cast an instant or sorcery spell from that player's graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
+    "text": "Delve{line}Target opponent mills nine cards, then you may cast an instant or sorcery spell from that player's graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
     "flavor": "",
     "rarity": "R",
     "cn": 73,
     "set": "MTD",
     "artist": "Stable Diffusion",
-    "img": "https://i.imgur.com/IHBbRJr.png",
+    "img": "https://i.imgur.com/zrhxkGa.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-08-2024",
@@ -1137,6 +1268,11 @@
         "date": "16-08-2024",
         "creator": "Thys",
         "notes": "New render with correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1155,9 +1291,9 @@
     "cn": 74,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/9ReQN4M.png",
+    "img": "https://i.imgur.com/7FPgOWf.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "09-07-2024",
@@ -1178,6 +1314,11 @@
         "date": "17-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1196,10 +1337,9 @@
     "cn": 75,
     "set": "MTD",
     "artist": "Copilot Designer",
-    "img": "https://i.imgur.com/0nwqxVD.png",
+    "img": "https://i.imgur.com/LxB2JrI.png",
     "id": "U",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -1210,13 +1350,16 @@
         "date": "18-08-2024",
         "creator": "Thys",
         "notes": "New render, added bleed, CN, etc."
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "counterspell"
-      ],
+      "function": ["counterspell"],
       "reprint": false
     }
   },
@@ -1270,7 +1413,7 @@
   },
   {
     "name": "Tides of Battle",
-    "cost": "{2}{U}",
+    "cost": "{1}{U}",
     "type": "Sorcery",
     "text": "Draw a card for each player you attacked this turn.",
     "flavor": "Because knowing is half the battle.",
@@ -1278,9 +1421,9 @@
     "cn": 77,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/IbrGdpw.png",
+    "img": "https://i.imgur.com/ywdUhx9.png",
     "id": "U",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "26-06-2024",
@@ -1311,13 +1454,16 @@
         "date": "27-12-2024",
         "creator": "Thys",
         "notes": "David suggested moving mana cost from 2U -> 1U"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, changed mana cost from 2U to 1U"
       }
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -1348,9 +1494,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -2240,9 +2384,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -3907,9 +4049,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false,
       "frame": "normal"
     }
@@ -5110,9 +5250,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "tutor"
-      ],
+      "function": ["tutor"],
       "reprint": false,
       "frame": "normal"
     }
@@ -5638,9 +5776,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -5884,9 +6020,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -5932,9 +6066,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -6717,9 +6849,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true
     }
   },
@@ -7475,9 +7605,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "Removal"
-      ],
+      "function": ["Removal"],
       "reprint": false
     }
   },
@@ -8371,9 +8499,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "wheel"
-      ],
+      "function": ["wheel"],
       "reprint": false
     }
   },
@@ -8772,10 +8898,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal",
-        "discard-outlet"
-      ],
+      "function": ["removal", "discard-outlet"],
       "reprint": false
     }
   },
@@ -8811,9 +8934,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -8844,9 +8965,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": false
     }
   },
@@ -8991,9 +9110,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "recursion"
-      ]
+      "function": ["recursion"]
     }
   },
   {
@@ -9063,9 +9180,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -9154,9 +9269,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard-outlet"
-      ],
+      "function": ["discard-outlet"],
       "reprint": false
     }
   },
@@ -9182,9 +9295,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -9209,9 +9320,7 @@
       }
     ],
     "tags": {
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": true,
       "frame": "normal"
     }
@@ -9352,12 +9461,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "discard",
-        "thoughtseize",
-        "discard-outlet",
-        "pact"
-      ],
+      "function": ["discard", "thoughtseize", "discard-outlet", "pact"],
       "reprint": false
     }
   },
@@ -9480,9 +9584,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "recursion"
-      ],
+      "function": ["recursion"],
       "reprint": false
     }
   },
@@ -9721,9 +9823,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -10033,9 +10133,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "removal"
-      ],
+      "function": ["removal"],
       "reprint": false
     }
   },
@@ -11271,9 +11369,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11355,9 +11451,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11383,9 +11477,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw"
-      ],
+      "function": ["draw"],
       "reprint": true
     }
   },
@@ -11442,9 +11534,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "ramp"
-      ],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -11536,11 +11626,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "repeatable-draw",
-        "card-advantage"
-      ],
+      "function": ["draw", "repeatable-draw", "card-advantage"],
       "reprint": true
     }
   },
@@ -11608,12 +11694,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [
-        "draw",
-        "card-advantage",
-        "mill",
-        "mill-self"
-      ],
+      "function": ["draw", "card-advantage", "mill", "mill-self"],
       "reprint": true
     }
   },
