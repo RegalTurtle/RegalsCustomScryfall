@@ -791,7 +791,7 @@
     "cost": "{3}{B}",
     "type": "Creature - Zombie",
     "text": "Madness {1}{B}{line}When ~ enters, if its madness cost was paid, you may return target creature card from a graveyard to its owner's hand.",
-    "flavor": "There will always be a seeker.",
+    "flavor": "",
     "rarity": "C",
     "power": 2,
     "toughness": 2,
@@ -810,7 +810,7 @@
       {
         "date": "01-01-2025",
         "creator": "Thys",
-        "notes": "Final pre-print pass, added p/t"
+        "notes": "Final pre-print pass, added p/t, removed flavor text \"There will always be a seeker.\""
       }
     ],
     "tags": {
@@ -7861,7 +7861,7 @@
     "text": "At the beginning of your end step, if you gained 2 or more life this turn, create an Excuse token.",
     "flavor": "“If the Inquisition is the pen, then I am their sword.”",
     "rarity": "U",
-    "img": "https://i.imgur.com/ySAK1HQ.png",
+    "img": "https://i.imgur.com/tyBb5cr.png",
     "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
@@ -9110,11 +9110,12 @@
     "id": "RG",
     "cost": "{1}{R}",
     "type": "Instant",
-    "text": "Destroy target artifact.\nFlashback {G}",
+    "text": "Destroy target artifact.{line}Flashback {G}",
     "flavor": "How did the symbol of chaos get there?",
     "rarity": "C",
-    "img": "https://i.imgur.com/u2gBywl.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/U0q98Di.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -9126,9 +9127,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Blood Party",
@@ -9175,8 +9184,9 @@
     "text": "Put two beer counters on target permanent you control.",
     "flavor": "After casting the spell, she looked at her challenger with new fire behind her eyes.",
     "rarity": "C",
-    "img": "https://i.imgur.com/2TRTPdW.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/w6qot8B.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -9203,9 +9213,17 @@
         "date": "16-07-2024",
         "creator": "Thys",
         "notes": "Uploaded new text"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Brewery Hellkite",
@@ -9240,22 +9258,30 @@
     "id": "R",
     "cost": "{2}{R}",
     "type": "Creature - Vampire",
-    "text": "First strike\nWhen ~ enters, exile a card from a graveyard.\nWhenever a player plays a land or casts a spell, if it shares a card type with the exiled card, that player takes a shot.",
+    "text": "First strike{line}When ~ enters, exile a card from a graveyard.{line}Whenever a player plays a land or casts a spell, if it shares a card type with the exiled card, that player takes a shot.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/dHa62g9.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/zkffBSq.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Created card based on cemetery gatekeeper, created art"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Crazed Fanatic",
@@ -9264,11 +9290,12 @@
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Elf Alcoholic",
-    "text": "{T}: Add {R}.\nWhenever an opponent takes a shot, you may untap ~.",
+    "text": "{T}: Add {R}.{line}Whenever an opponent takes a shot, you may untap ~.",
     "flavor": "Down! Down! Down! Anarchy and Fire!",
     "rarity": "U",
-    "img": "https://i.imgur.com/Sjvtk1b.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/V84ycp7.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 2,
     "art-remarks": "",
@@ -9282,28 +9309,41 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Cursed Lightning",
     "cost": "{3}{R}",
     "type": "Sorcery",
-    "text": "Pact{\n}~ deals 4 damage divided as you choose among one, two, or three target creatures.{\n}If you accepted ~'s pact, draw a card.",
+    "text": "Pact{line}~ deals 4 damage divided as you choose among one, two, or three target creatures.{line}If you accepted ~'s pact, draw a card.",
     "flavor": "",
     "rarity": "R",
     "cn": 136,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/4mWNr78.png",
+    "img": "https://i.imgur.com/Jv6jN83.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -9344,12 +9384,13 @@
     "cn": 138,
     "id": "R",
     "cost": "{3}{R}",
-    "type": "Creature - Elf Shaman",
-    "text": "Whenever ~ attacks, choose target creature you control, then roll a d20.\n1-14 | Create a tapped and attacking token that's a copy of that creature, except it's not legendary and it has \"At the end of combat, exile this creature.\"\n15-20 | Create one of those tokens. You may roll again.",
+    "type": "Legendary Creature - Elf Shaman",
+    "text": "Whenever Delina, Wild Mage attacks, choose target creature you control, then roll a d20.{line}{roll1—14} | Create a tapped and attacking token that's a copy of that creature, except it's not legendary and it has “At end of combat, exile this creature.”{line}{roll15—20} | Create one of those tokens. You may roll again.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/uuShjHB.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/iN54Rrh.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 2,
     "art-remarks": "",
@@ -9363,9 +9404,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Drunken Warrior",
@@ -9374,14 +9423,14 @@
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Human Alcoholic",
-    "text": "As long as it's your turn, ~ has first strike.",
-    "flavor": "\"ughhh blugh blah\"",
+    "text": "During your turn, ~ has first strike.",
+    "flavor": "“ughhh blugh blah”",
     "rarity": "U",
-    "img": "https://i.imgur.com/74Pvli1.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/tkUGdMW.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "06-12-2023",
@@ -9392,15 +9441,23 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, fixed \"During your turn\" text"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Dubious Brewer",
     "cost": "{R}",
     "type": "Creature - Shapeshifter",
-    "text": "Changeling\nSacrifice a creature: Put a beer counter on target permanent you control.",
+    "text": "Changeling{line}Sacrifice a creature: Put a beer counter on target permanent you control.",
     "flavor": "Would you trust him... it?",
     "rarity": "C",
     "cn": 140,
@@ -9429,11 +9486,12 @@
     "id": "R",
     "cost": "{4}{R}",
     "type": "Creature - Vampire Devil",
-    "text": "Elder Pact\nFor each time you accepted ~'s pact, create a Blood token.\nActivated abilities of Blood tokens you control cost {1} less to activate.",
+    "text": "Elder Pact{line}For each time you accepted ~'s pact, create a Blood token.{line}Activated abilities of Blood tokens you control cost {1} less to activate.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/G9V03st.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/y7pQE86.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 4,
     "toughness": 3,
     "art-remarks": "",
@@ -9442,9 +9500,17 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Created and gave card image"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Dwarven Mead",
@@ -9645,20 +9711,27 @@
     "name": "Feldon and Jaxis",
     "cost": "{1}{R}{R}",
     "type": "Legendary Creature - Human",
-    "text": "{r},{t}, Discard a card, Exile a creature card from your graveyard: Create a token that's a copy of the exiled card, except it’s an artifact in addition to its other types. It gains haste and “When this creature dies, draw a card.” Sacrifice it at the beginning of the next end step. ",
+    "text": "{R},{T}, Discard a card, Exile a creature card from your graveyard: Create a token that's a copy of the exiled card, except it's an artifact in addition to its other types. It gains haste and “When this creature dies, draw a card.” Sacrifice it at the beginning of the next end step.",
     "flavor": "",
     "rarity": "R",
     "cn": 148,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Om46C6T.png",
+    "img": "https://i.imgur.com/Xdtf8EE.png",
+    "power": 2,
+    "toughness": 3,
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added p/t"
       }
     ],
     "tags": {
@@ -9807,14 +9880,14 @@
     "id": "R",
     "cost": "{2}{R}",
     "type": "Artifact Creature - Wall",
-    "text": "Defender, reach\n{T}, Remove a beer counter from ~: Target player takes a shot.",
+    "text": "Defender, reach{line}{T}, Remove a beer counter from ~: Target player takes a shot.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/XbftEWc.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/nAZTPW7.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 3,
-    "art-remarks": "",
     "notes": [
       {
         "date": "30-12-2023",
@@ -9825,9 +9898,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Goblin Booze Runner",
@@ -10108,7 +10189,10 @@
         "notes": "Created json blob"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Rummager Elf",
@@ -10117,11 +10201,11 @@
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Elf Alcoholic",
-    "text": "~ enters with two beer counters.\n{T}, Remove a beer counter from ~, Discard a card: Draw a card.\n{2}: Untap ~.",
+    "text": "~ enters with two beer counters.{line}{T}, Remove a beer counter from ~, Discard a card: Draw a card.{line}{2}: Untap ~.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/9RJgf1N.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/SGqO0DE.png",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 2,
     "art-remarks": "",
@@ -10140,6 +10224,11 @@
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "added etb beer counters and removed flavor text"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10185,9 +10274,9 @@
     "cn": 165,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/L6RwsX7.png",
+    "img": "https://i.imgur.com/ZmwS7ER.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "16-09-2024",
@@ -10198,6 +10287,11 @@
         "date": "16-09-2024",
         "creator": "Sam",
         "notes": "Changed mana from 1R to 2R and made it draw an additional card."
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10216,11 +10310,11 @@
     "text": "If a player would lose life as a result of taking a shot, instead that player loses an additional 2 life.",
     "flavor": "At the court of high king Torbran of Red Fell, refusing a drink was the highest of blasphemies.",
     "rarity": "R",
-    "img": "https://i.imgur.com/FOPPDhZ.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/8E8Raj9.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 4,
-    "art-remarks": "",
     "notes": [
       {
         "date": "13-11-2023",
@@ -10241,9 +10335,17 @@
         "date": "16-07-2024",
         "creator": "Thys",
         "notes": "Fixed art and new card image"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Trash Broker",
