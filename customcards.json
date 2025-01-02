@@ -12338,6 +12338,37 @@
     }
   },
   {
+<<<<<<< HEAD
+=======
+    "name": "Accomplished Alchemist",
+    "cost": "{3}{G}",
+    "type": "Creature - Elf Druid",
+    "text": "{T}: Add one mana of any color.\n{T}: Add X mana of any one color, where X is the amount of life you gained this turn.",
+    "flavor": "The esoteric arts bend to my will alone.",
+    "rarity": "R",
+    "cn": 171,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/AUJD6H6.png",
+    "id": "G",
+    "has_bleed_edge": true,
+    "power": 2,
+    "toughness": 5,
+    "notes": [
+      {
+        "date": "28-11-2024",
+        "creator": "Sam",
+        "notes": "Added card to MTD"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+>>>>>>> d4049452a58ba6fc63286defe84f6ce2558a6b75
     "name": "Excuse",
     "cost": "",
     "type": "Token Artifact - Excuse",
