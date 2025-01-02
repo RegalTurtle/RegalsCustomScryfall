@@ -9146,11 +9146,15 @@
     "id": "R",
     "cost": "{1}{R}",
     "type": "Enchantment",
-    "text": "When ~ enters, create a blood token.\n{1}{R}: Sacrifice an artifact or creature: Goad target creature.",
+    "text": "When ~ enters, create a blood token.{line}{1}{R}: Sacrifice an artifact or creature: Goad target creature.",
     "rarity": "C",
     "img": "https://i.imgur.com/qlaFcER.png",
     "has_bleed_edge": false,
-    "tags": {}
+    "notes": [],
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Bloody Retribution",
@@ -9159,20 +9163,28 @@
     "id": "R",
     "cost": "{1}{R}",
     "type": "Instant",
-    "text": "Choose one -\n• Destroy target artifact.\n• Create a Blood token.",
+    "text": "Choose one {-}{line}• {indent}Destroy target artifact.{line}• {indent}Create a Blood token.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/w6oY2uz.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/i77Fzqz.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
         "creator": "Sam",
         "notes": "New art"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Boon of Vigor",
@@ -9489,7 +9501,7 @@
     "text": "Elder Pact{line}For each time you accepted ~'s pact, create a Blood token.{line}Activated abilities of Blood tokens you control cost {1} less to activate.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/y7pQE86.png",
+    "img": "https://i.imgur.com/8a9ihOB.png",
     "artist": "Midjourney",
     "has_bleed_edge": true,
     "power": 4,
@@ -9519,12 +9531,12 @@
     "id": "R",
     "cost": "{3}{R}",
     "type": "Enchantment",
-    "text": "Whenever you take a shot, you may have target player take a shot.",
+    "text": "Whenever you take a shot, you may have target opponent take a shot.",
     "flavor": "Dwarvish mead is never meant to be sipped alone.",
     "rarity": "U",
-    "img": "https://i.imgur.com/cDPWbvF.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/fYEjZM9.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-11-2023",
@@ -9570,9 +9582,17 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Updated card text."
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Effigy of Flame",
@@ -9642,8 +9662,9 @@
     "text": "Whenever ~ deals combat damage to a player, put a beer counter on target creature you control.",
     "flavor": "Elven moonshiners are known for their aggressive marketing techniques.",
     "rarity": "U",
-    "img": "https://i.imgur.com/q7M5Gc7.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/la0syz2.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 1,
     "art-remarks": "",
@@ -9657,9 +9678,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Elven Mountie",
@@ -9747,12 +9776,12 @@
     "id": "R",
     "cost": "{1}{R}{R}",
     "type": "Instant",
-    "text": "Choose one -\n• Target player takes a shot.\n• ~ deals 3 damage to target creature.\nMadness {R}",
+    "text": "Choose one {-}{line}• {indent}Target player takes a shot.{line}• {indent}~ deals 3 damage to target creature.{line}Madness {R}",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/FS39emJ.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/CGTSlR7.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "17-12-2023",
@@ -9768,9 +9797,17 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Updtaed card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Fiery Shot",
@@ -9780,10 +9817,11 @@
     "cost": "{R}",
     "type": "Instant",
     "text": "Target player takes a shot.",
-    "flavor": "Lightning bolt - Fiery Shot",
+    "flavor": "The last remaining card of the original MTD cycle, one of the cards that started it all in 2023.",
     "rarity": "U",
-    "img": "https://i.imgur.com/AJI04lA.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/4nNG00a.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -9803,11 +9841,19 @@
       },
       {
         "date": "14-07-2024",
-        "creator": "Thys",
+        "creator": "Sam",
         "notes": "will do"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, new flavor text \"The last remaining card of the original MTD cycle, one of the cards that started it all in 2023.\""
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Goblin Anarchist",
@@ -9819,11 +9865,11 @@
     "text": "Whenever you cast an instant or sorcery spell, target opponent takes a shot.",
     "flavor": "Boom, Headshot",
     "rarity": "U",
-    "img": "https://i.imgur.com/5tGnje1.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/NAUbWa1.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "13-11-2023",
@@ -9854,9 +9900,17 @@
         "date": "14-07-2024",
         "creator": "Sam",
         "notes": "Updated"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Goblin Beer Brawler",
@@ -9866,12 +9920,17 @@
     "cost": "{2}{R}",
     "type": "Creature - Goblin Alcoholic",
     "text": "Sacrifice ~: Target player takes a shot.",
+    "flavor": "“Forrr the beeeeeerr lets go brotherssss!”",
     "rarity": "C",
     "img": "https://i.imgur.com/oDKyEJp.png",
     "has_bleed_edge": false,
     "power": 3,
     "toughness": 3,
-    "tags": {}
+    "notes": [],
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Goblin Beer Launcher",
@@ -10142,14 +10201,14 @@
     "id": "R",
     "cost": "{3}{R}{R}",
     "type": "Creature - Devil",
-    "text": "Haste\nMountaincycling {2}",
+    "text": "Haste{line}Mountaincycling {2}",
     "flavor": "Hell is a party best experienced on Earth.",
     "rarity": "C",
-    "img": "https://i.imgur.com/CyFcWWp.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/JHArKQQ.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 7,
     "toughness": 3,
-    "art-remarks": "",
     "notes": [
       {
         "date": "26-07-2024",
@@ -10160,9 +10219,17 @@
         "date": "29-07-2024",
         "creator": "Sam",
         "notes": "Added art, flavor, and name"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added reminder text to cycling"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Red Solo Cup",
@@ -10171,12 +10238,12 @@
     "id": "R",
     "cost": "{R}",
     "type": "Artifact - Equipment",
-    "text": "Whenever equipped creature becomes blocked by a creature, that creature's controller takes a shot.\nEquip {1}",
-    "flavor": "\"Sup Bro\"",
+    "text": "Whenever equipped creature becomes blocked by a creature, that creature's controller takes a shot.{line}Equip {1}",
+    "flavor": "“Sup Bro”",
     "rarity": "C",
-    "img": "https://i.imgur.com/dEARHlN.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/sldZ2Zd.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-12-2023",
@@ -10187,6 +10254,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10244,12 +10316,12 @@
     "id": "R",
     "cost": "{3}{R}",
     "type": "Sorcery",
-    "text": "Choose one - \n• Destroy target artifact.\n• Destroy target land.",
+    "text": "Choose one - {line}• {indent}Destroy target artifact.{line}• {indent}Destroy target land.",
     "flavor": "The Carnarium burned but the party never stopped.",
     "rarity": "C",
-    "img": "https://i.imgur.com/3QR3gKQ.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/6GYRQYK.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "26-07-2024",
@@ -10260,9 +10332,17 @@
         "date": "29-07-2024",
         "creator": "Sam",
         "notes": "Added art, name, and flavor"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Tactical Retreat",
