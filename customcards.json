@@ -1255,7 +1255,7 @@
     "cn": 205,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/2y7uCF2.png",
+    "img": "https://i.imgur.com/zCRfu2C.png",
     "id": "G",
     "has_bleed_edge": true,
     "notes": [
@@ -1263,6 +1263,11 @@
         "date": "28-11-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1275,15 +1280,15 @@
     "name": "Royal Merchant",
     "cost": "{3}{G}",
     "type": "Creature - Elf",
-    "text": "When ~ enters, you become the monarch.\nAt the beginning of the monarch's end step, that player puts a beer counter on target permanent they control.",
+    "text": "When ~ enters, you become the monarch.{line}At the beginning of the monarch's end step, that player puts a beer counter on target permanent they control.",
     "flavor": "I serve the king of the day.",
     "rarity": "C",
     "cn": 206,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/ttfjdGH.png",
+    "img": "https://i.imgur.com/htuDxjS.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 3,
     "notes": [
@@ -1301,6 +1306,11 @@
         "date": "28-11-2024",
         "creator": "Sam",
         "notes": "Added pow/tou to json"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1319,9 +1329,9 @@
     "cn": 207,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/pmW49mb.png",
+    "img": "https://i.imgur.com/hZDf5nL.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
@@ -1337,6 +1347,11 @@
         "date": "29-11-2024",
         "creator": "Thys",
         "notes": "Upshifted from Common to Uncommon"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1352,11 +1367,12 @@
     "id": "G",
     "cost": "{10}{G}{G}",
     "type": "Creature - Elemental Spirit",
-    "text": "This spell costs {1} less to cast for each counter among players and permanents.\nTrample\n~ enters tapped.",
+    "text": "This spell costs {1} less to cast for each counter among players and permanents.{line}Trample{line}~ enters tapped.",
     "flavor": "Tall and elegant as she is fierce and unyielding, mother nature's hand.",
     "rarity": "U",
-    "img": "https://i.imgur.com/tNoY8Wp.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/ZLmkXQ4.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 8,
     "toughness": 8,
     "art-remarks": "",
@@ -1375,28 +1391,41 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Updated Image"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Veteran Huntsman",
     "cost": "{G}{G}",
     "type": "Creature - Elf",
     "text": "",
-    "flavor": "\"I have been on many hunts, I have felled many a beast, but lately, it is I who have felt hunted. The woods aren't what they used to be, something has been let loose and it is finally making itself known.\"",
+    "flavor": "“I have been on many hunts, I have felled many a beast, but lately, it is I who have felt hunted. The woods aren't what they used to be, something has been let loose and it is finally making itself known.”",
     "rarity": "C",
     "cn": 209,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/bbTfYvG.png",
+    "img": "https://i.imgur.com/E5XrGhE.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1409,15 +1438,17 @@
     "name": "Wall of Trees",
     "cost": "{2}{G}{G}",
     "type": "Creature - Plant Wall",
-    "text": "Defender, reach\n~ can block one additional creature each combat for each beer counter on it.",
+    "text": "Defender, reach{line}~ can block one additional creature each combat for each beer counter on it.",
     "flavor": "The forest gives back to those who nurture it.",
     "rarity": "U",
     "cn": 210,
+    "power": 0,
+    "toughness": 8,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/RExCihB.png",
+    "img": "https://i.imgur.com/dw295Fv.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
@@ -1438,6 +1469,11 @@
         "date": "17-11-2024",
         "creator": "Thys",
         "notes": "JSON for this needs to get power and toughness"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1453,14 +1489,14 @@
     "id": "G",
     "cost": "{2}{G}{G}",
     "type": "Creature - Bird",
-    "text": "When ~ enters, create a 1/1 green Elf Druid creature token with \"{T}: Add {G}.\"",
+    "text": "When ~ enters, create a 1/1 green Elf Druid creature token with “{T}: Add {G}.”",
     "flavor": "While uncommon, some elves have chosen an avian life.",
     "rarity": "U",
-    "img": "https://i.imgur.com/FXA8Msp.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/oEfralX.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "18-07-2024",
@@ -1471,23 +1507,31 @@
         "date": "22-07-2024",
         "creator": "Thys",
         "notes": "this is so egregious (the art)"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "World Staff",
     "cost": "{G}",
     "type": "Artifact - Equipment",
-    "text": "Equipped creature gets +0/+2 and gains \"Whenever this creature blocks a creature, put a beer counter on target permanent you control.\"\n{G}{G}{G}{G}{G}, Remove six beer counters from among permanents you control: Your life total becomes 20. Untap all permanents you control. Activate only once.\nEquip {G}{G}",
+    "text": "Equipped creature gets +0/+2 and gains “Whenever this creature blocks a creature, put a beer counter on target permanent you control.”{line}{G}{G}{G}{G}{G}{G}, Exile ~, Remove six beer counters from among permanents you control: Your life total becomes 20. Untap all permanents you control. Activate only as a sorcery.{line}Equip {G}{G}",
     "flavor": "",
     "rarity": "R",
     "cn": 212,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/dUB6ZMW.png",
+    "img": "https://i.imgur.com/Sp83kPX.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
@@ -1513,6 +1557,11 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "Maybe it should exile itself instead of saying \"activate only once\", might be clearer template. Also life-resetting effects are usually at sorcery speed."
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added \"as a sorcery\", increased ability cost by G (from 5 to 6 G), and made it exile instead of \"activate only once\""
       }
     ],
     "tags": {
