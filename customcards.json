@@ -10004,14 +10004,14 @@
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Goblin",
-    "text": "Haste\nWhenever ~ deals combat damage to a player, you may sacrifice ~. If you do, that player takes a shot.",
+    "text": "Haste{line}Whenever ~ deals combat damage to a player, you may sacrifice it. If you do, that player takes a shot.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/UGVD3rx.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/glIhA7Z.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "13-11-2023",
@@ -10032,9 +10032,17 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Updated card art."
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Hellfire Ritual",
