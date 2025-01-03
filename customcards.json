@@ -9659,19 +9659,26 @@
     "cost": "{1}{R}",
     "type": "Creature - Goblin Alcoholic",
     "text": "{1}, Remove a beer counter from a permanent you control: Exile the top card of your library. You may play that card this turn.",
-    "flavor": "\"Come child, sit, and take a sip of your destiny.\"",
+    "flavor": "“Come child, sit, and take a sip of your destiny.”",
     "rarity": "U",
+    "power": 1,
+    "toughness": 1,
     "cn": 137,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/fWGlFvs.png",
+    "img": "https://i.imgur.com/7pFVNF6.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -9762,17 +9769,24 @@
     "text": "Changeling{line}Sacrifice a creature: Put a beer counter on target permanent you control.",
     "flavor": "Would you trust him... it?",
     "rarity": "C",
+    "power": 1,
+    "toughness": 1,
     "cn": 140,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/L4rpGIo.png",
+    "img": "https://i.imgur.com/hITppGj.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -9894,14 +9908,19 @@
     "cn": 143,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/byNmSeX.png",
+    "img": "https://i.imgur.com/sJ92shv.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10325,20 +10344,25 @@
     "name": "Hellfire Ritual",
     "cost": "{1}{R}",
     "type": "Sorcery",
-    "text": "Pact {i}(You may take a shot or discard a card as you cast this spell.){/i}\nAs an additional cost to cast this spell, discard a card.\nDraw two cards. If you accepted ~’s pact, create a 3/1 red Elemental creature token with trample and haste. Exile it at the beginning of the next end step.",
+    "text": "Pact{line}As an additional cost to cast this spell, discard a card.{line}Draw two cards. If you accepted ~'s pact, create a 3/1 red Elemental creature token with trample and haste. Exile it at the beginning of the next end step.",
     "flavor": "",
     "rarity": "C",
     "cn": 155,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/extFu6m.png",
+    "img": "https://i.imgur.com/EwnAr3D.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10770,11 +10794,11 @@
     "id": "R",
     "cost": "{2}{R}",
     "type": "Creature - Goblin",
-    "text": "Draft ~ face up.\nDuring the draft, you may turn ~ face down. If you do, target player passes the last card from their booster pack to you.",
+    "text": "Draft ~ face up.{line}During the draft, you may turn ~ face down. If you do, target player passes the last card from their booster pack to you.",
     "flavor": "What ya lookin for missy?",
     "rarity": "C",
-    "img": "https://i.imgur.com/KHJLn9j.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/yrrjEoH.png",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
     "watermark": "draft",
@@ -10804,9 +10828,17 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Updated art & added flavor text"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Voldaren Epicure",
@@ -10829,7 +10861,10 @@
         "notes": "New Art"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Wizard's Shot",
@@ -10841,8 +10876,9 @@
     "text": "You may choose new targets for target spell or ability unless its controller takes a shot.",
     "flavor": "I'll drink to that.",
     "rarity": "U",
-    "img": "https://i.imgur.com/3S3VRua.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/S9Ao9Cn.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -10859,9 +10895,17 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Buffed card to be more similar to deflecting swat"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Law of Equivalent Exchange",
@@ -10914,7 +10958,10 @@
         "notes": "Finally added the card to the json"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Path to .08 B.A.C.",
