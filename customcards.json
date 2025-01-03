@@ -10870,20 +10870,28 @@
     "id": "C",
     "cost": "{0}",
     "type": "Instant",
-    "text": "As an additional cost to cast this spell, take a shot.\nEach opponent takes a shot.",
+    "text": "As an additional cost to cast this spell, take a shot.{line}Each opponent takes a shot.",
     "flavor": "In order to obtain a particular something, something else of equivalent value must be in given exchange or lost.",
     "rarity": "M",
-    "img": "https://i.imgur.com/xtTbVnR.png",
+    "img": "https://i.imgur.com/u133nWV.png",
+    "artist": "Midjourney",
     "has_bleed_edge": true,
-    "art-remarks": "",
     "notes": [
       {
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Finally added the card to the json"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Gut Blast",
