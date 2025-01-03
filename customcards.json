@@ -76,14 +76,13 @@
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf Soldier",
-    "text": "Reach\n~ gets +1/+1 for each beer counter on it.",
+    "text": "Reach{line}~ gets +1/+1 for each beer counter on it.",
     "flavor": "He stands tall, barring all from entering, less they are true of intention and high of spirit.",
     "rarity": "C",
     "img": "https://i.imgur.com/2uzC2x4.png",
     "has_bleed_edge": false,
     "power": 1,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "14-11-2023",
@@ -110,14 +109,14 @@
     "id": "G",
     "cost": "{G}",
     "type": "Creature - Elf Shaman",
-    "text": "Whenever you take a shot, put a beer counter on target permanent you control.\n{T}: Add {G}.",
+    "text": "Whenever you take a shot, put a beer counter on target permanent you control.{line}{T}: Add {G}.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/30ZCpea.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/1GLbP7U.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 0,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "14-11-2023",
@@ -128,9 +127,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Cellar Assistant",
@@ -142,11 +149,11 @@
     "text": "Remove a beer counter from ~: Add {G}",
     "flavor": "Hints of oak, maple, and a touch of cherry.",
     "rarity": "C",
-    "img": "https://i.imgur.com/TVYjg9F.png",
-    "has_bleed_edge": false,
+    "img": "https://imgur.com/UZQiCMq.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "24-12-2023",
@@ -157,9 +164,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Colossal Dreadbeast",
@@ -168,14 +183,14 @@
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Creature - Beast",
-    "text": "Trample\nForestcycling {2}",
+    "text": "Trample{line}Forestcycling {2}",
     "flavor": "If you see the trees shake, run. If you smell the rank, flee. If you see its fur, it's too late.",
     "rarity": "C",
-    "img": "https://i.imgur.com/PrdtuSI.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/ruaiWKk.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 6,
     "toughness": 6,
-    "art-remarks": "",
     "notes": [
       {
         "date": "26-07-2024",
@@ -186,9 +201,17 @@
         "date": "29-07-2024",
         "creator": "Sam",
         "notes": "Added name, subtype, flavor, and art"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Deathgorge Scavenger",
@@ -200,7 +223,7 @@
     "cn": 177,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/XYqBuIB.png",
+    "img": "https://i.imgur.com/KXYVDkZ.png",
     "id": "G",
     "has_bleed_edge": true,
     "power": 3,
@@ -215,6 +238,11 @@
         "date": "29-11-2024",
         "creator": "Thys",
         "notes": "Added stamp and updated cn"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -9735,15 +9763,17 @@
     "name": "Elven Mountie",
     "cost": "{1}{R}",
     "type": "Creature - Elf Soldier",
-    "text": "Ward {1}\nOther creatures you control have haste.",
+    "text": "Ward {1}{line}Other creatures you control have haste.",
     "flavor": "Built for peace, equipped for war.",
+    "power": 1,
+    "toughness": 1,
     "rarity": "U",
     "cn": 146,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/vDrGxFJ.png",
+    "img": "https://i.imgur.com/ZhY46Rs.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
@@ -9754,6 +9784,11 @@
         "date": "15-10-2024",
         "creator": "Thys",
         "notes": "What in the WOTC card design is this????"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
