@@ -72,11 +72,11 @@ export const sortMTD = () => {
   // Blue
   // setCnBetweenCns(45, 86, "MTD");
   // Black
-  // setCnBetweenCns(87, 128, "MTD");
+  setCnBetweenCns(87, 128, "MTD");
   // Red
   // setCnBetweenCns(129, 170, "MTD");
   // Green
-  setCnBetweenCns(171, 212, "MTD");
+  // setCnBetweenCns(171, 212, "MTD");
   // Multicolor
   // setCnBetweenCns(213, 246, "MTD");
   // Artifact
