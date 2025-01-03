@@ -288,7 +288,7 @@
     "flavor": "\"All payments must be made in advance. I'm tired of patrons passing out with unpaid tabs.\"",
     "rarity": "C",
     "img": "https://i.imgur.com/q4Toh2q.png",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
     "art-remarks": "",
@@ -313,12 +313,11 @@
     "id": "G",
     "cost": "{3}{G}",
     "type": "Enchantment",
-    "text": "Whenever you become the target of a spell or ability that would force you to take a shot, put a beer counter on ~.\nRemove two beer counters from ~: Prevent the next shot you would take this turn.",
+    "text": "Whenever you become the target of a spell or ability that would force you to take a shot, put a beer counter on ~.{line}Remove two beer counters from ~: Prevent the next shot you would take this turn.",
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/tCxpd2u.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -356,7 +355,10 @@
         "notes": "Added \"this turn\" to the second ability."
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Elvish Visionary",
@@ -385,7 +387,10 @@
         "notes": "Changed art and added bleed edge"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Elvish Warmaster",
@@ -394,11 +399,12 @@
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf Warrior",
-    "text": "Whenever one or more other Elves enters under your control, create a 1/1 green Elf Warrior creature token. This ability triggers only once each turn.\n{5}{G}{G}: Elves you control get +2/+2 and gain deathtouch until end of turn.",
+    "text": "Whenever one or more other Elves enters under your control, create a 1/1 green Elf Warrior creature token. This ability triggers only once each turn.{line}{5}{G}{G}: Elves you control get +2/+2 and gain deathtouch until end of turn.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/NBte17x.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/1KiAIjx.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
     "art-remarks": "",
@@ -412,9 +418,17 @@
         "date": "15-07-2024",
         "creator": "Sam",
         "notes": "New art and added bleed edge"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Enti, the Worldshaker",
@@ -423,14 +437,14 @@
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Legendary Creature - Turtle",
-    "text": "~ enters with six beer counters on it.\nRemove one beer counter from ~: Target creature gains trample, vigilance, and haste until end of turn.\nRemove two beer counters from ~: Put a +1/+1 counter on target creature.\nRemove four beer counters from ~: Creatures you control get +2/+2 until end of turn.",
+    "text": "Enti enters with six beer counters on it.{line}Remove one beer counter from Enti: Target creature gains trample, vigilance, and haste until end of turn.{line}Remove two beer counters from Enti: Put a +1/+1 counter on target creature.{line}Remove four beer counters from Enti: Creatures you control get +2/+2 until end of turn.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/Qu7BxnV.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/qJiLQC3.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 4,
     "toughness": 7,
-    "art-remarks": "",
     "notes": [
       {
         "date": "26-07-2024",
@@ -446,9 +460,17 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Balances changes, 9 -> 6 beer counter etb, reduced cost of third mode to four beer counters"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Entourage of Trest",
@@ -457,14 +479,14 @@
     "id": "G",
     "cost": "{4}{G}",
     "type": "Creature - Elf Soldier",
-    "text": "When ~ enters, you become the monarch.\n~ can block an additional creature as long as you're the monarch.",
+    "text": "When ~ enters, you become the monarch.{line}~ can block an additional creature as long as you're the monarch.",
     "flavor": "The envoys to the throne were as strong as they were graceful.",
     "rarity": "C",
-    "img": "https://i.imgur.com/q6h4Ss4.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/1Z8eNOF.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 4,
     "toughness": 4,
-    "art-remarks": "",
     "notes": [
       {
         "date": "13-12-2023",
@@ -475,9 +497,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Evolving Culture",
@@ -486,14 +516,14 @@
     "id": "G",
     "cost": "{G}",
     "type": "Creature - Elemental",
-    "text": "~ enters with a beer counter on it.\n~ gets +1/+1 for each beer counter on it.\nWhenever one or more beer counters are put on a permanent you control not named ~, put a beer counter on ~.",
+    "text": "~ enters with a beer counter on it.{line}~ gets +1/+1 for each beer counter on it.{line}Whenever one or more beer counters are put on a permanent you control not named ~, put a beer counter on ~.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/0v1wmGN.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/WGl3fTW.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 0,
     "toughness": 0,
-    "art-remarks": "",
     "notes": [
       {
         "date": "12-01-2024",
@@ -504,9 +534,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Fervent Acolyte",
@@ -516,13 +554,13 @@
     "cost": "{G}",
     "type": "Creature - Elf Alcoholic",
     "text": "{T}, Remove a beer counter from a permanent you control: Create a Food token.",
-    "flavor": "To the most fervent of acolyted, drinking is more than a ritual, it is a lifestyle.",
+    "flavor": "To the most fervent of acolytes, drinking is more than a ritual, it is a lifestyle.",
     "rarity": "C",
-    "img": "https://i.imgur.com/AgH5dEX.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/ERBJcla.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "14-11-2023",
@@ -533,21 +571,29 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Gaea's Grasp",
     "cost": "{1}{G}{G}",
     "type": "Legendary Enchantment",
-    "text": "Hexproof\nIf you were to take a shot, prevent that shot and put a beer counter on ~.\nWhen there are seven or more beer counters on ~, exile it.\nWhen ~ leaves the battlefield, you lose the game.",
+    "text": "Hexproof{line}If you were to take a shot, prevent that shot and put a beer counter on ~.{line}When there are seven or more beer counters on ~, exile it.{line}When ~ leaves the battlefield, you lose the game.",
     "flavor": "",
     "rarity": "R",
     "cn": 187,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/YY1KPkx.png",
+    "img": "https://i.imgur.com/b2tfoyN.png",
     "id": "G",
     "has_bleed_edge": true,
     "notes": [
@@ -555,6 +601,11 @@
         "date": "29-11-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -570,14 +621,14 @@
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature - Elf",
-    "text": "When ~ enters, choose one - \n• Put a +1/+1 counter on target creature.\n• Put two beer counters on target permanent.",
+    "text": "When ~ enters, choose one {-}{line}• {indent}Put a +1/+1 counter on target creature.{line}• {indent}Put two beer counters on target permanent.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/9XZjEVw.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/G3uD61X.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "09-07-2024",
@@ -600,7 +651,10 @@
         "notes": "Added name and art"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Gifts for the Host",
@@ -627,7 +681,10 @@
         "notes": "Created json blob"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Ginger Beer",
@@ -636,7 +693,7 @@
     "id": "G",
     "cost": "{G}",
     "type": "Artifact - Food",
-    "text": "When ~ enters, put a beer counter on target permanent you control.\n{2}, {T}, Sacrifice ~: You gain 3 life.",
+    "text": "When ~ enters, put a beer counter on target permanent you control.{line}{2}, {T}, Sacrifice ~: You gain 3 life.",
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/RJIQmEu.png",
@@ -654,7 +711,10 @@
         "notes": "Created json blob"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "function": false
+    }
   },
   {
     "name": "High Priestess",
@@ -666,8 +726,9 @@
     "text": "Elves you control get +1/+1 for each beer counter on ~.",
     "flavor": "She was bestowed the heights of honors, and she delivered with pride.",
     "rarity": "R",
-    "img": "https://i.imgur.com/K8FYWUw.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/P6EndL6.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
     "notes": [
@@ -685,9 +746,17 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "damn holo stamps"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Invigorating Brew",
@@ -699,9 +768,9 @@
     "text": "Target creature gets +3/+3 until end of turn. Put a beer counter on it.",
     "flavor": "Cheers!",
     "rarity": "C",
-    "img": "https://i.imgur.com/9JCjMu4.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/85Mjvor.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-11-2023",
@@ -712,9 +781,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Leaping Ambush",
@@ -726,14 +803,19 @@
     "cn": 193,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/legoOS3.png",
+    "img": "https://i.imgur.com/RF167tA.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created render"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -749,15 +831,15 @@
     "id": "G",
     "cost": "{2}{G}",
     "type": "Creature - Elf Rogue",
-    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that pack. If you do, turn ~ face down, then pass the next booster pack without drafting a card from it.",
+    "text": "Draft ~ face up.{line}As you draft a card, you may draft an additional card from that pack. If you do, turn ~ face down, then pass the next booster pack without drafting a card from it.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/ZyDyH97.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/SLjtGku.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 2,
     "watermark": "draft",
-    "art-remarks": "",
     "notes": [
       {
         "date": "13-12-2023",
@@ -768,9 +850,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Life Goes On",
@@ -782,7 +872,7 @@
     "cn": 195,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/p2Gn6Kw.png",
+    "img": "https://i.imgur.com/NGOWwsb.png",
     "id": "G",
     "has_bleed_edge": true,
     "notes": [
@@ -790,6 +880,11 @@
         "date": "28-11-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -802,20 +897,25 @@
     "name": "Life Sprout",
     "cost": "{G}",
     "type": "Instant",
-    "text": "As an additional cost to cast this spell, take a shot.\nReturn target card from a graveyard to its owner's hand.",
+    "text": "As an additional cost to cast this spell, take a shot.{line}Return target card from a graveyard to its owner's hand.",
     "flavor": "“Here is your chance to turn a new leaf”",
     "rarity": "U",
     "cn": 196,
     "set": "MTD",
     "artist": "",
-    "img": "https://i.imgur.com/YIGD2sp.png",
+    "img": "https://i.imgur.com/IDfxRUq.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "16-08-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -884,21 +984,24 @@
         "notes": "Added \"only as a sorcery\" to the second ability"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Loam of Life",
     "cost": "{1}{G}{G}",
     "type": "Enchantment",
-    "text": "Whenever a permanent card is put into your graveyard, put a beer counter on target permanent you control.",
+    "text": "Whenever a permanent card is put into a graveyard from anywhere, put a beer counter on target permanent you control.",
     "flavor": "To the earth all things return, from the earth all things are found.",
     "rarity": "U",
     "cn": 198,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/rQiuyXZ.png",
+    "img": "https://i.imgur.com/rPO3Kez.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
@@ -909,6 +1012,11 @@
         "date": "23-10-2024",
         "creator": "Thys",
         "notes": "Changed wording from \"Whenever a permanent enters the graveyard from anywhere\" to \"Whenever a permanent card is put into your graveyard"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, changed trigger from \"Whenever a permanent card is put into your graveyard\" to \"Whenever a permanent card is put into a graveyard from anywhere\""
       }
     ],
     "tags": {
@@ -924,14 +1032,14 @@
     "id": "G",
     "cost": "{1}{G}",
     "type": "Creature — Halfling Citizen",
-    "text": "When ~ enters, create a Treasure token.\nWhenever another creature enters under your control, you gain 1 life.",
+    "text": "When ~ enters, create a Treasure token.{line}Whenever another creature enters under your control, you gain 1 life.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/3OIBR5S.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/1XkDjKS.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "14-07-2024",
@@ -942,21 +1050,29 @@
         "date": "16-07-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Rager Moose",
     "cost": "{4}{G}{G}",
     "type": "Creature - Elk Alcoholic",
-    "text": "Flash\nMultikicker{-}Take a shot.\nVigilance, reach, trample\n~ enters with a beer counter on it for each time it was kicked.\n~ gets +1/+1 for each beer counter on it.",
+    "text": "Flash{line}Multikicker{-}Take a shot.{line}Vigilance, reach, trample{line}~ enters with a beer counter on it for each time it was kicked.{line}~ gets +1/+1 for each beer counter on it.",
     "flavor": "",
     "rarity": "R",
     "cn": 200,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/egLok2s.png",
+    "img": "https://i.imgur.com/UXzQMQX.png",
     "id": "G",
     "has_bleed_edge": true,
     "power": 4,
@@ -971,6 +1087,11 @@
         "date": "29-11-2024",
         "creator": "Sam",
         "notes": "rip fucker moose"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -986,14 +1107,14 @@
     "id": "G",
     "cost": "{4}{G}{G}",
     "type": "Creature - Dinosaur",
-    "text": "Trample\nWhen ~ enters, you become the monarch.\nWhenever you tap a land for mana while you're the monarch, add an additional one mana of any color.",
+    "text": "Trample{line}When ~ enters, you become the monarch.{line}Whenever you tap a land for mana while you're the monarch, add an additional one mana of any color.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/OnBfiOG.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/pRQfwWs.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 5,
     "toughness": 5,
-    "art-remarks": "",
     "notes": [
       {
         "date": "24-02-2024",
@@ -1004,9 +1125,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Rejuvinating Ale",
@@ -1018,7 +1147,7 @@
     "cn": 202,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/9CNh2j5.png",
+    "img": "https://i.imgur.com/JFEPMGd.png",
     "id": "G",
     "has_bleed_edge": true,
     "notes": [
@@ -1026,6 +1155,11 @@
         "date": "29-11-2024",
         "creator": "Thys",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -1084,11 +1218,11 @@
     "cost": "{3}{G}",
     "type": "Instant",
     "text": "Destroy target artifact, enchantment, or creature with flying.",
-    "flavor": "",
+    "flavor": "“Get down here where I can hit you with my axe!”{lns}{-}Severely Disgruntled Elf Farmer",
     "rarity": "C",
-    "img": "https://i.imgur.com/jSzVzhz.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/YTtDtP0.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "29-07-2024",
@@ -1099,9 +1233,17 @@
         "date": "21-08-2024",
         "creator": "Sam",
         "notes": "New art with new render"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Righteous Bite",
@@ -7432,10 +7574,11 @@
     "id": "C",
     "cost": "{9}",
     "type": "Sorcery",
-    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.\nYou get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
+    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.{line}You get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/kPNCcOJ.png",
+    "img": "https://i.imgur.com/kH9tW2j.png",
+    "artist": "Midjourney",
     "has_bleed_edge": true,
     "notes": [
       {
@@ -7517,9 +7660,17 @@
         "date": "17-11-2024",
         "creator": "Thys",
         "notes": "Needs holostamp"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Aerial Assault",
@@ -9717,12 +9868,12 @@
     "id": "R",
     "cost": "{R}",
     "type": "Artifact",
-    "text": "At the beginning of your upkeep, put a beer counter on target creature you control.\n{2}, {T}: Create a 1/1 red Elf Alcoholic creature token. Activate only if a beer counter was removed from a creature you control this turn or a creature with a beer counter on it was put into your graveyard this turn.",
+    "text": "At the beginning of your upkeep, put a beer counter on target creature you control.{line}{2}, {T}: Create a 1/1 red Elf Alcoholic creature token. Activate only if a beer counter was removed from a creature you control this turn or a creature with a beer counter on it was put into your graveyard this turn.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/PdaeYiq.png",
+    "img": "https://i.imgur.com/UVwIURu.png",
+    "artist": "Midjourney",
     "has_bleed_edge": true,
-    "art-remarks": "",
     "notes": [
       {
         "date": "29-12-2023",
@@ -9738,9 +9889,17 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Changed name of token & Updated the art"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Elven Moonshiner",
