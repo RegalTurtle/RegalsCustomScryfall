@@ -28,7 +28,7 @@
     ],
     "tags": {
       "frame": "normal",
-      "function": [],
+      "function": ["ramp"],
       "reprint": true
     }
   },
@@ -40,9 +40,9 @@
     "cost": "{5}{G}",
     "type": "Creature - Elf Warrior",
     "text": "Whenever you take a shot, put two beer counters on target permanent you control.",
-    "flavor": "",
+    "flavor": "Who says war needs to be a sober affair!?",
     "rarity": "C",
-    "img": "https://i.imgur.com/DUrXoK7.png",
+    "img": "https://i.imgur.com/n630b5w.png",
     "has_bleed_edge": false,
     "power": 6,
     "toughness": 4,
@@ -57,9 +57,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Brewery Guard",
