@@ -1589,13 +1589,12 @@
     "id": "B",
     "cost": "{1}{B}",
     "type": "Instant",
-    "text": "As an additional cost to cast this spell, discard a card or take a shot.\nDestroy target creature or planeswalker.",
+    "text": "As an additional cost to cast this spell, discard a card or take a shot.{line}Destroy target creature.",
     "flavor": "Do not challenge what you cannot even begin to comprehend.",
     "artist": "Midjourney",
     "rarity": "U",
-    "img": "https://i.imgur.com/YsLwU4f.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/o6pQeoV.png",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-12-2023",
@@ -1661,6 +1660,11 @@
         "date": "14-10-2024",
         "creator": "Thys",
         "notes": "New render, removed planeswalker"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -9320,20 +9324,27 @@
     "name": "Brewery Hellkite",
     "cost": "{3}{R}{R}",
     "type": "Creature - Dragon",
-    "text": "Flying\n~ enters with two beer counters.\nRemove a beer counter from ~: ~ gets +1/+0 until end of turn.",
+    "text": "Flying{line}~ enters with two beer counters.{line}Remove a beer counter from ~: ~ gets +1/+0 until end of turn.",
     "flavor": "",
     "rarity": "U",
+    "power": 3,
+    "toughness": 4,
     "cn": 133,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Q0YwlQr.png",
+    "img": "https://i.imgur.com/iuWpXbj.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
