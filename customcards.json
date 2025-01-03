@@ -3,13 +3,13 @@
     "name": "Accomplished Alchemist",
     "cost": "{3}{G}",
     "type": "Creature - Elf Druid",
-    "text": "{T}: Add one mana of any color.\n{T}: Add X mana of any one color, where X is the amount of life you gained this turn.",
+    "text": "{T}: Add one mana of any color.{line}{T}: Add X mana of any one color, where X is the amount of life you gained this turn.",
     "flavor": "The esoteric arts bend to my will alone.",
     "rarity": "R",
     "cn": 171,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Q0PYA7C.png",
+    "img": "https://i.imgur.com/AUJD6H6.png",
     "id": "G",
     "has_bleed_edge": true,
     "power": 2,
@@ -19,6 +19,11 @@
         "date": "28-11-2024",
         "creator": "Sam",
         "notes": "Added card to MTD"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10152,14 +10157,14 @@
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Devil",
-    "text": "Pact\nWhen ~ enters, if you accepted its pact, ~ deals 1 damage to any target.",
+    "text": "Pact{line}When ~ enters, if you accepted its pact, ~ deals 1 damage to any target.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/flvGoAu.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/1A7VDJ8.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "16-12-2023",
@@ -10170,9 +10175,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Play with Fire",
@@ -10184,8 +10197,8 @@
     "text": "~ deals 2 damage to any target. If a player is dealt damage this way, scry 1.",
     "flavor": "Try not to get burned.",
     "rarity": "C",
-    "img": "https://i.imgur.com/NlyHKc3.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/aHBH0S9.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -10197,9 +10210,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Raging Quartermaster",
@@ -10211,11 +10232,10 @@
     "text": "When ~ enters, it deals X damage to any target, where X is the number of permanents you control with beer counters on them.",
     "flavor": "Who's been drinking my beer! If I catch you, ohhhh if I catch you.",
     "rarity": "U",
-    "img": "https://i.imgur.com/t20G3ZV.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/GdNo6J2.png",
+    "has_bleed_edge": true,
     "power": 4,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "31-12-2023",
@@ -10226,9 +10246,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Rampage Devil",
