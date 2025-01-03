@@ -3146,7 +3146,7 @@
     "cn": 48,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/nZv41bD.png",
+    "img": "https://i.imgur.com/NhFgcc5.png",
     "id": "U",
     "has_bleed_edge": true,
     "notes": [
@@ -3159,6 +3159,11 @@
         "date": "25-12-2024",
         "creator": "Sam",
         "notes": "Added art"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -8912,7 +8917,7 @@
     "cn": 37,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/lmnEcJT.png",
+    "img": "https://i.imgur.com/mbpF5ig.png",
     "id": "W",
     "has_bleed_edge": true,
     "notes": [
@@ -8935,6 +8940,11 @@
         "date": "17-11-2024",
         "creator": "Thys",
         "notes": "Needs correct CN"
+      },
+      {
+        "date": "31-12-2024",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
