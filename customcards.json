@@ -5240,9 +5240,9 @@
     "text": "Put a +1/+1 counter and a Beer counter on each creature you control. You gain 1 life for each creature you control.",
     "flavor": "We are ready. Do not underestimate us.",
     "rarity": "U",
-    "img": "https://i.imgur.com/XS1a9vo.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/PCuByrD.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "22-02-2024",
@@ -5253,9 +5253,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Brewery Bombing",
@@ -5593,12 +5601,12 @@
     "id": "RG",
     "cost": "{4}{R}{G}",
     "type": "Sorcery",
-    "text": "Choose one -\n• Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.\n• Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.",
+    "text": "Choose one {-}{line}• {indent}Create X 1/1 red and green Elf Alcoholic creature tokens with haste, where X is the numhber of beer counters on target permanent you control.{line}• {indent}Creatures you control gain trample and get +X/+X until end of turn, where X is the number of beer counters on target permanent you control.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/BcvPR9z.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/t4spVpD.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-12-2023",
@@ -5624,9 +5632,17 @@
         "date": "17-11-2024",
         "creator": "Thys",
         "notes": "This feels like the render might be off, we'll have to check when we redo it"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Glint-Blade Infiltrator",
@@ -6120,11 +6136,11 @@
     "text": "Vigilance, indestructible{line}If you would take a shot, you may instead sacrifice a nonland permanent you control.",
     "flavor": "One can only shudder to think what it sees.",
     "rarity": "M",
-    "img": "https://i.imgur.com/L6adwRq.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/GvqaP98.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 5,
-    "art-remarks": "",
     "notes": [
       {
         "date": "17-07-2024",
@@ -6135,6 +6151,11 @@
         "date": "23-10-2024",
         "creator": "Thys",
         "notes": "Changed mana cost from {R/W}{R/W} to {R}{W}"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6665,14 +6686,19 @@
     "cn": 258,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/vB54djU.png",
+    "img": "https://i.imgur.com/OGqD1tZ.png",
     "id": "C",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-09-2024",
         "creator": "Sam",
         "notes": "Found card, added card to MTD, created art"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -11432,12 +11458,12 @@
     "id": "C",
     "cost": "",
     "type": "Land",
-    "text": "{T}: Add {C}\n{4}, {T}, Sacrifice ~: You become the monarch.",
+    "text": "{T}: Add {C}{line}{4}, {T}, Sacrifice ~: You become the monarch.",
     "flavor": "The highest throne of human kind, the pinnacle of royal might",
     "rarity": "R",
-    "img": "https://i.imgur.com/PgKeU8t.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/eSI2jIw.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "24-02-2024",
@@ -11453,9 +11479,17 @@
         "date": "27-07-2024",
         "creator": "Thys",
         "notes": "Updated with CN and bleed"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Growthstone Portal",
@@ -11464,12 +11498,12 @@
     "id": "RG",
     "cost": "",
     "type": "Land",
-    "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {R} or {G}.\"",
+    "text": "{T}: Add {C}{line}As long as ~ is in your graveyard, lands you control have “{T}: Add {R} or {G}.”",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/GE1Ch3V.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/CLqcuQJ.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "05-12-2023",
@@ -11490,9 +11524,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Added stamp"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Magestone Portal",
@@ -11501,12 +11543,12 @@
     "id": "UB",
     "cost": "",
     "type": "Land",
-    "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {U} or {B}.\"",
+    "text": "{T}: Add {C}{line}As long as ~ is in your graveyard, lands you control have “{T}: Add {U} or {B}.”",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/6mwBqMR.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/Raxi6UO.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "05-12-2023",
@@ -11527,9 +11569,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Added stamp"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Hellstone Portal",
@@ -11538,12 +11588,12 @@
     "id": "BR",
     "cost": "",
     "type": "Land",
-    "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {B} or {R}.\"",
+    "text": "{T}: Add {C}{line}As long as ~ is in your graveyard, lands you control have “{T}: Add {B} or {R}.”",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/YywEybu.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/8HRLIaM.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "05-12-2023",
@@ -11564,9 +11614,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Added stamp"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Skystone Portal",
@@ -11575,12 +11633,12 @@
     "id": "WU",
     "cost": "",
     "type": "Land",
-    "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {W} or {U}.\"",
+    "text": "{T}: Add {C}{line}As long as ~ is in your graveyard, lands you control have “{T}: Add {W} or {U}.”",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/hMrKWev.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/cThGbXs.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "05-12-2023",
@@ -11601,9 +11659,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Added stamp"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Riftstone Portal",
@@ -11612,12 +11678,12 @@
     "id": "WG",
     "cost": "",
     "type": "Land",
-    "text": "{T}: Add {C}\nAs long as ~ is in your graveyard, lands you control have \"{T}: Add {G} or {W}.\"",
+    "text": "{T}: Add {C}{line}As long as ~ is in your graveyard, lands you control have “{T}: Add {G} or {W}.”",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/aqpYOxY.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/I8GWq3z.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "05-12-2023",
@@ -11638,9 +11704,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Added stamp"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Decoction Tower",
@@ -11649,12 +11723,12 @@
     "id": "B",
     "cost": "",
     "type": "Legendary Land",
-    "text": "{T}: Add {C}\n{T}, Take a shot: Add {B}{B}",
+    "text": "{T}: Add {C}{line}{T}, Take a shot: Add {B}{B}",
     "flavor": "No batch is perfect, sometimes you have to boil part of the mash again to get the desired effect.",
     "rarity": "M",
-    "img": "https://i.imgur.com/SQ2luvm.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/KGjDs23.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "13-11-2023",
@@ -11675,9 +11749,17 @@
         "date": "14-07-2024",
         "creator": "Sam",
         "notes": "Upshifted to Mythic"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Contaminated Aquifer",
@@ -11689,9 +11771,9 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/paFZxmH.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/pzOD9Wg.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-07-2024",
@@ -11702,9 +11784,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Card image posted"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Geothermal Bog",
@@ -11716,9 +11806,9 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/ux6dDEf.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/DNuBjtx.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "15-07-2024",
@@ -11729,9 +11819,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Card image posted"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Haunted Mire",
@@ -11763,7 +11861,10 @@
         "notes": "Given image"
       }
     ],
-    "tags": {},
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    },
     "invisible": true
   },
   {
@@ -11776,9 +11877,9 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/BupeQwc.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/J0v1O84.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "15-07-2024",
@@ -11789,9 +11890,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Card image posted"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Molten Tributary",
@@ -11823,7 +11932,10 @@
         "notes": "Given image"
       }
     ],
-    "tags": {},
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    },
     "invisible": true
   },
   {
@@ -11836,9 +11948,9 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/DnEdVUW.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/yA0dEKw.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "15-07-2024",
@@ -11849,9 +11961,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Card image posted"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Sacred Peaks",
@@ -11883,7 +12003,10 @@
         "notes": "Given image"
       }
     ],
-    "tags": {},
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    },
     "invisible": true
   },
   {
@@ -11921,7 +12044,10 @@
         "notes": "Put correct set symbol on"
       }
     ],
-    "tags": {},
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    },
     "invisible": true
   },
   {
@@ -11954,7 +12080,10 @@
         "notes": "Given image"
       }
     ],
-    "tags": {},
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    },
     "invisible": true
   },
   {
@@ -11967,9 +12096,9 @@
     "text": "~ enters tapped.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/76a25ZC.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/ttuWKs7.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "15-07-2024",
@@ -11980,9 +12109,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Card image posted"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Smaug",
@@ -11991,7 +12128,7 @@
     "id": "R",
     "cost": "",
     "type": "Token Legendary Creature - Dragon",
-    "text": "Flying, haste\nWhen this creature dies, create fourteen Treasure tokens.",
+    "text": "Flying, haste{line}When this creature dies, create fourteen Treasure tokens.",
     "flavor": "",
     "rarity": "T",
     "img": "https://i.imgur.com/udnSfZY.png",
@@ -12053,7 +12190,7 @@
     "id": "R",
     "cost": "{4}{R}",
     "type": "Creature - Vampire Devil",
-    "text": "Elder Pact\nFor each time you accepted ~'s pact, create a Blood token.\nActivated abilities of Blood tokens you control cost {1} less to activate.",
+    "text": "Elder Pact{line}For each time you accepted ~'s pact, create a Blood token.{line}Activated abilities of Blood tokens you control cost {1} less to activate.",
     "flavor": "",
     "rarity": "R",
     "img": "https://i.imgur.com/DSuYMVm.png",
@@ -12077,7 +12214,7 @@
     "id": "UB",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {U}{B}.",
+    "text": "~ enters tapped.{line}When ~ enters, return a land you control to its owner's hand.{line}{T}: Add {U}{B}.",
     "flavor": "",
     "rarity": "C",
     "img": "https://i.imgur.com/dNeydTJ.png",
@@ -12095,7 +12232,10 @@
         "notes": "Added correct rarity"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Azorius Chancery",
@@ -12104,12 +12244,12 @@
     "id": "WU",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {W}{U}.",
+    "text": "~ enters tapped.{line}When ~ enters, return a land you control to its owner's hand.{line}{T}: Add {W}{U}.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/SLcxEps.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/a3S3Ioo.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "17-07-2024",
@@ -12120,9 +12260,17 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Added correct rarity"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Gruul Turf",
@@ -12131,12 +12279,12 @@
     "id": "RG",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {R}{G}.",
+    "text": "~ enters tapped.{line}When ~ enters, return a land you control to its owner's hand.{line}{T}: Add {R}{G}.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/J6ddjSo.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/Z9omsbx.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "17-07-2024",
@@ -12147,9 +12295,17 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Added correct rarity"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Rakdos Carnarium",
@@ -12158,12 +12314,12 @@
     "id": "BR",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {B}{R}.",
+    "text": "~ enters tapped.{line}When ~ enters, return a land you control to its owner's hand.{line}{T}: Add {B}{R}.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/BsL8fi7.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/5CHL9mV.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "17-07-2024",
@@ -12174,9 +12330,17 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Added correct rarity"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Selesnya Sanctuary",
@@ -12185,12 +12349,12 @@
     "id": "WG",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\nWhen ~ enters, return a land you control to its owner's hand.\n{T}: Add {G}{W}.",
+    "text": "~ enters tapped.{line}When ~ enters, return a land you control to its owner's hand.{line}{T}: Add {G}{W}.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/5cJgKwc.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/CkRe63B.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "17-07-2024",
@@ -12201,9 +12365,17 @@
         "date": "18-08-2024",
         "creator": "Sam",
         "notes": "Added correct rarity"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Blessed Grove",
@@ -12212,12 +12384,12 @@
     "id": "G",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\n{T}: Add {G}.\n{1}{G}, {T}: Put a beer counter on target permanent you control.",
+    "text": "~ enters tapped.{line}{T}: Add {G}.{line}{1}{G}, {T}: Put a beer counter on target permanent you control.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/w9fHqkt.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/kICUMou.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "18-07-2024",
@@ -12228,9 +12400,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Renamed to Blessed Grove, added CN, changed art"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Mountainous Brewery",
@@ -12239,20 +12419,28 @@
     "id": "R",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\n{T}: Add {R}.\n{3}{R}, {T}: Target player takes a shot.",
+    "text": "~ enters tapped.{line}{T}: Add {R}.{line}{3}{R}, {T}: Target player takes a shot.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/5d3Tg8n.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://imgur.com/gVYjFTS.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "red land w/ someone takes a shot // Posted card image"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Mystical Archive",
@@ -12261,11 +12449,12 @@
     "id": "U",
     "cost": "",
     "type": "Land",
-    "text": "~ enters tapped.\n{T}: Add {U}.\n{2}{U}, {T}: Return target instant or sorcery card from your graveyard to your hand.",
+    "text": "~ enters tapped.{line}{T}: Add {U}.{line}{2}{U}, {T}: Return target instant or sorcery card from your graveyard to your hand.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/aRtkhaP.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/SIkfOkx.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "art-remarks": "Bookshelves/library feel",
     "notes": [
       {
@@ -12277,9 +12466,17 @@
         "date": "18-07-2024",
         "creator": "Sam",
         "notes": "Generated art"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Exotic Orchard",
@@ -12291,17 +12488,25 @@
     "text": "{T}: Add one mana of any color that a land an opponent controls could produce.",
     "flavor": "Those who have seen it never forget it.",
     "rarity": "R",
-    "img": "https://i.imgur.com/x3WIGWK.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/MXC0yrA.png",
+    "has_bleed_edge": true,
+    "artist": "Midjourney",
     "notes": [
       {
         "date": "18-07-2024",
         "creator": "Thys",
         "notes": "Suggested Exotic Orchard"
+      },
+      {
+        "date": "04-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Hypnostatic Architect",
@@ -12310,7 +12515,7 @@
     "id": "UB",
     "cost": "{1}{B}{B}",
     "type": "Creature - Nightmare Wizard",
-    "text": "{3}{U}: Target player draws a card.\n{3}{B}: Target player discards a card.",
+    "text": "{3}{U}: Target player draws a card.{line}{3}{B}: Target player discards a card.",
     "flavor": "Your mind is an Escher painting and I am an artist.",
     "rarity": "R",
     "img": "https://i.imgur.com/HLSXqnn.png",
