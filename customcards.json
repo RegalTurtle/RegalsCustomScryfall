@@ -6337,19 +6337,19 @@
   {
     "name": "Agent of Acquisitions",
     "set": "MTD",
-    "cn": 247,
+    "cn": 248,
     "id": "C",
     "cost": "{2}",
     "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nInstead of drafting a card from a booster pack, you may draft each card in that booster pack, one at a time. If you do, turn ~ face down and you can't draft cards for the rest of this draft round.",
+    "text": "Draft ~ face up.{line}Instead of drafting a card from a booster pack, you may draft each card in that booster pack, one at a time. If you do, turn ~ face down and you can't draft cards for the rest of this draft round.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/OyqYQg5.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/i2TcNNb.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 1,
     "watermark": "draft",
-    "art-remarks": "",
     "notes": [
       {
         "date": "12-01-2024",
@@ -6360,9 +6360,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Banner of Assimilation",
@@ -6472,19 +6480,19 @@
   {
     "name": "Cogwork Librarian",
     "set": "MTD",
-    "cn": 251,
+    "cn": 252,
     "id": "C",
     "cost": "{4}",
     "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nAs you draft a card, you may draft an additional card from that booster pack. If you do, put ~ into that booster pack.",
+    "text": "Draft ~ face up.{line}As you draft a card, you may draft an additional card from that booster pack. If you do, put ~ into that booster pack.",
     "flavor": "Why wait for answers?",
     "rarity": "C",
-    "img": "https://i.imgur.com/uyn0v4K.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/gOu8dFE.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 3,
     "watermark": "draft",
-    "art-remarks": "",
     "notes": [
       {
         "date": "12-01-2024",
@@ -6495,26 +6503,34 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Deal Broker",
     "set": "MTD",
-    "cn": 252,
+    "cn": 254,
     "id": "C",
     "cost": "{3}",
     "type": "Artifact Creature - Construct",
-    "text": "Draft ~ face up.\nImmediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.\n{T}: Draw a card, then discard a card.",
+    "text": "Draft ~ face up.{line}Immediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.{line}{T}: Draw a card, then discard a card.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/o08H6PH.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/PCJoSio.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
     "watermark": "draft",
-    "art-remarks": "",
     "notes": [
       {
         "date": "12-01-2024",
@@ -6525,9 +6541,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Feldon's Cane",
@@ -6568,16 +6592,16 @@
   {
     "name": "Freyan's Keg",
     "set": "MTD",
-    "cn": 254,
+    "cn": 256,
     "id": "C",
     "cost": "{2}",
-    "type": "Artifact",
-    "text": "Equipped creature gets +1/+1 for each beer counter on it.\nEquip {2}",
+    "type": "Artifact - Equipment",
+    "text": "Equipped creature gets +1/+1 for each beer counter on it.{line}Equip {2}",
     "flavor": "Whilst their Southern counterparts value peace and prosperity, the brews of the North represent a much more passionate culture.",
     "rarity": "C",
-    "img": "https://i.imgur.com/C3Pz1dP.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/f3P2koB.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "05-12-2023",
@@ -6588,9 +6612,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Heraldic Banner",
@@ -6697,7 +6729,7 @@
     "text": "You have hexproof.{line}If a creature would deal damage to you, prevent 1 of that damage.",
     "flavor": "The body, the mind, the soul.",
     "rarity": "R",
-    "img": "https://i.imgur.com/uJtVLt1.png",
+    "img": "https://i.imgur.com/Z9u3bIp.png",
     "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "notes": [
@@ -6725,16 +6757,16 @@
   {
     "name": "Overflowing Cellar",
     "set": "MTD",
-    "cn": 259,
+    "cn": 263,
     "id": "C",
     "cost": "{2}",
     "type": "Artifact",
     "text": "~ enters with two battlefield with two beer counters on it.{line}{T}, Remove a beer counter from ~: Put a beer counter on target creature you control.{line}{T}: Put a beer counter on ~.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/0DNjAxe.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/NHic6kD.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-02-2024",
@@ -6745,6 +6777,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
