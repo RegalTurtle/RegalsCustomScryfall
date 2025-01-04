@@ -12729,5 +12729,83 @@
       "function": [],
       "reprint": false
     }
+  },
+  {
+    "name": "Aeon Engine",
+    "cost": "{5}",
+    "type": "Artifact",
+    "text": "~ enters tapped.{line}{T}, Exile ~: Reverse the game's turn order.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 247,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/RZPYwCL.png",
+    "id": "C",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Added card, final pre-print pass"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Aeon Engine",
+    "cost": "{5}",
+    "type": "Artifact",
+    "text": "{1}{W}, {T}: You gain 5 life.{line}{1}{U}, {T}: Draw a card, then discard a card.{line}{1}{B}, {T}: Target creature gets -2/-2 until end of turn.{line}{1}{R}, {T}: ~ deals 3 damage to target player or planeswalker.{line}{1}{G}, {T}: Target creature gets +4/+4 until end of turn.",
+    "flavor": "",
+    "rarity": "R",
+    "cn": 261,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/ZUAL8i4.png",
+    "id": "WUBRG",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Added card, final pre-print pass"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": true
+    }
+  },
+  {
+    "name": "Memory Lantern",
+    "cost": "{3}",
+    "type": "Artifact",
+    "text": "{T}: Put up to two target cards from a graveyard on the bottom of their owner's library.",
+    "flavor": "Guidance can lead to all kinds of discovery.",
+    "rarity": "U",
+    "cn": 259,
+    "set": "MTD",
+    "artist": "Midjourney",
+    "img": ".png",
+    "id": "C",
+    "has_bleed_edge": false,
+    "notes": [
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Added card"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "function": [],
+      "reprint": false
+    }
   }
 ]
