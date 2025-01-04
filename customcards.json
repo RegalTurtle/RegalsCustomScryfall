@@ -666,9 +666,9 @@
     "text": "Draw a card for each creature you control with a counter on it.",
     "flavor": "The host provides, the guests pay their respects, everyone leaves happy.",
     "rarity": "U",
-    "img": "https://i.imgur.com/aU7esHr.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/ZiP2mhF.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "24-02-2024",
@@ -679,6 +679,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -696,9 +701,9 @@
     "text": "When ~ enters, put a beer counter on target permanent you control.{line}{2}, {T}, Sacrifice ~: You gain 3 life.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/RJIQmEu.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/9ym1S87.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "22-12-2023",
@@ -709,6 +714,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -928,15 +938,15 @@
     "name": "Lively Tavern",
     "cost": "{2}{G}{G}",
     "type": "Artifact",
-    "text": "{2}: Put a beer counter on target permanent.\n{t}, Remove six beer counters from among permanents you control: You become the monarch. Activate only as a sorcery.",
-    "flavor": "Those who make us happy, often have our true loyalty.",
+    "text": "{2}: Put a beer counter on target permanent.{line}{T}, Remove six beer counters from among permanents you control: You become the monarch. Activate only as a sorcery.",
+    "flavor": "Those who make us happy often have our true loyalty.",
     "rarity": "U",
     "cn": 197,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/vD05wbh.png",
+    "img": "https://i.imgur.com/kxfGRmI.png",
     "id": "G",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-12-2023",
@@ -982,6 +992,11 @@
         "date": "25-12-2024",
         "creator": "Thys",
         "notes": "Added \"only as a sorcery\" to the second ability"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, fixed grammar on flavor"
       }
     ],
     "tags": {
@@ -1178,9 +1193,9 @@
     "text": "Destroy target artifact, enchantment, or land. If a land was destroyed this way, its controller may search their library for up to two basic land cards, put them onto the battlefield tapped, then shuffle. Otherwise, its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/9tAMBOS.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/VWfoDUN.png",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "26-07-2024",
@@ -1196,6 +1211,11 @@
         "date": "29-07-2024",
         "creator": "Sam",
         "notes": "Given name and art"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5465,14 +5485,14 @@
     "id": "RG",
     "cost": "{2}{R}{G}",
     "type": "Legendary Creature - Elf Alcoholic",
-    "text": "First strike, haste\n Whenever ~ attacks, put a beer counter on each attacking creature you control.",
+    "text": "First strike, haste{line}Whenever ~ attacks, put a beer counter on each attacking creature you control.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/C8jFHq6.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/uJU2PdT.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 4,
     "toughness": 3,
-    "art-remarks": "",
     "notes": [
       {
         "date": "06-12-2023",
@@ -5483,9 +5503,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Freyan's Warpath",
@@ -10347,10 +10375,10 @@
     "text": "Pact{line}As an additional cost to cast this spell, discard a card.{line}Draw two cards. If you accepted ~'s pact, create a 3/1 red Elemental creature token with trample and haste. Exile it at the beginning of the next end step.",
     "flavor": "",
     "rarity": "C",
-    "cn": 155,
+    "cn": 156,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/EwnAr3D.png",
+    "img": "https://i.imgur.com/WayOKkc.png",
     "id": "R",
     "has_bleed_edge": true,
     "notes": [
@@ -10374,15 +10402,16 @@
   {
     "name": "Impatiant Swindler",
     "set": "MTD",
-    "cn": 156,
+    "cn": 157,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Goblin Alcoholic",
-    "text": "Haste\nWhenever ~ deals combat damage to a player, you take a shot.",
-    "flavor": "\"I'll go shot for shot with ye, anyone betting on me losing!?\"",
+    "text": "Haste{line}Whenever ~ deals combat damage to a player, you take a shot.",
+    "flavor": "“I'll go shot for shot with ye, anyone betting on me losing!?”",
     "rarity": "R",
-    "img": "https://i.imgur.com/3Ty9vNU.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/u4sgNIF.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
     "art-remarks": "",
@@ -10416,28 +10445,43 @@
         "date": "19-11-2024",
         "creator": "Thys",
         "notes": "Needs holo stamp"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Inspiring Drake Rider",
     "cost": "{R}{R}",
     "type": "Creature - Goblin Warrior",
-    "text": "Echo {r}\nBattle cry {i}\nFlying, haste",
+    "text": "Echo {r}{line}Battle cry{line}Flying, haste",
     "flavor": "",
+    "power": 1,
+    "toughness": 1,
     "rarity": "R",
-    "cn": 157,
+    "cn": 158,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/ewxaDEY.png",
+    "img": "https://i.imgur.com/o1wBz5y.png",
     "id": "R",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10449,14 +10493,14 @@
   {
     "name": "Pact Devil",
     "set": "MTD",
-    "cn": 158,
+    "cn": 159,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Devil",
     "text": "Pact{line}When ~ enters, if you accepted its pact, ~ deals 1 damage to any target.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/1A7VDJ8.png",
+    "img": "https://i.imgur.com/bQ5RP1Q.png",
     "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "power": 1,
@@ -10486,16 +10530,16 @@
   {
     "name": "Play with Fire",
     "set": "MTD",
-    "cn": 159,
+    "cn": 160,
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
     "text": "~ deals 2 damage to any target. If a player is dealt damage this way, scry 1.",
     "flavor": "Try not to get burned.",
     "rarity": "C",
-    "img": "https://i.imgur.com/aHBH0S9.png",
+    "img": "https://i.imgur.com/8tOwNlJ.png",
+    "artist": "Copilot Designer",
     "has_bleed_edge": true,
-    "art-remarks": "",
     "notes": [
       {
         "date": "12-12-2023",
@@ -10521,14 +10565,15 @@
   {
     "name": "Raging Quartermaster",
     "set": "MTD",
-    "cn": 160,
+    "cn": 161,
     "id": "R",
     "cost": "{3}{R}",
     "type": "Creature - Elf Alcoholic",
     "text": "When ~ enters, it deals X damage to any target, where X is the number of permanents you control with beer counters on them.",
     "flavor": "Who's been drinking my beer! If I catch you, ohhhh if I catch you.",
     "rarity": "U",
-    "img": "https://i.imgur.com/GdNo6J2.png",
+    "img": "https://i.imgur.com/MKZ7Xmq.png",
+    "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "power": 4,
     "toughness": 2,
@@ -10557,14 +10602,14 @@
   {
     "name": "Rampage Devil",
     "set": "MTD",
-    "cn": 161,
+    "cn": 162,
     "id": "R",
     "cost": "{3}{R}{R}",
     "type": "Creature - Devil",
     "text": "Haste{line}Mountaincycling {2}",
     "flavor": "Hell is a party best experienced on Earth.",
     "rarity": "C",
-    "img": "https://i.imgur.com/JHArKQQ.png",
+    "img": "https://i.imgur.com/hw03pBk.png",
     "artist": "Midjourney",
     "has_bleed_edge": true,
     "power": 7,
@@ -10594,14 +10639,14 @@
   {
     "name": "Red Solo Cup",
     "set": "MTD",
-    "cn": 162,
+    "cn": 163,
     "id": "R",
     "cost": "{R}",
     "type": "Artifact - Equipment",
     "text": "Whenever equipped creature becomes blocked by a creature, that creature's controller takes a shot.{line}Equip {1}",
     "flavor": "“Sup Bro”",
     "rarity": "C",
-    "img": "https://i.imgur.com/sldZ2Zd.png",
+    "img": "https://i.imgur.com/sx18ITy.png",
     "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "notes": [
@@ -10629,14 +10674,15 @@
   {
     "name": "Rummager Elf",
     "set": "MTD",
-    "cn": 163,
+    "cn": 164,
     "id": "R",
     "cost": "{1}{R}",
     "type": "Creature - Elf Alcoholic",
     "text": "~ enters with two beer counters.{line}{T}, Remove a beer counter from ~, Discard a card: Draw a card.{line}{2}: Untap ~.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/SGqO0DE.png",
+    "img": "https://i.imgur.com/irQ1F4D.png",
+    "artist": "Midjourney",
     "has_bleed_edge": true,
     "power": 1,
     "toughness": 2,
@@ -10672,14 +10718,14 @@
   {
     "name": "Scorching Blast",
     "set": "MTD",
-    "cn": 164,
+    "cn": 165,
     "id": "R",
     "cost": "{3}{R}",
     "type": "Sorcery",
     "text": "Choose one - {line}• {indent}Destroy target artifact.{line}• {indent}Destroy target land.",
     "flavor": "The Carnarium burned but the party never stopped.",
     "rarity": "C",
-    "img": "https://i.imgur.com/6GYRQYK.png",
+    "img": "https://i.imgur.com/VHj0w9s.png",
     "artist": "Midjourney",
     "has_bleed_edge": true,
     "notes": [
@@ -10711,10 +10757,10 @@
     "text": "Discard your hand, then draw three cards.",
     "flavor": "“Back! Back! We'll come at them from a different angle!”",
     "rarity": "C",
-    "cn": 165,
+    "cn": 166,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/ZmwS7ER.png",
+    "img": "https://i.imgur.com/aKk3c8Y.png",
     "id": "R",
     "has_bleed_edge": true,
     "notes": [
@@ -10743,14 +10789,14 @@
   {
     "name": "Torbran, Before the Fall",
     "set": "MTD",
-    "cn": 166,
+    "cn": 167,
     "id": "R",
     "cost": "{1}{R}{R}{R}",
     "type": "Legendary Creature - Dwarf Noble",
     "text": "If a player would lose life as a result of taking a shot, instead that player loses an additional 2 life.",
     "flavor": "At the court of high king Torbran of Red Fell, refusing a drink was the highest of blasphemies.",
     "rarity": "R",
-    "img": "https://i.imgur.com/8E8Raj9.png",
+    "img": "https://i.imgur.com/NCALaZh.png",
     "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "power": 2,
@@ -10790,14 +10836,14 @@
   {
     "name": "Trash Broker",
     "set": "MTD",
-    "cn": 167,
+    "cn": 168,
     "id": "R",
     "cost": "{2}{R}",
     "type": "Creature - Goblin",
     "text": "Draft ~ face up.{line}During the draft, you may turn ~ face down. If you do, target player passes the last card from their booster pack to you.",
     "flavor": "What ya lookin for missy?",
     "rarity": "C",
-    "img": "https://i.imgur.com/yrrjEoH.png",
+    "img": "https://i.imgur.com/O63BFDv.png",
     "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
@@ -10843,15 +10889,16 @@
   {
     "name": "Voldaren Epicure",
     "set": "MTD",
-    "cn": 168,
+    "cn": 169,
     "id": "R",
     "cost": "{R}",
     "type": "Creature - Vampire",
     "text": "When ~ enters, it deals 1 damage to each opponent. Create a Blood token.",
     "flavor": "A scion of the southern vampire families, they seek only blood and pain.",
     "rarity": "C",
-    "img": "https://i.imgur.com/wVTssg1.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/DngHw0B.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
     "notes": [
@@ -10859,6 +10906,11 @@
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "New Art"
+      },
+      {
+        "date": "02-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -10869,14 +10921,14 @@
   {
     "name": "Wizard's Shot",
     "set": "MTD",
-    "cn": 169,
+    "cn": 170,
     "id": "R",
     "cost": "{R}",
     "type": "Instant",
     "text": "You may choose new targets for target spell or ability unless its controller takes a shot.",
     "flavor": "I'll drink to that.",
     "rarity": "U",
-    "img": "https://i.imgur.com/S9Ao9Cn.png",
+    "img": "https://i.imgur.com/hCNnUko.png",
     "artist": "Copilot Designer",
     "has_bleed_edge": true,
     "art-remarks": "",
@@ -10945,17 +10997,22 @@
     "id": "R",
     "cost": "{0}",
     "type": "Instant",
-    "text": "As an additional cost to cast this spell, pay {r} or take a shot.\nGut Blast deals 1 damage to any target. If a permanent dealt damage this way would die this turn, exile it instead.",
+    "text": "As an additional cost to cast this spell, pay {R} or take a shot.{line}~ deals 1 damage to any target. If a permanent dealt damage this way would die this turn, exile it instead.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/pulN4EL.png",
+    "img": "https://i.imgur.com/NB4jpIH.png",
+    "artist": "Midjourney",
     "has_bleed_edge": true,
-    "art-remarks": "",
     "notes": [
       {
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Finally added the card to the json"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
