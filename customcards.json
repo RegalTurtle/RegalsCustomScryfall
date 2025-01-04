@@ -79,8 +79,9 @@
     "text": "Reach{line}~ gets +1/+1 for each beer counter on it.",
     "flavor": "He stands tall, barring all from entering, less they are true of intention and high of spirit.",
     "rarity": "C",
-    "img": "https://i.imgur.com/2uzC2x4.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/y4wE9HD.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 2,
     "notes": [
@@ -98,9 +99,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Changed toughness from 1 to 2"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Brewery Shaman",
@@ -368,13 +377,13 @@
     "cost": "{1}{G}",
     "type": "Creature - Elf Shaman",
     "text": "When ~ enters, draw a card.",
-    "flavor": "",
+    "flavor": "Blessed with foresight, cursed with rampant alcoholism.",
     "rarity": "C",
-    "img": "https://i.imgur.com/dJCA2ZU.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/YCmxg2X.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 1,
-    "art-remarks": "",
     "notes": [
       {
         "date": "14-07-2024",
@@ -385,6 +394,11 @@
         "date": "14-07-2024",
         "creator": "Sam",
         "notes": "Changed art and added bleed edge"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -2612,24 +2626,31 @@
     "name": "Intoxicating Deluge",
     "cost": "{2}{B}",
     "type": "Sorcery",
-    "text": "As an additional cost to cast this spell, take any number of shots.\nAll creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
+    "text": "As an additional cost to cast this spell, take any number of shots.{line}All creatures get -X/-X until end of turn, where X is three time the number of shots you took.",
     "flavor": "",
     "rarity": "R",
     "cn": 112,
     "set": "MTD",
-    "artist": "",
+    "artist": "Midjourney",
     "id": "B",
-    "img": "https://i.imgur.com/qDYqNzt.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/mxIUmOp.png",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Kitesail Freebooter",
@@ -3075,17 +3096,17 @@
     "name": "Vampiric Bartender",
     "cost": "{B}",
     "type": "Creature - Vampire Alcoholic",
-    "text": "Blood tokens you control have \"{T}, Take a shot, Sacrifice this artifact: Draw a card.\"",
-    "flavor": "\"So, what will it be stranger?\"",
+    "text": "Blood tokens you control have “{T}, Take a shot, Sacrifice this artifact: Draw a card.”",
+    "flavor": "“So, what will it be stranger?”",
     "power": 1,
     "toughness": 1,
     "rarity": "U",
     "cn": 124,
     "set": "MTD",
     "artist": "",
-    "img": "https://i.imgur.com/sRGNMgg.png",
+    "img": "https://i.imgur.com/BQ9z02Y.png",
     "id": "B",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-07-2024",
@@ -3096,6 +3117,11 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Upshifted to Uncommon, maybe could go back to Common"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5096,9 +5122,9 @@
     "text": "Counter target spell. You gain 3 life.",
     "flavor": "Creation comes from all places, even destruction.",
     "rarity": "R",
-    "img": "https://i.imgur.com/m3eUNr0.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/oH6owFK.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "17-07-2024",
@@ -5109,9 +5135,17 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "damn holo stamps // new image"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Ariel, Architect of Aphelion",
@@ -5120,11 +5154,11 @@
     "id": "WU",
     "cost": "{3}{W}{U}",
     "type": "Legendary Creature - Bird Wizard",
-    "text": "Flash\nFlying\nThis spell costs {3} less to cast if you have taken a shot this turn.\nWhenever you take your second shot each turn, you gain 6 life.",
+    "text": "Flash{line}Flying{line}This spell costs {3} less to cast if you have taken a shot this turn.{line}Whenever you take your second shot each turn, you gain 6 life.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/WhqaOPc.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/h7dcZNo.png",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 3,
     "art-remarks": "",
@@ -5158,9 +5192,17 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Changed art of Ariel"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "At All Costs",
@@ -5225,14 +5267,19 @@
     "cn": 217,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/TrlnIRB.png",
+    "img": "https://i.imgur.com/d3sNH05.png",
     "id": "RG",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "26-12-2024",
         "creator": "Thys",
         "notes": "Added card"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5248,20 +5295,28 @@
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Sorcery",
-    "text": "Choose one -\n• Target player draws two cards.\n• Target player discards two cards.",
-    "flavor": "\"What isss it you requirrre?\"",
+    "text": "Choose one {-}{line}• {indent}Target player draws two cards.{line}• {indent}Target player discards two cards.",
+    "flavor": "“What isss it you requirrre?”",
     "rarity": "U",
-    "img": "https://i.imgur.com/vcRzIMU.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/ja3UxO5.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Posted card image"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Coy Reversal",
@@ -5273,9 +5328,9 @@
     "text": "Counter target spell. Its controller discards a card and takes a shot.",
     "flavor": "Espionage at its finest.",
     "rarity": "U",
-    "img": "https://i.imgur.com/7f3h9Ui.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/JxoHbkz.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "06-12-2023",
@@ -5288,7 +5343,10 @@
         "notes": "Created json blob"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Daughter of Moonshine",
@@ -5391,7 +5449,7 @@
     "cn": 223,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/H6qtxwC.png",
+    "img": "https://i.imgur.com/PwSreQZ.png",
     "id": "WG",
     "has_bleed_edge": true,
     "power": 4,
@@ -5401,6 +5459,11 @@
         "date": "29-11-2024",
         "creator": "Thys",
         "notes": "Added card"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5411,7 +5474,7 @@
   },
   {
     "name": "Ending of Ages",
-    "cost": "{W/B}{U/R}{B/G}{R/W}{G/U}",
+    "cost": "{W/B}{B/G}{G/U}{U/R}{R/W}",
     "type": "Enchantment - Saga",
     "text": "Surveil 3, then draw three cards.\nExile any number of target cards from your graveyard. Until end of turn, you may play those cards.\nEach opponent may discard a card or sacrifice a nonland permanent. If they don't, they lose 3 life. Repeat this process five more times.\nYou get an emblem with “Whenever you draw a card, you take a shot.”",
     "flavor": "",
@@ -5419,7 +5482,7 @@
     "cn": 224,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/H0dV8FR.png",
+    "img": "https://i.imgur.com/lpQrNRZ.png",
     "id": "WUBRG",
     "has_bleed_edge": false,
     "art-remarks": "",
@@ -5448,9 +5511,17 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "Ending of Ages: Mana Cost order should be switched to : Orzhov,Golgari,Simic,Izzet,Boros"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Fractured Identity",
@@ -5626,10 +5697,10 @@
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Sorcery",
-    "text": "Exile all opponents' graveyards. You may cast spells from among those cards this turn, and mana of any type can be spent to cast them. At the beginning of the next end step, if any of those cards remain exiled, return them to their owners' graveyards.\nExile ~.",
+    "text": "Exile all opponents' graveyards. You may cast spells from among those cards this turn, and mana of any type can be spent to cast them. At the beginning of the next end step, if any of those cards remain exiled, return them to their owners' graveyards.{line}Exile ~.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/LEKFZQu.png",
+    "img": "https://i.imgur.com/NtWx466.png",
     "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
@@ -5642,25 +5713,33 @@
         "date": "16-11-2024",
         "creator": "Sam",
         "notes": "Updated card"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
-    "name": "Nepenthe, Titan of Mind's Deisre",
+    "name": "Nepenthe, Titan of Mind's Desire",
     "set": "MTD",
     "cn": 231,
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Legendary Creature - Elder Giant",
-    "text": "When ~ enters, sacrifice it unless it escaped.\nWhenever ~ enters or attacks, each player mills three cards, then exile target nonland card from a graveyard. You may cast it this turn by exiling two cards from your graveyard in addition to paying its other costs, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.\nEscape - {U}{U}{B}{B}, Exile five other cards from your graveyard.",
+    "text": "When ~ enters, sacrifice it unless it escaped.{line}Whenever ~ enters or attacks, each player mills three cards, then exile target nonland card from a graveyard. You may cast it this turn by exiling two cards from your graveyard in addition to paying its other costs, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.{line}Escape - {U}{U}{B}{B}, Exile five other cards from your graveyard.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/XlaUoFv.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/8EQu7Sg.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 6,
     "toughness": 6,
-    "art-remarks": "",
     "notes": [
       {
         "date": "29-07-2024",
@@ -5691,6 +5770,11 @@
         "date": "16-09-2024",
         "creator": "Sam",
         "notes": "Fixed wording on render"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5709,11 +5793,11 @@
     "text": "Haste{line}Whenever ~ attacks, put a beer counter on target permanent you control.{line}Remove a beer counter from ~: Add {R}{G}. Activate only once each turn.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/dsDG17l.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/vZVpV8l.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "21-01-2024",
@@ -5729,9 +5813,17 @@
         "date": "25-12-2024",
         "creator": "Thys",
         "notes": "Changed abilities from \"Remove a beer counter from ~: Add {R}{G}. Activate only if ~ has attacked this turn, and only once each turn.\" to \"Whenever ~ attacks, put a beer counter on target permanent you control.{line}Remove a beer counter from ~: Add {R}{G}. Activate only once each turn.\""
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Reach into Hell",
@@ -5740,12 +5832,12 @@
     "id": "BR",
     "cost": "{B}{R}",
     "type": "Sorcery",
-    "text": "Return target black or red creature from your graveyard to your hand.\nMadness {0}",
+    "text": "Return target black or red creature from your graveyard to your hand.{line}Madness {0}",
     "flavor": "Reaching into Hell, he found what he sought, but at a great price.",
     "rarity": "U",
-    "img": "https://i.imgur.com/FuAv2uo.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/Al5hrC2.png",
+    "has_bleed_edge": true,
+    "artist": "Copilot Designer",
     "notes": [
       {
         "date": "24-12-2023",
@@ -5756,9 +5848,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Rest Well Deserved",
@@ -5770,8 +5870,9 @@
     "text": "Permanents you control with counters on them gain hexproof and indestructible until end of turn.",
     "flavor": "They may have every advantage under the Sun. But we have full bellies and clear eyes, I can't say the same for them.",
     "rarity": "R",
-    "img": "https://i.imgur.com/mkatfaM.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/KD5pcjS.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
@@ -5783,9 +5884,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Saint Marcus XVII",
@@ -5798,7 +5907,7 @@
     "set": "MTD",
     "artist": "Midjourney",
     "art-remarks": "its the pope or like an archbishop of the city",
-    "img": "https://i.imgur.com/CUHS0Pg.png",
+    "img": "https://i.imgur.com/RUf5Mx2.png",
     "id": "WG",
     "has_bleed_edge": true,
     "power": 0,
@@ -5813,6 +5922,11 @@
         "date": "30-11-2024",
         "creator": "Thys",
         "notes": "Made it a 0/2 for GWW, made it Saint Marcus"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -5856,11 +5970,12 @@
     "id": "UR",
     "cost": "{1}{U}{R}",
     "type": "Legendary Enchantment Artifact",
-    "text": "You may look at the top card of your library any time.\nYou may play lands and cast spells from the top of your library. If you cast a spell this way, take a shot.",
+    "text": "You may look at the top card of your library any time.{line}You may play lands and cast spells from the top of your library. If you cast a spell this way, take a shot.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/0JA2xJx.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/3d5aM6n.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "art-remarks": "A shot glass on a scroll or spellbook",
     "notes": [
       {
@@ -5882,9 +5997,17 @@
         "date": "23-10-2024",
         "creator": "Thys",
         "notes": "Changed {U/R}{U/R} in casting cost to {U}{R}"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Strefan, Wrathful Reagent",
@@ -5945,13 +6068,13 @@
     "name": "The Sixth Day",
     "cost": "{1}{G}{W}",
     "type": "Sorcery",
-    "text": "Spree{line}+ {4}{W} {-} Return each creature card from your graveyard to the battlefield.{line}+ {X}{G} {-} Create X 4/4 green beasts.{line}+ {W} {-} Put a flying counter on each creature you control.",
+    "text": "Spree{line}+ {4}{W} {-} Return each creature card from your graveyard to the battlefield.{line}+ {X}{G} {-} Create X 4/4 green Beast creature tokens.{line}+ {W} {-} Put a flying counter on each creature you control.",
     "flavor": "",
     "rarity": "M",
     "cn": 240,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/lod8bom.png",
+    "img": "https://i.imgur.com/uYxOfuK.png",
     "id": "WG",
     "has_bleed_edge": true,
     "notes": [
@@ -5974,6 +6097,11 @@
         "date": "31-12-2024",
         "creator": "Thys",
         "notes": "Change name from Light of God to The Sixth Day"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, using David's suggestions"
       }
     ],
     "tags": {
@@ -5989,7 +6117,7 @@
     "id": "WR",
     "cost": "{3}{R}{W}",
     "type": "Legendary Creature - God",
-    "text": "Vigilance, indestructible\nIf you would take a shot, you may instead sacrifice a nonland permanent you control.",
+    "text": "Vigilance, indestructible{line}If you would take a shot, you may instead sacrifice a nonland permanent you control.",
     "flavor": "One can only shudder to think what it sees.",
     "rarity": "M",
     "img": "https://i.imgur.com/L6adwRq.png",
@@ -6009,7 +6137,10 @@
         "notes": "Changed mana cost from {R/W}{R/W} to {R}{W}"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Thunderclap Wyvern",
@@ -6018,14 +6149,14 @@
     "id": "WU",
     "cost": "{2}{W}{U}",
     "type": "Creature - Drake",
-    "text": "Flash\nFlying\nOther creatures you control with flying get +1/+1.",
+    "text": "Flash{line}Flying{line}Other creatures you control with flying get +1/+1.",
     "flavor": "The unholy offspring of lightning and death itself. Never engage this dragon. Your only chance: Hide and pray it does not find you.",
     "rarity": "R",
-    "img": "https://i.imgur.com/YNH8MKP.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/WpUYplL.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
-    "art-remarks": "",
     "notes": [
       {
         "date": "21-01-2024",
@@ -6046,9 +6177,17 @@
         "date": "17-11-2024",
         "creator": "Thys",
         "notes": "This needs power and toughness"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Twilight Harbinger",
@@ -6057,14 +6196,14 @@
     "id": "UB",
     "cost": "{1}{U}{B}",
     "type": "Creature - Nightmare",
-    "text": "Whenever you cast an instant or sorcery spell, ~ can't be blocked this turn.\nWhenever ~ deals combat damage to a player, return target instant or sorcery from your graveyard to your hand.",
+    "text": "Whenever you cast an instant or sorcery spell, ~ can't be blocked this turn.{line}Whenever ~ deals combat damage to a player, return target instant or sorcery from your graveyard to your hand.",
     "flavor": "",
     "rarity": "R",
-    "img": "https://i.imgur.com/1k572ei.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/A6rTO3D.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 1,
     "toughness": 3,
-    "art-remarks": "",
     "notes": [
       {
         "date": "17-07-2024",
@@ -6075,6 +6214,11 @@
         "date": "30-11-2024",
         "creator": "Thys",
         "notes": "We need to talk about this, it might be too powerful"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {}
@@ -6087,11 +6231,13 @@
     "flavor": "",
     "rarity": "R",
     "cn": 244,
+    "power": 1,
+    "toughness": 5,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/cXY9Sp4.png",
+    "img": "https://i.imgur.com/D7s0I5d.png",
     "id": "UB",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "02-12-2024",
@@ -6102,6 +6248,11 @@
         "date": "25-12-2024",
         "creator": "Sam",
         "notes": "Added art"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6143,14 +6294,14 @@
     "id": "RG",
     "cost": "{R}{G}",
     "type": "Creature - Elf Alcoholic",
-    "text": "When ~ enters, you may have it fight target creature. If that creature dies this way, put a +1/+1 counter and a beer counter on target creature you control. If you controlled that creature, instead put two +1/+1 counters and two beer counters on that creature.",
+    "text": "When ~ enters, you may have it fight target creature. If that creature would die this turn, put a +1/+1 counter and a beer counter on target creature you control. If you controlled that creature, instead put two +1/+1 counters and two beer counters on that creature.",
     "flavor": "",
     "rarity": "U",
-    "img": "https://i.imgur.com/GYXbwsE.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/Gkj5HZk.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 2,
-    "art-remarks": "",
     "notes": [
       {
         "date": "06-12-2023",
@@ -6171,9 +6322,17 @@
         "date": "27-12-2024",
         "creator": "David",
         "notes": "\"If that creature would die this way\" probably should be changed to \"If that creature would die this turn\", a bit more intuitive"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Agent of Acquisitions",
@@ -6208,21 +6367,26 @@
   {
     "name": "Banner of Assimilation",
     "cost": "{3}",
-    "type": "Artifact",
-    "text": "Equipped creature gets +1/+1.\nCreatures that share a creature type with equipped creature also get +1/+1.\nEquip {2}",
+    "type": "Artifact - Equipment",
+    "text": "Equipped creature gets +1/+1.{line}Creatures that share a creature type with equipped creature also get +1/+1.{line}Equip {2}",
     "flavor": "",
     "rarity": "U",
-    "cn": 248,
+    "cn": 249,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/LrQSqdz.png",
+    "img": "https://i.imgur.com/wE4nQwn.png",
     "id": "C",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created card"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6234,16 +6398,17 @@
   {
     "name": "Blessed Bread",
     "set": "MTD",
-    "cn": 249,
+    "cn": 250,
     "id": "C",
     "cost": "{2}",
-    "type": "Artifact Food",
-    "text": "When ~ enters, scry 1, then draw a card.\n{2}, {T}, Sacrifice ~: You gain 3 life.\nWhen ~ is put into a graveyard from the battlefield, its owner shuffles it into their library.",
+    "type": "Artifact - Food",
+    "text": "When ~ enters, scry 1, then draw a card.{line}{2}, {T}, Sacrifice ~: You gain 3 life.{line}When ~ is put into a graveyard from the battlefield, its owner shuffles it into their library.",
     "flavor": "Every culture has their bread.",
     "rarity": "C",
-    "img": "https://i.imgur.com/z0sqxE7.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "note": "=LTR 243",
+    "img": "https://i.imgur.com/I9CZUWG.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "13-12-2023",
@@ -6259,6 +6424,11 @@
         "date": "16-07-2024",
         "creator": "Thys",
         "notes": "Changed from nickname to note, uploaded new image"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {}
@@ -6270,10 +6440,10 @@
     "text": "Spells you control can't be countered.{line}At the beginning of your end step, discover 5.",
     "flavor": "",
     "rarity": "M",
-    "cn": 250,
+    "cn": 251,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/4u1qYnf.png",
+    "img": "https://i.imgur.com/q9pqq1v.png",
     "id": "C",
     "has_bleed_edge": true,
     "notes": [
@@ -6286,6 +6456,11 @@
         "date": "30-11-2024",
         "creator": "Sam",
         "notes": "Added art"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6359,12 +6534,12 @@
     "cost": "{1}",
     "type": "Artifact",
     "text": "{T}, Exile ~: Shuffle your graveyard into your library.",
-    "flavor": "Time is a funny thing; start messing with things you don’t understand, and you’ll see results—you just might not appreciate the consequences.",
+    "flavor": "Time is a funny thing; start messing with things you don't understand, and you'll see results—you just might not appreciate the consequences.",
     "rarity": "U",
-    "cn": 253,
+    "cn": 255,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/QRpKdLP.png",
+    "img": "https://i.imgur.com/kQGsCmi.png",
     "id": "C",
     "has_bleed_edge": true,
     "notes": [
@@ -6377,6 +6552,11 @@
         "date": "30-11-2024",
         "creator": "Sam",
         "notes": "Added art and flavor"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6419,10 +6599,10 @@
     "text": "As ~ enters, choose a color.{line}Creatures you control of the chosen color get +1/+0.{line}{T}: Add one mana of the chosen color.",
     "flavor": "",
     "rarity": "U",
-    "cn": 255,
+    "cn": 257,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/tQwtISQ.png",
+    "img": "https://i.imgur.com/QBsAlAq.png",
     "id": "C",
     "has_bleed_edge": true,
     "notes": [
@@ -6447,10 +6627,10 @@
     "name": "Key to the City",
     "cost": "{2}",
     "type": "Artifact",
-    "text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.\nWhenever ~ becomes untapped, you may pay {2}. If you do, draw a card.",
+    "text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.{line}Whenever ~ becomes untapped, you may pay {2}. If you do, draw a card.",
     "flavor": "Many doors are open to you, my friend.",
     "rarity": "R",
-    "cn": 256,
+    "cn": 258,
     "set": "MTD",
     "artist": "Midjourney",
     "img": "https://i.imgur.com/vB54djU.png",
@@ -6476,10 +6656,10 @@
     "text": "When ~ enters, destroy target nonland permanent an opponent controls.",
     "flavor": "Born of fire, it seeks to return all to ashes.",
     "rarity": "U",
-    "cn": 257,
+    "cn": 260,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/T4OZDvE.png",
+    "img": "https://i.imgur.com/fI4p9cw.png",
     "id": "C",
     "has_bleed_edge": true,
     "power": 3,
@@ -6494,6 +6674,11 @@
         "date": "30-11-2024",
         "creator": "Sam",
         "notes": "Added art"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6505,16 +6690,16 @@
   {
     "name": "Orbs of Warding",
     "set": "MTD",
-    "cn": 258,
+    "cn": 262,
     "id": "C",
     "cost": "{5}",
     "type": "Artifact",
-    "text": "You have hexproof.\nIf a creature would deal damage to you, prevent 1 of that damage.",
+    "text": "You have hexproof.{line}If a creature would deal damage to you, prevent 1 of that damage.",
     "flavor": "The body, the mind, the soul.",
     "rarity": "R",
-    "img": "https://i.imgur.com/IALjUkh.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/uJtVLt1.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-01-2024",
@@ -6525,9 +6710,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Overflowing Cellar",
@@ -6536,7 +6729,7 @@
     "id": "C",
     "cost": "{2}",
     "type": "Artifact",
-    "text": "~ enters with two battlefield with two beer counters on it.\n{T}, Remove a beer counter from ~: Put a beer counter on target creature you control.\n{T}: Put a beer counter on ~.",
+    "text": "~ enters with two battlefield with two beer counters on it.{line}{T}, Remove a beer counter from ~: Put a beer counter on target creature you control.{line}{T}: Put a beer counter on ~.",
     "flavor": "",
     "rarity": "U",
     "img": "https://i.imgur.com/0DNjAxe.png",
@@ -6554,26 +6747,34 @@
         "notes": "Created json blob"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Spidersilk Net",
     "cost": "{0}",
     "type": "Artifact - Equipment",
-    "text": "Equipped creature gets +0/+2 and has reach.\nEquip {2}",
+    "text": "Equipped creature gets +0/+2 and has reach.{line}Equip {2}",
     "flavor": "Finer than steel, stickier than tar, light as a feather—in short, deadly.",
     "rarity": "C",
-    "cn": 260,
+    "cn": 264,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/wcEs5Hq.png",
+    "img": "https://i.imgur.com/1ztpDrK.png",
     "id": "C",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "15-10-2024",
         "creator": "Sam",
         "notes": "Created render"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6585,16 +6786,16 @@
   {
     "name": "Urn of Godfire",
     "set": "MTD",
-    "cn": 261,
+    "cn": 265,
     "id": "C",
     "cost": "{1}",
     "type": "Artifact",
-    "text": "{2}: Add one mana of any color.\n{6}, {T}, Sacrifice ~: Destroy target creature or enchantment.",
+    "text": "{2}: Add one mana of any color.{line}{6}, {T}, Sacrifice ~: Destroy target creature or enchantment.",
     "flavor": "Blessed by gods long forgotten, these relics are coveted for their innate magical properties by all peoples across the plane.",
     "rarity": "C",
-    "img": "https://i.imgur.com/yUqJjzr.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/HV3bRFc.png",
+    "artist": "Copilot Designer",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "12-01-2024",
@@ -6605,9 +6806,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Elven Mixologist",
@@ -9459,9 +9668,16 @@
     "type": "Enchantment",
     "text": "When ~ enters, create a blood token.{line}{1}{R}: Sacrifice an artifact or creature: Goad target creature.",
     "rarity": "C",
-    "img": "https://i.imgur.com/qlaFcER.png",
-    "has_bleed_edge": false,
-    "notes": [],
+    "artist": "Midjourney",
+    "img": "https://i.imgur.com/21poHuV.png",
+    "has_bleed_edge": true,
+    "notes": [
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
+      }
+    ],
     "tags": {
       "frame": "normal",
       "reprint": false
@@ -10080,13 +10296,23 @@
     "id": "R",
     "cost": "{4}{R}",
     "type": "Creature - Vampire",
-    "text": "Menace\nWhen ~ enters, create two Blood tokens.",
+    "text": "Menace{line}When ~ enters, create two Blood tokens.",
     "rarity": "C",
-    "img": "https://i.imgur.com/XnDghgM.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/5cGh3a5.png",
+    "has_bleed_edge": true,
     "power": 4,
     "toughness": 4,
-    "tags": {}
+    "notes": [
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass, added notes"
+      }
+    ],
+    "tags": {
+      "frame": "normal",
+      "reprint": true
+    }
   },
   {
     "name": "Feldon and Jaxis",
@@ -10274,11 +10500,18 @@
     "text": "Sacrifice ~: Target player takes a shot.",
     "flavor": "“Forrr the beeeeeerr lets go brotherssss!”",
     "rarity": "C",
-    "img": "https://i.imgur.com/oDKyEJp.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/igTrzRC.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 3,
     "toughness": 3,
-    "notes": [],
+    "notes": [
+      {
+        "date": "01-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
+      }
+    ],
     "tags": {
       "frame": "normal",
       "reprint": false
@@ -12708,20 +12941,27 @@
     "name": "Crucible Thunderhulk",
     "cost": "{7}",
     "type": "Artifact Creature - Construct",
-    "text": "Trample{line}~ enters with three +1/+1 counters on it.{line}Whenever ~ attacks or dfies, create a number of 1/1 colorless Construct artifact creature tokens equal to its power.{line}{2}, Sacrifice a nontoken permanet: Put a +1/+1 counter on ~",
+    "text": "Trample{line}~ enters with three +1/+1 counters on it.{line}Whenever ~ attacks or dfies, create a number of 1/1 colorless Construct artifact creature tokens equal to its power.{line}{2}, Sacrifice a nontoken permanet: Put a +1/+1 counter on ~.",
     "flavor": "",
     "rarity": "R",
-    "cn": 252,
+    "power": 0,
+    "toughness": 0,
+    "cn": 253,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": "https://i.imgur.com/Sc0ni82.png",
+    "img": "https://i.imgur.com/x6khJEb.png",
     "id": "C",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "26-12-2024",
         "creator": "Thys",
         "notes": "Added card"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -12792,14 +13032,19 @@
     "cn": 259,
     "set": "MTD",
     "artist": "Midjourney",
-    "img": ".png",
+    "img": "https://i.imgur.com/uhrWv9j.png",
     "id": "C",
-    "has_bleed_edge": false,
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "03-01-2025",
         "creator": "Thys",
         "notes": "Added card"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
