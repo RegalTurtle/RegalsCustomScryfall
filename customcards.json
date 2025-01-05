@@ -5363,14 +5363,14 @@
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Creature — Vampire Devil",
-    "text": "Flying, lifelink\nTake a shot: Create a Blood token.",
+    "text": "Flying, lifelink{line}Take a shot: Create a Blood token.",
     "flavor": "The moon shone bright, but her beauty surpassed all.",
     "rarity": "U",
-    "img": "https://i.imgur.com/nFCDaWk.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/uYxahKP.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 4,
-    "art-remarks": "",
     "notes": [
       {
         "date": "05-05-2024",
@@ -5386,9 +5386,17 @@
         "date": "17-07-2024",
         "creator": "Sam",
         "notes": "Added devil to typeline"
+      },
+      {
+        "date": "04-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "dfc": "transform",
@@ -5430,9 +5438,9 @@
     "text": "Take a shot: Add {C}",
     "flavor": "Beneath the heathen worlds of fire and ice, in the darkest pits of the most hallowed night, the Demon Lord celebrates his forbidden pleasures. Tonight, all of Hell parties with him.",
     "rarity": "M",
-    "img": "https://i.imgur.com/vWdcL2s.png",
-    "has_bleed_edge": false,
-    "art-remarks": "",
+    "img": "https://i.imgur.com/jYfctce.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "notes": [
       {
         "date": "14-11-2023",
@@ -5443,9 +5451,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "Elderwood Scion",
@@ -5655,7 +5671,7 @@
     "set": "MTD",
     "artist": "Midjourney",
     "art-remarks": "elvish assasins sent to kill the king and take back the throne, espionage",
-    "img": "https://i.imgur.com/BxcDRRs.png",
+    "img": "https://i.imgur.com/W2uFAjV.png",
     "id": "WG",
     "has_bleed_edge": true,
     "power": 4,
@@ -5670,6 +5686,11 @@
         "date": "29-11-2024",
         "creator": "Sam",
         "notes": "Made name and art"
+      },
+      {
+        "date": "03-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
     "tags": {
@@ -6032,14 +6053,14 @@
     "id": "BR",
     "cost": "{2}{B}{R}",
     "type": "Legendary Creature — Vampire Noble",
-    "text": "Flying\nAt the beginning of your end step, create a Blood token for each player who lost life this turn. Whenever ~ attacks, you may sacrifice a Blood token. If you do, defending player takes a shot.",
+    "text": "Flying{line}At the beginning of your end step, create a Blood token for each player who lost life this turn. Whenever ~ attacks, you may sacrifice a Blood token. If you do, defending player takes a shot.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/sb5D54F.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/QhzLknj.png",
+    "artist": "Midjourney",
+    "has_bleed_edge": true,
     "power": 2,
     "toughness": 3,
-    "art-remarks": "",
     "notes": [
       {
         "date": "04-05-2024",
@@ -6050,9 +6071,17 @@
         "date": "14-07-2024",
         "creator": "Thys",
         "notes": "Created json blob, the second cardname should probably be just the first name"
+      },
+      {
+        "date": "04-01-2025",
+        "creator": "Thys",
+        "notes": "Final pre-print pass"
       }
     ],
-    "tags": {}
+    "tags": {
+      "frame": "normal",
+      "reprint": false
+    }
   },
   {
     "name": "The Foundry",
