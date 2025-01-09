@@ -12246,8 +12246,8 @@
     "text": "~ enters tapped.{line}When ~ enters, return a land you control to its owner's hand.{line}{T}: Add {U}{B}.",
     "flavor": "",
     "rarity": "C",
-    "img": "https://i.imgur.com/dNeydTJ.png",
-    "has_bleed_edge": false,
+    "img": "https://i.imgur.com/R5WUs7C.png",
+    "has_bleed_edge": true,
     "art-remarks": "",
     "notes": [
       {
