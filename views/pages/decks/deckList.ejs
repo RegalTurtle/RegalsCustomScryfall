@@ -14,12 +14,17 @@
     </header>
 
     <main>
-      <div>
+      <div class="container">
         <% decks.forEach(deck => { %>
-        <a href="/decks/<%= deck.id %>" class="customClass"
-          ><%= deck.deckName %></a
-        >
+        <a href="/decks/<%= deck.id %>" class="deckInfo <%= deck.colorId %>">
+          <h3><%= deck.deckName %></h3>
+          <p>Format: <%= deck.format %></p>
+          <p>Owner: <%= deck.owner %></p>
+        </a>
         <% }); %>
+        <a href="/decks/add-deck" class="deckInfo C">
+          <h3>Add a deck</h3>
+        </a>
       </div>
     </main>
 

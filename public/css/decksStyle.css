@@ -3,7 +3,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
-  height: 100dvh; /* Full viewport height */
+  min-height: 100dvh; /* Full viewport height */
   background: linear-gradient(to bottom, #2f9288, #135750);
 }
 
@@ -13,7 +13,7 @@ main {
   flex-direction: column; /* Arrange children in a column */
   justify-content: center; /* Align children vertically */
   align-items: center; /* Align children horizontally */
-  height: 100%; /* Ensure it fills the parent container */
+  min-height: 100%; /* Ensure it fills the parent container */
 }
 
 body main h1 {
@@ -49,35 +49,160 @@ header h1 {
   font-weight: bold;
 }
 
-.customClass { grid-area: custom; }
-.decksClass { grid-area: decks; }
-.gamesClass { grid-area: games; }
-.loginClass { grid-area: login; }
-
-.grid-container {
+.container {
   display: grid;
-  grid-template-areas: 
-    'login login'
-    'custom custom'
-    'decks games';
-  /* background-color: #2196F3; */
-  padding: 10px;
-  gap: 5dvh;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: transparent;
+  align-self: center;
+  width: 80dvw;
+  margin: auto;
+  padding-top: 2dvh;
+  padding-bottom: 2dvh;
 }
 
-a {
+.deckInfo {
   justify-self: center; /* Center the button horizontally */
 
-  font-size: 16pt;
   font-family: Verdana, sans-serif;
   background-color: transparent;
-  padding: 12px 7px 12px 7px;
-  border: 2px solid #daddf5;
+  border: 2px solid #000000;
   border-radius: 10px;
   color: white;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   text-decoration: none;
   min-width: 15dvw;
+  width: 90%;
+  padding: 12px;
+  margin: 10px;
+  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(150, 33, 33, 0.9));
+  
+}
+
+.deckInfo h3 {
+  color: black;
+  margin: 5px;
+}
+
+.deckInfo p {
+  margin: 0px;
+  text-align: left;
+  color: black;
+}
+
+/* COLOR IDENTITY CLASSES */
+.C {
+  background: linear-gradient(90deg, rgba(130, 130, 130, 0.9), rgba(189, 189, 189, 0.9), rgba(130, 130, 130, 0.9));
+}
+
+.RG {
+  background: linear-gradient(90deg, rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+.URW {
+  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(150, 33, 33, 0.9), rgba(245, 237, 196, 0.9));
+}
+
+.WBG {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(102, 46, 171, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+.WUBRG {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+/* STUFF FOR ADDING DECKS */
+
+.add-deck-container {
+  background-color: #ffffff66;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
+  text-align: center;
+  width: 80dvw;
+  min-width: 10em;
+}
+
+.add-deck-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-deck-container input {
+  padding: 15px;
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  border: 2px solid #daddf5;
+  border-radius: 10px;
+  color: #333333;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.add-deck-container input::placeholder {
+  color: #6c6c6c;
+}
+
+.add-deck-container input:focus {
+  outline: none;
+  border-color: #9b4dca;
+}
+
+.add-deck-container button {
+  padding: 13px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #9b4dca, #6a0dad, #a64ca6);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-deck-container button:hover {
+  background: linear-gradient(to right, #723996, #460972, #723996);
+}
+
+.add-deck-container a {
+  display: block;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.add-deck-container a:hover {
+  text-decoration: underline;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-form div {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-form button {
+  grid-column: span 2;
+  margin-top: 20px;
+}
+
+.errorList {
+  grid-column: span 2;
+}
+
+.singleDeckInfo {
+  background-color: #7d92bd74;
+  width: 85dvw;
+  padding: 10px;
+  margin: 15px;
+  border: 3px solid #000000;
+  border-radius: 10px;
 }

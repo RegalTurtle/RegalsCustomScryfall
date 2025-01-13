@@ -1,6 +1,6 @@
 import cardJsonRoutes from "./cards.js";
 import cardRoutes from "./card.js";
-import deckRoutes from "./decks/deckList.js";
+import deckRoutes from "./decks.js";
 import loginRoutes from "./login.js";
 import signupRoutes from "./signup.js";
 import session from "express-session";

@@ -24,4 +24,48 @@ const getDeckByMoxfieldId = async (moxfieldId) => {
   return deckFound;
 };
 
-export default { getAllDecks, getDeckByMoxfieldId };
+/**
+ *
+ * @param {string} deckName The name of the deck to be added
+ * @param {string} colorId The color id, in the correct order
+ * @param {string} moxfield
+ * @param {string} format
+ * @param {string} owner
+ * @returns An object containing id,
+ */
+const addDeck = async (deckName, colorId, moxfield, format, owner) => {
+  // validate all inputs
+  deckName = validation.verifyStr(deckName, `deckName`);
+  colorId = validation.verifyColorIdOrdered(colorId);
+  moxfield = validation.verifyMoxfieldLink(moxfield);
+  format = validation.verifyStr(format, `format`);
+  owner = validation.verifyStr(owner, `owner`);
+
+  // Fetch decks collection from DB
+  const decksCollection = await decks();
+  const deckIfFound = await decksCollection.findOne({ moxfield });
+  if (deckIfFound)
+    throw new Error(`A deck with that moxfield link already exists.`);
+
+  // Create an object for the new deck
+  let deckInfo = {
+    id: moxfield.split("/").pop(),
+    moxfield,
+    owner,
+    deckName,
+    format,
+    colorId,
+    commander: {},
+    cards: [],
+    changes: [],
+    comments: [],
+    games: [],
+  };
+
+  // attempt to insert deck
+  await decksCollection.insertOne(deckInfo);
+
+  return deckInfo;
+};
+
+export default { getAllDecks, getDeckByMoxfieldId, addDeck };

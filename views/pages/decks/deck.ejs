@@ -10,14 +10,44 @@
 
   <body>
     <header>
-      <h1>My Decks</h1>
+      <h1><%= deck.deckName %></h1>
     </header>
 
     <main>
-      <div>
-        <a><%= deck.deckName %></a>
-        <a><%= deck.format %></a>
+      <div class="singleDeckInfo">
+        <p>Format: <%= deck.format %></p>
+        <p>Owner: <%= deck.owner %></p>
       </div>
+
+      <div class="singleDeckInfo">
+        <form method="POST">
+          <div>
+            <h2>Record a game</h2>
+          </div>
+          <div>
+            <label>
+              <input type="radio" name="winLose" id="winLoseW" value="true" />
+              Won
+            </label>
+            <label>
+              <input type="radio" name="winLose" id="winLoseL" value="false" />
+              Lost
+            </label>
+          </div>
+          <button type="submit">Submit game</button>
+        </form>
+      </div>
+
+      <% if (deck.cards && deck.cards.length > 0) { %>
+      <div class="singleDeckInfo">
+        <h2>Decklist:</h2>
+        <% deck.cards.forEach(card => { %> <% if (card.count) { %>
+        <p><%= `${card.count}x ${card.cardName} (${card.set} ${card.cn})` %></p>
+        <% } else { %>
+        <p><%= `${card.cardName} (${card.set} ${card.cn})` %></p>
+        <% } %> <% }); %>
+      </div>
+      <% } %>
     </main>
 
     <footer>

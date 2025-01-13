@@ -89,10 +89,90 @@ const verifyPermissionLevel = (permissionLevel) => {
   return permissionLevel;
 };
 
+/**
+ * Verifies that a given string is a correctly-ordered color identity (i.e. clockwise around the mana circle, shortest path)
+ * @param {string} idString
+ * @returns the idString, uppercase, and trimmed
+ */
+const verifyColorIdOrdered = (idString) => {
+  const validColorIds = [
+    "C",
+    "W",
+    "U",
+    "B",
+    "R",
+    "G",
+    "WU",
+    "UB",
+    "BR",
+    "RG",
+    "GW",
+    "WB",
+    "UR",
+    "BG",
+    "RW",
+    "GU",
+    "WUB",
+    "UBR",
+    "BRG",
+    "RGW",
+    "GWU",
+    "RWB",
+    "GUR",
+    "WBG",
+    "URW",
+    "BGU",
+    "UBRG",
+    "BRGW",
+    "RGWU",
+    "GWUB",
+    "WUBR",
+    "WUBRG",
+  ];
+
+  idString = verifyStr(idString, `idString`).toUpperCase();
+  if (validColorIds.includes(idString)) {
+    return idString;
+  } else {
+    throw new Error(`idString must be a valid colorId`);
+  }
+};
+
+/**
+ * Takes a string and verifies that it is a moxfield link
+ * @param {string} moxfieldLink
+ * @returns The moxfield link, trimmed
+ */
+const verifyMoxfieldLink = (moxfieldLink) => {
+  const beginningOfLink = "https://moxfield.com/decks/";
+  moxfieldLink = verifyStr(moxfieldLink);
+  if (
+    !moxfieldLink.startsWith(beginningOfLink) ||
+    moxfieldLink.length <= beginningOfLink.length
+  )
+    throw new Error(`Link must be a valid Moxfield link`);
+  return moxfieldLink;
+};
+
+/**
+ * Takes a string and verifies that it is either true or false
+ * @param {string} b
+ * @returns A boolean, either true or false depending on the input
+ */
+const verifyStringToBool = (b) => {
+  b = verifyStr(b, `b`).toLowerCase();
+  if (b === "true") return true;
+  if (b === "false") return false;
+  throw new Error(`b was neither true nor false`);
+};
+
 export default {
   verifyStr,
   verifyUsername,
   verifyPassword,
   verifyEmail,
   verifyPermissionLevel,
+  verifyColorIdOrdered,
+  verifyMoxfieldLink,
+  verifyStringToBool,
 };
