@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/css/customStyle.css" />
+
+    <title>Regal's Custom Cards</title>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a href="/" class="backButton">Home</a>
+      <form class="searchbar" action="/custom/search/" method="POST">
+        <input
+          type="text"
+          placeholder="Search"
+          style="font-weight: bold"
+          name="searchTerms"
+          id="searchInput"
+          value="<%- searchTerms %>"
+        />
+      </form>
+    </div>
+
+    <!-- <p id="output"></p> -->
+
+    <div class="card-grid">
+      <div class="card-grid-inner" id="card-grid-id">
+        <% jsonDataFiltered.forEach(card => { %>
+          <div class="card-grid-item ">
+            <a class="card-grid-item-card" href="/custom/card/<%= card["set"] %>/<%= card["cn"] %>">
+              <span class="card-grid-item-invisible-label" aria-hidden="true"><%= card["name"] %></span>
+              <div class="card-grid-item-card-faces">
+                  <div class="card-grid-item-card-front">
+                    <img class="card jmp border-black " title="<%= card["name"] %> (<%= card["set"] %><%=card["cn"] %>)" alt="<%= card["name"] %> (<%= card["set"] %><%= card["cn"] %>)" loading="eager" src="<%= card["img"] %>">
+                  </div>
+              </div>
+            </a>
+          </div>
+        <% }); %>
+        <div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>
+        <div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>
+        <div class="card-grid-item flexbox-spacer " aria-hidden="true"></div>
+      </div>
+    </div>
+  </body>
+</html>

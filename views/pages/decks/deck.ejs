@@ -9,8 +9,9 @@
   </head>
 
   <body>
-    <header>
-      <h1><%= deck.deckName %></h1>
+    <header class="<%= deck.colorId %>">
+      <a href="/decks" class="backButton">Back</a>
+      <h1 class="deckTitle"><%= deck.deckName %></h1>
     </header>
 
     <main>

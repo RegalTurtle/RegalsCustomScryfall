@@ -1,6 +1,6 @@
 import { Router } from "express";
 const router = Router();
-import cardData from "../data/cards.js";
+import cardData from "../data/customCards.js";
 import validation from "../data/validation.js";
 
 router.route("/").get(async (req, res) => {

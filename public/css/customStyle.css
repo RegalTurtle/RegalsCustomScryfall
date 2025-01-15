@@ -590,3 +590,20 @@ footer {
 .cardForm {
   margin-top: 5dvh;
 }
+
+.backButton {
+  position: absolute;
+  left: 20px; /* Keep some spacing from the right edge */
+  padding: 7px 2px 7px 2px;
+  margin: 10px;
+  min-width: 5em;
+  font-size: 17pt;
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}

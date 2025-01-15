@@ -42,6 +42,9 @@ header {
   text-align: center;
   border-bottom: solid;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
 header h1 {
@@ -205,4 +208,25 @@ header h1 {
   margin: 15px;
   border: 3px solid #000000;
   border-radius: 10px;
+}
+
+.backButton {
+  position: absolute;
+  left: 20px; /* Keep some spacing from the right edge */
+  padding: 12px 7px 12px 7px;
+  min-width: 5em;
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.deckTitle {
+  font-size: 35pt;
+  text-decoration: underline;
 }

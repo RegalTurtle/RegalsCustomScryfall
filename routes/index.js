@@ -4,7 +4,6 @@ import deckRoutes from "./decks.js";
 import loginRoutes from "./login.js";
 import signupRoutes from "./signup.js";
 import session from "express-session";
-
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -75,14 +74,6 @@ const constructorMethod = (app) => {
 
   app.get("*/style.css", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/style.css"));
-  });
-
-  app.get("/card/*", async (req, res) => {
-    res.render("pages/custom/card");
-  });
-
-  app.get("/search/*", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/search.html"));
   });
 
   app.use("*", (req, res) => {
