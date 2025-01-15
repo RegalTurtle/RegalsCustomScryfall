@@ -120,7 +120,10 @@ router
   })
   .post(
     async (req, res, next) => {
-      if (!req.session || req.session.userInfo.permissionLevel !== "owner")
+      if (
+        !req.session.userInfo ||
+        req.session.userInfo.permissionLevel !== "owner"
+      )
         return res.redirect("/login");
       next();
     },

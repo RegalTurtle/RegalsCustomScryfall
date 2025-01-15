@@ -78,7 +78,6 @@ header h1 {
   width: 90%;
   padding: 12px;
   margin: 10px;
-  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(150, 33, 33, 0.9));
   
 }
 
@@ -94,8 +93,14 @@ header h1 {
 }
 
 /* COLOR IDENTITY CLASSES */
+/* Monocolor */
 .C {
   background: linear-gradient(90deg, rgba(130, 130, 130, 0.9), rgba(189, 189, 189, 0.9), rgba(130, 130, 130, 0.9));
+}
+
+/* Allies */
+.BR {
+  background: linear-gradient(90deg, rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9));
 }
 
 .RG {
