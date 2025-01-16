@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/css/colorIdGradients.css"
+    />
     <link rel="stylesheet" type="text/css" href="/public/css/decksStyle.css" />
 
     <title>Regal's Magic</title>
@@ -20,6 +25,7 @@
         <p>Owner: <%= deck.owner %></p>
       </div>
 
+      <% if (canAddGames) { %>
       <div class="singleDeckInfo">
         <form method="POST">
           <div>
@@ -35,11 +41,10 @@
               Lost
             </label>
           </div>
-          <button type="submit">Submit game</button>
+          <button type="submit" class="gameSubmitButton">Submit game</button>
         </form>
       </div>
-
-      <% if (deck.cards && deck.cards.length > 0) { %>
+      <% } if (deck.cards && deck.cards.length > 0) { %>
       <div class="singleDeckInfo">
         <h2>Decklist:</h2>
         <% deck.cards.forEach(card => { %> <% if (card.count) { %>

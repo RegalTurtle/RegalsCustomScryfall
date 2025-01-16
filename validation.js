@@ -1,3 +1,5 @@
+import authorization from "./authorization.js";
+
 /**
  * Verifies that a given string is a non-empty string, and trims it
  * @param {string} s - a string to be verified
@@ -75,8 +77,13 @@ const verifyEmail = (email) => {
   return email;
 };
 
+/**
+ * Takes a string and vefiries that it is a permission level, and trims it
+ * @param {string} permissionLevel Given a string, makes sure that it is a valid permission level
+ * @returns The given permission level, trimmed
+ */
 const verifyPermissionLevel = (permissionLevel) => {
-  const permissionLevels = ["owner", "user"];
+  const permissionLevels = authorization.permissionLevels;
 
   permissionLevel = verifyStr(permissionLevel, `permissionLevel`);
   // cast all permissionLevels to lowercase

@@ -92,33 +92,6 @@ header h1 {
   color: black;
 }
 
-/* COLOR IDENTITY CLASSES */
-/* Monocolor */
-.C {
-  background: linear-gradient(90deg, rgba(130, 130, 130, 0.9), rgba(189, 189, 189, 0.9), rgba(130, 130, 130, 0.9));
-}
-
-/* Allies */
-.BR {
-  background: linear-gradient(90deg, rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9));
-}
-
-.RG {
-  background: linear-gradient(90deg, rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
-}
-
-.URW {
-  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(150, 33, 33, 0.9), rgba(245, 237, 196, 0.9));
-}
-
-.WBG {
-  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(102, 46, 171, 0.9), rgba(26, 171, 30, 0.9));
-}
-
-.WUBRG {
-  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
-}
-
 /* STUFF FOR ADDING DECKS */
 
 .add-deck-container {
@@ -234,4 +207,8 @@ header h1 {
 .deckTitle {
   font-size: 35pt;
   text-decoration: underline;
+}
+
+.gameSubmitButton {
+  margin: 10px 10px 10px 1px;
 }
