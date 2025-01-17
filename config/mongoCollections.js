@@ -16,3 +16,4 @@ const getCollectionFn = (collection) => {
 export const users = getCollectionFn("users");
 export const decks = getCollectionFn("decks");
 export const cards = null;
+export const games = getCollectionFn("games");

@@ -173,6 +173,48 @@ const verifyStringToBool = (b) => {
   throw new Error(`b was neither true nor false`);
 };
 
+/**
+ * Takes in a string and verifies that it is an integer, then returns the string representation of the integer
+ * @param {string} i The string representation of an integer
+ * @returns `i`, trimmed
+ */
+const verifyIntegerAsString = (i) => {
+  i = verifyStr(i, `i`);
+
+  const integerRegex = /^-?\d+$/;
+  if (!integerRegex.test(str)) {
+    throw new Error(`Invalid integer string: "${str}"`);
+  }
+
+  return i;
+};
+
+/**
+ * Verifies that a given string is a date string of the form YYYYMMDD
+ * @param {string} date A date string in the format YYYYMMDD
+ * @returns The date string, trimmed
+ */
+const verifyDate = (date) => {
+  date = verifyStr(date, `date`);
+
+  // Check if the string matches the YYYYMMDD format
+  const regex = /^\d{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])$/;
+  if (!regex.test(date)) {
+    throw new Error(`Date string in incorrect format`);
+  }
+
+  // Extract year, month, and day from the string
+  const year = parseInt(date.substring(0, 4), 10);
+  const month = parseInt(date.substring(4, 6), 10);
+  const day = parseInt(date.substring(6, 8), 10);
+
+  // Check for valid days in the month
+  const daysInMonth = new Date(year, month, 0).getDate();
+  if (day > daysInMonth)
+    throw new Error(`There aren't that many days in month ${month}`);
+  return date;
+};
+
 export default {
   verifyStr,
   verifyUsername,
@@ -182,4 +224,6 @@ export default {
   verifyColorIdOrdered,
   verifyMoxfieldLink,
   verifyStringToBool,
+  verifyDate,
+  verifyIntegerAsString,
 };
