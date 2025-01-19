@@ -149,13 +149,9 @@
                 }
               }
               if (cur_param.slice(0, 2) == "c=") {
-                let cardColorsToCheck = getColors(card["cost"]);
-                if (card["colors"]) {
-                  cardColorsToCheck = card["colors"];
-                }
                 if (
                   haveSameCharacters(
-                    cardColorsToCheck,
+                    getColors(card["cost"]),
                     cur_param.slice(2)
                   )
                 ) {
@@ -165,14 +161,10 @@
                 }
               }
               if (cur_param.slice(0, 3) == "c>=") {
-                let cardColorsToCheck = getColors(card["cost"]);
-                if (card["colors"]) {
-                  cardColorsToCheck = card["colors"];
-                }
                 if (
                   containsAllCharacters(
                     cur_param.slice(3),
-                    cardColorsToCheck
+                    getColors(card["cost"])
                   )
                 ) {
                   continue;
@@ -181,13 +173,9 @@
                 }
               }
               if (cur_param.slice(0, 3) == "c<=") {
-                let cardColorsToCheck = getColors(card["cost"]);
-                if (card["colors"]) {
-                  cardColorsToCheck = card["colors"];
-                }
                 if (
                   containsAllCharacters(
-                    cardColorsToCheck,
+                    getColors(card["cost"]),
                     cur_param.slice(3)
                   )
                 ) {
