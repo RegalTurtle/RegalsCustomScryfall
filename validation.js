@@ -215,6 +215,35 @@ const verifyDate = (date) => {
   return date;
 };
 
+/**
+ * Verifies that a given object is a player object with one or more fields
+ * @param {string} player A player object containing one or more of the allowed keys
+ * @returns The `player` object
+ */
+const verifyPlayer = (player) => {
+  const possibleFields = ["name", "deck"];
+
+  if (typeof player !== "object") throw new Error(`Player must be an object`);
+  if (Object.keys(player).length === 0)
+    throw new Error(`Player must not be empty`);
+  for (const key in player) {
+    if (!possibleFields.includes(key))
+      throw new Error(`Each key must be valid`);
+  }
+  return player;
+};
+
+/**
+ * Verifies that `b` is a boolean
+ * @param {boolean} b a boolean
+ * @param {string} type what `b` is used for
+ * @returns `b`
+ */
+const verifyBool = (b, type) => {
+  if (typeof b !== "boolean") throw new Error(`${type} must be a boolean`);
+  return b;
+};
+
 export default {
   verifyStr,
   verifyUsername,
@@ -226,4 +255,6 @@ export default {
   verifyStringToBool,
   verifyDate,
   verifyIntegerAsString,
+  verifyPlayer,
+  verifyBool,
 };

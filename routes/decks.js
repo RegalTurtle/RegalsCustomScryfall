@@ -1,5 +1,6 @@
 import { Router } from "express";
 import deckData from "../data/decks.js";
+import gameData from "../data/games.js";
 import xss from "xss";
 import validation from "../validation.js";
 import authorization from "../authorization.js";
@@ -102,80 +103,92 @@ router
     try {
       deck = await deckData.getDeckByMoxfieldId(id);
     } catch (e) {
-      return res.status(400).json({ error: e, location: "deckList /:id GET" });
+      return res.status(400).json({ error: e, location: "GET /decks/:id/" });
     }
 
+    let games;
+    try {
+      games = await gameData.getGamesByDeckMoxfieldId(id);
+    } catch (e) {
+      return res.status(400).json({ error: e, location: "GET /decks/:id/" });
+    }
+    let won = games.filter((game) => game.win);
+
     return res.render(`pages/decks/deck`, {
+      deck,
       errors: undefined,
       formData: undefined,
-      deck,
       canAddGames: authorization.canAddGames(
         req.session.userInfo?.permissionLevel
       ),
+      games,
+      gamesWon: won,
     });
   })
-  .post(
-    async (req, res, next) => {
-      if (
-        !req.session.userInfo ||
-        req.session.userInfo.permissionLevel !== "owner"
-      )
-        return res.redirect("/login");
-      next();
-    },
-    async (req, res) => {
-      // get the deck as per the id in the url
-      let id = xss(req.params.id);
+  .post(authorization.mwCanAddGames, async (req, res) => {
+    // get the deck as per the id in the url
+    let id = xss(req.params.id);
 
-      let deck;
-      try {
-        deck = await deckData.getDeckByMoxfieldId(id);
-      } catch (e) {
-        return res
-          .status(400)
-          .json({ error: e, location: "deckList /:id GET" });
-      }
-
-      // parse the req for the form data
-      let { winLose } = req.body;
-      // XSS checking, for cross-site scripting
-      winLose = xss(winLose);
-
-      // validate inputs
-      let errors = [];
-      try {
-        winLose = validation.verifyStringToBool(winLose);
-      } catch (e) {
-        errors.push(e);
-      }
-
-      // if there are errors, re-render the page
-      if (errors.length > 0) {
-        return res.status(400).render(`pages/decks/deck`, {
-          deck,
-          errors,
-          formData: undefined,
-          canAddGames: authorization.canAddGames(
-            req.session.userInfo?.permissionLevel
-          ),
-        });
-      }
-
-      // if no errors, try to input game
-      let game;
-      try {
-        game = await gameData.addGame(winLose);
-      } catch (e) {
-        return res.status(500).render("pages/decks/deck", {
-          deck,
-          errors,
-          formData: undefined,
-          canAddGames: authorization.canAddGames(
-            req.session.userInfo?.permissionLevel
-          ),
-        });
-      }
+    let deck;
+    try {
+      deck = await deckData.getDeckByMoxfieldId(id);
+    } catch (e) {
+      return res.status(400).json({ error: e, location: "POST /decks/:id/" });
     }
-  );
+
+    let games;
+    try {
+      games = await gameData.getGamesByDeckMoxfieldId(id);
+    } catch (e) {
+      return res.status(400).json({ error: e, location: "POST /decks/:id/" });
+    }
+    let won = games.filter((game) => game.win);
+
+    // parse the req for the form data
+    let { winLose } = req.body;
+    // XSS checking, for cross-site scripting
+    winLose = xss(winLose);
+
+    // validate inputs
+    let errors = [];
+    try {
+      winLose = validation.verifyStringToBool(winLose);
+    } catch (e) {
+      errors.push(e);
+    }
+
+    // if there are errors, re-render the page
+    if (errors.length > 0) {
+      return res.status(400).render(`pages/decks/deck`, {
+        deck,
+        errors,
+        formData: undefined,
+        canAddGames: authorization.canAddGames(
+          req.session.userInfo?.permissionLevel
+        ),
+        games,
+        gamesWon: won,
+      });
+    }
+
+    // if no errors, try to input game
+    let game;
+    try {
+      game = await gameData.addGame(deck.id, winLose, {});
+    } catch (e) {
+      return res.status(500).render("pages/decks/deck", {
+        deck,
+        errors,
+        formData: undefined,
+        canAddGames: authorization.canAddGames(
+          req.session.userInfo?.permissionLevel
+        ),
+        games,
+        gamesWon: won,
+      });
+    }
+
+    return res.redirect(`/decks/${id}/`);
+  });
 
 export default router;

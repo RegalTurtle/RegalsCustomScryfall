@@ -55,12 +55,14 @@ const addDeck = async (deckName, colorId, moxfield, format, owner) => {
     deckName,
     format,
     colorId,
-    commander: {},
     cards: [],
     changes: [],
     comments: [],
-    games: [],
   };
+
+  if (format === "EDH") {
+    deckInfo.commander = {};
+  }
 
   // attempt to insert deck
   await decksCollection.insertOne(deckInfo);

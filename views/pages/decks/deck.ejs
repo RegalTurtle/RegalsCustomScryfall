@@ -23,7 +23,11 @@
       <div class="singleDeckInfo">
         <p>Format: <%= deck.format %></p>
         <p>Owner: <%= deck.owner %></p>
-        <a href="<%= deck.moxfield %>" target="_blank">Scryfall link</a>
+        <p>
+          Winrate: <%= gamesWon.length %>/<%= games.length %> (<%= (100 *
+          gamesWon.length / games.length).toFixed(0) %>%)
+        </p>
+        <p><a href="<%= deck.moxfield %>" target="_blank">Scryfall link</a></p>
       </div>
 
       <% if (canAddGames) { %>
@@ -48,7 +52,7 @@
       <% } if (deck.cards && deck.cards.length > 0) { %>
       <div class="singleDeckInfo">
         <h2>Decklist:</h2>
-        <% deck.cards.forEach(card => { %> <% if (card.count) { %>
+        <% deck.cards.forEach(card => { if (card.count) { %>
         <p><%= `${card.count}x ${card.cardName} (${card.set} ${card.cn})` %></p>
         <% } else { %>
         <p><%= `${card.cardName} (${card.set} ${card.cn})` %></p>

@@ -25,10 +25,18 @@ const canAddGames = (permissionLevel) => {
   return allowedLevels.includes(permissionLevel);
 };
 
+const mwCanAddGames = async (req, res, next) => {
+  if (canAddGames(req.session.userInfo?.permissionLevel)) {
+    return next();
+  }
+  return res.redirect(`/login/`);
+};
+
 export default {
   permissionLevels,
   canViewDecks,
   canAddDecks,
   mwCanAddDecks,
   canAddGames,
+  mwCanAddGames,
 };
