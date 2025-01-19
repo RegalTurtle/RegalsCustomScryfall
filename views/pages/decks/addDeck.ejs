@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/css/decksStyle.css" />
+
+    <title>Regal's Magic</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="/decks" class="backButton">Back</a>
+      <h1>My Decks</h1>
+    </header>
+
+    <main>
+      <div class="add-deck-container">
+        <h1>Add Deck</h1>
+        <form action="/decks/add-deck" method="POST" class="grid-form">
+          <div>
+            <input
+              type="text"
+              name="deckName"
+              id="deckName"
+              placeholder="Deck Name"
+              autocomplete="off"
+              value="<%= formData ? formData.deckName : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="colorId"
+              id="colorId"
+              placeholder="Color Identity"
+              autocomplete="off"
+              value="<%= formData ? formData.colorId : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="moxfield"
+              id="moxfield"
+              placeholder="Moxfield Link"
+              autocomplete="off"
+              value="<%= formData ? formData.moxfield : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="format"
+              id="format"
+              placeholder="Format"
+              autocomplete="off"
+              value="<%= formData ? formData.format : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="owner"
+              id="owner"
+              placeholder="Owner"
+              autocomplete="off"
+              value="<%= formData ? formData.owner : '' %>"
+              required
+            />
+          </div>
+          <% if (errors && errors.length > 0) { %>
+          <ul class="errorList">
+            <% errors.forEach(e => { %>
+            <li><%= e %></li>
+            <% }); %>
+          </ul>
+          <% } %>
+          <button type="submit">Add Deck</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <h1>456</h1>
+    </footer>
+  </body>
+</html>

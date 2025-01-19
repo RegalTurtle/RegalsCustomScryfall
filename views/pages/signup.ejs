@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/css/signupStyle.css" />
+
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <main>
+      <div class="login-container">
+        <h1>Sign Up</h1>
+        <form action="/signup" method="POST" class="grid-form">
+          <div>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="First Name"
+              autocomplete="off"
+              value="<%= formData ? formData.firstName : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              placeholder="Last Name"
+              autocomplete="off"
+              value="<%= formData ? formData.lastName : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              autocomplete="off"
+              value="<%= formData ? formData.username : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              autocomplete="off"
+              value="<%= formData ? formData.email : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              autocomplete="off"
+              value="<%= formData ? formData.password : '' %>"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+              autocomplete="off"
+              value="<%= formData ? formData.confirmPassword : '' %>"
+              required
+            />
+          </div>
+          <% if (errors && errors.length > 0) { %>
+          <ul class="errorList">
+            <% errors.forEach(e => { %>
+            <li><%= e %></li>
+            <% }); %>
+          </ul>
+          <% } %>
+          <button type="submit">Sign Up</button>
+        </form>
+        <a href="/login">Already have an account? Log in</a>
+      </div>
+    </main>
+  </body>
+</html>

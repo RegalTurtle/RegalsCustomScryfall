@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/css/colorIdGradients.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/public/css/decksStyle.css" />
+
+    <title>Regal's Magic</title>
+  </head>
+
+  <body>
+    <header class="<%= deck.colorId %>">
+      <a href="/decks" class="backButton">Back</a>
+      <h1 class="deckTitle"><%= deck.deckName %></h1>
+    </header>
+
+    <main>
+      <div class="singleDeckInfo">
+        <p>Format: <%= deck.format %></p>
+        <p>Owner: <%= deck.owner %></p>
+        <p>
+          Winrate: <%= gamesWon.length %>/<%= games.length %> (<%= (100 *
+          gamesWon.length / games.length).toFixed(0) %>%)
+        </p>
+        <p><a href="<%= deck.moxfield %>" target="_blank">Scryfall link</a></p>
+      </div>
+
+      <% if (canAddGames) { %>
+      <div class="singleDeckInfo">
+        <form method="POST">
+          <div>
+            <h2>Record a game</h2>
+          </div>
+          <div>
+            <label>
+              <input type="radio" name="winLose" id="winLoseW" value="true" />
+              Won
+            </label>
+            <label>
+              <input type="radio" name="winLose" id="winLoseL" value="false" />
+              Lost
+            </label>
+          </div>
+          <button type="submit" class="gameSubmitButton">Submit game</button>
+        </form>
+      </div>
+      <% } if (deck.cards && deck.cards.length > 0) { %>
+      <div class="singleDeckInfo">
+        <h2>Decklist:</h2>
+        <% deck.cards.forEach(card => { if (card.count) { %>
+        <p><%= `${card.count}x ${card.cardName} (${card.set} ${card.cn})` %></p>
+        <% } else { %>
+        <p><%= `${card.cardName} (${card.set} ${card.cn})` %></p>
+        <% } %> <% }); %>
+      </div>
+      <% } %>
+    </main>
+
+    <footer>
+      <h1>456</h1>
+    </footer>
+  </body>
+</html>

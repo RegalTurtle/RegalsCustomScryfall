@@ -1,10 +1,12 @@
 <nav class="topnav">
-  <form class="searchbar" action="/search/" method="GET">
+  <a href="/" class="backButton">Home</a>
+  <form class="searchbar" action="/custom/search/" method="POST">
     <input
       type="text"
       placeholder="Search"
       style="font-weight: bold"
-      name="q"
+      name="searchTerms"
+      id="searchInput"
     />
   </form>
 </nav>

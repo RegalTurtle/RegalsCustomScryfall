@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { colors, rarities } from "../helpers.js";
+import helpers from "../helpers.js";
 
 const checkStr = (str, type) => {
   if (!str) throw new Error(`Error: ${type} must be provided`);
@@ -53,7 +53,7 @@ const exportedMethods = {
     id = checkStr(id, "id").toUpperCase();
     if (
       !id.every((ch) => {
-        return colors.includes(ch);
+        return helpers.colors.includes(ch);
       })
     )
       throw new Error(`Error: colors not within magic colors`);
@@ -79,7 +79,7 @@ const exportedMethods = {
   },
   checkRarity(r) {
     r = checkStr(r, "rarity").toUpperCase;
-    if (!rarities.includes(r))
+    if (!helpers.rarities.includes(r))
       throw new Error(`Error: rarity must be a proper rarity`);
     return r;
   },

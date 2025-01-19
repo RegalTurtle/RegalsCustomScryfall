@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/css/colorIdGradients.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/public/css/decksStyle.css" />
+
+    <title>Regal's Magic</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="backButton">Back</a>
+      <h1>My Decks</h1>
+    </header>
+
+    <main>
+      <div class="container">
+        <% decks.forEach(deck => { %>
+        <a href="/decks/<%= deck.id %>" class="deckInfo <%= deck.colorId %>">
+          <h3><%= deck.deckName %></h3>
+          <p>Format: <%= deck.format %></p>
+          <p>Owner: <%= deck.owner %></p>
+        </a>
+        <% }); if (canAddDecks) { %>
+        <a href="/decks/add-deck" class="deckInfo C">
+          <h3>Add a deck</h3>
+        </a>
+        <% } %>
+      </div>
+    </main>
+
+    <footer>
+      <h1>456</h1>
+    </footer>
+  </body>
+</html>

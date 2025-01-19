@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/css/homeStyle.css" />
+
+    <title>Regal's Magic</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Regal's Magic</h1>
+      <% if( !user || !user.username ) { %>
+      <a href="/login" class="loginButton">Log In</a>
+      <% } else { %>
+      <a href="/logout" class="loginButton">Log Out</a>
+      <% } %>
+    </header>
+
+    <main>
+      <h1>A hub of tools for RegalTurtle</h1>
+      <div class="grid-container">
+        <a href="/custom" class="customClass">Search Custom Cards</a>
+        <a href="/decks" class="decksClass">Decks</a>
+        <a href="/games" class="gamesClass">Index Games</a>
+      </div>
+    </main>
+
+    <footer>
+      <h1>456</h1>
+    </footer>
+  </body>
+</html>

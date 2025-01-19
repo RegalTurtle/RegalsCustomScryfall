@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/customStyle.css" />
 
     <title>Regal's Custom Cards</title>
   </head>
@@ -12,14 +12,14 @@
     <main>
       <h1>Regal's Custom Cards</h1>
       <h3>A search engine for custom cards</h3>
-      <form action="/search/" method="GET">
-        <input class="homepage-text-input" type="text" name="q" />
+      <form action="/custom/search/" method="POST">
+        <input class="homepage-text-input" type="text" name="searchTerms" />
       </form>
     </main>
-  </body>
 
-  <footer>
-    <h1>Commands</h1>
-    <h3>Legal Information</h3>
-  </footer>
+    <footer>
+      <h1>Commands</h1>
+      <h3>Legal Information</h3>
+    </footer>
+  </body>
 </html>

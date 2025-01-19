@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/public/css/customStyle.css" />
+
+    <title>Regal's Custom Cards</title>
+  </head>
+
+  <body>
+    <header><%- include('../../partials/header'); %></header>
+
+    <div class="row">
+      <div class="column">
+        <div id="cardImage">
+          <div class="cell">
+            <img
+              src="<%= card.img %>"
+              alt="<%= card.name %> || <%= card.text %>"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="cardTextBox">
+          <p id="cardName" style="color: #fff; font-weight: bold">
+            <%= card.name %>
+          </p>
+          <hr />
+          <p id="cardType" style="color: #fff; font-weight: bold">
+            <%= card.type %>
+          </p>
+          <% if (card.text) { %>
+          <hr />
+          <p id="cardOracle" style="color: #fff; font-weight: bold">
+            <%= card.text.replace(/~/g, card.name); %>
+          </p>
+          <% } if (card.type.includes("Creature")) { %>
+          <hr />
+          <p id="cardPowTou" style="color: #fff; font-weight: bold">
+            <%= card.power + "/" + card.toughness %>
+          </p>
+          <% } if (card.flavor) { %>
+          <hr />
+          <i id="cardFlavor" style="color: #fff; font-weight: bold">
+            <%- card.flavor.replace(/{lns}/g, "<br />").replace(/{-}/g, "—");%>
+          </i>
+          <% } %>
+          <hr />
+          <ul id="cardNotes" style="color: #fff; font-weight: bold">
+            <% card.notes.forEach(e => { %>
+            <li><%= e.creator %>: <%= e.notes %></li>
+            <% }); %>
+          </ul>
+          <hr />
+          <p id="cardCN" style="color: #fff; font-weight: bold">
+            <%= card.set %><%= card.cn %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cardForm">
+      <form class="commentForm" method="post">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="name" />
+        <br />
+        <label for="userComment">Comment:</label>
+        <input type="text" id="userComment" name="comment" />
+        <br />
+        <input type="submit" />
+
+        <input type="hidden" name="_method" id="_method" value="PATCH" />
+      </form>
+    </div>
+  </body>
+</html>

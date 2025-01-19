@@ -1,0 +1,119 @@
+/* COLOR IDENTITY CLASSES */
+/* Monocolor */
+.C {
+  background: linear-gradient(90deg, rgba(130, 130, 130, 0.9), rgba(189, 189, 189, 0.9), rgba(130, 130, 130, 0.9));
+}
+
+.W {
+  background: linear-gradient(90deg, rgba(209, 198, 140, 0.9), rgba(245, 237, 196, 0.9), rgba(209, 198, 140, 0.9));
+}
+
+/* Allies */
+.WU {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9));
+}
+
+.UB {
+  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9));
+}
+
+.BR {
+  background: linear-gradient(90deg, rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9));
+}
+
+.RG {
+  background: linear-gradient(90deg, rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+.GW {
+  background: linear-gradient(90deg, rgba(26, 171, 30, 0.9), rgba(245, 237, 196, 0.9));
+}
+
+/* Enemies */
+.WB {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(102, 46, 171, 0.9));
+}
+
+.UR {
+  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(150, 33, 33, 0.9));
+}
+
+.BG {
+  background: linear-gradient(90deg, rgba(102, 46, 171, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+.RW {
+  background: linear-gradient(90deg, rgba(150, 33, 33, 0.9), rgba(245, 237, 196, 0.9));
+}
+
+.GU {
+  background: linear-gradient(90deg, rgba(26, 171, 30, 0.9), rgba(66, 142, 255, 0.9));
+}
+
+/* Shards */
+.WUB {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9));
+}
+
+.UBR {
+  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9));
+}
+
+.BRG {
+  background: linear-gradient(90deg, rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+.RGW {
+  background: linear-gradient(90deg, rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9), rgba(245, 237, 196, 0.9));
+}
+
+.GWB {
+  background: linear-gradient(90deg, rgba(26, 171, 30, 0.9), rgba(245, 237, 196, 0.9), rgba(102, 46, 171, 0.9));
+}
+
+/* Wedges */
+.WBG {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(102, 46, 171, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+.URW {
+  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(150, 33, 33, 0.9), rgba(245, 237, 196, 0.9));
+}
+
+.BGU {
+  background: linear-gradient(90deg, rgba(102, 46, 171, 0.9), rgba(26, 171, 30, 0.9), rgba(66, 142, 255, 0.9));
+}
+
+.RWB {
+  background: linear-gradient(90deg, rgba(150, 33, 33, 0.9), rgba(245, 237, 196, 0.9), rgba(102, 46, 171, 0.9));
+}
+
+.GUR {
+  background: linear-gradient(90deg, rgba(26, 171, 30, 0.9), rgba(66, 142, 255, 0.9), rgba(150, 33, 33, 0.9));
+}
+
+/* 4 color */
+.WUBR {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9));
+}
+
+.UBRG {
+  background: linear-gradient(90deg, rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
+}
+
+.BRGW {
+  background: linear-gradient(90deg, rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9), rgba(245, 237, 196, 0.9));
+}
+
+.RGWU {
+  background: linear-gradient(90deg, rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9), rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9), );
+}
+
+.GWUB {
+  background: linear-gradient(90deg, rgba(26, 171, 30, 0.9), rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9));
+}
+
+/* 5 Color */
+.WUBRG {
+  background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9), rgba(102, 46, 171, 0.9), rgba(150, 33, 33, 0.9), rgba(26, 171, 30, 0.9));
+}

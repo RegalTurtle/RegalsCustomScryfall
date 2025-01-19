@@ -1,6 +1,9 @@
 import cardJsonRoutes from "./cards.js";
 import cardRoutes from "./card.js";
-
+import deckRoutes from "./decks.js";
+import loginRoutes from "./login.js";
+import signupRoutes from "./signup.js";
+import session from "express-session";
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -12,11 +15,58 @@ const __dirname = path
   .replace("\\routes", "");
 
 const constructorMethod = (app) => {
-  app.get(express.static(path.join(__dirname, "client")));
+  app.get("/", async (req, res) => {
+    res.render("pages/home", { user: req.session.userInfo });
+  });
+
+  // Use login routes, but redirect any users that are already signed in to the profile page
+  app.use(
+    "/login",
+    (req, res, next) => {
+      if (req.session && req.session.userInfo) {
+        return res.redirect("/profile");
+      }
+      next();
+    },
+    loginRoutes
+  );
+
+  // Use signup routes, but redirect any users that are already signed in to the profile page
+  app.use(
+    "/signup",
+    (req, res, next) => {
+      if (req.session && req.session.userInfo) {
+        return res.redirect("/profile");
+      }
+      next();
+    },
+    signupRoutes
+  );
+
+  // Logout route, when hit, logs user out and redirects to home
+  // If hit while not logged in, redirect to login
+  // This doesn't seem relevant enought to create a whole file for
+  app.use(
+    "/logout",
+    (req, res, next) => {
+      if (!req.session || !req.session.userInfo) {
+        return res.redirect("/login");
+      }
+      next();
+    },
+    async (req, res) => {
+      req.session.destroy();
+      return res.redirect("/");
+    }
+  );
 
   app.use("/cardjson", cardJsonRoutes);
 
-  app.use("/card", cardRoutes);
+  // Routes for the custom card searcher
+  app.use("/custom", cardRoutes);
+
+  // Routes for deck lists
+  app.use("/decks", deckRoutes);
 
   app.get("*/customcards.json", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "customcards.json"));
@@ -24,20 +74,6 @@ const constructorMethod = (app) => {
 
   app.get("*/style.css", async (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/style.css"));
-  });
-
-  app.get("/card/*", async (req, res) => {
-    res.render("pages/card");
-  });
-
-  app.get("/search/*", async (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/search.html"));
-  });
-
-  // Serve the main index.html file
-  app.get("/", async (req, res) => {
-    res.render("pages/index");
-    // res.sendFile(path.resolve(__dirname, "client/index.html"));
   });
 
   app.use("*", (req, res) => {

@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  min-height: 100dvh; /* Full viewport height */
+  background: linear-gradient(to bottom, #2f9288, #135750);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: center; /* Align children vertically */
+  align-items: center; /* Align children horizontally */
+  min-height: 100%; /* Ensure it fills the parent container */
+}
+
+body main h1 {
+  margin-bottom: 0px;
+  font-size: 36pt;
+  font-family: Verdana, sans-serif;
+  color: #daddf5;
+}
+
+body main h3 {
+  font-size: 18pt;
+  font-family: Verdana, sans-serif;
+  color: #daddf5;
+}
+
+footer {
+  height: 10dvh;
+  background: #113847;
+  text-align: center;
+  border-top: solid;
+}
+
+header {
+  height: 10dvh;
+  background: #26746c;
+  text-align: center;
+  border-bottom: solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+header h1 {
+  margin: auto;
+  font-weight: bold;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: transparent;
+  align-self: center;
+  width: 80dvw;
+  margin: auto;
+  padding-top: 2dvh;
+  padding-bottom: 2dvh;
+}
+
+.deckInfo {
+  justify-self: center; /* Center the button horizontally */
+
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  min-width: 15dvw;
+  width: 90%;
+  padding: 12px;
+  margin: 10px;
+}
+
+.deckInfo h3 {
+  color: black;
+  margin: 5px;
+}
+
+.deckInfo p {
+  margin: 0px;
+  text-align: left;
+  color: black;
+}
+
+/* STUFF FOR ADDING DECKS */
+
+.add-deck-container {
+  background-color: #ffffff66;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  width: 80dvw;
+  min-width: 10em;
+}
+
+.add-deck-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-deck-container input {
+  padding: 15px;
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  border: 2px solid #daddf5;
+  border-radius: 10px;
+  color: #333333;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.add-deck-container input::placeholder {
+  color: #6c6c6c;
+}
+
+.add-deck-container input:focus {
+  outline: none;
+  border-color: #9b4dca;
+}
+
+.add-deck-container button {
+  padding: 13px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #9b4dca, #6a0dad, #a64ca6);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-deck-container button:hover {
+  background: linear-gradient(to right, #723996, #460972, #723996);
+}
+
+.add-deck-container a {
+  display: block;
+  margin-top: 15px;
+  font-size: 15px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.add-deck-container a:hover {
+  text-decoration: underline;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-form div {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-form button {
+  grid-column: span 2;
+  margin-top: 20px;
+}
+
+.errorList {
+  grid-column: span 2;
+}
+
+.singleDeckInfo {
+  background-color: #7d92bd74;
+  width: 85dvw;
+  padding: 10px;
+  margin: 15px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+}
+
+.backButton {
+  position: absolute;
+  left: 20px; /* Keep some spacing from the right edge */
+  padding: 12px 7px 12px 7px;
+  min-width: 5em;
+  font-size: 16pt;
+  font-family: Verdana, sans-serif;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.deckTitle {
+  font-size: 35pt;
+  text-decoration: underline;
+}
+
+.gameSubmitButton {
+  margin: 10px 10px 10px 1px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Switch to 1 column */
+    width: 100%; /* Adjust width to fit smaller screens */
+  }
+
+  .deckInfo {
+    width: 90%; /* Ensure items don't stretch too much */
+    margin: 10px auto; /* Center items horizontally */
+  }
+}
