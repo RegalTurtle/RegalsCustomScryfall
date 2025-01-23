@@ -50,7 +50,7 @@
         </form>
       </div>
       <% } %>
-			<% if (!(deck.cards?.length > 0) && canAddDecks) {
+			<% if (!(deck.cards?.length > 0) && canAddDecks) { %>
 			<div class="addDecklist">
 				<form method="POST">
 					<div>
@@ -66,11 +66,13 @@
 			<% if (deck.cards && deck.cards.length > 0) { %>
       <div class="singleDeckInfo">
         <h2>Decklist:</h2>
-        <% deck.cards.forEach(card => { if (card.count) { %>
+        <% deck.cards.forEach(card => { %>
+				<% if (card.count) { %>
         <p><%= `${card.count}x ${card.cardName} (${card.set} ${card.cn})` %></p>
-        <% } else { %>
+      	<% } else { %>
         <p><%= `${card.cardName} (${card.set} ${card.cn})` %></p>
-        <% } %> <% }); %>
+      	<% } %>
+				<% }); %>
       </div>
       <% } %>
     </main>
