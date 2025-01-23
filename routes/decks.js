@@ -121,6 +121,9 @@ router
       canAddGames: authorization.canAddGames(
         req.session.userInfo?.permissionLevel
       ),
+      canAddDecks: authorization.canAddDecks(
+        req.session.userInfo?.permissionLevel
+      ),
       games,
       gamesWon: won,
     });
@@ -166,6 +169,9 @@ router
         canAddGames: authorization.canAddGames(
           req.session.userInfo?.permissionLevel
         ),
+      	canAddDecks: authorization.canAddDecks(
+      		req.session.userInfo?.permissionLevel
+      	),
         games,
         gamesWon: won,
       });
@@ -183,6 +189,9 @@ router
         canAddGames: authorization.canAddGames(
           req.session.userInfo?.permissionLevel
         ),
+      	canAddDecks: authorization.canAddDecks(
+      		req.session.userInfo?.permissionLevel
+      	),
         games,
         gamesWon: won,
       });
