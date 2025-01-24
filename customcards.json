@@ -7951,10 +7951,10 @@
     "id": "C",
     "cost": "{9}",
     "type": "Sorcery",
-    "text": "Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.{line}You get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.”",
+    "text": "This spell can't be countered.{line}Starting with you, you and target player take turns taking shots until one person concedes. That player loses the game.{line}You get an emblem with “If you were to lose life as a result of taking a shot, instead you lose 2 less life.” Exile this sorcery.",
     "flavor": "",
     "rarity": "M",
-    "img": "https://i.imgur.com/kH9tW2j.png",
+    "img": "https://i.imgur.com/EivJMTu.png",
     "artist": "Midjourney",
     "has_bleed_edge": true,
     "notes": [
@@ -8042,6 +8042,11 @@
         "date": "02-01-2025",
         "creator": "Thys",
         "notes": "Final pre-print pass"
+      },
+      {
+        "date": "24-01-2025",
+        "creator": "Thys",
+        "notes": "Added can't be countered and made it exile after use"
       }
     ],
     "tags": {
