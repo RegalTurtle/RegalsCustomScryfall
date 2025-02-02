@@ -37,7 +37,9 @@ const addDeck = async (deckName, colorId, moxfield, format, owner) => {
   // validate all inputs
   deckName = validation.verifyStr(deckName, `deckName`);
   colorId = validation.verifyColorIdOrdered(colorId);
-  moxfield = validation.verifyMoxfieldLink(moxfield);
+  try {
+    moxfield = validation.verifyMoxfieldLink(moxfield);
+  } catch (e) {}
   format = validation.verifyStr(format, `format`);
   owner = validation.verifyStr(owner, `owner`);
 
