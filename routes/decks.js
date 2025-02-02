@@ -53,7 +53,7 @@ router
     try {
       moxfield = validation.verifyMoxfieldLink(moxfield, `moxfield`);
     } catch (e) {
-      errors.push(e);
+      // pass
     }
     try {
       format = validation.verifyStr(format, `format`);
