@@ -35,11 +35,15 @@ const getDeckByMoxfieldId = async (moxfieldId) => {
  */
 const addDeck = async (deckName, colorId, moxfield, format, owner) => {
   // validate all inputs
+  let deckId = "";
   deckName = validation.verifyStr(deckName, `deckName`);
   colorId = validation.verifyColorIdOrdered(colorId);
   try {
     moxfield = validation.verifyMoxfieldLink(moxfield);
-  } catch (e) {}
+    deckId = moxfield.split("/").pop();
+  } catch (e) {
+    deckId = `${deckName}-${owner}`;
+  }
   format = validation.verifyStr(format, `format`);
   owner = validation.verifyStr(owner, `owner`);
 
@@ -51,7 +55,7 @@ const addDeck = async (deckName, colorId, moxfield, format, owner) => {
 
   // Create an object for the new deck
   let deckInfo = {
-    id: moxfield.split("/").pop(),
+    id: deckId,
     moxfield,
     owner,
     deckName,
