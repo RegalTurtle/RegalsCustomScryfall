@@ -8,6 +8,10 @@
   background: linear-gradient(90deg, rgba(209, 198, 140, 0.9), rgba(245, 237, 196, 0.9), rgba(209, 198, 140, 0.9));
 }
 
+.R {
+  background: linear-gradient(90deg, rgba(148, 6, 6, 0.9), rgba(150, 33, 33, 0.9), rgba(148, 6, 6, 0.9));
+}
+
 /* Allies */
 .WU {
   background: linear-gradient(90deg, rgba(245, 237, 196, 0.9), rgba(66, 142, 255, 0.9));
