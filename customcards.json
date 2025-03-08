@@ -10538,7 +10538,7 @@
     "type": "Creature - Goblin Alcoholic",
     "text": "Whenever you cast an instant or sorcery spell, target opponent takes a shot.",
     "flavor": "Boom, Headshot",
-    "rarity": "U",
+    "rarity": "R",
     "img": "https://i.imgur.com/NAUbWa1.png",
     "artist": "Copilot Designer",
     "has_bleed_edge": true,
