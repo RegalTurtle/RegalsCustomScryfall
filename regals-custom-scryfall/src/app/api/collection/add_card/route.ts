@@ -5,7 +5,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     const body = await req.json();
 
-    await cardData.addCard(body.name, body.quant, body.set, body.cn, body.foil, body.proxy);
+    await cardData.addCard(body.name, body.quant, body.set, body.cn, body.foil, body.proxy, body.image);
 
     return NextResponse.json({ message: "Card received" }, { status: 201 });
   } catch (err) {

@@ -15,20 +15,24 @@ export async function GET() {
     for (const card of allCards) {
       const sleep = (ms: number): Promise<undefined> => new Promise((resolve) => setTimeout(resolve, ms));
 
-      const headers = {
-        "User-Agent": "RegalTurtlesMagic/1.0", // Replace with your app name/version
-        "Accept": "application/json",
-      };
+      if (card.image) {
+        allCardsPlus.push(card as ExtendedCard);
+      } else {
+        const headers = {
+          "User-Agent": "RegalTurtlesMagic/1.0", // Replace with your app name/version
+          "Accept": "application/json",
+        };
 
-      const res: Response = await fetch(`https://api.scryfall.com/cards/${card.set}/${card.cn}/`, { headers });
-      const data = await res.json();
-      let newCard: ExtendedCard = card as ExtendedCard;
+        const res: Response = await fetch(`https://api.scryfall.com/cards/${card.set}/${card.cn}/`, { headers });
+        const data = await res.json();
+        let newCard: ExtendedCard = card as ExtendedCard;
 
-      newCard.image = data.image_uris ? data.image_uris.normal : data.card_faces[0].image_uris.normal;
+        newCard.image = data.image_uris ? data.image_uris.normal : data.card_faces[0].image_uris.normal;
 
-      allCardsPlus.push(newCard);
+        allCardsPlus.push(newCard);
 
-      await sleep(75);
+        await sleep(75);
+      }
     }
 
     return NextResponse.json(allCards);
