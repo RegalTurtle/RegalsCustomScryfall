@@ -17,7 +17,7 @@ type SanitizedUser = {
  * @returns An object with the username, firstName, lastName, and permissionLevel of the user
  */
 const verifyUser = async (
-  username: string, 
+  username: string,
   password: string
 ): Promise<SanitizedUser> => {
   username = validation.verifyUsername(username);

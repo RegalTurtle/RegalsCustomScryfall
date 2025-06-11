@@ -1,9 +1,9 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import userData from "@/data/users";
 import validation from "@/validation";
 
-const handler = NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -11,29 +11,22 @@ const handler = NextAuth({
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req) {
-        try {
-          let { username, password } = credentials ?? {};
+      async authorize(credentials) {
+        if (!credentials) return null;
+        let { username, password } = credentials;
 
-          // Validate input
-          username = validation.verifyUsername(username);
-          password = validation.verifyPassword(password);
+        username = validation.verifyUsername(username);
+        password = validation.verifyPassword(password);
 
-          // Check user from data source (e.g., MongoDB)
-          const user = await userData.verifyUser(username, password);
+        const user = await userData.verifyUser(username, password);
+        if (!user) return null;
 
-          if (!user) return null; // Invalid credentials
-
-          // Return user object to be saved in JWT/session
-          return {
-            id: user.username,
-            name: `${user.firstName} ${user.lastName}`,
-            username: user.username,
-          };
-        } catch (error) {
-          console.error("Authorization error:", error);
-          return null;
-        }
+        return {
+          id: user.username,
+          username: user.username,
+          permissionLevel: user.permissionLevel,
+          // you can add `name` or `email` here if you want
+        };
       },
     }),
   ],
@@ -45,6 +38,26 @@ const handler = NextAuth({
     strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.username = user.username;
+        token.permissionLevel = user.permissionLevel;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token.username) {
+        session.user.username = token.username;
+      }
+      if (token.permissionLevel) {
+        session.user.permissionLevel = token.permissionLevel;
+      }
+      return session;
+    },
+  },
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

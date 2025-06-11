@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useRef, useState } from "react";
 import Modal from '@/components/Modal';
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
+import authorization from "@/authorization";
 
 type ExtendedCard = Card & {
   image: string;
@@ -120,8 +121,7 @@ export default function Collection() {
       <RegalsMagicHeader isHome={false} />
 
       <main className="flex-1 px-4 text-center justify-items-center">
-        {session && 
-          // TODO: Change this so that you have to both be signed in, and have a permission to add cards
+        {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
           <div className="mb-4">
             <button
               onClick={() => setShowFindModal(true)}
