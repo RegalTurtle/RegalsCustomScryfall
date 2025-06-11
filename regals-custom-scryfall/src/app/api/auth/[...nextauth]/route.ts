@@ -22,16 +22,14 @@ const handler = NextAuth({
           // Check user from data source (e.g., MongoDB)
           const user = await userData.verifyUser(username, password);
 
-          // Return user object to be saved in JWT/session
-          if (user) {
-            return {
-              id: user.username,
-              name: `${user.firstName} ${user.lastName}`,
-              username: user.username,
-            };
-          }
+          if (!user) return null; // Invalid credentials
 
-          return null; // Invalid credentials
+          // Return user object to be saved in JWT/session
+          return {
+            id: user.username,
+            name: `${user.firstName} ${user.lastName}`,
+            username: user.username,
+          };
         } catch (error) {
           console.error("Authorization error:", error);
           return null;
@@ -41,6 +39,7 @@ const handler = NextAuth({
   ],
   pages: {
     signIn: "/login",
+    error: "/auth/signin",
   },
   session: {
     strategy: "jwt",
