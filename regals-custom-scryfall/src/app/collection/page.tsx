@@ -25,6 +25,7 @@ const headers = {
 };
 
 export default function Collection() {
+  // SESSION VARIABLES
   const { data: session, status } = useSession();
 
   const [ cards, setCards ] = useState<ExtendedCard[]>([]);
@@ -40,23 +41,64 @@ export default function Collection() {
 
   const [ cardToAdd, setCardToAdd ] = useState<ScryfallCard | null>(null);
   const [ cardNotFound, setCardNotFound ] = useState<boolean>(false);
-  // const [ setAndCn, setSetAndCn ] = useState<Array<string>>([]);
 
   const [ foilOption, setFoilOption ] = useState<FoilOption>("nonfoil");
   const [ quantToAdd, setQuantToAdd ] = useState<number>(1);
   const [ isProxy, setIsProxy ] = useState<string>("false");
   const [ isList, setIsList ] = useState<boolean>(false);
 
+  // Used when adding cards to the list, as it puts them at the front of the list
   const [ update, sendUpdate ] = useState(0);
 
+  // Used for the footer
   const [ totalCards, setTotalCards ] = useState(0);
 
+  // Used for the searching of collection
   const [ moxfieldSearch, setMoxfieldSearch ] = useState<string>("");
   const [ debouncedSearch, setDebouncedSearch ] = useState(moxfieldSearch);
 
+  // References to be used to focus to the right place for finding and adding a card
   const findRef = useRef<HTMLInputElement>(null);
   const addRef = useRef<HTMLInputElement>(null);
+  const addByNameRef = useRef<HTMLSelectElement>(null);
 
+  // Used for searching by name
+  const [ showAddByCardModal, setShowAddByCardModal ] = useState<boolean>(false);
+  const [ cardList, setCardList ] = useState<Array<ScryfallCard>>([]);
+  const [ setAndCn, setSetAndCn ] = useState<string>("");
+
+  const handleNameSearch = async () => {
+    const params = new URLSearchParams({
+      q: `!"${name}"`,
+      unique: "prints",
+      order: "released",
+      dir: "asc",
+    });
+
+    try {
+      const res = await fetch(`https://api.scryfall.com/cards/search?${params.toString()}`, { headers });
+      const data = await res.json();
+      if (data.object === "error") {
+        setCardNotFound(true);
+        return;
+      }
+      setCardToAdd(data.data[0]);
+      const foundCard = data.data[0];
+      if (foundCard === null) {
+        setCardNotFound(true);
+        return;
+      }
+      setCardList(data.data);
+      setName(foundCard.name);
+      setArtUrl((foundCard.image_uris ? foundCard.image_uris.normal : foundCard.card_faces[0].image_uris.normal))
+      setShowFindModal(false);
+      setShowAddByCardModal(true);
+      setSetAndCn(`${foundCard.set} | ${foundCard.collector_number}`);
+      setFoilOption(foundCard.finishes[0] as FoilOption);
+    } catch (e) {
+      console.error("Error:", e);
+    }
+  }
 
   useEffect(() => {
     if (showFindModal && findRef.current) {
@@ -70,7 +112,13 @@ export default function Collection() {
     }
   }, [ showFindModal ]);
 
-    useEffect(() => {
+  useEffect(() => {
+    if (showAddByCardModal && addByNameRef.current) {
+      addByNameRef.current.focus();
+    }
+  }, [ showFindModal ]);
+
+  useEffect(() => {
     // Set a timer to update debouncedSearch after 500ms of no typing
     const handler = setTimeout(() => {
       setDebouncedSearch(moxfieldSearch);
@@ -194,8 +242,8 @@ export default function Collection() {
               let res;
               let data: ScryfallCard;
               if (name) {
-                res = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${name.replace(" ", "+")}`, { headers });
-                data = await res.json();
+                await handleNameSearch();
+                return;
               } else {
                 if (isList) {
                   res = await fetch(`https://api.scryfall.com/cards/search?q=s:plst+cn=${setCode}-${cn}`);
@@ -258,13 +306,13 @@ export default function Collection() {
             </label>
           </div>
 
-          {/* <label className="text-sm font-medium">Name</label>
+          <label className="text-sm font-medium">Name</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="border rounded px-2 py-1"
-          /> */}
+          />
 
           <button
             className="bg-indigo-600 text-white rounded px-4 py-2 mt-2 hover:bg-indigo-700"
@@ -384,6 +432,168 @@ export default function Collection() {
                 <label className="text-sm font-medium">Quantity</label>
                 <input
                   ref={addRef}
+                  type="number"
+                  value={quantToAdd}
+                  onChange={(e) => setQuantToAdd(Number(e.target.value))}
+                  className="border rounded px-2 py-1"
+                />
+
+                <label className="text-sm font-medium">Foil</label>
+                <select
+                  id="dropdown"
+                  value={foilOption}
+                  onChange={(e) => setFoilOption(e.target.value as FoilOption)}
+                  className="border rounded px-2 py-1"
+                >
+                  {cardToAdd && cardToAdd.finishes.includes("nonfoil") && (<option value="nonfoil">Nonfoil</option>)}
+                  {cardToAdd && cardToAdd.finishes.includes("foil") && (<option value="foil">Foil</option>)}
+                  {cardToAdd && cardToAdd.finishes.includes("etched") && (<option value="etched">Etched Foil</option>)}
+                </select>
+
+                <label className="text-sm font-medium mr-2">Is a proxy?</label>
+                <select
+                  id="dropdown"
+                  value={isProxy}
+                  onChange={(e) => setIsProxy(e.target.value)}
+                  className="border rounded px-2 py-1"
+                >
+                  <option value="false">No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button
+            className="bg-indigo-600 text-white rounded px-4 py-2 mt-2 hover:bg-indigo-700"
+            type="submit"
+          >
+            Add
+          </button>
+        </form>
+      </Modal>
+
+      <Modal 
+        show={showAddByCardModal} 
+        onClose={() => {
+          setShowAddByCardModal(false);
+          setSetAndCn("");
+          setName("");
+          setArtUrl("");
+          setFoilOption("nonfoil");
+          setQuantToAdd(1);
+          setIsProxy("false");
+          setIsList(false);
+          setCardToAdd(null);
+          setCardNotFound(false);
+          setCardList([]);
+        }}
+      >
+        <h2 className="text-lg font-semibold mb-4">Add a card</h2>
+
+        <form 
+          className="flex flex-col gap-2"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            if (!cardToAdd) {
+              setShowAddModal(false);
+              setShowFindModal(true);
+              setArtUrl("");
+              setFoilOption("nonfoil");
+              setQuantToAdd(1);
+              setIsProxy("false");
+              setIsList(false);
+              setCardNotFound(true);
+              return;
+            }
+
+            const proxyBool: boolean = isProxy === "true";
+
+            const card: Card = {
+              name: cardToAdd.name,
+              quant: quantToAdd,
+              set: cardToAdd.set,
+              cn: cardToAdd.collector_number,
+              foil: foilOption,
+              proxy: proxyBool,
+              decks: [],
+              updatedAt: null,
+              image: artUrl,
+            }
+
+            const res = await fetch("/api/collection/add_card", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(card)
+            });
+
+            setShowAddByCardModal(false);
+            setCn("");
+            setSetCode("");
+            setName("");
+            setArtUrl("");
+            setFoilOption("nonfoil");
+            setQuantToAdd(1);
+            setIsProxy("false");
+            setCardToAdd(null);
+            setCardNotFound(false);
+            sendUpdate(update + 1);
+            setIsList(false);
+            setShowFindModal(true);
+          }}
+        >
+          <div className="flex flex-row gap-6">
+            {/* Image on the left */}
+            <div className="w-1/2 flex items-center justify-center">
+              <div className="mt-4">
+                <img src={artUrl} alt="Card Art" className="w-full max-w-xs mx-auto rounded" />
+              </div>
+            </div>
+
+            {/* Form on the right */}
+            <div className="w-1/2 flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm font-medium">Name</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => {}}
+                  className="border rounded px-2 py-1"
+                />
+
+                <label className="text-sm font-medium">Collector Info</label>
+                <select
+                  ref={addByNameRef}
+                  id="dropdown"
+                  value={setAndCn}
+                  onChange={(e) => {
+                    setSetAndCn(e.target.value);
+                    const [setCode, collectorNumber] = e.target.value.split(" | ");
+
+                    const selectedCard = cardList.find(
+                      (card) => card.set === setCode && card.collector_number === collectorNumber
+                    );
+                    
+                    if (selectedCard) {
+                      setCardToAdd(selectedCard);
+                      setArtUrl(
+                        selectedCard.image_uris
+                          ? selectedCard.image_uris.normal
+                          : selectedCard.card_faces[0].image_uris.normal
+                      );
+                    }
+                  }}
+                  className="border rounded px-2 py-1"
+                >
+                  {cardList.map((card, index) => (
+                    <option value={`${card.set} | ${card.collector_number}`} key={index}>{`${card.set.toUpperCase()} | ${card.collector_number}`}</option>
+                  ))}
+                </select>
+
+                <label className="text-sm font-medium">Quantity</label>
+                <input
                   type="number"
                   value={quantToAdd}
                   onChange={(e) => setQuantToAdd(Number(e.target.value))}
