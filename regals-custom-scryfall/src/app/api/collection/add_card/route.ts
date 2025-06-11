@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import cardData from "@/data/cards"
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
+  // TODO: Add check to make sure that request is from logged in and authorized source
   try {
     const body = await req.json();
 

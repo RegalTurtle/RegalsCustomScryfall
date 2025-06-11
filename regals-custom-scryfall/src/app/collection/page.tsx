@@ -51,8 +51,7 @@ export default function Collection() {
   const [ totalCards, setTotalCards ] = useState(0);
 
   const [ moxfieldSearch, setMoxfieldSearch ] = useState<string>("");
-  // Add a new state to track the debounced search term
-  const [debouncedSearch, setDebouncedSearch] = useState(moxfieldSearch);
+  const [ debouncedSearch, setDebouncedSearch ] = useState(moxfieldSearch);
 
   const findRef = useRef<HTMLInputElement>(null);
   const addRef = useRef<HTMLInputElement>(null);
@@ -62,13 +61,13 @@ export default function Collection() {
     if (showFindModal && findRef.current) {
       findRef.current.focus();
     }
-  }, [showFindModal]);
+  }, [ showFindModal ]);
 
   useEffect(() => {
     if (showAddModal && addRef.current) {
       addRef.current.focus();
     }
-  }, [showFindModal]);
+  }, [ showFindModal ]);
 
     useEffect(() => {
     // Set a timer to update debouncedSearch after 500ms of no typing
@@ -80,7 +79,6 @@ export default function Collection() {
     return () => clearTimeout(handler);
   }, [moxfieldSearch]);
 
-  // Now use debouncedSearch for your fetch effect instead of moxfieldSearch
   useEffect(() => {
     async function fetchCards() {
       try {
@@ -127,14 +125,17 @@ export default function Collection() {
       </header>
 
       <main className="flex-1 px-4 text-center justify-items-center">
-        <div className="mb-4">
-          <button
-            onClick={() => setShowFindModal(true)}
-            className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
-          >
-            + Add a Card
-          </button>
-        </div>
+        {session && 
+          // TODO: Change this so that you have to both be signed in, and have a permission to add cards
+          <div className="mb-4">
+            <button
+              onClick={() => setShowFindModal(true)}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              + Add a Card
+            </button>
+          </div>
+        }
 
         <input
           type="text"
