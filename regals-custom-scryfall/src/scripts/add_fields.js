@@ -1,0 +1,67 @@
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv"; // Import dotenv to load environment variables
+
+dotenv.config(); // Loads the variables from .env file
+
+let _connection = undefined;
+let _db = undefined;
+
+export const dbConnection = async () => {
+  if (!_connection) {
+    _connection = await MongoClient.connect(process.env.MONGO_URL || ""); // Use environment variable
+    _db = _connection.db(process.env.DATABASE_NAME); // Use environment variable
+  }
+  if (_db) {
+    return _db;
+  }
+  throw new Error(`Database not found`);
+};
+
+const getCollectionFn = (collection) => {
+  let _collection = undefined;
+
+  return async () => {
+    if (!_collection) {
+      const db = await dbConnection();
+      _collection = db.collection(collection);
+    }
+
+    return _collection;
+  };
+};
+
+const cards = getCollectionFn("cards");
+
+const cardCollection = await cards();
+const allCards = await cardCollection.find({}).toArray();
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const errors = [];
+
+for (let card of allCards) {
+  await sleep(100);
+
+  const set = card.set;
+  const cn = card.cn;
+
+  const res = await fetch(`https://api.scryfall.com/cards/${set}/${cn}/`);
+  const scryfallCard = await res.json();
+
+  const imageUrl =
+    scryfallCard.image_uris?.normal ??
+    scryfallCard.card_faces?.[0]?.image_uris?.normal ??
+    null;
+  const scryfallOracle =
+    scryfallCard.oracle_text ??
+    `${scryfallCard?.card_faces?.[0]?.oracle_text} // ${scryfallCard?.card_faces?.[1]?.oracle_text}` ??
+    "";
+
+  if (!imageUrl || scryfallOracle === "") errors.push(`${set} | ${cn}`);
+  console.log(`${set} | ${cn} done`);
+
+  await cardCollection.updateOne(
+    { _id: card._id },
+    { $set: { image: imageUrl, oracle: scryfallOracle, updatedAt: new Date() } }
+  );
+}
