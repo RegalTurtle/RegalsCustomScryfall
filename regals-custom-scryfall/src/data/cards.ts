@@ -61,7 +61,16 @@ const getAllCards = async (page: number): Promise<Array<Card>> => {
  * @param proxy Whether the card is a proxy or not
  * @returns Undefined
  */
-const addCard = async (name: string, quant: number, set: string, cn: string, foil: FoilOption, proxy: boolean, image: string): Promise<undefined> => {
+const addCard = async (
+  name: string, 
+  quant: number, 
+  set: string, 
+  cn: string, 
+  foil: FoilOption, 
+  proxy: boolean, 
+  image: string,
+  oracle: string,
+): Promise<undefined> => {
   name = validation.verifyStr(name, `name`);
   quant = validation.verifyInteger(quant, `quant`);
   set = validation.verifyStr(set, `set`);
@@ -69,6 +78,7 @@ const addCard = async (name: string, quant: number, set: string, cn: string, foi
   foil = validation.verifyFoilType(foil);
   proxy = validation.verifyBool(proxy, `proxy`);
   image = validation.verifyStr(image, `image`);
+  oracle = validation.verifyStr(oracle, `oracle`);
   
   const cardCollection: Collection<Card> = await cards();
   let foundCard: Card | null = await cardCollection.findOne({ set, cn, foil, proxy });
@@ -94,7 +104,8 @@ const addCard = async (name: string, quant: number, set: string, cn: string, foi
     proxy,
     decks: [],
     updatedAt: new Date(),
-    image
+    image,
+    oracle,
   })
 }
 

@@ -369,6 +369,7 @@ export default function Collection() {
               decks: [],
               updatedAt: null,
               image: artUrl,
+              oracle: cardToAdd.oracle_text,
             }
 
             const res = await fetch("/api/collection/add_card", {
@@ -519,6 +520,7 @@ export default function Collection() {
               decks: [],
               updatedAt: null,
               image: artUrl,
+              oracle: cardToAdd.oracle_text,
             }
 
             const res = await fetch("/api/collection/add_card", {

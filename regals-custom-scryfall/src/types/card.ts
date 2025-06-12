@@ -11,5 +11,6 @@ export interface Card {
   proxy: boolean;
   decks: string[];
   updatedAt: Date | null;
-  image?: string;
+  image: string;
+  oracle: string;
 }
