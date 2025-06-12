@@ -78,7 +78,7 @@ const addCard = async (
   foil = validation.verifyFoilType(foil);
   proxy = validation.verifyBool(proxy, `proxy`);
   image = validation.verifyStr(image, `image`);
-  oracle = validation.verifyStr(oracle, `oracle`);
+  if (typeof oracle !== "string") throw new Error("oracle must be a string");
   
   const cardCollection: Collection<Card> = await cards();
   let foundCard: Card | null = await cardCollection.findOne({ set, cn, foil, proxy });
