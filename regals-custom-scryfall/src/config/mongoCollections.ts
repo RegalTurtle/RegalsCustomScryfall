@@ -14,10 +14,8 @@ const getCollectionFn = <T extends Document>(collection: string): (() => Promise
   };
 };
 
-// Import your types
 import type { User, Deck, Card, Game } from "@/types";
 
-// Pass the type to each one!
 export const users = getCollectionFn<User>("users");
 export const decks = getCollectionFn<Deck>("decks");
 export const cards = getCollectionFn<Card>("cards");
