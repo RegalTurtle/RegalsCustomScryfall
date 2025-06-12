@@ -579,6 +579,7 @@ export default function Collection() {
                     );
                     
                     if (selectedCard) {
+                      setFoilOption(selectedCard.finishes[0] as FoilOption);
                       setCardToAdd(selectedCard);
                       setArtUrl(
                         selectedCard.image_uris
