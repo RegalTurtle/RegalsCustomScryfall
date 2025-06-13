@@ -47,6 +47,11 @@ export async function GET(
   for (let term of terms) {
     term = term.replace(/^"(.+(?="$))"$/, '$1');
 
+    // Implemented:
+    // [ q / quant ]  [ = / > / < / >= / <= ] [ number ]
+    // [ o / oracle ] [ : ]                   [ string ]
+    // [ string ]
+
     if (term.startsWith("o:")) { // Oracle contains
       mongoQuery.oracle = { $regex: new RegExp(term.slice(2), 'i') };
     } else if (term.startsWith("oracle:")) { // Oracle contains
