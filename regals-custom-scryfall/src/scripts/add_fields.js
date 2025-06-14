@@ -33,35 +33,31 @@ const getCollectionFn = (collection) => {
 const cards = getCollectionFn("cards");
 
 const cardCollection = await cards();
-const allCards = await cardCollection.find({}).toArray();
+// const allCards = await cardCollection.find({}).toArray();
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const errors = [];
+// const errors = [];
 
-for (let card of allCards) {
-  await sleep(100);
+// for (let card of allCards) {
+//   await sleep(100);
 
-  const set = card.set;
-  const cn = card.cn;
+//   const set = card.set;
+//   const cn = card.cn;
 
-  const res = await fetch(`https://api.scryfall.com/cards/${set}/${cn}/`);
-  const scryfallCard = await res.json();
+//   // const res = await fetch(`https://api.scryfall.com/cards/${set}/${cn}/`);
+//   // const scryfallCard = await res.json();
 
-  const imageUrl =
-    scryfallCard.image_uris?.normal ??
-    scryfallCard.card_faces?.[0]?.image_uris?.normal ??
-    null;
-  const scryfallOracle =
-    scryfallCard.oracle_text ??
-    `${scryfallCard?.card_faces?.[0]?.oracle_text} // ${scryfallCard?.card_faces?.[1]?.oracle_text}` ??
-    "";
+//   await cardCollection.updateOne(
+//     { _id: card._id },
+//     { $set: { image: imageUrl, oracle: scryfallOracle, updatedAt: new Date() } }
+//   );
+//   console.log(`${set} | ${cn} done`);
+// }
 
-  if (!imageUrl || scryfallOracle === "") errors.push(`${set} | ${cn}`);
-  console.log(`${set} | ${cn} done`);
+await cardCollection.updateMany(
+  {},
+  { $unset: { decks: "" }, $set: { locations: [] } }
+);
 
-  await cardCollection.updateOne(
-    { _id: card._id },
-    { $set: { image: imageUrl, oracle: scryfallOracle, updatedAt: new Date() } }
-  );
-}
+console.log("Done!");
