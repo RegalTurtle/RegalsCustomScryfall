@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Modal from '@/components/Modal';
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import authorization from "@/authorization";
+import ProgressBar from "@/components/ProgressBar";
 
 type ExtendedCard = Card & {
   image: string;
@@ -210,12 +211,17 @@ export default function Collection() {
         </div>
       </main>
 
-      <footer className="h-16 bg-gray-900 text-white flex items-center justify-center mt-10">
-        {
-          footerLoading ?
-          <p>Loading...</p> :
-          <p>{`Cards: ${totalCards}`}</p>
-        }
+      <footer className="h-16 bg-gray-900 text-white flex flex-col items-center justify-center mt-10 space-y-4">
+        {/* <div>
+          {footerLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <p className="text-lg font-semibold">{`Cards: ${totalCards}`}</p>
+          )}
+        </div> */}
+        <div className="w-4/5 max-w-xl">
+          <ProgressBar update={update} />
+        </div>
       </footer>
 
       <Modal 
