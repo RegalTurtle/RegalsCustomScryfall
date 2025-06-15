@@ -40,15 +40,15 @@ const getCardBySetCn = async (set: string, cn: string, foilOption: FoilOption): 
 }
 
 /**
- * Gets a page of card objects, sorted from most recently changed to least recently changed
+ * Gets a page of card objects in my bulk
  * @param page Page number to navigate to
  * @returns An array of 20 card objects
  */
-const getAllCards = async (page: number): Promise<Array<Card>> => {
+const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
   const cardCollection: Collection<Card> = await cards();
-  let allCards: Array<Card> = await cardCollection.find().sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
+  let cardPage: Array<Card> = await cardCollection.find({ locations: [] }).sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
   
-  return allCards;
+  return cardPage;
 }
 
 /**
@@ -128,7 +128,7 @@ const countAllCards = async (): Promise<number> => {
 export default {
   getCardByMongoId, 
   getCardBySetCn,
-  getAllCards,
+  getPageOfCardsBulk,
   addCard,
   countAllCards
 }
