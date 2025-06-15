@@ -19,4 +19,6 @@ import type { User, Deck, Card, Game } from "@/types";
 export const users = getCollectionFn<User>("users");
 export const decks = getCollectionFn<Deck>("decks");
 export const bulkCards = getCollectionFn<Card>("bulk_cards");
+export const coolCards = getCollectionFn<Card>("cool_cards");
+export const tradeBinder = getCollectionFn<Card>("trade_binder");
 export const games = getCollectionFn<Game>("games");

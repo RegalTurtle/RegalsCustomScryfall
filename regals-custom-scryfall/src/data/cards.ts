@@ -1,7 +1,7 @@
-import { bulkCards } from "@/config/mongoCollections";
+import { bulkCards, coolCards, tradeBinder } from "@/config/mongoCollections";
 import validation from "@/validation";
 import { Collection, Document, ObjectId } from "mongodb";
-import { Card, FoilOption } from "@/types";
+import { Card, CollectionTypeOption, FoilOption } from "@/types";
 
 /**
  * Given a string representation of an ObjectId, finds that card in the database
@@ -52,6 +52,28 @@ const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
 }
 
 /**
+ * Gets the most recently changed 20 card entries from a collection of cards 
+ * @param page The page number to get
+ * @param collection_type Either bulk, cool-cards, or trade-binder depending on which collection to get
+ * @returns The most recent 20 changes to the collection
+ */
+const getPageOfCards = async ( page: number, collection_type: "bulk" | "cool-cards" | "trade-binder" ): Promise<Array<Card>> => {
+  let cardCollection: Collection<Card>;
+  if (collection_type === "bulk") {
+    cardCollection = await bulkCards();
+  } else if (collection_type === "cool-cards") {
+    cardCollection = await coolCards();
+  } else if (collection_type === "trade-binder") {
+    cardCollection = await tradeBinder();
+  } else {
+    throw new Error("collection_type invalid");
+  }
+  let cardPage: Array<Card> = await cardCollection.find().sort({ updatedAt: -1 }).skip((page - 1) * 20).limit(20).toArray();
+
+  return cardPage;
+}
+
+/**
  * Given information about the card, modifies the database by adding or removing quant number of that card
  * @param name Name of the card to add
  * @param quant Quantity of card to add
@@ -62,6 +84,7 @@ const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
  * @returns Undefined
  */
 const addCard = async (
+  collection_type: CollectionTypeOption,
   name: string, 
   quant: number, 
   set: string, 
@@ -71,6 +94,7 @@ const addCard = async (
   image: string,
   oracle: string,
 ): Promise<undefined> => {
+  collection_type = validation.verifyCollectionType(collection_type);
   name = validation.verifyStr(name, `name`);
   quant = validation.verifyInteger(quant, `quant`);
   set = validation.verifyStr(set, `set`);
@@ -80,22 +104,32 @@ const addCard = async (
   image = validation.verifyStr(image, `image`);
   if (typeof oracle !== "string") throw new Error("oracle must be a string");
   
-  const bulkCardsCollection: Collection<Card> = await bulkCards();
-  let foundCard: Card | null = await bulkCardsCollection.findOne({ set, cn, foil, proxy });
+  let cardsCollection: Collection<Card>;
+  if (collection_type === "bulk") {
+    cardsCollection = await bulkCards();
+  } else if (collection_type === "cool-cards") {
+    cardsCollection = await coolCards();
+  } else if (collection_type === "trade-binder") {
+    cardsCollection = await tradeBinder();
+  } else {
+    throw new Error(`collectionType invalid`);
+  }
+  
+  let foundCard: Card | null = await cardsCollection.findOne({ set, cn, foil, proxy });
   if (foundCard) {
     const newQuant: number = foundCard.quant + quant;
     if (newQuant < 1) {
-      await bulkCardsCollection.deleteOne({ _id: foundCard._id });
+      await cardsCollection.deleteOne({ _id: foundCard._id });
       return;
     }
-    await bulkCardsCollection.updateOne(
+    await cardsCollection.updateOne(
       { _id: foundCard._id },
       // update image here to slowly put all of the image URLs with the mongo objects
       { $set: { quant: newQuant, updatedAt: new Date(), image }}
     )
     return;
   }
-  await bulkCardsCollection.insertOne({
+  await cardsCollection.insertOne({
     name,
     quant,
     set,
@@ -130,5 +164,6 @@ export default {
   getCardBySetCn,
   getPageOfCardsBulk,
   addCard,
-  countAllCards
+  countAllCards,
+  getPageOfCards
 }

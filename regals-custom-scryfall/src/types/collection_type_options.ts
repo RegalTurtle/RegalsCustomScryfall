@@ -1,0 +1,1 @@
+export type CollectionTypeOption = "bulk" | "cool-cards" | "trade-binder";

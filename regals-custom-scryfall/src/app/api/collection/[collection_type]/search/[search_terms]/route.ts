@@ -1,15 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
-import { bulkCards } from "@/config/mongoCollections";
+import { bulkCards, coolCards, tradeBinder } from "@/config/mongoCollections";
+import { Card } from "@/types";
+import { Collection } from "mongodb";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { search_terms: string } }
+  { params }: { params: { search_terms: string, collection_type: "bulk" | "cool-cards" | "trade-binder" } }
 ) {
   // const searchTerms = await (await params).search_terms;
-  const searchTerms = (await params).search_terms;
+  const { search_terms, collection_type } = await params;
   const mongoQuery: any = {};
 
-  const terms = searchTerms.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
+  const terms = search_terms.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
 
   for (let term of terms) {
     term = term.replace(/^"(.+(?="$))"$/, '$1');
@@ -49,8 +51,17 @@ export async function GET(
   }
   
   try {
-    const bulkCardsCollection = await bulkCards();
-    const foundCards = await bulkCardsCollection.find(mongoQuery).sort({ updatedAt: -1 }).limit(100).toArray();
+    let cardsCollection: Collection<Card>;
+    if (collection_type === "bulk") {
+      cardsCollection = await bulkCards();
+    } else if (collection_type === "cool-cards") {
+      cardsCollection = await coolCards();
+    } else if (collection_type === "trade-binder") {
+      cardsCollection = await tradeBinder();
+    } else {
+      return new NextResponse("collection_type invalid", { status: 400 });
+    }
+    const foundCards = await cardsCollection.find(mongoQuery).sort({ updatedAt: -1 }).limit(100).toArray();
     return NextResponse.json(foundCards);
   } catch (error) {
     console.error("Error fetching cards:", error);

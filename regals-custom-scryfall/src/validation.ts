@@ -1,6 +1,6 @@
 import authorization from "@/authorization";
 import { ObjectId } from "mongodb";
-import { FoilOption } from "./types";
+import { CollectionTypeOption, FoilOption } from "./types";
 
 /**
  * Verifies that a given string is a non-empty string, and trims it
@@ -275,6 +275,12 @@ const verifyFoilType = (foil: string): FoilOption => {
   return foil;
 }
 
+const verifyCollectionType = (collectionType: string): CollectionTypeOption => {
+  collectionType = collectionType.trim();
+  if (collectionType !== "bulk" && collectionType !== "cool-cards" && collectionType !== "trade-binder") throw new Error(`collectionType must be either bulk, cool-cards, or trade-binder`);
+  return collectionType;
+}
+
 export default {
   verifyStr,
   verifyUsername,
@@ -291,4 +297,5 @@ export default {
   verifyMongoId,
   verifyInteger,
   verifyFoilType,
+  verifyCollectionType,
 };

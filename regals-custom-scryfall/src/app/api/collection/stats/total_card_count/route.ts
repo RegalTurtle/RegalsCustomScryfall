@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import cardData from "@/data/cards"
 
-export async function GET(req: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
     const count = await cardData.countAllCards();
 
