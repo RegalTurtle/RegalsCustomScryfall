@@ -30,10 +30,10 @@ const getCollectionFn = (collection) => {
   };
 };
 
-const cards = getCollectionFn("cards");
+const bulkCards = getCollectionFn("bulk_cards");
 
-const cardCollection = await cards();
-// const allCards = await cardCollection.find({}).toArray();
+const bulkCardsCollection = await bulkCards();
+// const allCards = await bulkCardsCollection.find({}).toArray();
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -48,14 +48,14 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 //   // const res = await fetch(`https://api.scryfall.com/cards/${set}/${cn}/`);
 //   // const scryfallCard = await res.json();
 
-//   await cardCollection.updateOne(
+//   await bulkCardsCollection.updateOne(
 //     { _id: card._id },
 //     { $set: { image: imageUrl, oracle: scryfallOracle, updatedAt: new Date() } }
 //   );
 //   console.log(`${set} | ${cn} done`);
 // }
 
-await cardCollection.updateMany(
+await bulkCardsCollection.updateMany(
   {},
   { $unset: { locations: [] } }
 );

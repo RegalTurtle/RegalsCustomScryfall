@@ -8,6 +8,10 @@ import authorization from "@/authorization";
 import ProgressBar from "@/components/ProgressBar";
 import Link from "next/link";
 
+type ExtendedCard = Card & {
+  image: string;
+};
+
 interface ScryfallCard {
   name: string;
   finishes: Array<String>;
@@ -18,7 +22,7 @@ interface ScryfallCard {
 }
 
 const headers = {
-  "User-Agent": "RegalTurtlesMagic/1.0",
+  "User-Agent": "RegalTurtlesMagic/1.0", // Replace with your app name/version
   "Accept": "application/json",
 };
 
@@ -26,7 +30,7 @@ export default function Collection() {
   // SESSION VARIABLES
   const { data: session, status } = useSession();
 
-  const [ cards, setCards ] = useState<Card[]>([]);
+  const [ cards, setCards ] = useState<ExtendedCard[]>([]);
   const [ loading, setLoading ] = useState<boolean>(true);
   const [ showFindModal, setShowFindModal ] = useState<boolean>(false);
   const [ showAddModal, setShowAddModal ] = useState<boolean>(false);
@@ -151,8 +155,8 @@ export default function Collection() {
 
       <main className="flex-1 px-4 text-center justify-items-center">
         <div className="mb-4">
+          <Link href="/collection" className="bg-sky-600 text-white px-4 py-3 rounded hover:bg-sky-700 mx-1">Bulk Collection</Link>
           <Link href="/collection/trade-binder" className="bg-sky-600 text-white px-4 py-3 rounded hover:bg-sky-700 mx-1">Trade Binder</Link>
-          <Link href="/collection/cool-cards" className="bg-sky-600 text-white px-4 py-3 rounded hover:bg-sky-700 mx-1">Cool Cards</Link>
         </div>
 
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 

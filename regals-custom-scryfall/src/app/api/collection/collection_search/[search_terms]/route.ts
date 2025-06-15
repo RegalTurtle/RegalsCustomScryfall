@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cards } from "@/config/mongoCollections";
+import { bulkCards } from "@/config/mongoCollections";
 
 export async function GET(
   request: NextRequest,
@@ -49,8 +49,8 @@ export async function GET(
   }
   
   try {
-    const cardCollection = await cards();
-    const foundCards = await cardCollection.find(mongoQuery).sort({ updatedAt: -1 }).limit(100).toArray();
+    const bulkCardsCollection = await bulkCards();
+    const foundCards = await bulkCardsCollection.find(mongoQuery).sort({ updatedAt: -1 }).limit(100).toArray();
     return NextResponse.json(foundCards);
   } catch (error) {
     console.error("Error fetching cards:", error);

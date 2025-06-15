@@ -1,6 +1,6 @@
-import { cards } from "@/config/mongoCollections";
+import { bulkCards } from "@/config/mongoCollections";
 import validation from "@/validation";
-import { AggregationCursor, Collection, Document, ObjectId } from "mongodb";
+import { Collection, Document, ObjectId } from "mongodb";
 import { Card, FoilOption } from "@/types";
 
 /**
@@ -11,8 +11,8 @@ import { Card, FoilOption } from "@/types";
 const getCardByMongoId = async (id: string): Promise<Card> => {
   const _id: ObjectId = validation.verifyMongoId(id);
   
-  const cardCollection: Collection<Card> = await cards();
-  let card: Card | null = await cardCollection.findOne({ _id });
+  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  let card: Card | null = await bulkCardsCollection.findOne({ _id });
 
   if (!card) throw new Error(`Card not found`);
 
@@ -31,8 +31,8 @@ const getCardBySetCn = async (set: string, cn: string, foilOption: FoilOption): 
   cn = validation.verifyStr(cn, `cn`);
   foilOption = validation.verifyFoilType(foilOption);
 
-  const cardCollection: Collection<Card> = await cards();
-  let card: Card | null = await cardCollection.findOne({ set, cn, foil: foilOption });
+  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  let card: Card | null = await bulkCardsCollection.findOne({ set, cn, foil: foilOption });
 
   if (!card) throw new Error(`Card not found`);
 
@@ -45,8 +45,8 @@ const getCardBySetCn = async (set: string, cn: string, foilOption: FoilOption): 
  * @returns An array of 20 card objects
  */
 const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
-  const cardCollection: Collection<Card> = await cards();
-  let cardPage: Array<Card> = await cardCollection.find().sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
+  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  let cardPage: Array<Card> = await bulkCardsCollection.find().sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
   
   return cardPage;
 }
@@ -80,22 +80,22 @@ const addCard = async (
   image = validation.verifyStr(image, `image`);
   if (typeof oracle !== "string") throw new Error("oracle must be a string");
   
-  const cardCollection: Collection<Card> = await cards();
-  let foundCard: Card | null = await cardCollection.findOne({ set, cn, foil, proxy });
+  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  let foundCard: Card | null = await bulkCardsCollection.findOne({ set, cn, foil, proxy });
   if (foundCard) {
     const newQuant: number = foundCard.quant + quant;
     if (newQuant < 1) {
-      await cardCollection.deleteOne({ _id: foundCard._id });
+      await bulkCardsCollection.deleteOne({ _id: foundCard._id });
       return;
     }
-    await cardCollection.updateOne(
+    await bulkCardsCollection.updateOne(
       { _id: foundCard._id },
       // update image here to slowly put all of the image URLs with the mongo objects
       { $set: { quant: newQuant, updatedAt: new Date(), image }}
     )
     return;
   }
-  await cardCollection.insertOne({
+  await bulkCardsCollection.insertOne({
     name,
     quant,
     set,
@@ -114,9 +114,9 @@ const addCard = async (
  * @returns The total number of cards that are in the database
  */
 const countAllCards = async (): Promise<number> => {
-  const cardCollection: Collection<Card> = await cards();
+  const bulkCardsCollection: Collection<Card> = await bulkCards();
 
-  const total: Array<Document> = await cardCollection.aggregate([
+  const total: Array<Document> = await bulkCardsCollection.aggregate([
     { $group: { _id: null, totalQuant: { $sum: "$quant" } } }
   ]).toArray();
 
