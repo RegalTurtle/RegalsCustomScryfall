@@ -144,17 +144,23 @@ const addCard = async (
 }
 
 /**
- * Gets the total quantity of cards in the collection
+ * Gets the total quantity of cards in all collections
  * @returns The total number of cards that are in the database
  */
 const countAllCards = async (): Promise<number> => {
-  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  let totalQuant: number = 0;
 
-  const total: Array<Document> = await bulkCardsCollection.aggregate([
+  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  const bulkTotal: Array<Document> = await bulkCardsCollection.aggregate([
     { $group: { _id: null, totalQuant: { $sum: "$quant" } } }
   ]).toArray();
+  totalQuant += bulkTotal[0]?.totalQuant || 0;
 
-  const totalQuant: number = total[0]?.totalQuant || 0;
+  const coolCardsCollection: Collection<Card> = await coolCards();
+  const coolCardsTotal: Array<Document> = await coolCardsCollection.aggregate([
+    { $group: { _id: null, totalQuant: { $sum: "$quant" } } }
+  ]).toArray();
+  totalQuant += coolCardsTotal[0]?.totalQuant || 0;
 
   return totalQuant;
 }
