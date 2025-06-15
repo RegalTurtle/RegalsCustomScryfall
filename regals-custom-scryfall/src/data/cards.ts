@@ -102,7 +102,7 @@ const addCard = async (
     cn,
     foil,
     proxy,
-    decks: [],
+    locations: [],
     updatedAt: new Date(),
     image,
     oracle,

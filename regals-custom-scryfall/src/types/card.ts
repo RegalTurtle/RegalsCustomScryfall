@@ -9,7 +9,7 @@ export interface Card {
   cn: string;
   foil: FoilOption;
   proxy: boolean;
-  decks: string[];
+  locations: string[];
   updatedAt: Date | null;
   image: string;
   oracle: string;

@@ -6,6 +6,7 @@ import Modal from '@/components/Modal';
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import authorization from "@/authorization";
 import ProgressBar from "@/components/ProgressBar";
+import Link from "next/link";
 
 type ExtendedCard = Card & {
   image: string;
@@ -170,6 +171,11 @@ export default function Collection() {
       <RegalsMagicHeader isHome={false} />
 
       <main className="flex-1 px-4 text-center justify-items-center">
+        <div className="mb-4">
+          <Link href="/trade-binder" className="bg-sky-600 text-white px-4 py-3 rounded hover:bg-sky-700 mx-1">Trade Binder</Link>
+          <Link href="/cool-cards" className="bg-sky-600 text-white px-4 py-3 rounded hover:bg-sky-700 mx-1">Cool Cards</Link>
+        </div>
+
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
           <div className="mb-4">
             <button
@@ -372,7 +378,7 @@ export default function Collection() {
               cn: cardToAdd.collector_number,
               foil: foilOption,
               proxy: proxyBool,
-              decks: [],
+              locations: [],
               updatedAt: null,
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
@@ -523,13 +529,13 @@ export default function Collection() {
               cn: cardToAdd.collector_number,
               foil: foilOption,
               proxy: proxyBool,
-              decks: [],
+              locations: [],
               updatedAt: null,
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
             }
 
-            const res = await fetch("/api/collection/add_card", {
+            const _res = await fetch("/api/collection/add_card", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
