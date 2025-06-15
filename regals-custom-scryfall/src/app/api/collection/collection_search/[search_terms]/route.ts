@@ -1,39 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cards } from "@/config/mongoCollections";
 
-interface ScryfallCard {
-  name: string;
-  finishes: Array<String>;
-  oracle_id: string;
-  set: string;
-  collector_number: string;
-  [key: string]: any; // allows additional properties
-}
-
-const headers = {
-  "User-Agent": "RegalTurtlesMagic/1.0",
-  "Accept": "application/json",
-};
-
-async function fetchAllScryfallResults(searchUrl: string): Promise<ScryfallCard[]> {
-  let results: ScryfallCard[] = [];
-  let url: string | null = searchUrl;
-
-  while (url) {
-    const res: Response = await fetch(url, { headers });
-    const data = await res.json();
-
-    if (data.object === "error") {
-      return [];
-    }
-
-    results = results.concat(data.data);
-    url = data.has_more ? data.next_page : null;
-  }
-
-  return results;
-}
-
 export async function GET(
   request: NextRequest,
   { params }: { params: { search_terms: string } }
@@ -80,9 +47,7 @@ export async function GET(
       mongoQuery.name = { $regex: new RegExp(term, 'i') };
     }
   }
-
-  // console.log(mongoQuery);
-
+  
   try {
     const cardCollection = await cards();
     const foundCards = await cardCollection.find(mongoQuery).sort({ updatedAt: -1 }).limit(100).toArray();
