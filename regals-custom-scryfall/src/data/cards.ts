@@ -46,7 +46,7 @@ const getCardBySetCn = async (set: string, cn: string, foilOption: FoilOption): 
  */
 const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
   const cardCollection: Collection<Card> = await cards();
-  let cardPage: Array<Card> = await cardCollection.find({ locations: [] }).sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
+  let cardPage: Array<Card> = await cardCollection.find().sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
   
   return cardPage;
 }

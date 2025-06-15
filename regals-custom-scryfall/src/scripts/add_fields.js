@@ -57,7 +57,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 await cardCollection.updateMany(
   {},
-  { $unset: { decks: "" }, $set: { locations: [] } }
+  { $unset: { locations: [] } }
 );
 
 console.log("Done!");
