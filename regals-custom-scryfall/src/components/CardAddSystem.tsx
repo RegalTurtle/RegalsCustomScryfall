@@ -1,5 +1,5 @@
 import Modal from "@/components/Modal";
-import { Card, FoilOption } from "@/types";
+import { Card, CollectionTypeOption, FoilOption } from "@/types";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 interface ScryfallCard {
@@ -16,7 +16,7 @@ type CardAddSystemProps = {
   setShowFindModal: Dispatch<SetStateAction<boolean>>;
   update: number;
   sendUpdate: Dispatch<SetStateAction<number>>;
-  collection_type: string;
+  collection_type: CollectionTypeOption;
 };
 
 const headers = {
@@ -255,7 +255,6 @@ const CardAddSystem = ({
               cn: cardToAdd.collector_number,
               foil: foilOption,
               proxy: proxyBool,
-              locations: [],
               updatedAt: null,
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
@@ -406,7 +405,6 @@ const CardAddSystem = ({
               cn: cardToAdd.collector_number,
               foil: foilOption,
               proxy: proxyBool,
-              locations: [],
               updatedAt: null,
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,

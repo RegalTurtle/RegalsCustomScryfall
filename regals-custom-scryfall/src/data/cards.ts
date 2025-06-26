@@ -1,4 +1,4 @@
-import { bulkCards, coolCards, tradeBinder } from "@/config/mongoCollections";
+import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import validation from "@/validation";
 import { Collection, Document, ObjectId } from "mongodb";
 import { Card, CollectionTypeOption, FoilOption } from "@/types";
@@ -111,6 +111,43 @@ const addCard = async (
     cardsCollection = await coolCards();
   } else if (collection_type === "trade-binder") {
     cardsCollection = await tradeBinder();
+  } else if (collection_type.startsWith("decks+")) {
+    const decksCollection = await decks();
+    const deckId = collection_type.slice(6);
+
+    const deck = await decksCollection.findOne({ _id: ObjectId.createFromHexString(deckId) });
+    if (!deck) throw new Error(`Deck not found`);
+
+    let cards = deck.cards;
+    const existing = cards.find(c => c.cn === cn && c.set === set);
+
+    if (existing) {
+      existing.quant += quant;
+      existing.updatedAt = new Date();
+      if (existing.quant < 1) {
+        cards.filter(c => c.cn !== cn || c.set !== set);
+      }
+    } else {
+      cards.push({
+        name,
+        quant,
+        set,
+        cn,
+        foil,
+        proxy,
+        updatedAt: new Date(),
+        image,
+        oracle,
+        tag: [],
+      });
+    }
+
+    await decksCollection.updateOne(
+      { _id: ObjectId.createFromHexString(deckId) },
+      { $set: { cards } }
+    );
+
+    return;
   } else {
     throw new Error(`collectionType invalid`);
   }
@@ -136,7 +173,6 @@ const addCard = async (
     cn,
     foil,
     proxy,
-    locations: [],
     updatedAt: new Date(),
     image,
     oracle,
@@ -144,7 +180,7 @@ const addCard = async (
 }
 
 /**
- * Gets the total quantity of cards in all collections
+ * Gets the total quantity of cards in all collections  
  * @returns The total number of cards that are in the database
  */
 const countAllCards = async (): Promise<number> => {

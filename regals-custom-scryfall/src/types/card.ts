@@ -9,8 +9,8 @@ export interface Card {
   cn: string;
   foil: FoilOption;
   proxy: boolean;
-  locations: string[];
   updatedAt: Date | null;
   image: string;
   oracle: string;
+  tag?: string[];
 }
