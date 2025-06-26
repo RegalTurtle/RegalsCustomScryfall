@@ -10,6 +10,7 @@ export async function GET(
   // const searchTerms = await (await params).search_terms;
   const { search_terms, collection_type } = await params;
   const mongoQuery: any = {};
+  mongoQuery.$and = [];
 
   const terms = search_terms.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
 
@@ -46,7 +47,7 @@ export async function GET(
     } else if (term.startsWith("quant<")) { // Quantity less than
       mongoQuery.quant = { ...(mongoQuery.quant || {}), $lt: parseInt(term.slice(6)) };
     } else {
-      mongoQuery.name = { $regex: new RegExp(term, 'i') };
+      mongoQuery.$and.push({ name: { $regex: new RegExp(term, 'i') }});
     }
   }
   
