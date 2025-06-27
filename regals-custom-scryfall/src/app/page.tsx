@@ -10,7 +10,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-teal-900 h-dvh min-h-screen">
-      <RegalsMagicHeader isHome={true} />
+      <RegalsMagicHeader 
+        showBack={false}
+        backUrl=""
+        backText="" 
+      />
 
       <main className="flex-1 flex flex-col items-center justify-center px-4 text-center">
         <h2 className="text-2xl mb-6">A hub of tools for RegalTurtle</h2>

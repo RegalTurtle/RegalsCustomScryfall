@@ -2,7 +2,7 @@
 import authorization from "@/authorization";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import { useSession } from "next-auth/react";
-import { redirect, useRouter } from "next/navigation";
+import { redirect, useParams, useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 export default function DeckSettings() {
@@ -13,6 +13,8 @@ export default function DeckSettings() {
   const [owner, setOwner] = useState("");
   const [format, setFormat] = useState("");
   const [colorId, setColorId] = useState("");
+
+  const { deck_id: deckId } = useParams();
 
   if (sessionStatus === "loading") {
     return (
@@ -26,7 +28,11 @@ export default function DeckSettings() {
 
   return (
     <div className="flex flex-col min-h-screen bg-teal-900">
-      <RegalsMagicHeader isHome={false} />
+      <RegalsMagicHeader 
+        showBack={true}
+        backUrl={`/decks/${deckId}`}
+        backText="Back to deck" 
+      />
 
       <main className="flex-1 px-4 text-center justify-items-center">        
         <form 

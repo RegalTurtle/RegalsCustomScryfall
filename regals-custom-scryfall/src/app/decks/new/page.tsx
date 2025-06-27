@@ -26,7 +26,11 @@ export default function Decks() {
 
   return (
     <div className="flex flex-col min-h-screen bg-teal-900">
-      <RegalsMagicHeader isHome={false} />
+      <RegalsMagicHeader
+        showBack={true}
+        backUrl="/" 
+        backText="Home"
+      />
 
       <main className="flex-1 px-4 text-center justify-items-center">        
         <form 

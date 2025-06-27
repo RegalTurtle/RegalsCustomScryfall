@@ -82,7 +82,11 @@ export default function Decks() {
 
   return (
     <div className="flex flex-col min-h-screen bg-teal-900">
-      <RegalsMagicHeader isHome={false} />
+      <RegalsMagicHeader 
+        showBack={true}
+        backUrl="/decks"
+        backText="Decks"
+      />
 
       {/* Deck Info Centered, Settings Button Right */}
       <div className="relative py-4">

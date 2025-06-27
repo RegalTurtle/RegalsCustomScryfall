@@ -1,5 +1,6 @@
 "use client";
 import authorization from "@/authorization";
+import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import { Deck } from "@/types";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -36,12 +37,11 @@ export default function Decks() {
 
   return (
     <div className="flex flex-col min-h-screen bg-teal-900">
-      <header className="h-20 flex items-center relative mb-5 bg-teal-950">
-        <Link href="/" className="mr-auto mv-auto ml-5 bg-indigo-600 p-2 text-white rounded-md hover:bg-indigo-700">Home</Link>
-        <h1 className="absolute left-1/2 transform -translate-x-1/2 text-3xl">Regal's Magic</h1>
-        {!session && <Link href="/login" className="ml-auto mv-auto mr-5 bg-indigo-600 p-2 text-white rounded-md hover:bg-indigo-700">Log In</Link>}
-        {session && <Link href="/logout" className="ml-auto mv-auto mr-5 bg-indigo-600 p-2 text-white rounded-md hover:bg-indigo-700">Log Out</Link>}
-      </header>
+      <RegalsMagicHeader
+        showBack={true}
+        backUrl="/"
+        backText="Home"
+      />
 
       <main className="flex-1 px-4 text-center justify-items-center">
         {session && authorization.canAddDecks(session.user?.permissionLevel) && 
