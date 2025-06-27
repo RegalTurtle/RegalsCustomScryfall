@@ -48,7 +48,7 @@ export default function Decks() {
           <Link href="/decks/new" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">New Deck</Link>
         }
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">    
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center mt-5">
           {decks.map((deck, index) => (
             <a href={`/decks/${deck._id?.toString()}`} key={index} className="bg-teal-100 rounded-lg shadow-md p-4 w-58 flex flex-col text-black">
               <p>{deck.name}</p>
