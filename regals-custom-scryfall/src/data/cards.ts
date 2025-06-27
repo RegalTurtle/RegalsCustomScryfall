@@ -113,22 +113,36 @@ const addCard = async (
     cardsCollection = await tradeBinder();
   } else if (collection_type.startsWith("decks+")) {
     const decksCollection = await decks();
-    const deckId = collection_type.slice(6);
+    let deckId = collection_type.slice(6);
+
+    // Determine which list to update
+    let listKey = "cards";
+    if (deckId.startsWith("sideboard+")) {
+      listKey = "sideboard";
+      deckId = deckId.slice("sideboard+".length);
+    } else if (deckId.startsWith("maybeboard+")) {
+      listKey = "maybeboard";
+      deckId = deckId.slice("maybeboard+".length);
+    } else if (deckId.startsWith("wishlist+")) {
+      listKey = "wishlist";
+      deckId = deckId.slice("wishlist+".length);
+    }
 
     const deck = await decksCollection.findOne({ _id: ObjectId.createFromHexString(deckId) });
     if (!deck) throw new Error(`Deck not found`);
 
-    let cards = deck.cards;
-    const existing = cards.find(c => c.cn === cn && c.set === set);
+    const list = deck[listKey as "cards" | "sideboard" | "maybeboard" | "wishlist"] || [];
 
+    const existing = list.find(c => c.cn === cn && c.set === set);
     if (existing) {
       existing.quant += quant;
       existing.updatedAt = new Date();
       if (existing.quant < 1) {
-        cards.filter(c => c.cn !== cn || c.set !== set);
+        const index = list.indexOf(existing);
+        list.splice(index, 1);
       }
     } else {
-      cards.push({
+      list.push({
         name,
         quant,
         set,
@@ -144,7 +158,7 @@ const addCard = async (
 
     await decksCollection.updateOne(
       { _id: ObjectId.createFromHexString(deckId) },
-      { $set: { cards } }
+      { $set: { [listKey]: list, lastUpdate: new Date() } }
     );
 
     return;

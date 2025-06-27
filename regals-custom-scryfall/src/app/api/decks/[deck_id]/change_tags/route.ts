@@ -5,8 +5,10 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import deckData from "@/data/decks";
 
 export async function POST(
-  request: NextRequest
+  request: NextRequest,
+  { params }: { params: { deck_id: string } }
 ): Promise<NextResponse> {
+  const { deck_id } = await params;
   const session = await getServerSession({ request, ...authOptions });
 
   if (!session || !authorization.canAddDecks(session.user?.permissionLevel)) {
@@ -14,11 +16,11 @@ export async function POST(
   }
 
   try {
-    const body = await request.json();
-
-    const objId = await deckData.addDeck(body.name, body.link || null, body.owner, body.format, body.colorId || null);
-
-    return NextResponse.json({ message: "Deck received", objId }, { status: 201 });
+    const { set, cn, updatedTags } = await request.json();
+    console.log("before setTags")
+    await deckData.setTags(deck_id, set, cn, updatedTags);
+    console.log("after setTags")
+    return NextResponse.json({ message: "Tags updated" }, { status: 201 });
   } catch (err) {
     console.error("Error parsing request:", err);
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });

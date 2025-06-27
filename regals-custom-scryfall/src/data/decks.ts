@@ -27,6 +27,8 @@ const addDeck = async (
     losses: 0,
     sideboard: [],
     maybeboard: [],
+    wishlist: [],
+    together: true,
   };
 
   if (link) {
@@ -63,8 +65,33 @@ const getAllDecks = async () => {
   return allDecks;
 }
 
+const setTags = async (
+  deckId: string,
+  set: string,
+  cn: string,
+  updatedTags: string[]
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+
+  const deckCollection: Collection<Deck> = await decks();
+
+  await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $set: {
+        "cards.$[elem].tag": updatedTags,
+        lastUpdate: new Date(),
+      },
+    },
+    {
+      arrayFilters: [{ "elem.set": set, "elem.cn": cn }],
+    }
+  );
+};
+
 export default {
   addDeck,
   findDeckByMongoId,
   getAllDecks,
+  setTags,
 };

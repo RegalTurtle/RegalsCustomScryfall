@@ -18,4 +18,6 @@ export interface Deck {
   losses: number;
   sideboard: Card[];
   maybeboard: Card[];
+  wishlist: Card[];
+  together: boolean;
 }

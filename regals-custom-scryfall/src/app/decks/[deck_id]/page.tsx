@@ -14,7 +14,7 @@ function groupCardsByTags(cards: Card[]): CardPile[] {
   const pileMap: Record<string, Card[]> = {};
 
   for (const card of cards) {
-    const tags = card.tag?.length ? card.tag : [`Untagged`];
+    const tags = card.tag?.length ? card.tag : ["Untagged"];
     for (const tag of tags) {
       if (!pileMap[tag]) {
         pileMap[tag] = [];
@@ -23,12 +23,17 @@ function groupCardsByTags(cards: Card[]): CardPile[] {
     }
   }
 
-  return Object.entries(pileMap).map(([pileName, cards]) => ({
-    pileName,
-    cards: cards.sort((a, b) => a.name.localeCompare(b.name)),
-  }));
+  return Object.entries(pileMap)
+    .sort(([a], [b]) => {
+      if (a === "Commander") return -1;
+      if (b === "Commander") return 1;
+      return a.localeCompare(b)
+    }) // Sort piles by pileName
+    .map(([pileName, cards]) => ({
+      pileName,
+      cards: cards.sort((a, b) => a.name.localeCompare(b.name)), // Sort cards in each pile
+    }));
 }
-
 
 export default function Decks() {
   const { data: session, status } = useSession();
@@ -36,9 +41,15 @@ export default function Decks() {
   const { deck_id: deckId } = useParams();
   const [ deck, setDeck ] = useState<Deck | null>(null);
   const [ piles, setPiles ] = useState<CardPile[] | null>(null);
+  const [ sidePiles, setSidePiles ] = useState<CardPile[] | null>(null);
+  const [ maybePiles, setMaybePiles ] = useState<CardPile[] | null>(null);
+  const [ wishPiles, setWishPiles ] = useState<CardPile[] | null>(null);
   const [ loadingDeck, setLoadingDeck ] = useState(true);
 
   const [ showFindModal, setShowFindModal ] = useState<boolean>(false);
+  const [ showFindSideModal, setShowFindSideModal ] = useState<boolean>(false);
+  const [ showFindMaybeModal, setShowFindMaybeModal ] = useState<boolean>(false);
+  const [ showFindWishModal, setShowFindWishModal ] = useState<boolean>(false);
   const [ update, sendUpdate ] = useState(0);
 
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
@@ -53,6 +64,9 @@ export default function Decks() {
         const { foundDeck } = await res.json();
         setDeck(foundDeck);
         setPiles(groupCardsByTags(foundDeck.cards));
+        setSidePiles(groupCardsByTags(foundDeck.sideboard));
+        setMaybePiles(groupCardsByTags(foundDeck.maybeboard));
+        setWishPiles(groupCardsByTags(foundDeck.wishlist));
       } catch (error) {
         console.error(`Error fetching deck:`, error);
       } finally {
@@ -70,22 +84,107 @@ export default function Decks() {
     <div className="flex flex-col min-h-screen bg-teal-900">
       <RegalsMagicHeader isHome={false} />
 
-      <div className="text-center">
-        <h1 className="text-xl font-bold">{deck.name}</h1>
-        <p>Owner: {deck.owner}</p>
-        <p>Format: {deck.format}</p>
+      {/* Deck Info Centered, Settings Button Right */}
+      <div className="relative py-4">
+        {/* Centered Deck Info */}
+        <div className="text-center mx-auto">
+          <h1 className="text-xl font-bold">{deck.name}</h1>
+          <p>Owner: {deck.owner}</p>
+          <p>Format: {deck.format}</p>
+        </div>
+
+        {/* Settings Button on the Right */}
+        {session && authorization.canAddDecks(session.user?.permissionLevel) && 
+          <a
+            href={`/decks/${deck._id}/settings`}
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300 transition"
+          >
+            Settings
+          </a>
+        }
       </div>
 
-      {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
-        <div className="mb-4 text-center mt-3">
-          <button
-            onClick={() => setShowFindModal(true)}
-            className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
-          >
-            + Add a Card
-          </button>
-        </div>
-      }
+      { piles && (<div className="text-center">
+        <p className="text-lg ml-5">Decklist</p>
+        {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
+          <div className="mb-1 mt-1 ml-5">
+            <button
+              onClick={() => setShowFindModal(true)}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              + Add a Card
+            </button>
+          </div>
+        }
+        <CardPiles 
+          piles={piles}
+          setSelectedCard={setSelectedCard} 
+        /> 
+      </div>) }
+
+      { sidePiles && (<div className="text-center">
+        <p className="text-lg ml-5">Sideboard</p>
+        {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
+          <div className="mb-1 mt-1 ml-5">
+            <button
+              onClick={() => setShowFindSideModal(true)}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              + Add a Card
+            </button>
+          </div>
+        }
+        <CardPiles 
+          piles={sidePiles}
+          setSelectedCard={setSelectedCard} 
+        /> 
+      </div>) }
+
+      { maybePiles && (<div className="text-center">
+        <p className="text-lg ml-5">Physical Maybeboard</p>
+        {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
+          <div className="mb-1 mt-1 ml-5">
+            <button
+              onClick={() => setShowFindMaybeModal(true)}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              + Add a Card
+            </button>
+          </div>
+        }
+        <CardPiles 
+          piles={maybePiles}
+          setSelectedCard={setSelectedCard} 
+        /> 
+      </div>) }
+
+      { wishPiles && (<div className="text-center">
+        <p className="text-lg ml-5">Online Maybeboard</p>
+        {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
+          <div className="mb-1 mt-1 ml-5">
+            <button
+              onClick={() => setShowFindWishModal(true)}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              + Add a Card
+            </button>
+          </div>
+        }
+        <CardPiles 
+          piles={wishPiles}
+          setSelectedCard={setSelectedCard} 
+        /> 
+      </div>) }
+
+      {selectedCard && (
+        <CardEditModal
+          card={selectedCard}
+          onClose={() => setSelectedCard(null)}
+          update={update}
+          sendUpdate={sendUpdate}
+          deckId={deckId?.toString() as string}
+        />
+      )}
 
       <CardAddSystem
         showFindModal={showFindModal}
@@ -95,17 +194,29 @@ export default function Decks() {
         collection_type={`decks+${deckId}`}
       />
 
-      { piles && <CardPiles 
-        piles={piles}
-        setSelectedCard={setSelectedCard} 
-      /> }
+      <CardAddSystem
+        showFindModal={showFindSideModal}
+        setShowFindModal={setShowFindSideModal}
+        update={update}
+        sendUpdate={sendUpdate}
+        collection_type={`decks+sideboard+${deckId}`}
+      />
 
-      {selectedCard && (
-        <CardEditModal
-          card={selectedCard}
-          onClose={() => setSelectedCard(null)}
-        />
-      )}
+      <CardAddSystem
+        showFindModal={showFindMaybeModal}
+        setShowFindModal={setShowFindMaybeModal}
+        update={update}
+        sendUpdate={sendUpdate}
+        collection_type={`decks+maybeboard+${deckId}`}
+      />
+
+      <CardAddSystem
+        showFindModal={showFindWishModal}
+        setShowFindModal={setShowFindWishModal}
+        update={update}
+        sendUpdate={sendUpdate}
+        collection_type={`decks+wishlist+${deckId}`}
+      />
     </div>
   )
 }

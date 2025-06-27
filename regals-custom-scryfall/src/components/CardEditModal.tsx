@@ -1,13 +1,60 @@
 import { Card } from "@/types";
-import { useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
+import { useState } from "react";
 
 export default function CardEditModal({
   card,
   onClose,
+  update, 
+  sendUpdate,
+  deckId,
 }: {
   card: Card;
   onClose: () => void;
+  update: number;
+  sendUpdate: Dispatch<SetStateAction<number>>;
+  deckId: string;
 }) {
+  // Inside CardEditModal
+  const [tags, setTags] = useState<string[]>(card.tag ?? []);
+  const [newTag, setNewTag] = useState("");
+
+  const addTag = async () => {
+    if (!newTag.trim() || tags.includes(newTag)) return;
+    const updatedTags = [...tags, newTag.trim()];
+    const _res = await fetch(`/api/decks/${deckId}/change_tags`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        set: card.set,
+        cn: card.cn,
+        updatedTags,
+      }),
+    });
+    setTags(updatedTags);
+    setNewTag("");
+    sendUpdate(update + 1);
+  };
+
+  const removeTag = async (tagToRemove: string) => {
+    const updatedTags = tags.filter(t => t !== tagToRemove);
+    const _res = await fetch(`/api/decks/${deckId}/change_tags`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        set: card.set,
+        cn: card.cn,
+        updatedTags,
+      }),
+    });
+    setTags(updatedTags);
+    sendUpdate(update + 1);
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -41,12 +88,36 @@ export default function CardEditModal({
           <h2 className="text-lg font-semibold mb-2">{card.name}</h2>
 
           <div className="space-y-2 w-full">
-            <button className="w-full bg-green-800 hover:bg-green-700 px-4 py-2 rounded">
-              Add Tag
-            </button>
-            <button className="w-full bg-red-900 hover:bg-red-800 px-4 py-2 rounded">
-              Remove Tag
-            </button>
+            <div className="w-full">
+              <div className="mb-2">
+                <label className="block text-sm mb-1">Tags:</label>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span key={tag} className="bg-gray-600 px-2 py-1 rounded text-sm flex items-center gap-1">
+                      {tag}
+                      <button onClick={() => removeTag(tag)} className="text-xs text-red-300">✕</button>
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex gap-2 mb-4">
+                <input
+                  type="text"
+                  value={newTag}
+                  onChange={(e) => setNewTag(e.target.value)}
+                  className="flex-grow px-2 py-1 rounded bg-gray-700 text-white"
+                  placeholder="Add a tag..."
+                />
+                <button
+                  onClick={addTag}
+                  className="bg-green-700 hover:bg-green-600 px-3 py-1 rounded text-sm"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+            
             <button className="w-full bg-purple-800 hover:bg-purple-700 px-4 py-2 rounded">
               Swap Card
             </button>
