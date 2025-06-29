@@ -93,6 +93,10 @@ const addCard = async (
   proxy: boolean, 
   image: string,
   oracle: string,
+  color: string,
+  color_identity: string,
+  type: string,
+  cmc: number,
 ): Promise<undefined> => {
   collection_type = validation.verifyCollectionType(collection_type);
   name = validation.verifyStr(name, `name`);
@@ -103,6 +107,11 @@ const addCard = async (
   proxy = validation.verifyBool(proxy, `proxy`);
   image = validation.verifyStr(image, `image`);
   if (typeof oracle !== "string") throw new Error("oracle must be a string");
+  color = validation.verifyColorIdOrdered(color);
+  color_identity = validation.verifyColorIdOrdered(color_identity);
+  type = validation.verifyStr(type, `type`);
+  // TODO: Add a validation fn for this
+  if (typeof cmc !== "number") throw new Error("cmc must be a number");
   
   let cardsCollection: Collection<Card>;
   if (collection_type === "bulk") {
@@ -153,6 +162,10 @@ const addCard = async (
         image,
         oracle,
         tag: [],
+        color,
+        color_identity,
+        type,
+        cmc,
       });
     }
 
@@ -190,6 +203,10 @@ const addCard = async (
     updatedAt: new Date(),
     image,
     oracle,
+    color,
+    color_identity,
+    type,
+    cmc,
   })
 }
 

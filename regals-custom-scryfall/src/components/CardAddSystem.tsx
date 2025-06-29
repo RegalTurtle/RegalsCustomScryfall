@@ -248,6 +248,14 @@ const CardAddSystem = ({
 
             const proxyBool: boolean = isProxy === "true";
 
+            const WUBRG = ["W", "U", "B", "R", "G"];
+            let scryfallColors;
+            if (cardToAdd.colors) {
+              scryfallColors = WUBRG.filter(c => cardToAdd.colors.includes(c)).join("");
+            } else {
+              scryfallColors = `${WUBRG.filter(c => cardToAdd.card_faces[0].colors.includes(c)).join("")} // ${WUBRG.filter(c => cardToAdd.card_faces[1].colors.includes(c)).join("")}`;
+            }
+
             const card: Card = {
               name: cardToAdd.name,
               quant: quantToAdd,
@@ -258,6 +266,10 @@ const CardAddSystem = ({
               updatedAt: null,
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
+              color: scryfallColors,
+              color_identity: cardToAdd.color_identity,
+              type: cardToAdd.type,
+              cmc: cardToAdd.cmc,
             }
 
             const _res = await fetch(`/api/collection/${collection_type}/add_card`, {
@@ -398,6 +410,14 @@ const CardAddSystem = ({
 
             const proxyBool: boolean = isProxy === "true";
 
+            const WUBRG = ["W", "U", "B", "R", "G"];
+            let scryfallColors;
+            if (cardToAdd.colors) {
+              scryfallColors = WUBRG.filter(c => cardToAdd.colors.includes(c)).join("");
+            } else {
+              scryfallColors = `${WUBRG.filter(c => cardToAdd.card_faces[0].colors.includes(c)).join("")} // ${WUBRG.filter(c => cardToAdd.card_faces[1].colors.includes(c)).join("")}`;
+            }
+
             const card: Card = {
               name: cardToAdd.name,
               quant: quantToAdd,
@@ -408,6 +428,11 @@ const CardAddSystem = ({
               updatedAt: null,
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
+              color: scryfallColors,
+              color_identity: cardToAdd.color_identity,
+              type: cardToAdd.type,
+              cmc: cardToAdd.cmc,
+
             }
 
             const _res = await fetch(`/api/collection/${collection_type}/add_card`, {

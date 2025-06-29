@@ -18,8 +18,8 @@ export async function POST(
 
   try {
     const body = await request.json();
-
-    await cardData.addCard(collection_type, body.name, body.quant, body.set, body.cn, body.foil, body.proxy, body.image, body.oracle);
+    
+    await cardData.addCard(collection_type, body.name, body.quant, body.set, body.cn, body.foil, body.proxy, body.image, body.oracle, body.color, body.color_identity, body.string, body.cmc);
 
     return NextResponse.json({ message: "Card received" }, { status: 201 });
   } catch (err) {

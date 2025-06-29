@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import cardData from "@/data/cards";
 import deckData from "@/data/decks";
 
 export async function GET(

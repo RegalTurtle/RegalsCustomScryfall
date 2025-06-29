@@ -13,4 +13,8 @@ export interface Card {
   image: string;
   oracle: string;
   tag?: string[];
+  color: string;
+  color_identity: string;
+  type: string;
+  cmc: number;
 }

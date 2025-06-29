@@ -30,12 +30,89 @@ const getCollectionFn = (collection) => {
   };
 };
 
-const bulkCards = getCollectionFn("bulk_cards");
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const bulkCardsCollection = await bulkCards();
-// const allCards = await bulkCardsCollection.find({}).toArray();
+////////////////////////////////////////////////
+//                                            //
+//    Code for replacing stuff starts here    //
+//                                            //
+////////////////////////////////////////////////
+
+const decks = getCollectionFn("decks");
+const decksCollection = await decks();
+const allDecks = await decksCollection.find({}).toArray();
+
+const WUBRG = ["W", "U", "B", "R", "G"];
+const lists = ["cards", "sideboard", "maybeboard", "wishlist"];
+
+for (const deck of allDecks) {
+  let updated = false;
+
+  for (const listName of lists) {
+    if (!Array.isArray(deck[listName])) continue;
+
+    for (const card of deck[listName]) {
+      try {
+        await sleep(100);
+        const { set, cn } = card;
+
+        const res = await fetch(`https://api.scryfall.com/cards/${set}/${cn}`);
+        const scryfallCard = await res.json();
+
+        const scryfallColors = scryfallCard.colors
+          ? WUBRG.filter(c => scryfallCard.colors.includes(c)).join("")
+          : `${WUBRG.filter(c => scryfallCard.card_faces[0].colors.includes(c)).join("")} // ${WUBRG.filter(c => scryfallCard.card_faces[1].colors.includes(c)).join("")}`;
+
+        const scryfallIdentity = WUBRG.filter(c => scryfallCard.color_identity.includes(c)).join("");
+        const scryfallTypeline = scryfallCard.type_line;
+        const scryfallCMC = scryfallCard.cmc;
+
+        // Add new fields to the card
+        card.color = scryfallColors;
+        card.color_identity = scryfallIdentity;
+        card.type = scryfallTypeline;
+        card.cmc = scryfallCMC;
+
+        console.log(`${deck._id}: ${set} | ${cn} enriched`);
+        updated = true;
+
+      } catch (e) {
+        console.error(`Deck ${deck._id}: Failed on ${card.set} | ${card.cn}:`, e);
+      }
+    }
+  }
+
+  if (updated) {
+    await decksCollection.updateOne(
+      { _id: deck._id },
+      {
+        $set: {
+          cards: deck.cards || [],
+          sideboard: deck.sideboard || [],
+          maybeboard: deck.maybeboard || [],
+          wishlist: deck.wishlist || [],
+          updatedAt: new Date(),
+        },
+      }
+    );
+  }
+}
+
+
+
+
+
+
+/*
+const al = await bulkCardsCollection.find({}).toArray();
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const errors = [];
+
+for (let card of allCards) {
+
+}
 
 // const errors = [];
 
@@ -61,3 +138,4 @@ await bulkCardsCollection.updateMany(
 );
 
 console.log("Done!");
+console.log(errors);*/
