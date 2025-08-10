@@ -9,8 +9,10 @@ import { CollectionTypeOption, FoilOption } from "./types";
  * @returns {string} s, trimmed
  */
 const verifyStr = (s: string, varName: string): string => {
-  if (typeof s !== "string")
+  if (typeof s !== "string") {
+    console.error(`Error: ${varName} must be a string: it was instead ${typeof s}`)
     throw new Error(`${varName} must be a string: it was instead ${typeof s}`);
+  }
   s = s.trim();
   if (s.length === 0) throw new Error(`${varName} must be non-empty`);
   return s;
@@ -99,52 +101,27 @@ const verifyPermissionLevel = (permissionLevel: string): string => {
 };
 
 /**
- * Verifies that a given string is a correctly-ordered color identity (i.e. clockwise around the mana circle, shortest path)
+ * Normalizes a color identity string to WUBRG order and validates it.
  * @param {string} idString
- * @returns the idString, uppercase, and trimmed
+ * @returns the normalized, validated color identity string
  */
 const verifyColorIdOrdered = (idString: string): string => {
-  const validColorIds = [
-    "C",
-    "W",
-    "U",
-    "B",
-    "R",
-    "G",
-    "WU",
-    "UB",
-    "BR",
-    "RG",
-    "GW",
-    "WB",
-    "UR",
-    "BG",
-    "RW",
-    "GU",
-    "WUB",
-    "UBR",
-    "BRG",
-    "RGW",
-    "GWU",
-    "RWB",
-    "GUR",
-    "WBG",
-    "URW",
-    "BGU",
-    "UBRG",
-    "BRGW",
-    "RGWU",
-    "GWUB",
-    "WUBR",
-    "WUBRG",
-  ];
+  const order = ["W", "U", "B", "R", "G"];
+  const validChars = new Set(order);
 
-  idString = verifyStr(idString, `idString`).toUpperCase();
-  if (validColorIds.includes(idString)) {
-    return idString;
-  } else {
-    throw new Error(`idString must be a valid colorId`);
+  // Remove whitespace, convert to uppercase, split to characters
+  const inputColors = [...new Set(idString.trim().toUpperCase())];
+
+  // Check if all characters are valid colors
+  for (const c of inputColors) {
+    if (!validChars.has(c)) {
+      throw new Error(`idString must only contain W, U, B, R, G`);
+    }
   }
+
+  // Filter and sort colors based on WUBRG order
+  const sorted = order.filter(c => inputColors.includes(c));
+  return sorted.join("");
 };
 
 /**

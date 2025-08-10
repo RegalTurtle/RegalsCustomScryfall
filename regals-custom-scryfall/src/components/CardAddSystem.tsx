@@ -267,8 +267,8 @@ const CardAddSystem = ({
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
               color: scryfallColors,
-              color_identity: cardToAdd.color_identity,
-              type: cardToAdd.type,
+              color_identity: WUBRG.filter(c => cardToAdd.color_identity.includes(c)).join(""),
+              type: cardToAdd.type_line,
               cmc: cardToAdd.cmc,
             }
 
@@ -429,10 +429,9 @@ const CardAddSystem = ({
               image: artUrl,
               oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
               color: scryfallColors,
-              color_identity: cardToAdd.color_identity,
-              type: cardToAdd.type,
+              color_identity: WUBRG.filter(c => cardToAdd.color_identity.includes(c)).join(""),
+              type: cardToAdd.type_line,
               cmc: cardToAdd.cmc,
-
             }
 
             const _res = await fetch(`/api/collection/${collection_type}/add_card`, {
