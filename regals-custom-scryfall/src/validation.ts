@@ -102,17 +102,27 @@ const verifyPermissionLevel = (permissionLevel: string): string => {
 
 /**
  * Normalizes a color identity string to WUBRG order and validates it.
- * @param {string} idString
- * @returns the normalized, validated color identity string
+ * Handles split/DFC like "WU // W" by normalizing each side.
+ * @param idString
+ * @returns normalized, validated color identity string
  */
 const verifyColorIdOrdered = (idString: string): string => {
   const order = ["W", "U", "B", "R", "G"];
   const validChars = new Set(order);
 
-  // Remove whitespace, convert to uppercase, split to characters
+  // If this is a split/DFC style string, normalize each half separately
+  if (idString.includes("//")) {
+    const [leftRaw, rightRaw] = idString.split("//");
+
+    const left = verifyColorIdOrdered(leftRaw.trim());
+    const right = verifyColorIdOrdered(rightRaw.trim());
+
+    return `${left} // ${right}`;
+  }
+
+  // Base case: single color-identity chunk, like "WU" or "BRG"
   const inputColors = [...new Set(idString.trim().toUpperCase())];
 
-  // Check if all characters are valid colors
   for (const c of inputColors) {
     if (!validChars.has(c)) {
       throw new Error(`idString must only contain W, U, B, R, G`);
