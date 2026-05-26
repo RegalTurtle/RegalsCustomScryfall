@@ -2,6 +2,12 @@ import { Card } from "@/types";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useState } from "react";
 
+type OwnedVersion = Card & {
+  _id: string;
+  collection: "bulk" | "cool-cards";
+  collectionLabel: string;
+};
+
 export default function CardEditModal({
   card,
   onClose,
@@ -18,6 +24,10 @@ export default function CardEditModal({
   // Inside CardEditModal
   const [tags, setTags] = useState<string[]>(card.tag ?? []);
   const [newTag, setNewTag] = useState("");
+  const [ownedVersions, setOwnedVersions] = useState<OwnedVersion[]>([]);
+  const [selectedOwnedVersion, setSelectedOwnedVersion] = useState("");
+  const [loadingOwnedVersions, setLoadingOwnedVersions] = useState(false);
+  const [swapError, setSwapError] = useState("");
 
   const addTag = async () => {
     if (!newTag.trim() || tags.includes(newTag)) return;
@@ -36,6 +46,54 @@ export default function CardEditModal({
     setTags(updatedTags);
     setNewTag("");
     sendUpdate(update + 1);
+  };
+
+  const loadOwnedVersions = async () => {
+    setLoadingOwnedVersions(true);
+    setSwapError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/owned_versions?name=${encodeURIComponent(card.name)}`);
+      if (!res.ok) throw new Error("Could not load owned copies");
+      const { ownedVersions } = await res.json();
+      setOwnedVersions(ownedVersions);
+      setSelectedOwnedVersion(ownedVersions[0] ? `${ownedVersions[0].collection}|${ownedVersions[0]._id}` : "");
+    } catch (error) {
+      setSwapError(error instanceof Error ? error.message : "Could not load owned copies");
+    } finally {
+      setLoadingOwnedVersions(false);
+    }
+  };
+
+  const replaceProxy = async () => {
+    if (!selectedOwnedVersion) return;
+    const [collection, collectionCardId] = selectedOwnedVersion.split("|");
+    setSwapError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/replace_proxy`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          originalSet: card.set,
+          originalCn: card.cn,
+          collection,
+          collectionCardId,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not replace proxy");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setSwapError(error instanceof Error ? error.message : "Could not replace proxy");
+    }
   };
 
   const removeTag = async (tagToRemove: string) => {
@@ -70,8 +128,14 @@ export default function CardEditModal({
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 bg-black/70 bg-opacity-60 flex justify-center items-center z-200">
-      <div className="bg-gray-800 text-white rounded-lg shadow-lg w-[90%] max-w-md p-4 relative">
+    <div
+      className="fixed inset-0 bg-black/70 bg-opacity-60 flex justify-center items-center z-200"
+      onClick={onClose}
+    >
+      <div
+        className="bg-gray-800 text-white rounded-lg shadow-lg w-[90%] max-w-md p-4 relative"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           className="absolute top-2 right-2 text-white text-xl cursor-pointer"
           onClick={onClose}
@@ -117,10 +181,45 @@ export default function CardEditModal({
                 </button>
               </div>
             </div>
-            
-            <button className="w-full bg-purple-800 hover:bg-purple-700 px-4 py-2 rounded">
-              Swap Card
-            </button>
+            {card.proxy && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                {ownedVersions.length === 0 ? (
+                  <button
+                    onClick={loadOwnedVersions}
+                    disabled={loadingOwnedVersions}
+                    className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {loadingOwnedVersions ? "Loading..." : "Use Owned Copy"}
+                  </button>
+                ) : (
+                  <div className="flex flex-col gap-2">
+                    <label className="text-sm">Owned copy:</label>
+                    <select
+                      value={selectedOwnedVersion}
+                      onChange={(e) => setSelectedOwnedVersion(e.target.value)}
+                      className="rounded bg-gray-800 px-2 py-1 text-white"
+                    >
+                      {ownedVersions.map((ownedCard) => (
+                        <option
+                          key={`${ownedCard.collection}|${ownedCard._id}`}
+                          value={`${ownedCard.collection}|${ownedCard._id}`}
+                        >
+                          {`${ownedCard.collectionLabel}: ${ownedCard.set.toUpperCase()} ${ownedCard.cn}${ownedCard.foil !== "nonfoil" ? ` (${ownedCard.foil})` : ""} - ${ownedCard.quant} owned`}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={replaceProxy}
+                      disabled={!selectedOwnedVersion}
+                      className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
+                    >
+                      Replace Proxy
+                    </button>
+                  </div>
+                )}
+                {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
+              </div>
+            )}
             {/* <a
               href={`https://www.cardkingdom.com/catalog/search?search=header&filter[name]=${encodeURIComponent(card.name)}`}
               target="_blank"

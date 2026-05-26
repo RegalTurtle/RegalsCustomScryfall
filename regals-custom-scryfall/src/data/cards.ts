@@ -73,6 +73,23 @@ const getPageOfCards = async ( page: number, collection_type: "bulk" | "cool-car
   return cardPage;
 }
 
+const getOwnedVersionsByName = async (name: string): Promise<Array<Card & { collection: "bulk" | "cool-cards", collectionLabel: string }>> => {
+  name = validation.verifyStr(name, "name");
+
+  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  const coolCardsCollection: Collection<Card> = await coolCards();
+
+  const [bulkMatches, coolMatches] = await Promise.all([
+    bulkCardsCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
+    coolCardsCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
+  ]);
+
+  return [
+    ...bulkMatches.map(card => ({ ...card, collection: "bulk" as const, collectionLabel: "Bulk" })),
+    ...coolMatches.map(card => ({ ...card, collection: "cool-cards" as const, collectionLabel: "Cool Cards" })),
+  ];
+}
+
 /**
  * Given information about the card, modifies the database by adding or removing quant number of that card
  * @param name Name of the card to add
@@ -241,6 +258,7 @@ export default {
   getCardByMongoId, 
   getCardBySetCn,
   getPageOfCardsBulk,
+  getOwnedVersionsByName,
   addCard,
   countAllCards,
   getPageOfCards

@@ -53,6 +53,9 @@ export default function Decks() {
   const [ showFindMaybeModal, setShowFindMaybeModal ] = useState<boolean>(false);
   const [ showFindWishModal, setShowFindWishModal ] = useState<boolean>(false);
   const [ update, sendUpdate ] = useState(0);
+  const [ availableProxyKeys, setAvailableProxyKeys ] = useState<string[]>([]);
+  const [ availableProxyLocations, setAvailableProxyLocations ] = useState<Record<string, string[]>>({});
+  const [ checkingProxies, setCheckingProxies ] = useState(false);
 
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
 
@@ -69,6 +72,8 @@ export default function Decks() {
         setSidePiles(groupCardsByTags(foundDeck.sideboard));
         setMaybePiles(groupCardsByTags(foundDeck.maybeboard));
         setWishPiles(groupCardsByTags(foundDeck.wishlist));
+        setAvailableProxyKeys([]);
+        setAvailableProxyLocations({});
       } catch (error) {
         console.error(`Error fetching deck:`, error);
       } finally {
@@ -81,6 +86,22 @@ export default function Decks() {
 
   if (loadingDeck) return <p>Loading...</p>;
   if (!deck) return <p>Deck not found</p>;
+
+  const checkAvailableProxies = async () => {
+    setCheckingProxies(true);
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/available_proxies`);
+      if (!res.ok) throw new Error("Failed to check proxies");
+      const { availableProxyKeys, availableProxyLocations } = await res.json();
+      setAvailableProxyKeys(availableProxyKeys);
+      setAvailableProxyLocations(availableProxyLocations ?? {});
+    } catch (error) {
+      console.error("Error checking proxies:", error);
+    } finally {
+      setCheckingProxies(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-teal-900">
@@ -126,11 +147,20 @@ export default function Decks() {
             >
               Bulk Edit
             </button>
+            <button
+              onClick={checkAvailableProxies}
+              disabled={checkingProxies}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 disabled:bg-gray-400"
+            >
+              {checkingProxies ? "Checking..." : "Check Proxies"}
+            </button>
           </div>
         }
         <CardPiles 
           piles={piles}
           setSelectedCard={setSelectedCard} 
+          availableProxyKeys={availableProxyKeys}
+          availableProxyLocations={availableProxyLocations}
         /> 
       </div>) }
 
