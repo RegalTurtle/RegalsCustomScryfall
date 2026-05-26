@@ -97,6 +97,7 @@ const addCard = async (
   color_identity: string,
   type: string,
   cmc: number,
+  tag: string[] = [],
 ): Promise<undefined> => {
   collection_type = validation.verifyCollectionType(collection_type);
   name = validation.verifyStr(name, `name`);
@@ -112,6 +113,7 @@ const addCard = async (
   type = validation.verifyStr(type, `type`);
   // TODO: Add a validation fn for this
   if (typeof cmc !== "number") throw new Error("cmc must be a number");
+  if (!Array.isArray(tag) || tag.some(t => typeof t !== "string")) throw new Error("tag must be an array of strings");
   
   let cardsCollection: Collection<Card>;
   if (collection_type === "bulk") {
@@ -146,6 +148,9 @@ const addCard = async (
     if (existing) {
       existing.quant += quant;
       existing.updatedAt = new Date();
+      existing.proxy = proxy;
+      existing.foil = foil;
+      existing.tag = Array.from(new Set([...(existing.tag ?? []), ...tag]));
       if (existing.quant < 1) {
         const index = list.indexOf(existing);
         list.splice(index, 1);
@@ -161,7 +166,7 @@ const addCard = async (
         updatedAt: new Date(),
         image,
         oracle,
-        tag: [],
+        tag,
         color,
         color_identity,
         type,

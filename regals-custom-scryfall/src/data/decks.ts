@@ -1,5 +1,5 @@
 import { decks } from "@/config/mongoCollections";
-import { Deck } from "@/types";
+import { Card, Deck } from "@/types";
 import validation from "@/validation"
 import { Collection, ObjectId } from "mongodb";
 
@@ -89,9 +89,34 @@ const setTags = async (
   );
 };
 
+const replaceCards = async (
+  deckId: string,
+  cards: Card[]
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  if (!Array.isArray(cards)) throw new Error("cards must be an array");
+
+  const deckCollection: Collection<Deck> = await decks();
+  const result = await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $set: {
+        cards: cards.map(card => ({
+          ...card,
+          updatedAt: new Date(),
+        })),
+        lastUpdate: new Date(),
+      },
+    }
+  );
+
+  if (result.matchedCount === 0) throw new Error("Deck not found");
+};
+
 export default {
   addDeck,
   findDeckByMongoId,
   getAllDecks,
   setTags,
+  replaceCards,
 };

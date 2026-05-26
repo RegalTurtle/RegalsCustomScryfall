@@ -49,6 +49,9 @@ export default function CardPiles({ piles, setSelectedCard }: { piles: CardPile[
                       className="w-full h-full object-contain rounded-lg cursor-pointer"
                       style={{ pointerEvents: "auto" }}
                     />
+                    {card.proxy && (
+                      <div className="pointer-events-none absolute inset-0 rounded-lg border-4 border-red-600" />
+                    )}
                   </div>
                 ))}
               </div>

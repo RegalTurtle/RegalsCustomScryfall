@@ -1,15 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import cardData from "@/data/cards"
 import { getServerSession } from "next-auth";
 import authorization from "@/authorization";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { CollectionTypeOption } from "@/types";
+import deckData from "@/data/decks";
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { collection_type: CollectionTypeOption } }
+  { params }: { params: { deck_id: string } }
 ): Promise<NextResponse> {
-  const { collection_type } = await params;
+  const { deck_id } = await params;
   const session = await getServerSession({ request, ...authOptions });
 
   if (!session || !authorization.canAddCardsToCollection(session.user?.permissionLevel)) {
@@ -17,13 +16,11 @@ export async function POST(
   }
 
   try {
-    const body = await request.json();
-    
-    await cardData.addCard(collection_type, body.name, body.quant, body.set, body.cn, body.foil, body.proxy, body.image, body.oracle, body.color, body.color_identity, body.type, body.cmc, body.tag);
-
-    return NextResponse.json({ message: "Card received" }, { status: 201 });
+    const { cards } = await request.json();
+    await deckData.replaceCards(deck_id, cards);
+    return NextResponse.json({ message: "Deck cards replaced" }, { status: 201 });
   } catch (err) {
-    console.error("Error parsing request:", err);
+    console.error("Error replacing deck cards:", err);
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 }

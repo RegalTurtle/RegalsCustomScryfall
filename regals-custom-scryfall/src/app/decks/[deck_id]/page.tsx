@@ -4,6 +4,7 @@ import authorization from "@/authorization";
 import CardAddSystem from "@/components/CardAddSystem";
 import CardEditModal from "@/components/CardEditModal";
 import CardPiles from "@/components/CardPiles";
+import DeckBulkEditModal from "@/components/DeckBulkEditModal";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader"
 import { Card, CardPile, Deck } from "@/types";
 import { useSession } from "next-auth/react";
@@ -47,6 +48,7 @@ export default function Decks() {
   const [ loadingDeck, setLoadingDeck ] = useState(true);
 
   const [ showFindModal, setShowFindModal ] = useState<boolean>(false);
+  const [ showBulkEditModal, setShowBulkEditModal ] = useState<boolean>(false);
   const [ showFindSideModal, setShowFindSideModal ] = useState<boolean>(false);
   const [ showFindMaybeModal, setShowFindMaybeModal ] = useState<boolean>(false);
   const [ showFindWishModal, setShowFindWishModal ] = useState<boolean>(false);
@@ -111,12 +113,18 @@ export default function Decks() {
       { piles && (<div className="text-center">
         <p className="text-lg ml-5">Decklist</p>
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
-          <div className="mb-1 mt-1 ml-5">
+          <div className="mb-1 mt-1 ml-5 flex justify-center gap-2">
             <button
               onClick={() => setShowFindModal(true)}
               className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
             >
               + Add a Card
+            </button>
+            <button
+              onClick={() => setShowBulkEditModal(true)}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              Bulk Edit
             </button>
           </div>
         }
@@ -196,6 +204,15 @@ export default function Decks() {
         update={update}
         sendUpdate={sendUpdate}
         collection_type={`decks+${deckId}`}
+      />
+
+      <DeckBulkEditModal
+        show={showBulkEditModal}
+        onClose={() => setShowBulkEditModal(false)}
+        deckId={deckId?.toString() as string}
+        update={update}
+        sendUpdate={sendUpdate}
+        collectionType={`decks+${deckId}`}
       />
 
       <CardAddSystem
