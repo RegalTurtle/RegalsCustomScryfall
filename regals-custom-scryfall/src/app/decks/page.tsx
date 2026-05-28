@@ -238,7 +238,7 @@ export default function Decks() {
 
         {showEdhColorView ? (
           <div className="mt-5 w-full max-w-6xl mx-auto text-white">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1.5fr_1.5fr_1.5fr]">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
               <div className="space-y-5">
                 {monoColorGroups.map(group => (
                   <DeckGroup

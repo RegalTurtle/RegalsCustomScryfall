@@ -5,11 +5,13 @@ const cardKey = (card: Card) => `${card.set}|${card.cn}`;
 export default function CardPiles({ 
   piles, 
   setSelectedCard,
+  setHoveredCard,
   availableProxyKeys = [],
   availableProxyLocations = {},
 }: { 
   piles: CardPile[], 
   setSelectedCard: (card: Card) => void,
+  setHoveredCard?: (card: Card) => void,
   availableProxyKeys?: string[],
   availableProxyLocations?: Record<string, string[]>,
 }) {
@@ -57,6 +59,7 @@ export default function CardPiles({
                     <img
                       src={card.image}
                       alt={card.name}
+                      onMouseEnter={() => setHoveredCard?.(card)}
                       onClick={() => setSelectedCard(card)}
                       className="w-full h-full object-contain rounded-lg cursor-pointer"
                       style={{ pointerEvents: "auto" }}

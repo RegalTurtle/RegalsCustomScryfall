@@ -72,6 +72,7 @@ export default function Decks() {
 
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedCardCollectionType, setSelectedCardCollectionType] = useState<CollectionTypeOption | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<Card | null>(null);
 
   useEffect(() => {
     if (!deckId) return;
@@ -238,6 +239,7 @@ export default function Decks() {
         <CardPiles 
           piles={piles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+${deckId}`)}
+          setHoveredCard={setHoveredCard}
           availableProxyKeys={availableProxyKeys}
           availableProxyLocations={availableProxyLocations}
         /> 
@@ -258,6 +260,7 @@ export default function Decks() {
         <CardPiles 
           piles={sidePiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+sideboard+${deckId}`)}
+          setHoveredCard={setHoveredCard}
         /> 
       </div>) }
 
@@ -375,6 +378,7 @@ export default function Decks() {
         <CardPiles 
           piles={maybePiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+maybeboard+${deckId}`)}
+          setHoveredCard={setHoveredCard}
         /> 
       </div>) }
 
@@ -393,8 +397,24 @@ export default function Decks() {
         <CardPiles 
           piles={wishPiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+wishlist+${deckId}`)}
+          setHoveredCard={setHoveredCard}
         /> 
       </div>) }
+
+      {hoveredCard && (
+        <aside className="fixed left-16 top-32 z-40 hidden w-80 rounded bg-gray-900/95 p-3 text-white shadow-xl 2xl:left-28 xl:block">
+          <img
+            src={hoveredCard.image}
+            alt={hoveredCard.name}
+            className="w-full rounded-2xl"
+          />
+          <div className="mt-3 text-center">
+            <p className="font-semibold">{hoveredCard.name}</p>
+            <p className="text-sm text-gray-300">{`${hoveredCard.set.toUpperCase()} ${hoveredCard.cn}`}</p>
+            {hoveredCard.quant > 1 && <p className="text-sm text-gray-300">{`x${hoveredCard.quant}`}</p>}
+          </div>
+        </aside>
+      )}
 
       {selectedCard && selectedCardCollectionType && (
         <CardEditModal
