@@ -9,7 +9,38 @@ import RegalsMagicHeader from "@/components/RegalsMagicHeader"
 import { Card, CardPile, CollectionTypeOption, Deck } from "@/types";
 import { useSession } from "next-auth/react";
 import { useParams } from 'next/navigation';
-import { useEffect, useState } from "react";
+import { DragEvent, useEffect, useState } from "react";
+
+type ScryfallCard = {
+  name: string;
+  set: string;
+  collector_number: string;
+  finishes: string[];
+  image_uris?: { normal: string };
+  card_faces?: Array<{
+    image_uris?: { normal: string };
+    oracle_text?: string;
+    colors?: string[];
+  }>;
+  oracle_text?: string;
+  colors?: string[];
+  color_identity: string[];
+  type_line: string;
+  cmc: number;
+  object?: string;
+};
+
+type DroppedCardLookup = {
+  name?: string;
+  set?: string;
+  cn?: string;
+  scryfallId?: string;
+  moxfieldAssetUrl?: string;
+};
+
+const ignoredDragNames = new Set(["front", "back", "card", "image"]);
+
+const WUBRG = ["W", "U", "B", "R", "G"];
 
 function groupCardsByTags(cards: Card[]): CardPile[] {
   const pileMap: Record<string, Card[]> = {};
@@ -45,6 +76,165 @@ function findCardImage(cards: Card[], cardName: string | null): string | null {
   return cards.find(card => card.name === cardName)?.image ?? null;
 }
 
+function getCardImage(card: ScryfallCard): string {
+  return card.image_uris?.normal ?? card.card_faces?.[0]?.image_uris?.normal ?? "";
+}
+
+function getCardOracle(card: ScryfallCard): string {
+  return card.oracle_text ?? card.card_faces?.map(face => face.oracle_text ?? "").join(" // ") ?? "";
+}
+
+function getCardColors(card: ScryfallCard): string {
+  if (card.colors) {
+    return WUBRG.filter(c => card.colors?.includes(c)).join("");
+  }
+
+  if (card.card_faces && card.card_faces.length > 0) {
+    return card.card_faces
+      .map(face => WUBRG.filter(c => face.colors?.includes(c)).join(""))
+      .join(" // ");
+  }
+
+  return "";
+}
+
+function getDroppedCardLookup(event: DragEvent): DroppedCardLookup {
+  const getUsefulName = (value: string | null | undefined) => {
+    const trimmed = value?.trim();
+    if (!trimmed || ignoredDragNames.has(trimmed.toLowerCase())) return undefined;
+    return trimmed;
+  };
+  const parseSource = (source: string): DroppedCardLookup | null => {
+    const decodedSource = decodeURIComponent(source);
+    const scryfallId = decodedSource.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i)?.[0];
+    if (scryfallId) return { scryfallId };
+    if (/assets\.moxfield\.net\/cards\/card-[^/?#]+/i.test(decodedSource)) {
+      return { moxfieldAssetUrl: decodedSource };
+    }
+
+    const setCnPatterns = [
+      /[?&#](?:set|s)=([A-Z0-9]{2,6}).*?[?&#](?:cn|collector(?:_number)?|number)=([A-Z0-9]+[-\w]*[a-z]?)/i,
+      /(?:\(|\b)([A-Z0-9]{2,6})\)\s+([A-Z0-9]+[-\w]*[a-z]?)(?=\s|$|[/?&#)])/i,
+    ];
+
+    for (const pattern of setCnPatterns) {
+      const setCnMatch = decodedSource.match(pattern);
+      if (setCnMatch) {
+        return {
+          set: setCnMatch[1].toLowerCase(),
+          cn: setCnMatch[2],
+        };
+      }
+    }
+
+    return null;
+  };
+
+  const html = event.dataTransfer.getData("text/html");
+  if (html) {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const attributeValues = Array.from(doc.querySelectorAll("*"))
+      .flatMap(element => Array.from(element.attributes).map(attribute => attribute.value))
+      .filter((value): value is string => Boolean(value));
+
+    let moxfieldAssetLookup: DroppedCardLookup | null = null;
+    for (const attributeValue of attributeValues) {
+      const parsed = parseSource(attributeValue);
+      if (parsed?.moxfieldAssetUrl) {
+        moxfieldAssetLookup = parsed;
+        continue;
+      }
+      if (parsed) return parsed;
+    }
+
+    const image = doc.querySelector("img");
+    const name = getUsefulName(image?.getAttribute("data-card-name"))
+      ?? getUsefulName(image?.getAttribute("data-name"))
+      ?? getUsefulName(image?.getAttribute("alt"))
+      ?? getUsefulName(image?.getAttribute("title"))
+      ?? getUsefulName(image?.getAttribute("aria-label"))
+      ?? getUsefulName(doc.body.textContent);
+
+    if (name) return { name };
+    if (moxfieldAssetLookup) return moxfieldAssetLookup;
+  }
+
+  const plainText = event.dataTransfer.getData("text/plain").trim();
+  if (plainText) {
+    const parsed = parseSource(plainText);
+    if (parsed) return parsed;
+    const name = getUsefulName(plainText);
+    if (name && !name.startsWith("http")) return { name };
+  }
+
+  return {};
+}
+
+function describeDroppedLookup(lookup: DroppedCardLookup): string {
+  if (lookup.scryfallId) return `Scryfall ID ${lookup.scryfallId}`;
+  if (lookup.set && lookup.cn) return `${lookup.set.toUpperCase()} ${lookup.cn}`;
+  if (lookup.moxfieldAssetUrl) return "a Moxfield image URL without card identity";
+  if (lookup.name) return lookup.name;
+  return "nothing readable";
+}
+
+async function fetchDroppedScryfallCard(lookup: DroppedCardLookup): Promise<ScryfallCard> {
+  if (lookup.scryfallId || (lookup.set && lookup.cn)) {
+    const res = await fetch("/api/scryfall/card_lookup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(lookup),
+    });
+    const data = await res.json();
+
+    if (!res.ok || !data.card) {
+      throw new Error(data.error ?? `Dropped card lookup failed for ${describeDroppedLookup(lookup)}`);
+    }
+
+    return data.card;
+  }
+
+  if (!lookup.name) {
+    if (lookup.moxfieldAssetUrl) {
+      throw new Error("Moxfield image URLs do not include card name, set, or collector number. Drag the card link/row if possible, use Scryfall, or use Bulk Edit from a Moxfield export line.");
+    }
+    throw new Error(`Could not read set/collector number from the dropped card. Parsed ${describeDroppedLookup(lookup)}.`);
+  }
+
+  const params = new URLSearchParams({
+    exact: lookup.name,
+  });
+  const res = await fetch(`https://api.scryfall.com/cards/named?${params.toString()}`);
+  const data = await res.json();
+
+  if (!res.ok || data.object === "error") {
+    throw new Error(`${lookup.name} was not found on Scryfall`);
+  }
+
+  return data;
+}
+
+function buildCardFromScryfall(card: ScryfallCard): Card {
+  return {
+    name: card.name,
+    quant: 1,
+    set: card.set,
+    cn: card.collector_number,
+    foil: card.finishes.includes("nonfoil") ? "nonfoil" : card.finishes[0] as Card["foil"],
+    proxy: false,
+    updatedAt: null,
+    image: getCardImage(card),
+    oracle: getCardOracle(card),
+    tag: [],
+    color: getCardColors(card),
+    color_identity: WUBRG.filter(c => card.color_identity.includes(c)).join(""),
+    type: card.type_line,
+    cmc: card.cmc,
+  };
+}
+
 export default function Decks() {
   const { data: session, status } = useSession();
 
@@ -69,6 +259,8 @@ export default function Decks() {
   const [ plannedCardIn, setPlannedCardIn ] = useState("");
   const [ savingPlannedChange, setSavingPlannedChange ] = useState(false);
   const [ plannedChangeError, setPlannedChangeError ] = useState("");
+  const [ dragTarget, setDragTarget ] = useState<CollectionTypeOption | null>(null);
+  const [ dropError, setDropError ] = useState("");
 
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedCardCollectionType, setSelectedCardCollectionType] = useState<CollectionTypeOption | null>(null);
@@ -128,6 +320,34 @@ export default function Decks() {
     setSelectedCard(card);
     setSelectedCardCollectionType(collectionType);
   };
+
+  const addDroppedCard = async (event: DragEvent, collectionType: CollectionTypeOption) => {
+    event.preventDefault();
+    setDragTarget(null);
+    setDropError("");
+
+    try {
+      const droppedCardLookup = getDroppedCardLookup(event);
+      const scryfallCard = await fetchDroppedScryfallCard(droppedCardLookup);
+      const card = buildCardFromScryfall(scryfallCard);
+      const res = await fetch(`/api/collection/${collectionType}/add_card`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(card),
+      });
+
+      if (!res.ok) throw new Error(`Could not add ${card.name}`);
+      sendUpdate(update + 1);
+    } catch {
+      setDropError("Couldn't import card from image.");
+    }
+  };
+
+  const dropTargetClass = (collectionType: CollectionTypeOption) => (
+    dragTarget === collectionType ? "ring-4 ring-indigo-300 ring-offset-2 ring-offset-teal-900" : ""
+  );
 
   const addPlannedChange = async () => {
     setSavingPlannedChange(true);
@@ -211,7 +431,28 @@ export default function Decks() {
         }
       </div>
 
-      { piles && (<div className="text-center">
+      {dropError && (
+        <div className="fixed right-4 top-4 z-[300] max-w-sm rounded border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-800 shadow-lg">
+          <button
+            onClick={() => setDropError("")}
+            className="absolute right-2 top-1 text-lg leading-none"
+            aria-label="Dismiss import error"
+          >
+            x
+          </button>
+          <p className="pr-5">{dropError}</p>
+        </div>
+      )}
+
+      { piles && (<div 
+        className={`text-center rounded ${dropTargetClass(`decks+${deckId}`)}`}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragTarget(`decks+${deckId}`);
+        }}
+        onDragLeave={() => setDragTarget(null)}
+        onDrop={(e) => addDroppedCard(e, `decks+${deckId}`)}
+      >
         <p className="text-lg ml-5">{`Decklist (${countCards(deck.cards)})`}</p>
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
           <div className="mb-1 mt-1 ml-5 flex justify-center gap-2">
@@ -245,7 +486,15 @@ export default function Decks() {
         /> 
       </div>) }
 
-      { sidePiles && (<div className="text-center">
+      { sidePiles && (<div 
+        className={`text-center rounded ${dropTargetClass(`decks+sideboard+${deckId}`)}`}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragTarget(`decks+sideboard+${deckId}`);
+        }}
+        onDragLeave={() => setDragTarget(null)}
+        onDrop={(e) => addDroppedCard(e, `decks+sideboard+${deckId}`)}
+      >
         <p className="text-lg ml-5">Sideboard</p>
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
           <div className="mb-1 mt-1 ml-5">
@@ -363,7 +612,15 @@ export default function Decks() {
         </div>
       </div>
 
-      { maybePiles && (<div className="text-center">
+      { maybePiles && (<div 
+        className={`text-center rounded ${dropTargetClass(`decks+maybeboard+${deckId}`)}`}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragTarget(`decks+maybeboard+${deckId}`);
+        }}
+        onDragLeave={() => setDragTarget(null)}
+        onDrop={(e) => addDroppedCard(e, `decks+maybeboard+${deckId}`)}
+      >
         <p className="text-lg ml-5">Physical Maybeboard</p>
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
           <div className="mb-1 mt-1 ml-5">
@@ -382,7 +639,15 @@ export default function Decks() {
         /> 
       </div>) }
 
-      { wishPiles && (<div className="text-center">
+      { wishPiles && (<div 
+        className={`text-center rounded ${dropTargetClass(`decks+wishlist+${deckId}`)}`}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragTarget(`decks+wishlist+${deckId}`);
+        }}
+        onDragLeave={() => setDragTarget(null)}
+        onDrop={(e) => addDroppedCard(e, `decks+wishlist+${deckId}`)}
+      >
         <p className="text-lg ml-5">Online Maybeboard</p>
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
           <div className="mb-1 mt-1 ml-5">
