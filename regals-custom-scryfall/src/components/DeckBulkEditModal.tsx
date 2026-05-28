@@ -116,25 +116,24 @@ function getCardColors(card: ScryfallCard): string {
 }
 
 async function fetchScryfallCard(parsed: ParsedDeckLine): Promise<ScryfallCard> {
-  let res: Response;
-
-  if (parsed.set === "plst") {
-    const params = new URLSearchParams({ q: `s:plst cn=${parsed.cn}` });
-    res = await fetch(`https://api.scryfall.com/cards/search?${params.toString()}`);
-    const data = await res.json();
-    if (!res.ok || data.object === "error" || !data.data?.[0]) {
-      throw new Error(`Line ${parsed.lineNumber}: ${parsed.name} was not found on Scryfall`);
-    }
-    return data.data[0];
-  }
-
-  res = await fetch(`https://api.scryfall.com/cards/${parsed.set}/${encodeURIComponent(parsed.cn)}`);
+  const res = await fetch("/api/scryfall/card_lookup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: parsed.name,
+      set: parsed.set,
+      cn: parsed.cn,
+    }),
+  });
   const data = await res.json();
-  if (!res.ok || data.object === "error") {
-    throw new Error(`Line ${parsed.lineNumber}: ${parsed.name} was not found on Scryfall`);
+
+  if (!res.ok || !data.card) {
+    throw new Error(`Line ${parsed.lineNumber}: ${data.error ?? `${parsed.name} was not found on Scryfall`}`);
   }
 
-  return data;
+  return data.card;
 }
 
 function buildCard(parsed: ParsedDeckLine, scryfallCard: ScryfallCard): Card {

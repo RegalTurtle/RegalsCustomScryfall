@@ -290,7 +290,7 @@ export default function Decks() {
                 <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
                   Other EDH Decks
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 justify-items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 justify-items-stretch">
                   {edhColorGroups.otherDecks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)}
                 </div>
               </section>

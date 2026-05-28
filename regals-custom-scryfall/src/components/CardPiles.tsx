@@ -1,5 +1,4 @@
 import { Card, CardPile } from "@/types";
-import { Dispatch, SetStateAction } from "react";
 
 const cardKey = (card: Card) => `${card.set}|${card.cn}`;
 
@@ -10,7 +9,7 @@ export default function CardPiles({
   availableProxyLocations = {},
 }: { 
   piles: CardPile[], 
-  setSelectedCard: Dispatch<SetStateAction<Card | null>>,
+  setSelectedCard: (card: Card) => void,
   availableProxyKeys?: string[],
   availableProxyLocations?: Record<string, string[]>,
 }) {

@@ -1,4 +1,4 @@
-import { Card } from "@/types";
+import { Card, CollectionTypeOption } from "@/types";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useState } from "react";
 
@@ -14,12 +14,14 @@ export default function CardEditModal({
   update, 
   sendUpdate,
   deckId,
+  collectionType,
 }: {
   card: Card;
   onClose: () => void;
   update: number;
   sendUpdate: Dispatch<SetStateAction<number>>;
   deckId: string;
+  collectionType: CollectionTypeOption;
 }) {
   // Inside CardEditModal
   const [tags, setTags] = useState<string[]>(card.tag ?? []);
@@ -30,6 +32,9 @@ export default function CardEditModal({
   const [hasLoadedOwnedVersions, setHasLoadedOwnedVersions] = useState(false);
   const [loadingOwnedVersions, setLoadingOwnedVersions] = useState(false);
   const [swapError, setSwapError] = useState("");
+  const [removeQuant, setRemoveQuant] = useState(1);
+  const [removingCopies, setRemovingCopies] = useState(false);
+  const [removeCopiesError, setRemoveCopiesError] = useState("");
 
   const addTag = async () => {
     if (!newTag.trim() || tags.includes(newTag)) return;
@@ -116,6 +121,36 @@ export default function CardEditModal({
     });
     setTags(updatedTags);
     sendUpdate(update + 1);
+  };
+
+  const removeCopies = async () => {
+    setRemovingCopies(true);
+    setRemoveCopiesError("");
+
+    try {
+      const res = await fetch(`/api/collection/${collectionType}/add_card`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...card,
+          quant: -removeQuant,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not remove copies");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setRemoveCopiesError(error instanceof Error ? error.message : "Could not remove copies");
+    } finally {
+      setRemovingCopies(false);
+    }
   };
 
   useEffect(() => {
@@ -244,6 +279,27 @@ export default function CardEditModal({
                 </div>
               )}
               {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
+            </div>
+            <div className="w-full rounded bg-gray-700 p-3">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Remove copies from this section:</label>
+                <input
+                  type="number"
+                  min={1}
+                  max={card.quant}
+                  value={removeQuant}
+                  onChange={(e) => setRemoveQuant(Math.min(card.quant, Math.max(1, Number(e.target.value))))}
+                  className="rounded bg-gray-800 px-2 py-1 text-white"
+                />
+                <button
+                  onClick={removeCopies}
+                  disabled={removingCopies}
+                  className="w-full bg-red-700 hover:bg-red-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                >
+                  {removingCopies ? "Removing..." : "Remove Copies"}
+                </button>
+              </div>
+              {removeCopiesError && <p className="mt-2 text-sm text-red-300">{removeCopiesError}</p>}
             </div>
             {/* <a
               href={`https://www.cardkingdom.com/catalog/search?search=header&filter[name]=${encodeURIComponent(card.name)}`}

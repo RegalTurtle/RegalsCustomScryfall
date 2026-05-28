@@ -9,10 +9,12 @@ const addDeck = async (
   owner: string,
   format: string,
   colorId: string | null,
+  mainForColorIdentity: boolean = false,
 ) => {
   name = validation.verifyStr(name, `name`);
   owner = validation.verifyStr(owner, `owner`);
   format = validation.verifyStr(format, `format`);
+  if (typeof mainForColorIdentity !== "boolean") throw new Error("mainForColorIdentity must be a boolean");
 
   const newDeck: Deck = {
     owner,
@@ -29,7 +31,7 @@ const addDeck = async (
     maybeboard: [],
     wishlist: [],
     together: true,
-    mainForColorIdentity: false,
+    mainForColorIdentity,
   };
 
   if (link) {
@@ -46,6 +48,18 @@ const addDeck = async (
   if (!acknowledged) {
     throw new Error("Database error");
   }
+
+  if (mainForColorIdentity) {
+    await deckCollection.updateMany(
+      {
+        _id: { $ne: insertedId },
+        format,
+        ...(colorId ? { colorId } : { $or: [{ colorId: { $exists: false } }, { colorId: "" }] }),
+      },
+      { $set: { mainForColorIdentity: false } }
+    );
+  }
+
   return insertedId;
 }
 
@@ -274,12 +288,69 @@ const replaceProxyWithOwnedCard = async (
   );
 };
 
+const addPlannedChange = async (
+  deckId: string,
+  cardOut: string,
+  cardIn: string,
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  cardOut = validation.verifyStr(cardOut, "cardOut");
+  cardIn = validation.verifyStr(cardIn, "cardIn");
+
+  const deckCollection: Collection<Deck> = await decks();
+  const result = await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $push: {
+        changes: {
+          date: new Date(),
+          cardOut,
+          cardIn,
+        },
+      },
+      $set: {
+        lastUpdate: new Date(),
+      },
+    }
+  );
+
+  if (result.matchedCount === 0) throw new Error("Deck not found");
+}
+
+const removePlannedChange = async (
+  deckId: string,
+  changeIndex: number,
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  changeIndex = validation.verifyInteger(changeIndex, "changeIndex");
+  if (changeIndex < 0) throw new Error("changeIndex must be at least 0");
+
+  const deckCollection: Collection<Deck> = await decks();
+  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  if (!deck) throw new Error("Deck not found");
+  if (changeIndex >= deck.changes.length) throw new Error("Planned change not found");
+
+  deck.changes.splice(changeIndex, 1);
+
+  await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $set: {
+        changes: deck.changes,
+        lastUpdate: new Date(),
+      },
+    }
+  );
+}
+
 export default {
   addDeck,
   findDeckByMongoId,
   getAllDecks,
   updateDeckSettings,
   setTags,
+  addPlannedChange,
+  removePlannedChange,
   replaceCards,
   replaceProxyWithOwnedCard,
 };
