@@ -12,6 +12,7 @@ export interface Deck {
   notes: string;
   commander?: Card;
   colorId?: string;
+  mainForColorIdentity?: boolean;
   format: string;
   games: Array<Game>;
   wins: number;

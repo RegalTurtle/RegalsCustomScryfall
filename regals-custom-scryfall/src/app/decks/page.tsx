@@ -151,37 +151,37 @@ export default function Decks() {
   }, [decks, formatFilter, sortBy]);
 
   const edhColorGroups = useMemo(() => {
-    const edhDecks = visibleDecks.filter(deck => normalizeColorId(deck.colorId).length !== 3 && normalizeColorId(deck.colorId).length !== 4);
+    const mainDecks = visibleDecks.filter(deck => deck.mainForColorIdentity);
+    const otherDecks = visibleDecks.filter(deck => !deck.mainForColorIdentity);
 
     return {
-      colorless: visibleDecks.filter(deck => normalizeColorId(deck.colorId).length === 0),
+      otherDecks,
+      colorless: mainDecks.filter(deck => normalizeColorId(deck.colorId).length === 0),
       mono: Object.fromEntries(
         monoColorGroups.map(group => [
           group.colorId,
-          visibleDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
+          mainDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
         ])
       ) as Record<string, Deck[]>,
       twoColor: Object.fromEntries(
         twoColorGroups.map(group => [
           group.colorId,
-          visibleDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
+          mainDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
         ])
       ) as Record<string, Deck[]>,
-      threeColor: visibleDecks.filter(deck => normalizeColorId(deck.colorId).length === 3),
-      fourColor: visibleDecks.filter(deck => normalizeColorId(deck.colorId).length === 4),
       namedThreeColor: Object.fromEntries(
         threeColorGroups.map(group => [
           group.colorId,
-          visibleDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
+          mainDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
         ])
       ) as Record<string, Deck[]>,
       namedFourColor: Object.fromEntries(
         fourColorGroups.map(group => [
           group.colorId,
-          visibleDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
+          mainDecks.filter(deck => normalizeColorId(deck.colorId) === group.colorId),
         ])
       ) as Record<string, Deck[]>,
-      fiveColor: visibleDecks.filter(deck => normalizeColorId(deck.colorId).length === 5),
+      fiveColor: mainDecks.filter(deck => normalizeColorId(deck.colorId).length === 5),
     };
   }, [visibleDecks]);
 
@@ -284,6 +284,17 @@ export default function Decks() {
               <DeckGroup title="Colorless" decks={edhColorGroups.colorless} />
               <DeckGroup title="5 color" decks={edhColorGroups.fiveColor} />
             </div>
+
+            {edhColorGroups.otherDecks.length > 0 && (
+              <section className="mt-8">
+                <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
+                  Other EDH Decks
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 justify-items-stretch">
+                  {edhColorGroups.otherDecks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)}
+                </div>
+              </section>
+            )}
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 justify-items-stretch mt-5 w-full max-w-5xl mx-auto">

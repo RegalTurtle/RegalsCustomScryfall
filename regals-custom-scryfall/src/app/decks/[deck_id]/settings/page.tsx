@@ -35,6 +35,7 @@ export default function DeckSettings() {
   const [owner, setOwner] = useState("");
   const [format, setFormat] = useState("");
   const [colorId, setColorId] = useState("");
+  const [mainForColorIdentity, setMainForColorIdentity] = useState(false);
 
   useEffect(() => {
     if (!deckId) return;
@@ -50,6 +51,7 @@ export default function DeckSettings() {
         setOwner(foundDeck.owner);
         setFormat(foundDeck.format);
         setColorId(foundDeck.colorId ?? "");
+        setMainForColorIdentity(Boolean(foundDeck.mainForColorIdentity));
       } catch (error) {
         setError(error instanceof Error ? error.message : "Failed to fetch deck");
       } finally {
@@ -98,6 +100,7 @@ export default function DeckSettings() {
           owner,
           format,
           colorId,
+          mainForColorIdentity,
         }),
       });
 
@@ -206,6 +209,21 @@ export default function DeckSettings() {
               </button>
             </div>
           </div>
+
+          <label className="flex items-start gap-3 rounded border border-gray-200 bg-gray-50 p-3">
+            <input
+              type="checkbox"
+              checked={mainForColorIdentity}
+              onChange={(e) => setMainForColorIdentity(e.target.checked)}
+              className="mt-1 h-4 w-4"
+            />
+            <span>
+              <span className="block text-sm font-medium">Main deck for this color identity</span>
+              <span className="block text-sm text-gray-600">
+                Show this deck in the EDH color overview. Other decks with the same format and colors will be listed below it.
+              </span>
+            </span>
+          </label>
 
           <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-2 pt-2">
             <button

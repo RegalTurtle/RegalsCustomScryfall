@@ -29,6 +29,7 @@ const addDeck = async (
     maybeboard: [],
     wishlist: [],
     together: true,
+    mainForColorIdentity: false,
   };
 
   if (link) {
@@ -72,16 +73,19 @@ const updateDeckSettings = async (
   owner: string,
   format: string,
   colorId: string | null,
+  mainForColorIdentity: boolean,
 ) => {
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   name = validation.verifyStr(name, "name");
   owner = validation.verifyStr(owner, "owner");
   format = validation.verifyStr(format, "format");
+  if (typeof mainForColorIdentity !== "boolean") throw new Error("mainForColorIdentity must be a boolean");
 
   const deckUpdate: Partial<Deck> = {
     name,
     owner,
     format,
+    mainForColorIdentity,
     lastUpdate: new Date(),
   };
 
@@ -102,6 +106,17 @@ const updateDeckSettings = async (
   );
 
   if (result.matchedCount === 0) throw new Error("Deck not found");
+
+  if (mainForColorIdentity) {
+    await deckCollection.updateMany(
+      {
+        _id: { $ne: new ObjectId(deckId) },
+        format,
+        ...(colorId ? { colorId } : { $or: [{ colorId: { $exists: false } }, { colorId: "" }] }),
+      },
+      { $set: { mainForColorIdentity: false } }
+    );
+  }
 }
 
 const setTags = async (
