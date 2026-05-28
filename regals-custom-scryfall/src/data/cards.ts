@@ -73,6 +73,157 @@ const getPageOfCards = async ( page: number, collection_type: "bulk" | "cool-car
   return cardPage;
 }
 
+const getCardCollection = async (collection_type: "bulk" | "cool-cards" | "trade-binder"): Promise<Collection<Card>> => {
+  if (collection_type === "bulk") {
+    return await bulkCards();
+  } else if (collection_type === "cool-cards") {
+    return await coolCards();
+  } else if (collection_type === "trade-binder") {
+    return await tradeBinder();
+  }
+
+  throw new Error("collection_type invalid");
+}
+
+const transferCard = async (
+  fromCollectionType: "bulk" | "cool-cards" | "trade-binder",
+  toCollectionType: "bulk" | "cool-cards" | "trade-binder",
+  cardId: string,
+  quant: number,
+): Promise<undefined> => {
+  if (fromCollectionType === toCollectionType) throw new Error("Collections must be different");
+  const _id = validation.verifyMongoId(cardId);
+  quant = validation.verifyInteger(quant, "quant");
+  if (quant < 1) throw new Error("quant must be at least 1");
+
+  const fromCollection = await getCardCollection(fromCollectionType);
+  const toCollection = await getCardCollection(toCollectionType);
+
+  const sourceCard = await fromCollection.findOne({ _id });
+  if (!sourceCard) throw new Error("Source card not found");
+  if (sourceCard.quant < quant) throw new Error("Not enough copies to transfer");
+
+  const existingTargetCard = await toCollection.findOne({
+    set: sourceCard.set,
+    cn: sourceCard.cn,
+    foil: sourceCard.foil,
+    proxy: sourceCard.proxy,
+  });
+
+  if (existingTargetCard) {
+    await toCollection.updateOne(
+      { _id: existingTargetCard._id },
+      {
+        $set: {
+          quant: existingTargetCard.quant + quant,
+          updatedAt: new Date(),
+          image: sourceCard.image,
+        },
+      }
+    );
+  } else {
+    const cardToTransfer: Card = {
+      ...sourceCard,
+      quant,
+      updatedAt: new Date(),
+    };
+    delete cardToTransfer._id;
+    await toCollection.insertOne(cardToTransfer);
+  }
+
+  const remainingQuant = sourceCard.quant - quant;
+  if (remainingQuant < 1) {
+    await fromCollection.deleteOne({ _id });
+  } else {
+    await fromCollection.updateOne(
+      { _id },
+      { $set: { quant: remainingQuant, updatedAt: new Date() } }
+    );
+  }
+}
+
+const changeCardFoil = async (
+  collection_type: "bulk" | "cool-cards" | "trade-binder",
+  cardId: string,
+  quant: number,
+  foil: FoilOption,
+): Promise<undefined> => {
+  const _id = validation.verifyMongoId(cardId);
+  quant = validation.verifyInteger(quant, "quant");
+  if (quant < 1) throw new Error("quant must be at least 1");
+  foil = validation.verifyFoilType(foil);
+
+  const cardsCollection = await getCardCollection(collection_type);
+  const sourceCard = await cardsCollection.findOne({ _id });
+  if (!sourceCard) throw new Error("Source card not found");
+  if (sourceCard.foil === foil) throw new Error("Card already has that finish");
+  if (sourceCard.quant < quant) throw new Error("Not enough copies to update");
+
+  const existingTargetCard = await cardsCollection.findOne({
+    set: sourceCard.set,
+    cn: sourceCard.cn,
+    foil,
+    proxy: sourceCard.proxy,
+  });
+
+  if (existingTargetCard) {
+    await cardsCollection.updateOne(
+      { _id: existingTargetCard._id },
+      {
+        $set: {
+          quant: existingTargetCard.quant + quant,
+          updatedAt: new Date(),
+          image: sourceCard.image,
+        },
+      }
+    );
+  } else {
+    const updatedFinishCard: Card = {
+      ...sourceCard,
+      foil,
+      quant,
+      updatedAt: new Date(),
+    };
+    delete updatedFinishCard._id;
+    await cardsCollection.insertOne(updatedFinishCard);
+  }
+
+  const remainingQuant = sourceCard.quant - quant;
+  if (remainingQuant < 1) {
+    await cardsCollection.deleteOne({ _id });
+  } else {
+    await cardsCollection.updateOne(
+      { _id },
+      { $set: { quant: remainingQuant, updatedAt: new Date() } }
+    );
+  }
+}
+
+const removeCard = async (
+  collection_type: "bulk" | "cool-cards" | "trade-binder",
+  cardId: string,
+  quant: number,
+): Promise<undefined> => {
+  const _id = validation.verifyMongoId(cardId);
+  quant = validation.verifyInteger(quant, "quant");
+  if (quant < 1) throw new Error("quant must be at least 1");
+
+  const cardsCollection = await getCardCollection(collection_type);
+  const sourceCard = await cardsCollection.findOne({ _id });
+  if (!sourceCard) throw new Error("Card not found");
+  if (sourceCard.quant < quant) throw new Error("Not enough copies to remove");
+
+  const remainingQuant = sourceCard.quant - quant;
+  if (remainingQuant < 1) {
+    await cardsCollection.deleteOne({ _id });
+  } else {
+    await cardsCollection.updateOne(
+      { _id },
+      { $set: { quant: remainingQuant, updatedAt: new Date() } }
+    );
+  }
+}
+
 const getOwnedVersionsByName = async (name: string): Promise<Array<Card & { collection: "bulk" | "cool-cards", collectionLabel: string }>> => {
   name = validation.verifyStr(name, "name");
 
@@ -259,6 +410,9 @@ export default {
   getCardBySetCn,
   getPageOfCardsBulk,
   getOwnedVersionsByName,
+  transferCard,
+  changeCardFoil,
+  removeCard,
   addCard,
   countAllCards,
   getPageOfCards

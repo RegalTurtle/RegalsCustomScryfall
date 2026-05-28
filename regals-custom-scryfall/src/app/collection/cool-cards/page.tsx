@@ -48,6 +48,7 @@ export default function Collection() {
 
         <CardsWithSearch 
           update={update}
+          sendUpdate={sendUpdate}
           collection_type="cool-cards"
         />
       </main>

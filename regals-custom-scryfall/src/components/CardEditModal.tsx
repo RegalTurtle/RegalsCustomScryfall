@@ -26,6 +26,8 @@ export default function CardEditModal({
   const [newTag, setNewTag] = useState("");
   const [ownedVersions, setOwnedVersions] = useState<OwnedVersion[]>([]);
   const [selectedOwnedVersion, setSelectedOwnedVersion] = useState("");
+  const [returnCollection, setReturnCollection] = useState<"bulk" | "cool-cards">("bulk");
+  const [hasLoadedOwnedVersions, setHasLoadedOwnedVersions] = useState(false);
   const [loadingOwnedVersions, setLoadingOwnedVersions] = useState(false);
   const [swapError, setSwapError] = useState("");
 
@@ -58,6 +60,8 @@ export default function CardEditModal({
       const { ownedVersions } = await res.json();
       setOwnedVersions(ownedVersions);
       setSelectedOwnedVersion(ownedVersions[0] ? `${ownedVersions[0].collection}|${ownedVersions[0]._id}` : "");
+      setReturnCollection(ownedVersions[0]?.collection ?? "bulk");
+      setHasLoadedOwnedVersions(true);
     } catch (error) {
       setSwapError(error instanceof Error ? error.message : "Could not load owned copies");
     } finally {
@@ -65,7 +69,7 @@ export default function CardEditModal({
     }
   };
 
-  const replaceProxy = async () => {
+  const replaceCard = async () => {
     if (!selectedOwnedVersion) return;
     const [collection, collectionCardId] = selectedOwnedVersion.split("|");
     setSwapError("");
@@ -81,18 +85,19 @@ export default function CardEditModal({
           originalCn: card.cn,
           collection,
           collectionCardId,
+          returnCollection: card.proxy ? undefined : returnCollection,
         }),
       });
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error ?? "Could not replace proxy");
+        throw new Error(data.error ?? "Could not replace card");
       }
 
       sendUpdate(update + 1);
       onClose();
     } catch (error) {
-      setSwapError(error instanceof Error ? error.message : "Could not replace proxy");
+      setSwapError(error instanceof Error ? error.message : "Could not replace card");
     }
   };
 
@@ -181,45 +186,65 @@ export default function CardEditModal({
                 </button>
               </div>
             </div>
-            {card.proxy && (
-              <div className="w-full rounded bg-gray-700 p-3">
-                {ownedVersions.length === 0 ? (
+            <div className="w-full rounded bg-gray-700 p-3">
+              {ownedVersions.length === 0 ? (
+                <div className="flex flex-col gap-2">
                   <button
                     onClick={loadOwnedVersions}
                     disabled={loadingOwnedVersions}
                     className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
                   >
-                    {loadingOwnedVersions ? "Loading..." : "Use Owned Copy"}
+                    {loadingOwnedVersions ? "Loading..." : card.proxy ? "Use Owned Copy" : "Swap Owned Copy"}
                   </button>
-                ) : (
-                  <div className="flex flex-col gap-2">
-                    <label className="text-sm">Owned copy:</label>
-                    <select
-                      value={selectedOwnedVersion}
-                      onChange={(e) => setSelectedOwnedVersion(e.target.value)}
-                      className="rounded bg-gray-800 px-2 py-1 text-white"
-                    >
-                      {ownedVersions.map((ownedCard) => (
-                        <option
-                          key={`${ownedCard.collection}|${ownedCard._id}`}
-                          value={`${ownedCard.collection}|${ownedCard._id}`}
-                        >
-                          {`${ownedCard.collectionLabel}: ${ownedCard.set.toUpperCase()} ${ownedCard.cn}${ownedCard.foil !== "nonfoil" ? ` (${ownedCard.foil})` : ""} - ${ownedCard.quant} owned`}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      onClick={replaceProxy}
-                      disabled={!selectedOwnedVersion}
-                      className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
-                    >
-                      Replace Proxy
-                    </button>
-                  </div>
-                )}
-                {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
-              </div>
-            )}
+                  {hasLoadedOwnedVersions && <p className="text-sm text-gray-300">No owned copies found.</p>}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm">Owned copy:</label>
+                  <select
+                    value={selectedOwnedVersion}
+                    onChange={(e) => {
+                      setSelectedOwnedVersion(e.target.value);
+                      const [selectedCollection] = e.target.value.split("|");
+                      if (selectedCollection === "bulk" || selectedCollection === "cool-cards") {
+                        setReturnCollection(selectedCollection);
+                      }
+                    }}
+                    className="rounded bg-gray-800 px-2 py-1 text-white"
+                  >
+                    {ownedVersions.map((ownedCard) => (
+                      <option
+                        key={`${ownedCard.collection}|${ownedCard._id}`}
+                        value={`${ownedCard.collection}|${ownedCard._id}`}
+                      >
+                        {`${ownedCard.collectionLabel}: ${ownedCard.set.toUpperCase()} ${ownedCard.cn}${ownedCard.foil !== "nonfoil" ? ` (${ownedCard.foil})` : ""} - ${ownedCard.quant} owned`}
+                      </option>
+                    ))}
+                  </select>
+                  {!card.proxy && (
+                    <>
+                      <label className="text-sm">Return removed card to:</label>
+                      <select
+                        value={returnCollection}
+                        onChange={(e) => setReturnCollection(e.target.value as "bulk" | "cool-cards")}
+                        className="rounded bg-gray-800 px-2 py-1 text-white"
+                      >
+                        <option value="bulk">Bulk</option>
+                        <option value="cool-cards">Cool Cards</option>
+                      </select>
+                    </>
+                  )}
+                  <button
+                    onClick={replaceCard}
+                    disabled={!selectedOwnedVersion}
+                    className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {card.proxy ? "Replace Proxy" : "Swap Card"}
+                  </button>
+                </div>
+              )}
+              {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
+            </div>
             {/* <a
               href={`https://www.cardkingdom.com/catalog/search?search=header&filter[name]=${encodeURIComponent(card.name)}`}
               target="_blank"

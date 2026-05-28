@@ -24,6 +24,20 @@ const headers = {
   "Accept": "application/json",
 };
 
+function getCardPrice(card: ScryfallCard, foilOption: FoilOption): number | null {
+  const prices = card.prices;
+  if (!prices) return null;
+
+  const rawPrice = foilOption === "foil"
+    ? prices.usd_foil
+    : foilOption === "etched"
+      ? prices.usd_etched
+      : prices.usd;
+  const parsedPrice = Number(rawPrice);
+
+  return Number.isFinite(parsedPrice) ? parsedPrice : null;
+}
+
 const CardAddSystem = ({ 
     showFindModal, 
     setShowFindModal, 
@@ -52,6 +66,16 @@ const CardAddSystem = ({
   const [ showAddByCardModal, setShowAddByCardModal ] = useState<boolean>(false);
   const [ cardList, setCardList ] = useState<Array<ScryfallCard>>([]);
   const [ setAndCn, setSetAndCn ] = useState<string>("");
+  const [ valuableCardNotice, setValuableCardNotice ] = useState<string>("");
+
+  const notifyIfValuableBulkCard = (card: ScryfallCard, foil: FoilOption) => {
+    if (collection_type !== "bulk") return;
+
+    const price = getCardPrice(card, foil);
+    if (price === null || price <= 2) return;
+
+    setValuableCardNotice(`${card.name} is worth $${price.toFixed(2)}.`);
+  };
 
   const handleNameSearch = async () => {
     const params = new URLSearchParams({
@@ -107,6 +131,18 @@ const CardAddSystem = ({
 
   return (
     <div>
+      {valuableCardNotice && (
+        <div className="fixed right-4 top-4 z-[300] max-w-sm rounded border border-yellow-300 bg-yellow-100 px-4 py-3 text-sm font-medium text-yellow-900 shadow-lg">
+          <button
+            onClick={() => setValuableCardNotice("")}
+            className="absolute right-2 top-1 text-lg leading-none"
+          >
+            x
+          </button>
+          <p className="pr-5">{valuableCardNotice}</p>
+        </div>
+      )}
+
       <Modal 
         show={showFindModal} 
         onClose={() => {
@@ -279,6 +315,7 @@ const CardAddSystem = ({
               },
               body: JSON.stringify(card)
             });
+            notifyIfValuableBulkCard(cardToAdd, foilOption);
 
             setShowAddModal(false);
             setCn("");
@@ -441,6 +478,7 @@ const CardAddSystem = ({
               },
               body: JSON.stringify(card)
             });
+            notifyIfValuableBulkCard(cardToAdd, foilOption);
 
             setShowAddByCardModal(false);
             setCn("");

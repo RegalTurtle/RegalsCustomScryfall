@@ -2,13 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import authorization from "@/authorization";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import deckData from "@/data/decks";
+import cardData from "@/data/cards";
 
-export async function POST(
-  request: NextRequest,
-  { params }: { params: { deck_id: string } }
-): Promise<NextResponse> {
-  const { deck_id } = await params;
+export async function POST(request: NextRequest): Promise<NextResponse> {
   const session = await getServerSession({ request, ...authOptions });
 
   if (!session || !authorization.canAddCardsToCollection(session.user?.permissionLevel)) {
@@ -16,11 +12,12 @@ export async function POST(
   }
 
   try {
-    const { originalSet, originalCn, collection, collectionCardId, returnCollection } = await request.json();
-    await deckData.replaceProxyWithOwnedCard(deck_id, originalSet, originalCn, collection, collectionCardId, returnCollection);
-    return NextResponse.json({ message: "Card replaced" }, { status: 201 });
+    const { collectionType, cardId, quant } = await request.json();
+    await cardData.removeCard(collectionType, cardId, quant);
+
+    return NextResponse.json({ message: "Card removed" }, { status: 201 });
   } catch (err) {
-    console.error("Error replacing card:", err);
+    console.error("Error removing card:", err);
     return NextResponse.json({ error: err instanceof Error ? err.message : "Invalid request" }, { status: 400 });
   }
 }

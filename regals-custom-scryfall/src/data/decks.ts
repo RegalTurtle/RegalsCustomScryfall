@@ -65,6 +65,45 @@ const getAllDecks = async () => {
   return allDecks;
 }
 
+const updateDeckSettings = async (
+  deckId: string,
+  name: string,
+  link: string | null,
+  owner: string,
+  format: string,
+  colorId: string | null,
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  name = validation.verifyStr(name, "name");
+  owner = validation.verifyStr(owner, "owner");
+  format = validation.verifyStr(format, "format");
+
+  const deckUpdate: Partial<Deck> = {
+    name,
+    owner,
+    format,
+    lastUpdate: new Date(),
+  };
+
+  if (link) deckUpdate.link = validation.verifyStr(link, "link");
+  if (colorId) deckUpdate.colorId = validation.verifyStr(colorId, "colorId");
+
+  const unsetFields: Record<string, ""> = {};
+  if (!link) unsetFields.link = "";
+  if (!colorId) unsetFields.colorId = "";
+
+  const deckCollection: Collection<Deck> = await decks();
+  const result = await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $set: deckUpdate,
+      ...(Object.keys(unsetFields).length > 0 ? { $unset: unsetFields } : {}),
+    }
+  );
+
+  if (result.matchedCount === 0) throw new Error("Deck not found");
+}
+
 const setTags = async (
   deckId: string,
   set: string,
@@ -118,22 +157,25 @@ const replaceProxyWithOwnedCard = async (
   originalSet: string,
   originalCn: string,
   collection: "bulk" | "cool-cards",
-  collectionCardId: string
+  collectionCardId: string,
+  returnCollection?: "bulk" | "cool-cards"
 ) => {
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   originalSet = validation.verifyStr(originalSet, "originalSet");
   originalCn = validation.verifyStr(originalCn, "originalCn");
   if (collection !== "bulk" && collection !== "cool-cards") throw new Error("collection invalid");
+  if (returnCollection && returnCollection !== "bulk" && returnCollection !== "cool-cards") throw new Error("returnCollection invalid");
   const ownedCardId = validation.verifyMongoId(collectionCardId);
 
   const deckCollection: Collection<Deck> = await decks();
   const ownedCollection: Collection<Card> = collection === "bulk" ? await bulkCards() : await coolCards();
+  const returnedCollection: Collection<Card> = (returnCollection ?? collection) === "bulk" ? await bulkCards() : await coolCards();
 
   const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
   if (!deck) throw new Error("Deck not found");
 
-  const deckCardIndex = deck.cards.findIndex(card => card.set === originalSet && card.cn === originalCn && card.proxy);
-  if (deckCardIndex === -1) throw new Error("Proxy card not found in deck");
+  const deckCardIndex = deck.cards.findIndex(card => card.set === originalSet && card.cn === originalCn);
+  if (deckCardIndex === -1) throw new Error("Card not found in deck");
 
   const deckCard = deck.cards[deckCardIndex];
   const ownedCard = await ownedCollection.findOne({ _id: ownedCardId });
@@ -180,6 +222,37 @@ const replaceProxyWithOwnedCard = async (
     );
   }
 
+  if (!deckCard.proxy) {
+    const returnedCard: Card = {
+      ...deckCard,
+      updatedAt: new Date(),
+    };
+    delete returnedCard._id;
+    delete returnedCard.tag;
+
+    const existingReturnedCard = await returnedCollection.findOne({
+      set: returnedCard.set,
+      cn: returnedCard.cn,
+      foil: returnedCard.foil,
+      proxy: returnedCard.proxy,
+    });
+
+    if (existingReturnedCard) {
+      await returnedCollection.updateOne(
+        { _id: existingReturnedCard._id },
+        {
+          $set: {
+            quant: existingReturnedCard.quant + returnedCard.quant,
+            updatedAt: new Date(),
+            image: returnedCard.image,
+          },
+        }
+      );
+    } else {
+      await returnedCollection.insertOne(returnedCard);
+    }
+  }
+
   await deckCollection.updateOne(
     { _id: new ObjectId(deckId) },
     { $set: { cards: deck.cards, lastUpdate: new Date() } }
@@ -190,6 +263,7 @@ export default {
   addDeck,
   findDeckByMongoId,
   getAllDecks,
+  updateDeckSettings,
   setTags,
   replaceCards,
   replaceProxyWithOwnedCard,

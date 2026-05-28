@@ -11,16 +11,24 @@ export async function POST(
   const { deck_id } = await params;
   const session = await getServerSession({ request, ...authOptions });
 
-  if (!session || !authorization.canAddCardsToCollection(session.user?.permissionLevel)) {
+  if (!session || !authorization.canAddDecks(session.user?.permissionLevel)) {
     return NextResponse.json({ error: "Not signed in" }, { status: 401 });
   }
 
   try {
-    const { originalSet, originalCn, collection, collectionCardId, returnCollection } = await request.json();
-    await deckData.replaceProxyWithOwnedCard(deck_id, originalSet, originalCn, collection, collectionCardId, returnCollection);
-    return NextResponse.json({ message: "Card replaced" }, { status: 201 });
+    const body = await request.json();
+    await deckData.updateDeckSettings(
+      deck_id,
+      body.name,
+      body.link || null,
+      body.owner,
+      body.format,
+      body.colorId || null,
+    );
+
+    return NextResponse.json({ message: "Deck settings updated" }, { status: 200 });
   } catch (err) {
-    console.error("Error replacing card:", err);
-    return NextResponse.json({ error: err instanceof Error ? err.message : "Invalid request" }, { status: 400 });
+    console.error("Error updating deck settings:", err);
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 }
