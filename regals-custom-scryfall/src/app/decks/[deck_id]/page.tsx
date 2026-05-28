@@ -667,7 +667,7 @@ export default function Decks() {
       </div>) }
 
       {hoveredCard && (
-        <aside className="fixed left-16 top-32 z-40 hidden w-80 rounded bg-gray-900/95 p-3 text-white shadow-xl 2xl:left-28 xl:block">
+        <aside className="fixed left-[calc((100vw-1468px)/2-22rem)] top-32 z-40 hidden w-80 rounded bg-gray-900/95 p-3 text-white shadow-xl min-[2200px]:block">
           <img
             src={hoveredCard.image}
             alt={hoveredCard.name}
