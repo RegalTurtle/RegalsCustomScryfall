@@ -8,11 +8,40 @@ const headers = {
   "Accept": "application/json",
 };
 
-async function fetchJson(url: string) {
-  const res = await fetch(url, { headers });
-  const data = await res.json();
+const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-  return { res, data };
+async function fetchJson(url: string) {
+  const retryDelays = [0, 750, 1500];
+  let lastRes: Response | null = null;
+  let lastData: any = null;
+
+  for (let attempt = 0; attempt < retryDelays.length; attempt++) {
+    if (retryDelays[attempt] > 0) {
+      await wait(retryDelays[attempt]);
+    }
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+
+    try {
+      const res = await fetch(url, { headers, signal: controller.signal });
+      const data = await res.json();
+      lastRes = res;
+      lastData = data;
+
+      if (res.ok || ![404, 429, 500, 502, 503, 504].includes(res.status)) {
+        return { res, data };
+      }
+    } catch (error) {
+      if (attempt === retryDelays.length - 1) {
+        throw error;
+      }
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  return { res: lastRes as Response, data: lastData };
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {

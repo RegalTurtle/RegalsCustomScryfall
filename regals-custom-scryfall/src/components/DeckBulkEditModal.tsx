@@ -46,6 +46,7 @@ type ScryfallCard = {
 const WUBRG = ["W", "U", "B", "R", "G"];
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+const SCRYFALL_LOOKUP_DELAY_MS = 350;
 
 function parseTags(rawTags: string): { proxy: boolean; tags: string[] } {
   let proxy = false;
@@ -197,7 +198,7 @@ export default function DeckBulkEditModal({
           const card = buildCard(parsed, scryfallCard);
           if (overrideDeck) {
             replacementCards.push(card);
-            await wait(75);
+            await wait(SCRYFALL_LOOKUP_DELAY_MS);
             continue;
           }
 
@@ -216,7 +217,7 @@ export default function DeckBulkEditModal({
           importErrors.push(error instanceof Error ? error.message : `Line ${parsed.lineNumber}: ${parsed.name} failed`);
         }
 
-        await wait(75);
+        await wait(SCRYFALL_LOOKUP_DELAY_MS);
       }
 
       if (overrideDeck) {
