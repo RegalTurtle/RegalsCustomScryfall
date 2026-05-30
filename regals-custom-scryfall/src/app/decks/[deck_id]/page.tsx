@@ -254,6 +254,8 @@ export default function Decks() {
   const [ update, sendUpdate ] = useState(0);
   const [ availableProxyKeys, setAvailableProxyKeys ] = useState<string[]>([]);
   const [ availableProxyLocations, setAvailableProxyLocations ] = useState<Record<string, string[]>>({});
+  const [ ownedMaybeboardKeys, setOwnedMaybeboardKeys ] = useState<string[]>([]);
+  const [ ownedMaybeboardLocations, setOwnedMaybeboardLocations ] = useState<Record<string, string[]>>({});
   const [ checkingProxies, setCheckingProxies ] = useState(false);
   const [ plannedCardOut, setPlannedCardOut ] = useState("");
   const [ plannedCardIn, setPlannedCardIn ] = useState("");
@@ -281,6 +283,8 @@ export default function Decks() {
         setWishPiles(groupCardsByTags(foundDeck.wishlist));
         setAvailableProxyKeys([]);
         setAvailableProxyLocations({});
+        setOwnedMaybeboardKeys([]);
+        setOwnedMaybeboardLocations({});
       } catch (error) {
         console.error(`Error fetching deck:`, error);
       } finally {
@@ -300,9 +304,11 @@ export default function Decks() {
     try {
       const res = await fetch(`/api/decks/${deckId}/available_proxies`);
       if (!res.ok) throw new Error("Failed to check proxies");
-      const { availableProxyKeys, availableProxyLocations } = await res.json();
+      const { availableProxyKeys, availableProxyLocations, ownedMaybeboardKeys, ownedMaybeboardLocations } = await res.json();
       setAvailableProxyKeys(availableProxyKeys);
       setAvailableProxyLocations(availableProxyLocations ?? {});
+      setOwnedMaybeboardKeys(ownedMaybeboardKeys ?? []);
+      setOwnedMaybeboardLocations(ownedMaybeboardLocations ?? {});
     } catch (error) {
       console.error("Error checking proxies:", error);
     } finally {
@@ -663,6 +669,8 @@ export default function Decks() {
           piles={wishPiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+wishlist+${deckId}`)}
           setHoveredCard={setHoveredCard}
+          ownedCardKeys={ownedMaybeboardKeys}
+          ownedCardLocations={ownedMaybeboardLocations}
         /> 
       </div>) }
 

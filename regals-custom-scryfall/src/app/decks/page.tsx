@@ -15,6 +15,39 @@ const manaColors: Record<string, string> = {
 };
 
 const colorOrder = ["W", "U", "B", "R", "G"];
+const gradientColorOrders: Record<string, string> = {
+  W: "W",
+  U: "U",
+  B: "B",
+  R: "R",
+  G: "G",
+  WU: "WU",
+  UB: "UB",
+  BR: "BR",
+  RG: "RG",
+  WG: "GW",
+  WB: "WB",
+  UR: "UR",
+  BG: "BG",
+  WR: "RW",
+  UG: "GU",
+  WUB: "WUB",
+  UBR: "UBR",
+  BRG: "BRG",
+  WRG: "RGW",
+  WUG: "GWU",
+  WBG: "WBG",
+  WUR: "URW",
+  UBG: "BGU",
+  WBR: "RWB",
+  URG: "GUR",
+  WUBR: "WUBR",
+  UBRG: "UBRG",
+  WBRG: "BRGW",
+  WURG: "RGWU",
+  WUBG: "GWUB",
+  WUBRG: "WUBRG",
+};
 const monoColorGroups = [
   { colorId: "W", label: "White" },
   { colorId: "U", label: "Blue" },
@@ -60,7 +93,9 @@ function normalizeColorId(colorId?: string) {
 }
 
 function deckBorderStyle(colorId?: string): React.CSSProperties {
-  const colors = normalizeColorId(colorId).split("")
+  const normalizedColorId = normalizeColorId(colorId);
+  const gradientColorOrder = gradientColorOrders[normalizedColorId] ?? normalizedColorId;
+  const colors = gradientColorOrder.split("")
     .map(color => manaColors[color])
     .filter(Boolean);
 
@@ -77,10 +112,10 @@ function DeckCard({ deck }: { deck: Deck }) {
   return (
     <Link
       href={`/decks/${deck._id?.toString()}`}
-      className="rounded-lg shadow-md p-2 w-full text-black"
+      className="block h-28 rounded-lg shadow-md p-2 w-full text-black"
       style={deckBorderStyle(deck.colorId)}
     >
-      <div className="bg-teal-100 rounded-md p-4 h-full flex flex-col gap-1">
+      <div className="bg-teal-100 rounded-md p-4 h-full flex flex-col justify-center gap-1">
         <p className="font-semibold">{deck.name}</p>
         <p className="text-sm">{deck.format}</p>
         <p className="text-sm">Owner: {deck.owner}</p>
@@ -97,8 +132,10 @@ function DeckGroup({ title, decks }: { title: string, decks: Deck[] }) {
       </h2>
       <div className="flex flex-col gap-3">
         {decks.length === 0 ? (
-          <div className="rounded border border-teal-700/60 px-3 py-4 text-sm text-teal-100/70">
-            No decks
+          <div className="h-28 w-full rounded-lg border border-teal-700/60 p-2">
+            <div className="flex h-full items-center justify-center rounded-md px-3 py-4 text-sm text-teal-100/70">
+              No decks
+            </div>
           </div>
         ) : (
           decks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)
@@ -186,6 +223,32 @@ export default function Decks() {
   }, [visibleDecks]);
 
   const showEdhColorView = formatFilter.toLowerCase() === "edh";
+  const edhColorColumns = [
+    monoColorGroups.map(group => ({
+      title: group.label,
+      decks: edhColorGroups.mono[group.colorId],
+    })),
+    twoColorGroups.slice(0, 5).map(group => ({
+      title: group.label,
+      decks: edhColorGroups.twoColor[group.colorId],
+    })),
+    twoColorGroups.slice(5).map(group => ({
+      title: group.label,
+      decks: edhColorGroups.twoColor[group.colorId],
+    })),
+    threeColorGroups.slice(0, 5).map(group => ({
+      title: group.label,
+      decks: edhColorGroups.namedThreeColor[group.colorId],
+    })),
+    threeColorGroups.slice(5).map(group => ({
+      title: group.label,
+      decks: edhColorGroups.namedThreeColor[group.colorId],
+    })),
+    fourColorGroups.map(group => ({
+      title: group.label,
+      decks: edhColorGroups.namedFourColor[group.colorId],
+    })),
+  ];
 
   if (sessionStatus === "loading" || loadingDecks) {
     return (
@@ -202,9 +265,12 @@ export default function Decks() {
       />
 
       <main className="flex-1 px-4 text-center justify-items-center">
-        {session && authorization.canAddDecks(session.user?.permissionLevel) && 
-          <Link href="/decks/new" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">New Deck</Link>
-        }
+        <div className="flex flex-wrap justify-center gap-2">
+          {session && authorization.canAddDecks(session.user?.permissionLevel) &&
+            <Link href="/decks/new" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">New Deck</Link>
+          }
+          <Link href="/decks/proxies" className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Proxy Report</Link>
+        </div>
 
         <div className="mt-5 flex w-full max-w-5xl flex-col gap-3 rounded bg-teal-950/40 p-4 text-left sm:flex-row sm:items-end">
           <label className="flex flex-1 flex-col gap-1 text-sm">
@@ -237,52 +303,28 @@ export default function Decks() {
         </div>
 
         {showEdhColorView ? (
-          <div className="mt-5 w-full max-w-6xl mx-auto text-white">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
-              <div className="space-y-5">
-                {monoColorGroups.map(group => (
-                  <DeckGroup
-                    key={group.colorId}
-                    title={group.label}
-                    decks={edhColorGroups.mono[group.colorId]}
-                  />
-                ))}
-              </div>
-
-              <div className="space-y-5">
-                {twoColorGroups.map(group => (
-                  <DeckGroup
-                    key={group.colorId}
-                    title={group.label}
-                    decks={edhColorGroups.twoColor[group.colorId]}
-                  />
-                ))}
-              </div>
-
-              <div className="space-y-5">
-                {threeColorGroups.map(group => (
-                  <DeckGroup
-                    key={group.colorId}
-                    title={group.label}
-                    decks={edhColorGroups.namedThreeColor[group.colorId]}
-                  />
-                ))}
-              </div>
-
-              <div className="space-y-5">
-                {fourColorGroups.map(group => (
-                  <DeckGroup
-                    key={group.colorId}
-                    title={group.label}
-                    decks={edhColorGroups.namedFourColor[group.colorId]}
-                  />
-                ))}
-              </div>
+          <div className="mt-5 w-full max-w-[1600px] mx-auto text-white">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+              {edhColorColumns.map((column, index) => (
+                <div key={index} className="space-y-5">
+                  {column.map(group => (
+                    <DeckGroup
+                      key={group.title}
+                      title={group.title}
+                      decks={group.decks}
+                    />
+                  ))}
+                </div>
+              ))}
             </div>
 
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-              <DeckGroup title="Colorless" decks={edhColorGroups.colorless} />
-              <DeckGroup title="5 color" decks={edhColorGroups.fiveColor} />
+            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+              <div className="xl:col-start-2">
+                <DeckGroup title="Colorless" decks={edhColorGroups.colorless} />
+              </div>
+              <div className="xl:col-start-5">
+                <DeckGroup title="5 color" decks={edhColorGroups.fiveColor} />
+              </div>
             </div>
 
             {edhColorGroups.otherDecks.length > 0 && (

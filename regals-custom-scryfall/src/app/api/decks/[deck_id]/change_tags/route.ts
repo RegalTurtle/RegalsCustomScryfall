@@ -4,6 +4,16 @@ import authorization from "@/authorization";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import deckData from "@/data/decks";
 
+function getDeckSection(collectionType?: string): "cards" | "sideboard" | "maybeboard" | "wishlist" {
+  const section = collectionType?.split("+")[1];
+
+  if (section === "sideboard" || section === "maybeboard" || section === "wishlist") {
+    return section;
+  }
+
+  return "cards";
+}
+
 export async function POST(
   request: NextRequest,
   { params }: { params: { deck_id: string } }
@@ -16,10 +26,8 @@ export async function POST(
   }
 
   try {
-    const { set, cn, updatedTags } = await request.json();
-    console.log("before setTags")
-    await deckData.setTags(deck_id, set, cn, updatedTags);
-    console.log("after setTags")
+    const { set, cn, updatedTags, collectionType } = await request.json();
+    await deckData.setTags(deck_id, set, cn, updatedTags, getDeckSection(collectionType));
     return NextResponse.json({ message: "Tags updated" }, { status: 201 });
   } catch (err) {
     console.error("Error parsing request:", err);

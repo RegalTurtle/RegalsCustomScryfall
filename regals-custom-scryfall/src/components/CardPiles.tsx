@@ -8,16 +8,21 @@ export default function CardPiles({
   setHoveredCard,
   availableProxyKeys = [],
   availableProxyLocations = {},
+  ownedCardKeys = [],
+  ownedCardLocations = {},
 }: { 
   piles: CardPile[], 
   setSelectedCard: (card: Card) => void,
   setHoveredCard?: (card: Card) => void,
   availableProxyKeys?: string[],
   availableProxyLocations?: Record<string, string[]>,
+  ownedCardKeys?: string[],
+  ownedCardLocations?: Record<string, string[]>,
 }) {
   const cardOffset = 32;
   const cardHeight = 279;
   const availableProxyKeySet = new Set(availableProxyKeys);
+  const ownedCardKeySet = new Set(ownedCardKeys);
 
   return (
     <div className="w-55 sm:w-107 md:w-159 lg:w-211 xl:w-315 2xl:w-367 mx-auto">
@@ -64,12 +69,17 @@ export default function CardPiles({
                       className="w-full h-full object-contain rounded-lg cursor-pointer"
                       style={{ pointerEvents: "auto" }}
                     />
-                    {card.proxy && (
-                      <div className={`pointer-events-none absolute inset-0 rounded-lg border-4 ${availableProxyKeySet.has(cardKey(card)) ? "border-blue-600" : "border-red-600"}`} />
+                    {(card.proxy || ownedCardKeySet.has(cardKey(card))) && (
+                      <div className={`pointer-events-none absolute inset-0 rounded-lg border-4 ${availableProxyKeySet.has(cardKey(card)) || ownedCardKeySet.has(cardKey(card)) ? "border-blue-600" : "border-red-600"}`} />
                     )}
                     {card.proxy && availableProxyKeySet.has(cardKey(card)) && (
                       <div className="pointer-events-none absolute left-2 top-2 z-20 hidden rounded bg-blue-700 px-2 py-1 text-xs font-semibold text-white shadow-lg group-hover:block">
                         {availableProxyLocations[cardKey(card)]?.join(" + ") ?? "Available"}
+                      </div>
+                    )}
+                    {!card.proxy && ownedCardKeySet.has(cardKey(card)) && (
+                      <div className="pointer-events-none absolute left-2 top-2 z-20 hidden rounded bg-blue-700 px-2 py-1 text-xs font-semibold text-white shadow-lg group-hover:block">
+                        {ownedCardLocations[cardKey(card)]?.join(" + ") ?? "Owned"}
                       </div>
                     )}
                   </div>

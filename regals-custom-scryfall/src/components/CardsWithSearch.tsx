@@ -107,14 +107,24 @@ const CardsWithSearch = ({
       setPriceError("");
 
       try {
-        const res = await fetch(`https://api.scryfall.com/cards/${cardToPrice.set}/${encodeURIComponent(cardToPrice.cn)}`);
+        const res = await fetch("/api/scryfall/card_lookup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: cardToPrice.name,
+            set: cardToPrice.set,
+            cn: cardToPrice.cn,
+          }),
+        });
         const data = await res.json();
 
-        if (!res.ok || data.object === "error") {
+        if (!res.ok || !data.card) {
           throw new Error("Price unavailable");
         }
 
-        setCardPrice(data.prices ?? null);
+        setCardPrice(data.card.prices ?? null);
       } catch (error) {
         setPriceError(error instanceof Error ? error.message : "Price unavailable");
       } finally {

@@ -48,6 +48,7 @@ export default function CardEditModal({
         set: card.set,
         cn: card.cn,
         updatedTags,
+        collectionType,
       }),
     });
     setTags(updatedTags);
@@ -117,6 +118,7 @@ export default function CardEditModal({
         set: card.set,
         cn: card.cn,
         updatedTags,
+        collectionType,
       }),
     });
     setTags(updatedTags);

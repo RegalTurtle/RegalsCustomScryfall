@@ -137,7 +137,8 @@ const setTags = async (
   deckId: string,
   set: string,
   cn: string,
-  updatedTags: string[]
+  updatedTags: string[],
+  deckSection: "cards" | "sideboard" | "maybeboard" | "wishlist" = "cards"
 ) => {
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
 
@@ -147,7 +148,7 @@ const setTags = async (
     { _id: new ObjectId(deckId) },
     {
       $set: {
-        "cards.$[elem].tag": updatedTags,
+        [`${deckSection}.$[elem].tag`]: updatedTags,
         lastUpdate: new Date(),
       },
     },
