@@ -3,7 +3,7 @@
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import { Card } from "@/types";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type OwnedCollection = "bulk" | "cool-cards" | "trade-binder";
 
@@ -53,15 +53,30 @@ export default function ProxyReportPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState(search);
   const [selectedItem, setSelectedItem] = useState<ProxyReportItem | null>(null);
   const [cardPrice, setCardPrice] = useState<CardPrice | null>(null);
   const [loadingPrice, setLoadingPrice] = useState(false);
   const [priceError, setPriceError] = useState("");
 
   useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 500);
+
+    return () => clearTimeout(handler);
+  }, [search]);
+
+  useEffect(() => {
     async function fetchProxyReport() {
+      setLoading(true);
+      setError("");
+
       try {
-        const res = await fetch("/api/decks/proxy_report");
+        const params = debouncedSearch.trim()
+          ? `?search=${encodeURIComponent(debouncedSearch.trim())}`
+          : "";
+        const res = await fetch(`/api/decks/proxy_report${params}`);
         const data = await res.json();
 
         if (!res.ok) {
@@ -77,7 +92,7 @@ export default function ProxyReportPage() {
     }
 
     fetchProxyReport();
-  }, []);
+  }, [debouncedSearch]);
 
   useEffect(() => {
     if (!selectedItem) return;
@@ -117,28 +132,6 @@ export default function ProxyReportPage() {
     fetchPrice();
   }, [selectedItem]);
 
-  const filteredProxyReport = useMemo(() => {
-    const tokens = search.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    const wantsOwned = tokens.includes("is:owned");
-    const wantsUnowned = tokens.includes("is:unowned");
-    const textSearch = tokens
-      .filter(token => token !== "is:owned" && token !== "is:unowned")
-      .join(" ");
-
-    if (wantsOwned && wantsUnowned) return [];
-
-    return proxyReport.filter(item => (
-      (!wantsOwned || item.totalOwned > 0) &&
-      (!wantsUnowned || item.totalOwned === 0) &&
-      (
-        !textSearch ||
-        item.card.name.toLowerCase().includes(textSearch) ||
-        item.decks.some(deck => deck.deckName.toLowerCase().includes(textSearch)) ||
-        item.locations.some(location => location.toLowerCase().includes(textSearch))
-      )
-    ));
-  }, [proxyReport, search]);
-
   return (
     <div className="flex min-h-screen flex-col bg-teal-900 text-white">
       <RegalsMagicHeader
@@ -170,14 +163,14 @@ export default function ProxyReportPage() {
             </p>
           )}
 
-          {!loading && !error && filteredProxyReport.length === 0 && (
+          {!loading && !error && proxyReport.length === 0 && (
             <p className="mx-auto max-w-xl rounded border border-teal-700/60 px-3 py-4 text-sm text-teal-100/80">
               No proxied cards found.
             </p>
           )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-            {filteredProxyReport.map(item => (
+            {proxyReport.map(item => (
               <button
                 key={`${item.card.name}-${item.card.set}-${item.card.cn}`}
                 onClick={() => setSelectedItem(item)}

@@ -1,6 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import { Card, Deck } from "@/types";
+import { cardMatchesParsedSearch, parseCardSearchTerms } from "@/utils/cardSearch";
 
 type OwnedCollection = "bulk" | "cool-cards" | "trade-binder";
 
@@ -23,8 +24,30 @@ function serializeCard(card: Card, collection?: OwnedCollection) {
   };
 }
 
-export async function GET(): Promise<NextResponse> {
+function proxyReportMatchesSearch(
+  item: {
+    card: ReturnType<typeof serializeCard>;
+    decks: Array<{ deckId: string; deckName: string; quantity: number }>;
+    ownedCopies: ReturnType<typeof serializeCard>[];
+    locations: (string | undefined)[];
+    totalOwned: number;
+    totalProxies: number;
+  },
+  searchTerms: string,
+) {
+  return cardMatchesParsedSearch(item.card as Card, parseCardSearchTerms(searchTerms), {
+    quantity: item.totalProxies,
+    totalOwned: item.totalOwned,
+    textValues: [
+      ...item.decks.map(deck => deck.deckName),
+      ...item.locations,
+    ],
+  });
+}
+
+export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
+    const searchTerms = request.nextUrl.searchParams.get("search")?.trim() ?? "";
     const decksCollection = await decks();
     const allDecks = await decksCollection.find({}).toArray();
     const proxyCardsByName = new Map<string, {
@@ -83,7 +106,7 @@ export async function GET(): Promise<NextResponse> {
     coolMatches.forEach(card => addOwnedCopy(card, "cool-cards"));
     tradeMatches.forEach(card => addOwnedCopy(card, "trade-binder"));
 
-    const proxyReport = Array.from(proxyCardsByName.values())
+    let proxyReport = Array.from(proxyCardsByName.values())
       .map(({ card, decks }) => {
         const ownedCopies = ownedCopiesByName.get(card.name) ?? [];
         const locations = Array.from(new Set(ownedCopies.map(copy => copy.collectionLabel).filter(Boolean)));
@@ -100,6 +123,10 @@ export async function GET(): Promise<NextResponse> {
         };
       })
       .sort((a, b) => a.card.name.localeCompare(b.card.name));
+
+    if (searchTerms) {
+      proxyReport = proxyReport.filter(item => proxyReportMatchesSearch(item, searchTerms));
+    }
 
     return NextResponse.json({ proxyReport }, { status: 200 });
   } catch (err) {
