@@ -50,6 +50,10 @@ export async function GET(
       mongoQuery.$and.push({ name: { $regex: new RegExp(term, 'i') }});
     }
   }
+
+  if (mongoQuery.$and.length === 0) {
+    delete mongoQuery.$and;
+  }
   
   try {
     let cardsCollection: Collection<Card>;
