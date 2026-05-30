@@ -118,13 +118,24 @@ export default function ProxyReportPage() {
   }, [selectedItem]);
 
   const filteredProxyReport = useMemo(() => {
-    const normalizedSearch = search.trim().toLowerCase();
-    if (!normalizedSearch) return proxyReport;
+    const tokens = search.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const wantsOwned = tokens.includes("is:owned");
+    const wantsUnowned = tokens.includes("is:unowned");
+    const textSearch = tokens
+      .filter(token => token !== "is:owned" && token !== "is:unowned")
+      .join(" ");
+
+    if (wantsOwned && wantsUnowned) return [];
 
     return proxyReport.filter(item => (
-      item.card.name.toLowerCase().includes(normalizedSearch) ||
-      item.decks.some(deck => deck.deckName.toLowerCase().includes(normalizedSearch)) ||
-      item.locations.some(location => location.toLowerCase().includes(normalizedSearch))
+      (!wantsOwned || item.totalOwned > 0) &&
+      (!wantsUnowned || item.totalOwned === 0) &&
+      (
+        !textSearch ||
+        item.card.name.toLowerCase().includes(textSearch) ||
+        item.decks.some(deck => deck.deckName.toLowerCase().includes(textSearch)) ||
+        item.locations.some(location => location.toLowerCase().includes(textSearch))
+      )
     ));
   }, [proxyReport, search]);
 
@@ -149,7 +160,7 @@ export default function ProxyReportPage() {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition mb-4 text-black"
+            className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition mb-4 text-white"
           />
 
           {loading && <p>Loading...</p>}
