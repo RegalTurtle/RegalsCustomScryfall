@@ -3,6 +3,13 @@ import { bulkCards, coolCards, tradeBinder } from "@/config/mongoCollections";
 import { Card } from "@/types";
 import { Collection } from "mongodb";
 
+const colorOrder = ["W", "U", "B", "R", "G"];
+
+function normalizeColorSearch(value: string) {
+  const selectedColors = new Set(value.toUpperCase().split(""));
+  return colorOrder.filter(color => selectedColors.has(color)).join("");
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: { search_terms: string, collection_type: "bulk" | "cool-cards" | "trade-binder" } }
@@ -19,6 +26,7 @@ export async function GET(
 
     // Implemented:
     // [ q / quant ]  [ = / > / < / >= / <= ] [ number ]
+    // [ c / color ]  [ = ]                   [ wubrg / c / 0 / 1-5 ]
     // [ o / oracle ] [ : ]                   [ string ]
     // [ string ]
 
@@ -26,6 +34,17 @@ export async function GET(
       mongoQuery.oracle = { $regex: new RegExp(term.slice(2), 'i') };
     } else if (term.startsWith("oracle:")) { // Oracle contains
       mongoQuery.oracle = { $regex: new RegExp(term.slice(7), 'i') };
+    } else if (term.startsWith("c=") || term.startsWith("color=")) { // Color exactly
+      const rawColorSearch = term.startsWith("c=") ? term.slice(2) : term.slice(6);
+      const normalizedColorSearch = rawColorSearch.toLowerCase();
+
+      if (normalizedColorSearch === "c" || normalizedColorSearch === "0" || normalizedColorSearch === "colorless") {
+        mongoQuery.color = "";
+      } else if (/^[1-5]$/.test(normalizedColorSearch)) {
+        mongoQuery.color = { $regex: new RegExp(`^[WUBRG]{${normalizedColorSearch}}$`) };
+      } else {
+        mongoQuery.color = normalizeColorSearch(rawColorSearch);
+      }
     } else if (term.startsWith("q=")) { // Quantity equals
       mongoQuery.quant = { ...(mongoQuery.quant || {}), $eq: parseInt(term.slice(2)) };
     } else if (term.startsWith("q>=")) { // Quantity greater than or equal
