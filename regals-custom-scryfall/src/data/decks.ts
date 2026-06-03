@@ -90,17 +90,20 @@ const updateDeckSettings = async (
   format: string,
   colorId: string | null,
   mainForColorIdentity: boolean,
+  notes: string = "",
 ) => {
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   name = validation.verifyStr(name, "name");
   owner = validation.verifyStr(owner, "owner");
   format = validation.verifyStr(format, "format");
+  if (typeof notes !== "string") throw new Error("notes must be a string");
   if (typeof mainForColorIdentity !== "boolean") throw new Error("mainForColorIdentity must be a boolean");
 
   const deckUpdate: Partial<Deck> = {
     name,
     owner,
     format,
+    notes,
     mainForColorIdentity,
     lastUpdate: new Date(),
   };

@@ -25,6 +25,7 @@ export async function POST(
       body.format,
       body.colorId || null,
       Boolean(body.mainForColorIdentity),
+      body.notes ?? "",
     );
 
     return NextResponse.json({ message: "Deck settings updated" }, { status: 200 });

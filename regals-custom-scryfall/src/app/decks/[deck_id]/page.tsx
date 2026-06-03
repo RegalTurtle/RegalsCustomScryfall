@@ -450,6 +450,25 @@ export default function Decks() {
         </div>
       )}
 
+      {deck.notes?.trim() && (
+        <section className="mx-auto mb-4 w-full max-w-4xl px-4 text-left">
+          <div className="rounded bg-teal-950/40 p-4 text-teal-50">
+            <div className="mb-2 flex items-center justify-between gap-3">
+              <h2 className="text-lg font-semibold">Notes</h2>
+              {session && authorization.canAddDecks(session.user?.permissionLevel) && (
+                <a
+                  href={`/decks/${deck._id}/settings`}
+                  className="rounded bg-indigo-600 px-3 py-1 text-sm text-white hover:bg-indigo-700"
+                >
+                  Edit
+                </a>
+              )}
+            </div>
+            <p className="whitespace-pre-wrap text-sm leading-6">{deck.notes}</p>
+          </div>
+        </section>
+      )}
+
       { piles && (<div 
         className={`text-center rounded ${dropTargetClass(`decks+${deckId}`)}`}
         onDragOver={(e) => {

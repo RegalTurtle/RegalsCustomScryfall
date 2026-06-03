@@ -36,6 +36,7 @@ export default function DeckSettings() {
   const [format, setFormat] = useState("");
   const [colorId, setColorId] = useState("");
   const [mainForColorIdentity, setMainForColorIdentity] = useState(false);
+  const [notes, setNotes] = useState("");
 
   useEffect(() => {
     if (!deckId) return;
@@ -52,6 +53,7 @@ export default function DeckSettings() {
         setFormat(foundDeck.format);
         setColorId(foundDeck.colorId ?? "");
         setMainForColorIdentity(Boolean(foundDeck.mainForColorIdentity));
+        setNotes(foundDeck.notes ?? "");
       } catch (error) {
         setError(error instanceof Error ? error.message : "Failed to fetch deck");
       } finally {
@@ -101,6 +103,7 @@ export default function DeckSettings() {
           format,
           colorId,
           mainForColorIdentity,
+          notes,
         }),
       });
 
@@ -180,6 +183,15 @@ export default function DeckSettings() {
               onChange={(e) => setLink(e.target.value)}
               className="w-full p-2 border rounded"
               placeholder="https://moxfield.com/decks/..."
+            />
+          </label>
+
+          <label className="block">
+            <span className="mb-1 block text-sm font-medium">Notes</span>
+            <textarea
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="min-h-32 w-full resize-y rounded border p-2"
             />
           </label>
 
