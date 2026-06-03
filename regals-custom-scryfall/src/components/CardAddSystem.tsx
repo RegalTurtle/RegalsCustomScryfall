@@ -24,6 +24,13 @@ const headers = {
   "Accept": "application/json",
 };
 
+async function fetchScryfallFromBrowser(url: string) {
+  console.log(`[Scryfall Browser] GET ${url}`);
+  const res = await fetch(url, { headers });
+  console.log(`[Scryfall Browser] ${res.status} ${url}`);
+  return res;
+}
+
 function getCardPrice(card: ScryfallCard, foilOption: FoilOption): number | null {
   const prices = card.prices;
   if (!prices) return null;
@@ -36,6 +43,61 @@ function getCardPrice(card: ScryfallCard, foilOption: FoilOption): number | null
   const parsedPrice = Number(rawPrice);
 
   return Number.isFinite(parsedPrice) ? parsedPrice : null;
+}
+
+function joinUniqueFaceValues(values: Array<string | undefined>) {
+  return Array.from(new Set(values.filter((value): value is string => Boolean(value)))).join(" // ");
+}
+
+function getCardImage(card: ScryfallCard): string {
+  return card.image_uris?.normal
+    ?? card.image_uris?.large
+    ?? card.image_uris?.border_crop
+    ?? card.card_faces?.[0]?.image_uris?.normal
+    ?? card.card_faces?.[0]?.image_uris?.large
+    ?? card.card_faces?.[0]?.image_uris?.border_crop
+    ?? "";
+}
+
+function getCardOracle(card: ScryfallCard): string {
+  return card.oracle_text ?? joinUniqueFaceValues(card.card_faces?.map((face: ScryfallCard) => face.oracle_text) ?? []);
+}
+
+function getCardColors(card: ScryfallCard): string {
+  const WUBRG = ["W", "U", "B", "R", "G"];
+
+  if (card.colors) {
+    return WUBRG.filter(c => card.colors.includes(c)).join("");
+  }
+
+  return joinUniqueFaceValues(card.card_faces?.map((face: ScryfallCard) => (
+    WUBRG.filter(c => face.colors?.includes(c)).join("")
+  )) ?? []);
+}
+
+function getCardType(card: ScryfallCard): string {
+  const type = card.type_line ?? joinUniqueFaceValues(card.card_faces?.map((face: ScryfallCard) => face.type_line) ?? []);
+  if (!type) {
+    throw new Error(`${card.name} is missing type information from Scryfall`);
+  }
+
+  return type;
+}
+
+function getCardCmc(card: ScryfallCard): number {
+  if (typeof card.cmc === "number") {
+    return card.cmc;
+  }
+
+  const faceCmc = card.card_faces
+    ?.map((face: ScryfallCard) => face.cmc)
+    .find((cmc: unknown): cmc is number => typeof cmc === "number");
+
+  if (typeof faceCmc !== "number") {
+    throw new Error(`${card.name} is missing mana value information from Scryfall`);
+  }
+
+  return faceCmc;
 }
 
 const CardAddSystem = ({ 
@@ -86,7 +148,7 @@ const CardAddSystem = ({
     });
 
     try {
-      const res = await fetch(`https://api.scryfall.com/cards/search?${params.toString()}`, { headers });
+      const res = await fetchScryfallFromBrowser(`https://api.scryfall.com/cards/search?${params.toString()}`);
       const data = await res.json();
       if (data.object === "error") {
         setCardNotFound(true);
@@ -100,7 +162,7 @@ const CardAddSystem = ({
       }
       setCardList(data.data);
       setName(foundCard.name);
-      setArtUrl((foundCard.image_uris ? foundCard.image_uris.normal : foundCard.card_faces[0].image_uris.normal))
+      setArtUrl(getCardImage(foundCard))
       setShowFindModal(false);
       setShowAddByCardModal(true);
       setSetAndCn(`${foundCard.set} | ${foundCard.collector_number}`);
@@ -164,14 +226,14 @@ const CardAddSystem = ({
             e.preventDefault();
             setCardNotFound(false);
             try {
-              let res;
-              let data: ScryfallCard;
-              if (name) {
-                await handleNameSearch();
-                return;
-              } else {
-                if (isList) {
-                  res = await fetch(`https://api.scryfall.com/cards/search?q=s:plst+cn=${setCode}-${cn}`);
+                let res;
+                let data: ScryfallCard;
+                if (name) {
+                  await handleNameSearch();
+                  return;
+                } else {
+                  if (isList) {
+                  res = await fetchScryfallFromBrowser(`https://api.scryfall.com/cards/search?q=s:plst+cn=${setCode}-${cn}`);
                   const parsedJson = await res.json();
                   if (parsedJson.object === "error") {
                     setCardNotFound(true);
@@ -179,7 +241,7 @@ const CardAddSystem = ({
                   }
                   data = parsedJson.data[0];
                 } else {
-                  res = await fetch(`https://api.scryfall.com/cards/${setCode}/${cn}/`);
+                  res = await fetchScryfallFromBrowser(`https://api.scryfall.com/cards/${setCode}/${cn}/`);
                   data = await res.json();
                 }
               }
@@ -188,7 +250,7 @@ const CardAddSystem = ({
                 return;
               }
               // const oracleId: string = data.oracle_id;
-              setArtUrl((data.image_uris ? data.image_uris.normal : data.card_faces[0].image_uris.normal))
+              setArtUrl(getCardImage(data))
               setShowFindModal(false);
               setShowAddModal(true);
               setCardToAdd(data);
@@ -285,12 +347,7 @@ const CardAddSystem = ({
             const proxyBool: boolean = isProxy === "true";
 
             const WUBRG = ["W", "U", "B", "R", "G"];
-            let scryfallColors;
-            if (cardToAdd.colors) {
-              scryfallColors = WUBRG.filter(c => cardToAdd.colors.includes(c)).join("");
-            } else {
-              scryfallColors = `${WUBRG.filter(c => cardToAdd.card_faces[0].colors.includes(c)).join("")} // ${WUBRG.filter(c => cardToAdd.card_faces[1].colors.includes(c)).join("")}`;
-            }
+            const scryfallColors = getCardColors(cardToAdd);
 
             const card: Card = {
               name: cardToAdd.name,
@@ -301,11 +358,11 @@ const CardAddSystem = ({
               proxy: proxyBool,
               updatedAt: null,
               image: artUrl,
-              oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
+              oracle: getCardOracle(cardToAdd),
               color: scryfallColors,
               color_identity: WUBRG.filter(c => cardToAdd.color_identity.includes(c)).join(""),
-              type: cardToAdd.type_line,
-              cmc: cardToAdd.cmc,
+              type: getCardType(cardToAdd),
+              cmc: getCardCmc(cardToAdd),
             }
 
             const _res = await fetch(`/api/collection/${collection_type}/add_card`, {
@@ -448,12 +505,7 @@ const CardAddSystem = ({
             const proxyBool: boolean = isProxy === "true";
 
             const WUBRG = ["W", "U", "B", "R", "G"];
-            let scryfallColors;
-            if (cardToAdd.colors) {
-              scryfallColors = WUBRG.filter(c => cardToAdd.colors.includes(c)).join("");
-            } else {
-              scryfallColors = `${WUBRG.filter(c => cardToAdd.card_faces[0].colors.includes(c)).join("")} // ${WUBRG.filter(c => cardToAdd.card_faces[1].colors.includes(c)).join("")}`;
-            }
+            const scryfallColors = getCardColors(cardToAdd);
 
             const card: Card = {
               name: cardToAdd.name,
@@ -464,11 +516,11 @@ const CardAddSystem = ({
               proxy: proxyBool,
               updatedAt: null,
               image: artUrl,
-              oracle: cardToAdd.oracle_text ?? `${cardToAdd?.card_faces?.[0]?.oracle_text} // ${cardToAdd?.card_faces?.[1]?.oracle_text}`,
+              oracle: getCardOracle(cardToAdd),
               color: scryfallColors,
               color_identity: WUBRG.filter(c => cardToAdd.color_identity.includes(c)).join(""),
-              type: cardToAdd.type_line,
-              cmc: cardToAdd.cmc,
+              type: getCardType(cardToAdd),
+              cmc: getCardCmc(cardToAdd),
             }
 
             const _res = await fetch(`/api/collection/${collection_type}/add_card`, {
@@ -530,11 +582,7 @@ const CardAddSystem = ({
                     if (selectedCard) {
                       setFoilOption(selectedCard.finishes[0] as FoilOption);
                       setCardToAdd(selectedCard);
-                      setArtUrl(
-                        selectedCard.image_uris
-                          ? selectedCard.image_uris.normal
-                          : selectedCard.card_faces[0].image_uris.normal
-                      );
+                      setArtUrl(getCardImage(selectedCard));
                     }
                   }}
                   className="border rounded px-2 py-1"
