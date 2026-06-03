@@ -59,12 +59,13 @@ function buildGameQuery(filters: GameFilters): Filter<Game> {
 
 const getGames = async (filters: GameFilters = {}): Promise<SerializedGame[]> => {
   const gameCollection: Collection<Game> = await games();
-  const limit = Math.min(Math.max(filters.limit ?? 200, 1), 500);
-  const foundGames = await gameCollection
+  const cursor = gameCollection
     .find(buildGameQuery(filters))
-    .sort({ date: -1, createdAt: -1 })
-    .limit(limit)
-    .toArray();
+    .sort({ date: -1, createdAt: -1 });
+  const foundGames = await (filters.limit
+    ? cursor.limit(Math.min(Math.max(filters.limit, 1), 500))
+    : cursor
+  ).toArray();
 
   return foundGames.map(serializeGame);
 };

@@ -11,7 +11,8 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const result = request.nextUrl.searchParams.get("result") ?? undefined;
     const dateFrom = request.nextUrl.searchParams.get("dateFrom") ?? undefined;
     const dateTo = request.nextUrl.searchParams.get("dateTo") ?? undefined;
-    const limit = Number(request.nextUrl.searchParams.get("limit") ?? 200);
+    const limitParam = request.nextUrl.searchParams.get("limit");
+    const limit = limitParam ? Number(limitParam) : undefined;
 
     const games = await gameData.getGames({
       deckId,

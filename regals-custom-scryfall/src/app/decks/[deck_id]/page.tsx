@@ -302,7 +302,7 @@ export default function Decks() {
 
     async function fetchDeckGames() {
       try {
-        const res = await fetch(`/api/games?deckId=${deckId}&limit=5`);
+        const res = await fetch(`/api/games?deckId=${deckId}`);
         if (!res.ok) throw new Error("Failed to fetch games");
         const { games, stats } = await res.json();
         setRecentGames(games ?? []);
@@ -488,54 +488,6 @@ export default function Decks() {
           </div>
         </section>
       )}
-
-      <section className="mx-auto mb-4 w-full max-w-4xl px-4 text-left">
-        <div className="rounded bg-teal-950/40 p-4 text-teal-50">
-          <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h2 className="text-lg font-semibold">Recent Games</h2>
-              {gameStats && (
-                <p className="text-sm text-teal-100/80">
-                  {`${gameStats.total} logged - ${gameStats.wins}W/${gameStats.losses}L/${gameStats.ties}T - ${Math.round(gameStats.winRate * 100)}% win rate`}
-                </p>
-              )}
-            </div>
-            <div className="flex gap-2">
-              <a
-                href={`/games?deckId=${deckId}`}
-                className="rounded bg-teal-100 px-3 py-1 text-sm text-teal-950 hover:bg-white"
-              >
-                View Games
-              </a>
-              {session && authorization.canAddGames(session.user?.permissionLevel) && (
-                <a
-                  href={`/games?deckId=${deckId}&add=1`}
-                  className="rounded bg-indigo-600 px-3 py-1 text-sm text-white hover:bg-indigo-700"
-                >
-                  Add Game
-                </a>
-              )}
-            </div>
-          </div>
-          {recentGames.length === 0 ? (
-            <p className="text-sm text-teal-100/70">No games logged for this deck yet.</p>
-          ) : (
-            <div className="grid grid-cols-1 gap-2">
-              {recentGames.map(game => (
-                <div key={game._id} className="grid grid-cols-[auto_auto_1fr] items-start gap-3 rounded bg-teal-900/70 px-3 py-2 text-sm">
-                  <span className="font-medium">{game.date}</span>
-                  <span className={`rounded px-2 py-1 text-xs font-semibold ${game.result === "win" ? "bg-emerald-600" : game.result === "loss" ? "bg-red-700" : "bg-sky-700"}`}>
-                    {game.result === "win" ? "Win" : game.result === "loss" ? "Loss" : "Tie"}
-                  </span>
-                  <span className="text-teal-100/90">
-                    {`${game.numPlayers} players${game.turnNumber ? `, turn ${game.turnNumber}` : ""}${game.notes ? ` - ${game.notes}` : ""}`}
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
 
       { piles && (<div 
         className={`text-center rounded ${dropTargetClass(`decks+${deckId}`)}`}
@@ -760,6 +712,54 @@ export default function Decks() {
           ownedCardLocations={ownedMaybeboardLocations}
         /> 
       </div>) }
+
+      <section className="mx-auto mb-6 mt-4 w-full max-w-4xl px-4 text-left">
+        <div className="rounded bg-teal-950/40 p-4 text-teal-50">
+          <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-lg font-semibold">Games</h2>
+              {gameStats && (
+                <p className="text-sm text-teal-100/80">
+                  {`${gameStats.total} logged - ${gameStats.wins}/${gameStats.losses}/${gameStats.ties} - ${Math.round(gameStats.winRate * 100)}% win rate`}
+                </p>
+              )}
+            </div>
+            <div className="flex gap-2">
+              <a
+                href={`/games?deckId=${deckId}`}
+                className="rounded bg-teal-100 px-3 py-1 text-sm text-teal-950 hover:bg-white"
+              >
+                View Games
+              </a>
+              {session && authorization.canAddGames(session.user?.permissionLevel) && (
+                <a
+                  href={`/games?deckId=${deckId}&add=1`}
+                  className="rounded bg-indigo-600 px-3 py-1 text-sm text-white hover:bg-indigo-700"
+                >
+                  Add Game
+                </a>
+              )}
+            </div>
+          </div>
+          {recentGames.length === 0 ? (
+            <p className="text-sm text-teal-100/70">No games logged for this deck yet.</p>
+          ) : (
+            <div className="grid grid-cols-1 gap-2">
+              {recentGames.map(game => (
+                <div key={game._id} className="grid grid-cols-[auto_auto_1fr] items-start gap-3 rounded bg-teal-900/70 px-3 py-2 text-sm">
+                  <span className="font-medium">{game.date}</span>
+                  <span className={`rounded px-2 py-1 text-xs font-semibold ${game.result === "win" ? "bg-emerald-600" : game.result === "loss" ? "bg-red-700" : "bg-sky-700"}`}>
+                    {game.result === "win" ? "Win" : game.result === "loss" ? "Loss" : "Tie"}
+                  </span>
+                  <span className="text-teal-100/90">
+                    {`${game.numPlayers} players${game.turnNumber ? `, turn ${game.turnNumber}` : ""}${game.notes ? ` - ${game.notes}` : ""}`}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
 
       {hoveredCard && (
         <aside className="fixed left-[calc((100vw-1468px)/2-22rem)] top-32 z-40 hidden w-80 rounded bg-gray-900/95 p-3 text-white shadow-xl min-[2200px]:block">
