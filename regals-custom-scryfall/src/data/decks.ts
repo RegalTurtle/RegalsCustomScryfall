@@ -1,4 +1,5 @@
 import { bulkCards, coolCards, decks } from "@/config/mongoCollections";
+import gameData from "@/data/games";
 import { Card, Deck } from "@/types";
 import validation from "@/validation"
 import { Collection, ObjectId } from "mongodb";
@@ -125,6 +126,8 @@ const updateDeckSettings = async (
   );
 
   if (result.matchedCount === 0) throw new Error("Deck not found");
+
+  await gameData.updateDeckSnapshot(deckId, name, link);
 
   if (mainForColorIdentity) {
     await deckCollection.updateMany(
