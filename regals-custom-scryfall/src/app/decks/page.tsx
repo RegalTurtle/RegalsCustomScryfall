@@ -1,7 +1,7 @@
 "use client";
 import authorization from "@/authorization";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
-import { Deck } from "@/types";
+import { Deck, SerializedGame } from "@/types";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -87,6 +87,11 @@ const fourColorGroups = [
   { colorId: "WUBG", label: "Witch-Maw" },
 ];
 
+type DeckOverviewStats = {
+  gamesPlayed: number;
+  winPercent: number | null;
+};
+
 function normalizeColorId(colorId?: string) {
   const selectedColors = new Set((colorId ?? "").toUpperCase().split(""));
   return colorOrder.filter(color => selectedColors.has(color)).join("");
@@ -108,23 +113,34 @@ function deckBorderStyle(colorId?: string): React.CSSProperties {
   };
 }
 
-function DeckCard({ deck }: { deck: Deck }) {
+function deckIdString(deck: Deck): string {
+  return deck._id?.toString() ?? "";
+}
+
+function formatDeckWinPercent(stats?: DeckOverviewStats): string {
+  if (!stats || stats.gamesPlayed === 0 || stats.winPercent === null) return "N/A";
+  return `${stats.winPercent.toFixed(0)}%`;
+}
+
+function DeckCard({ deck, stats }: { deck: Deck, stats?: DeckOverviewStats }) {
+  const gamesPlayed = stats?.gamesPlayed ?? 0;
+
   return (
     <Link
-      href={`/decks/${deck._id?.toString()}`}
+      href={`/decks/${deckIdString(deck)}`}
       className="block h-28 rounded-lg shadow-md p-2 w-full text-black"
       style={deckBorderStyle(deck.colorId)}
     >
       <div className="bg-teal-100 rounded-md p-4 h-full flex flex-col justify-center gap-1">
         <p className="font-semibold">{deck.name}</p>
-        <p className="text-sm">{deck.format}</p>
+        <p className="text-sm">{`${deck.format} | ${formatDeckWinPercent(stats)} | ${gamesPlayed} game${gamesPlayed === 1 ? "" : "s"}`}</p>
         <p className="text-sm">Owner: {deck.owner}</p>
       </div>
     </Link>
   );
 }
 
-function DeckGroup({ title, decks }: { title: string, decks: Deck[] }) {
+function DeckGroup({ title, decks, deckStats }: { title: string, decks: Deck[], deckStats: Record<string, DeckOverviewStats> }) {
   return (
     <section>
       <h2 className="mb-2 text-left text-sm font-semibold uppercase tracking-wide text-teal-100">
@@ -138,17 +154,17 @@ function DeckGroup({ title, decks }: { title: string, decks: Deck[] }) {
             </div>
           </div>
         ) : (
-          decks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)
+          decks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} />)
         )}
       </div>
     </section>
   );
 }
 
-function DeckGrid({ decks }: { decks: Deck[] }) {
+function DeckGrid({ decks, deckStats }: { decks: Deck[], deckStats: Record<string, DeckOverviewStats> }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 justify-items-stretch">
-      {decks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)}
+      {decks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} />)}
     </div>
   );
 }
@@ -158,6 +174,7 @@ export default function Decks() {
 
   // Deck information
   const [ decks, setDecks ] = useState<Deck[]>([]);
+  const [ games, setGames ] = useState<SerializedGame[]>([]);
   const [ loadingDecks, setLoadingDecks ] = useState<boolean>(true);
   const [ formatFilter, setFormatFilter ] = useState("EDH");
   const [ sortBy, setSortBy ] = useState("name-asc");
@@ -165,9 +182,14 @@ export default function Decks() {
   useEffect(() => {
     async function fetchDecks() {
       try {
-        let res = await fetch("/api/decks/all_decks");
-        const { allDecks } = await res.json();
+        const [decksRes, gamesRes] = await Promise.all([
+          fetch("/api/decks/all_decks"),
+          fetch("/api/games"),
+        ]);
+        const { allDecks } = await decksRes.json();
+        const { games } = await gamesRes.json();
         setDecks(allDecks);
+        setGames(games ?? []);
       } catch(error) {
         console.error("Failed to fetch decks", error);
       } finally {
@@ -177,6 +199,26 @@ export default function Decks() {
 
     fetchDecks();
   }, []);
+
+  const deckStats = useMemo(() => {
+    return games.reduce<Record<string, DeckOverviewStats>>((statsByDeck, game) => {
+      if (!game.deckId) return statsByDeck;
+
+      const stats = statsByDeck[game.deckId] ?? { gamesPlayed: 0, winPercent: null };
+      const winsSoFar = stats.winPercent === null
+        ? 0
+        : (stats.winPercent / 100) * stats.gamesPlayed;
+      const gamesPlayed = stats.gamesPlayed + 1;
+      const wins = winsSoFar + (game.result === "win" ? 1 : 0);
+
+      statsByDeck[game.deckId] = {
+        gamesPlayed,
+        winPercent: (wins / gamesPlayed) * 100,
+      };
+
+      return statsByDeck;
+    }, {});
+  }, [games]);
 
   const formats = useMemo(() => {
     return Array.from(new Set(decks.map(deck => deck.format).filter(Boolean))).sort((a, b) => a.localeCompare(b));
@@ -328,6 +370,7 @@ export default function Decks() {
                       key={group.title}
                       title={group.title}
                       decks={group.decks}
+                      deckStats={deckStats}
                     />
                   ))}
                 </div>
@@ -336,10 +379,10 @@ export default function Decks() {
 
             <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
               <div className="xl:col-start-2">
-                <DeckGroup title="Colorless" decks={edhColorGroups.colorless} />
+                <DeckGroup title="Colorless" decks={edhColorGroups.colorless} deckStats={deckStats} />
               </div>
               <div className="xl:col-start-5">
-                <DeckGroup title="5 color" decks={edhColorGroups.fiveColor} />
+                <DeckGroup title="5 color" decks={edhColorGroups.fiveColor} deckStats={deckStats} />
               </div>
             </div>
 
@@ -349,7 +392,7 @@ export default function Decks() {
                   Other EDH Decks
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 justify-items-stretch">
-                  {edhColorGroups.otherDecks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)}
+                  {edhColorGroups.otherDecks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} />)}
                 </div>
               </section>
             )}
@@ -359,19 +402,19 @@ export default function Decks() {
                 <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
                   Not Currently Built
                 </h2>
-                <DeckGrid decks={notBuiltDecks} />
+                <DeckGrid decks={notBuiltDecks} deckStats={deckStats} />
               </section>
             )}
           </div>
         ) : (
           <div className="mt-5 w-full max-w-5xl mx-auto text-white">
-            <DeckGrid decks={builtDecks} />
+            <DeckGrid decks={builtDecks} deckStats={deckStats} />
             {notBuiltDecks.length > 0 && (
               <section className="mt-8">
                 <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
                   Not Currently Built
                 </h2>
-                <DeckGrid decks={notBuiltDecks} />
+                <DeckGrid decks={notBuiltDecks} deckStats={deckStats} />
               </section>
             )}
           </div>

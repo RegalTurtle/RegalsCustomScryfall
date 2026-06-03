@@ -9,7 +9,7 @@ import RegalsMagicHeader from "@/components/RegalsMagicHeader"
 import { Card, CardPile, CollectionTypeOption, Deck, GameStats, SerializedGame } from "@/types";
 import { useSession } from "next-auth/react";
 import { useParams } from 'next/navigation';
-import { DragEvent, useEffect, useState } from "react";
+import { DragEvent, useEffect, useMemo, useState } from "react";
 
 type ScryfallCard = {
   name: string;
@@ -38,9 +38,21 @@ type DroppedCardLookup = {
   moxfieldAssetUrl?: string;
 };
 
+type GameBreakdownColumn = {
+  key: string;
+  label: string;
+  games: SerializedGame[];
+  expectedWinRate: number | null;
+};
+
 const ignoredDragNames = new Set(["front", "back", "card", "image"]);
 
 const WUBRG = ["W", "U", "B", "R", "G"];
+const resultLabels = {
+  win: "Win",
+  loss: "Loss",
+  tie: "Tie",
+};
 
 function groupCardsByTags(cards: Card[]): CardPile[] {
   const pileMap: Record<string, Card[]> = {};
@@ -69,6 +81,16 @@ function groupCardsByTags(cards: Card[]): CardPile[] {
 
 function countCards(cards: Card[]): number {
   return cards.reduce((sum, card) => sum + card.quant, 0);
+}
+
+function formatPercent(value: number | null): string {
+  return value === null ? "N/A" : `${value.toFixed(2)}%`;
+}
+
+function getWinPercent(games: SerializedGame[]): number | null {
+  if (games.length === 0) return null;
+  const wins = games.filter(game => game.result === "win").length;
+  return (wins / games.length) * 100;
 }
 
 function findCardImage(cards: Card[], cardName: string | null): string | null {
@@ -269,6 +291,39 @@ export default function Decks() {
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedCardCollectionType, setSelectedCardCollectionType] = useState<CollectionTypeOption | null>(null);
   const [hoveredCard, setHoveredCard] = useState<Card | null>(null);
+
+  const gameBreakdown = useMemo<GameBreakdownColumn[]>(() => [
+    {
+      key: "2",
+      label: "2 Players",
+      games: recentGames.filter(game => game.numPlayers === 2),
+      expectedWinRate: 50,
+    },
+    {
+      key: "3",
+      label: "3 Players",
+      games: recentGames.filter(game => game.numPlayers === 3),
+      expectedWinRate: 100 / 3,
+    },
+    {
+      key: "4",
+      label: "4 Players",
+      games: recentGames.filter(game => game.numPlayers === 4),
+      expectedWinRate: 25,
+    },
+    {
+      key: "5",
+      label: "5+ Players",
+      games: recentGames.filter(game => game.numPlayers >= 5),
+      expectedWinRate: 20,
+    },
+    {
+      key: "total",
+      label: "Total",
+      games: recentGames,
+      expectedWinRate: null,
+    },
+  ], [recentGames]);
 
   useEffect(() => {
     if (!deckId) return;
@@ -713,7 +768,7 @@ export default function Decks() {
         /> 
       </div>) }
 
-      <section className="mx-auto mb-6 mt-4 w-full max-w-4xl px-4 text-left">
+      <section className="mx-auto mb-6 mt-4 w-full max-w-7xl px-4 text-left">
         <div className="rounded bg-teal-950/40 p-4 text-teal-50">
           <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -741,21 +796,87 @@ export default function Decks() {
               )}
             </div>
           </div>
+          <div className="mb-3 overflow-x-auto rounded bg-teal-900/70">
+            <table className="w-full min-w-[720px] text-left text-sm">
+              <thead>
+                <tr className="border-b border-teal-700/60">
+                  <th className="px-3 py-2"></th>
+                  {gameBreakdown.map(column => (
+                    <th key={column.key} className="px-3 py-2 text-right font-semibold">
+                      {column.label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-teal-800/70">
+                  <th className="px-3 py-2 font-semibold">Win Percent</th>
+                  {gameBreakdown.map(column => (
+                    <td key={`${column.key}-win`} className="px-3 py-2 text-right">
+                      {formatPercent(getWinPercent(column.games))}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-teal-800/70">
+                  <th className="px-3 py-2 font-semibold">Over/Under</th>
+                  {gameBreakdown.map(column => {
+                    const winPercent = getWinPercent(column.games);
+                    const overUnder = winPercent === null || column.expectedWinRate === null
+                      ? null
+                      : winPercent - column.expectedWinRate;
+
+                    return (
+                      <td key={`${column.key}-over-under`} className="px-3 py-2 text-right">
+                        {formatPercent(overUnder)}
+                      </td>
+                    );
+                  })}
+                </tr>
+                <tr>
+                  <th className="px-3 py-2 font-semibold">Games Played</th>
+                  {gameBreakdown.map(column => (
+                    <td key={`${column.key}-played`} className="px-3 py-2 text-right">
+                      {column.games.length}
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
           {recentGames.length === 0 ? (
             <p className="text-sm text-teal-100/70">No games logged for this deck yet.</p>
           ) : (
-            <div className="grid grid-cols-1 gap-2">
-              {recentGames.map(game => (
-                <div key={game._id} className="grid grid-cols-[auto_auto_1fr] items-start gap-3 rounded bg-teal-900/70 px-3 py-2 text-sm">
-                  <span className="font-medium">{game.date}</span>
-                  <span className={`rounded px-2 py-1 text-xs font-semibold ${game.result === "win" ? "bg-emerald-600" : game.result === "loss" ? "bg-red-700" : "bg-sky-700"}`}>
-                    {game.result === "win" ? "Win" : game.result === "loss" ? "Loss" : "Tie"}
-                  </span>
-                  <span className="text-teal-100/90">
-                    {`${game.numPlayers} players${game.turnNumber ? `, turn ${game.turnNumber}` : ""}${game.notes ? ` - ${game.notes}` : ""}`}
-                  </span>
-                </div>
-              ))}
+            <div className="overflow-x-auto rounded bg-teal-900/70">
+              <table className="w-full min-w-[920px] text-left text-sm">
+                <thead className="border-b border-teal-700/60 text-teal-100">
+                  <tr>
+                    <th className="px-3 py-2">Date</th>
+                    <th className="px-3 py-2">Format</th>
+                    <th className="px-3 py-2">Result</th>
+                    <th className="px-3 py-2">Players</th>
+                    <th className="px-3 py-2">Turn</th>
+                    <th className="px-3 py-2">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {recentGames.map(game => (
+                    <tr key={game._id} className="border-b border-teal-800/70 last:border-0">
+                      <td className="px-3 py-2">{game.date}</td>
+                      <td className="px-3 py-2">{game.format}</td>
+                      <td className="px-3 py-2">
+                        <span className={`rounded px-2 py-1 text-xs font-semibold ${game.result === "win" ? "bg-emerald-600" : game.result === "loss" ? "bg-red-700" : "bg-sky-700"}`}>
+                          {resultLabels[game.result]}
+                        </span>
+                      </td>
+                      <td className="px-3 py-2">{game.numPlayers}</td>
+                      <td className="px-3 py-2">{game.turnNumber ?? ""}</td>
+                      <td className="max-w-md px-3 py-2">
+                        <p className="whitespace-pre-wrap">{game.notes}</p>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>

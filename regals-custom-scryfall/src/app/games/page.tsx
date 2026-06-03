@@ -14,6 +14,13 @@ type DeckOption = {
   link?: string;
 };
 
+type GameBreakdownColumn = {
+  key: string;
+  label: string;
+  games: SerializedGame[];
+  expectedWinRate: number | null;
+};
+
 const resultLabels: Record<GameResult, string> = {
   win: "Win",
   loss: "Loss",
@@ -40,6 +47,16 @@ function serializeDeck(deck: Deck): DeckOption {
     format: deck.format,
     link: deck.link,
   };
+}
+
+function formatPercent(value: number | null): string {
+  return value === null ? "N/A" : `${value.toFixed(2)}%`;
+}
+
+function getWinPercent(games: SerializedGame[]): number | null {
+  if (games.length === 0) return null;
+  const wins = games.filter(game => game.result === "win").length;
+  return (wins / games.length) * 100;
 }
 
 export default function GamesPage() {
@@ -75,6 +92,51 @@ export default function GamesPage() {
       ...games.map(game => game.format),
     ].filter(Boolean))).sort((a, b) => a.localeCompare(b))
   ), [decks, games]);
+
+  const gameBreakdown = useMemo<GameBreakdownColumn[]>(() => [
+    {
+      key: "2",
+      label: "2 Players",
+      games: games.filter(game => game.numPlayers === 2),
+      expectedWinRate: 50,
+    },
+    {
+      key: "3",
+      label: "3 Players",
+      games: games.filter(game => game.numPlayers === 3),
+      expectedWinRate: 100 / 3,
+    },
+    {
+      key: "4",
+      label: "4 Players",
+      games: games.filter(game => game.numPlayers === 4),
+      expectedWinRate: 25,
+    },
+    {
+      key: "5",
+      label: "5+ Players",
+      games: games.filter(game => game.numPlayers >= 5),
+      expectedWinRate: 20,
+    },
+    {
+      key: "draft",
+      label: "Draft",
+      games: games.filter(game => game.format.toLowerCase() === "draft"),
+      expectedWinRate: 50,
+    },
+    {
+      key: "edh",
+      label: "EDH",
+      games: games.filter(game => game.format.toLowerCase() === "edh"),
+      expectedWinRate: null,
+    },
+    {
+      key: "prerelease",
+      label: "Prerelease",
+      games: games.filter(game => game.format.toLowerCase() === "prerelease"),
+      expectedWinRate: 50,
+    },
+  ], [games]);
 
   useEffect(() => {
     async function fetchDecks() {
@@ -263,6 +325,54 @@ export default function GamesPage() {
             <p className="text-xs uppercase text-teal-100/70">Win Rate</p>
             <p className="text-2xl font-semibold">{`${Math.round(stats.winRate * 100)}%`}</p>
           </div>
+        </section>
+
+        <section className="overflow-x-auto rounded bg-teal-950/40 p-4">
+          <table className="w-full min-w-[820px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-teal-700/60">
+                <th className="px-3 py-2"></th>
+                {gameBreakdown.map(column => (
+                  <th key={column.key} className="px-3 py-2 text-right font-semibold">
+                    {column.label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-teal-800/70">
+                <th className="px-3 py-2 font-semibold">Win Percent</th>
+                {gameBreakdown.map(column => (
+                  <td key={`${column.key}-win`} className="px-3 py-2 text-right">
+                    {formatPercent(getWinPercent(column.games))}
+                  </td>
+                ))}
+              </tr>
+              <tr className="border-b border-teal-800/70">
+                <th className="px-3 py-2 font-semibold">Over/Under</th>
+                {gameBreakdown.map(column => {
+                  const winPercent = getWinPercent(column.games);
+                  const overUnder = winPercent === null || column.expectedWinRate === null
+                    ? null
+                    : winPercent - column.expectedWinRate;
+
+                  return (
+                    <td key={`${column.key}-over-under`} className="px-3 py-2 text-right">
+                      {formatPercent(overUnder)}
+                    </td>
+                  );
+                })}
+              </tr>
+              <tr>
+                <th className="px-3 py-2 font-semibold">Games Played</th>
+                {gameBreakdown.map(column => (
+                  <td key={`${column.key}-played`} className="px-3 py-2 text-right">
+                    {column.games.length}
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section className="grid grid-cols-1 gap-3 rounded bg-teal-950/40 p-4 md:grid-cols-5">
