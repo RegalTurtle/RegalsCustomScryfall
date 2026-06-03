@@ -3,6 +3,8 @@ import { Card, Deck } from "@/types";
 import validation from "@/validation"
 import { Collection, ObjectId } from "mongodb";
 
+type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
+
 const addDeck = async (
   name: string,
   link: string | null,
@@ -138,7 +140,7 @@ const setTags = async (
   set: string,
   cn: string,
   updatedTags: string[],
-  deckSection: "cards" | "sideboard" | "maybeboard" | "wishlist" = "cards"
+  deckSection: DeckSection = "cards"
 ) => {
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
 
@@ -180,6 +182,96 @@ export const replaceCards = async (
   );
 
   if (result.matchedCount === 0) throw new Error("Deck not found");
+};
+
+const moveCardCopies = async (
+  deckId: string,
+  sourceSection: DeckSection,
+  targetSection: DeckSection,
+  set: string,
+  cn: string,
+  foil: Card["foil"],
+  proxy: boolean,
+  quant: number,
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(sourceSection)) throw new Error("sourceSection invalid");
+  if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(targetSection)) throw new Error("targetSection invalid");
+  if (sourceSection === targetSection) throw new Error("Sections must be different");
+  set = validation.verifyStr(set, "set");
+  cn = validation.verifyStr(cn, "cn");
+  foil = validation.verifyFoilType(foil);
+  proxy = validation.verifyBool(proxy, "proxy");
+  quant = validation.verifyInteger(quant, "quant");
+  if (quant < 1) throw new Error("quant must be at least 1");
+
+  const deckCollection: Collection<Deck> = await decks();
+  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  if (!deck) throw new Error("Deck not found");
+
+  const sourceCards = deck[sourceSection] ?? [];
+  const targetCards = deck[targetSection] ?? [];
+  const sourceIndex = sourceCards.findIndex(card => (
+    card.set === set &&
+    card.cn === cn &&
+    card.foil === foil &&
+    card.proxy === proxy
+  ));
+
+  if (sourceIndex === -1) throw new Error("Card not found in source section");
+
+  const sourceCard = sourceCards[sourceIndex];
+  if (sourceCard.quant < quant) throw new Error("Not enough copies to move");
+
+  const movedCard: Card = {
+    ...sourceCard,
+    quant,
+    updatedAt: new Date(),
+  };
+  delete movedCard._id;
+
+  const remainingSourceQuant = sourceCard.quant - quant;
+  if (remainingSourceQuant < 1) {
+    sourceCards.splice(sourceIndex, 1);
+  } else {
+    sourceCards[sourceIndex] = {
+      ...sourceCard,
+      quant: remainingSourceQuant,
+      updatedAt: new Date(),
+    };
+  }
+
+  const targetIndex = targetCards.findIndex(card => (
+    card.set === movedCard.set &&
+    card.cn === movedCard.cn &&
+    card.foil === movedCard.foil &&
+    card.proxy === movedCard.proxy
+  ));
+
+  if (targetIndex >= 0) {
+    targetCards[targetIndex] = {
+      ...targetCards[targetIndex],
+      quant: targetCards[targetIndex].quant + quant,
+      tag: Array.from(new Set([
+        ...(targetCards[targetIndex].tag ?? []),
+        ...(movedCard.tag ?? []),
+      ])),
+      updatedAt: new Date(),
+    };
+  } else {
+    targetCards.push(movedCard);
+  }
+
+  await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $set: {
+        [sourceSection]: sourceCards,
+        [targetSection]: targetCards,
+        lastUpdate: new Date(),
+      },
+    }
+  );
 };
 
 const replaceProxyWithOwnedCard = async (
@@ -350,6 +442,7 @@ export default {
   getAllDecks,
   updateDeckSettings,
   setTags,
+  moveCardCopies,
   addPlannedChange,
   removePlannedChange,
   replaceCards,

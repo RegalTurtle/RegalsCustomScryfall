@@ -8,6 +8,25 @@ type OwnedVersion = Card & {
   collectionLabel: string;
 };
 
+type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
+
+const deckSectionLabels: Record<DeckSection, string> = {
+  cards: "Decklist",
+  sideboard: "Sideboard",
+  maybeboard: "Physical Maybeboard",
+  wishlist: "Online Maybeboard",
+};
+
+function getDeckSection(collectionType: CollectionTypeOption): DeckSection {
+  const section = collectionType.split("+")[1];
+
+  if (section === "sideboard" || section === "maybeboard" || section === "wishlist") {
+    return section;
+  }
+
+  return "cards";
+}
+
 export default function CardEditModal({
   card,
   onClose,
@@ -35,6 +54,13 @@ export default function CardEditModal({
   const [removeQuant, setRemoveQuant] = useState(1);
   const [removingCopies, setRemovingCopies] = useState(false);
   const [removeCopiesError, setRemoveCopiesError] = useState("");
+  const [moveQuant, setMoveQuant] = useState(1);
+  const [moveTargetSection, setMoveTargetSection] = useState<DeckSection>("wishlist");
+  const [movingCopies, setMovingCopies] = useState(false);
+  const [moveCopiesError, setMoveCopiesError] = useState("");
+  const sourceSection = getDeckSection(collectionType);
+  const moveTargetOptions = (Object.keys(deckSectionLabels) as DeckSection[])
+    .filter(section => section !== sourceSection);
 
   const addTag = async () => {
     if (!newTag.trim() || tags.includes(newTag)) return;
@@ -155,6 +181,41 @@ export default function CardEditModal({
     }
   };
 
+  const moveCopies = async () => {
+    setMovingCopies(true);
+    setMoveCopiesError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/move_card`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sourceSection,
+          targetSection: moveTargetSection,
+          set: card.set,
+          cn: card.cn,
+          foil: card.foil,
+          proxy: card.proxy,
+          quant: moveQuant,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not move copies");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setMoveCopiesError(error instanceof Error ? error.message : "Could not move copies");
+    } finally {
+      setMovingCopies(false);
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -169,13 +230,21 @@ export default function CardEditModal({
     };
   }, [onClose]);
 
+  useEffect(() => {
+    setMoveQuant(1);
+    setRemoveQuant(1);
+    setMoveCopiesError("");
+    setRemoveCopiesError("");
+    setMoveTargetSection(moveTargetOptions.includes("wishlist") ? "wishlist" : moveTargetOptions[0] ?? "cards");
+  }, [card, collectionType]);
+
   return (
     <div
       className="fixed inset-0 bg-black/70 bg-opacity-60 flex justify-center items-center z-200"
       onClick={onClose}
     >
       <div
-        className="bg-gray-800 text-white rounded-lg shadow-lg w-[90%] max-w-md p-4 relative"
+        className="collection-card-modal bg-gray-800 text-white rounded-lg shadow-lg w-[90%] max-w-md max-h-[90vh] overflow-y-auto p-4 relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -281,6 +350,39 @@ export default function CardEditModal({
                 </div>
               )}
               {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
+            </div>
+            <div className="w-full rounded bg-gray-700 p-3">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Move copies from {deckSectionLabels[sourceSection]} to:</label>
+                <select
+                  value={moveTargetSection}
+                  onChange={(e) => setMoveTargetSection(e.target.value as DeckSection)}
+                  className="rounded bg-gray-800 px-2 py-1 text-white"
+                >
+                  {moveTargetOptions.map(section => (
+                    <option key={section} value={section}>
+                      {deckSectionLabels[section]}
+                    </option>
+                  ))}
+                </select>
+                <label className="text-sm">Quantity:</label>
+                <input
+                  type="number"
+                  min={1}
+                  max={card.quant}
+                  value={moveQuant}
+                  onChange={(e) => setMoveQuant(Math.min(card.quant, Math.max(1, Number(e.target.value))))}
+                  className="rounded bg-gray-800 px-2 py-1 text-white"
+                />
+                <button
+                  onClick={moveCopies}
+                  disabled={movingCopies}
+                  className="w-full bg-indigo-700 hover:bg-indigo-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                >
+                  {movingCopies ? "Moving..." : "Move Copies"}
+                </button>
+              </div>
+              {moveCopiesError && <p className="mt-2 text-sm text-red-300">{moveCopiesError}</p>}
             </div>
             <div className="w-full rounded bg-gray-700 p-3">
               <div className="flex flex-col gap-2">
