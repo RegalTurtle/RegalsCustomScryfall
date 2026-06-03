@@ -1,5 +1,6 @@
 import { Card } from "@/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import Link from "next/link";
 
 type CollectionType = "bulk" | "cool-cards" | "trade-binder";
 
@@ -18,6 +19,15 @@ type CardPrice = {
 };
 
 type FoilOption = "nonfoil" | "foil" | "etched";
+
+type CardDeckUsage = {
+  deckId: string;
+  deckName: string;
+  sectionLabel: string;
+  quantity: number;
+  proxy: boolean;
+  versionLabel: string;
+};
 
 const collectionLabels: Record<CollectionType, string> = {
   "bulk": "Bulk Collection",
@@ -49,6 +59,9 @@ const CardsWithSearch = ({
   const [ cardPrice, setCardPrice ] = useState<CardPrice | null>(null);
   const [ loadingPrice, setLoadingPrice ] = useState(false);
   const [ priceError, setPriceError ] = useState("");
+  const [ deckUsages, setDeckUsages ] = useState<CardDeckUsage[]>([]);
+  const [ loadingDeckUsages, setLoadingDeckUsages ] = useState(false);
+  const [ deckUsageError, setDeckUsageError ] = useState("");
 
   // Used for the searching of collection
   const [ moxfieldSearch, setMoxfieldSearch ] = useState<string>("");
@@ -95,6 +108,8 @@ const CardsWithSearch = ({
     setTransferError("");
     setFinishError("");
     setRemoveError("");
+    setDeckUsages([]);
+    setDeckUsageError("");
   }, [selectedCard, collection_type]);
 
   useEffect(() => {
@@ -133,6 +148,34 @@ const CardsWithSearch = ({
     }
 
     fetchPrice();
+  }, [selectedCard]);
+
+  useEffect(() => {
+    if (!selectedCard) return;
+    const cardToFind = selectedCard;
+
+    async function fetchDeckUsages() {
+      setLoadingDeckUsages(true);
+      setDeckUsages([]);
+      setDeckUsageError("");
+
+      try {
+        const res = await fetch(`/api/collection/card_deck_usage?name=${encodeURIComponent(cardToFind.name)}`);
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.error ?? "Deck usage unavailable");
+        }
+
+        setDeckUsages(data.usages ?? []);
+      } catch (error) {
+        setDeckUsageError(error instanceof Error ? error.message : "Deck usage unavailable");
+      } finally {
+        setLoadingDeckUsages(false);
+      }
+    }
+
+    fetchDeckUsages();
   }, [selectedCard]);
 
   const displayPrice = () => {
@@ -315,6 +358,37 @@ const CardsWithSearch = ({
               <p className="mb-4 rounded bg-gray-700 px-3 py-1 text-sm font-semibold">
                 {displayPrice()}
               </p>
+
+              <div className="mb-3 w-full rounded bg-gray-700 p-3 text-left">
+                <h3 className="mb-2 text-sm font-semibold">Decks</h3>
+                {loadingDeckUsages && <p className="text-sm text-gray-300">Checking decks...</p>}
+                {!loadingDeckUsages && deckUsageError && <p className="text-sm text-red-300">{deckUsageError}</p>}
+                {!loadingDeckUsages && !deckUsageError && deckUsages.length === 0 && (
+                  <p className="text-sm text-gray-300">Not currently in any decks.</p>
+                )}
+                {!loadingDeckUsages && !deckUsageError && deckUsages.length > 0 && (
+                  <div className="flex flex-col gap-2">
+                    {deckUsages.map((usage, index) => (
+                      <Link
+                        key={`${usage.deckId}-${usage.sectionLabel}-${usage.versionLabel}-${index}`}
+                        href={`/decks/${usage.deckId}`}
+                        className="rounded bg-gray-800 px-3 py-2 text-sm hover:bg-gray-900"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <p className="font-semibold">{usage.deckName}</p>
+                            <p className="text-gray-300">{`${usage.sectionLabel} x${usage.quantity}`}</p>
+                            <p className="text-gray-300">{usage.versionLabel}</p>
+                          </div>
+                          <span className={`shrink-0 rounded px-2 py-1 text-xs font-semibold ${usage.proxy ? "bg-yellow-500 text-black" : "bg-emerald-600 text-white"}`}>
+                            {usage.proxy ? "Proxy" : "Owned"}
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <div className="w-full rounded bg-gray-700 p-3 flex flex-col gap-2">
                 <label className="text-sm">Transfer to:</label>
