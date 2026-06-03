@@ -37,6 +37,7 @@ export default function DeckSettings() {
   const [colorId, setColorId] = useState("");
   const [mainForColorIdentity, setMainForColorIdentity] = useState(false);
   const [notes, setNotes] = useState("");
+  const [together, setTogether] = useState(true);
 
   useEffect(() => {
     if (!deckId) return;
@@ -54,6 +55,7 @@ export default function DeckSettings() {
         setColorId(foundDeck.colorId ?? "");
         setMainForColorIdentity(Boolean(foundDeck.mainForColorIdentity));
         setNotes(foundDeck.notes ?? "");
+        setTogether(foundDeck.together !== false);
       } catch (error) {
         setError(error instanceof Error ? error.message : "Failed to fetch deck");
       } finally {
@@ -104,6 +106,7 @@ export default function DeckSettings() {
           colorId,
           mainForColorIdentity,
           notes,
+          together,
         }),
       });
 
@@ -233,6 +236,21 @@ export default function DeckSettings() {
               <span className="block text-sm font-medium">Main deck for this color identity</span>
               <span className="block text-sm text-gray-600">
                 Show this deck in the EDH color overview. Other decks with the same format and colors will be listed below it.
+              </span>
+            </span>
+          </label>
+
+          <label className="flex items-start gap-3 rounded border border-gray-200 bg-gray-50 p-3">
+            <input
+              type="checkbox"
+              checked={together}
+              onChange={(e) => setTogether(e.target.checked)}
+              className="mt-1 h-4 w-4"
+            />
+            <span>
+              <span className="block text-sm font-medium">Currently built</span>
+              <span className="block text-sm text-gray-600">
+                Show this deck with your active built decks.
               </span>
             </span>
           </label>

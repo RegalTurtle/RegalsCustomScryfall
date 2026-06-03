@@ -49,7 +49,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
     const searchTerms = request.nextUrl.searchParams.get("search")?.trim() ?? "";
     const decksCollection = await decks();
-    const allDecks = await decksCollection.find({}).toArray();
+    const allDecks = await decksCollection.find({ together: { $ne: false } }).toArray();
     const proxyCardsByName = new Map<string, {
       card: Card;
       decks: Array<{ deckId: string; deckName: string; quantity: number }>;

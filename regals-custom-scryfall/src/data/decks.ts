@@ -13,11 +13,13 @@ const addDeck = async (
   format: string,
   colorId: string | null,
   mainForColorIdentity: boolean = false,
+  together: boolean = true,
 ) => {
   name = validation.verifyStr(name, `name`);
   owner = validation.verifyStr(owner, `owner`);
   format = validation.verifyStr(format, `format`);
   if (typeof mainForColorIdentity !== "boolean") throw new Error("mainForColorIdentity must be a boolean");
+  if (typeof together !== "boolean") throw new Error("together must be a boolean");
 
   const newDeck: Deck = {
     owner,
@@ -33,7 +35,7 @@ const addDeck = async (
     sideboard: [],
     maybeboard: [],
     wishlist: [],
-    together: true,
+    together,
     mainForColorIdentity,
   };
 
@@ -92,6 +94,7 @@ const updateDeckSettings = async (
   colorId: string | null,
   mainForColorIdentity: boolean,
   notes: string = "",
+  together: boolean = true,
 ) => {
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   name = validation.verifyStr(name, "name");
@@ -99,12 +102,14 @@ const updateDeckSettings = async (
   format = validation.verifyStr(format, "format");
   if (typeof notes !== "string") throw new Error("notes must be a string");
   if (typeof mainForColorIdentity !== "boolean") throw new Error("mainForColorIdentity must be a boolean");
+  if (typeof together !== "boolean") throw new Error("together must be a boolean");
 
   const deckUpdate: Partial<Deck> = {
     name,
     owner,
     format,
     notes,
+    together,
     mainForColorIdentity,
     lastUpdate: new Date(),
   };

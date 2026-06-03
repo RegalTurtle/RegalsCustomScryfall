@@ -16,7 +16,15 @@ export async function POST(
   try {
     const body = await request.json();
 
-    const objId = await deckData.addDeck(body.name, body.link || null, body.owner, body.format, body.colorId || null, Boolean(body.mainForColorIdentity));
+    const objId = await deckData.addDeck(
+      body.name,
+      body.link || null,
+      body.owner,
+      body.format,
+      body.colorId || null,
+      Boolean(body.mainForColorIdentity),
+      body.together !== false,
+    );
 
     return NextResponse.json({ message: "Deck received", objId }, { status: 201 });
   } catch (err) {

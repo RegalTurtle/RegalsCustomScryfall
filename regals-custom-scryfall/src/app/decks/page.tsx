@@ -145,6 +145,14 @@ function DeckGroup({ title, decks }: { title: string, decks: Deck[] }) {
   );
 }
 
+function DeckGrid({ decks }: { decks: Deck[] }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 justify-items-stretch">
+      {decks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)}
+    </div>
+  );
+}
+
 export default function Decks() {
   const { data: session, status: sessionStatus } = useSession();
 
@@ -187,9 +195,17 @@ export default function Decks() {
     });
   }, [decks, formatFilter, sortBy]);
 
+  const builtDecks = useMemo(() => (
+    visibleDecks.filter(deck => deck.together !== false)
+  ), [visibleDecks]);
+
+  const notBuiltDecks = useMemo(() => (
+    visibleDecks.filter(deck => deck.together === false)
+  ), [visibleDecks]);
+
   const edhColorGroups = useMemo(() => {
-    const mainDecks = visibleDecks.filter(deck => deck.mainForColorIdentity);
-    const otherDecks = visibleDecks.filter(deck => !deck.mainForColorIdentity);
+    const mainDecks = builtDecks.filter(deck => deck.mainForColorIdentity);
+    const otherDecks = builtDecks.filter(deck => !deck.mainForColorIdentity);
 
     return {
       otherDecks,
@@ -220,7 +236,7 @@ export default function Decks() {
       ) as Record<string, Deck[]>,
       fiveColor: mainDecks.filter(deck => normalizeColorId(deck.colorId).length === 5),
     };
-  }, [visibleDecks]);
+  }, [builtDecks]);
 
   const showEdhColorView = formatFilter.toLowerCase() === "edh";
   const edhColorColumns = [
@@ -337,10 +353,27 @@ export default function Decks() {
                 </div>
               </section>
             )}
+
+            {notBuiltDecks.length > 0 && (
+              <section className="mt-8">
+                <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
+                  Not Currently Built
+                </h2>
+                <DeckGrid decks={notBuiltDecks} />
+              </section>
+            )}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 justify-items-stretch mt-5 w-full max-w-5xl mx-auto">
-            {visibleDecks.map(deck => <DeckCard key={deck._id?.toString()} deck={deck} />)}
+          <div className="mt-5 w-full max-w-5xl mx-auto text-white">
+            <DeckGrid decks={builtDecks} />
+            {notBuiltDecks.length > 0 && (
+              <section className="mt-8">
+                <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
+                  Not Currently Built
+                </h2>
+                <DeckGrid decks={notBuiltDecks} />
+              </section>
+            )}
           </div>
         )}
       </main>
