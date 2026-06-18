@@ -4,8 +4,16 @@ import { useState } from "react";
 
 type OwnedVersion = Card & {
   _id: string;
-  collection: "bulk" | "cool-cards";
+  collection: "bulk" | "cool-cards" | "trade-binder";
   collectionLabel: string;
+};
+
+type CardPrice = {
+  usd?: string | null;
+  usd_foil?: string | null;
+  usd_etched?: string | null;
+  eur?: string | null;
+  tix?: string | null;
 };
 
 type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
@@ -25,6 +33,27 @@ function getDeckSection(collectionType: CollectionTypeOption): DeckSection {
   }
 
   return "cards";
+}
+
+function displayPrice(card: Card, cardPrice: CardPrice | null, loadingPrice: boolean, priceError: string) {
+  if (loadingPrice) return "Loading price...";
+  if (priceError) return priceError;
+  if (!cardPrice) return "Price unavailable";
+
+  if (card.foil === "foil" && cardPrice.usd_foil) return `$${cardPrice.usd_foil} foil`;
+  if (card.foil === "etched" && cardPrice.usd_etched) return `$${cardPrice.usd_etched} etched`;
+  if (cardPrice.usd) return `$${cardPrice.usd}`;
+  if (cardPrice.usd_foil) return `$${cardPrice.usd_foil} foil`;
+  if (cardPrice.usd_etched) return `$${cardPrice.usd_etched} etched`;
+  if (cardPrice.eur) return `EUR ${cardPrice.eur}`;
+  if (cardPrice.tix) return `${cardPrice.tix} tix`;
+
+  return "Price unavailable";
+}
+
+function bellevueKioskSearchUrl(cardName: string) {
+  const frontFaceName = cardName.split(" // ")[0].trim();
+  return `https://mbhbellevue.mtgkiosk.com/catalog/search?search=header&filter%5Bname%5D=${encodeURIComponent(frontFaceName)}`;
 }
 
 export default function CardEditModal({
@@ -47,7 +76,7 @@ export default function CardEditModal({
   const [newTag, setNewTag] = useState("");
   const [ownedVersions, setOwnedVersions] = useState<OwnedVersion[]>([]);
   const [selectedOwnedVersion, setSelectedOwnedVersion] = useState("");
-  const [returnCollection, setReturnCollection] = useState<"bulk" | "cool-cards">("bulk");
+  const [returnCollection, setReturnCollection] = useState<"bulk" | "cool-cards" | "none">("bulk");
   const [hasLoadedOwnedVersions, setHasLoadedOwnedVersions] = useState(false);
   const [loadingOwnedVersions, setLoadingOwnedVersions] = useState(false);
   const [swapError, setSwapError] = useState("");
@@ -58,6 +87,9 @@ export default function CardEditModal({
   const [moveTargetSection, setMoveTargetSection] = useState<DeckSection>("wishlist");
   const [movingCopies, setMovingCopies] = useState(false);
   const [moveCopiesError, setMoveCopiesError] = useState("");
+  const [cardPrice, setCardPrice] = useState<CardPrice | null>(null);
+  const [loadingPrice, setLoadingPrice] = useState(false);
+  const [priceError, setPriceError] = useState("");
   const sourceSection = getDeckSection(collectionType);
   const moveTargetOptions = (Object.keys(deckSectionLabels) as DeckSection[])
     .filter(section => section !== sourceSection);
@@ -92,7 +124,11 @@ export default function CardEditModal({
       const { ownedVersions } = await res.json();
       setOwnedVersions(ownedVersions);
       setSelectedOwnedVersion(ownedVersions[0] ? `${ownedVersions[0].collection}|${ownedVersions[0]._id}` : "");
-      setReturnCollection(ownedVersions[0]?.collection ?? "bulk");
+      setReturnCollection(
+        ownedVersions[0]?.collection === "bulk" || ownedVersions[0]?.collection === "cool-cards"
+          ? ownedVersions[0].collection
+          : "none"
+      );
       setHasLoadedOwnedVersions(true);
     } catch (error) {
       setSwapError(error instanceof Error ? error.message : "Could not load owned copies");
@@ -118,6 +154,7 @@ export default function CardEditModal({
           collection,
           collectionCardId,
           returnCollection: card.proxy ? undefined : returnCollection,
+          deckSection: sourceSection,
         }),
       });
 
@@ -235,8 +272,47 @@ export default function CardEditModal({
     setRemoveQuant(1);
     setMoveCopiesError("");
     setRemoveCopiesError("");
+    setCardPrice(null);
+    setPriceError("");
     setMoveTargetSection(moveTargetOptions.includes("wishlist") ? "wishlist" : moveTargetOptions[0] ?? "cards");
   }, [card, collectionType]);
+
+  useEffect(() => {
+    const cardToPrice = card;
+
+    async function fetchPrice() {
+      setLoadingPrice(true);
+      setCardPrice(null);
+      setPriceError("");
+
+      try {
+        const res = await fetch("/api/scryfall/card_lookup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: cardToPrice.name,
+            set: cardToPrice.set,
+            cn: cardToPrice.cn,
+          }),
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.card) {
+          throw new Error("Price unavailable");
+        }
+
+        setCardPrice(data.card.prices ?? null);
+      } catch (error) {
+        setPriceError(error instanceof Error ? error.message : "Price unavailable");
+      } finally {
+        setLoadingPrice(false);
+      }
+    }
+
+    fetchPrice();
+  }, [card]);
 
   return (
     <div
@@ -261,8 +337,21 @@ export default function CardEditModal({
             className="w-72 rounded-xl mb-4 shadow"
           />
           <h2 className="text-lg font-semibold mb-2">{card.name}</h2>
+          <p className="mb-3 rounded bg-gray-700 px-3 py-1 text-sm font-semibold">
+            {displayPrice(card, cardPrice, loadingPrice, priceError)}
+          </p>
 
           <div className="space-y-2 w-full">
+            {card.proxy && (
+              <a
+                href={bellevueKioskSearchUrl(card.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full rounded bg-sky-700 px-4 py-2 text-center text-sm text-white hover:bg-sky-600"
+              >
+                Search Bellevue Kiosk
+              </a>
+            )}
             <div className="w-full">
               <div className="mb-2">
                 <label className="block text-sm mb-1">Tags:</label>
@@ -300,7 +389,7 @@ export default function CardEditModal({
                     disabled={loadingOwnedVersions}
                     className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
                   >
-                    {loadingOwnedVersions ? "Loading..." : card.proxy ? "Use Owned Copy" : "Swap Owned Copy"}
+                    {loadingOwnedVersions ? "Loading..." : "Use Owned Copy"}
                   </button>
                   {hasLoadedOwnedVersions && <p className="text-sm text-gray-300">No owned copies found.</p>}
                 </div>
@@ -314,6 +403,8 @@ export default function CardEditModal({
                       const [selectedCollection] = e.target.value.split("|");
                       if (selectedCollection === "bulk" || selectedCollection === "cool-cards") {
                         setReturnCollection(selectedCollection);
+                      } else {
+                        setReturnCollection("none");
                       }
                     }}
                     className="rounded bg-gray-800 px-2 py-1 text-white"
@@ -332,9 +423,10 @@ export default function CardEditModal({
                       <label className="text-sm">Return removed card to:</label>
                       <select
                         value={returnCollection}
-                        onChange={(e) => setReturnCollection(e.target.value as "bulk" | "cool-cards")}
+                        onChange={(e) => setReturnCollection(e.target.value as "bulk" | "cool-cards" | "none")}
                         className="rounded bg-gray-800 px-2 py-1 text-white"
                       >
+                        <option value="none">Do not return</option>
                         <option value="bulk">Bulk</option>
                         <option value="cool-cards">Cool Cards</option>
                       </select>
@@ -345,7 +437,7 @@ export default function CardEditModal({
                     disabled={!selectedOwnedVersion}
                     className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
                   >
-                    {card.proxy ? "Replace Proxy" : "Swap Card"}
+                    Use Owned Copy
                   </button>
                 </div>
               )}

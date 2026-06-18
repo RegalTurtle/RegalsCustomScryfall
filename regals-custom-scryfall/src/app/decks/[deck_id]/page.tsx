@@ -278,7 +278,11 @@ export default function Decks() {
   const [ availableProxyLocations, setAvailableProxyLocations ] = useState<Record<string, string[]>>({});
   const [ ownedMaybeboardKeys, setOwnedMaybeboardKeys ] = useState<string[]>([]);
   const [ ownedMaybeboardLocations, setOwnedMaybeboardLocations ] = useState<Record<string, string[]>>({});
+  const [ ownedDeckCardKeys, setOwnedDeckCardKeys ] = useState<string[]>([]);
+  const [ ownedDeckCardLocations, setOwnedDeckCardLocations ] = useState<Record<string, string[]>>({});
+  const [ proxyUsdTotal, setProxyUsdTotal ] = useState<number | null>(null);
   const [ checkingProxies, setCheckingProxies ] = useState(false);
+  const [ checkingCollection, setCheckingCollection ] = useState(false);
   const [ plannedCardOut, setPlannedCardOut ] = useState("");
   const [ plannedCardIn, setPlannedCardIn ] = useState("");
   const [ savingPlannedChange, setSavingPlannedChange ] = useState(false);
@@ -342,6 +346,9 @@ export default function Decks() {
         setAvailableProxyLocations({});
         setOwnedMaybeboardKeys([]);
         setOwnedMaybeboardLocations({});
+        setOwnedDeckCardKeys([]);
+        setOwnedDeckCardLocations({});
+        setProxyUsdTotal(null);
       } catch (error) {
         console.error(`Error fetching deck:`, error);
       } finally {
@@ -379,15 +386,32 @@ export default function Decks() {
     try {
       const res = await fetch(`/api/decks/${deckId}/available_proxies`);
       if (!res.ok) throw new Error("Failed to check proxies");
-      const { availableProxyKeys, availableProxyLocations, ownedMaybeboardKeys, ownedMaybeboardLocations } = await res.json();
+      const { availableProxyKeys, availableProxyLocations, ownedMaybeboardKeys, ownedMaybeboardLocations, proxyUsdTotal } = await res.json();
       setAvailableProxyKeys(availableProxyKeys);
       setAvailableProxyLocations(availableProxyLocations ?? {});
       setOwnedMaybeboardKeys(ownedMaybeboardKeys ?? []);
       setOwnedMaybeboardLocations(ownedMaybeboardLocations ?? {});
+      setProxyUsdTotal(typeof proxyUsdTotal === "number" ? proxyUsdTotal : 0);
     } catch (error) {
       console.error("Error checking proxies:", error);
     } finally {
       setCheckingProxies(false);
+    }
+  };
+
+  const checkCollectionCards = async () => {
+    setCheckingCollection(true);
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/available_proxies?includeDeckCards=true`);
+      if (!res.ok) throw new Error("Failed to check collection");
+      const { ownedDeckCardKeys, ownedDeckCardLocations } = await res.json();
+      setOwnedDeckCardKeys(ownedDeckCardKeys ?? []);
+      setOwnedDeckCardLocations(ownedDeckCardLocations ?? {});
+    } catch (error) {
+      console.error("Error checking collection:", error);
+    } finally {
+      setCheckingCollection(false);
     }
   };
 
@@ -575,6 +599,18 @@ export default function Decks() {
             >
               {checkingProxies ? "Checking..." : "Check Proxies"}
             </button>
+            <button
+              onClick={checkCollectionCards}
+              disabled={checkingCollection}
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 disabled:bg-gray-400"
+            >
+              {checkingCollection ? "Checking..." : "Check Collection"}
+            </button>
+            {proxyUsdTotal !== null && (
+              <span className="rounded bg-teal-100 px-4 py-2 text-sm font-semibold text-teal-950">
+                {`Proxy total: $${proxyUsdTotal.toFixed(2)}`}
+              </span>
+            )}
           </div>
         }
         <CardPiles 
@@ -583,6 +619,8 @@ export default function Decks() {
           setHoveredCard={setHoveredCard}
           availableProxyKeys={availableProxyKeys}
           availableProxyLocations={availableProxyLocations}
+          ownedCardKeys={ownedDeckCardKeys}
+          ownedCardLocations={ownedDeckCardLocations}
         /> 
       </div>) }
 

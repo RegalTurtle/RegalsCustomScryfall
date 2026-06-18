@@ -16,8 +16,8 @@ export async function POST(
   }
 
   try {
-    const { originalSet, originalCn, collection, collectionCardId, returnCollection } = await request.json();
-    await deckData.replaceProxyWithOwnedCard(deck_id, originalSet, originalCn, collection, collectionCardId, returnCollection);
+    const { originalSet, originalCn, collection, collectionCardId, returnCollection, deckSection } = await request.json();
+    await deckData.replaceProxyWithOwnedCard(deck_id, originalSet, originalCn, collection, collectionCardId, returnCollection, deckSection);
     return NextResponse.json({ message: "Card replaced" }, { status: 201 });
   } catch (err) {
     console.error("Error replacing card:", err);

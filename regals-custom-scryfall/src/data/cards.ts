@@ -224,20 +224,23 @@ const removeCard = async (
   }
 }
 
-const getOwnedVersionsByName = async (name: string): Promise<Array<Card & { collection: "bulk" | "cool-cards", collectionLabel: string }>> => {
+const getOwnedVersionsByName = async (name: string): Promise<Array<Card & { collection: "bulk" | "cool-cards" | "trade-binder", collectionLabel: string }>> => {
   name = validation.verifyStr(name, "name");
 
   const bulkCardsCollection: Collection<Card> = await bulkCards();
   const coolCardsCollection: Collection<Card> = await coolCards();
+  const tradeBinderCollection: Collection<Card> = await tradeBinder();
 
-  const [bulkMatches, coolMatches] = await Promise.all([
+  const [bulkMatches, coolMatches, tradeMatches] = await Promise.all([
     bulkCardsCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
     coolCardsCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
+    tradeBinderCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
   ]);
 
   return [
     ...bulkMatches.map(card => ({ ...card, collection: "bulk" as const, collectionLabel: "Bulk" })),
     ...coolMatches.map(card => ({ ...card, collection: "cool-cards" as const, collectionLabel: "Cool Cards" })),
+    ...tradeMatches.map(card => ({ ...card, collection: "trade-binder" as const, collectionLabel: "Trade Binder" })),
   ];
 }
 

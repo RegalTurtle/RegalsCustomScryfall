@@ -1,4 +1,4 @@
-import { bulkCards, coolCards, decks } from "@/config/mongoCollections";
+import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import gameData from "@/data/games";
 import { Card, Deck } from "@/types";
 import validation from "@/validation"
@@ -289,28 +289,37 @@ const replaceProxyWithOwnedCard = async (
   deckId: string,
   originalSet: string,
   originalCn: string,
-  collection: "bulk" | "cool-cards",
+  collection: "bulk" | "cool-cards" | "trade-binder",
   collectionCardId: string,
-  returnCollection?: "bulk" | "cool-cards"
+  returnCollection?: "bulk" | "cool-cards" | "none",
+  deckSection: DeckSection = "cards",
 ) => {
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   originalSet = validation.verifyStr(originalSet, "originalSet");
   originalCn = validation.verifyStr(originalCn, "originalCn");
-  if (collection !== "bulk" && collection !== "cool-cards") throw new Error("collection invalid");
-  if (returnCollection && returnCollection !== "bulk" && returnCollection !== "cool-cards") throw new Error("returnCollection invalid");
+  if (collection !== "bulk" && collection !== "cool-cards" && collection !== "trade-binder") throw new Error("collection invalid");
+  if (returnCollection && returnCollection !== "bulk" && returnCollection !== "cool-cards" && returnCollection !== "none") throw new Error("returnCollection invalid");
+  if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(deckSection)) throw new Error("deckSection invalid");
   const ownedCardId = validation.verifyMongoId(collectionCardId);
 
   const deckCollection: Collection<Deck> = await decks();
-  const ownedCollection: Collection<Card> = collection === "bulk" ? await bulkCards() : await coolCards();
-  const returnedCollection: Collection<Card> = (returnCollection ?? collection) === "bulk" ? await bulkCards() : await coolCards();
+  const ownedCollection: Collection<Card> = collection === "bulk"
+    ? await bulkCards()
+    : collection === "cool-cards"
+      ? await coolCards()
+      : await tradeBinder();
+  const returnedCollection: Collection<Card> | null = returnCollection === "none"
+    ? null
+    : (returnCollection ?? collection) === "bulk" ? await bulkCards() : await coolCards();
 
   const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
   if (!deck) throw new Error("Deck not found");
+  const deckCards = deck[deckSection] ?? [];
 
-  const deckCardIndex = deck.cards.findIndex(card => card.set === originalSet && card.cn === originalCn);
+  const deckCardIndex = deckCards.findIndex(card => card.set === originalSet && card.cn === originalCn);
   if (deckCardIndex === -1) throw new Error("Card not found in deck");
 
-  const deckCard = deck.cards[deckCardIndex];
+  const deckCard = deckCards[deckCardIndex];
   const ownedCard = await ownedCollection.findOne({ _id: ownedCardId });
   if (!ownedCard) throw new Error("Owned card not found");
   if (ownedCard.name !== deckCard.name) throw new Error("Owned card does not match deck card");
@@ -325,9 +334,9 @@ const replaceProxyWithOwnedCard = async (
   };
   delete replacementCard._id;
 
-  deck.cards.splice(deckCardIndex, 1);
+  deckCards.splice(deckCardIndex, 1);
 
-  const existingIndex = deck.cards.findIndex(card => (
+  const existingIndex = deckCards.findIndex(card => (
     card.set === replacementCard.set &&
     card.cn === replacementCard.cn &&
     card.foil === replacementCard.foil &&
@@ -335,14 +344,14 @@ const replaceProxyWithOwnedCard = async (
   ));
 
   if (existingIndex >= 0) {
-    deck.cards[existingIndex].quant += replacementCard.quant;
-    deck.cards[existingIndex].tag = Array.from(new Set([
-      ...(deck.cards[existingIndex].tag ?? []),
+    deckCards[existingIndex].quant += replacementCard.quant;
+    deckCards[existingIndex].tag = Array.from(new Set([
+      ...(deckCards[existingIndex].tag ?? []),
       ...(replacementCard.tag ?? []),
     ]));
-    deck.cards[existingIndex].updatedAt = new Date();
+    deckCards[existingIndex].updatedAt = new Date();
   } else {
-    deck.cards.splice(deckCardIndex, 0, replacementCard);
+    deckCards.splice(deckCardIndex, 0, replacementCard);
   }
 
   const remainingOwnedQuant = ownedCard.quant - deckCard.quant;
@@ -355,7 +364,7 @@ const replaceProxyWithOwnedCard = async (
     );
   }
 
-  if (!deckCard.proxy) {
+  if (!deckCard.proxy && returnedCollection) {
     const returnedCard: Card = {
       ...deckCard,
       updatedAt: new Date(),
@@ -388,7 +397,7 @@ const replaceProxyWithOwnedCard = async (
 
   await deckCollection.updateOne(
     { _id: new ObjectId(deckId) },
-    { $set: { cards: deck.cards, lastUpdate: new Date() } }
+    { $set: { [deckSection]: deckCards, lastUpdate: new Date() } }
   );
 };
 
