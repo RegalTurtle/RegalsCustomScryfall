@@ -328,6 +328,7 @@ export default function Decks() {
             <Link href="/decks/new" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">New Deck</Link>
           }
           <Link href="/decks/proxies" className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Proxy Report</Link>
+          <Link href="/decks/watchlist" className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Watchlist</Link>
         </div>
 
         <div className="mt-5 flex w-full max-w-5xl flex-col gap-3 rounded bg-teal-950/40 p-4 text-left sm:flex-row sm:items-end">

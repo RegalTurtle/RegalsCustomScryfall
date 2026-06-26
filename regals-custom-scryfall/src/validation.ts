@@ -264,7 +264,7 @@ const verifyFoilType = (foil: string): FoilOption => {
 
 const verifyCollectionType = (collectionType: string): CollectionTypeOption => {
   collectionType = collectionType.trim();
-  if (collectionType !== "bulk" && collectionType !== "cool-cards" && collectionType !== "trade-binder" && !collectionType.startsWith("decks+")) throw new Error(`collectionType must be either bulk, cool-cards, or trade-binder`);
+  if (collectionType !== "bulk" && collectionType !== "cool-cards" && collectionType !== "watchlist" && collectionType !== "trade-binder" && !collectionType.startsWith("decks+")) throw new Error(`collectionType must be either bulk, cool-cards, watchlist, trade-binder, or a deck collection`);
   return collectionType as CollectionTypeOption;
 }
 

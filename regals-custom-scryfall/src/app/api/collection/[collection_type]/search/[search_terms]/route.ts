@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { bulkCards, coolCards, tradeBinder } from "@/config/mongoCollections";
+import { bulkCards, cardWatchlist, coolCards, tradeBinder } from "@/config/mongoCollections";
 import { Card } from "@/types";
 import { Collection } from "mongodb";
 import { buildCollectionCardSearchQuery } from "@/utils/cardSearch";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { search_terms: string, collection_type: "bulk" | "cool-cards" | "trade-binder" } }
+  { params }: { params: { search_terms: string, collection_type: "bulk" | "cool-cards" | "watchlist" | "trade-binder" } }
 ) {
   // const searchTerms = await (await params).search_terms;
   const { search_terms, collection_type } = await params;
@@ -18,6 +18,8 @@ export async function GET(
       cardsCollection = await bulkCards();
     } else if (collection_type === "cool-cards") {
       cardsCollection = await coolCards();
+    } else if (collection_type === "watchlist") {
+      cardsCollection = await cardWatchlist();
     } else if (collection_type === "trade-binder") {
       cardsCollection = await tradeBinder();
     } else {

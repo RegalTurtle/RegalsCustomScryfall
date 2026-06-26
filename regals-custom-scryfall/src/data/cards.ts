@@ -1,4 +1,4 @@
-import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
+import { bulkCards, cardWatchlist, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import validation from "@/validation";
 import { Collection, Document, ObjectId } from "mongodb";
 import { Card, CollectionTypeOption, FoilOption } from "@/types";
@@ -57,12 +57,16 @@ const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
  * @param collection_type Either bulk, cool-cards, or trade-binder depending on which collection to get
  * @returns The most recent 20 changes to the collection
  */
-const getPageOfCards = async ( page: number, collection_type: "bulk" | "cool-cards" | "trade-binder" ): Promise<Array<Card>> => {
+type CardCollectionType = "bulk" | "cool-cards" | "watchlist" | "trade-binder";
+
+const getPageOfCards = async ( page: number, collection_type: CardCollectionType ): Promise<Array<Card>> => {
   let cardCollection: Collection<Card>;
   if (collection_type === "bulk") {
     cardCollection = await bulkCards();
   } else if (collection_type === "cool-cards") {
     cardCollection = await coolCards();
+  } else if (collection_type === "watchlist") {
+    cardCollection = await cardWatchlist();
   } else if (collection_type === "trade-binder") {
     cardCollection = await tradeBinder();
   } else {
@@ -73,11 +77,13 @@ const getPageOfCards = async ( page: number, collection_type: "bulk" | "cool-car
   return cardPage;
 }
 
-const getCardCollection = async (collection_type: "bulk" | "cool-cards" | "trade-binder"): Promise<Collection<Card>> => {
+const getCardCollection = async (collection_type: CardCollectionType): Promise<Collection<Card>> => {
   if (collection_type === "bulk") {
     return await bulkCards();
   } else if (collection_type === "cool-cards") {
     return await coolCards();
+  } else if (collection_type === "watchlist") {
+    return await cardWatchlist();
   } else if (collection_type === "trade-binder") {
     return await tradeBinder();
   }
@@ -86,8 +92,8 @@ const getCardCollection = async (collection_type: "bulk" | "cool-cards" | "trade
 }
 
 const transferCard = async (
-  fromCollectionType: "bulk" | "cool-cards" | "trade-binder",
-  toCollectionType: "bulk" | "cool-cards" | "trade-binder",
+  fromCollectionType: CardCollectionType,
+  toCollectionType: CardCollectionType,
   cardId: string,
   quant: number,
 ): Promise<undefined> => {
@@ -143,7 +149,7 @@ const transferCard = async (
 }
 
 const changeCardFoil = async (
-  collection_type: "bulk" | "cool-cards" | "trade-binder",
+  collection_type: CardCollectionType,
   cardId: string,
   quant: number,
   foil: FoilOption,
@@ -200,7 +206,7 @@ const changeCardFoil = async (
 }
 
 const removeCard = async (
-  collection_type: "bulk" | "cool-cards" | "trade-binder",
+  collection_type: CardCollectionType,
   cardId: string,
   quant: number,
 ): Promise<undefined> => {
@@ -291,6 +297,8 @@ const addCard = async (
     cardsCollection = await bulkCards();
   } else if (collection_type === "cool-cards") {
     cardsCollection = await coolCards();
+  } else if (collection_type === "watchlist") {
+    cardsCollection = await cardWatchlist();
   } else if (collection_type === "trade-binder") {
     cardsCollection = await tradeBinder();
   } else if (collection_type.startsWith("decks+")) {

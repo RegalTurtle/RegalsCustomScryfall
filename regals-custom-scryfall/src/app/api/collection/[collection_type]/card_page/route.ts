@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { collection_type: "bulk" | "cool-cards" | "trade-binder" } }
+  { params }: { params: { collection_type: "bulk" | "cool-cards" | "watchlist" | "trade-binder" } }
 ) {
   const { collection_type } = await params;
   try {

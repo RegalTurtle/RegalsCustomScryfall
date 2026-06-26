@@ -21,4 +21,5 @@ export const decks = getCollectionFn<Deck>("decks");
 export const bulkCards = getCollectionFn<Card>("bulk_cards");
 export const coolCards = getCollectionFn<Card>("cool_cards");
 export const tradeBinder = getCollectionFn<Card>("trade_binder");
+export const cardWatchlist = getCollectionFn<Card>("card_watchlist");
 export const games = getCollectionFn<Game>("games");
