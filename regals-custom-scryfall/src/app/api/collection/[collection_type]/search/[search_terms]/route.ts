@@ -6,7 +6,7 @@ import { buildCollectionCardSearchQuery } from "@/utils/cardSearch";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { search_terms: string, collection_type: "bulk" | "cool-cards" | "watchlist" | "trade-binder" } }
+  { params }: { params: Promise<{ search_terms: string, collection_type: "bulk" | "cool-cards" | "watchlist" | "trade-binder" }> }
 ) {
   // const searchTerms = await (await params).search_terms;
   const { search_terms, collection_type } = await params;

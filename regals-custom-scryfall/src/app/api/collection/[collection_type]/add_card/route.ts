@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import cardData from "@/data/cards"
 import { getServerSession } from "next-auth";
 import authorization from "@/authorization";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/auth-options";
 import { CollectionTypeOption } from "@/types";
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { collection_type: CollectionTypeOption } }
+  { params }: { params: Promise<{ collection_type: CollectionTypeOption }> }
 ): Promise<NextResponse> {
   const { collection_type } = await params;
   const session = await getServerSession({ request, ...authOptions });

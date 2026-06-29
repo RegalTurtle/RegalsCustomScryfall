@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import authorization from "@/authorization";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
 
 function getDeckSection(collectionType?: string): "cards" | "sideboard" | "maybeboard" | "wishlist" {
@@ -16,7 +16,7 @@ function getDeckSection(collectionType?: string): "cards" | "sideboard" | "maybe
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { deck_id: string } }
+  { params }: { params: Promise<{ deck_id: string }> }
 ): Promise<NextResponse> {
   const { deck_id } = await params;
   const session = await getServerSession({ request, ...authOptions });

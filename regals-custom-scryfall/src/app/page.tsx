@@ -43,7 +43,7 @@ export default function Home() {
 /* 
 // app/dashboard/page.tsx (or any server component)
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/auth-options";
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions);

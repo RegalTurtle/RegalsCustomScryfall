@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import authorization from "@/authorization";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/auth-options";
 import cardData from "@/data/cards";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { deck_id: string } }
+  { params }: { params: Promise<{ deck_id: string }> }
 ): Promise<NextResponse> {
   const session = await getServerSession({ request, ...authOptions });
 

@@ -66,7 +66,7 @@ async function fetchProxyPrices(proxyCards: Card[]): Promise<Record<string, Scry
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { deck_id: string } }
+  { params }: { params: Promise<{ deck_id: string }> }
 ): Promise<NextResponse> {
   const { deck_id } = await params;
 
