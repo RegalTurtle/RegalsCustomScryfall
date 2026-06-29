@@ -5,12 +5,13 @@ const colorOrder = ["W", "U", "B", "R", "G"];
 export type CardSearchTerm =
   | { type: "text"; value: string }
   | { type: "oracle"; value: string }
+  | { type: "cardType"; value: string }
   | { type: "color"; value: string }
   | { type: "colorCount"; operator: "$eq" | "$gte" | "$lte" | "$gt" | "$lt"; value: number }
   | { type: "quantity"; operator: "$eq" | "$gte" | "$lte" | "$gt" | "$lt"; value: number }
   | { type: "owned"; owned: boolean };
 
-type SearchableCard = Pick<Card, "name" | "oracle" | "color">;
+type SearchableCard = Pick<Card, "name" | "oracle" | "color" | "type">;
 
 export function parseCardSearchTerms(searchTerms: string): CardSearchTerm[] {
   const terms = searchTerms.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
@@ -23,6 +24,8 @@ export function parseCardSearchTerms(searchTerms: string): CardSearchTerm[] {
     if (lowerTerm === "is:unowned") return { type: "owned", owned: false };
     if (term.startsWith("o:")) return { type: "oracle", value: term.slice(2) };
     if (term.startsWith("oracle:")) return { type: "oracle", value: term.slice(7) };
+    if (lowerTerm.startsWith("t:")) return { type: "cardType", value: term.slice(2) };
+    if (lowerTerm.startsWith("type:")) return { type: "cardType", value: term.slice(5) };
     if (term.startsWith("c=")) return { type: "color", value: term.slice(2) };
     if (term.startsWith("color=")) return { type: "color", value: term.slice(6) };
 
@@ -97,6 +100,7 @@ export function buildCollectionCardSearchQuery(searchTerms: string) {
   const mongoQuery: {
     $and?: Array<{ name: { $regex: RegExp } }>;
     oracle?: { $regex: RegExp };
+    type?: { $regex: RegExp };
     color?: string | { $regex: RegExp };
     quant?: Partial<Record<"$eq" | "$gte" | "$lte" | "$gt" | "$lt", number>>;
   } = {
@@ -106,6 +110,8 @@ export function buildCollectionCardSearchQuery(searchTerms: string) {
   for (const term of parseCardSearchTerms(searchTerms)) {
     if (term.type === "oracle") {
       mongoQuery.oracle = { $regex: new RegExp(term.value, "i") };
+    } else if (term.type === "cardType") {
+      mongoQuery.type = { $regex: new RegExp(term.value, "i") };
     } else if (term.type === "color") {
       mongoQuery.color = buildColorQuery(term.value);
     } else if (term.type === "colorCount") {
@@ -155,6 +161,8 @@ export function cardMatchesParsedSearch(
       if (!term.owned && totalOwned !== 0) return false;
     } else if (term.type === "oracle") {
       if (!new RegExp(term.value, "i").test(card.oracle)) return false;
+    } else if (term.type === "cardType") {
+      if (!new RegExp(term.value, "i").test(card.type)) return false;
     } else if (term.type === "color") {
       if (!cardMatchesColor(card, term.value)) return false;
     } else if (term.type === "colorCount") {
