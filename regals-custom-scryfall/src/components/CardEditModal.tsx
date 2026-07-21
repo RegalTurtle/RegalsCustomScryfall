@@ -387,20 +387,8 @@ export default function CardEditModal({
                 Search Bellevue Kiosk
               </a>
             )}
-            {!card.proxy && (
-              <div className="w-full rounded bg-gray-700 p-3">
-                <div className="flex flex-col gap-2">
-                  <button
-                    onClick={makeProxy}
-                    disabled={makingProxy}
-                    className="w-full bg-amber-700 hover:bg-amber-600 disabled:bg-gray-500 px-4 py-2 rounded"
-                  >
-                    {makingProxy ? "Making Proxy..." : "Make Proxy"}
-                  </button>
-                </div>
-                {makeProxyError && <p className="mt-2 text-sm text-red-300">{makeProxyError}</p>}
-              </div>
-            )}
+
+            {/* Tags here */}
             <div className="w-full">
               <div className="mb-2">
                 <label className="block text-sm mb-1">Tags:</label>
@@ -414,6 +402,7 @@ export default function CardEditModal({
                 </div>
               </div>
 
+              {/* Tag adding */}
               <div className="flex gap-2 mb-4">
                 <input
                   type="text"
@@ -430,6 +419,22 @@ export default function CardEditModal({
                 </button>
               </div>
             </div>
+
+            {!card.proxy && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={makeProxy}
+                    disabled={makingProxy}
+                    className="w-full bg-amber-700 hover:bg-amber-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {makingProxy ? "Making Proxy..." : "Make Proxy"}
+                  </button>
+                </div>
+                {makeProxyError && <p className="mt-2 text-sm text-red-300">{makeProxyError}</p>}
+              </div>
+            )}
+
             <div className="w-full rounded bg-gray-700 p-3">
               {ownedVersions.length === 0 ? (
                 <div className="flex flex-col gap-2">
