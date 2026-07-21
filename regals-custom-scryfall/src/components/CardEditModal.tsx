@@ -1,5 +1,5 @@
 import { Card, CollectionTypeOption } from "@/types";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, KeyboardEvent as ReactKeyboardEvent, SetStateAction, useEffect, useRef } from "react";
 import { useState } from "react";
 
 type OwnedVersion = Card & {
@@ -74,6 +74,7 @@ export default function CardEditModal({
   // Inside CardEditModal
   const [tags, setTags] = useState<string[]>(card.tag ?? []);
   const [newTag, setNewTag] = useState("");
+  const newTagRef = useRef<HTMLInputElement>(null);
   const [ownedVersions, setOwnedVersions] = useState<OwnedVersion[]>([]);
   const [selectedOwnedVersion, setSelectedOwnedVersion] = useState("");
   const [returnCollection, setReturnCollection] = useState<"bulk" | "cool-cards" | "none">("bulk");
@@ -114,6 +115,13 @@ export default function CardEditModal({
     setTags(updatedTags);
     setNewTag("");
     sendUpdate(update + 1);
+    newTagRef.current?.focus();
+  };
+
+  const handleNewTagKeyDown = (e: ReactKeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    addTag();
   };
 
   const loadOwnedVersions = async () => {
@@ -405,9 +413,11 @@ export default function CardEditModal({
               {/* Tag adding */}
               <div className="flex gap-2 mb-4">
                 <input
+                  ref={newTagRef}
                   type="text"
                   value={newTag}
                   onChange={(e) => setNewTag(e.target.value)}
+                  onKeyDown={handleNewTagKeyDown}
                   className="flex-grow px-2 py-1 rounded bg-gray-700 text-white"
                   placeholder="Add a tag..."
                 />
