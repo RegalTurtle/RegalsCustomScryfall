@@ -316,7 +316,6 @@ const makeCardProxy = async (
   const proxyCard: Card = {
     ...sourceCard,
     proxy: true,
-    tag: Array.from(new Set([...(sourceCard.tag ?? []), "Proxy"])),
     updatedAt: new Date(),
   };
   delete proxyCard._id;
