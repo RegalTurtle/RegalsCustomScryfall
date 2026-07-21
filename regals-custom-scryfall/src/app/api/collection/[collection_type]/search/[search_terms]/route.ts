@@ -4,15 +4,25 @@ import { Card } from "@/types";
 import { Collection } from "mongodb";
 import { buildCollectionCardSearchQuery } from "@/utils/cardSearch";
 
+type CardCollectionType = "bulk" | "cool-cards" | "watchlist" | "trade-binder";
+
+function isCardCollectionType(collectionType: string): collectionType is CardCollectionType {
+  return ["bulk", "cool-cards", "watchlist", "trade-binder"].includes(collectionType);
+}
+
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ search_terms: string, collection_type: "bulk" | "cool-cards" | "watchlist" | "trade-binder" }> }
+  { params }: { params: Promise<{ search_terms: string, collection_type: string }> }
 ) {
   // const searchTerms = await (await params).search_terms;
   const { search_terms, collection_type } = await params;
   const mongoQuery = buildCollectionCardSearchQuery(search_terms);
   
   try {
+    if (!isCardCollectionType(collection_type)) {
+      return new NextResponse("collection_type invalid", { status: 400 });
+    }
+
     let cardsCollection: Collection<Card>;
     if (collection_type === "bulk") {
       cardsCollection = await bulkCards();

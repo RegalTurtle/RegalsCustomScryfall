@@ -3,13 +3,13 @@ import cardData from "@/data/cards"
 import { getServerSession } from "next-auth";
 import authorization from "@/authorization";
 import { authOptions } from "@/auth-options";
-import { CollectionTypeOption } from "@/types";
+import validation from "@/validation";
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ collection_type: CollectionTypeOption }> }
+  { params }: { params: Promise<{ collection_type: string }> }
 ): Promise<NextResponse> {
-  const { collection_type } = await params;
+  const { collection_type: rawCollectionType } = await params;
   const session = await getServerSession({ request, ...authOptions });
 
   if (!session || !authorization.canAddCardsToCollection(session.user?.permissionLevel)) {
@@ -17,6 +17,7 @@ export async function POST(
   }
 
   try {
+    const collection_type = validation.verifyCollectionType(rawCollectionType);
     const body = await request.json();
     
     await cardData.addCard(collection_type, body.name, body.quant, body.set, body.cn, body.foil, body.proxy, body.image, body.oracle, body.color, body.color_identity, body.type, body.cmc, body.tag);
