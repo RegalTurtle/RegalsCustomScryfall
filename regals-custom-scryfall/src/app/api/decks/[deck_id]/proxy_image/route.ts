@@ -5,7 +5,7 @@ import { randomUUID } from "crypto";
 import authorization from "@/authorization";
 import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
-import { deleteLocalProxyImage, getProxyImageUploadDir, proxyImageUrlPrefix } from "@/utils/proxyImages";
+import { deleteLocalProxyImage, getProxyImagePath, getProxyImageUploadDir, proxyImageUrlPrefix } from "@/utils/proxyImages";
 
 export const runtime = "nodejs";
 
@@ -77,8 +77,12 @@ export async function POST(
 
     const fileName = `${deck_id}-${set}-${cn}-${randomUUID()}.${extension}`.replace(/[^a-zA-Z0-9._-]/g, "-");
     const uploadDir = getProxyImageUploadDir();
-    const uploadPath = `${uploadDir}/${fileName}`;
+    const uploadPath = getProxyImagePath(fileName);
     const imageUrl = `${proxyImageUrlPrefix}${fileName}`;
+
+    if (!uploadPath) {
+      throw new Error("Generated image filename was invalid");
+    }
 
     await mkdir(uploadDir, { recursive: true });
     await writeFile(uploadPath, Buffer.from(await file.arrayBuffer()));
