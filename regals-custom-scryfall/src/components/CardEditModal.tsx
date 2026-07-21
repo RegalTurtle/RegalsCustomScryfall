@@ -87,6 +87,8 @@ export default function CardEditModal({
   const [moveTargetSection, setMoveTargetSection] = useState<DeckSection>("wishlist");
   const [movingCopies, setMovingCopies] = useState(false);
   const [moveCopiesError, setMoveCopiesError] = useState("");
+  const [makingProxy, setMakingProxy] = useState(false);
+  const [makeProxyError, setMakeProxyError] = useState("");
   const [cardPrice, setCardPrice] = useState<CardPrice | null>(null);
   const [loadingPrice, setLoadingPrice] = useState(false);
   const [priceError, setPriceError] = useState("");
@@ -253,6 +255,38 @@ export default function CardEditModal({
     }
   };
 
+  const makeProxy = async () => {
+    setMakingProxy(true);
+    setMakeProxyError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/make_proxy`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          deckSection: sourceSection,
+          set: card.set,
+          cn: card.cn,
+          foil: card.foil,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not make proxy");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setMakeProxyError(error instanceof Error ? error.message : "Could not make proxy");
+    } finally {
+      setMakingProxy(false);
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -272,6 +306,7 @@ export default function CardEditModal({
     setRemoveQuant(1);
     setMoveCopiesError("");
     setRemoveCopiesError("");
+    setMakeProxyError("");
     setCardPrice(null);
     setPriceError("");
     setMoveTargetSection(moveTargetOptions.includes("wishlist") ? "wishlist" : moveTargetOptions[0] ?? "cards");
@@ -351,6 +386,20 @@ export default function CardEditModal({
               >
                 Search Bellevue Kiosk
               </a>
+            )}
+            {!card.proxy && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={makeProxy}
+                    disabled={makingProxy}
+                    className="w-full bg-amber-700 hover:bg-amber-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {makingProxy ? "Making Proxy..." : "Make Proxy"}
+                  </button>
+                </div>
+                {makeProxyError && <p className="mt-2 text-sm text-red-300">{makeProxyError}</p>}
+              </div>
             )}
             <div className="w-full">
               <div className="mb-2">

@@ -285,6 +285,71 @@ const moveCardCopies = async (
   );
 };
 
+const makeCardProxy = async (
+  deckId: string,
+  deckSection: DeckSection,
+  set: string,
+  cn: string,
+  foil: Card["foil"],
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(deckSection)) throw new Error("deckSection invalid");
+  set = validation.verifyStr(set, "set");
+  cn = validation.verifyStr(cn, "cn");
+  foil = validation.verifyFoilType(foil);
+
+  const deckCollection: Collection<Deck> = await decks();
+  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  if (!deck) throw new Error("Deck not found");
+
+  const deckCards = deck[deckSection] ?? [];
+  const sourceIndex = deckCards.findIndex(card => (
+    card.set === set &&
+    card.cn === cn &&
+    card.foil === foil &&
+    !card.proxy
+  ));
+
+  if (sourceIndex === -1) throw new Error("Card not found in deck");
+
+  const sourceCard = deckCards[sourceIndex];
+  const proxyCard: Card = {
+    ...sourceCard,
+    proxy: true,
+    tag: Array.from(new Set([...(sourceCard.tag ?? []), "Proxy"])),
+    updatedAt: new Date(),
+  };
+  delete proxyCard._id;
+
+  deckCards.splice(sourceIndex, 1);
+
+  const existingProxyIndex = deckCards.findIndex(card => (
+    card.set === proxyCard.set &&
+    card.cn === proxyCard.cn &&
+    card.foil === proxyCard.foil &&
+    card.proxy
+  ));
+
+  if (existingProxyIndex >= 0) {
+    deckCards[existingProxyIndex] = {
+      ...deckCards[existingProxyIndex],
+      quant: deckCards[existingProxyIndex].quant + proxyCard.quant,
+      tag: Array.from(new Set([
+        ...(deckCards[existingProxyIndex].tag ?? []),
+        ...(proxyCard.tag ?? []),
+      ])),
+      updatedAt: new Date(),
+    };
+  } else {
+    deckCards.splice(sourceIndex, 0, proxyCard);
+  }
+
+  await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    { $set: { [deckSection]: deckCards, lastUpdate: new Date() } }
+  );
+};
+
 const replaceProxyWithOwnedCard = async (
   deckId: string,
   originalSet: string,
@@ -466,5 +531,6 @@ export default {
   addPlannedChange,
   removePlannedChange,
   replaceCards,
+  makeCardProxy,
   replaceProxyWithOwnedCard,
 };
