@@ -180,7 +180,7 @@ export default function ProxyReportPage() {
                 <div className="flex-1 flex items-center justify-center">
                   <div>
                     <h2 className="text-md font-semibold text-black break-words text-center mt-3">{item.card.name}</h2>
-                    <p className="text-sm font-semibold text-black break-words text-center">{`${item.totalProxies} proxy${item.totalProxies === 1 ? "" : "ies"}`}</p>
+                    <p className="text-sm font-semibold text-black break-words text-center">{`${item.totalProxies} prox${item.totalProxies === 1 ? "y" : "ies"}`}</p>
                     {item.totalOwned > 0 ? (
                       <p className="text-sm font-semibold break-words text-center text-blue-800">
                         {`Owned: ${item.locations.join(" + ")}`}
