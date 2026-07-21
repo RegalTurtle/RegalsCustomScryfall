@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { mkdir, unlink, writeFile } from "fs/promises";
-import path from "path";
+import { mkdir, writeFile } from "fs/promises";
 import { randomUUID } from "crypto";
 import authorization from "@/authorization";
 import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
+import { deleteLocalProxyImage, getProxyImageUploadDir, proxyImageUrlPrefix } from "@/utils/proxyImages";
 
 export const runtime = "nodejs";
 
@@ -34,21 +34,6 @@ function formValueToString(value: FormDataEntryValue | null, fieldName: string):
   }
 
   return value.trim();
-}
-
-async function deleteLocalProxyImage(imageUrl: string | undefined, exceptImageUrl?: string) {
-  if (!imageUrl || imageUrl === exceptImageUrl || !imageUrl.startsWith("/proxy-images/")) return;
-
-  const fileName = imageUrl.slice("/proxy-images/".length);
-  if (!fileName || path.basename(fileName) !== fileName) return;
-
-  try {
-    await unlink(path.join(process.cwd(), "public", "proxy-images", fileName));
-  } catch (error) {
-    if (!(error instanceof Error) || !("code" in error) || error.code !== "ENOENT") {
-      console.warn(`Could not delete old proxy image ${imageUrl}:`, error);
-    }
-  }
 }
 
 export async function POST(
@@ -91,9 +76,9 @@ export async function POST(
     }
 
     const fileName = `${deck_id}-${set}-${cn}-${randomUUID()}.${extension}`.replace(/[^a-zA-Z0-9._-]/g, "-");
-    const uploadDir = path.join(process.cwd(), "public", "proxy-images");
-    const uploadPath = path.join(uploadDir, fileName);
-    const imageUrl = `/proxy-images/${fileName}`;
+    const uploadDir = getProxyImageUploadDir();
+    const uploadPath = `${uploadDir}/${fileName}`;
+    const imageUrl = `${proxyImageUrlPrefix}${fileName}`;
 
     await mkdir(uploadDir, { recursive: true });
     await writeFile(uploadPath, Buffer.from(await file.arrayBuffer()));
