@@ -27,6 +27,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const decksCollection = await decks();
     const allDecks = await decksCollection
       .find({
+        together: { $ne: false },
         $or: [
           { "cards.name": name },
           { "sideboard.name": name },
