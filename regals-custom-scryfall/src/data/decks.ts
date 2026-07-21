@@ -349,6 +349,59 @@ const makeCardProxy = async (
   );
 };
 
+const setProxyImage = async (
+  deckId: string,
+  deckSection: DeckSection,
+  set: string,
+  cn: string,
+  foil: Card["foil"],
+  image: string,
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(deckSection)) throw new Error("deckSection invalid");
+  set = validation.verifyStr(set, "set");
+  cn = validation.verifyStr(cn, "cn");
+  foil = validation.verifyFoilType(foil);
+  image = validation.verifyStr(image, "image");
+
+  const deckCollection: Collection<Deck> = await decks();
+  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  if (!deck) throw new Error("Deck not found");
+
+  const deckCards = deck[deckSection] ?? [];
+  const proxyCard = deckCards.find(card => (
+    card.set === set &&
+    card.cn === cn &&
+    card.foil === foil &&
+    card.proxy
+  ));
+  if (!proxyCard) throw new Error("Proxy card not found in deck");
+
+  const result = await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $set: {
+        [`${deckSection}.$[elem].image`]: image,
+        [`${deckSection}.$[elem].updatedAt`]: new Date(),
+        lastUpdate: new Date(),
+      },
+    },
+    {
+      arrayFilters: [{
+        "elem.set": set,
+        "elem.cn": cn,
+        "elem.foil": foil,
+        "elem.proxy": true,
+      }],
+    }
+  );
+
+  if (result.matchedCount === 0) throw new Error("Deck not found");
+  if (result.modifiedCount === 0) throw new Error("Proxy card not found in deck");
+
+  return proxyCard.image;
+};
+
 const replaceProxyWithOwnedCard = async (
   deckId: string,
   originalSet: string,
@@ -384,6 +437,7 @@ const replaceProxyWithOwnedCard = async (
   if (deckCardIndex === -1) throw new Error("Card not found in deck");
 
   const deckCard = deckCards[deckCardIndex];
+  const replacedImage = deckCard.image;
   const ownedCard = await ownedCollection.findOne({ _id: ownedCardId });
   if (!ownedCard) throw new Error("Owned card not found");
   if (ownedCard.name !== deckCard.name) throw new Error("Owned card does not match deck card");
@@ -463,6 +517,8 @@ const replaceProxyWithOwnedCard = async (
     { _id: new ObjectId(deckId) },
     { $set: { [deckSection]: deckCards, lastUpdate: new Date() } }
   );
+
+  return replacedImage;
 };
 
 const addPlannedChange = async (
@@ -531,5 +587,6 @@ export default {
   removePlannedChange,
   replaceCards,
   makeCardProxy,
+  setProxyImage,
   replaceProxyWithOwnedCard,
 };

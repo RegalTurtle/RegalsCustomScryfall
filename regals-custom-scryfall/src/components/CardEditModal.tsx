@@ -90,6 +90,9 @@ export default function CardEditModal({
   const [moveCopiesError, setMoveCopiesError] = useState("");
   const [makingProxy, setMakingProxy] = useState(false);
   const [makeProxyError, setMakeProxyError] = useState("");
+  const [proxyImageFile, setProxyImageFile] = useState<File | null>(null);
+  const [uploadingProxyImage, setUploadingProxyImage] = useState(false);
+  const [proxyImageError, setProxyImageError] = useState("");
   const [cardPrice, setCardPrice] = useState<CardPrice | null>(null);
   const [loadingPrice, setLoadingPrice] = useState(false);
   const [priceError, setPriceError] = useState("");
@@ -295,6 +298,38 @@ export default function CardEditModal({
     }
   };
 
+  const uploadProxyImage = async () => {
+    if (!proxyImageFile) return;
+    setUploadingProxyImage(true);
+    setProxyImageError("");
+
+    try {
+      const formData = new FormData();
+      formData.append("image", proxyImageFile);
+      formData.append("deckSection", sourceSection);
+      formData.append("set", card.set);
+      formData.append("cn", card.cn);
+      formData.append("foil", card.foil);
+
+      const res = await fetch(`/api/decks/${deckId}/proxy_image`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not upload proxy image");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setProxyImageError(error instanceof Error ? error.message : "Could not upload proxy image");
+    } finally {
+      setUploadingProxyImage(false);
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -315,6 +350,8 @@ export default function CardEditModal({
     setMoveCopiesError("");
     setRemoveCopiesError("");
     setMakeProxyError("");
+    setProxyImageFile(null);
+    setProxyImageError("");
     setCardPrice(null);
     setPriceError("");
     setMoveTargetSection(moveTargetOptions.includes("wishlist") ? "wishlist" : moveTargetOptions[0] ?? "cards");
@@ -561,6 +598,27 @@ export default function CardEditModal({
               </div>
               {removeCopiesError && <p className="mt-2 text-sm text-red-300">{removeCopiesError}</p>}
             </div>
+            {card.proxy && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-sm font-semibold">Custom Proxy Image</h3>
+                  <input
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    onChange={(e) => setProxyImageFile(e.target.files?.[0] ?? null)}
+                    className="block w-full text-sm text-gray-200 file:mr-3 file:rounded file:border-0 file:bg-gray-800 file:px-3 file:py-2 file:text-white hover:file:bg-gray-900"
+                  />
+                  <button
+                    onClick={uploadProxyImage}
+                    disabled={!proxyImageFile || uploadingProxyImage}
+                    className="w-full bg-amber-700 hover:bg-amber-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {uploadingProxyImage ? "Uploading..." : "Upload Proxy Image"}
+                  </button>
+                </div>
+                {proxyImageError && <p className="mt-2 text-sm text-red-300">{proxyImageError}</p>}
+              </div>
+            )}
             {/* <a
               href={`https://www.cardkingdom.com/catalog/search?search=header&filter[name]=${encodeURIComponent(card.name)}`}
               target="_blank"
