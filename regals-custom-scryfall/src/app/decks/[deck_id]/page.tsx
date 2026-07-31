@@ -45,6 +45,20 @@ type GameBreakdownColumn = {
   expectedWinRate: number | null;
 };
 
+type ManaCurveBucket = {
+  manaValue: number;
+  permanents: number;
+  spells: number;
+  total: number;
+  cards: Card[];
+};
+
+type ManaCurveGroup = {
+  label: string;
+  cards: Card[];
+  total: number;
+};
+
 const ignoredDragNames = new Set(["front", "back", "card", "image"]);
 
 const WUBRG = ["W", "U", "B", "R", "G"];
@@ -81,6 +95,73 @@ function groupCardsByTags(cards: Card[]): CardPile[] {
 
 function countCards(cards: Card[]): number {
   return cards.reduce((sum, card) => sum + card.quant, 0);
+}
+
+function isLand(card: Card): boolean {
+  return card.type.toLowerCase().includes("land");
+}
+
+function isSpell(card: Card): boolean {
+  const type = card.type.toLowerCase();
+  return type.includes("instant") || type.includes("sorcery");
+}
+
+function getManaValue(card: Card): number {
+  return Math.max(0, Math.floor(card.cmc));
+}
+
+function getManaCurve(cards: Card[]): ManaCurveBucket[] {
+  const nonLandCards = cards.filter(card => !isLand(card));
+  const maxManaValue = Math.max(0, ...nonLandCards.map(getManaValue));
+
+  return Array.from({ length: maxManaValue + 1 }, (_, manaValue) => {
+    const cardsAtManaValue = nonLandCards
+      .filter(card => getManaValue(card) === manaValue)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const spells = cardsAtManaValue
+      .filter(isSpell)
+      .reduce((sum, card) => sum + card.quant, 0);
+    const permanents = cardsAtManaValue
+      .filter(card => !isSpell(card))
+      .reduce((sum, card) => sum + card.quant, 0);
+
+    return {
+      manaValue,
+      permanents,
+      spells,
+      total: permanents + spells,
+      cards: cardsAtManaValue,
+    };
+  });
+}
+
+function getCardTypeGroup(card: Card): string {
+  const type = card.type.toLowerCase();
+  if (type.includes("instant")) return "Instants";
+  if (type.includes("sorcery")) return "Sorceries";
+  if (type.includes("creature")) return "Creatures";
+  if (type.includes("artifact")) return "Artifacts";
+  if (type.includes("enchantment")) return "Enchantments";
+  if (type.includes("planeswalker")) return "Planeswalkers";
+  if (type.includes("battle")) return "Battles";
+  return "Other";
+}
+
+function groupManaCurveCards(cards: Card[]): ManaCurveGroup[] {
+  const groups = cards.reduce<Record<string, Card[]>>((acc, card) => {
+    const label = getCardTypeGroup(card);
+    acc[label] = [...(acc[label] ?? []), card];
+    return acc;
+  }, {});
+
+  const order = ["Creatures", "Artifacts", "Enchantments", "Planeswalkers", "Battles", "Instants", "Sorceries", "Other"];
+  return Object.entries(groups)
+    .map(([label, groupCards]) => ({
+      label,
+      cards: groupCards.sort((a, b) => a.name.localeCompare(b.name)),
+      total: countCards(groupCards),
+    }))
+    .sort((a, b) => order.indexOf(a.label) - order.indexOf(b.label));
 }
 
 function formatPercent(value: number | null): string {
@@ -295,6 +376,7 @@ export default function Decks() {
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedCardCollectionType, setSelectedCardCollectionType] = useState<CollectionTypeOption | null>(null);
   const [hoveredCard, setHoveredCard] = useState<Card | null>(null);
+  const [selectedManaValue, setSelectedManaValue] = useState<number | null>(null);
 
   const gameBreakdown = useMemo<GameBreakdownColumn[]>(() => [
     {
@@ -328,6 +410,24 @@ export default function Decks() {
       expectedWinRate: null,
     },
   ], [recentGames]);
+
+  const manaCurve = useMemo(() => getManaCurve(deck?.cards ?? []), [deck?.cards]);
+  const selectedManaBucket = manaCurve.find(bucket => bucket.manaValue === selectedManaValue)
+    ?? manaCurve.find(bucket => bucket.total > 0)
+    ?? manaCurve[0];
+  const selectedManaGroups = selectedManaBucket ? groupManaCurveCards(selectedManaBucket.cards) : [];
+  const maxManaCurveCount = Math.max(1, ...manaCurve.map(bucket => bucket.total));
+
+  useEffect(() => {
+    if (manaCurve.length === 0) {
+      setSelectedManaValue(null);
+      return;
+    }
+
+    if (selectedManaValue === null || !manaCurve.some(bucket => bucket.manaValue === selectedManaValue)) {
+      setSelectedManaValue(manaCurve.find(bucket => bucket.total > 0)?.manaValue ?? manaCurve[0].manaValue);
+    }
+  }, [manaCurve, selectedManaValue]);
 
   useEffect(() => {
     if (!deckId) return;
@@ -808,6 +908,100 @@ export default function Decks() {
 
       <section className="mx-auto mb-6 mt-4 w-full max-w-7xl px-4 text-left">
         <div className="rounded bg-teal-950/40 p-4 text-teal-50">
+          <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 className="text-lg font-semibold">Mana Curve</h2>
+              <p className="text-sm text-teal-100/80">{`${manaCurve.reduce((sum, bucket) => sum + bucket.total, 0)} nonland cards`}</p>
+            </div>
+            {selectedManaBucket && (
+              <p className="text-sm text-teal-100/80">{`Mana value ${selectedManaBucket.manaValue}: ${selectedManaBucket.total} cards`}</p>
+            )}
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)]">
+            <div className="app-scrollbar overflow-x-auto rounded bg-teal-900/70 p-4">
+              <div className="flex min-w-[680px] items-end gap-3 border-b border-l border-teal-200/50 px-2 pb-2 pt-6">
+                {manaCurve.map(bucket => {
+                  const permanentHeight = `${Math.max(2, (bucket.permanents / maxManaCurveCount) * 190)}px`;
+                  const spellHeight = `${Math.max(2, (bucket.spells / maxManaCurveCount) * 190)}px`;
+                  const isSelected = selectedManaBucket?.manaValue === bucket.manaValue;
+
+                  return (
+                    <button
+                      key={bucket.manaValue}
+                      type="button"
+                      onClick={() => setSelectedManaValue(bucket.manaValue)}
+                      className="group flex h-60 flex-1 min-w-10 flex-col items-center justify-end gap-2 text-teal-100 outline-none"
+                      aria-label={`Show mana value ${bucket.manaValue} cards`}
+                    >
+                      <div className={`flex h-48 w-full max-w-9 flex-col justify-end overflow-hidden rounded-t border bg-teal-950/60 ${isSelected ? "border-fuchsia-500 ring-2 ring-fuchsia-500/70" : "border-teal-100/20 group-hover:border-white"}`}>
+                        {bucket.spells > 0 && (
+                          <div
+                            className="w-full bg-slate-300 transition"
+                            style={{ height: spellHeight }}
+                            title={`${bucket.spells} spells`}
+                          />
+                        )}
+                        {bucket.permanents > 0 && (
+                          <div
+                            className="w-full bg-violet-400 transition"
+                            style={{ height: permanentHeight }}
+                            title={`${bucket.permanents} permanents`}
+                          />
+                        )}
+                      </div>
+                      <span className={`text-xs ${isSelected ? "font-bold text-white" : "text-teal-100/80"}`}>
+                        {bucket.manaValue}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-teal-100/90">
+                <span className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-violet-400" />Permanents</span>
+                <span className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-slate-300" />Spells</span>
+                <span className="flex items-center gap-2"><span className="h-3 w-3 rounded-sm bg-fuchsia-500" />Selected</span>
+              </div>
+            </div>
+
+            <div className="rounded bg-teal-900/70 p-4">
+              {selectedManaGroups.length === 0 ? (
+                <p className="text-sm text-teal-100/70">No nonland cards at this mana value.</p>
+              ) : (
+                <div className="space-y-4">
+                  {selectedManaGroups.map(group => (
+                    <div key={group.label}>
+                      <h3 className="border-b border-teal-700/70 pb-1 text-sm font-semibold">
+                        {`${group.label} (${group.total})`}
+                      </h3>
+                      <div className="divide-y divide-teal-800/80">
+                        {group.cards.map(card => (
+                          <button
+                            key={`${card.set}|${card.cn}`}
+                            type="button"
+                            onClick={() => selectCardFromCollection(card, `decks+${deckId}`)}
+                            onMouseEnter={() => setHoveredCard(card)}
+                            className="grid w-full grid-cols-[2rem_1fr_auto] items-center gap-2 px-1 py-2 text-left text-sm hover:bg-teal-800/80"
+                          >
+                            <span className="text-right text-teal-100/70">{card.quant}</span>
+                            <span className="font-medium text-white">{card.name}</span>
+                            <span className="rounded bg-teal-100/10 px-2 py-0.5 text-xs text-teal-100/80">
+                              {card.type.split(" - ")[0]}
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mb-6 mt-4 w-full max-w-7xl px-4 text-left">
+        <div className="rounded bg-teal-950/40 p-4 text-teal-50">
           <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="text-lg font-semibold">Games</h2>
@@ -834,7 +1028,7 @@ export default function Decks() {
               )}
             </div>
           </div>
-          <div className="mb-3 overflow-x-auto rounded bg-teal-900/70">
+          <div className="app-scrollbar mb-3 overflow-x-auto rounded bg-teal-900/70">
             <table className="w-full min-w-[720px] text-left text-sm">
               <thead>
                 <tr className="border-b border-teal-700/60">
@@ -884,7 +1078,7 @@ export default function Decks() {
           {recentGames.length === 0 ? (
             <p className="text-sm text-teal-100/70">No games logged for this deck yet.</p>
           ) : (
-            <div className="overflow-x-auto rounded bg-teal-900/70">
+            <div className="app-scrollbar overflow-x-auto rounded bg-teal-900/70">
               <table className="w-full min-w-[920px] text-left text-sm">
                 <thead className="border-b border-teal-700/60 text-teal-100">
                   <tr>

@@ -25,6 +25,54 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  scrollbar-color: #64748b #0f3f3f;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0f3f3f;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #94a3b8, #475569);
+  border: 3px solid #0f3f3f;
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #cbd5e1, #64748b);
+}
+
+.app-scrollbar {
+  scrollbar-color: #64748b #0f3f3f;
+  scrollbar-width: thin;
+}
+
+.app-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.app-scrollbar::-webkit-scrollbar-track {
+  background: #0f3f3f;
+  border-radius: 999px;
+}
+
+.app-scrollbar::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border: 2px solid #0f3f3f;
+  border-radius: 999px;
+}
+
+.app-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
 .collection-card-modal {
   scrollbar-color: #64748b #1f2937;
   scrollbar-width: thin;
