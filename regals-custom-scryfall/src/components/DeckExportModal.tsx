@@ -3,8 +3,7 @@
 import { Card, Deck } from "@/types";
 import { useMemo, useState } from "react";
 
-type ExportScope = "all" | "deck" | "sideboard" | "maybeboard" | "wishlist";
-type ExportType = "text" | "moxfield";
+type ExportType = "text" | "moxfield" | "planned-swaps";
 
 type DeckExportModalProps = {
   show: boolean;
@@ -21,17 +20,10 @@ type ExportOptions = {
   colorTagData: boolean;
 };
 
-const exportScopes: Array<{ value: ExportScope; label: string }> = [
-  { value: "all", label: "All cards" },
-  { value: "deck", label: "Deck only" },
-  { value: "sideboard", label: "Sideboard" },
-  { value: "maybeboard", label: "Physical maybeboard" },
-  { value: "wishlist", label: "Online maybeboard" },
-];
-
 const exportTypes: Array<{ value: ExportType; label: string }> = [
-  { value: "text", label: "Text" },
-  { value: "moxfield", label: "Moxfield text" },
+  { value: "text", label: "Mainboard text" },
+  { value: "moxfield", label: "Mainboard Moxfield text" },
+  { value: "planned-swaps", label: "Mainboard with planned swaps" },
 ];
 
 const optionLabels: Array<{ key: keyof ExportOptions; label: string }> = [
@@ -62,20 +54,6 @@ function countCards(cards: Card[]): number {
 
 function uniqueCardCount(cards: Card[]): number {
   return new Set(cards.map(card => `${card.name}|${card.set}|${card.cn}`)).size;
-}
-
-function getScopedCards(deck: Deck, scope: ExportScope, includeOutOfDeck: boolean): Card[] {
-  if (scope === "deck") return deck.cards;
-  if (scope === "sideboard") return deck.sideboard;
-  if (scope === "maybeboard") return deck.maybeboard;
-  if (scope === "wishlist") return deck.wishlist;
-
-  return [
-    ...deck.cards,
-    ...(includeOutOfDeck ? deck.sideboard : []),
-    ...(includeOutOfDeck ? deck.maybeboard : []),
-    ...(includeOutOfDeck ? deck.wishlist : []),
-  ];
 }
 
 function formatTag(tag: string): string {
@@ -111,17 +89,44 @@ function formatCardLine(card: Card, options: ExportOptions): string {
   return parts.join(" ");
 }
 
+function applyPlannedSwaps(deck: Deck): { cards: Card[]; warnings: string[] } {
+  const cards = deck.cards.map(card => ({ ...card, tag: card.tag ? [...card.tag] : undefined }));
+  const swapSources = [...deck.maybeboard, ...deck.wishlist, ...deck.sideboard];
+  const warnings: string[] = [];
+
+  for (const change of deck.changes) {
+    if (!change.cardOut || !change.cardIn) continue;
+
+    const outIndex = cards.findIndex(card => card.name === change.cardOut);
+    const inCard = swapSources.find(card => card.name === change.cardIn);
+
+    if (outIndex === -1) {
+      warnings.push(`${change.cardOut} is not in the mainboard.`);
+      continue;
+    }
+
+    if (!inCard) {
+      warnings.push(`${change.cardIn} was not found in the maybeboard, wishlist, or sideboard.`);
+      continue;
+    }
+
+    cards[outIndex] = {
+      ...inCard,
+      quant: cards[outIndex].quant,
+      tag: inCard.tag ? [...inCard.tag] : undefined,
+    };
+  }
+
+  return { cards, warnings };
+}
+
 export default function DeckExportModal({ show, onClose, deck }: DeckExportModalProps) {
-  const [scope, setScope] = useState<ExportScope>("all");
   const [exportType, setExportType] = useState<ExportType>("text");
-  const [includeOutOfDeck, setIncludeOutOfDeck] = useState(true);
   const [options, setOptions] = useState<ExportOptions>(defaultOptions);
   const [copied, setCopied] = useState(false);
 
-  const selectedCards = useMemo(
-    () => getScopedCards(deck, scope, includeOutOfDeck),
-    [deck, scope, includeOutOfDeck]
-  );
+  const plannedSwapPreview = useMemo(() => applyPlannedSwaps(deck), [deck]);
+  const selectedCards = exportType === "planned-swaps" ? plannedSwapPreview.cards : deck.cards;
   const exportText = useMemo(
     () => selectedCards.map(card => formatCardLine(card, options)).join("\n"),
     [selectedCards, options]
@@ -192,32 +197,8 @@ export default function DeckExportModal({ show, onClose, deck }: DeckExportModal
         </div>
 
         <div className="space-y-4">
-          <label className="block text-sm font-semibold">
-            Select cards by
-            <select
-              value={scope}
-              onChange={(event) => setScope(event.target.value as ExportScope)}
-              className="mt-1 w-full rounded border border-slate-500 bg-neutral-800 px-3 py-2 font-normal text-white"
-            >
-              {exportScopes.map(exportScope => (
-                <option key={exportScope.value} value={exportScope.value}>{exportScope.label}</option>
-              ))}
-            </select>
-          </label>
-
-          <label className="flex items-center gap-2 text-sm font-semibold">
-            <input
-              type="checkbox"
-              checked={includeOutOfDeck}
-              onChange={(event) => setIncludeOutOfDeck(event.target.checked)}
-              disabled={scope !== "all"}
-              className="h-4 w-4"
-            />
-            Include out of deck cards (eg: maybeboard)
-          </label>
-
           <p className="text-sm font-semibold">
-            {`Selected cards: ${countCards(selectedCards)} (${uniqueCardCount(selectedCards)} unique cards)`}
+            {`Selected mainboard cards: ${countCards(selectedCards)} (${uniqueCardCount(selectedCards)} unique cards)`}
           </p>
 
           <label className="block text-sm font-semibold">
@@ -232,6 +213,14 @@ export default function DeckExportModal({ show, onClose, deck }: DeckExportModal
               ))}
             </select>
           </label>
+
+          {exportType === "planned-swaps" && plannedSwapPreview.warnings.length > 0 && (
+            <div className="rounded border border-amber-500 bg-amber-950/60 p-3 text-sm text-amber-100">
+              {plannedSwapPreview.warnings.map((warning, index) => (
+                <p key={`${warning}-${index}`}>{warning}</p>
+              ))}
+            </div>
+          )}
 
           <div>
             <p className="text-sm font-semibold">Export options</p>
