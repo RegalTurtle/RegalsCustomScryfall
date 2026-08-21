@@ -5,6 +5,7 @@ import CardAddSystem from "@/components/CardAddSystem";
 import CardEditModal from "@/components/CardEditModal";
 import CardPiles from "@/components/CardPiles";
 import DeckBulkEditModal from "@/components/DeckBulkEditModal";
+import DeckExportModal from "@/components/DeckExportModal";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader"
 import { Card, CardPile, CollectionTypeOption, Deck, GameStats, SerializedGame } from "@/types";
 import { useSession } from "next-auth/react";
@@ -351,6 +352,7 @@ export default function Decks() {
 
   const [ showFindModal, setShowFindModal ] = useState<boolean>(false);
   const [ showBulkEditModal, setShowBulkEditModal ] = useState<boolean>(false);
+  const [ showExportModal, setShowExportModal ] = useState<boolean>(false);
   const [ showFindSideModal, setShowFindSideModal ] = useState<boolean>(false);
   const [ showFindMaybeModal, setShowFindMaybeModal ] = useState<boolean>(false);
   const [ showFindWishModal, setShowFindWishModal ] = useState<boolean>(false);
@@ -691,6 +693,12 @@ export default function Decks() {
               className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
             >
               Bulk Edit
+            </button>
+            <button
+              onClick={() => setShowExportModal(true)}
+              className="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700"
+            >
+              Export
             </button>
             <button
               onClick={checkAvailableProxies}
@@ -1158,6 +1166,12 @@ export default function Decks() {
         update={update}
         sendUpdate={sendUpdate}
         collectionType={`decks+${deckId}`}
+      />
+
+      <DeckExportModal
+        show={showExportModal}
+        onClose={() => setShowExportModal(false)}
+        deck={deck}
       />
 
       <CardAddSystem

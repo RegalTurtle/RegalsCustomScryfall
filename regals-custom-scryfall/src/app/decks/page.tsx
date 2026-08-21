@@ -1,5 +1,6 @@
 "use client";
 import authorization from "@/authorization";
+import DeckExportModal from "@/components/DeckExportModal";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import { Deck, SerializedGame } from "@/types";
 import { useSession } from "next-auth/react";
@@ -122,25 +123,34 @@ function formatDeckWinPercent(stats?: DeckOverviewStats): string {
   return `${stats.winPercent.toFixed(0)}%`;
 }
 
-function DeckCard({ deck, stats }: { deck: Deck, stats?: DeckOverviewStats }) {
+function DeckCard({ deck, stats, onExport }: { deck: Deck, stats?: DeckOverviewStats, onExport: (deck: Deck) => void }) {
   const gamesPlayed = stats?.gamesPlayed ?? 0;
 
   return (
-    <Link
-      href={`/decks/${deckIdString(deck)}`}
-      className="block h-28 rounded-lg shadow-md p-2 w-full text-black"
-      style={deckBorderStyle(deck.colorId)}
-    >
-      <div className="bg-teal-100 rounded-md p-4 h-full flex flex-col justify-center gap-1">
-        <p className="font-semibold">{deck.name}</p>
-        <p className="text-sm">{`${deck.format} | ${formatDeckWinPercent(stats)} | ${gamesPlayed} game${gamesPlayed === 1 ? "" : "s"}`}</p>
-        <p className="text-sm">Owner: {deck.owner}</p>
-      </div>
-    </Link>
+    <div className="relative">
+      <Link
+        href={`/decks/${deckIdString(deck)}`}
+        className="block h-28 rounded-lg shadow-md p-2 w-full text-black"
+        style={deckBorderStyle(deck.colorId)}
+      >
+        <div className="bg-teal-100 rounded-md p-4 h-full flex flex-col justify-center gap-1 pr-20">
+          <p className="font-semibold">{deck.name}</p>
+          <p className="text-sm">{`${deck.format} | ${formatDeckWinPercent(stats)} | ${gamesPlayed} game${gamesPlayed === 1 ? "" : "s"}`}</p>
+          <p className="text-sm">Owner: {deck.owner}</p>
+        </div>
+      </Link>
+      <button
+        type="button"
+        onClick={() => onExport(deck)}
+        className="absolute right-4 top-1/2 -translate-y-1/2 rounded bg-emerald-700 px-3 py-1 text-sm font-semibold text-white shadow hover:bg-emerald-600"
+      >
+        Export
+      </button>
+    </div>
   );
 }
 
-function DeckGroup({ title, decks, deckStats }: { title: string, decks: Deck[], deckStats: Record<string, DeckOverviewStats> }) {
+function DeckGroup({ title, decks, deckStats, onExport }: { title: string, decks: Deck[], deckStats: Record<string, DeckOverviewStats>, onExport: (deck: Deck) => void }) {
   return (
     <section>
       <h2 className="mb-2 text-left text-sm font-semibold uppercase tracking-wide text-teal-100">
@@ -154,17 +164,17 @@ function DeckGroup({ title, decks, deckStats }: { title: string, decks: Deck[], 
             </div>
           </div>
         ) : (
-          decks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} />)
+          decks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} onExport={onExport} />)
         )}
       </div>
     </section>
   );
 }
 
-function DeckGrid({ decks, deckStats }: { decks: Deck[], deckStats: Record<string, DeckOverviewStats> }) {
+function DeckGrid({ decks, deckStats, onExport }: { decks: Deck[], deckStats: Record<string, DeckOverviewStats>, onExport: (deck: Deck) => void }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 justify-items-stretch">
-      {decks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} />)}
+      {decks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} onExport={onExport} />)}
     </div>
   );
 }
@@ -178,6 +188,7 @@ export default function Decks() {
   const [ loadingDecks, setLoadingDecks ] = useState<boolean>(true);
   const [ formatFilter, setFormatFilter ] = useState("EDH");
   const [ sortBy, setSortBy ] = useState("name-asc");
+  const [ exportDeck, setExportDeck ] = useState<Deck | null>(null);
 
   useEffect(() => {
     async function fetchDecks() {
@@ -372,6 +383,7 @@ export default function Decks() {
                       title={group.title}
                       decks={group.decks}
                       deckStats={deckStats}
+                      onExport={setExportDeck}
                     />
                   ))}
                 </div>
@@ -380,10 +392,10 @@ export default function Decks() {
 
             <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
               <div className="xl:col-start-2">
-                <DeckGroup title="Colorless" decks={edhColorGroups.colorless} deckStats={deckStats} />
+                <DeckGroup title="Colorless" decks={edhColorGroups.colorless} deckStats={deckStats} onExport={setExportDeck} />
               </div>
               <div className="xl:col-start-5">
-                <DeckGroup title="5 color" decks={edhColorGroups.fiveColor} deckStats={deckStats} />
+                <DeckGroup title="5 color" decks={edhColorGroups.fiveColor} deckStats={deckStats} onExport={setExportDeck} />
               </div>
             </div>
 
@@ -393,7 +405,7 @@ export default function Decks() {
                   Other EDH Decks
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 justify-items-stretch">
-                  {edhColorGroups.otherDecks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} />)}
+                  {edhColorGroups.otherDecks.map(deck => <DeckCard key={deckIdString(deck)} deck={deck} stats={deckStats[deckIdString(deck)]} onExport={setExportDeck} />)}
                 </div>
               </section>
             )}
@@ -403,22 +415,30 @@ export default function Decks() {
                 <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
                   Not Currently Built
                 </h2>
-                <DeckGrid decks={notBuiltDecks} deckStats={deckStats} />
+                <DeckGrid decks={notBuiltDecks} deckStats={deckStats} onExport={setExportDeck} />
               </section>
             )}
           </div>
         ) : (
           <div className="mt-5 w-full max-w-5xl mx-auto text-white">
-            <DeckGrid decks={builtDecks} deckStats={deckStats} />
+            <DeckGrid decks={builtDecks} deckStats={deckStats} onExport={setExportDeck} />
             {notBuiltDecks.length > 0 && (
               <section className="mt-8">
                 <h2 className="mb-3 text-left text-lg font-semibold text-teal-100">
                   Not Currently Built
                 </h2>
-                <DeckGrid decks={notBuiltDecks} deckStats={deckStats} />
+                <DeckGrid decks={notBuiltDecks} deckStats={deckStats} onExport={setExportDeck} />
               </section>
             )}
           </div>
+        )}
+
+        {exportDeck && (
+          <DeckExportModal
+            show={true}
+            onClose={() => setExportDeck(null)}
+            deck={exportDeck}
+          />
         )}
       </main>
     </div>
