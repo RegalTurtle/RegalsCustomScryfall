@@ -22,7 +22,6 @@ type ExportOptions = {
 
 const exportTypes: Array<{ value: ExportType; label: string }> = [
   { value: "text", label: "Mainboard text" },
-  { value: "moxfield", label: "Mainboard Moxfield text" },
   { value: "planned-swaps", label: "Mainboard with planned swaps" },
 ];
 
