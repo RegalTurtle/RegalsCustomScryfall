@@ -353,6 +353,7 @@ export default function Decks() {
   const [ showFindModal, setShowFindModal ] = useState<boolean>(false);
   const [ showBulkEditModal, setShowBulkEditModal ] = useState<boolean>(false);
   const [ showExportModal, setShowExportModal ] = useState<boolean>(false);
+  const [ showDeckActions, setShowDeckActions ] = useState<boolean>(false);
   const [ showFindSideModal, setShowFindSideModal ] = useState<boolean>(false);
   const [ showFindMaybeModal, setShowFindMaybeModal ] = useState<boolean>(false);
   const [ showFindWishModal, setShowFindWishModal ] = useState<boolean>(false);
@@ -707,13 +708,32 @@ export default function Decks() {
             >
               {checkingProxies ? "Checking..." : "Check Proxies"}
             </button>
-            <button
-              onClick={checkCollectionCards}
-              disabled={checkingCollection}
-              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 disabled:bg-gray-400"
-            >
-              {checkingCollection ? "Checking..." : "Check Collection"}
-            </button>
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setShowDeckActions(current => !current)}
+                className="h-10 rounded bg-indigo-600 px-3 text-white hover:bg-indigo-700"
+                aria-label="More deck actions"
+                aria-expanded={showDeckActions}
+              >
+                ...
+              </button>
+              {showDeckActions && (
+                <div className="absolute right-0 top-11 z-50 w-48 rounded border border-teal-700 bg-teal-950 p-1 text-left shadow-xl">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowDeckActions(false);
+                      checkCollectionCards();
+                    }}
+                    disabled={checkingCollection}
+                    className="w-full rounded px-3 py-2 text-left text-sm text-white hover:bg-teal-800 disabled:text-gray-400"
+                  >
+                    {checkingCollection ? "Checking..." : "Check Collection"}
+                  </button>
+                </div>
+              )}
+            </div>
             {proxyUsdTotal !== null && (
               <span className="rounded bg-teal-100 px-4 py-2 text-sm font-semibold text-teal-950">
                 {`Proxy total: $${proxyUsdTotal.toFixed(2)}`}
