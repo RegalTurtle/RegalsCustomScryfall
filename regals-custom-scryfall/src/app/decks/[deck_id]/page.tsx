@@ -11,6 +11,7 @@ import { Card, CardPile, CollectionTypeOption, Deck, GameStats, SerializedGame }
 import { useSession } from "next-auth/react";
 import { useParams } from 'next/navigation';
 import { DragEvent, useEffect, useMemo, useState } from "react";
+import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 
 type ScryfallCard = {
   name: string;
@@ -173,18 +174,6 @@ function getManaCurve(cards: Card[]): ManaCurveBucket[] {
       cards: cardsAtManaValue,
     };
   });
-}
-
-function isGameChangerCard(card: Card): boolean {
-  if (card.game_changer) return true;
-
-  const normalizedTags = (card.tag ?? []).map(tag => tag.trim().toLowerCase());
-  return normalizedTags.some(tag =>
-    tag === "game changer" ||
-    tag === "game-changer" ||
-    tag === "gamechanger" ||
-    tag === "game changer card"
-  );
 }
 
 function getCardTypeGroup(card: Card): string {
@@ -374,8 +363,7 @@ async function fetchDroppedScryfallCard(lookup: DroppedCardLookup): Promise<Scry
   const params = new URLSearchParams({
     exact: lookup.name,
   });
-  const res = await fetch(`https://api.scryfall.com/cards/named?${params.toString()}`);
-  const data = await res.json();
+  const { res, data } = await fetchScryfallJson<any>(`https://api.scryfall.com/cards/named?${params.toString()}`);
 
   if (!res.ok || data.object === "error") {
     throw new Error(`${lookup.name} was not found on Scryfall`);
@@ -396,7 +384,6 @@ function buildCardFromScryfall(card: ScryfallCard): Card {
     image: getCardImage(card),
     oracle: getCardOracle(card),
     tag: [],
-    game_changer: Boolean(card.game_changer),
     color: getCardColors(card),
     color_identity: WUBRG.filter(c => card.color_identity.includes(c)).join(""),
     type: card.type_line,
@@ -433,6 +420,7 @@ export default function Decks() {
   const [ checkingProxies, setCheckingProxies ] = useState(false);
   const [ checkingCollection, setCheckingCollection ] = useState(false);
   const [ highlightGameChangers, setHighlightGameChangers ] = useState(false);
+  const [ gameChangerCardKeys, setGameChangerCardKeys ] = useState<Set<string>>(new Set());
   const [ plannedCardOut, setPlannedCardOut ] = useState("");
   const [ plannedCardIn, setPlannedCardIn ] = useState("");
   const [ savingPlannedChange, setSavingPlannedChange ] = useState(false);
@@ -535,6 +523,53 @@ export default function Decks() {
 
     fetchDeck();
   }, [ update, cardGroupMode, cardSortMode ]);
+
+  const syncGameChangerCards = async () => {
+    if (!deck) return;
+
+    const uniqueCards = Array.from(new Map(
+      [...deck.cards, ...deck.sideboard, ...deck.maybeboard, ...deck.wishlist]
+        .map(card => [`${card.set}|${card.cn}`, card] as const))
+      .values()
+    );
+
+    const keys: string[] = [];
+
+    for (const card of uniqueCards) {
+      try {
+        const res = await fetch("/api/scryfall/card_lookup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: card.name,
+            set: card.set,
+            cn: card.cn,
+          }),
+        });
+
+        if (!res.ok) {
+          await new Promise(resolve => setTimeout(resolve, 150));
+          continue;
+        }
+
+        const data = await res.json();
+        if (data?.card?.game_changer) {
+          keys.push(`${card.set}|${card.cn}`);
+        }
+      } catch {
+        // Ignore lookup failures for this refresh pass.
+      }
+
+      await new Promise(resolve => setTimeout(resolve, 150));
+    }
+
+    setGameChangerCardKeys(new Set(keys));
+  };
+
+  useEffect(() => {
+    if (!deck) return;
+    void syncGameChangerCards();
+  }, [deck]);
 
   useEffect(() => {
     if (!deckId) return;
@@ -888,9 +923,14 @@ export default function Decks() {
                   </button>
                   <button
                     type="button"
-                    onClick={() => {
-                      setHighlightGameChangers(current => !current);
+                    onClick={async () => {
+                      const nextValue = !highlightGameChangers;
+                      setHighlightGameChangers(nextValue);
                       setShowDeckActions(false);
+
+                      if (nextValue) {
+                        await syncGameChangerCards();
+                      }
                     }}
                     className="w-full rounded px-3 py-2 text-left text-sm text-white hover:bg-teal-800"
                   >
@@ -915,6 +955,7 @@ export default function Decks() {
           ownedCardKeys={ownedDeckCardKeys}
           ownedCardLocations={ownedDeckCardLocations}
           highlightGameChangerCards={highlightGameChangers}
+          gameChangerCardKeys={gameChangerCardKeys}
         /> 
       </div>) }
 
@@ -943,6 +984,7 @@ export default function Decks() {
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+sideboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
           highlightGameChangerCards={highlightGameChangers}
+          gameChangerCardKeys={gameChangerCardKeys}
         /> 
       </div>) }
 
@@ -1109,6 +1151,7 @@ export default function Decks() {
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+maybeboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
           highlightGameChangerCards={highlightGameChangers}
+          gameChangerCardKeys={gameChangerCardKeys}
         /> 
       </div>) }
 
@@ -1139,6 +1182,7 @@ export default function Decks() {
           ownedCardKeys={ownedMaybeboardKeys}
           ownedCardLocations={ownedMaybeboardLocations}
           highlightGameChangerCards={highlightGameChangers}
+          gameChangerCardKeys={gameChangerCardKeys}
         /> 
       </div>) }
 

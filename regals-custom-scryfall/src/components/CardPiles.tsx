@@ -2,18 +2,6 @@ import { Card, CardPile } from "@/types";
 
 const cardKey = (card: Card) => `${card.set}|${card.cn}`;
 
-const isGameChangerCard = (card: Card): boolean => {
-  if (card.game_changer) return true;
-
-  const normalizedTags = (card.tag ?? []).map(tag => tag.trim().toLowerCase());
-  return normalizedTags.some(tag =>
-    tag === "game changer" ||
-    tag === "game-changer" ||
-    tag === "gamechanger" ||
-    tag === "game changer card"
-  );
-};
-
 export default function CardPiles({ 
   piles, 
   setSelectedCard,
@@ -23,6 +11,7 @@ export default function CardPiles({
   ownedCardKeys = [],
   ownedCardLocations = {},
   highlightGameChangerCards = false,
+  gameChangerCardKeys = new Set<string>(),
 }: { 
   piles: CardPile[], 
   setSelectedCard: (card: Card) => void,
@@ -32,6 +21,7 @@ export default function CardPiles({
   ownedCardKeys?: string[],
   ownedCardLocations?: Record<string, string[]>,
   highlightGameChangerCards?: boolean,
+  gameChangerCardKeys?: Set<string>,
 }) {
   const cardOffset = 32;
   const cardHeight = 279;
@@ -57,7 +47,10 @@ export default function CardPiles({
                 className="relative w-full overflow-visible"
                 style={{ height: `${stackHeight}px` }}
               >
-                {pile.cards.map((card, index) => (
+                {pile.cards.map((card, index) => {
+                  const isGameChangerCard = highlightGameChangerCards && gameChangerCardKeys.has(cardKey(card));
+
+                  return (
                   <div
                     key={`${card.set}|${card.cn}`}
                     className="group absolute top-0 left-0"
@@ -75,13 +68,13 @@ export default function CardPiles({
                         {card.quant}
                       </div>
                     )}
-                    <div className={highlightGameChangerCards && isGameChangerCard(card) ? "rounded-lg ring-4 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.8)]" : ""}>
+                    <div className={isGameChangerCard ? "rounded-lg ring-4 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.8)]" : ""}>
                       <img
                         src={card.image}
                         alt={card.name}
                         onMouseEnter={() => setHoveredCard?.(card)}
                         onClick={() => setSelectedCard(card)}
-                        className={`w-full h-full object-contain rounded-lg cursor-pointer ${highlightGameChangerCards && isGameChangerCard(card) ? "bg-yellow-200/30" : ""}`}
+                        className={`w-full h-full object-contain rounded-lg cursor-pointer ${isGameChangerCard ? "bg-yellow-200/30" : ""}`}
                         style={{ pointerEvents: "auto" }}
                       />
                     </div>
@@ -99,7 +92,8 @@ export default function CardPiles({
                       </div>
                     )}
                   </div>
-                ))}
+                );
+                })}
               </div>
             </div>
           );

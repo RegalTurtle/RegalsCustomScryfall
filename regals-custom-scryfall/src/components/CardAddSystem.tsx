@@ -1,5 +1,6 @@
 import Modal from "@/components/Modal";
 import { Card, CollectionTypeOption, FoilOption } from "@/types";
+import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 interface ScryfallCard {
@@ -26,7 +27,7 @@ const headers = {
 
 async function fetchScryfallFromBrowser(url: string) {
   console.log(`[Scryfall Browser] GET ${url}`);
-  const res = await fetch(url, { headers });
+  const { res } = await fetchScryfallJson(url, { headers });
   console.log(`[Scryfall Browser] ${res.status} ${url}`);
   return res;
 }

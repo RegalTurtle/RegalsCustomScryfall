@@ -13,7 +13,6 @@ export interface Card {
   image: string;
   oracle: string;
   tag?: string[];
-  game_changer?: boolean;
   color: string;
   color_identity: string;
   type: string;

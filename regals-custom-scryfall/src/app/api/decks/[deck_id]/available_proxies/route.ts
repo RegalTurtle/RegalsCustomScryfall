@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { bulkCards, coolCards, tradeBinder } from "@/config/mongoCollections";
 import deckData from "@/data/decks";
 import { Card } from "@/types";
+import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 
 const cardKey = (card: Card) => `${card.set}|${card.cn}`;
 
@@ -44,7 +45,7 @@ async function fetchProxyPrices(proxyCards: Card[]): Promise<Record<string, Scry
   const priceEntries = await Promise.all(
     uniqueProxyCards.map(async card => {
       try {
-        const res = await fetch(`https://api.scryfall.com/cards/${card.set.toLowerCase()}/${encodeURIComponent(card.cn)}`, {
+        const { res, data } = await fetchScryfallJson<{ prices?: ScryfallPrices }>(`https://api.scryfall.com/cards/${card.set.toLowerCase()}/${encodeURIComponent(card.cn)}`, {
           headers: {
             "User-Agent": "RegalTurtlesMagic/1.0",
             "Accept": "application/json",
@@ -52,10 +53,13 @@ async function fetchProxyPrices(proxyCards: Card[]): Promise<Record<string, Scry
         });
 
         if (!res.ok) return [cardKey(card), undefined] as const;
-        const data: { prices?: ScryfallPrices } = await res.json();
 
         return [cardKey(card), data.prices] as const;
-      } catch {
+      } catch (error) {
+        if (error instanceof Error && error.message.includes("rate limit exceeded")) {
+          throw error;
+        }
+
         return [cardKey(card), undefined] as const;
       }
     })
@@ -169,6 +173,11 @@ export async function GET(
     }, { status: 200 });
   } catch (err) {
     console.error("Error checking available proxies:", err);
+
+    if (err instanceof Error && err.message.includes("rate limit exceeded")) {
+      return NextResponse.json({ error: err.message }, { status: 429 });
+    }
+
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 }

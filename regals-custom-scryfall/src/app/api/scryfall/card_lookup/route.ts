@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import authorization from "@/authorization";
 import { authOptions } from "@/auth-options";
+import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 
 const headers = {
   "User-Agent": "RegalTurtlesMagic/1.0",
@@ -24,15 +25,22 @@ async function fetchJson(url: string) {
     const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
-      const res = await fetch(url, { headers, signal: controller.signal });
-      const data = await res.json();
+      const { res, data } = await fetchScryfallJson(url, { headers, signal: controller.signal });
       lastRes = res;
       lastData = data;
 
-      if (res.ok || ![404, 429, 500, 502, 503, 504].includes(res.status)) {
+      if (res.status === 429) {
+        throw new Error("Scryfall rate limit exceeded. Please wait 30 seconds and try again.");
+      }
+
+      if (res.ok || ![404, 500, 502, 503, 504].includes(res.status)) {
         return { res, data };
       }
     } catch (error) {
+      if (error instanceof Error && error.message.includes("rate limit exceeded")) {
+        throw error;
+      }
+
       if (attempt === retryDelays.length - 1) {
         throw error;
       }
@@ -107,6 +115,11 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: `${cardName || `${setCode.toUpperCase()} ${collectorNumber}`} was not found on Scryfall` }, { status: 404 });
   } catch (err) {
     console.error("Error looking up Scryfall card:", err);
+
+    if (err instanceof Error && err.message.includes("rate limit exceeded")) {
+      return NextResponse.json({ error: err.message }, { status: 429 });
+    }
+
     return NextResponse.json({ error: "Scryfall lookup failed" }, { status: 400 });
   }
 }

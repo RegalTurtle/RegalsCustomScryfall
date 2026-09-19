@@ -2,6 +2,7 @@
 import { useSession } from "next-auth/react";
 import { DragEvent, useEffect, useMemo, useState } from "react";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
+import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 import authorization from "@/authorization";
 import CardAddSystem from "@/components/CardAddSystem";
 import CardPiles from "@/components/CardPiles";
@@ -341,8 +342,7 @@ async function fetchDroppedScryfallCard(lookup: DroppedCardLookup): Promise<Scry
   const params = new URLSearchParams({
     exact: lookup.name,
   });
-  const res = await fetch(`https://api.scryfall.com/cards/named?${params.toString()}`);
-  const data = await res.json();
+  const { res, data } = await fetchScryfallJson<any>(`https://api.scryfall.com/cards/named?${params.toString()}`);
 
   if (!res.ok || data.object === "error") {
     throw new Error(`${lookup.name} was not found on Scryfall`);
@@ -441,15 +441,18 @@ export default function DeckWatchlist() {
       const setInfoEntries = await Promise.all(
         missingSetCodes.map(async (setCode) => {
           try {
-            const res = await fetch(`https://api.scryfall.com/sets/${setCode}`);
+            const { res, data } = await fetchScryfallJson<{ name?: string; released_at?: string | null }>(`https://api.scryfall.com/sets/${setCode}`);
             if (!res.ok) throw new Error("Set lookup failed");
-            const setInfo = await res.json();
 
             return [setCode, {
-              name: setInfo.name ?? setCode.toUpperCase(),
-              released_at: setInfo.released_at ?? null,
+              name: data.name ?? setCode.toUpperCase(),
+              released_at: data.released_at ?? null,
             }] as const;
-          } catch {
+          } catch (error) {
+            if (error instanceof Error && error.message.includes("rate limit exceeded")) {
+              throw error;
+            }
+
             return [setCode, {
               name: setCode.toUpperCase(),
               released_at: null,
