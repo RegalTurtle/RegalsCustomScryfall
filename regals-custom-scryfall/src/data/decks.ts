@@ -521,6 +521,144 @@ const replaceProxyWithOwnedCard = async (
   return replacedImage;
 };
 
+const mergeTags = (...tagGroups: Array<string[] | undefined>): string[] => Array.from(new Set(tagGroups.flatMap(tags => tags ?? [])));
+
+const cardIdentityMatches = (left: Card, right: Card): boolean => (
+  left.name === right.name &&
+  left.set === right.set &&
+  left.cn === right.cn &&
+  left.foil === right.foil &&
+  left.proxy === right.proxy
+);
+
+const applyPlannedChange = async (
+  deckId: string,
+  changeIndex: number,
+  targetSection: "cards" | "sideboard" | "maybeboard" | "wishlist" = "maybeboard",
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  changeIndex = validation.verifyInteger(changeIndex, "changeIndex");
+  if (changeIndex < 0) throw new Error("changeIndex must be at least 0");
+  if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(targetSection)) throw new Error("targetSection invalid");
+
+  const deckCollection: Collection<Deck> = await decks();
+  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  if (!deck) throw new Error("Deck not found");
+
+  if (changeIndex >= deck.changes.length) throw new Error("Planned change not found");
+
+  const change = deck.changes[changeIndex];
+  if (!change.cardOut || !change.cardIn) throw new Error("Planned change is missing card data");
+
+  const mainCards = deck.cards ?? [];
+  const outIndex = mainCards.findIndex(card => card.name === change.cardOut);
+  if (outIndex === -1) throw new Error(`${change.cardOut} is not in the mainboard`);
+
+  const cardOut = mainCards[outIndex];
+  const removedCard: Card = {
+    ...cardOut,
+    quant: 1,
+    tag: cardOut.tag ? [...cardOut.tag] : undefined,
+    updatedAt: new Date(),
+  };
+
+  if (cardOut.quant <= 1) {
+    mainCards.splice(outIndex, 1);
+  } else {
+    mainCards[outIndex] = {
+      ...cardOut,
+      quant: cardOut.quant - 1,
+      updatedAt: new Date(),
+    };
+  }
+
+  const destinationCards = deck[targetSection] ?? [];
+  const targetIndex = destinationCards.findIndex(card => cardIdentityMatches(card, removedCard));
+  if (targetIndex >= 0) {
+    destinationCards[targetIndex] = {
+      ...destinationCards[targetIndex],
+      quant: destinationCards[targetIndex].quant + 1,
+      tag: mergeTags(destinationCards[targetIndex].tag, removedCard.tag),
+      updatedAt: new Date(),
+    };
+  } else {
+    destinationCards.push({ ...removedCard, tag: removedCard.tag ? [...removedCard.tag] : undefined });
+  }
+  deck[targetSection] = destinationCards;
+
+  const swapSources: Array<{ section: "sideboard" | "maybeboard" | "wishlist"; cards: Card[] }> = [
+    { section: "maybeboard", cards: deck.maybeboard ?? [] },
+    { section: "wishlist", cards: deck.wishlist ?? [] },
+    { section: "sideboard", cards: deck.sideboard ?? [] },
+  ];
+
+  let incomingChoice: { section: "sideboard" | "maybeboard" | "wishlist"; cards: Card[]; index: number } | null = null;
+  for (const option of swapSources) {
+    const index = option.cards.findIndex(card => card.name === change.cardIn);
+    if (index !== -1) {
+      incomingChoice = { ...option, index };
+      break;
+    }
+  }
+
+  if (!incomingChoice) throw new Error(`${change.cardIn} was not found in the maybeboard, wishlist, or sideboard`);
+
+  const incomingCard = incomingChoice.cards[incomingChoice.index];
+  const incomingCopy: Card = {
+    ...incomingCard,
+    quant: 1,
+    tag: incomingCard.tag ? [...incomingCard.tag] : undefined,
+    updatedAt: new Date(),
+  };
+
+  if (incomingCard.quant <= 1) {
+    incomingChoice.cards.splice(incomingChoice.index, 1);
+  } else {
+    incomingChoice.cards[incomingChoice.index] = {
+      ...incomingCard,
+      quant: incomingCard.quant - 1,
+      updatedAt: new Date(),
+    };
+  }
+
+  if (incomingChoice.section === "maybeboard") {
+    deck.maybeboard = incomingChoice.cards;
+  } else if (incomingChoice.section === "wishlist") {
+    deck.wishlist = incomingChoice.cards;
+  } else {
+    deck.sideboard = incomingChoice.cards;
+  }
+
+  const mainIndex = mainCards.findIndex(card => cardIdentityMatches(card, incomingCopy));
+  if (mainIndex >= 0) {
+    mainCards[mainIndex] = {
+      ...mainCards[mainIndex],
+      quant: mainCards[mainIndex].quant + 1,
+      tag: mergeTags(mainCards[mainIndex].tag, incomingCopy.tag),
+      updatedAt: new Date(),
+    };
+  } else {
+    mainCards.push({ ...incomingCopy, tag: incomingCopy.tag ? [...incomingCopy.tag] : undefined });
+  }
+
+  deck.cards = mainCards;
+  deck.changes.splice(changeIndex, 1);
+
+  await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    {
+      $set: {
+        cards: deck.cards,
+        sideboard: deck.sideboard ?? [],
+        maybeboard: deck.maybeboard ?? [],
+        wishlist: deck.wishlist ?? [],
+        changes: deck.changes,
+        lastUpdate: new Date(),
+      },
+    }
+  );
+};
+
 const addPlannedChange = async (
   deckId: string,
   cardOut: string,
@@ -584,6 +722,7 @@ export default {
   setTags,
   moveCardCopies,
   addPlannedChange,
+  applyPlannedChange,
   removePlannedChange,
   replaceCards,
   makeCardProxy,

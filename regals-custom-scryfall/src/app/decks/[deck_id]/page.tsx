@@ -39,6 +39,8 @@ type DroppedCardLookup = {
   moxfieldAssetUrl?: string;
 };
 
+type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
+
 type GameBreakdownColumn = {
   key: string;
   label: string;
@@ -179,6 +181,19 @@ function findCardImage(cards: Card[], cardName: string | null): string | null {
   if (!cardName) return null;
   return cards.find(card => card.name === cardName)?.image ?? null;
 }
+
+function findPlannedSwapSourceSection(deck: Deck, cardName: string): Exclude<DeckSection, "cards"> {
+  if (deck.maybeboard.some(card => card.name === cardName)) return "maybeboard";
+  if (deck.wishlist.some(card => card.name === cardName)) return "wishlist";
+  if (deck.sideboard.some(card => card.name === cardName)) return "sideboard";
+  return "maybeboard";
+}
+
+const plannedSwapTargetLabels: Record<Exclude<DeckSection, "cards">, string> = {
+  sideboard: "Sideboard",
+  maybeboard: "Physical Maybeboard",
+  wishlist: "Online Maybeboard",
+};
 
 function getCardImage(card: ScryfallCard): string {
   return card.image_uris?.normal ?? card.card_faces?.[0]?.image_uris?.normal ?? "";
@@ -370,6 +385,8 @@ export default function Decks() {
   const [ plannedCardOut, setPlannedCardOut ] = useState("");
   const [ plannedCardIn, setPlannedCardIn ] = useState("");
   const [ savingPlannedChange, setSavingPlannedChange ] = useState(false);
+  const [ plannedSwapTargets, setPlannedSwapTargets ] = useState<Record<number, Exclude<DeckSection, "cards">>>({});
+  const [ executingPlannedChanges, setExecutingPlannedChanges ] = useState<Record<number, boolean>>({});
   const [ plannedChangeError, setPlannedChangeError ] = useState("");
   const [ dragTarget, setDragTarget ] = useState<CollectionTypeOption | null>(null);
   const [ dropError, setDropError ] = useState("");
@@ -585,6 +602,63 @@ export default function Decks() {
       setPlannedChangeError(error instanceof Error ? error.message : "Failed to add planned swap");
     } finally {
       setSavingPlannedChange(false);
+    }
+  };
+
+  const applyPlannedSwap = async (changeIndex: number, targetSection: Exclude<DeckSection, "cards">) => {
+    setPlannedChangeError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/planned_changes`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          action: "apply",
+          changeIndex,
+          targetSection,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error ?? "Failed to apply planned swap");
+      }
+
+      sendUpdate(update + 1);
+    } catch (error) {
+      setPlannedChangeError(error instanceof Error ? error.message : "Failed to apply planned swap");
+      throw error;
+    }
+  };
+
+  const makePlannedSwap = async (changeIndex: number) => {
+    const targetSection = plannedSwapTargets[changeIndex] ?? "maybeboard";
+    setExecutingPlannedChanges(current => ({ ...current, [changeIndex]: true }));
+
+    try {
+      await applyPlannedSwap(changeIndex, targetSection);
+    } finally {
+      setExecutingPlannedChanges(current => ({ ...current, [changeIndex]: false }));
+    }
+  };
+
+  const makeAllMarkedSwaps = async () => {
+    if (deck.changes.length === 0) return;
+
+    setPlannedChangeError("");
+
+    try {
+      for (let index = 0; index < deck.changes.length; index += 1) {
+        const change = deck.changes[index];
+        const targetSection = plannedSwapTargets[index] ?? (findPlannedSwapSourceSection(deck, change.cardIn ?? "") === "maybeboard" ? "wishlist" : "maybeboard");
+        setExecutingPlannedChanges(current => ({ ...current, [index]: true }));
+        await applyPlannedSwap(index, targetSection);
+        setExecutingPlannedChanges(current => ({ ...current, [index]: false }));
+      }
+    } catch (error) {
+      setPlannedChangeError(error instanceof Error ? error.message : "Failed to apply marked swaps");
     }
   };
 
@@ -822,6 +896,18 @@ export default function Decks() {
           </div>
         )}
 
+        {deck.changes.length > 0 && session && authorization.canAddDecks(session.user?.permissionLevel) && (
+          <div className="mt-3 flex justify-end">
+            <button
+              type="button"
+              onClick={makeAllMarkedSwaps}
+              className="rounded bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
+            >
+              Make all marked swaps
+            </button>
+          </div>
+        )}
+
         {plannedChangeError && (
           <p className="mx-auto mt-2 max-w-3xl rounded border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-800">
             {plannedChangeError}
@@ -837,6 +923,12 @@ export default function Decks() {
             deck.changes.map((change, index) => {
               const outImage = findCardImage(deck.cards, change.cardOut);
               const inImage = findCardImage([...deck.maybeboard, ...deck.wishlist], change.cardIn);
+              const defaultTarget = (() => {
+                const sourceSection = findPlannedSwapSourceSection(deck, change.cardIn ?? "");
+                return (["sideboard", "maybeboard", "wishlist"] as const).find(section => section !== sourceSection) ?? "maybeboard";
+              })();
+              const targetOptions = (["sideboard", "maybeboard", "wishlist"] as const).filter(section => section !== findPlannedSwapSourceSection(deck, change.cardIn ?? ""));
+              const selectedTarget = plannedSwapTargets[index] ?? defaultTarget;
 
               return (
                 <div key={`${change.cardOut}-${change.cardIn}-${index}`} className="grid grid-cols-[1fr_auto_1fr_auto] items-center gap-3 rounded bg-teal-100 p-3 text-black shadow">
@@ -864,12 +956,33 @@ export default function Decks() {
                     )}
                   </div>
                   {session && authorization.canAddDecks(session.user?.permissionLevel) && (
-                    <button
-                      onClick={() => removePlannedChange(index)}
-                      className="rounded bg-red-700 px-3 py-1 text-sm text-white hover:bg-red-600"
-                    >
-                      Remove
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <label className="flex items-center gap-2 text-xs font-medium text-teal-900">
+                        <span>Put out card in:</span>
+                        <select
+                          value={selectedTarget}
+                          onChange={(e) => setPlannedSwapTargets(current => ({ ...current, [index]: e.target.value as Exclude<DeckSection, "cards"> }))}
+                          className="rounded border border-teal-700 bg-white px-2 py-1 text-sm text-black"
+                        >
+                          {targetOptions.map(option => (
+                            <option key={option} value={option}>{plannedSwapTargetLabels[option]}</option>
+                          ))}
+                        </select>
+                      </label>
+                      <button
+                        onClick={() => makePlannedSwap(index)}
+                        disabled={executingPlannedChanges[index]}
+                        className="rounded bg-emerald-700 px-3 py-1 text-sm text-white hover:bg-emerald-600 disabled:bg-gray-400"
+                      >
+                        {executingPlannedChanges[index] ? "Applying..." : "Make Swap"}
+                      </button>
+                      <button
+                        onClick={() => removePlannedChange(index)}
+                        className="rounded bg-red-700 px-3 py-1 text-sm text-white hover:bg-red-600"
+                      >
+                        Remove
+                      </button>
+                    </div>
                   )}
                 </div>
               );
