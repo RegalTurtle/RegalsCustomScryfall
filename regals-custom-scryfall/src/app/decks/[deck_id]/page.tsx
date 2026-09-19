@@ -41,6 +41,7 @@ type DroppedCardLookup = {
 
 type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
 type CardSortMode = "name" | "cmc";
+type CardGroupMode = "tags" | "type";
 
 type GameBreakdownColumn = {
   key: string;
@@ -104,6 +105,27 @@ function groupCardsByTags(cards: Card[], sortMode: CardSortMode = "name"): CardP
       if (b === "Commander") return 1;
       return a.localeCompare(b)
     })
+    .map(([pileName, cardsInPile]) => ({
+      pileName,
+      cards: sortCardsByMode(cardsInPile, sortMode),
+    }));
+}
+
+function groupCardsByType(cards: Card[], sortMode: CardSortMode = "name"): CardPile[] {
+  const pileMap: Record<string, Card[]> = {};
+
+  for (const card of cards) {
+    const pileName = getCardTypeGroup(card);
+    if (!pileMap[pileName]) {
+      pileMap[pileName] = [];
+    }
+    pileMap[pileName].push(card);
+  }
+
+  const pileOrder = ["Creatures", "Artifacts", "Enchantments", "Planeswalkers", "Battles", "Instants", "Sorceries", "Other"];
+
+  return Object.entries(pileMap)
+    .sort(([a], [b]) => (pileOrder.indexOf(a) - pileOrder.indexOf(b)))
     .map(([pileName, cardsInPile]) => ({
       pileName,
       cards: sortCardsByMode(cardsInPile, sortMode),
@@ -404,6 +426,7 @@ export default function Decks() {
   const [ plannedChangeError, setPlannedChangeError ] = useState("");
   const [ dragTarget, setDragTarget ] = useState<CollectionTypeOption | null>(null);
   const [ dropError, setDropError ] = useState("");
+  const [ cardGroupMode, setCardGroupMode ] = useState<CardGroupMode>("tags");
   const [ cardSortMode, setCardSortMode ] = useState<CardSortMode>("cmc");
   const [recentGames, setRecentGames] = useState<SerializedGame[]>([]);
   const [gameStats, setGameStats] = useState<GameStats | null>(null);
@@ -467,16 +490,20 @@ export default function Decks() {
   useEffect(() => {
     if (!deckId) return;
 
+    const groupCards = (cards: Card[]) => cardGroupMode === "type"
+      ? groupCardsByType(cards, cardSortMode)
+      : groupCardsByTags(cards, cardSortMode);
+
     const fetchDeck  = async () => {
       try {
         const res = await fetch(`/api/decks/${deckId}`);
         if (!res.ok) throw new Error(`Failed to fetch deck`);
         const { foundDeck } = await res.json();
         setDeck(foundDeck);
-        setPiles(groupCardsByTags(foundDeck.cards, cardSortMode));
-        setSidePiles(groupCardsByTags(foundDeck.sideboard, cardSortMode));
-        setMaybePiles(groupCardsByTags(foundDeck.maybeboard, cardSortMode));
-        setWishPiles(groupCardsByTags(foundDeck.wishlist, cardSortMode));
+        setPiles(groupCards(foundDeck.cards));
+        setSidePiles(groupCards(foundDeck.sideboard));
+        setMaybePiles(groupCards(foundDeck.maybeboard));
+        setWishPiles(groupCards(foundDeck.wishlist));
         setAvailableProxyKeys([]);
         setAvailableProxyLocations({});
         setOwnedMaybeboardKeys([]);
@@ -492,7 +519,7 @@ export default function Decks() {
     }
 
     fetchDeck();
-  }, [ update, cardSortMode ]);
+  }, [ update, cardGroupMode, cardSortMode ]);
 
   useEffect(() => {
     if (!deckId) return;
@@ -771,6 +798,17 @@ export default function Decks() {
       >
         <div className="mb-1 mt-1 ml-5 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
           <p className="text-lg">{`Decklist (${countCards(deck.cards)})`}</p>
+          <label className="flex items-center gap-2 rounded bg-teal-950/40 px-2 py-1 text-sm text-teal-50">
+            <span>Group by</span>
+            <select
+              value={cardGroupMode}
+              onChange={(e) => setCardGroupMode(e.target.value as CardGroupMode)}
+              className="rounded border border-teal-700 bg-teal-100 px-2 py-1 text-black"
+            >
+              <option value="tags">Tags</option>
+              <option value="type">Type</option>
+            </select>
+          </label>
           <label className="flex items-center gap-2 rounded bg-teal-950/40 px-2 py-1 text-sm text-teal-50">
             <span>Sort by</span>
             <select
