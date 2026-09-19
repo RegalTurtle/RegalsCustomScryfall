@@ -28,6 +28,7 @@ type ScryfallCard = {
   color_identity: string[];
   type_line: string;
   cmc: number;
+  game_changer?: boolean;
   object?: string;
 };
 
@@ -175,8 +176,8 @@ function getManaCurve(cards: Card[]): ManaCurveBucket[] {
 }
 
 function isGameChangerCard(card: Card): boolean {
-  // Scryfall’s card API does not expose a native `game_changer` field. In this app,
-  // a card is treated as a game changer when a deck tag matches the community naming.
+  if (card.game_changer) return true;
+
   const normalizedTags = (card.tag ?? []).map(tag => tag.trim().toLowerCase());
   return normalizedTags.some(tag =>
     tag === "game changer" ||
@@ -395,6 +396,7 @@ function buildCardFromScryfall(card: ScryfallCard): Card {
     image: getCardImage(card),
     oracle: getCardOracle(card),
     tag: [],
+    game_changer: Boolean(card.game_changer),
     color: getCardColors(card),
     color_identity: WUBRG.filter(c => card.color_identity.includes(c)).join(""),
     type: card.type_line,

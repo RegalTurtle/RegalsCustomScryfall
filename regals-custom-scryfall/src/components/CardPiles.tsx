@@ -3,6 +3,8 @@ import { Card, CardPile } from "@/types";
 const cardKey = (card: Card) => `${card.set}|${card.cn}`;
 
 const isGameChangerCard = (card: Card): boolean => {
+  if (card.game_changer) return true;
+
   const normalizedTags = (card.tag ?? []).map(tag => tag.trim().toLowerCase());
   return normalizedTags.some(tag =>
     tag === "game changer" ||
