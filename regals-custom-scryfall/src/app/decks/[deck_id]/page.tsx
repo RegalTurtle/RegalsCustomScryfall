@@ -40,6 +40,7 @@ type DroppedCardLookup = {
 };
 
 type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
+type CardSortMode = "name" | "cmc";
 
 type GameBreakdownColumn = {
   key: string;
@@ -71,7 +72,20 @@ const resultLabels = {
   tie: "Tie",
 };
 
-function groupCardsByTags(cards: Card[]): CardPile[] {
+function sortCardsByMode(cards: Card[], mode: CardSortMode): Card[] {
+  return [...cards].sort((a, b) => {
+    if (mode === "cmc") {
+      const manaDiff = (a.cmc ?? 0) - (b.cmc ?? 0);
+      if (manaDiff !== 0) return manaDiff;
+    }
+
+    const nameDiff = a.name.localeCompare(b.name);
+    if (nameDiff !== 0) return nameDiff;
+    return `${a.set}|${a.cn}`.localeCompare(`${b.set}|${b.cn}`);
+  });
+}
+
+function groupCardsByTags(cards: Card[], sortMode: CardSortMode = "name"): CardPile[] {
   const pileMap: Record<string, Card[]> = {};
 
   for (const card of cards) {
@@ -89,10 +103,10 @@ function groupCardsByTags(cards: Card[]): CardPile[] {
       if (a === "Commander") return -1;
       if (b === "Commander") return 1;
       return a.localeCompare(b)
-    }) // Sort piles by pileName
-    .map(([pileName, cards]) => ({
+    })
+    .map(([pileName, cardsInPile]) => ({
       pileName,
-      cards: cards.sort((a, b) => a.name.localeCompare(b.name)), // Sort cards in each pile
+      cards: sortCardsByMode(cardsInPile, sortMode),
     }));
 }
 
@@ -390,6 +404,7 @@ export default function Decks() {
   const [ plannedChangeError, setPlannedChangeError ] = useState("");
   const [ dragTarget, setDragTarget ] = useState<CollectionTypeOption | null>(null);
   const [ dropError, setDropError ] = useState("");
+  const [ cardSortMode, setCardSortMode ] = useState<CardSortMode>("name");
   const [recentGames, setRecentGames] = useState<SerializedGame[]>([]);
   const [gameStats, setGameStats] = useState<GameStats | null>(null);
 
@@ -458,10 +473,10 @@ export default function Decks() {
         if (!res.ok) throw new Error(`Failed to fetch deck`);
         const { foundDeck } = await res.json();
         setDeck(foundDeck);
-        setPiles(groupCardsByTags(foundDeck.cards));
-        setSidePiles(groupCardsByTags(foundDeck.sideboard));
-        setMaybePiles(groupCardsByTags(foundDeck.maybeboard));
-        setWishPiles(groupCardsByTags(foundDeck.wishlist));
+        setPiles(groupCardsByTags(foundDeck.cards, cardSortMode));
+        setSidePiles(groupCardsByTags(foundDeck.sideboard, cardSortMode));
+        setMaybePiles(groupCardsByTags(foundDeck.maybeboard, cardSortMode));
+        setWishPiles(groupCardsByTags(foundDeck.wishlist, cardSortMode));
         setAvailableProxyKeys([]);
         setAvailableProxyLocations({});
         setOwnedMaybeboardKeys([]);
@@ -477,7 +492,7 @@ export default function Decks() {
     }
 
     fetchDeck();
-  }, [ update ]);
+  }, [ update, cardSortMode ]);
 
   useEffect(() => {
     if (!deckId) return;
@@ -754,7 +769,20 @@ export default function Decks() {
         onDragLeave={() => setDragTarget(null)}
         onDrop={(e) => addDroppedCard(e, `decks+${deckId}`)}
       >
-        <p className="text-lg ml-5">{`Decklist (${countCards(deck.cards)})`}</p>
+        <div className="mb-1 mt-1 ml-5 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
+          <p className="text-lg">{`Decklist (${countCards(deck.cards)})`}</p>
+          <label className="flex items-center gap-2 rounded bg-teal-950/40 px-2 py-1 text-sm text-teal-50">
+            <span>Sort by</span>
+            <select
+              value={cardSortMode}
+              onChange={(e) => setCardSortMode(e.target.value as CardSortMode)}
+              className="rounded border border-teal-700 bg-teal-100 px-2 py-1 text-black"
+            >
+              <option value="name">Name</option>
+              <option value="cmc">Mana value</option>
+            </select>
+          </label>
+        </div>
         {session && authorization.canAddCardsToCollection(session.user?.permissionLevel) && 
           <div className="mb-1 mt-1 ml-5 flex justify-center gap-2">
             <button
