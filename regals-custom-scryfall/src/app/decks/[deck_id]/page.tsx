@@ -174,6 +174,16 @@ function getManaCurve(cards: Card[]): ManaCurveBucket[] {
   });
 }
 
+function isGameChangerCard(card: Card): boolean {
+  const normalizedTags = (card.tag ?? []).map(tag => tag.trim().toLowerCase());
+  return normalizedTags.some(tag =>
+    tag === "game changer" ||
+    tag === "game-changer" ||
+    tag === "gamechanger" ||
+    tag === "game changer card"
+  );
+}
+
 function getCardTypeGroup(card: Card): string {
   const type = card.type.toLowerCase();
   if (type.includes("instant")) return "Instants";
@@ -418,6 +428,7 @@ export default function Decks() {
   const [ proxyUsdTotal, setProxyUsdTotal ] = useState<number | null>(null);
   const [ checkingProxies, setCheckingProxies ] = useState(false);
   const [ checkingCollection, setCheckingCollection ] = useState(false);
+  const [ highlightGameChangers, setHighlightGameChangers ] = useState(false);
   const [ plannedCardOut, setPlannedCardOut ] = useState("");
   const [ plannedCardIn, setPlannedCardIn ] = useState("");
   const [ savingPlannedChange, setSavingPlannedChange ] = useState(false);
@@ -810,6 +821,13 @@ export default function Decks() {
             </select>
           </label>
           <label className="flex items-center gap-2 rounded bg-teal-950/40 px-2 py-1 text-sm text-teal-50">
+          <button
+            type="button"
+            onClick={() => setHighlightGameChangers(current => !current)}
+            className={`rounded px-3 py-1 text-sm font-medium transition ${highlightGameChangers ? "bg-yellow-400 text-yellow-950 hover:bg-yellow-300" : "bg-teal-100 text-teal-900 hover:bg-white"}`}
+          >
+            {highlightGameChangers ? "Game changers on" : "Highlight game changers"}
+          </button>
             <span>Sort by</span>
             <select
               value={cardSortMode}
@@ -889,6 +907,7 @@ export default function Decks() {
           availableProxyLocations={availableProxyLocations}
           ownedCardKeys={ownedDeckCardKeys}
           ownedCardLocations={ownedDeckCardLocations}
+          highlightGameChangerCards={highlightGameChangers}
         /> 
       </div>) }
 
@@ -916,6 +935,7 @@ export default function Decks() {
           piles={sidePiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+sideboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
+          highlightGameChangerCards={highlightGameChangers}
         /> 
       </div>) }
 
@@ -1081,6 +1101,7 @@ export default function Decks() {
           piles={maybePiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+maybeboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
+          highlightGameChangerCards={highlightGameChangers}
         /> 
       </div>) }
 
@@ -1110,6 +1131,7 @@ export default function Decks() {
           setHoveredCard={setHoveredCard}
           ownedCardKeys={ownedMaybeboardKeys}
           ownedCardLocations={ownedMaybeboardLocations}
+          highlightGameChangerCards={highlightGameChangers}
         /> 
       </div>) }
 

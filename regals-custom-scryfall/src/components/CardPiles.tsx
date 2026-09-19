@@ -2,6 +2,16 @@ import { Card, CardPile } from "@/types";
 
 const cardKey = (card: Card) => `${card.set}|${card.cn}`;
 
+const isGameChangerCard = (card: Card): boolean => {
+  const normalizedTags = (card.tag ?? []).map(tag => tag.trim().toLowerCase());
+  return normalizedTags.some(tag =>
+    tag === "game changer" ||
+    tag === "game-changer" ||
+    tag === "gamechanger" ||
+    tag === "game changer card"
+  );
+};
+
 export default function CardPiles({ 
   piles, 
   setSelectedCard,
@@ -10,6 +20,7 @@ export default function CardPiles({
   availableProxyLocations = {},
   ownedCardKeys = [],
   ownedCardLocations = {},
+  highlightGameChangerCards = false,
 }: { 
   piles: CardPile[], 
   setSelectedCard: (card: Card) => void,
@@ -18,6 +29,7 @@ export default function CardPiles({
   availableProxyLocations?: Record<string, string[]>,
   ownedCardKeys?: string[],
   ownedCardLocations?: Record<string, string[]>,
+  highlightGameChangerCards?: boolean,
 }) {
   const cardOffset = 32;
   const cardHeight = 279;
@@ -61,14 +73,16 @@ export default function CardPiles({
                         {card.quant}
                       </div>
                     )}
-                    <img
-                      src={card.image}
-                      alt={card.name}
-                      onMouseEnter={() => setHoveredCard?.(card)}
-                      onClick={() => setSelectedCard(card)}
-                      className="w-full h-full object-contain rounded-lg cursor-pointer"
-                      style={{ pointerEvents: "auto" }}
-                    />
+                    <div className={highlightGameChangerCards && isGameChangerCard(card) ? "rounded-lg ring-4 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.8)]" : ""}>
+                      <img
+                        src={card.image}
+                        alt={card.name}
+                        onMouseEnter={() => setHoveredCard?.(card)}
+                        onClick={() => setSelectedCard(card)}
+                        className={`w-full h-full object-contain rounded-lg cursor-pointer ${highlightGameChangerCards && isGameChangerCard(card) ? "bg-yellow-200/30" : ""}`}
+                        style={{ pointerEvents: "auto" }}
+                      />
+                    </div>
                     {(card.proxy || ownedCardKeySet.has(cardKey(card))) && (
                       <div className={`pointer-events-none absolute inset-0 rounded-lg border-4 ${availableProxyKeySet.has(cardKey(card)) || ownedCardKeySet.has(cardKey(card)) ? "border-blue-600" : "border-red-600"}`} />
                     )}
