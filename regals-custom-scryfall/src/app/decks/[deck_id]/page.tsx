@@ -175,6 +175,8 @@ function getManaCurve(cards: Card[]): ManaCurveBucket[] {
 }
 
 function isGameChangerCard(card: Card): boolean {
+  // Scryfall’s card API does not expose a native `game_changer` field. In this app,
+  // a card is treated as a game changer when a deck tag matches the community naming.
   const normalizedTags = (card.tag ?? []).map(tag => tag.trim().toLowerCase());
   return normalizedTags.some(tag =>
     tag === "game changer" ||
@@ -821,13 +823,6 @@ export default function Decks() {
             </select>
           </label>
           <label className="flex items-center gap-2 rounded bg-teal-950/40 px-2 py-1 text-sm text-teal-50">
-          <button
-            type="button"
-            onClick={() => setHighlightGameChangers(current => !current)}
-            className={`rounded px-3 py-1 text-sm font-medium transition ${highlightGameChangers ? "bg-yellow-400 text-yellow-950 hover:bg-yellow-300" : "bg-teal-100 text-teal-900 hover:bg-white"}`}
-          >
-            {highlightGameChangers ? "Game changers on" : "Highlight game changers"}
-          </button>
             <span>Sort by</span>
             <select
               value={cardSortMode}
@@ -888,6 +883,16 @@ export default function Decks() {
                     className="w-full rounded px-3 py-2 text-left text-sm text-white hover:bg-teal-800 disabled:text-gray-400"
                   >
                     {checkingCollection ? "Checking..." : "Check Collection"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setHighlightGameChangers(current => !current);
+                      setShowDeckActions(false);
+                    }}
+                    className="w-full rounded px-3 py-2 text-left text-sm text-white hover:bg-teal-800"
+                  >
+                    {highlightGameChangers ? "Hide game changers" : "Highlight game changers"}
                   </button>
                 </div>
               )}
