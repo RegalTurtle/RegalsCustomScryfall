@@ -404,7 +404,7 @@ export default function Decks() {
   const [ plannedChangeError, setPlannedChangeError ] = useState("");
   const [ dragTarget, setDragTarget ] = useState<CollectionTypeOption | null>(null);
   const [ dropError, setDropError ] = useState("");
-  const [ cardSortMode, setCardSortMode ] = useState<CardSortMode>("name");
+  const [ cardSortMode, setCardSortMode ] = useState<CardSortMode>("cmc");
   const [recentGames, setRecentGames] = useState<SerializedGame[]>([]);
   const [gameStats, setGameStats] = useState<GameStats | null>(null);
 
