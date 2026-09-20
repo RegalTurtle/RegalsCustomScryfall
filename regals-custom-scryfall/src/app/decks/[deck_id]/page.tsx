@@ -1086,7 +1086,7 @@ export default function Decks() {
                     )}
                   </div>
                   {session && authorization.canAddDecks(session.user?.permissionLevel) && (
-                    <div className="flex items-center justify-end gap-2">
+                    <div className="flex flex-col items-stretch justify-center gap-2">
                       <select
                         value={selectedTarget}
                         onChange={(e) => setPlannedSwapTargets(current => ({ ...current, [index]: e.target.value as Exclude<DeckSection, "cards"> }))}
@@ -1096,19 +1096,21 @@ export default function Decks() {
                           <option key={option} value={option}>{plannedSwapTargetLabels[option]}</option>
                         ))}
                       </select>
-                      <button
-                        onClick={() => makePlannedSwap(index)}
-                        disabled={executingPlannedChanges[index]}
-                        className="rounded bg-emerald-700 px-3 py-1 text-sm text-white hover:bg-emerald-600 disabled:bg-gray-400"
-                      >
-                        {executingPlannedChanges[index] ? "Applying..." : "Make Swap"}
-                      </button>
-                      <button
-                        onClick={() => removePlannedChange(index)}
-                        className="rounded bg-red-700 px-3 py-1 text-sm text-white hover:bg-red-600"
-                      >
-                        Remove
-                      </button>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => makePlannedSwap(index)}
+                          disabled={executingPlannedChanges[index]}
+                          className="flex-1 rounded bg-emerald-700 px-3 py-1 text-sm text-white hover:bg-emerald-600 disabled:bg-gray-400"
+                        >
+                          {executingPlannedChanges[index] ? "Applying..." : "Make Swap"}
+                        </button>
+                        <button
+                          onClick={() => removePlannedChange(index)}
+                          className="flex-1 rounded bg-red-700 px-3 py-1 text-sm text-white hover:bg-red-600"
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
