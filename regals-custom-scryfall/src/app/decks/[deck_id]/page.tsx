@@ -1044,7 +1044,7 @@ export default function Decks() {
           </p>
         )}
 
-        <div className="mx-auto mt-3 grid max-w-3xl grid-cols-1 gap-3">
+        <div className="mx-auto mt-3 grid max-w-5xl grid-cols-1 gap-3">
           {deck.changes.length === 0 ? (
             <p className="rounded border border-teal-700/60 px-3 py-4 text-sm text-teal-100/80">
               No planned swaps yet.
@@ -1061,10 +1061,10 @@ export default function Decks() {
               const selectedTarget = plannedSwapTargets[index] ?? defaultTarget;
 
               return (
-                <div key={`${change.cardOut}-${change.cardIn}-${index}`} className="grid grid-cols-[1fr_auto_1fr_auto] items-center gap-3 rounded bg-teal-100 p-3 text-black shadow">
-                  <div className="group relative">
+                <div key={`${change.cardOut}-${change.cardIn}-${index}`} className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-3 rounded bg-teal-100 p-3 text-black shadow">
+                  <div className="group relative min-w-0">
                     <p className="text-xs font-semibold uppercase text-red-700">Out</p>
-                    <p className="font-medium">{change.cardOut}</p>
+                    <p className="font-medium break-words">{change.cardOut}</p>
                     {outImage && (
                       <img
                         src={outImage}
@@ -1074,9 +1074,9 @@ export default function Decks() {
                     )}
                   </div>
                   <span className="text-lg font-bold">→</span>
-                  <div className="group relative">
+                  <div className="group relative min-w-0">
                     <p className="text-xs font-semibold uppercase text-green-700">In</p>
-                    <p className="font-medium">{change.cardIn}</p>
+                    <p className="font-medium break-words">{change.cardIn}</p>
                     {inImage && (
                       <img
                         src={inImage}
@@ -1086,19 +1086,16 @@ export default function Decks() {
                     )}
                   </div>
                   {session && authorization.canAddDecks(session.user?.permissionLevel) && (
-                    <div className="flex items-center gap-2">
-                      <label className="flex items-center gap-2 text-xs font-medium text-teal-900">
-                        <span>Put out card in:</span>
-                        <select
-                          value={selectedTarget}
-                          onChange={(e) => setPlannedSwapTargets(current => ({ ...current, [index]: e.target.value as Exclude<DeckSection, "cards"> }))}
-                          className="rounded border border-teal-700 bg-white px-2 py-1 text-sm text-black"
-                        >
-                          {targetOptions.map(option => (
-                            <option key={option} value={option}>{plannedSwapTargetLabels[option]}</option>
-                          ))}
-                        </select>
-                      </label>
+                    <div className="flex items-center justify-end gap-2">
+                      <select
+                        value={selectedTarget}
+                        onChange={(e) => setPlannedSwapTargets(current => ({ ...current, [index]: e.target.value as Exclude<DeckSection, "cards"> }))}
+                        className="rounded border border-teal-700 bg-white px-2 py-1 text-sm text-black"
+                      >
+                        {targetOptions.map(option => (
+                          <option key={option} value={option}>{plannedSwapTargetLabels[option]}</option>
+                        ))}
+                      </select>
                       <button
                         onClick={() => makePlannedSwap(index)}
                         disabled={executingPlannedChanges[index]}
