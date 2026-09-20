@@ -4,7 +4,7 @@ const ENDPOINT_INTERVAL_MS: Record<string, number> = {
   random: 500,
   collection: 500,
   manifest: 6000,
-  default: 100,
+  default: 500,
 };
 
 const lastRequestTimes = new Map<string, number>();
@@ -48,6 +48,6 @@ export async function fetchScryfallJson<T>(url: string, init?: RequestInit): Pro
     throw new Error("Scryfall rate limit exceeded. Please wait 30 seconds and try again.");
   }
 
-  const data = await res.json() as T;
+  const data = await res.clone().json() as T;
   return { res, data };
 }
