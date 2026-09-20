@@ -567,11 +567,6 @@ export default function Decks() {
   };
 
   useEffect(() => {
-    if (!deck) return;
-    void syncGameChangerCards();
-  }, [deck]);
-
-  useEffect(() => {
     if (!deckId) return;
 
     async function fetchDeckGames() {
