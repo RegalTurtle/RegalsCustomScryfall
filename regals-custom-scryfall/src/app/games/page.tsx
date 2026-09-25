@@ -69,6 +69,7 @@ export default function GamesPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [showAddGame, setShowAddGame] = useState(false);
+  const [editingGameId, setEditingGameId] = useState<string | null>(null);
   const [update, setUpdate] = useState(0);
   const [deckFilter, setDeckFilter] = useState("");
   const [formatFilter, setFormatFilter] = useState("");
@@ -222,38 +223,68 @@ export default function GamesPage() {
     setNotes("");
   };
 
-  const addGame = async (event: FormEvent) => {
+  const closeGameModal = () => {
+    setShowAddGame(false);
+    setEditingGameId(null);
+    resetForm();
+  };
+
+  const openAddGame = () => {
+    setEditingGameId(null);
+    resetForm();
+    setShowAddGame(true);
+  };
+
+  const openEditGame = (game: SerializedGame) => {
+    setEditingGameId(game._id);
+    setDate(game.date);
+    setDeckId(game.deckId ?? "");
+    setDeckName(game.deckName);
+    setDeckLink(game.deckLink ?? "");
+    setFormat(game.format);
+    setResult(game.result);
+    setNumPlayers(game.numPlayers);
+    setTurnNumber(game.turnNumber?.toString() ?? "");
+    setNotes(game.notes ?? "");
+    setShowAddGame(true);
+  };
+
+  const saveGame = async (event: FormEvent) => {
     event.preventDefault();
     setSaving(true);
     setError("");
 
     try {
-      const res = await fetch("/api/games", {
-        method: "POST",
+      const payload = {
+        date,
+        deckId: deckId || undefined,
+        deckName,
+        deckLink,
+        format,
+        result,
+        numPlayers,
+        turnNumber: turnNumber ? Number(turnNumber) : null,
+        notes,
+      };
+
+      const endpoint = editingGameId ? `/api/games/${editingGameId}` : "/api/games";
+      const method = editingGameId ? "PUT" : "POST";
+      const res = await fetch(endpoint, {
+        method,
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          date,
-          deckId: deckId || undefined,
-          deckName,
-          deckLink,
-          format,
-          result,
-          numPlayers,
-          turnNumber: turnNumber ? Number(turnNumber) : null,
-          notes,
-        }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
 
-      if (!res.ok) throw new Error(data.error ?? "Could not add game");
+      if (!res.ok) throw new Error(data.error ?? (editingGameId ? "Could not update game" : "Could not add game"));
 
-      resetForm();
-      setShowAddGame(false);
+      closeGameModal();
       setUpdate(current => current + 1);
     } catch (error) {
-      setError(error instanceof Error ? error.message : "Could not add game");
+      const message = editingGameId ? "Could not update game" : "Could not add game";
+      setError(error instanceof Error ? error.message : message);
     } finally {
       setSaving(false);
     }
@@ -290,7 +321,7 @@ export default function GamesPage() {
           </div>
           {canAddGames && (
             <button
-              onClick={() => setShowAddGame(true)}
+              onClick={openAddGame}
               className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
             >
               + Add Game
@@ -465,12 +496,23 @@ export default function GamesPage() {
                     </td>
                     {canAddGames && (
                       <td className="px-3 py-2 text-right">
-                        <button
-                          onClick={() => deleteGame(game._id)}
-                          className="rounded bg-red-700 px-3 py-1 text-xs text-white hover:bg-red-600"
-                        >
-                          Delete
-                        </button>
+                        <div className="flex justify-end gap-2">
+                          <button
+                            type="button"
+                            onClick={() => openEditGame(game)}
+                            title="Edit game"
+                            aria-label={`Edit ${game.deckName}`}
+                            className="rounded bg-slate-600 px-2 py-1 text-sm text-white hover:bg-slate-500"
+                          >
+                            ⚙
+                          </button>
+                          <button
+                            onClick={() => deleteGame(game._id)}
+                            className="rounded bg-red-700 px-3 py-1 text-xs text-white hover:bg-red-600"
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </td>
                     )}
                   </tr>
@@ -484,16 +526,16 @@ export default function GamesPage() {
       {showAddGame && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-          onClick={() => setShowAddGame(false)}
+          onClick={closeGameModal}
         >
           <form
-            onSubmit={addGame}
+            onSubmit={saveGame}
             className="collection-card-modal max-h-[90vh] w-[90%] max-w-xl overflow-y-auto rounded bg-white p-5 text-black shadow"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-xl font-semibold">Add Game</h2>
-              <button type="button" onClick={() => setShowAddGame(false)} className="text-xl">x</button>
+              <h2 className="text-xl font-semibold">{editingGameId ? "Edit Game" : "Add Game"}</h2>
+              <button type="button" onClick={closeGameModal} className="text-xl">x</button>
             </div>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -546,11 +588,11 @@ export default function GamesPage() {
             </label>
 
             <div className="mt-4 flex justify-end gap-2">
-              <button type="button" onClick={() => setShowAddGame(false)} className="rounded border border-gray-300 px-4 py-2 hover:bg-gray-100">
+              <button type="button" onClick={closeGameModal} className="rounded border border-gray-300 px-4 py-2 hover:bg-gray-100">
                 Cancel
               </button>
               <button type="submit" disabled={saving} className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 disabled:bg-gray-400">
-                {saving ? "Saving..." : "Save Game"}
+                {saving ? "Saving..." : editingGameId ? "Save Changes" : "Save Game"}
               </button>
             </div>
           </form>

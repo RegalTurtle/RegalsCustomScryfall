@@ -114,6 +114,75 @@ const addGame = async (input: GameCreateInput): Promise<string> => {
   return insertedId.toString();
 };
 
+const updateGame = async (gameId: string, input: GameCreateInput): Promise<void> => {
+  const _id: ObjectId = validation.verifyMongoId(gameId);
+  const date = verifyDateInput(input.date);
+  const format = validation.verifyStr(input.format, "format");
+  const result = verifyGameResult(input.result);
+  const numPlayers = validation.verifyInteger(Number(input.numPlayers), "numPlayers");
+  if (numPlayers < 1) throw new Error("numPlayers must be at least 1");
+
+  const rawTurnNumber = input.turnNumber;
+  let turnNumber: number | null = null;
+  if (rawTurnNumber !== undefined && rawTurnNumber !== null && rawTurnNumber !== "") {
+    turnNumber = validation.verifyInteger(Number(rawTurnNumber), "turnNumber");
+    if (turnNumber < 1) throw new Error("turnNumber must be at least 1");
+  }
+
+  const deckName = validation.verifyStr(input.deckName, "deckName");
+  const notes = typeof input.notes === "string" ? input.notes : "";
+
+  const updateFields: Partial<Game> = {
+    date,
+    format,
+    result,
+    numPlayers,
+    turnNumber,
+    deckName,
+    notes,
+    updatedAt: new Date(),
+  };
+
+  if (input.deckId && input.deckId !== "") {
+    updateFields.deckId = validation.verifyMongoId(input.deckId);
+  } else {
+    updateFields.deckId = undefined;
+  }
+
+  if (input.deckLink && input.deckLink.trim() !== "") {
+    updateFields.deckLink = validation.verifyStr(input.deckLink, "deckLink");
+  } else {
+    updateFields.deckLink = undefined;
+  }
+
+  const gameCollection: Collection<Game> = await games();
+  const unsetFields: Record<string, string> = {};
+  if (updateFields.deckId === undefined) unsetFields.deckId = "";
+  if (updateFields.deckLink === undefined) unsetFields.deckLink = "";
+
+  const updateOperation: Record<string, unknown> = {
+    $set: {
+      date,
+      format,
+      result,
+      numPlayers,
+      turnNumber,
+      deckName,
+      notes,
+      updatedAt: updateFields.updatedAt,
+      ...(updateFields.deckId !== undefined ? { deckId: updateFields.deckId } : {}),
+      ...(updateFields.deckLink !== undefined ? { deckLink: updateFields.deckLink } : {}),
+    },
+  };
+
+  if (Object.keys(unsetFields).length > 0) {
+    updateOperation.$unset = unsetFields;
+  }
+
+  const updateResult = await gameCollection.updateOne({ _id }, updateOperation);
+  if (updateResult.matchedCount === 0) throw new Error("Game not found");
+};
+
 const deleteGame = async (gameId: string): Promise<void> => {
   const _id: ObjectId = validation.verifyMongoId(gameId);
   const gameCollection: Collection<Game> = await games();
@@ -167,6 +236,7 @@ function getGameStats(gameList: SerializedGame[]): GameStats {
 export default {
   getGames,
   addGame,
+  updateGame,
   deleteGame,
   updateDeckSnapshot,
   getGameStats,
