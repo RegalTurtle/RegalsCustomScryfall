@@ -1,4 +1,5 @@
-import { Card, CollectionTypeOption } from "@/types";
+import { Card, CollectionTypeOption, FoilOption } from "@/types";
+import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 import { Dispatch, KeyboardEvent as ReactKeyboardEvent, SetStateAction, useEffect, useRef } from "react";
 import { useState } from "react";
 
@@ -80,6 +81,11 @@ export default function CardEditModal({
   const [returnCollection, setReturnCollection] = useState<"bulk" | "cool-cards" | "none">("bulk");
   const [hasLoadedOwnedVersions, setHasLoadedOwnedVersions] = useState(false);
   const [loadingOwnedVersions, setLoadingOwnedVersions] = useState(false);
+  const [printingOptions, setPrintingOptions] = useState<Array<{ set: string; cn: string; foil: FoilOption; image: string; label: string }>>([]);
+  const [selectedPrinting, setSelectedPrinting] = useState("");
+  const [loadingPrintings, setLoadingPrintings] = useState(false);
+  const [versionError, setVersionError] = useState("");
+  const [changingVersion, setChangingVersion] = useState(false);
   const [swapError, setSwapError] = useState("");
   const [removeQuant, setRemoveQuant] = useState(1);
   const [removingCopies, setRemovingCopies] = useState(false);
@@ -147,6 +153,98 @@ export default function CardEditModal({
       setSwapError(error instanceof Error ? error.message : "Could not load owned copies");
     } finally {
       setLoadingOwnedVersions(false);
+    }
+  };
+
+  const loadPrintingOptions = async () => {
+    setLoadingPrintings(true);
+    setVersionError("");
+
+    try {
+      const params = new URLSearchParams({
+        q: `!\"${card.name}\"`,
+        unique: "prints",
+        order: "released",
+        dir: "asc",
+      });
+
+      const { res, data } = await fetchScryfallJson<{ data: Array<{ name: string; set: string; collector_number: string; finishes: string[]; image_uris?: { normal?: string }; card_faces?: Array<{ image_uris?: { normal?: string } }> }> }>(
+        `https://api.scryfall.com/cards/search?${params.toString()}`,
+        {
+          headers: {
+            "User-Agent": "RegalTurtlesMagic/1.0",
+            "Accept": "application/json",
+          },
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error("Could not load versions");
+      }
+
+      const options = (data.data ?? [])
+        .flatMap((printing) => {
+          const image = printing.image_uris?.normal ?? printing.card_faces?.[0]?.image_uris?.normal ?? "";
+          const finishes = printing.finishes?.length ? printing.finishes : ["nonfoil"];
+
+          return finishes.map((finish) => ({
+            set: printing.set,
+            cn: printing.collector_number,
+            foil: finish as FoilOption,
+            image,
+            label: `${printing.set.toUpperCase()} ${printing.collector_number}${finish !== "nonfoil" ? ` (${finish})` : ""}`,
+          }));
+        });
+
+      setPrintingOptions(options);
+      const currentOption = options.find(option => option.set === card.set && option.cn === card.cn && option.foil === card.foil)
+        ?? options[0];
+      setSelectedPrinting(currentOption ? `${currentOption.set}|${currentOption.cn}|${currentOption.foil}` : "");
+    } catch (error) {
+      setVersionError(error instanceof Error ? error.message : "Could not load versions");
+    } finally {
+      setLoadingPrintings(false);
+    }
+  };
+
+  const changeCardVersion = async () => {
+    if (!selectedPrinting) return;
+    const [targetSet, targetCn, targetFoil] = selectedPrinting.split("|");
+    setVersionError("");
+    setChangingVersion(true);
+
+    try {
+      const selectedOption = printingOptions.find(option =>
+        option.set === targetSet && option.cn === targetCn && option.foil === targetFoil
+      );
+
+      const res = await fetch(`/api/decks/${deckId}/replace_proxy`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          originalSet: card.set,
+          originalCn: card.cn,
+          deckSection: sourceSection,
+          replacementSet: targetSet,
+          replacementCn: targetCn,
+          replacementFoil: targetFoil,
+          replacementImage: selectedOption?.image ?? card.image,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not change card version");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setVersionError(error instanceof Error ? error.message : "Could not change card version");
+    } finally {
+      setChangingVersion(false);
     }
   };
 
@@ -394,6 +492,10 @@ export default function CardEditModal({
     fetchPrice();
   }, [card]);
 
+  useEffect(() => {
+    loadPrintingOptions();
+  }, [card.name]);
+
   return (
     <div
       className="fixed inset-0 bg-black/70 bg-opacity-60 flex justify-center items-center z-200"
@@ -481,6 +583,41 @@ export default function CardEditModal({
                 {makeProxyError && <p className="mt-2 text-sm text-red-300">{makeProxyError}</p>}
               </div>
             )}
+
+            <div className="w-full rounded bg-gray-700 p-3">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Change version to:</label>
+                {loadingPrintings ? (
+                  <p className="text-sm text-gray-300">Loading versions...</p>
+                ) : (
+                  <>
+                    <select
+                      value={selectedPrinting}
+                      onChange={(e) => setSelectedPrinting(e.target.value)}
+                      className="rounded bg-gray-800 px-2 py-1 text-white"
+                    >
+                      {printingOptions.length === 0 ? (
+                        <option value="">No versions found</option>
+                      ) : (
+                        printingOptions.map((option) => (
+                          <option key={`${option.set}|${option.cn}|${option.foil}`} value={`${option.set}|${option.cn}|${option.foil}`}>
+                            {option.label}
+                          </option>
+                        ))
+                      )}
+                    </select>
+                    <button
+                      onClick={changeCardVersion}
+                      disabled={changingVersion || !selectedPrinting}
+                      className="w-full bg-cyan-700 hover:bg-cyan-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                    >
+                      {changingVersion ? "Changing version..." : "Apply version"}
+                    </button>
+                  </>
+                )}
+                {versionError && <p className="mt-2 text-sm text-red-300">{versionError}</p>}
+              </div>
+            </div>
 
             <div className="w-full rounded bg-gray-700 p-3">
               {ownedVersions.length === 0 ? (

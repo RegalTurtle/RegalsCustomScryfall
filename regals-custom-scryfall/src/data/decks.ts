@@ -1,6 +1,6 @@
 import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import gameData from "@/data/games";
-import { Card, Deck } from "@/types";
+import { Card, Deck, FoilOption } from "@/types";
 import validation from "@/validation"
 import { Collection, ObjectId } from "mongodb";
 
@@ -402,6 +402,76 @@ const setProxyImage = async (
   return proxyCard.image;
 };
 
+const replaceCardVersion = async (
+  deckId: string,
+  originalSet: string,
+  originalCn: string,
+  replacementSet: string,
+  replacementCn: string,
+  replacementFoil: FoilOption = "nonfoil",
+  deckSection: DeckSection = "cards",
+  replacementImage?: string,
+) => {
+  if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
+  originalSet = validation.verifyStr(originalSet, "originalSet");
+  originalCn = validation.verifyStr(originalCn, "originalCn");
+  replacementSet = validation.verifyStr(replacementSet, "replacementSet");
+  replacementCn = validation.verifyStr(replacementCn, "replacementCn");
+  replacementFoil = validation.verifyFoilType(replacementFoil);
+  if (replacementImage !== undefined) replacementImage = validation.verifyStr(replacementImage, "replacementImage");
+  if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(deckSection)) throw new Error("deckSection invalid");
+
+  const deckCollection: Collection<Deck> = await decks();
+  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  if (!deck) throw new Error("Deck not found");
+
+  const deckCards = deck[deckSection] ?? [];
+  const deckCardIndex = deckCards.findIndex(card => card.set === originalSet && card.cn === originalCn);
+  if (deckCardIndex === -1) throw new Error("Card not found in deck");
+
+  const deckCard = deckCards[deckCardIndex];
+  const replacedImage = deckCard.image;
+
+  const replacementCard: Card = {
+    ...deckCard,
+    set: replacementSet,
+    cn: replacementCn,
+    foil: replacementFoil,
+    proxy: false,
+    image: replacementImage ?? deckCard.image,
+    tag: (deckCard.tag ?? []).filter(tag => tag.toLowerCase() !== "proxy"),
+    updatedAt: new Date(),
+  };
+  delete replacementCard._id;
+
+  deckCards.splice(deckCardIndex, 1);
+
+  const existingIndex = deckCards.findIndex(card => (
+    card.set === replacementCard.set &&
+    card.cn === replacementCard.cn &&
+    card.foil === replacementCard.foil &&
+    !card.proxy
+  ));
+
+  if (existingIndex >= 0) {
+    deckCards[existingIndex].quant += replacementCard.quant;
+    deckCards[existingIndex].tag = Array.from(new Set([
+      ...(deckCards[existingIndex].tag ?? []),
+      ...(replacementCard.tag ?? []),
+    ]));
+    deckCards[existingIndex].updatedAt = new Date();
+  } else {
+    deckCards.splice(deckCardIndex, 0, replacementCard);
+  }
+
+  await deckCollection.updateOne(
+    { _id: new ObjectId(deckId) },
+    { $set: { [deckSection]: deckCards, lastUpdate: new Date() } }
+  );
+
+  return replacedImage;
+};
+
 const replaceProxyWithOwnedCard = async (
   deckId: string,
   originalSet: string,
@@ -727,5 +797,6 @@ export default {
   replaceCards,
   makeCardProxy,
   setProxyImage,
+  replaceCardVersion,
   replaceProxyWithOwnedCard,
 };

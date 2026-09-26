@@ -17,8 +17,44 @@ export async function POST(
   }
 
   try {
-    const { originalSet, originalCn, collection, collectionCardId, returnCollection, deckSection } = await request.json();
-    const replacedImage = await deckData.replaceProxyWithOwnedCard(deck_id, originalSet, originalCn, collection, collectionCardId, returnCollection, deckSection);
+    const {
+      originalSet,
+      originalCn,
+      collection,
+      collectionCardId,
+      returnCollection,
+      deckSection,
+      replacementSet,
+      replacementCn,
+      replacementFoil,
+      replacementImage,
+    } = await request.json();
+
+    let replacedImage: string;
+
+    if (replacementSet && replacementCn) {
+      replacedImage = await deckData.replaceCardVersion(
+        deck_id,
+        originalSet,
+        originalCn,
+        replacementSet,
+        replacementCn,
+        replacementFoil,
+        deckSection,
+        replacementImage,
+      );
+    } else {
+      replacedImage = await deckData.replaceProxyWithOwnedCard(
+        deck_id,
+        originalSet,
+        originalCn,
+        collection,
+        collectionCardId,
+        returnCollection,
+        deckSection,
+      );
+    }
+
     await deleteLocalProxyImage(replacedImage);
     return NextResponse.json({ message: "Card replaced" }, { status: 201 });
   } catch (err) {
