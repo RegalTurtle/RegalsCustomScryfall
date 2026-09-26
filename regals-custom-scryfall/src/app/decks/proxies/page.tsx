@@ -55,10 +55,6 @@ export default function ProxyReportPage() {
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState(search);
   const [selectedItem, setSelectedItem] = useState<ProxyReportItem | null>(null);
-  const [selectedDeckId, setSelectedDeckId] = useState<string | null>(null);
-  const [selectedOwnedVersion, setSelectedOwnedVersion] = useState<string>("");
-  const [replacingProxy, setReplacingProxy] = useState(false);
-  const [replaceProxyError, setReplaceProxyError] = useState("");
   const [cardPrice, setCardPrice] = useState<CardPrice | null>(null);
   const [loadingPrice, setLoadingPrice] = useState(false);
   const [priceError, setPriceError] = useState("");
@@ -99,18 +95,7 @@ export default function ProxyReportPage() {
   }, [debouncedSearch]);
 
   useEffect(() => {
-    if (!selectedItem) {
-      setSelectedDeckId(null);
-      setSelectedOwnedVersion("");
-      setReplaceProxyError("");
-      return;
-    }
-
-    const firstDeck = selectedItem.decks[0];
-    setSelectedDeckId(firstDeck?.deckId ?? null);
-    setSelectedOwnedVersion(selectedItem.ownedCopies[0] ? `${selectedItem.ownedCopies[0].collection}|${selectedItem.ownedCopies[0]._id}` : "");
-    setReplaceProxyError("");
-
+    if (!selectedItem) return;
     const itemToPrice = selectedItem;
 
     async function fetchPrice() {
@@ -146,56 +131,6 @@ export default function ProxyReportPage() {
 
     fetchPrice();
   }, [selectedItem]);
-
-  const replaceProxyWithOwnedCopy = async () => {
-    if (!selectedItem || !selectedDeckId || !selectedOwnedVersion) {
-      setReplaceProxyError("Choose a deck and an owned version first.");
-      return;
-    }
-
-    const [collection, collectionCardId] = selectedOwnedVersion.split("|");
-    if (!collection || !collectionCardId) {
-      setReplaceProxyError("Choose a valid owned version.");
-      return;
-    }
-
-    setReplacingProxy(true);
-    setReplaceProxyError("");
-
-    try {
-      const res = await fetch(`/api/decks/${selectedDeckId}/replace_proxy`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          originalSet: selectedItem.card.set,
-          originalCn: selectedItem.card.cn,
-          collection,
-          collectionCardId,
-          returnCollection: "none",
-          deckSection: "cards",
-        }),
-      });
-
-      const data = await res.json().catch(() => ({}));
-
-      if (!res.ok) {
-        throw new Error(data.error ?? "Could not replace this proxy");
-      }
-
-      setSelectedItem(null);
-      setSelectedDeckId(null);
-      setSelectedOwnedVersion("");
-      const refreshed = await fetch(`/api/decks/proxy_report${debouncedSearch.trim() ? `?search=${encodeURIComponent(debouncedSearch.trim())}` : ""}`);
-      const refreshedData = await refreshed.json();
-      setProxyReport(refreshedData.proxyReport ?? []);
-    } catch (error) {
-      setReplaceProxyError(error instanceof Error ? error.message : "Could not replace this proxy");
-    } finally {
-      setReplacingProxy(false);
-    }
-  };
 
   return (
     <div className="flex min-h-screen flex-col bg-teal-900 text-white">
@@ -295,53 +230,34 @@ export default function ProxyReportPage() {
                 <h3 className="mb-2 text-sm font-semibold">Proxy decks</h3>
                 <div className="flex flex-col gap-2">
                   {selectedItem.decks.map(deck => (
-                    <button
+                    <Link
                       key={`${deck.deckId}-${deck.deckName}`}
-                      type="button"
-                      onClick={() => setSelectedDeckId(deck.deckId)}
-                      className={`rounded px-3 py-2 text-left text-sm ${selectedDeckId === deck.deckId ? "bg-indigo-600" : "bg-gray-800 hover:bg-gray-600"}`}
+                      href={`/decks/${deck.deckId}`}
+                      className="rounded bg-gray-800 px-3 py-2 text-sm hover:bg-gray-600"
                     >
                       {`${deck.deckName} x${deck.quantity}`}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>
 
               <div className="mt-3 w-full rounded bg-gray-700 p-3 text-left">
-                <h3 className="mb-2 text-sm font-semibold">Select owned version</h3>
+                <h3 className="mb-2 text-sm font-semibold">Owned copies</h3>
                 {selectedItem.ownedCopies.length === 0 ? (
                   <p className="rounded bg-gray-800 px-3 py-2 text-sm text-gray-300">
                     No owned copies found in Bulk, Cool Cards, or Trade Binder.
                   </p>
                 ) : (
-                  <div className="flex flex-col gap-3">
-                    <select
-                      value={selectedOwnedVersion}
-                      onChange={(e) => setSelectedOwnedVersion(e.target.value)}
-                      className="rounded bg-gray-800 px-2 py-2 text-sm text-white"
-                    >
-                      {selectedItem.ownedCopies.map(copy => (
-                        <option
-                          key={`${copy.collection}-${copy.set}-${copy.cn}-${copy.foil}-${copy._id}`}
-                          value={`${copy.collection}|${copy._id}`}
-                        >
-                          {`${copy.collectionLabel}: ${copy.set.toUpperCase()} ${copy.cn} x${copy.quant}${copy.foil === "nonfoil" ? " (nonfoil)" : copy.foil === "foil" ? " (foil)" : " (etched)"}`}
-                        </option>
-                      ))}
-                    </select>
-                    <button
-                      type="button"
-                      onClick={replaceProxyWithOwnedCopy}
-                      disabled={!selectedDeckId || !selectedOwnedVersion || replacingProxy}
-                      className="rounded bg-purple-700 px-3 py-2 text-sm font-semibold text-white hover:bg-purple-600 disabled:bg-gray-500"
-                    >
-                      {replacingProxy ? "Replacing..." : "Replace proxy with selected version"}
-                    </button>
-                    {replaceProxyError && (
-                      <p className="rounded border border-red-300 bg-red-100 px-2 py-2 text-sm text-red-700">
-                        {replaceProxyError}
-                      </p>
-                    )}
+                  <div className="flex flex-col gap-2">
+                    {selectedItem.ownedCopies.map(copy => (
+                      <div key={`${copy.collection}-${copy.set}-${copy.cn}-${copy.foil}`} className="rounded bg-gray-800 px-3 py-2 text-sm">
+                        <p className="font-semibold">{copy.collectionLabel}</p>
+                        <p>{`${copy.set.toUpperCase()} ${copy.cn} x${copy.quant}`}</p>
+                        <p className="text-gray-300">
+                          {copy.foil === "nonfoil" ? "Nonfoil" : copy.foil === "foil" ? "Foil" : "Etched Foil"}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
