@@ -1,6 +1,15 @@
-import { Card } from "@/types";
+import { Card, FoilOption } from "@/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Link from "next/link";
+
+type CardDeckUsage = {
+  deckId: string;
+  deckName: string;
+  sectionLabel: string;
+  versionLabel: string;
+  quantity: number;
+  proxy: boolean;
+};
 
 type CollectionType = "bulk" | "cool-cards" | "trade-binder";
 
@@ -16,17 +25,13 @@ type CardPrice = {
   usd_etched?: string | null;
   eur?: string | null;
   tix?: string | null;
-};
-
-type FoilOption = "nonfoil" | "foil" | "etched";
-
-type CardDeckUsage = {
-  deckId: string;
-  deckName: string;
-  sectionLabel: string;
-  quantity: number;
-  proxy: boolean;
-  versionLabel: string;
+  cheapest?: {
+    usd?: string | null;
+    usd_foil?: string | null;
+    usd_etched?: string | null;
+    eur?: string | null;
+    tix?: string | null;
+  } | null;
 };
 
 const collectionLabels: Record<CollectionType, string> = {
@@ -139,7 +144,10 @@ const CardsWithSearch = ({
           throw new Error("Price unavailable");
         }
 
-        setCardPrice(data.card.prices ?? null);
+        setCardPrice({
+          ...(data.card.prices ?? null),
+          cheapest: data.cheapestPrice ?? null,
+        });
       } catch (error) {
         setPriceError(error instanceof Error ? error.message : "Price unavailable");
       } finally {
@@ -183,8 +191,26 @@ const CardsWithSearch = ({
     if (priceError) return priceError;
     if (!cardPrice) return "Price unavailable";
 
-    if (selectedCard?.foil === "foil" && cardPrice.usd_foil) return `$${cardPrice.usd_foil} foil`;
-    if (selectedCard?.foil === "etched" && cardPrice.usd_etched) return `$${cardPrice.usd_etched} etched`;
+    const finish = selectedCard?.foil === "foil" ? "foil" : selectedCard?.foil === "etched" ? "etched" : "nonfoil";
+    const currentValue = finish === "foil"
+      ? cardPrice.usd_foil ?? cardPrice.usd ?? null
+      : finish === "etched"
+        ? cardPrice.usd_etched ?? cardPrice.usd ?? null
+        : cardPrice.usd ?? cardPrice.usd_foil ?? cardPrice.usd_etched ?? null;
+    const cheapestValue = finish === "foil"
+      ? cardPrice.cheapest?.usd_foil ?? cardPrice.cheapest?.usd ?? null
+      : finish === "etched"
+        ? cardPrice.cheapest?.usd_etched ?? cardPrice.cheapest?.usd ?? null
+        : cardPrice.cheapest?.usd ?? cardPrice.cheapest?.usd_foil ?? cardPrice.cheapest?.usd_etched ?? null;
+
+    if (currentValue) {
+      const currentText = `$${Number(currentValue).toFixed(2)}${finish === "nonfoil" ? "" : ` ${finish}`}`;
+      if (cheapestValue && Number(cheapestValue) < Number(currentValue)) {
+        return `Current: ${currentText} • Cheapest: $${Number(cheapestValue).toFixed(2)}`;
+      }
+      return `Current: ${currentText}`;
+    }
+
     if (cardPrice.usd) return `$${cardPrice.usd}`;
     if (cardPrice.usd_foil) return `$${cardPrice.usd_foil} foil`;
     if (cardPrice.usd_etched) return `$${cardPrice.usd_etched} etched`;

@@ -11,6 +11,37 @@ const headers = {
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+function normalizePriceValue(value: unknown): string | null {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed.toFixed(2) : null;
+}
+
+function getCheapestPrintingsPrice(cards: Array<Record<string, any>>): Record<string, string | null> | null {
+  const cheapest: Record<string, string | null> = {
+    usd: null,
+    usd_foil: null,
+    usd_etched: null,
+    eur: null,
+    tix: null,
+  };
+
+  for (const card of cards) {
+    const prices = card?.prices;
+    if (!prices) continue;
+
+    for (const key of Object.keys(cheapest) as Array<keyof typeof cheapest>) {
+      const candidate = normalizePriceValue(prices[key]);
+      if (!candidate) continue;
+
+      if (!cheapest[key] || Number(candidate) < Number(cheapest[key])) {
+        cheapest[key] = candidate;
+      }
+    }
+  }
+
+  return Object.values(cheapest).some(value => value !== null) ? cheapest : null;
+}
+
 async function fetchJson(url: string) {
   const retryDelays = [0, 750, 1500];
   let lastRes: Response | null = null;
@@ -61,10 +92,27 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   try {
     const { name, set, cn, scryfallId } = await request.json();
+    const fetchCheapestPrice = async (cardName: string | null | undefined) => {
+      if (!cardName) return null;
+
+      const params = new URLSearchParams({
+        q: `!"${cardName}"`,
+        unique: "prints",
+      });
+
+      const { res, data } = await fetchJson(`https://api.scryfall.com/cards/search?${params.toString()}`);
+      if (!res.ok || data.object === "error" || !Array.isArray(data.data)) {
+        return null;
+      }
+
+      return getCheapestPrintingsPrice(data.data);
+    };
+
     if (scryfallId) {
       const { res, data } = await fetchJson(`https://api.scryfall.com/cards/${scryfallId}`);
       if (res.ok && data.object !== "error") {
-        return NextResponse.json({ card: data }, { status: 200 });
+        const cheapestPrice = await fetchCheapestPrice(data.name);
+        return NextResponse.json({ card: data, cheapestPrice }, { status: 200 });
       }
     }
 
@@ -97,19 +145,27 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       const { res, data } = await fetchJson(`https://api.scryfall.com/cards/search?${params.toString()}`);
       if (res.ok && data.object !== "error" && data.data?.[0]) {
         const card = data.data.find((card: { name: string }) => card.name === cardName) ?? data.data[0];
-        return NextResponse.json({ card }, { status: 200 });
+        const cheapestPrice = await fetchCheapestPrice(card.name ?? cardName);
+        return NextResponse.json({ card, cheapestPrice }, { status: 200 });
       }
 
       const fallbackCard = await fetchByNameAndSet();
-      if (fallbackCard) return NextResponse.json({ card: fallbackCard }, { status: 200 });
+      if (fallbackCard) {
+        const cheapestPrice = await fetchCheapestPrice(fallbackCard.name ?? cardName);
+        return NextResponse.json({ card: fallbackCard, cheapestPrice }, { status: 200 });
+      }
     } else {
       const { res, data } = await fetchJson(`https://api.scryfall.com/cards/${setCode}/${encodeURIComponent(collectorNumber)}`);
       if (res.ok && data.object !== "error") {
-        return NextResponse.json({ card: data }, { status: 200 });
+        const cheapestPrice = await fetchCheapestPrice(data.name ?? cardName);
+        return NextResponse.json({ card: data, cheapestPrice }, { status: 200 });
       }
 
       const fallbackCard = await fetchByNameAndSet();
-      if (fallbackCard) return NextResponse.json({ card: fallbackCard }, { status: 200 });
+      if (fallbackCard) {
+        const cheapestPrice = await fetchCheapestPrice(fallbackCard.name ?? cardName);
+        return NextResponse.json({ card: fallbackCard, cheapestPrice }, { status: 200 });
+      }
     }
 
     return NextResponse.json({ error: `${cardName || `${setCode.toUpperCase()} ${collectorNumber}`} was not found on Scryfall` }, { status: 404 });

@@ -33,12 +33,40 @@ type CardPrice = {
   usd_etched?: string | null;
   eur?: string | null;
   tix?: string | null;
+  cheapest?: {
+    usd?: string | null;
+    usd_foil?: string | null;
+    usd_etched?: string | null;
+    eur?: string | null;
+    tix?: string | null;
+  } | null;
 };
 
-function displayPrice(cardPrice: CardPrice | null, loadingPrice: boolean, priceError: string) {
+function displayPrice(cardPrice: CardPrice | null, loadingPrice: boolean, priceError: string, foil: string | null | undefined = null) {
   if (loadingPrice) return "Loading price...";
   if (priceError) return priceError;
   if (!cardPrice) return "Price unavailable";
+
+  const finish = foil === "foil" ? "foil" : foil === "etched" ? "etched" : "nonfoil";
+  const currentValue = finish === "foil"
+    ? cardPrice.usd_foil ?? cardPrice.usd ?? null
+    : finish === "etched"
+      ? cardPrice.usd_etched ?? cardPrice.usd ?? null
+      : cardPrice.usd ?? cardPrice.usd_foil ?? cardPrice.usd_etched ?? null;
+  const cheapestValue = finish === "foil"
+    ? cardPrice.cheapest?.usd_foil ?? cardPrice.cheapest?.usd ?? null
+    : finish === "etched"
+      ? cardPrice.cheapest?.usd_etched ?? cardPrice.cheapest?.usd ?? null
+      : cardPrice.cheapest?.usd ?? cardPrice.cheapest?.usd_foil ?? cardPrice.cheapest?.usd_etched ?? null;
+
+  if (currentValue) {
+    const currentText = `$${Number(currentValue).toFixed(2)}${finish === "nonfoil" ? "" : ` ${finish}`}`;
+    if (cheapestValue && Number(cheapestValue) < Number(currentValue)) {
+      return `Current: ${currentText} • Cheapest: $${Number(cheapestValue).toFixed(2)}`;
+    }
+    return `Current: ${currentText}`;
+  }
+
   if (cardPrice.usd) return `$${cardPrice.usd}`;
   if (cardPrice.usd_foil) return `$${cardPrice.usd_foil} foil`;
   if (cardPrice.usd_etched) return `$${cardPrice.usd_etched} etched`;
@@ -121,7 +149,10 @@ export default function ProxyReportPage() {
           throw new Error("Price unavailable");
         }
 
-        setCardPrice(data.card.prices ?? null);
+        setCardPrice({
+          ...(data.card.prices ?? null),
+          cheapest: data.cheapestPrice ?? null,
+        });
       } catch (error) {
         setPriceError(error instanceof Error ? error.message : "Price unavailable");
       } finally {
@@ -223,7 +254,7 @@ export default function ProxyReportPage() {
                 {`${selectedItem.card.set.toUpperCase()} ${selectedItem.card.cn}`}
               </p>
               <p className="mb-4 rounded bg-gray-700 px-3 py-1 text-sm font-semibold">
-                {displayPrice(cardPrice, loadingPrice, priceError)}
+                {displayPrice(cardPrice, loadingPrice, priceError, selectedItem?.card.foil)}
               </p>
 
               <div className="w-full rounded bg-gray-700 p-3 text-left">
