@@ -180,12 +180,20 @@ export default function ProxyReportPage() {
             </p>
           </div>
 
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition mb-4 text-white"
-          />
+          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-white"
+            />
+            <Link
+              href="/decks/proxies/upload"
+              className="rounded bg-teal-100 px-4 py-2 text-sm font-semibold text-teal-900 shadow hover:bg-white"
+            >
+              Compare CSV
+            </Link>
+          </div>
 
           {loading && <p>Loading...</p>}
           {error && (
