@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import { Card, Deck } from "@/types";
 import { cardMatchesParsedSearch, parseCardSearchTerms } from "@/utils/cardSearch";
+import { getNetProxyCardsForDeck } from "@/utils/proxyReport";
 
 type OwnedCollection = "bulk" | "cool-cards" | "trade-binder";
 
@@ -56,23 +57,23 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     }>();
 
     for (const deck of allDecks as Deck[]) {
-      for (const card of deck.cards.filter(card => card.proxy)) {
-        const key = cardKey(card);
+      for (const entry of getNetProxyCardsForDeck(deck)) {
+        const key = cardKey(entry.card);
         const existing = proxyCardsByName.get(key);
 
         if (existing) {
           existing.decks.push({
-            deckId: deck._id?.toString() ?? "",
-            deckName: deck.name,
-            quantity: card.quant,
+            deckId: entry.deckId,
+            deckName: entry.deckName,
+            quantity: entry.quantity,
           });
         } else {
           proxyCardsByName.set(key, {
-            card,
+            card: entry.card,
             decks: [{
-              deckId: deck._id?.toString() ?? "",
-              deckName: deck.name,
-              quantity: card.quant,
+              deckId: entry.deckId,
+              deckName: entry.deckName,
+              quantity: entry.quantity,
             }],
           });
         }
