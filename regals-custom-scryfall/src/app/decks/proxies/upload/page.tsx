@@ -202,6 +202,9 @@ export default function ProxyCsvUploadPage() {
                       <p className="text-sm font-semibold text-teal-200">{version.setCode.toUpperCase()} {version.cardNumber}</p>
                       <p className="text-xs text-gray-300">{version.printing || version.setName || "Unknown printing"}</p>
                       <p className="mt-2 text-xs text-gray-400">Qty: {version.quantity || 1}</p>
+                      <p className="mt-1 text-xs text-gray-300">Owned: {version.owned ? "Yes" : "No"}</p>
+                      <p className="text-xs text-gray-300">You have: {version.ownedCopies} {version.ownedCopies === 1 ? "copy" : "copies"}</p>
+                      <p className="text-xs text-gray-300">Need: {version.copiesNeeded} {version.copiesNeeded === 1 ? "copy" : "copies"}</p>
                     </div>
                   );
                 })}

@@ -8,6 +8,9 @@ export type SharedProxyVersion = {
   cardNumber: string;
   printing: string;
   quantity: number;
+  owned: boolean;
+  ownedCopies: number;
+  copiesNeeded: number;
   imageUrl?: string;
 };
 
@@ -80,7 +83,11 @@ function parseCsvLine(line: string): string[] {
 }
 
 export function getSharedProxyVersions(
-  proxyReport: Array<{ card?: { name: string; set?: string; cn?: string }; cards?: Array<{ name: string; set?: string; cn?: string }> }>,
+  proxyReport: Array<{
+    card?: { name: string; set?: string; cn?: string };
+    cards?: Array<{ name: string; set?: string; cn?: string }>;
+    ownedCopies?: Array<{ name: string; set?: string; cn?: string; quant?: number }>;
+  }>,
   csvRows: CsvRow[],
 ) {
   const proxyNames = new Map<string, Array<{ set: string; cn: string }>>();
@@ -111,6 +118,18 @@ export function getSharedProxyVersions(
 
     if (!proxyNames.has(normalizedName)) continue;
 
+    const ownedCopiesForVersion = (proxyReport ?? [])
+      .flatMap(item => item.ownedCopies ?? [])
+      .filter(copy =>
+        normalizeProxyText(copy.name) === normalizedName
+        && normalizeProxyText(copy.set) === setCode
+        && normalizeProxyText(copy.cn) === cardNumber,
+      )
+      .reduce((total, copy) => total + (Number(copy.quant ?? 0) || 0), 0);
+
+    const rowQuantity = Number(row["Quantity"] ?? "0") || 0;
+    const copiesNeeded = Math.max(0, rowQuantity - ownedCopiesForVersion);
+
     let cardGroup = sharedCards.find(card => normalizeProxyText(card.name) === normalizedName);
     if (!cardGroup) {
       cardGroup = { name: displayName, versions: [] };
@@ -124,7 +143,10 @@ export function getSharedProxyVersions(
       setName: row["Set Name"] ?? "",
       cardNumber,
       printing: row["Printing"] ?? row["Set Name"] ?? "",
-      quantity: Number(row["Quantity"] ?? "0") || 0,
+      quantity: rowQuantity,
+      owned: ownedCopiesForVersion > 0,
+      ownedCopies: ownedCopiesForVersion,
+      copiesNeeded,
     });
   }
 
