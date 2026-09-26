@@ -21,10 +21,12 @@ export function normalizeProxyText(value: string | undefined | null): string {
 }
 
 export function parseCsvRows(csvText: string): CsvRow[] {
-  const rows = csvText.replace(/\r/g, "").split(/\n/).filter(line => line.trim() !== "");
+  const normalizedText = csvText.replace(/^\uFEFF/, "").replace(/\r/g, "");
+  const rows = normalizedText.split(/\n/).filter(line => line.trim() !== "");
   if (rows.length === 0) return [];
 
-  if (rows[0].startsWith("sep=")) {
+  const firstLine = rows[0].trim();
+  if (firstLine === "sep=," || firstLine === '"sep=,"' || firstLine === "'sep=,'") {
     rows.shift();
   }
 
