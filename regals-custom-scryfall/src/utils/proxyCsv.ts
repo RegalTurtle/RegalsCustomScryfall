@@ -118,17 +118,13 @@ export function getSharedProxyVersions(
 
     if (!proxyNames.has(normalizedName)) continue;
 
-    const ownedCopiesForVersion = (proxyReport ?? [])
+    const ownedCopiesForCard = (proxyReport ?? [])
       .flatMap(item => item.ownedCopies ?? [])
-      .filter(copy =>
-        normalizeProxyText(copy.name) === normalizedName
-        && normalizeProxyText(copy.set) === setCode
-        && normalizeProxyText(copy.cn) === cardNumber,
-      )
+      .filter(copy => normalizeProxyText(copy.name) === normalizedName)
       .reduce((total, copy) => total + (Number(copy.quant ?? 0) || 0), 0);
 
     const rowQuantity = Number(row["Quantity"] ?? "0") || 0;
-    const copiesNeeded = Math.max(0, rowQuantity - ownedCopiesForVersion);
+    const copiesNeeded = Math.max(0, rowQuantity - ownedCopiesForCard);
 
     let cardGroup = sharedCards.find(card => normalizeProxyText(card.name) === normalizedName);
     if (!cardGroup) {
@@ -144,8 +140,8 @@ export function getSharedProxyVersions(
       cardNumber,
       printing: row["Printing"] ?? row["Set Name"] ?? "",
       quantity: rowQuantity,
-      owned: ownedCopiesForVersion > 0,
-      ownedCopies: ownedCopiesForVersion,
+      owned: ownedCopiesForCard > 0,
+      ownedCopies: ownedCopiesForCard,
       copiesNeeded,
     });
   }
