@@ -33,6 +33,7 @@ export default function ProxyCsvUploadPage() {
   const [cardImages, setCardImages] = useState<CardImageMap>({});
   const [loadingReport, setLoadingReport] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -56,14 +57,16 @@ export default function ProxyCsvUploadPage() {
     fetchProxyReport();
   }, []);
 
-  const handleCsvUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+  const handleCsvScan = async () => {
+    if (!selectedFile) {
+      setError("Please choose a CSV file first.");
+      return;
+    }
 
     try {
       setUploading(true);
       setError("");
-      const csvText = await file.text();
+      const csvText = await selectedFile.text();
       const csvRows = parseCsvRows(csvText);
       if (csvRows.length === 0) {
         setSharedCards([]);
@@ -106,6 +109,19 @@ export default function ProxyCsvUploadPage() {
     }
   };
 
+  const handleCsvUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) {
+      setSelectedFile(null);
+      return;
+    }
+
+    setSelectedFile(file);
+    setSharedCards([]);
+    setCardImages({});
+    setError("");
+  };
+
   return (
     <div className="min-h-screen bg-teal-900 p-6 text-white">
       <div className="mx-auto max-w-6xl">
@@ -127,6 +143,22 @@ export default function ProxyCsvUploadPage() {
             onChange={handleCsvUpload}
             className="block w-full rounded border border-teal-600 bg-slate-800 px-3 py-2 text-sm file:mr-3 file:rounded file:border-0 file:bg-teal-600 file:px-3 file:py-2 file:text-white"
           />
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <button
+              type="button"
+              onClick={handleCsvScan}
+              disabled={!selectedFile || uploading}
+              className="rounded bg-teal-600 px-4 py-2 font-semibold text-white transition hover:bg-teal-500 disabled:cursor-not-allowed disabled:bg-slate-600"
+            >
+              {uploading ? "Scanning..." : "Scan CSV"}
+            </button>
+            {uploading && (
+              <div className="flex items-center gap-2 text-sm text-teal-100/80">
+                <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                Comparing versions and fetching card images...
+              </div>
+            )}
+          </div>
           <p className="mt-2 text-xs text-teal-100/80">
             Expected headers include: List Type, List Name, Collection, Format, Board, Quantity, Card Name, Set Code, Set Name, Card Number, Condition, Printing, Rarity, Language, Price Bought, Date Bought, Parent List Type, Parent List Name, Current Price (tcgplayer_marketsellprice), List Cover Image, Parent List Cover Image
           </p>
@@ -134,7 +166,6 @@ export default function ProxyCsvUploadPage() {
 
         {loadingReport && <p className="mt-4 text-sm text-teal-100/75">Loading proxy report...</p>}
         {error && <p className="mt-4 rounded border border-red-400 bg-red-900/40 px-3 py-2 text-sm text-red-100">{error}</p>}
-        {uploading && <p className="mt-4 text-sm text-teal-100/75">Comparing uploaded versions...</p>}
 
         {!uploading && !error && sharedCards.length === 0 && !loadingReport && (
           <p className="mt-6 rounded border border-teal-700 bg-slate-900/40 px-4 py-3 text-sm text-teal-100/80">
