@@ -80,22 +80,24 @@ function parseCsvLine(line: string): string[] {
 }
 
 export function getSharedProxyVersions(
-  proxyReport: Array<{ card: { name: string; set: string; cn: string } }>,
+  proxyReport: Array<{ card?: { name: string; set?: string; cn?: string }; cards?: Array<{ name: string; set?: string; cn?: string }> }>,
   csvRows: CsvRow[],
 ) {
-  const proxyKeys = new Set<string>();
   const proxyNames = new Map<string, Array<{ set: string; cn: string }>>();
 
   for (const item of proxyReport) {
-    const name = normalizeProxyText(item.card.name);
-    const set = normalizeProxyText(item.card.set);
-    const cn = normalizeProxyText(item.card.cn);
-    const key = `${name}|${set}|${cn}`;
-    proxyKeys.add(key);
+    const versions = item.cards && item.cards.length > 0 ? item.cards : [item.card].filter(Boolean) as Array<{ name: string; set?: string; cn?: string }>;
 
-    const versions = proxyNames.get(name) ?? [];
-    versions.push({ set, cn });
-    proxyNames.set(name, versions);
+    for (const card of versions) {
+      const name = normalizeProxyText(card.name);
+      if (!name) continue;
+
+      const set = normalizeProxyText(card.set ?? "");
+      const cn = normalizeProxyText(card.cn ?? "");
+      const versionsForName = proxyNames.get(name) ?? [];
+      versionsForName.push({ set, cn });
+      proxyNames.set(name, versionsForName);
+    }
   }
 
   const sharedCards: SharedProxyCard[] = [];
@@ -107,11 +109,7 @@ export function getSharedProxyVersions(
     const cardNumber = normalizeProxyText(row["Card Number"]);
     if (!normalizedName) continue;
 
-    const matchedProxy = (proxyNames.get(normalizedName) ?? []).some(version =>
-      version.set === setCode && version.cn === cardNumber,
-    );
-
-    if (!matchedProxy) continue;
+    if (!proxyNames.has(normalizedName)) continue;
 
     let cardGroup = sharedCards.find(card => normalizeProxyText(card.name) === normalizedName);
     if (!cardGroup) {
@@ -136,9 +134,6 @@ export function getSharedProxyVersions(
   return {
     sharedCards: orderedCards,
     sharedCardNames: orderedNames,
-    sharedKeys: Array.from(proxyKeys).filter(key => {
-      const [name] = key.split("|");
-      return orderedNames.includes(name);
-    }),
+    sharedKeys: Array.from(proxyNames.keys()).filter(name => orderedNames.includes(name)),
   };
 }
