@@ -12,6 +12,7 @@ import { useSession } from "next-auth/react";
 import { useParams } from 'next/navigation';
 import { DragEvent, useEffect, useMemo, useState } from "react";
 import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
+import { CardGroupMode, CardSortMode, groupCardsByManaValue, groupCardsByTags, groupCardsByType } from "@/utils/deckGrouping";
 
 type ScryfallCard = {
   name: string;
@@ -42,8 +43,6 @@ type DroppedCardLookup = {
 };
 
 type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
-type CardSortMode = "name" | "cmc";
-type CardGroupMode = "tags" | "type";
 
 type GameBreakdownColumn = {
   key: string;
@@ -74,65 +73,6 @@ const resultLabels = {
   loss: "Loss",
   tie: "Tie",
 };
-
-function sortCardsByMode(cards: Card[], mode: CardSortMode): Card[] {
-  return [...cards].sort((a, b) => {
-    if (mode === "cmc") {
-      const manaDiff = (a.cmc ?? 0) - (b.cmc ?? 0);
-      if (manaDiff !== 0) return manaDiff;
-    }
-
-    const nameDiff = a.name.localeCompare(b.name);
-    if (nameDiff !== 0) return nameDiff;
-    return `${a.set}|${a.cn}`.localeCompare(`${b.set}|${b.cn}`);
-  });
-}
-
-function groupCardsByTags(cards: Card[], sortMode: CardSortMode = "name"): CardPile[] {
-  const pileMap: Record<string, Card[]> = {};
-
-  for (const card of cards) {
-    const tags = card.tag?.length ? card.tag : ["Untagged"];
-    for (const tag of tags) {
-      if (!pileMap[tag]) {
-        pileMap[tag] = [];
-      }
-      pileMap[tag].push(card);
-    }
-  }
-
-  return Object.entries(pileMap)
-    .sort(([a], [b]) => {
-      if (a === "Commander") return -1;
-      if (b === "Commander") return 1;
-      return a.localeCompare(b)
-    })
-    .map(([pileName, cardsInPile]) => ({
-      pileName,
-      cards: sortCardsByMode(cardsInPile, sortMode),
-    }));
-}
-
-function groupCardsByType(cards: Card[], sortMode: CardSortMode = "name"): CardPile[] {
-  const pileMap: Record<string, Card[]> = {};
-
-  for (const card of cards) {
-    const pileName = getCardTypeGroup(card);
-    if (!pileMap[pileName]) {
-      pileMap[pileName] = [];
-    }
-    pileMap[pileName].push(card);
-  }
-
-  const pileOrder = ["Creatures", "Artifacts", "Enchantments", "Planeswalkers", "Battles", "Instants", "Sorceries", "Other"];
-
-  return Object.entries(pileMap)
-    .sort(([a], [b]) => (pileOrder.indexOf(a) - pileOrder.indexOf(b)))
-    .map(([pileName, cardsInPile]) => ({
-      pileName,
-      cards: sortCardsByMode(cardsInPile, sortMode),
-    }));
-}
 
 function countCards(cards: Card[]): number {
   return cards.reduce((sum, card) => sum + card.quant, 0);
@@ -493,9 +433,17 @@ export default function Decks() {
   useEffect(() => {
     if (!deckId) return;
 
-    const groupCards = (cards: Card[]) => cardGroupMode === "type"
-      ? groupCardsByType(cards, cardSortMode)
-      : groupCardsByTags(cards, cardSortMode);
+    const groupCards = (cards: Card[]) => {
+      switch (cardGroupMode) {
+        case "type":
+          return groupCardsByType(cards, cardSortMode);
+        case "mana":
+          return groupCardsByManaValue(cards, cardSortMode);
+        case "tags":
+        default:
+          return groupCardsByTags(cards, cardSortMode);
+      }
+    };
 
     const fetchDeck  = async () => {
       try {
@@ -852,6 +800,7 @@ export default function Decks() {
             >
               <option value="tags">Tags</option>
               <option value="type">Type</option>
+              <option value="mana">Mana value</option>
             </select>
           </label>
           <label className="flex items-center gap-2 rounded bg-teal-950/40 px-2 py-1 text-sm text-teal-50">
