@@ -34,6 +34,7 @@ export default function ProxyCsvUploadPage() {
   const [loadingReport, setLoadingReport] = useState(true);
   const [uploading, setUploading] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [scanComplete, setScanComplete] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -66,11 +67,13 @@ export default function ProxyCsvUploadPage() {
     try {
       setUploading(true);
       setError("");
+      setScanComplete(false);
       const csvText = await selectedFile.text();
       const csvRows = parseCsvRows(csvText);
       if (csvRows.length === 0) {
         setSharedCards([]);
         setCardImages({});
+        setScanComplete(true);
         return;
       }
 
@@ -100,10 +103,12 @@ export default function ProxyCsvUploadPage() {
       }
 
       setCardImages(nextImages);
+      setScanComplete(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not read CSV");
       setSharedCards([]);
       setCardImages({});
+      setScanComplete(false);
     } finally {
       setUploading(false);
     }
@@ -119,6 +124,7 @@ export default function ProxyCsvUploadPage() {
     setSelectedFile(file);
     setSharedCards([]);
     setCardImages({});
+    setScanComplete(false);
     setError("");
   };
 
@@ -167,9 +173,15 @@ export default function ProxyCsvUploadPage() {
         {loadingReport && <p className="mt-4 text-sm text-teal-100/75">Loading proxy report...</p>}
         {error && <p className="mt-4 rounded border border-red-400 bg-red-900/40 px-3 py-2 text-sm text-red-100">{error}</p>}
 
-        {!uploading && !error && sharedCards.length === 0 && !loadingReport && (
+        {!uploading && !error && !scanComplete && !loadingReport && (
           <p className="mt-6 rounded border border-teal-700 bg-slate-900/40 px-4 py-3 text-sm text-teal-100/80">
             Upload a CSV to see which versions are shared with your current proxy report.
+          </p>
+        )}
+
+        {!uploading && !error && scanComplete && sharedCards.length === 0 && (
+          <p className="mt-6 rounded border border-teal-700 bg-slate-900/40 px-4 py-3 text-sm text-teal-100/80">
+            Scan complete: no shared versions were found in this CSV.
           </p>
         )}
 
