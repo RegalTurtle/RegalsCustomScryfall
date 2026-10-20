@@ -134,7 +134,6 @@ function DeckCard({ deck, stats }: { deck: Deck, stats?: DeckOverviewStats }) {
       <div className="bg-teal-100 rounded-md p-4 h-full flex flex-col justify-center gap-1">
         <p className="min-w-0 w-full truncate font-semibold" title={deck.name}>{deck.name}</p>
         <p className="text-sm">{`${deck.format} | ${formatDeckWinPercent(stats)} | ${gamesPlayed} game${gamesPlayed === 1 ? "" : "s"}`}</p>
-        <p className="text-sm">Owner: {deck.owner}</p>
       </div>
     </Link>
   );
