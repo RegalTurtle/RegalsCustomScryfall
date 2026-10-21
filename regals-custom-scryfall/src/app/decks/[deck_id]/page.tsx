@@ -373,6 +373,8 @@ export default function Decks() {
   const [ cardSortMode, setCardSortMode ] = useState<CardSortMode>("cmc");
   const [recentGames, setRecentGames] = useState<SerializedGame[]>([]);
   const [gameStats, setGameStats] = useState<GameStats | null>(null);
+  const [gamesLoading, setGamesLoading] = useState(false);
+  const [deckLoadedForId, setDeckLoadedForId] = useState<string | null>(null);
 
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedCardCollectionType, setSelectedCardCollectionType] = useState<CollectionTypeOption | null>(null);
@@ -455,6 +457,7 @@ export default function Decks() {
         setSidePiles(groupCards(foundDeck.sideboard));
         setMaybePiles(groupCards(foundDeck.maybeboard));
         setWishPiles(groupCards(foundDeck.wishlist));
+        setDeckLoadedForId(deckId.toString());
         setAvailableProxyKeys([]);
         setAvailableProxyLocations({});
         setOwnedMaybeboardKeys([]);
@@ -470,7 +473,7 @@ export default function Decks() {
     }
 
     fetchDeck();
-  }, [ update, cardGroupMode, cardSortMode ]);
+  }, [ deckId, update, cardGroupMode, cardSortMode ]);
 
   const syncGameChangerCards = async () => {
     if (!deck) return;
@@ -515,9 +518,10 @@ export default function Decks() {
   };
 
   useEffect(() => {
-    if (!deckId) return;
+    if (!deckId || deckLoadedForId !== deckId.toString()) return;
 
     async function fetchDeckGames() {
+      setGamesLoading(true);
       try {
         const res = await fetch(`/api/games?deckId=${deckId}`);
         if (!res.ok) throw new Error("Failed to fetch games");
@@ -526,11 +530,13 @@ export default function Decks() {
         setGameStats(stats ?? null);
       } catch (error) {
         console.error("Error fetching deck games:", error);
+      } finally {
+        setGamesLoading(false);
       }
     }
 
     fetchDeckGames();
-  }, [deckId, update]);
+  }, [deckId, deckLoadedForId]);
 
   if (loadingDeck) return <p>Loading...</p>;
   if (!deck) return <p>Deck not found</p>;
@@ -1237,6 +1243,9 @@ export default function Decks() {
           <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="text-lg font-semibold">Games</h2>
+              {gamesLoading && (
+                <p className="text-sm text-teal-100/80">Loading game history...</p>
+              )}
               {gameStats && (
                 <p className="text-sm text-teal-100/80">
                   {`${gameStats.total} logged - ${gameStats.wins}/${gameStats.losses}/${gameStats.ties} - ${Math.round(gameStats.winRate * 100)}% win rate`}
