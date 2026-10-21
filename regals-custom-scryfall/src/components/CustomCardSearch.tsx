@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { CustomCard } from "@/types/customCard";
 
 type Props = { initialQuery?: string };
 
 export default function CustomCardSearch({ initialQuery = "" }: Props) {
+  const router = useRouter();
   const [query, setQuery] = useState(initialQuery);
   const [cards, setCards] = useState<CustomCard[]>([]);
   const [loading, setLoading] = useState(false);
@@ -14,6 +16,7 @@ export default function CustomCardSearch({ initialQuery = "" }: Props) {
 
   useEffect(() => {
     if (!initialQuery) return;
+    setQuery(initialQuery);
     void search(initialQuery);
   }, [initialQuery]);
 
@@ -35,7 +38,14 @@ export default function CustomCardSearch({ initialQuery = "" }: Props) {
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    void search(query);
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery) {
+      router.push("/custom");
+      setCards([]);
+      return;
+    }
+
+    router.push(`/custom/search?q=${encodeURIComponent(trimmedQuery)}`);
   }
 
   return (
@@ -61,7 +71,7 @@ export default function CustomCardSearch({ initialQuery = "" }: Props) {
         {cards.map(card => (
           <Link
             key={`${card.set}-${card.cn}`}
-            href={`/custom/card/${encodeURIComponent(card.set)}/${card.cn}`}
+            href={`/custom/card/${encodeURIComponent(card.set)}/${card.cn}?from=${encodeURIComponent(`/custom/search?q=${query}`)}`}
             className="group overflow-hidden rounded-xl border border-teal-950/70 bg-teal-950/60 text-left shadow-lg transition hover:-translate-y-1 hover:border-indigo-400 hover:shadow-xl"
           >
             <img src={card.img} alt={`${card.name} (${card.set}${card.cn})`} className="aspect-[5/7] w-full object-cover" loading="lazy" />

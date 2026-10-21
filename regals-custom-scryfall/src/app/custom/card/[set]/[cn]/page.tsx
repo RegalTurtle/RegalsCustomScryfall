@@ -2,18 +2,20 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import { CustomCard } from "@/types/customCard";
 
 export default function CustomCardDetailPage() {
   const { set, cn } = useParams<{ set: string; cn: string }>();
+  const searchParams = useSearchParams();
   const { data: session } = useSession();
   const [card, setCard] = useState<CustomCard | null>(null);
   const [note, setNote] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const returnTo = searchParams.get("from") || "/custom";
 
   useEffect(() => {
     if (!set || !cn) return;
@@ -49,7 +51,7 @@ export default function CustomCardDetailPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-teal-900">
-      <RegalsMagicHeader showBack backUrl="/custom" backText="Search" />
+      <RegalsMagicHeader showBack backUrl={returnTo} backText="Search" />
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-6 lg:flex-row">
         <div className="mx-auto w-full max-w-md">
           <img src={card.img} alt={card.name} className="w-full rounded-2xl shadow-2xl" />
@@ -79,7 +81,7 @@ export default function CustomCardDetailPage() {
           </div>
         </section>
       </main>
-      <footer className="flex h-16 items-center justify-center bg-gray-900"><Link href="/custom" className="text-teal-200 hover:text-white">Back to search</Link></footer>
+      <footer className="flex h-16 items-center justify-center bg-gray-900"><Link href={returnTo} className="text-teal-200 hover:text-white">Back to search</Link></footer>
     </div>
   );
 }
