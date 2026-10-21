@@ -25,6 +25,7 @@ type CardPrice = {
 };
 
 type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
+type WatchlistStatus = "checking" | "available" | "already-added" | "adding" | "error";
 
 const deckSectionLabels: Record<DeckSection, string> = {
   cards: "Decklist",
@@ -127,7 +128,10 @@ export default function CardEditModal({
   const [cardPrice, setCardPrice] = useState<CardPrice | null>(null);
   const [loadingPrice, setLoadingPrice] = useState(false);
   const [priceError, setPriceError] = useState("");
+  const [watchlistStatus, setWatchlistStatus] = useState<WatchlistStatus>("checking");
+  const [watchlistError, setWatchlistError] = useState("");
   const sourceSection = getDeckSection(collectionType);
+  const isDeckCard = collectionType.startsWith("decks+");
   const moveTargetOptions = (Object.keys(deckSectionLabels) as DeckSection[])
     .filter(section => section !== sourceSection);
 
@@ -453,6 +457,49 @@ export default function CardEditModal({
     }
   };
 
+  const checkWatchlist = async (): Promise<boolean> => {
+    const res = await fetch("/api/collection/watchlist/card_page");
+    if (!res.ok) throw new Error("Could not check the watchlist");
+
+    const watchlistCards: Card[] = await res.json();
+    const cardName = card.name.trim().toLowerCase();
+    return watchlistCards.some(watchlistCard => watchlistCard.name.trim().toLowerCase() === cardName);
+  };
+
+  const addToWatchlist = async () => {
+    if (watchlistStatus === "checking" || watchlistStatus === "adding" || watchlistStatus === "already-added") return;
+
+    setWatchlistStatus("adding");
+    setWatchlistError("");
+
+    try {
+      if (await checkWatchlist()) {
+        setWatchlistStatus("already-added");
+        return;
+      }
+
+      const res = await fetch("/api/collection/watchlist/add_card", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...card,
+          quant: 1,
+          tag: card.tag ?? [],
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not add card to watchlist");
+      }
+
+      setWatchlistStatus("already-added");
+    } catch (error) {
+      setWatchlistError(error instanceof Error ? error.message : "Could not add card to watchlist");
+      setWatchlistStatus("error");
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -477,8 +524,29 @@ export default function CardEditModal({
     setProxyImageError("");
     setCardPrice(null);
     setPriceError("");
+    setWatchlistStatus("checking");
+    setWatchlistError("");
     setMoveTargetSection(moveTargetOptions.includes("wishlist") ? "wishlist" : moveTargetOptions[0] ?? "cards");
   }, [card, collectionType]);
+
+  useEffect(() => {
+    if (!isDeckCard) return;
+
+    let cancelled = false;
+    checkWatchlist()
+      .then(alreadyAdded => {
+        if (!cancelled) setWatchlistStatus(alreadyAdded ? "already-added" : "available");
+      })
+      .catch(error => {
+        if (cancelled) return;
+        setWatchlistError(error instanceof Error ? error.message : "Could not check the watchlist");
+        setWatchlistStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [card.name, isDeckCard]);
 
   useEffect(() => {
     const cardToPrice = card;
@@ -562,7 +630,6 @@ export default function CardEditModal({
                 Search Bellevue Kiosk
               </a>
             )}
-
             {/* Tags here */}
             <div className="w-full">
               <div className="mb-2">
@@ -782,6 +849,21 @@ export default function CardEditModal({
                   </button>
                 </div>
                 {proxyImageError && <p className="mt-2 text-sm text-red-300">{proxyImageError}</p>}
+              </div>
+            )}
+            {isDeckCard && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <button
+                  onClick={addToWatchlist}
+                  disabled={watchlistStatus === "checking" || watchlistStatus === "adding" || watchlistStatus === "already-added"}
+                  className="w-full rounded bg-emerald-700 px-4 py-2 text-white hover:bg-emerald-600 disabled:bg-gray-500"
+                >
+                  {watchlistStatus === "checking" ? "Checking Watchlist..."
+                    : watchlistStatus === "adding" ? "Adding to Watchlist..."
+                      : watchlistStatus === "already-added" ? "Already on Watchlist"
+                        : "Add to Watchlist"}
+                </button>
+                {watchlistError && <p className="mt-2 text-sm text-red-300">{watchlistError}</p>}
               </div>
             )}
             {/* <a
