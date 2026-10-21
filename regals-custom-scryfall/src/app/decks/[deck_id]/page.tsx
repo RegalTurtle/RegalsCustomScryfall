@@ -1124,6 +1124,7 @@ export default function Decks() {
           piles={wishPiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+wishlist+${deckId}`)}
           setHoveredCard={setHoveredCard}
+          highlightCardNames={deck.format.trim().toLowerCase() === "edh" ? mainDeckCardNames : []}
           ownedCardKeys={ownedMaybeboardKeys}
           ownedCardLocations={ownedMaybeboardLocations}
           highlightGameChangerCards={highlightGameChangers}
