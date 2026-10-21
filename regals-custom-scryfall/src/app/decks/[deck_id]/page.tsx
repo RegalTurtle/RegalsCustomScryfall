@@ -79,11 +79,11 @@ function countCards(cards: Card[]): number {
 }
 
 function isLand(card: Card): boolean {
-  return card.type.toLowerCase().includes("land");
+  return (card.type ?? "").toLowerCase().includes("land");
 }
 
 function isSpell(card: Card): boolean {
-  const type = card.type.toLowerCase();
+  const type = (card.type ?? "").toLowerCase();
   return type.includes("instant") || type.includes("sorcery");
 }
 
@@ -117,7 +117,7 @@ function getManaCurve(cards: Card[]): ManaCurveBucket[] {
 }
 
 function getCardTypeGroup(card: Card): string {
-  const type = card.type.toLowerCase();
+  const type = (card.type ?? "").toLowerCase();
   if (type.includes("instant")) return "Instants";
   if (type.includes("sorcery")) return "Sorceries";
   if (type.includes("creature")) return "Creatures";
@@ -572,6 +572,7 @@ export default function Decks() {
 
   const deckCardNames = Array.from(new Set(deck.cards.map(card => card.name))).sort((a, b) => a.localeCompare(b));
   const mainDeckCardNames = deck.cards.map(card => card.name);
+  const isEdhDeck = (deck.format ?? "").trim().toLowerCase() === "edh";
   const plannedSwapInCardNames = deck.changes
     .map(change => change.cardIn)
     .filter((cardName): cardName is string => Boolean(cardName?.trim()));
@@ -738,7 +739,7 @@ export default function Decks() {
         <div className="text-center mx-auto">
           <h1 className="text-xl font-bold">{deck.name}</h1>
           <p>Owner: {deck.owner}</p>
-          <p>Format: {deck.format}</p>
+          <p>Format: {deck.format ?? "Unknown"}</p>
         </div>
 
         {/* Settings Button on the Right */}
@@ -1097,7 +1098,7 @@ export default function Decks() {
           piles={maybePiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+maybeboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
-          highlightCardNames={deck.format.trim().toLowerCase() === "edh" ? mainDeckCardNames : []}
+          highlightCardNames={isEdhDeck ? mainDeckCardNames : []}
           highlightGreenCardNames={plannedSwapInCardNames}
           highlightGameChangerCards={highlightGameChangers}
           gameChangerCardKeys={gameChangerCardKeys}
@@ -1128,7 +1129,7 @@ export default function Decks() {
           piles={wishPiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+wishlist+${deckId}`)}
           setHoveredCard={setHoveredCard}
-          highlightCardNames={deck.format.trim().toLowerCase() === "edh" ? mainDeckCardNames : []}
+          highlightCardNames={isEdhDeck ? mainDeckCardNames : []}
           highlightGreenCardNames={plannedSwapInCardNames}
           ownedCardKeys={ownedMaybeboardKeys}
           ownedCardLocations={ownedMaybeboardLocations}
@@ -1217,7 +1218,7 @@ export default function Decks() {
                             <span className="text-right text-teal-100/70">{card.quant}</span>
                             <span className="font-medium text-white">{card.name}</span>
                             <span className="rounded bg-teal-100/10 px-2 py-0.5 text-xs text-teal-100/80">
-                              {card.type.split(" - ")[0]}
+                              {(card.type ?? "Unknown").split(" - ")[0]}
                             </span>
                           </button>
                         ))}

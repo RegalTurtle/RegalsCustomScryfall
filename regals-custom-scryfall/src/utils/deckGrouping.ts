@@ -17,7 +17,7 @@ export function sortCardsByMode(cards: Card[], mode: CardSortMode): Card[] {
 }
 
 function getCardTypeGroup(card: Card): string {
-  const type = card.type.toLowerCase();
+  const type = (card.type ?? "").toLowerCase();
   if (type.includes("instant")) return "Instants";
   if (type.includes("sorcery")) return "Sorceries";
   if (type.includes("creature")) return "Creatures";
