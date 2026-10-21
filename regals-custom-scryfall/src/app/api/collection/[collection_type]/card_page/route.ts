@@ -17,8 +17,9 @@ export async function GET(
       return new NextResponse("collection_type invalid", { status: 400 });
     }
 
-    // Gets a page of cards from only those cards that are in my bulk
-    let allCards = await cardsData.getPageOfCards(1, collection_type);
+    const allCards = collection_type === "watchlist"
+      ? await cardsData.getAllCards(collection_type)
+      : await cardsData.getPageOfCards(1, collection_type);
 
     return NextResponse.json(allCards);
   } catch (error) {

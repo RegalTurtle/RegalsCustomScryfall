@@ -77,6 +77,11 @@ const getPageOfCards = async ( page: number, collection_type: CardCollectionType
   return cardPage;
 }
 
+const getAllCards = async (collection_type: CardCollectionType): Promise<Array<Card>> => {
+  const cardCollection = await getCardCollection(collection_type);
+  return await cardCollection.find().sort({ updatedAt: -1 }).toArray();
+}
+
 const getCardCollection = async (collection_type: CardCollectionType): Promise<Collection<Card>> => {
   if (collection_type === "bulk") {
     return await bulkCards();
@@ -426,5 +431,6 @@ export default {
   removeCard,
   addCard,
   countAllCards,
-  getPageOfCards
+  getPageOfCards,
+  getAllCards
 }
