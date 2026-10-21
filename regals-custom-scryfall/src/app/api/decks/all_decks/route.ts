@@ -3,7 +3,7 @@ import deckData from "@/data/decks";
 
 export async function GET(): Promise<NextResponse> {
   try {
-    const allDecks = await deckData.getAllDecks();
+    const allDecks = await deckData.getDeckOverviews();
 
     if (!allDecks) return NextResponse.json({ error: `No decks found` }, { status: 400 });
 

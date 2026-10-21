@@ -12,6 +12,11 @@ type GameFilters = {
   limit?: number;
 };
 
+export type DeckGameOverviewStats = {
+  gamesPlayed: number;
+  winPercent: number | null;
+};
+
 function verifyGameResult(result: string): GameResult {
   result = validation.verifyStr(result, "result").toLowerCase();
   if (result !== "win" && result !== "loss" && result !== "tie") throw new Error("result must be win, loss, or tie");
@@ -68,6 +73,36 @@ const getGames = async (filters: GameFilters = {}): Promise<SerializedGame[]> =>
   ).toArray();
 
   return foundGames.map(serializeGame);
+};
+
+const getDeckOverviewStats = async (): Promise<Record<string, DeckGameOverviewStats>> => {
+  const gameCollection: Collection<Game> = await games();
+  const groupedGames = await gameCollection.aggregate<{
+    _id: ObjectId;
+    gamesPlayed: number;
+    wins: number;
+  }>([
+    { $match: { deckId: { $exists: true, $ne: null } } },
+    {
+      $group: {
+        _id: "$deckId",
+        gamesPlayed: { $sum: 1 },
+        wins: {
+          $sum: {
+            $cond: [{ $eq: ["$result", "win"] }, 1, 0],
+          },
+        },
+      },
+    },
+  ]).toArray();
+
+  return Object.fromEntries(groupedGames.map(stats => [
+    stats._id.toString(),
+    {
+      gamesPlayed: stats.gamesPlayed,
+      winPercent: stats.gamesPlayed > 0 ? (stats.wins / stats.gamesPlayed) * 100 : null,
+    },
+  ]));
 };
 
 const addGame = async (input: GameCreateInput): Promise<string> => {
@@ -235,6 +270,7 @@ function getGameStats(gameList: SerializedGame[]): GameStats {
 
 export default {
   getGames,
+  getDeckOverviewStats,
   addGame,
   updateGame,
   deleteGame,

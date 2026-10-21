@@ -1,7 +1,7 @@
 "use client";
 import authorization from "@/authorization";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
-import { Deck, SerializedGame } from "@/types";
+import { Deck } from "@/types";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -173,7 +173,7 @@ export default function Decks() {
 
   // Deck information
   const [ decks, setDecks ] = useState<Deck[]>([]);
-  const [ games, setGames ] = useState<SerializedGame[]>([]);
+  const [ deckStats, setDeckStats ] = useState<Record<string, DeckOverviewStats>>({});
   const [ loadingDecks, setLoadingDecks ] = useState<boolean>(true);
   const [ formatFilter, setFormatFilter ] = useState("EDH");
   const [ sortBy, setSortBy ] = useState("name-asc");
@@ -181,43 +181,28 @@ export default function Decks() {
   useEffect(() => {
     async function fetchDecks() {
       try {
-        const [decksRes, gamesRes] = await Promise.all([
-          fetch("/api/decks/all_decks"),
-          fetch("/api/games"),
-        ]);
+        const decksRes = await fetch("/api/decks/all_decks");
+        if (!decksRes.ok) throw new Error("Failed to fetch decks");
         const { allDecks } = await decksRes.json();
-        const { games } = await gamesRes.json();
         setDecks(allDecks);
-        setGames(games ?? []);
       } catch(error) {
         console.error("Failed to fetch decks", error);
       } finally {
         setLoadingDecks(false);
       }
+
+      try {
+        const statsRes = await fetch("/api/games/overview");
+        if (!statsRes.ok) throw new Error("Failed to fetch deck game stats");
+        const { deckStats: overviewStats } = await statsRes.json();
+        setDeckStats(overviewStats ?? {});
+      } catch (error) {
+        console.error("Failed to fetch deck game stats", error);
+      }
     }
 
     fetchDecks();
   }, []);
-
-  const deckStats = useMemo(() => {
-    return games.reduce<Record<string, DeckOverviewStats>>((statsByDeck, game) => {
-      if (!game.deckId) return statsByDeck;
-
-      const stats = statsByDeck[game.deckId] ?? { gamesPlayed: 0, winPercent: null };
-      const winsSoFar = stats.winPercent === null
-        ? 0
-        : (stats.winPercent / 100) * stats.gamesPlayed;
-      const gamesPlayed = stats.gamesPlayed + 1;
-      const wins = winsSoFar + (game.result === "win" ? 1 : 0);
-
-      statsByDeck[game.deckId] = {
-        gamesPlayed,
-        winPercent: (wins / gamesPlayed) * 100,
-      };
-
-      return statsByDeck;
-    }, {});
-  }, [games]);
 
   const formats = useMemo(() => {
     return Array.from(new Set(decks.map(deck => deck.format).filter(Boolean))).sort((a, b) => a.localeCompare(b));

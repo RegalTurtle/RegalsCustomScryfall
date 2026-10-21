@@ -85,6 +85,22 @@ const getAllDecks = async () => {
   return allDecks;
 }
 
+const getDeckOverviews = async () => {
+  const deckCollection: Collection<Deck> = await decks();
+
+  return await deckCollection.find({}, {
+    projection: {
+      cards: 0,
+      changes: 0,
+      notes: 0,
+      sideboard: 0,
+      maybeboard: 0,
+      wishlist: 0,
+      games: 0,
+    },
+  }).toArray();
+}
+
 const updateDeckSettings = async (
   deckId: string,
   name: string,
@@ -788,6 +804,7 @@ export default {
   addDeck,
   findDeckByMongoId,
   getAllDecks,
+  getDeckOverviews,
   updateDeckSettings,
   setTags,
   moveCardCopies,
