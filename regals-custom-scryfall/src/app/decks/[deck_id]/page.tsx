@@ -78,10 +78,6 @@ function countCards(cards: Card[]): number {
   return cards.reduce((sum, card) => sum + card.quant, 0);
 }
 
-function cardKey(card: Card): string {
-  return `${card.set}|${card.cn}`;
-}
-
 function isLand(card: Card): boolean {
   return card.type.toLowerCase().includes("land");
 }
@@ -575,7 +571,7 @@ export default function Decks() {
   };
 
   const deckCardNames = Array.from(new Set(deck.cards.map(card => card.name))).sort((a, b) => a.localeCompare(b));
-  const mainDeckCardKeys = deck.cards.map(cardKey);
+  const mainDeckCardNames = deck.cards.map(card => card.name);
   const maybeboardCardNames = Array.from(new Set([
     ...deck.maybeboard.map(card => card.name),
     ...deck.wishlist.map(card => card.name),
@@ -1098,7 +1094,7 @@ export default function Decks() {
           piles={maybePiles}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+maybeboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
-          highlightCardKeys={deck.format.toLowerCase() === "edh" ? mainDeckCardKeys : []}
+          highlightCardNames={deck.format.trim().toLowerCase() === "edh" ? mainDeckCardNames : []}
           highlightGameChangerCards={highlightGameChangers}
           gameChangerCardKeys={gameChangerCardKeys}
         /> 

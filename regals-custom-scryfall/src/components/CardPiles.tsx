@@ -12,7 +12,7 @@ export default function CardPiles({
   ownedCardLocations = {},
   highlightGameChangerCards = false,
   gameChangerCardKeys = new Set<string>(),
-  highlightCardKeys = [],
+  highlightCardNames = [],
 }: { 
   piles: CardPile[], 
   setSelectedCard: (card: Card) => void,
@@ -23,13 +23,13 @@ export default function CardPiles({
   ownedCardLocations?: Record<string, string[]>,
   highlightGameChangerCards?: boolean,
   gameChangerCardKeys?: Set<string>,
-  highlightCardKeys?: string[],
+  highlightCardNames?: string[],
 }) {
   const cardOffset = 32;
   const cardHeight = 279;
   const availableProxyKeySet = new Set(availableProxyKeys);
   const ownedCardKeySet = new Set(ownedCardKeys);
-  const highlightedCardKeySet = new Set(highlightCardKeys);
+  const highlightedCardNameSet = new Set(highlightCardNames.map(name => name.trim().toLowerCase()));
 
   return (
     <div className="w-55 sm:w-107 md:w-159 lg:w-211 xl:w-315 2xl:w-367 mx-auto">
@@ -52,7 +52,7 @@ export default function CardPiles({
               >
                 {pile.cards.map((card, index) => {
                   const isGameChangerCard = highlightGameChangerCards && gameChangerCardKeys.has(cardKey(card));
-                  const isHighlightedCard = highlightedCardKeySet.has(cardKey(card));
+                  const isHighlightedCard = highlightedCardNameSet.has(card.name.trim().toLowerCase());
 
                   return (
                   <div
