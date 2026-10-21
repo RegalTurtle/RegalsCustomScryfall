@@ -1,6 +1,7 @@
 import { Card, FoilOption } from "@/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 type CardDeckUsage = {
   deckId: string;
@@ -45,6 +46,7 @@ const CardsWithSearch = ({
   sendUpdate,
   collection_type
 }: CardsWithSearchProps) => {
+  const { data: session } = useSession();
   const [ cards, setCards ] = useState<Card[]>([]);
   const [ loading, setLoading ] = useState<boolean>(true);
   const [ selectedCard, setSelectedCard ] = useState<Card | null>(null);
@@ -416,7 +418,9 @@ const CardsWithSearch = ({
                 )}
               </div>
 
-              <div className="w-full rounded bg-gray-700 p-3 flex flex-col gap-2">
+               {session ? (
+                 <>
+               <div className="w-full rounded bg-gray-700 p-3 flex flex-col gap-2">
                 <label className="text-sm">Transfer to:</label>
                 <select
                   value={transferTarget}
@@ -450,7 +454,7 @@ const CardsWithSearch = ({
                   {transferring ? "Transferring..." : "Transfer"}
                 </button>
                 {transferError && <p className="text-sm text-red-300">{transferError}</p>}
-              </div>
+               </div>
 
               <div className="mt-3 w-full rounded bg-gray-700 p-3 flex flex-col gap-2">
                 <label className="text-sm">Change finish to:</label>
@@ -506,8 +510,14 @@ const CardsWithSearch = ({
                   {removingCard ? "Removing..." : "Remove Cards"}
                 </button>
                 {removeError && <p className="mt-2 text-sm text-red-300">{removeError}</p>}
-              </div>
-            </div>
+               </div>
+             </>
+             ) : (
+               <p className="w-full rounded bg-gray-700 p-3 text-center text-sm text-gray-200">
+                 Sign in to transfer, change finishes, or remove cards.
+               </p>
+             )}
+             </div>
           </div>
         </div>
       )}

@@ -1,5 +1,6 @@
 import { Card, CollectionTypeOption, FoilOption } from "@/types";
 import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
+import { useSession } from "next-auth/react";
 import { Dispatch, KeyboardEvent as ReactKeyboardEvent, SetStateAction, useEffect, useRef } from "react";
 import { useState } from "react";
 
@@ -98,6 +99,7 @@ export default function CardEditModal({
   deckId: string;
   collectionType: CollectionTypeOption;
 }) {
+  const { data: session } = useSession();
   // Inside CardEditModal
   const [tags, setTags] = useState<string[]>(card.tag ?? []);
   const [newTag, setNewTag] = useState("");
@@ -530,7 +532,7 @@ export default function CardEditModal({
   }, [card, collectionType]);
 
   useEffect(() => {
-    if (!isDeckCard) return;
+    if (!isDeckCard || !session) return;
 
     let cancelled = false;
     checkWatchlist()
@@ -546,9 +548,14 @@ export default function CardEditModal({
     return () => {
       cancelled = true;
     };
-  }, [card.name, isDeckCard]);
+  }, [card.name, isDeckCard, session]);
 
   useEffect(() => {
+    if (!session) {
+      setLoadingPrice(false);
+      return;
+    }
+
     const cardToPrice = card;
 
     async function fetchPrice() {
@@ -586,7 +593,7 @@ export default function CardEditModal({
     }
 
     fetchPrice();
-  }, [card]);
+  }, [card, session]);
 
   useEffect(() => {
     loadPrintingOptions();
@@ -619,7 +626,12 @@ export default function CardEditModal({
             {displayPrice(card, cardPrice, loadingPrice, priceError)}
           </p>
 
-          <div className="space-y-2 w-full">
+           {!session ? (
+             <p className="w-full rounded bg-gray-700 p-3 text-center text-sm text-gray-200">
+               Sign in to edit cards, move cards, change printings, or manage your watchlist.
+             </p>
+           ) : (
+           <div className="space-y-2 w-full">
             {card.proxy && (
               <a
                 href={bellevueKioskSearchUrl(card.name)}
@@ -640,9 +652,9 @@ export default function CardEditModal({
                       {tag}
                       <button onClick={() => removeTag(tag)} className="text-xs text-red-300">✕</button>
                     </span>
-                  ))}
-                </div>
-              </div>
+                   ))}
+                 </div>
+               </div>
 
               {/* Tag adding */}
               <div className="flex gap-2 mb-4">
@@ -660,9 +672,9 @@ export default function CardEditModal({
                   className="bg-green-700 hover:bg-green-600 px-3 py-1 rounded text-sm"
                 >
                   Add
-                </button>
-              </div>
-            </div>
+                 </button>
+               </div>
+             </div>
 
             {!card.proxy && (
               <div className="w-full rounded bg-gray-700 p-3">
@@ -710,9 +722,9 @@ export default function CardEditModal({
                     </button>
                   </>
                 )}
-                {versionError && <p className="mt-2 text-sm text-red-300">{versionError}</p>}
-              </div>
-            </div>
+                 {versionError && <p className="mt-2 text-sm text-red-300">{versionError}</p>}
+               </div>
+             </div>
 
             <div className="w-full rounded bg-gray-700 p-3">
               {ownedVersions.length === 0 ? (
@@ -873,9 +885,10 @@ export default function CardEditModal({
               className="w-full block text-center bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded"
             >
               Buy on Card Kingdom
-            </a> */}
-          </div>
-        </div>
+             </a> */}
+           </div>
+           )}
+         </div>
       </div>
     </div>
   );
