@@ -572,6 +572,9 @@ export default function Decks() {
 
   const deckCardNames = Array.from(new Set(deck.cards.map(card => card.name))).sort((a, b) => a.localeCompare(b));
   const mainDeckCardNames = deck.cards.map(card => card.name);
+  const plannedSwapInCardNames = deck.changes
+    .map(change => change.cardIn)
+    .filter((cardName): cardName is string => Boolean(cardName?.trim()));
   const maybeboardCardNames = Array.from(new Set([
     ...deck.maybeboard.map(card => card.name),
     ...deck.wishlist.map(card => card.name),
@@ -1095,6 +1098,7 @@ export default function Decks() {
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+maybeboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
           highlightCardNames={deck.format.trim().toLowerCase() === "edh" ? mainDeckCardNames : []}
+          highlightGreenCardNames={plannedSwapInCardNames}
           highlightGameChangerCards={highlightGameChangers}
           gameChangerCardKeys={gameChangerCardKeys}
         /> 
@@ -1125,6 +1129,7 @@ export default function Decks() {
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+wishlist+${deckId}`)}
           setHoveredCard={setHoveredCard}
           highlightCardNames={deck.format.trim().toLowerCase() === "edh" ? mainDeckCardNames : []}
+          highlightGreenCardNames={plannedSwapInCardNames}
           ownedCardKeys={ownedMaybeboardKeys}
           ownedCardLocations={ownedMaybeboardLocations}
           highlightGameChangerCards={highlightGameChangers}
