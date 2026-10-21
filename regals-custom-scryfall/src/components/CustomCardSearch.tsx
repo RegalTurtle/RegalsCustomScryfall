@@ -39,35 +39,35 @@ export default function CustomCardSearch({ initialQuery = "" }: Props) {
   }
 
   return (
-    <div className="w-full max-w-6xl">
-      <form onSubmit={submit} className="mx-auto mb-8 flex w-full max-w-3xl gap-2">
+    <div className="mx-auto w-full max-w-6xl">
+      <form onSubmit={submit} className="mx-auto mb-10 flex w-full max-w-3xl gap-2">
         <input
           value={query}
           onChange={event => setQuery(event.target.value)}
           placeholder='Search cards, or use filters like t:creature s:mtd cmc<3'
-          className="min-w-0 flex-1 rounded-lg border border-teal-300 bg-teal-950 px-4 py-3 text-white outline-none focus:border-indigo-400"
+          className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-4 py-3 text-slate-800 shadow-sm outline-none placeholder:text-slate-400 focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
           aria-label="Search custom cards"
         />
-        <button type="submit" className="rounded-lg bg-indigo-600 px-5 py-3 text-white hover:bg-indigo-700">
+        <button type="submit" className="rounded-md bg-sky-600 px-5 py-3 font-medium text-white shadow-sm hover:bg-sky-700">
           Search
         </button>
       </form>
 
-      {loading && <p className="text-center text-teal-100">Searching...</p>}
-      {error && <p className="text-center text-red-300">{error}</p>}
-      {!loading && !error && query && cards.length === 0 && <p className="text-center text-teal-100">No cards found.</p>}
+      {loading && <p className="text-center text-slate-500">Searching...</p>}
+      {error && <p className="text-center text-red-600">{error}</p>}
+      {!loading && !error && query && cards.length === 0 && <p className="text-center text-slate-500">No cards found.</p>}
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div className="grid grid-cols-2 justify-center gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {cards.map(card => (
           <Link
             key={`${card.set}-${card.cn}`}
             href={`/custom/card/${encodeURIComponent(card.set)}/${card.cn}`}
-            className="group overflow-hidden rounded-xl bg-teal-950/60 shadow-lg transition hover:-translate-y-1 hover:ring-2 hover:ring-indigo-400"
+            className="group overflow-hidden rounded-lg border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:border-sky-400 hover:shadow-lg"
           >
             <img src={card.img} alt={`${card.name} (${card.set}${card.cn})`} className="aspect-[5/7] w-full object-cover" loading="lazy" />
             <div className="p-2 text-left">
-              <p className="truncate font-semibold text-white">{card.name}</p>
-              <p className="text-sm text-teal-200">{card.set}{card.cn}</p>
+              <p className="truncate font-semibold text-slate-800">{card.name}</p>
+              <p className="text-sm text-slate-500">{card.set}{card.cn}</p>
             </div>
           </Link>
         ))}
