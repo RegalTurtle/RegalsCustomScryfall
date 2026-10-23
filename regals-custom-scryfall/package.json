@@ -1,0 +1,31 @@
+{
+  "name": "regals-custom-scryfall",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrate:custom-cards": "tsx src/scripts/migrateCustomCards.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "eslint-config-next": "^16.3.5",
+    "mongodb": "^6.16.0",
+    "next": "^16.3.5",
+    "next-auth": "^4.24.15",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.3"
+  }
+}

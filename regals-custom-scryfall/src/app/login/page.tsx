@@ -1,0 +1,59 @@
+"use client";
+
+import { signIn } from "next-auth/react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
+
+function LoginForm() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const searchParams = useSearchParams();
+  const error = searchParams.get("error");
+
+  const errorMessage = {
+    CredentialsSignin: "Invalid username or password.",
+    default: "An unexpected error occurred. Please try again.",
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // res here if we want to check the result of signIn
+    const res = await signIn("credentials", {
+      username,
+      password,
+      redirect: true,
+      callbackUrl: "/", // Redirect on success, back to home page
+    });
+
+    // Optional: handle errors here
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-sm mx-auto mt-10">
+      {error && (
+        <div className="text-red-600 mb-4">
+          {errorMessage[error as keyof typeof errorMessage] || errorMessage.default}
+        </div>
+      )}
+
+      <div>
+        <label>Username:</label>
+        <input type="username" onChange={(e) => setUsername(e.target.value)} required />
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" onChange={(e) => setPassword(e.target.value)} required />
+      </div>
+      <button type="submit">Sign in</button>
+    </form>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={null}>
+      <LoginForm />
+    </Suspense>
+  );
+}

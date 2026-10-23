@@ -1,0 +1,895 @@
+import { Card, CollectionTypeOption, FoilOption } from "@/types";
+import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
+import { useSession } from "next-auth/react";
+import { Dispatch, KeyboardEvent as ReactKeyboardEvent, SetStateAction, useEffect, useRef } from "react";
+import { useState } from "react";
+
+type OwnedVersion = Card & {
+  _id: string;
+  collection: "bulk" | "cool-cards" | "trade-binder";
+  collectionLabel: string;
+};
+
+type CardPrice = {
+  usd?: string | null;
+  usd_foil?: string | null;
+  usd_etched?: string | null;
+  eur?: string | null;
+  tix?: string | null;
+  cheapest?: {
+    usd?: string | null;
+    usd_foil?: string | null;
+    usd_etched?: string | null;
+    eur?: string | null;
+    tix?: string | null;
+  } | null;
+};
+
+type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
+type WatchlistStatus = "checking" | "available" | "already-added" | "adding" | "error";
+
+const deckSectionLabels: Record<DeckSection, string> = {
+  cards: "Decklist",
+  sideboard: "Sideboard",
+  maybeboard: "Physical Maybeboard",
+  wishlist: "Online Maybeboard",
+};
+
+function getDeckSection(collectionType: CollectionTypeOption): DeckSection {
+  const section = collectionType.split("+")[1];
+
+  if (section === "sideboard" || section === "maybeboard" || section === "wishlist") {
+    return section;
+  }
+
+  return "cards";
+}
+
+function displayPrice(card: Card, cardPrice: CardPrice | null, loadingPrice: boolean, priceError: string) {
+  if (loadingPrice) return "Loading price...";
+  if (priceError) return priceError;
+  if (!cardPrice) return "Price unavailable";
+
+  const finish = card.foil === "foil" ? "foil" : card.foil === "etched" ? "etched" : "nonfoil";
+  const currentValue = finish === "foil"
+    ? cardPrice.usd_foil ?? cardPrice.usd ?? null
+    : finish === "etched"
+      ? cardPrice.usd_etched ?? cardPrice.usd ?? null
+      : cardPrice.usd ?? cardPrice.usd_foil ?? cardPrice.usd_etched ?? null;
+  const cheapestValue = finish === "foil"
+    ? cardPrice.cheapest?.usd_foil ?? cardPrice.cheapest?.usd ?? null
+    : finish === "etched"
+      ? cardPrice.cheapest?.usd_etched ?? cardPrice.cheapest?.usd ?? null
+      : cardPrice.cheapest?.usd ?? cardPrice.cheapest?.usd_foil ?? cardPrice.cheapest?.usd_etched ?? null;
+
+  if (currentValue) {
+    const currentText = `$${Number(currentValue).toFixed(2)}${finish === "nonfoil" ? "" : ` ${finish}`}`;
+    if (cheapestValue && Number(cheapestValue) < Number(currentValue)) {
+      return `Current: ${currentText} • Cheapest: $${Number(cheapestValue).toFixed(2)}`;
+    }
+    return `Current: ${currentText}`;
+  }
+
+  if (cardPrice.usd) return `$${cardPrice.usd}`;
+  if (cardPrice.usd_foil) return `$${cardPrice.usd_foil} foil`;
+  if (cardPrice.usd_etched) return `$${cardPrice.usd_etched} etched`;
+  if (cardPrice.eur) return `EUR ${cardPrice.eur}`;
+  if (cardPrice.tix) return `${cardPrice.tix} tix`;
+
+  return "Price unavailable";
+}
+
+function bellevueKioskSearchUrl(cardName: string) {
+  const frontFaceName = cardName.split(" // ")[0].trim();
+  return `https://mbhbellevue.mtgkiosk.com/catalog/search?search=header&filter%5Bname%5D=${encodeURIComponent(frontFaceName)}`;
+}
+
+export default function CardEditModal({
+  card,
+  onClose,
+  update, 
+  sendUpdate,
+  deckId,
+  collectionType,
+}: {
+  card: Card;
+  onClose: () => void;
+  update: number;
+  sendUpdate: Dispatch<SetStateAction<number>>;
+  deckId: string;
+  collectionType: CollectionTypeOption;
+}) {
+  const { data: session } = useSession();
+  // Inside CardEditModal
+  const [tags, setTags] = useState<string[]>(card.tag ?? []);
+  const [newTag, setNewTag] = useState("");
+  const newTagRef = useRef<HTMLInputElement>(null);
+  const [ownedVersions, setOwnedVersions] = useState<OwnedVersion[]>([]);
+  const [selectedOwnedVersion, setSelectedOwnedVersion] = useState("");
+  const [returnCollection, setReturnCollection] = useState<"bulk" | "cool-cards" | "none">("bulk");
+  const [hasLoadedOwnedVersions, setHasLoadedOwnedVersions] = useState(false);
+  const [loadingOwnedVersions, setLoadingOwnedVersions] = useState(false);
+  const [printingOptions, setPrintingOptions] = useState<Array<{ set: string; cn: string; foil: FoilOption; image: string; label: string }>>([]);
+  const [selectedPrinting, setSelectedPrinting] = useState("");
+  const [loadingPrintings, setLoadingPrintings] = useState(false);
+  const [versionError, setVersionError] = useState("");
+  const [changingVersion, setChangingVersion] = useState(false);
+  const [swapError, setSwapError] = useState("");
+  const [removeQuant, setRemoveQuant] = useState(1);
+  const [removingCopies, setRemovingCopies] = useState(false);
+  const [removeCopiesError, setRemoveCopiesError] = useState("");
+  const [moveQuant, setMoveQuant] = useState(1);
+  const [moveTargetSection, setMoveTargetSection] = useState<DeckSection>("wishlist");
+  const [movingCopies, setMovingCopies] = useState(false);
+  const [moveCopiesError, setMoveCopiesError] = useState("");
+  const [makingProxy, setMakingProxy] = useState(false);
+  const [makeProxyError, setMakeProxyError] = useState("");
+  const [proxyImageFile, setProxyImageFile] = useState<File | null>(null);
+  const [uploadingProxyImage, setUploadingProxyImage] = useState(false);
+  const [proxyImageError, setProxyImageError] = useState("");
+  const [cardPrice, setCardPrice] = useState<CardPrice | null>(null);
+  const [loadingPrice, setLoadingPrice] = useState(false);
+  const [priceError, setPriceError] = useState("");
+  const [watchlistStatus, setWatchlistStatus] = useState<WatchlistStatus>("checking");
+  const [watchlistError, setWatchlistError] = useState("");
+  const sourceSection = getDeckSection(collectionType);
+  const isDeckCard = collectionType.startsWith("decks+");
+  const moveTargetOptions = (Object.keys(deckSectionLabels) as DeckSection[])
+    .filter(section => section !== sourceSection);
+
+  const addTag = async () => {
+    if (!newTag.trim() || tags.includes(newTag)) return;
+    const updatedTags = [...tags, newTag.trim()];
+    const _res = await fetch(`/api/decks/${deckId}/change_tags`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        set: card.set,
+        cn: card.cn,
+        updatedTags,
+        collectionType,
+      }),
+    });
+    setTags(updatedTags);
+    setNewTag("");
+    sendUpdate(update + 1);
+    newTagRef.current?.focus();
+  };
+
+  const handleNewTagKeyDown = (e: ReactKeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    addTag();
+  };
+
+  const loadOwnedVersions = async () => {
+    setLoadingOwnedVersions(true);
+    setSwapError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/owned_versions?name=${encodeURIComponent(card.name)}`);
+      if (!res.ok) throw new Error("Could not load owned copies");
+      const { ownedVersions } = await res.json();
+      setOwnedVersions(ownedVersions);
+      setSelectedOwnedVersion(ownedVersions[0] ? `${ownedVersions[0].collection}|${ownedVersions[0]._id}` : "");
+      setReturnCollection(
+        ownedVersions[0]?.collection === "bulk" || ownedVersions[0]?.collection === "cool-cards"
+          ? ownedVersions[0].collection
+          : "none"
+      );
+      setHasLoadedOwnedVersions(true);
+    } catch (error) {
+      setSwapError(error instanceof Error ? error.message : "Could not load owned copies");
+    } finally {
+      setLoadingOwnedVersions(false);
+    }
+  };
+
+  const loadPrintingOptions = async () => {
+    setLoadingPrintings(true);
+    setVersionError("");
+
+    try {
+      const params = new URLSearchParams({
+        q: `!\"${card.name}\"`,
+        unique: "prints",
+        order: "released",
+        dir: "asc",
+      });
+
+      const { res, data } = await fetchScryfallJson<{ data: Array<{ name: string; set: string; collector_number: string; finishes: string[]; image_uris?: { normal?: string }; card_faces?: Array<{ image_uris?: { normal?: string } }> }> }>(
+        `https://api.scryfall.com/cards/search?${params.toString()}`,
+        {
+          headers: {
+            "User-Agent": "RegalTurtlesMagic/1.0",
+            "Accept": "application/json",
+          },
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error("Could not load versions");
+      }
+
+      const options = (data.data ?? [])
+        .flatMap((printing) => {
+          const image = printing.image_uris?.normal ?? printing.card_faces?.[0]?.image_uris?.normal ?? "";
+          const finishes = printing.finishes?.length ? printing.finishes : ["nonfoil"];
+
+          return finishes.map((finish) => ({
+            set: printing.set,
+            cn: printing.collector_number,
+            foil: finish as FoilOption,
+            image,
+            label: `${printing.set.toUpperCase()} ${printing.collector_number}${finish !== "nonfoil" ? ` (${finish})` : ""}`,
+          }));
+        });
+
+      setPrintingOptions(options);
+      const currentOption = options.find(option => option.set === card.set && option.cn === card.cn && option.foil === card.foil)
+        ?? options[0];
+      setSelectedPrinting(currentOption ? `${currentOption.set}|${currentOption.cn}|${currentOption.foil}` : "");
+    } catch (error) {
+      setVersionError(error instanceof Error ? error.message : "Could not load versions");
+    } finally {
+      setLoadingPrintings(false);
+    }
+  };
+
+  const changeCardVersion = async () => {
+    if (!selectedPrinting) return;
+    const [targetSet, targetCn, targetFoil] = selectedPrinting.split("|");
+    setVersionError("");
+    setChangingVersion(true);
+
+    try {
+      const selectedOption = printingOptions.find(option =>
+        option.set === targetSet && option.cn === targetCn && option.foil === targetFoil
+      );
+
+      const res = await fetch(`/api/decks/${deckId}/replace_proxy`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          originalSet: card.set,
+          originalCn: card.cn,
+          deckSection: sourceSection,
+          replacementSet: targetSet,
+          replacementCn: targetCn,
+          replacementFoil: targetFoil,
+          replacementImage: selectedOption?.image ?? card.image,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not change card version");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setVersionError(error instanceof Error ? error.message : "Could not change card version");
+    } finally {
+      setChangingVersion(false);
+    }
+  };
+
+  const replaceCard = async () => {
+    if (!selectedOwnedVersion) return;
+    const [collection, collectionCardId] = selectedOwnedVersion.split("|");
+    setSwapError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/replace_proxy`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          originalSet: card.set,
+          originalCn: card.cn,
+          collection,
+          collectionCardId,
+          returnCollection: card.proxy ? undefined : returnCollection,
+          deckSection: sourceSection,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not replace card");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setSwapError(error instanceof Error ? error.message : "Could not replace card");
+    }
+  };
+
+  const removeTag = async (tagToRemove: string) => {
+    const updatedTags = tags.filter(t => t !== tagToRemove);
+    const _res = await fetch(`/api/decks/${deckId}/change_tags`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        set: card.set,
+        cn: card.cn,
+        updatedTags,
+        collectionType,
+      }),
+    });
+    setTags(updatedTags);
+    sendUpdate(update + 1);
+  };
+
+  const removeCopies = async () => {
+    setRemovingCopies(true);
+    setRemoveCopiesError("");
+
+    try {
+      const res = await fetch(`/api/collection/${collectionType}/add_card`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...card,
+          quant: -removeQuant,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not remove copies");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setRemoveCopiesError(error instanceof Error ? error.message : "Could not remove copies");
+    } finally {
+      setRemovingCopies(false);
+    }
+  };
+
+  const moveCopies = async () => {
+    setMovingCopies(true);
+    setMoveCopiesError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/move_card`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sourceSection,
+          targetSection: moveTargetSection,
+          set: card.set,
+          cn: card.cn,
+          foil: card.foil,
+          proxy: card.proxy,
+          quant: moveQuant,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not move copies");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setMoveCopiesError(error instanceof Error ? error.message : "Could not move copies");
+    } finally {
+      setMovingCopies(false);
+    }
+  };
+
+  const makeProxy = async () => {
+    setMakingProxy(true);
+    setMakeProxyError("");
+
+    try {
+      const res = await fetch(`/api/decks/${deckId}/make_proxy`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          deckSection: sourceSection,
+          set: card.set,
+          cn: card.cn,
+          foil: card.foil,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not make proxy");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setMakeProxyError(error instanceof Error ? error.message : "Could not make proxy");
+    } finally {
+      setMakingProxy(false);
+    }
+  };
+
+  const uploadProxyImage = async () => {
+    if (!proxyImageFile) return;
+    setUploadingProxyImage(true);
+    setProxyImageError("");
+
+    try {
+      const formData = new FormData();
+      formData.append("image", proxyImageFile);
+      formData.append("deckSection", sourceSection);
+      formData.append("set", card.set);
+      formData.append("cn", card.cn);
+      formData.append("foil", card.foil);
+
+      const res = await fetch(`/api/decks/${deckId}/proxy_image`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not upload proxy image");
+      }
+
+      sendUpdate(update + 1);
+      onClose();
+    } catch (error) {
+      setProxyImageError(error instanceof Error ? error.message : "Could not upload proxy image");
+    } finally {
+      setUploadingProxyImage(false);
+    }
+  };
+
+  const checkWatchlist = async (): Promise<boolean> => {
+    const res = await fetch("/api/collection/watchlist/card_page");
+    if (!res.ok) throw new Error("Could not check the watchlist");
+
+    const watchlistCards: Card[] = await res.json();
+    const cardName = card.name.trim().toLowerCase();
+    return watchlistCards.some(watchlistCard => watchlistCard.name.trim().toLowerCase() === cardName);
+  };
+
+  const addToWatchlist = async () => {
+    if (watchlistStatus === "checking" || watchlistStatus === "adding" || watchlistStatus === "already-added") return;
+
+    setWatchlistStatus("adding");
+    setWatchlistError("");
+
+    try {
+      if (await checkWatchlist()) {
+        setWatchlistStatus("already-added");
+        return;
+      }
+
+      const res = await fetch("/api/collection/watchlist/add_card", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...card,
+          quant: 1,
+          tag: card.tag ?? [],
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error ?? "Could not add card to watchlist");
+      }
+
+      setWatchlistStatus("already-added");
+    } catch (error) {
+      setWatchlistError(error instanceof Error ? error.message : "Could not add card to watchlist");
+      setWatchlistStatus("error");
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose(); // Trigger the close function
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown); // Clean up on unmount
+    };
+  }, [onClose]);
+
+  useEffect(() => {
+    setMoveQuant(1);
+    setRemoveQuant(1);
+    setMoveCopiesError("");
+    setRemoveCopiesError("");
+    setMakeProxyError("");
+    setProxyImageFile(null);
+    setProxyImageError("");
+    setCardPrice(null);
+    setPriceError("");
+    setWatchlistStatus("checking");
+    setWatchlistError("");
+    setMoveTargetSection(moveTargetOptions.includes("wishlist") ? "wishlist" : moveTargetOptions[0] ?? "cards");
+  }, [card, collectionType]);
+
+  useEffect(() => {
+    if (!isDeckCard || !session) return;
+
+    let cancelled = false;
+    checkWatchlist()
+      .then(alreadyAdded => {
+        if (!cancelled) setWatchlistStatus(alreadyAdded ? "already-added" : "available");
+      })
+      .catch(error => {
+        if (cancelled) return;
+        setWatchlistError(error instanceof Error ? error.message : "Could not check the watchlist");
+        setWatchlistStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [card.name, isDeckCard, session]);
+
+  useEffect(() => {
+    if (!session) {
+      setLoadingPrice(false);
+      return;
+    }
+
+    const cardToPrice = card;
+
+    async function fetchPrice() {
+      setLoadingPrice(true);
+      setCardPrice(null);
+      setPriceError("");
+
+      try {
+        const res = await fetch("/api/scryfall/card_lookup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: cardToPrice.name,
+            set: cardToPrice.set,
+            cn: cardToPrice.cn,
+          }),
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.card) {
+          throw new Error("Price unavailable");
+        }
+
+        setCardPrice({
+          ...(data.card.prices ?? null),
+          cheapest: data.cheapestPrice ?? null,
+        });
+      } catch (error) {
+        setPriceError(error instanceof Error ? error.message : "Price unavailable");
+      } finally {
+        setLoadingPrice(false);
+      }
+    }
+
+    fetchPrice();
+  }, [card, session]);
+
+  useEffect(() => {
+    loadPrintingOptions();
+  }, [card.name]);
+
+  return (
+    <div
+      className="fixed inset-0 bg-black/70 bg-opacity-60 flex justify-center items-center z-200"
+      onClick={onClose}
+    >
+      <div
+        className="collection-card-modal bg-gray-800 text-white rounded-lg shadow-lg w-[90%] max-w-md max-h-[90vh] overflow-y-auto p-4 relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className="absolute top-2 right-2 text-white text-xl cursor-pointer"
+          onClick={onClose}
+        >
+          ✕
+        </button>
+
+        <div className="flex flex-col items-center">
+          <img
+            src={card.image}
+            alt={card.name}
+            className="w-72 rounded-xl mb-4 shadow"
+          />
+          <h2 className="text-lg font-semibold mb-2">{card.name}</h2>
+          <p className="mb-3 rounded bg-gray-700 px-3 py-1 text-sm font-semibold">
+            {displayPrice(card, cardPrice, loadingPrice, priceError)}
+          </p>
+
+           {!session ? (
+             <p className="w-full rounded bg-gray-700 p-3 text-center text-sm text-gray-200">
+               Sign in to edit cards, move cards, change printings, or manage your watchlist.
+             </p>
+           ) : (
+           <div className="space-y-2 w-full">
+            {card.proxy && (
+              <a
+                href={bellevueKioskSearchUrl(card.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full rounded bg-sky-700 px-4 py-2 text-center text-sm text-white hover:bg-sky-600"
+              >
+                Search Bellevue Kiosk
+              </a>
+            )}
+            {/* Tags here */}
+            <div className="w-full">
+              <div className="mb-2">
+                <label className="block text-sm mb-1">Tags:</label>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span key={tag} className="bg-gray-600 px-2 py-1 rounded text-sm flex items-center gap-1">
+                      {tag}
+                      <button onClick={() => removeTag(tag)} className="text-xs text-red-300">✕</button>
+                    </span>
+                   ))}
+                 </div>
+               </div>
+
+              {/* Tag adding */}
+              <div className="flex gap-2 mb-4">
+                <input
+                  ref={newTagRef}
+                  type="text"
+                  value={newTag}
+                  onChange={(e) => setNewTag(e.target.value)}
+                  onKeyDown={handleNewTagKeyDown}
+                  className="flex-grow px-2 py-1 rounded bg-gray-700 text-white"
+                  placeholder="Add a tag..."
+                />
+                <button
+                  onClick={addTag}
+                  className="bg-green-700 hover:bg-green-600 px-3 py-1 rounded text-sm"
+                >
+                  Add
+                 </button>
+               </div>
+             </div>
+
+            {!card.proxy && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={makeProxy}
+                    disabled={makingProxy}
+                    className="w-full bg-amber-700 hover:bg-amber-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {makingProxy ? "Making Proxy..." : "Make Proxy"}
+                  </button>
+                </div>
+                {makeProxyError && <p className="mt-2 text-sm text-red-300">{makeProxyError}</p>}
+              </div>
+            )}
+
+            <div className="w-full rounded bg-gray-700 p-3">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Change version to:</label>
+                {loadingPrintings ? (
+                  <p className="text-sm text-gray-300">Loading versions...</p>
+                ) : (
+                  <>
+                    <select
+                      value={selectedPrinting}
+                      onChange={(e) => setSelectedPrinting(e.target.value)}
+                      className="rounded bg-gray-800 px-2 py-1 text-white"
+                    >
+                      {printingOptions.length === 0 ? (
+                        <option value="">No versions found</option>
+                      ) : (
+                        printingOptions.map((option) => (
+                          <option key={`${option.set}|${option.cn}|${option.foil}`} value={`${option.set}|${option.cn}|${option.foil}`}>
+                            {option.label}
+                          </option>
+                        ))
+                      )}
+                    </select>
+                    <button
+                      onClick={changeCardVersion}
+                      disabled={changingVersion || !selectedPrinting}
+                      className="w-full bg-cyan-700 hover:bg-cyan-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                    >
+                      {changingVersion ? "Changing version..." : "Apply version"}
+                    </button>
+                  </>
+                )}
+                 {versionError && <p className="mt-2 text-sm text-red-300">{versionError}</p>}
+               </div>
+             </div>
+
+            <div className="w-full rounded bg-gray-700 p-3">
+              {ownedVersions.length === 0 ? (
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={loadOwnedVersions}
+                    disabled={loadingOwnedVersions}
+                    className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {loadingOwnedVersions ? "Loading..." : "Use Owned Copy"}
+                  </button>
+                  {hasLoadedOwnedVersions && <p className="text-sm text-gray-300">No owned copies found.</p>}
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm">Owned copy:</label>
+                  <select
+                    value={selectedOwnedVersion}
+                    onChange={(e) => {
+                      setSelectedOwnedVersion(e.target.value);
+                      const [selectedCollection] = e.target.value.split("|");
+                      if (selectedCollection === "bulk" || selectedCollection === "cool-cards") {
+                        setReturnCollection(selectedCollection);
+                      } else {
+                        setReturnCollection("none");
+                      }
+                    }}
+                    className="rounded bg-gray-800 px-2 py-1 text-white"
+                  >
+                    {ownedVersions.map((ownedCard) => (
+                      <option
+                        key={`${ownedCard.collection}|${ownedCard._id}`}
+                        value={`${ownedCard.collection}|${ownedCard._id}`}
+                      >
+                        {`${ownedCard.collectionLabel}: ${ownedCard.set.toUpperCase()} ${ownedCard.cn}${ownedCard.foil !== "nonfoil" ? ` (${ownedCard.foil})` : ""} - ${ownedCard.quant} owned`}
+                      </option>
+                    ))}
+                  </select>
+                  {!card.proxy && (
+                    <>
+                      <label className="text-sm">Return removed card to:</label>
+                      <select
+                        value={returnCollection}
+                        onChange={(e) => setReturnCollection(e.target.value as "bulk" | "cool-cards" | "none")}
+                        className="rounded bg-gray-800 px-2 py-1 text-white"
+                      >
+                        <option value="none">Do not return</option>
+                        <option value="bulk">Bulk</option>
+                        <option value="cool-cards">Cool Cards</option>
+                      </select>
+                    </>
+                  )}
+                  <button
+                    onClick={replaceCard}
+                    disabled={!selectedOwnedVersion}
+                    className="w-full bg-purple-800 hover:bg-purple-700 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    Use Owned Copy
+                  </button>
+                </div>
+              )}
+              {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
+            </div>
+            <div className="w-full rounded bg-gray-700 p-3">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Move copies from {deckSectionLabels[sourceSection]} to:</label>
+                <select
+                  value={moveTargetSection}
+                  onChange={(e) => setMoveTargetSection(e.target.value as DeckSection)}
+                  className="rounded bg-gray-800 px-2 py-1 text-white"
+                >
+                  {moveTargetOptions.map(section => (
+                    <option key={section} value={section}>
+                      {deckSectionLabels[section]}
+                    </option>
+                  ))}
+                </select>
+                <label className="text-sm">Quantity:</label>
+                <input
+                  type="number"
+                  min={1}
+                  max={card.quant}
+                  value={moveQuant}
+                  onChange={(e) => setMoveQuant(Math.min(card.quant, Math.max(1, Number(e.target.value))))}
+                  className="rounded bg-gray-800 px-2 py-1 text-white"
+                />
+                <button
+                  onClick={moveCopies}
+                  disabled={movingCopies}
+                  className="w-full bg-indigo-700 hover:bg-indigo-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                >
+                  {movingCopies ? "Moving..." : "Move Copies"}
+                </button>
+              </div>
+              {moveCopiesError && <p className="mt-2 text-sm text-red-300">{moveCopiesError}</p>}
+            </div>
+            <div className="w-full rounded bg-gray-700 p-3">
+              <div className="flex flex-col gap-2">
+                <label className="text-sm">Remove copies from this section:</label>
+                <input
+                  type="number"
+                  min={1}
+                  max={card.quant}
+                  value={removeQuant}
+                  onChange={(e) => setRemoveQuant(Math.min(card.quant, Math.max(1, Number(e.target.value))))}
+                  className="rounded bg-gray-800 px-2 py-1 text-white"
+                />
+                <button
+                  onClick={removeCopies}
+                  disabled={removingCopies}
+                  className="w-full bg-red-700 hover:bg-red-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                >
+                  {removingCopies ? "Removing..." : "Remove Copies"}
+                </button>
+              </div>
+              {removeCopiesError && <p className="mt-2 text-sm text-red-300">{removeCopiesError}</p>}
+            </div>
+            {card.proxy && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-sm font-semibold">Custom Proxy Image</h3>
+                  <input
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    onChange={(e) => setProxyImageFile(e.target.files?.[0] ?? null)}
+                    className="block w-full text-sm text-gray-200 file:mr-3 file:rounded file:border-0 file:bg-gray-800 file:px-3 file:py-2 file:text-white hover:file:bg-gray-900"
+                  />
+                  <button
+                    onClick={uploadProxyImage}
+                    disabled={!proxyImageFile || uploadingProxyImage}
+                    className="w-full bg-amber-700 hover:bg-amber-600 disabled:bg-gray-500 px-4 py-2 rounded"
+                  >
+                    {uploadingProxyImage ? "Uploading..." : "Upload Proxy Image"}
+                  </button>
+                </div>
+                {proxyImageError && <p className="mt-2 text-sm text-red-300">{proxyImageError}</p>}
+              </div>
+            )}
+            {isDeckCard && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <button
+                  onClick={addToWatchlist}
+                  disabled={watchlistStatus === "checking" || watchlistStatus === "adding" || watchlistStatus === "already-added"}
+                  className="w-full rounded bg-emerald-700 px-4 py-2 text-white hover:bg-emerald-600 disabled:bg-gray-500"
+                >
+                  {watchlistStatus === "checking" ? "Checking Watchlist..."
+                    : watchlistStatus === "adding" ? "Adding to Watchlist..."
+                      : watchlistStatus === "already-added" ? "Already on Watchlist"
+                        : "Add to Watchlist"}
+                </button>
+                {watchlistError && <p className="mt-2 text-sm text-red-300">{watchlistError}</p>}
+              </div>
+            )}
+            {/* <a
+              href={`https://www.cardkingdom.com/catalog/search?search=header&filter[name]=${encodeURIComponent(card.name)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full block text-center bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded"
+            >
+              Buy on Card Kingdom
+             </a> */}
+           </div>
+           )}
+         </div>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,1 @@
+export type FoilOption = "nonfoil" | "foil" | "etched";

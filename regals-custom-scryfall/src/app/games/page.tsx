@@ -1,0 +1,603 @@
+"use client";
+
+import authorization from "@/authorization";
+import RegalsMagicHeader from "@/components/RegalsMagicHeader";
+import { Deck, GameResult, GameStats, SerializedGame } from "@/types";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { FormEvent, useEffect, useMemo, useState } from "react";
+
+type DeckOption = {
+  _id: string;
+  name: string;
+  format: string;
+  link?: string;
+};
+
+type GameBreakdownColumn = {
+  key: string;
+  label: string;
+  games: SerializedGame[];
+  expectedWinRate: number | null;
+};
+
+const resultLabels: Record<GameResult, string> = {
+  win: "Win",
+  loss: "Loss",
+  tie: "Tie",
+};
+
+const emptyStats: GameStats = {
+  total: 0,
+  wins: 0,
+  losses: 0,
+  ties: 0,
+  winRate: 0,
+  averageTurn: null,
+};
+
+function todayString() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function serializeDeck(deck: Deck): DeckOption {
+  return {
+    _id: deck._id?.toString() ?? "",
+    name: deck.name,
+    format: deck.format,
+    link: deck.link,
+  };
+}
+
+function formatPercent(value: number | null): string {
+  return value === null ? "N/A" : `${value.toFixed(2)}%`;
+}
+
+function getWinPercent(games: SerializedGame[]): number | null {
+  if (games.length === 0) return null;
+  const wins = games.filter(game => game.result === "win").length;
+  return (wins / games.length) * 100;
+}
+
+export default function GamesPage() {
+  const { data: session, status } = useSession();
+  const canAddGames = Boolean(session && authorization.canAddGames(session.user?.permissionLevel));
+  const [games, setGames] = useState<SerializedGame[]>([]);
+  const [stats, setStats] = useState<GameStats>(emptyStats);
+  const [decks, setDecks] = useState<DeckOption[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState("");
+  const [showAddGame, setShowAddGame] = useState(false);
+  const [editingGameId, setEditingGameId] = useState<string | null>(null);
+  const [update, setUpdate] = useState(0);
+  const [deckFilter, setDeckFilter] = useState("");
+  const [formatFilter, setFormatFilter] = useState("");
+  const [resultFilter, setResultFilter] = useState("");
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTo] = useState("");
+  const [date, setDate] = useState(todayString());
+  const [deckId, setDeckId] = useState("");
+  const [deckName, setDeckName] = useState("");
+  const [deckLink, setDeckLink] = useState("");
+  const [format, setFormat] = useState("");
+  const [result, setResult] = useState<GameResult>("win");
+  const [numPlayers, setNumPlayers] = useState(4);
+  const [turnNumber, setTurnNumber] = useState("");
+  const [notes, setNotes] = useState("");
+  const [initializedFromQuery, setInitializedFromQuery] = useState(false);
+
+  const formats = useMemo(() => (
+    Array.from(new Set([
+      ...decks.map(deck => deck.format),
+      ...games.map(game => game.format),
+    ].filter(Boolean))).sort((a, b) => a.localeCompare(b))
+  ), [decks, games]);
+
+  const gameBreakdown = useMemo<GameBreakdownColumn[]>(() => [
+    {
+      key: "2",
+      label: "2 Players",
+      games: games.filter(game => game.numPlayers === 2),
+      expectedWinRate: 50,
+    },
+    {
+      key: "3",
+      label: "3 Players",
+      games: games.filter(game => game.numPlayers === 3),
+      expectedWinRate: 100 / 3,
+    },
+    {
+      key: "4",
+      label: "4 Players",
+      games: games.filter(game => game.numPlayers === 4),
+      expectedWinRate: 25,
+    },
+    {
+      key: "5",
+      label: "5+ Players",
+      games: games.filter(game => game.numPlayers >= 5),
+      expectedWinRate: 20,
+    },
+    {
+      key: "draft",
+      label: "Draft",
+      games: games.filter(game => game.format.toLowerCase() === "draft"),
+      expectedWinRate: 50,
+    },
+    {
+      key: "edh",
+      label: "EDH",
+      games: games.filter(game => game.format.toLowerCase() === "edh"),
+      expectedWinRate: null,
+    },
+    {
+      key: "prerelease",
+      label: "Prerelease",
+      games: games.filter(game => game.format.toLowerCase() === "prerelease"),
+      expectedWinRate: 50,
+    },
+  ], [games]);
+
+  useEffect(() => {
+    async function fetchDecks() {
+      try {
+        const res = await fetch("/api/decks/all_decks");
+        if (!res.ok) throw new Error("Could not fetch decks");
+        const { allDecks } = await res.json();
+        setDecks((allDecks as Deck[]).map(serializeDeck));
+      } catch (error) {
+        setError(error instanceof Error ? error.message : "Could not fetch decks");
+      }
+    }
+
+    fetchDecks();
+  }, []);
+
+  useEffect(() => {
+    if (initializedFromQuery || decks.length === 0) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const queryDeckId = params.get("deckId") ?? "";
+
+    if (queryDeckId) {
+      chooseDeck(queryDeckId);
+      setDeckFilter(queryDeckId);
+    }
+
+    if (params.get("add") === "1") {
+      setShowAddGame(true);
+    }
+
+    setInitializedFromQuery(true);
+  }, [decks, initializedFromQuery]);
+
+  useEffect(() => {
+    async function fetchGames() {
+      setLoading(true);
+      setError("");
+
+      try {
+        const params = new URLSearchParams();
+        if (deckFilter) params.set("deckId", deckFilter);
+        if (formatFilter) params.set("format", formatFilter);
+        if (resultFilter) params.set("result", resultFilter);
+        if (dateFrom) params.set("dateFrom", dateFrom);
+        if (dateTo) params.set("dateTo", dateTo);
+
+        const res = await fetch(`/api/games${params.toString() ? `?${params.toString()}` : ""}`);
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error ?? "Could not fetch games");
+
+        setGames(data.games ?? []);
+        setStats(data.stats ?? emptyStats);
+      } catch (error) {
+        setError(error instanceof Error ? error.message : "Could not fetch games");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchGames();
+  }, [deckFilter, formatFilter, resultFilter, dateFrom, dateTo, update]);
+
+  const chooseDeck = (selectedDeckId: string) => {
+    setDeckId(selectedDeckId);
+    const selectedDeck = decks.find(deck => deck._id === selectedDeckId);
+    if (!selectedDeck) return;
+
+    setDeckName(selectedDeck.name);
+    setDeckLink(selectedDeck.link ?? "");
+    setFormat(selectedDeck.format);
+  };
+
+  const resetForm = () => {
+    setDate(todayString());
+    setDeckId("");
+    setDeckName("");
+    setDeckLink("");
+    setFormat("");
+    setResult("win");
+    setNumPlayers(4);
+    setTurnNumber("");
+    setNotes("");
+  };
+
+  const closeGameModal = () => {
+    setShowAddGame(false);
+    setEditingGameId(null);
+    resetForm();
+  };
+
+  const openAddGame = () => {
+    setEditingGameId(null);
+    resetForm();
+    setShowAddGame(true);
+  };
+
+  const openEditGame = (game: SerializedGame) => {
+    setEditingGameId(game._id);
+    setDate(game.date);
+    setDeckId(game.deckId ?? "");
+    setDeckName(game.deckName);
+    setDeckLink(game.deckLink ?? "");
+    setFormat(game.format);
+    setResult(game.result);
+    setNumPlayers(game.numPlayers);
+    setTurnNumber(game.turnNumber?.toString() ?? "");
+    setNotes(game.notes ?? "");
+    setShowAddGame(true);
+  };
+
+  const saveGame = async (event: FormEvent) => {
+    event.preventDefault();
+    setSaving(true);
+    setError("");
+
+    try {
+      const payload = {
+        date,
+        deckId: deckId || undefined,
+        deckName,
+        deckLink,
+        format,
+        result,
+        numPlayers,
+        turnNumber: turnNumber ? Number(turnNumber) : null,
+        notes,
+      };
+
+      const endpoint = editingGameId ? `/api/games/${editingGameId}` : "/api/games";
+      const method = editingGameId ? "PUT" : "POST";
+      const res = await fetch(endpoint, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error ?? (editingGameId ? "Could not update game" : "Could not add game"));
+
+      closeGameModal();
+      setUpdate(current => current + 1);
+    } catch (error) {
+      const message = editingGameId ? "Could not update game" : "Could not add game";
+      setError(error instanceof Error ? error.message : message);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const deleteGame = async (gameId: string) => {
+    setError("");
+
+    try {
+      const res = await fetch(`/api/games/${gameId}`, { method: "DELETE" });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Could not delete game");
+      setUpdate(current => current + 1);
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Could not delete game");
+    }
+  };
+
+  if (status === "loading") return <p>Loading...</p>;
+
+  return (
+    <div className="flex min-h-screen flex-col bg-teal-900 text-white">
+      <RegalsMagicHeader
+        showBack={true}
+        backUrl="/"
+        backText="Home"
+      />
+
+      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-4 px-4 py-6">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h1 className="text-2xl font-semibold">Games</h1>
+            <p className="text-sm text-teal-100/80">Track date, format, result, players, turn, deck, and notes.</p>
+          </div>
+          {canAddGames && (
+            <button
+              onClick={openAddGame}
+              className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
+            >
+              + Add Game
+            </button>
+          )}
+        </div>
+
+        {error && (
+          <p className="rounded border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-800">
+            {error}
+          </p>
+        )}
+
+        <section className="grid grid-cols-2 gap-3 md:grid-cols-5">
+          <div className="rounded bg-teal-950/40 p-3">
+            <p className="text-xs uppercase text-teal-100/70">Games</p>
+            <p className="text-2xl font-semibold">{stats.total}</p>
+          </div>
+          <div className="rounded bg-teal-950/40 p-3">
+            <p className="text-xs uppercase text-teal-100/70">Wins</p>
+            <p className="text-2xl font-semibold">{stats.wins}</p>
+          </div>
+          <div className="rounded bg-teal-950/40 p-3">
+            <p className="text-xs uppercase text-teal-100/70">Losses</p>
+            <p className="text-2xl font-semibold">{stats.losses}</p>
+          </div>
+          <div className="rounded bg-teal-950/40 p-3">
+            <p className="text-xs uppercase text-teal-100/70">Ties</p>
+            <p className="text-2xl font-semibold">{stats.ties}</p>
+          </div>
+          <div className="rounded bg-teal-950/40 p-3">
+            <p className="text-xs uppercase text-teal-100/70">Win Rate</p>
+            <p className="text-2xl font-semibold">{`${Math.round(stats.winRate * 100)}%`}</p>
+          </div>
+        </section>
+
+        <section className="overflow-x-auto rounded bg-teal-950/40 p-4">
+          <table className="w-full min-w-[820px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-teal-700/60">
+                <th className="px-3 py-2"></th>
+                {gameBreakdown.map(column => (
+                  <th key={column.key} className="px-3 py-2 text-right font-semibold">
+                    {column.label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-teal-800/70">
+                <th className="px-3 py-2 font-semibold">Win Percent</th>
+                {gameBreakdown.map(column => (
+                  <td key={`${column.key}-win`} className="px-3 py-2 text-right">
+                    {formatPercent(getWinPercent(column.games))}
+                  </td>
+                ))}
+              </tr>
+              <tr className="border-b border-teal-800/70">
+                <th className="px-3 py-2 font-semibold">Over/Under</th>
+                {gameBreakdown.map(column => {
+                  const winPercent = getWinPercent(column.games);
+                  const overUnder = winPercent === null || column.expectedWinRate === null
+                    ? null
+                    : winPercent - column.expectedWinRate;
+
+                  return (
+                    <td key={`${column.key}-over-under`} className="px-3 py-2 text-right">
+                      {formatPercent(overUnder)}
+                    </td>
+                  );
+                })}
+              </tr>
+              <tr>
+                <th className="px-3 py-2 font-semibold">Games Played</th>
+                {gameBreakdown.map(column => (
+                  <td key={`${column.key}-played`} className="px-3 py-2 text-right">
+                    {column.games.length}
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section className="grid grid-cols-1 gap-3 rounded bg-teal-950/40 p-4 md:grid-cols-5">
+          <select
+            value={deckFilter}
+            onChange={(e) => setDeckFilter(e.target.value)}
+            className="rounded border border-teal-700 bg-teal-100 px-3 py-2 text-black"
+          >
+            <option value="">All decks</option>
+            {decks.map(deck => (
+              <option key={deck._id} value={deck._id}>{deck.name}</option>
+            ))}
+          </select>
+          <select
+            value={formatFilter}
+            onChange={(e) => setFormatFilter(e.target.value)}
+            className="rounded border border-teal-700 bg-teal-100 px-3 py-2 text-black"
+          >
+            <option value="">All formats</option>
+            {formats.map(formatOption => (
+              <option key={formatOption} value={formatOption}>{formatOption}</option>
+            ))}
+          </select>
+          <select
+            value={resultFilter}
+            onChange={(e) => setResultFilter(e.target.value)}
+            className="rounded border border-teal-700 bg-teal-100 px-3 py-2 text-black"
+          >
+            <option value="">All results</option>
+            <option value="win">Wins</option>
+            <option value="loss">Losses</option>
+            <option value="tie">Ties</option>
+          </select>
+          <input
+            type="date"
+            value={dateFrom}
+            onChange={(e) => setDateFrom(e.target.value)}
+            className="rounded border border-teal-700 bg-teal-100 px-3 py-2 text-black"
+          />
+          <input
+            type="date"
+            value={dateTo}
+            onChange={(e) => setDateTo(e.target.value)}
+            className="rounded border border-teal-700 bg-teal-100 px-3 py-2 text-black"
+          />
+        </section>
+
+        <section className="overflow-x-auto rounded bg-teal-950/40">
+          <table className="w-full min-w-[920px] text-left text-sm">
+            <thead className="border-b border-teal-700/60 text-teal-100">
+              <tr>
+                <th className="px-3 py-2">Date</th>
+                <th className="px-3 py-2">Format</th>
+                <th className="px-3 py-2">Result</th>
+                <th className="px-3 py-2">Players</th>
+                <th className="px-3 py-2">Turn</th>
+                <th className="px-3 py-2">Deck</th>
+                <th className="px-3 py-2">Notes</th>
+                {canAddGames && <th className="px-3 py-2"></th>}
+              </tr>
+            </thead>
+            <tbody>
+              {loading ? (
+                <tr><td colSpan={canAddGames ? 8 : 7} className="px-3 py-6 text-center text-teal-100/80">Loading games...</td></tr>
+              ) : games.length === 0 ? (
+                <tr><td colSpan={canAddGames ? 8 : 7} className="px-3 py-6 text-center text-teal-100/80">No games logged yet.</td></tr>
+              ) : (
+                games.map(game => (
+                  <tr key={game._id} className="border-b border-teal-800/70 last:border-0">
+                    <td className="px-3 py-2">{game.date}</td>
+                    <td className="px-3 py-2">{game.format}</td>
+                    <td className="px-3 py-2">
+                      <span className={`rounded px-2 py-1 text-xs font-semibold ${game.result === "win" ? "bg-emerald-600" : game.result === "loss" ? "bg-red-700" : "bg-sky-700"}`}>
+                        {resultLabels[game.result]}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2">{game.numPlayers}</td>
+                    <td className="px-3 py-2">{game.turnNumber ?? ""}</td>
+                    <td className="px-3 py-2">
+                      {game.deckId ? (
+                        <Link href={`/decks/${game.deckId}`} className="font-medium text-teal-100 underline-offset-2 hover:underline">
+                          {game.deckName}
+                        </Link>
+                      ) : (
+                        game.deckName
+                      )}
+                    </td>
+                    <td className="max-w-md px-3 py-2">
+                      <p className="whitespace-pre-wrap">{game.notes}</p>
+                    </td>
+                    {canAddGames && (
+                      <td className="px-3 py-2 text-right">
+                        <div className="flex justify-end gap-2">
+                          <button
+                            type="button"
+                            onClick={() => openEditGame(game)}
+                            title="Edit game"
+                            aria-label={`Edit ${game.deckName}`}
+                            className="rounded bg-slate-600 px-2 py-1 text-sm text-white hover:bg-slate-500"
+                          >
+                            ⚙
+                          </button>
+                          <button
+                            onClick={() => deleteGame(game._id)}
+                            className="rounded bg-red-700 px-3 py-1 text-xs text-white hover:bg-red-600"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    )}
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </section>
+      </main>
+
+      {showAddGame && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+          onClick={closeGameModal}
+        >
+          <form
+            onSubmit={saveGame}
+            className="collection-card-modal max-h-[90vh] w-[90%] max-w-xl overflow-y-auto rounded bg-white p-5 text-black shadow"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-xl font-semibold">{editingGameId ? "Edit Game" : "Add Game"}</h2>
+              <button type="button" onClick={closeGameModal} className="text-xl">x</button>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Date</span>
+                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded border p-2" required />
+              </label>
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Deck</span>
+                <select value={deckId} onChange={(e) => chooseDeck(e.target.value)} className="w-full rounded border p-2">
+                  <option value="">Manual deck</option>
+                  {decks.map(deck => (
+                    <option key={deck._id} value={deck._id}>{deck.name}</option>
+                  ))}
+                </select>
+              </label>
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Deck name</span>
+                <input type="text" value={deckName} onChange={(e) => setDeckName(e.target.value)} className="w-full rounded border p-2" required />
+              </label>
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Format</span>
+                <input type="text" value={format} onChange={(e) => setFormat(e.target.value)} className="w-full rounded border p-2" required />
+              </label>
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Result</span>
+                <select value={result} onChange={(e) => setResult(e.target.value as GameResult)} className="w-full rounded border p-2">
+                  <option value="win">Win</option>
+                  <option value="loss">Loss</option>
+                  <option value="tie">Tie</option>
+                </select>
+              </label>
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Number of players</span>
+                <input type="number" min={1} value={numPlayers} onChange={(e) => setNumPlayers(Math.max(1, Number(e.target.value)))} className="w-full rounded border p-2" required />
+              </label>
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Turn number</span>
+                <input type="number" min={1} value={turnNumber} onChange={(e) => setTurnNumber(e.target.value)} className="w-full rounded border p-2" />
+              </label>
+              <label className="block">
+                <span className="mb-1 block text-sm font-medium">Deck link</span>
+                <input type="url" value={deckLink} onChange={(e) => setDeckLink(e.target.value)} className="w-full rounded border p-2" />
+              </label>
+            </div>
+
+            <label className="mt-4 block">
+              <span className="mb-1 block text-sm font-medium">Notes</span>
+              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} className="min-h-28 w-full resize-y rounded border p-2" />
+            </label>
+
+            <div className="mt-4 flex justify-end gap-2">
+              <button type="button" onClick={closeGameModal} className="rounded border border-gray-300 px-4 py-2 hover:bg-gray-100">
+                Cancel
+              </button>
+              <button type="submit" disabled={saving} className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 disabled:bg-gray-400">
+                {saving ? "Saving..." : editingGameId ? "Save Changes" : "Save Game"}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+}
