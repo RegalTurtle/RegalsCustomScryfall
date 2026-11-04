@@ -4,6 +4,7 @@ import authorization from "@/authorization";
 import CardAddSystem from "@/components/CardAddSystem";
 import CardEditModal from "@/components/CardEditModal";
 import CardPiles from "@/components/CardPiles";
+import { useCardPerformanceMarkers } from "@/components/useCardPerformanceMarkers";
 import DeckBulkEditModal from "@/components/DeckBulkEditModal";
 import DeckExportModal from "@/components/DeckExportModal";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader"
@@ -158,6 +159,11 @@ function getWinPercent(games: SerializedGame[]): number | null {
 function findCardImage(cards: Card[], cardName: string | null): string | null {
   if (!cardName) return null;
   return cards.find(card => card.name === cardName)?.image ?? null;
+}
+
+function findCard(cards: Card[], cardName: string | null): Card | undefined {
+  if (!cardName) return undefined;
+  return cards.find(card => card.name === cardName);
 }
 
 function findPlannedSwapSourceSection(deck: Deck, cardName: string): Exclude<DeckSection, "cards"> {
@@ -334,7 +340,8 @@ function buildCardFromScryfall(card: ScryfallCard): Card {
 export default function Decks() {
   const { data: session, status } = useSession();
 
-  const { deck_id: deckId } = useParams();
+  const { deck_id: routeDeckId } = useParams();
+  const deckId = Array.isArray(routeDeckId) ? routeDeckId[0] : routeDeckId;
   const [ deck, setDeck ] = useState<Deck | null>(null);
   const [ piles, setPiles ] = useState<CardPile[] | null>(null);
   const [ sidePiles, setSidePiles ] = useState<CardPile[] | null>(null);
@@ -375,6 +382,20 @@ export default function Decks() {
   const [gameStats, setGameStats] = useState<GameStats | null>(null);
   const [gamesLoading, setGamesLoading] = useState(false);
   const [deckLoadedForId, setDeckLoadedForId] = useState<string | null>(null);
+
+  const performanceCards = deck ? [...deck.cards, ...deck.sideboard, ...deck.maybeboard, ...deck.wishlist] : [];
+  const { enabled: showPerformance, summaries: performanceSummaries } = useCardPerformanceMarkers(performanceCards, deckId);
+
+  const performanceMarkerForName = (cardName: string | null) => {
+    const card = findCard(performanceCards, cardName);
+    const performance = card ? performanceSummaries[`${card.set}|${card.cn}`] : undefined;
+    if (!showPerformance || !performance || performance.score === 0) return null;
+    return (
+      <span className={performance.score > 0 ? "ml-1 font-bold text-green-700" : "ml-1 font-bold text-red-700"}>
+        {performance.score > 0 ? "\u25B2" : "\u25BC"} {Math.abs(performance.score)}
+      </span>
+    );
+  };
 
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedCardCollectionType, setSelectedCardCollectionType] = useState<CollectionTypeOption | null>(null);
@@ -903,6 +924,7 @@ export default function Decks() {
         }
         <CardPiles 
           piles={piles}
+           deckId={deckId}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+${deckId}`)}
           setHoveredCard={setHoveredCard}
           availableProxyKeys={availableProxyKeys}
@@ -936,6 +958,7 @@ export default function Decks() {
         }
         <CardPiles 
           piles={sidePiles}
+          deckId={deckId}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+sideboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
           highlightGameChangerCards={highlightGameChangers}
@@ -1024,7 +1047,7 @@ export default function Decks() {
                 <div key={`${change.cardOut}-${change.cardIn}-${index}`} className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-3 rounded bg-teal-100 p-3 text-black shadow">
                   <div className="group relative min-w-0">
                     <p className="text-xs font-semibold uppercase text-red-700">Out</p>
-                    <p className="font-medium break-words">{change.cardOut}</p>
+                    <p className="font-medium break-words">{change.cardOut}{performanceMarkerForName(change.cardOut)}</p>
                     {outImage && (
                       <img
                         src={outImage}
@@ -1036,7 +1059,7 @@ export default function Decks() {
                   <span className="text-lg font-bold">→</span>
                   <div className="group relative min-w-0">
                     <p className="text-xs font-semibold uppercase text-green-700">In</p>
-                    <p className="font-medium break-words">{change.cardIn}</p>
+                    <p className="font-medium break-words">{change.cardIn}{performanceMarkerForName(change.cardIn)}</p>
                     {inImage && (
                       <img
                         src={inImage}
@@ -1102,6 +1125,7 @@ export default function Decks() {
         }
         <CardPiles 
           piles={maybePiles}
+          deckId={deckId}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+maybeboard+${deckId}`)}
           setHoveredCard={setHoveredCard}
           highlightCardNames={isEdhDeck ? mainDeckCardNames : []}
@@ -1133,6 +1157,7 @@ export default function Decks() {
         }
         <CardPiles 
           piles={wishPiles}
+          deckId={deckId}
           setSelectedCard={(card) => selectCardFromCollection(card, `decks+wishlist+${deckId}`)}
           setHoveredCard={setHoveredCard}
           highlightCardNames={isEdhDeck ? mainDeckCardNames : []}

@@ -336,14 +336,14 @@ const CardsWithSearch = ({
         className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition mb-4"
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">    
+       <div className="grid grid-cols-1 gap-6 justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">    
         {cards.map((card, index) => (
           <button
             key={index}
             onClick={() => setSelectedCard(card)}
             className="bg-teal-100 rounded-lg shadow-md p-4 w-58 flex flex-col text-left"
           >
-            <img src={card.image} alt={card.name} className="w-full h-70 object-contain rounded-lg" />
+             <img src={card.image} alt={card.name} className="h-70 w-full rounded-lg object-contain" />
             <div className="flex-1 flex items-center justify-center">
               <div>
                 <h2 className="text-md font-semibold text-black break-words text-center mt-3">{card.name}</h2>

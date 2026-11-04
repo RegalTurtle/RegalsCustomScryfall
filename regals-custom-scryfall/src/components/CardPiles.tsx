@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardPile } from "@/types";
+import { useCardPerformanceMarkers } from "@/components/useCardPerformanceMarkers";
 
 const cardKey = (card: Card) => `${card.set}|${card.cn}`;
 
@@ -14,6 +17,7 @@ export default function CardPiles({
   gameChangerCardKeys = new Set<string>(),
   highlightCardNames = [],
   highlightGreenCardNames = [],
+  deckId,
 }: { 
   piles: CardPile[], 
   setSelectedCard: (card: Card) => void,
@@ -26,6 +30,7 @@ export default function CardPiles({
   gameChangerCardKeys?: Set<string>,
   highlightCardNames?: string[],
   highlightGreenCardNames?: string[],
+  deckId?: string,
 }) {
   const cardOffset = 32;
   const cardHeight = 279;
@@ -33,9 +38,16 @@ export default function CardPiles({
   const ownedCardKeySet = new Set(ownedCardKeys);
   const highlightedCardNameSet = new Set(highlightCardNames.map(name => name.trim().toLowerCase()));
   const highlightedGreenCardNameSet = new Set(highlightGreenCardNames.map(name => name.trim().toLowerCase()));
+  const allCards = piles.flatMap(pile => pile.cards);
+  const { enabled: showPerformance, summaries, toggle: togglePerformance } = useCardPerformanceMarkers(allCards, deckId);
 
   return (
     <div className="w-55 sm:w-107 md:w-159 lg:w-211 xl:w-315 2xl:w-367 mx-auto">
+      {deckId && <div className="flex justify-end px-4 pt-3">
+        <button onClick={togglePerformance} className="rounded bg-teal-900 px-3 py-1 text-xs text-teal-50 hover:bg-teal-800">
+          {showPerformance ? "Hide performance markers" : "Show performance markers"}
+        </button>
+      </div>}
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-6 2xl:columns-7 gap-4 p-4">
         {piles.map((pile) => {
           const totalCards = pile.cards.reduce((sum, c) => sum + c.quant, 0);
@@ -57,6 +69,8 @@ export default function CardPiles({
                   const isGameChangerCard = highlightGameChangerCards && gameChangerCardKeys.has(cardKey(card));
                   const isHighlightedCard = highlightedCardNameSet.has(card.name.trim().toLowerCase());
                   const isGreenHighlightedCard = highlightedGreenCardNameSet.has(card.name.trim().toLowerCase());
+                  const performance = summaries[cardKey(card)];
+                  const performanceLabel = performance && performance.score !== 0 ? `${performance.score > 0 ? "▲" : "▼"} ${Math.abs(performance.score)}` : "";
 
                   return (
                   <div
@@ -74,6 +88,11 @@ export default function CardPiles({
                         className="absolute top-1 right-1 bg-gray-700 text-white text-xs px-1 py-0.5 rounded shadow-md z-10"
                       >
                         {card.quant}
+                      </div>
+                    )}
+                    {showPerformance && performanceLabel && (
+                      <div className={`pointer-events-none absolute left-1 top-1 z-20 rounded px-2 py-1 text-xs font-bold shadow ${performance.score > 0 ? "bg-green-600 text-white" : "bg-red-600 text-white"}`}>
+                        {performanceLabel}
                       </div>
                     )}
                     <div className={isGameChangerCard ? "rounded-lg ring-4 ring-yellow-300 shadow-[0_0_18px_rgba(250,204,21,0.8)]" : ""}>

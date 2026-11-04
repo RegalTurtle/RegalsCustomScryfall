@@ -3,6 +3,7 @@ import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 import { useSession } from "next-auth/react";
 import { Dispatch, KeyboardEvent as ReactKeyboardEvent, SetStateAction, useEffect, useRef } from "react";
 import { useState } from "react";
+import CardPerformancePanel from "@/components/CardPerformancePanel";
 
 type OwnedVersion = Card & {
   _id: string;
@@ -605,7 +606,7 @@ export default function CardEditModal({
       onClick={onClose}
     >
       <div
-        className="collection-card-modal bg-gray-800 text-white rounded-lg shadow-lg w-[90%] max-w-md max-h-[90vh] overflow-y-auto p-4 relative"
+        className="collection-card-modal relative max-h-[90vh] w-[95%] max-w-4xl overflow-y-auto rounded-lg bg-gray-800 p-4 pt-12 text-white shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -615,23 +616,8 @@ export default function CardEditModal({
           ✕
         </button>
 
-        <div className="flex flex-col items-center">
-          <img
-            src={card.image}
-            alt={card.name}
-            className="w-72 rounded-xl mb-4 shadow"
-          />
-          <h2 className="text-lg font-semibold mb-2">{card.name}</h2>
-          <p className="mb-3 rounded bg-gray-700 px-3 py-1 text-sm font-semibold">
-            {displayPrice(card, cardPrice, loadingPrice, priceError)}
-          </p>
-
-           {!session ? (
-             <p className="w-full rounded bg-gray-700 p-3 text-center text-sm text-gray-200">
-               Sign in to edit cards, move cards, change printings, or manage your watchlist.
-             </p>
-           ) : (
-           <div className="space-y-2 w-full">
+        <div className="hidden md:flex md:items-stretch md:gap-4">
+          <div className="order-2 flex w-1/2 flex-col gap-4">
             {card.proxy && (
               <a
                 href={bellevueKioskSearchUrl(card.name)}
@@ -642,8 +628,119 @@ export default function CardEditModal({
                 Search Bellevue Kiosk
               </a>
             )}
-            {/* Tags here */}
+            <div className="order-last">
+              <CardPerformancePanel card={card} deckId={deckId} onChanged={() => sendUpdate(update + 1)} />
+            </div>
+            {!card.proxy ? (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <button onClick={makeProxy} disabled={makingProxy} className="w-full rounded bg-amber-700 px-4 py-2 hover:bg-amber-600 disabled:bg-gray-500">
+                  {makingProxy ? "Making Proxy..." : "Make Proxy"}
+                </button>
+                {makeProxyError && <p className="mt-2 text-sm text-red-300">{makeProxyError}</p>}
+              </div>
+            ) : (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-sm font-semibold">Custom Proxy Image</h3>
+                  <input
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    onChange={(e) => setProxyImageFile(e.target.files?.[0] ?? null)}
+                    className="block w-full text-sm text-gray-200 file:mr-3 file:rounded file:border-0 file:bg-gray-800 file:px-3 file:py-2 file:text-white"
+                  />
+                  <button onClick={uploadProxyImage} disabled={!proxyImageFile || uploadingProxyImage} className="w-full rounded bg-amber-700 px-4 py-2 hover:bg-amber-600 disabled:bg-gray-500">
+                    {uploadingProxyImage ? "Uploading..." : "Upload Proxy Image"}
+                  </button>
+                </div>
+                {proxyImageError && <p className="mt-2 text-sm text-red-300">{proxyImageError}</p>}
+              </div>
+            )}
+            <div className="w-full rounded bg-gray-700 p-3">
+              {ownedVersions.length === 0 ? (
+                <button onClick={loadOwnedVersions} disabled={loadingOwnedVersions} className="w-full rounded bg-purple-800 px-4 py-2 hover:bg-purple-700 disabled:bg-gray-500">
+                  {loadingOwnedVersions ? "Loading..." : "Use Owned Copy"}
+                </button>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm">Owned copy:</label>
+                  <select value={selectedOwnedVersion} onChange={(e) => {
+                    setSelectedOwnedVersion(e.target.value);
+                    const [selectedCollection] = e.target.value.split("|");
+                    setReturnCollection(selectedCollection === "bulk" || selectedCollection === "cool-cards" ? selectedCollection : "none");
+                  }} className="rounded bg-gray-800 px-2 py-1 text-white">
+                    {ownedVersions.map((ownedCard) => <option key={`${ownedCard.collection}|${ownedCard._id}`} value={`${ownedCard.collection}|${ownedCard._id}`}>
+                      {`${ownedCard.collectionLabel}: ${ownedCard.set.toUpperCase()} ${ownedCard.cn}${ownedCard.foil !== "nonfoil" ? ` (${ownedCard.foil})` : ""} - ${ownedCard.quant} owned`}
+                    </option>)}
+                  </select>
+                  {!card.proxy && <>
+                    <label className="text-sm">Return removed card to:</label>
+                    <select value={returnCollection} onChange={(e) => setReturnCollection(e.target.value as "bulk" | "cool-cards" | "none")} className="rounded bg-gray-800 px-2 py-1 text-white">
+                      <option value="none">Do not return</option><option value="bulk">Bulk</option><option value="cool-cards">Cool Cards</option>
+                    </select>
+                  </>}
+                  <button onClick={replaceCard} disabled={!selectedOwnedVersion} className="w-full rounded bg-purple-800 px-4 py-2 hover:bg-purple-700 disabled:bg-gray-500">Use Owned Copy</button>
+                </div>
+              )}
+              {hasLoadedOwnedVersions && ownedVersions.length === 0 && <p className="mt-2 text-sm text-gray-300">No owned copies found.</p>}
+              {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
+            </div>
+            {isDeckCard && (
+              <div className="w-full rounded bg-gray-700 p-3">
+                <button onClick={addToWatchlist} disabled={watchlistStatus === "checking" || watchlistStatus === "adding" || watchlistStatus === "already-added"} className="w-full rounded bg-emerald-700 px-4 py-2 hover:bg-emerald-600 disabled:bg-gray-500">
+                  {watchlistStatus === "checking" ? "Checking Watchlist..." : watchlistStatus === "adding" ? "Adding to Watchlist..." : watchlistStatus === "already-added" ? "Already on Watchlist" : "Add to Watchlist"}
+                </button>
+                {watchlistError && <p className="mt-2 text-sm text-red-300">{watchlistError}</p>}
+              </div>
+            )}
+          </div>
+
+          <div className="order-1 flex w-1/2 flex-col gap-4">
+            <div className="flex flex-col items-center">
+              <img src={card.image} alt={card.name} className="w-72 rounded-xl shadow" />
+              <h2 className="mt-2 text-center text-lg font-semibold">{card.name}</h2>
+              <p className="mt-2 rounded bg-gray-700 px-3 py-1 text-sm font-semibold">{displayPrice(card, cardPrice, loadingPrice, priceError)}</p>
+            </div>
             <div className="w-full">
+              <div className="mb-2"><label className="mb-1 block text-sm">Tags:</label><div className="flex flex-wrap gap-2">
+                {tags.map((tag) => <span key={tag} className="flex items-center gap-1 rounded bg-gray-600 px-2 py-1 text-sm">{tag}<button onClick={() => removeTag(tag)} className="text-xs text-red-300">×</button></span>)}
+              </div></div>
+              <div className="flex gap-2"><input ref={newTagRef} type="text" value={newTag} onChange={(e) => setNewTag(e.target.value)} onKeyDown={handleNewTagKeyDown} className="flex-grow rounded bg-gray-700 px-2 py-1 text-white" placeholder="Add a tag..." /><button onClick={addTag} className="rounded bg-green-700 px-3 py-1 text-sm hover:bg-green-600">Add</button></div>
+            </div>
+            <div className="w-full rounded bg-gray-700 p-3"><div className="flex flex-col gap-2"><label className="text-sm">Change version to:</label>{loadingPrintings ? <p className="text-sm text-gray-300">Loading versions...</p> : <><select value={selectedPrinting} onChange={(e) => setSelectedPrinting(e.target.value)} className="rounded bg-gray-800 px-2 py-1 text-white">{printingOptions.length === 0 ? <option value="">No versions found</option> : printingOptions.map((option) => <option key={`${option.set}|${option.cn}|${option.foil}`} value={`${option.set}|${option.cn}|${option.foil}`}>{option.label}</option>)}</select><button onClick={changeCardVersion} disabled={changingVersion || !selectedPrinting} className="w-full rounded bg-cyan-700 px-4 py-2 hover:bg-cyan-600 disabled:bg-gray-500">{changingVersion ? "Changing version..." : "Apply version"}</button></>}{versionError && <p className="mt-2 text-sm text-red-300">{versionError}</p>}</div></div>
+            <div className="w-full rounded bg-gray-700 p-3"><div className="flex flex-col gap-2"><label className="text-sm">Move copies from {deckSectionLabels[sourceSection]} to:</label><select value={moveTargetSection} onChange={(e) => setMoveTargetSection(e.target.value as DeckSection)} className="rounded bg-gray-800 px-2 py-1 text-white">{moveTargetOptions.map(section => <option key={section} value={section}>{deckSectionLabels[section]}</option>)}</select><label className="text-sm">Quantity:</label><input type="number" min={1} max={card.quant} value={moveQuant} onChange={(e) => setMoveQuant(Math.min(card.quant, Math.max(1, Number(e.target.value))))} className="rounded bg-gray-800 px-2 py-1 text-white" /><button onClick={moveCopies} disabled={movingCopies} className="w-full rounded bg-indigo-700 px-4 py-2 hover:bg-indigo-600 disabled:bg-gray-500">{movingCopies ? "Moving..." : "Move Copies"}</button></div>{moveCopiesError && <p className="mt-2 text-sm text-red-300">{moveCopiesError}</p>}</div>
+            <div className="w-full rounded bg-gray-700 p-3"><div className="flex flex-col gap-2"><label className="text-sm">Remove copies from this section:</label><input type="number" min={1} max={card.quant} value={removeQuant} onChange={(e) => setRemoveQuant(Math.min(card.quant, Math.max(1, Number(e.target.value))))} className="rounded bg-gray-800 px-2 py-1 text-white" /><button onClick={removeCopies} disabled={removingCopies} className="w-full rounded bg-red-700 px-4 py-2 hover:bg-red-600 disabled:bg-gray-500">{removingCopies ? "Removing..." : "Remove Copies"}</button></div>{removeCopiesError && <p className="mt-2 text-sm text-red-300">{removeCopiesError}</p>}</div>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center md:hidden">
+          <img
+            src={card.image}
+            alt={card.name}
+            className="w-72 justify-self-center rounded-xl shadow md:col-start-2 md:row-start-1"
+          />
+          <h2 className="text-center text-lg font-semibold md:col-start-2 md:row-start-2">{card.name}</h2>
+          <p className="mb-3 justify-self-center rounded bg-gray-700 px-3 py-1 text-sm font-semibold md:col-start-2 md:row-start-3">
+            {displayPrice(card, cardPrice, loadingPrice, priceError)}
+          </p>
+
+           {!session ? (
+             <p className="w-full rounded bg-gray-700 p-3 text-center text-sm text-gray-200">
+               Sign in to edit cards, move cards, change printings, or manage your watchlist.
+             </p>
+           ) : (
+           <div className="w-full space-y-2 md:contents">
+            {card.proxy && (
+              <a
+                href={bellevueKioskSearchUrl(card.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                 className="block w-full rounded bg-sky-700 px-4 py-2 text-center text-sm text-white hover:bg-sky-600 md:col-start-1 md:row-start-1"
+              >
+                Search Bellevue Kiosk
+              </a>
+            )}
+            {/* Tags here */}
+             <div className="w-full md:col-start-2 md:row-start-4">
               <div className="mb-2">
                 <label className="block text-sm mb-1">Tags:</label>
                 <div className="flex flex-wrap gap-2">
@@ -676,8 +773,12 @@ export default function CardEditModal({
                </div>
              </div>
 
-            {!card.proxy && (
-              <div className="w-full rounded bg-gray-700 p-3">
+             <div className="md:col-start-1 md:row-start-2">
+               <CardPerformancePanel card={card} deckId={deckId} onChanged={() => sendUpdate(update + 1)} />
+             </div>
+
+             {!card.proxy && (
+               <div className="w-full rounded bg-gray-700 p-3 md:col-start-1 md:row-start-3">
                 <div className="flex flex-col gap-2">
                   <button
                     onClick={makeProxy}
@@ -691,7 +792,7 @@ export default function CardEditModal({
               </div>
             )}
 
-            <div className="w-full rounded bg-gray-700 p-3">
+             <div className="w-full rounded bg-gray-700 p-3 md:col-start-2 md:row-start-5">
               <div className="flex flex-col gap-2">
                 <label className="text-sm">Change version to:</label>
                 {loadingPrintings ? (
@@ -726,7 +827,7 @@ export default function CardEditModal({
                </div>
              </div>
 
-            <div className="w-full rounded bg-gray-700 p-3">
+             <div className="w-full rounded bg-gray-700 p-3 md:col-start-1 md:row-start-4">
               {ownedVersions.length === 0 ? (
                 <div className="flex flex-col gap-2">
                   <button
@@ -788,7 +889,7 @@ export default function CardEditModal({
               )}
               {swapError && <p className="mt-2 text-sm text-red-300">{swapError}</p>}
             </div>
-            <div className="w-full rounded bg-gray-700 p-3">
+             <div className="w-full rounded bg-gray-700 p-3 md:col-start-2 md:row-start-6">
               <div className="flex flex-col gap-2">
                 <label className="text-sm">Move copies from {deckSectionLabels[sourceSection]} to:</label>
                 <select
@@ -821,7 +922,7 @@ export default function CardEditModal({
               </div>
               {moveCopiesError && <p className="mt-2 text-sm text-red-300">{moveCopiesError}</p>}
             </div>
-            <div className="w-full rounded bg-gray-700 p-3">
+             <div className="w-full rounded bg-gray-700 p-3 md:col-start-2 md:row-start-7">
               <div className="flex flex-col gap-2">
                 <label className="text-sm">Remove copies from this section:</label>
                 <input
@@ -843,7 +944,7 @@ export default function CardEditModal({
               {removeCopiesError && <p className="mt-2 text-sm text-red-300">{removeCopiesError}</p>}
             </div>
             {card.proxy && (
-              <div className="w-full rounded bg-gray-700 p-3">
+               <div className="w-full rounded bg-gray-700 p-3 md:col-start-1 md:row-start-3">
                 <div className="flex flex-col gap-2">
                   <h3 className="text-sm font-semibold">Custom Proxy Image</h3>
                   <input
@@ -864,7 +965,7 @@ export default function CardEditModal({
               </div>
             )}
             {isDeckCard && (
-              <div className="w-full rounded bg-gray-700 p-3">
+               <div className="w-full rounded bg-gray-700 p-3 md:col-start-1 md:row-start-5">
                 <button
                   onClick={addToWatchlist}
                   disabled={watchlistStatus === "checking" || watchlistStatus === "adding" || watchlistStatus === "already-added"}

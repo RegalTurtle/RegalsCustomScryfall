@@ -14,7 +14,7 @@ const getCollectionFn = <T extends Document>(collection: string): (() => Promise
   };
 };
 
-import type { User, Deck, Card, Game } from "@/types";
+import type { User, Deck, Card, Game, CardPerformanceNote } from "@/types";
 
 export const users = getCollectionFn<User>("users");
 export const decks = getCollectionFn<Deck>("decks");
@@ -23,3 +23,4 @@ export const coolCards = getCollectionFn<Card>("cool_cards");
 export const tradeBinder = getCollectionFn<Card>("trade_binder");
 export const cardWatchlist = getCollectionFn<Card>("card_watchlist");
 export const games = getCollectionFn<Game>("games");
+export const cardPerformance = getCollectionFn<CardPerformanceNote>("card_performance");
