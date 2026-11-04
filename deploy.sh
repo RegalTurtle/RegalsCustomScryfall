@@ -1,4 +1,5 @@
 #!/bin/bash
+cd regalscustomscryfall
 set -e
 
 git pull --ff-only
