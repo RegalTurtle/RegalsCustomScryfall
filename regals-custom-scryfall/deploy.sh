@@ -8,7 +8,6 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
   . "$NVM_DIR/nvm.sh"
 fi
 
-cd regals-custom-scryfall
 
 git pull --ff-only
 npm install
