@@ -9,7 +9,7 @@ import { normalizeColorId, monoColorGroups, twoColorGroups, threeColorGroups, fo
 const identityOrder = ["", ...monoColorGroups.map(group => group.colorId), ...twoColorGroups.map(group => group.colorId), ...threeColorGroups.map(group => group.colorId), ...fourColorGroups.map(group => group.colorId), "WUBRG"];
 
 export function matchingEdhDecks(decks: Deck[], cardIdentity: readonly string[]): Deck[] {
-  return decks.filter(deck => deck.format.trim().toLowerCase() === "edh" && cardFitsDeck(cardIdentity, deck.colorId))
+  return decks.filter(deck => deck.together !== false && deck.format.trim().toLowerCase() === "edh" && cardFitsDeck(cardIdentity, deck.colorId))
     .sort((a, b) => Number(Boolean(b.mainForColorIdentity)) - Number(Boolean(a.mainForColorIdentity))
       || identityOrder.indexOf(normalizeColorId(a.colorId)) - identityOrder.indexOf(normalizeColorId(b.colorId))
       || a.name.localeCompare(b.name));

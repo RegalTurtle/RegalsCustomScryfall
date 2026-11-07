@@ -54,6 +54,28 @@ export default function ViewCard() {
   const [adding, setAdding] = useState(false);
   const [added, setAdded] = useState<Record<string, boolean>>({});
   const [addError, setAddError] = useState("");
+  const [maybeboardStatus, setMaybeboardStatus] = useState<{
+    cardId: string; deckIds: string[]; error?: string;
+  } | null>(null);
+
+  useEffect(() => {
+    if (!selected) return;
+    let cancelled = false;
+    const cardId = selected.id;
+    async function checkMaybeboards() {
+      try {
+        const res = await fetch(`/api/collection/card_deck_usage?name=${encodeURIComponent(selected!.name)}`, { cache: "no-store" });
+        if (!res.ok) throw new Error("Could not check Online Maybeboards. Adding will check the selected deck again.");
+        const data: { usages: { deckId: string; section: string }[] } = await res.json();
+        if (!cancelled) setMaybeboardStatus({ cardId, deckIds: data.usages.filter(usage => usage.section === "wishlist").map(usage => usage.deckId) });
+      } catch (err) {
+        if (!cancelled) setMaybeboardStatus({ cardId, deckIds: [], error: err instanceof Error ? err.message : "Could not check Online Maybeboards" });
+      }
+    }
+    setMaybeboardStatus(null);
+    void checkMaybeboards();
+    return () => { cancelled = true; };
+  }, [selected]);
 
   useEffect(() => {
     let cancelled = false;
@@ -107,6 +129,7 @@ export default function ViewCard() {
       const deckData = await deckRes.json();
       if (!deckRes.ok) throw new Error(deckData.error ?? "Could not check deck");
       const current: Deck = deckData.foundDeck;
+      if (current.together === false) throw new Error("This deck is no longer built. Refresh to see updated matches.");
       if (!cardFitsDeck(selected.color_identity, current.colorId)) throw new Error("This deck's color identity has changed. Refresh to see updated matches.");
       if (!(current.wishlist ?? []).some(card => card.name === selected.name)) {
         const res = await fetch(`/api/collection/decks+wishlist+${id}/add_card`, {
@@ -154,13 +177,14 @@ export default function ViewCard() {
 
   const matches = selected ? matchingEdhDecks(decks, selected.color_identity) : [];
   const canAdd = session && authorization.canAddCardsToCollection(session.user?.permissionLevel);
+  const checkingMaybeboards = Boolean(selected && maybeboardStatus?.cardId !== selected.id);
 
   return (
     <div className="min-h-screen bg-teal-900 text-white">
       <RegalsMagicHeader showBack backUrl="/decks" backText="Decks" />
       <main className="mx-auto max-w-6xl px-4 pb-10">
         <h1 className="mb-2 text-2xl font-semibold">View Card</h1>
-        <p className="mb-4 text-teal-100">Search Scryfall, select a card, and find EDH decks that fit its color identity. Main decks appear first, in color order.</p>
+        <p className="mb-4 text-teal-100">Search Scryfall, select a card, and find built EDH decks that fit its color identity. Main decks appear first, in color order.</p>
         <form onSubmit={search} className="mb-4 flex gap-2">
           <input aria-label="Search Scryfall" value={query} onChange={event => setQuery(event.target.value)} placeholder="Card name or Scryfall query (e.g. t:creature c:green)" className="min-w-0 flex-1 rounded border border-teal-500 bg-teal-950 px-3 py-2" />
           <button disabled={loading || adding || !query.trim()} className="rounded bg-indigo-600 px-4 py-2 hover:bg-indigo-700 disabled:opacity-50">{loading ? "Searching..." : "Search"}</button>
@@ -183,7 +207,7 @@ export default function ViewCard() {
                   <ul className="space-y-2">
                     {matches.map((deck, index) => {
                       const id = String(deck._id);
-                      const isAdded = added[`${selected.id}:${id}`];
+                      const isAdded = added[`${selected.id}:${id}`] || (maybeboardStatus?.cardId === selected.id && maybeboardStatus.deckIds.includes(id));
                       return <li key={id}>
                         {!deck.mainForColorIdentity && index > 0 && matches[index - 1].mainForColorIdentity && (
                           <div className="mb-3 mt-6 border-t border-teal-500 pt-3 text-sm font-semibold uppercase tracking-wide text-teal-100">Other decks</div>
@@ -192,7 +216,7 @@ export default function ViewCard() {
                         <div className="flex flex-wrap items-center justify-between gap-2 rounded-md bg-teal-100 p-4 text-black">
                         <div><Link href={`/decks/${id}`} className="font-semibold underline">{deck.name}</Link><p className="text-sm text-teal-800">{deck.format} · {deck.colorId || "Colorless"}</p></div>
                         {deck.mainForColorIdentity && <span className="text-sm font-medium">Main deck</span>}
-                        {canAdd && <button disabled={adding || isAdded} onClick={() => void addToDeck(deck)} className="rounded bg-indigo-600 px-3 py-2 text-sm text-white hover:bg-indigo-700 disabled:opacity-50">{isAdded ? "On Online Maybeboard" : "Add to Online Maybeboard"}</button>}
+                        {canAdd && <button disabled={adding || checkingMaybeboards || isAdded} onClick={() => void addToDeck(deck)} className="rounded bg-indigo-600 px-3 py-2 text-sm text-white hover:bg-indigo-700 disabled:opacity-50">{isAdded ? "On Online Maybeboard" : checkingMaybeboards ? "Checking Online Maybeboard..." : "Add to Online Maybeboard"}</button>}
                         </div>
                         </div>
                       </li>;
@@ -205,6 +229,7 @@ export default function ViewCard() {
                   </button>
                 </div>}
                 {adding && <p role="status" className="mt-2">Adding card...</p>}
+                {maybeboardStatus?.cardId === selected.id && maybeboardStatus.error && <p role="alert" className="mt-2 text-red-200">{maybeboardStatus.error}</p>}
                 {addError && <p role="alert" className="mt-2 text-red-200">{addError}</p>}
               </div>
             </div>
