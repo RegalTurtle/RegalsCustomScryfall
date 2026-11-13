@@ -18,3 +18,8 @@ export interface Card {
   type: string;
   cmc: number;
 }
+
+/** Inventory and watchlist roots require ownership; embedded deck cards inherit it. */
+export interface InventoryCard extends Card {
+  userId: ObjectId;
+}

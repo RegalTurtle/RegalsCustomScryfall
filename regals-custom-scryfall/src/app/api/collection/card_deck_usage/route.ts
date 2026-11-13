@@ -1,3 +1,6 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
+import { ownedFilter } from "@/data/ownership";
 import { NextRequest, NextResponse } from "next/server";
 import { decks } from "@/config/mongoCollections";
 import { Card, Deck } from "@/types";
@@ -17,6 +20,9 @@ function cardVersionLabel(card: Card): string {
 }
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   try {
     const name = request.nextUrl.searchParams.get("name")?.trim();
 
@@ -26,7 +32,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     const decksCollection = await decks();
     const allDecks = await decksCollection
-      .find({
+      .find(ownedFilter(userId, {
         together: { $ne: false },
         $or: [
           { "cards.name": name },
@@ -34,7 +40,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
           { "maybeboard.name": name },
           { "wishlist.name": name },
         ],
-      })
+      }))
       .sort({ name: 1 })
       .toArray();
 

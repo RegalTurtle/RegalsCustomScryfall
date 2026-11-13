@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+User data is isolated by authenticated MongoDB account ID. See
+[the ownership audit, migration, and rollout guide](docs/user-isolation.md)
+before deploying this version against an existing database.
+
 ## Getting Started
 
 First, run the development server:

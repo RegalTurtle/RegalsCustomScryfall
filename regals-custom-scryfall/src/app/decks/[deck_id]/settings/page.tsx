@@ -156,7 +156,7 @@ export default function DeckSettings() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <label className="block">
-              <span className="mb-1 block text-sm font-medium">Owner</span>
+              <span className="mb-1 block text-sm font-medium">Deck attribution</span>
               <input
                 type="text"
                 value={owner}

@@ -1,3 +1,5 @@
+import type { InventoryCard } from "@/types/card";
+import { ownedFilter, requireUserId } from "@/data/ownership";
 import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import gameData from "@/data/games";
 import { Card, Deck, FoilOption } from "@/types";
@@ -7,6 +9,7 @@ import { Collection, ObjectId } from "mongodb";
 type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
 
 const addDeck = async (
+  userId: ObjectId,
   name: string,
   link: string | null,
   owner: string,
@@ -15,6 +18,7 @@ const addDeck = async (
   mainForColorIdentity: boolean = false,
   together: boolean = true,
 ) => {
+  requireUserId(userId);
   name = validation.verifyStr(name, `name`);
   owner = validation.verifyStr(owner, `owner`);
   format = validation.verifyStr(format, `format`);
@@ -22,6 +26,7 @@ const addDeck = async (
   if (typeof together !== "boolean") throw new Error("together must be a boolean");
 
   const newDeck: Deck = {
+    userId,
     owner,
     name,
     cards: [],
@@ -49,18 +54,18 @@ const addDeck = async (
   }
 
   const deckCollection = await decks();
-  const { acknowledged, insertedId } = await deckCollection.insertOne(newDeck);
+  const { acknowledged, insertedId } = await deckCollection.insertOne({ ...newDeck, userId: requireUserId(userId) });
   if (!acknowledged) {
     throw new Error("Database error");
   }
 
   if (mainForColorIdentity) {
     await deckCollection.updateMany(
-      {
+      ownedFilter(userId, {
         _id: { $ne: insertedId },
         format,
         ...(colorId ? { colorId } : { $or: [{ colorId: { $exists: false } }, { colorId: "" }] }),
-      },
+      }),
       { $set: { mainForColorIdentity: false } }
     );
   }
@@ -68,27 +73,29 @@ const addDeck = async (
   return insertedId;
 }
 
-const findDeckByMongoId = async (deckId: string) => {
+const findDeckByMongoId = async (userId: ObjectId, deckId: string) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error(`deckId invalid`);
   const mongoId = ObjectId.createFromHexString(deckId);
 
   const deckCollection = await decks();
-  const deck = await deckCollection.findOne({ _id: mongoId });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: mongoId }));
   
   return deck;
 }
 
-const getAllDecks = async () => {
+const getAllDecks = async (userId: ObjectId) => {
+  requireUserId(userId);
   const deckCollection: Collection<Deck> = await decks();
-  const allDecks = await deckCollection.find({}).toArray();
+  const allDecks = await deckCollection.find(ownedFilter(userId, {})).toArray();
 
   return allDecks;
 }
 
-const getDeckOverviews = async () => {
+const getDeckOverviews = async (userId: ObjectId) => {
   const deckCollection: Collection<Deck> = await decks();
 
-  return await deckCollection.find({}, {
+  return await deckCollection.find(ownedFilter(userId), {
     projection: {
       cards: 0,
       changes: 0,
@@ -102,6 +109,7 @@ const getDeckOverviews = async () => {
 }
 
 const updateDeckSettings = async (
+  userId: ObjectId,
   deckId: string,
   name: string,
   link: string | null,
@@ -112,6 +120,7 @@ const updateDeckSettings = async (
   notes: string = "",
   together: boolean = true,
 ) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   name = validation.verifyStr(name, "name");
   owner = validation.verifyStr(owner, "owner");
@@ -139,7 +148,7 @@ const updateDeckSettings = async (
 
   const deckCollection: Collection<Deck> = await decks();
   const result = await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $set: deckUpdate,
       ...(Object.keys(unsetFields).length > 0 ? { $unset: unsetFields } : {}),
@@ -148,33 +157,35 @@ const updateDeckSettings = async (
 
   if (result.matchedCount === 0) throw new Error("Deck not found");
 
-  await gameData.updateDeckSnapshot(deckId, name, link);
+  await gameData.updateDeckSnapshot(userId, deckId, name, link);
 
   if (mainForColorIdentity) {
     await deckCollection.updateMany(
-      {
+      ownedFilter(userId, {
         _id: { $ne: new ObjectId(deckId) },
         format,
         ...(colorId ? { colorId } : { $or: [{ colorId: { $exists: false } }, { colorId: "" }] }),
-      },
+      }),
       { $set: { mainForColorIdentity: false } }
     );
   }
 }
 
 const setTags = async (
+  userId: ObjectId,
   deckId: string,
   set: string,
   cn: string,
   updatedTags: string[],
   deckSection: DeckSection = "cards"
 ) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
 
   const deckCollection: Collection<Deck> = await decks();
 
-  await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+  const result = await deckCollection.updateOne(
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $set: {
         [`${deckSection}.$[elem].tag`]: updatedTags,
@@ -185,18 +196,21 @@ const setTags = async (
       arrayFilters: [{ "elem.set": set, "elem.cn": cn }],
     }
   );
+  if (result.matchedCount === 0) throw new Error("Deck not found");
 };
 
 export const replaceCards = async (
+  userId: ObjectId,
   deckId: string,
   cards: Card[]
 ) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   if (!Array.isArray(cards)) throw new Error("cards must be an array");
 
   const deckCollection: Collection<Deck> = await decks();
   const result = await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $set: {
         cards: cards.map(card => ({
@@ -212,6 +226,7 @@ export const replaceCards = async (
 };
 
 const moveCardCopies = async (
+  userId: ObjectId,
   deckId: string,
   sourceSection: DeckSection,
   targetSection: DeckSection,
@@ -221,6 +236,7 @@ const moveCardCopies = async (
   proxy: boolean,
   quant: number,
 ) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(sourceSection)) throw new Error("sourceSection invalid");
   if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(targetSection)) throw new Error("targetSection invalid");
@@ -233,7 +249,7 @@ const moveCardCopies = async (
   if (quant < 1) throw new Error("quant must be at least 1");
 
   const deckCollection: Collection<Deck> = await decks();
-  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: new ObjectId(deckId) }));
   if (!deck) throw new Error("Deck not found");
 
   const sourceCards = deck[sourceSection] ?? [];
@@ -290,7 +306,7 @@ const moveCardCopies = async (
   }
 
   await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $set: {
         [sourceSection]: sourceCards,
@@ -302,6 +318,7 @@ const moveCardCopies = async (
 };
 
 const makeCardProxy = async (
+  userId: ObjectId,
   deckId: string,
   deckSection: DeckSection,
   set: string,
@@ -315,7 +332,7 @@ const makeCardProxy = async (
   foil = validation.verifyFoilType(foil);
 
   const deckCollection: Collection<Deck> = await decks();
-  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: new ObjectId(deckId) }));
   if (!deck) throw new Error("Deck not found");
 
   const deckCards = deck[deckSection] ?? [];
@@ -360,12 +377,13 @@ const makeCardProxy = async (
   }
 
   await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     { $set: { [deckSection]: deckCards, lastUpdate: new Date() } }
   );
 };
 
 const setProxyImage = async (
+  userId: ObjectId,
   deckId: string,
   deckSection: DeckSection,
   set: string,
@@ -381,7 +399,7 @@ const setProxyImage = async (
   image = validation.verifyStr(image, "image");
 
   const deckCollection: Collection<Deck> = await decks();
-  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: new ObjectId(deckId) }));
   if (!deck) throw new Error("Deck not found");
 
   const deckCards = deck[deckSection] ?? [];
@@ -394,7 +412,7 @@ const setProxyImage = async (
   if (!proxyCard) throw new Error("Proxy card not found in deck");
 
   const result = await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $set: {
         [`${deckSection}.$[elem].image`]: image,
@@ -419,6 +437,7 @@ const setProxyImage = async (
 };
 
 const replaceCardVersion = async (
+  userId: ObjectId,
   deckId: string,
   originalSet: string,
   originalCn: string,
@@ -438,7 +457,7 @@ const replaceCardVersion = async (
   if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(deckSection)) throw new Error("deckSection invalid");
 
   const deckCollection: Collection<Deck> = await decks();
-  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: new ObjectId(deckId) }));
   if (!deck) throw new Error("Deck not found");
 
   const deckCards = deck[deckSection] ?? [];
@@ -481,7 +500,7 @@ const replaceCardVersion = async (
   }
 
   await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     { $set: { [deckSection]: deckCards, lastUpdate: new Date() } }
   );
 
@@ -489,6 +508,7 @@ const replaceCardVersion = async (
 };
 
 const replaceProxyWithOwnedCard = async (
+  userId: ObjectId,
   deckId: string,
   originalSet: string,
   originalCn: string,
@@ -497,6 +517,7 @@ const replaceProxyWithOwnedCard = async (
   returnCollection?: "bulk" | "cool-cards" | "none",
   deckSection: DeckSection = "cards",
 ) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   originalSet = validation.verifyStr(originalSet, "originalSet");
   originalCn = validation.verifyStr(originalCn, "originalCn");
@@ -506,16 +527,16 @@ const replaceProxyWithOwnedCard = async (
   const ownedCardId = validation.verifyMongoId(collectionCardId);
 
   const deckCollection: Collection<Deck> = await decks();
-  const ownedCollection: Collection<Card> = collection === "bulk"
+  const ownedCollection: Collection<InventoryCard> = collection === "bulk"
     ? await bulkCards()
     : collection === "cool-cards"
       ? await coolCards()
       : await tradeBinder();
-  const returnedCollection: Collection<Card> | null = returnCollection === "none"
+  const returnedCollection: Collection<InventoryCard> | null = returnCollection === "none"
     ? null
     : (returnCollection ?? collection) === "bulk" ? await bulkCards() : await coolCards();
 
-  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: new ObjectId(deckId) }));
   if (!deck) throw new Error("Deck not found");
   const deckCards = deck[deckSection] ?? [];
 
@@ -524,7 +545,7 @@ const replaceProxyWithOwnedCard = async (
 
   const deckCard = deckCards[deckCardIndex];
   const replacedImage = deckCard.image;
-  const ownedCard = await ownedCollection.findOne({ _id: ownedCardId });
+  const ownedCard = await ownedCollection.findOne(ownedFilter(userId, { _id: ownedCardId }));
   if (!ownedCard) throw new Error("Owned card not found");
   if (ownedCard.name !== deckCard.name) throw new Error("Owned card does not match deck card");
   if (ownedCard.quant < deckCard.quant) throw new Error("Not enough owned copies");
@@ -560,10 +581,10 @@ const replaceProxyWithOwnedCard = async (
 
   const remainingOwnedQuant = ownedCard.quant - deckCard.quant;
   if (remainingOwnedQuant < 1) {
-    await ownedCollection.deleteOne({ _id: ownedCardId });
+    await ownedCollection.deleteOne(ownedFilter(userId, { _id: ownedCardId }));
   } else {
     await ownedCollection.updateOne(
-      { _id: ownedCardId },
+      ownedFilter(userId, { _id: ownedCardId }),
       { $set: { quant: remainingOwnedQuant, updatedAt: new Date() } }
     );
   }
@@ -576,16 +597,16 @@ const replaceProxyWithOwnedCard = async (
     delete returnedCard._id;
     delete returnedCard.tag;
 
-    const existingReturnedCard = await returnedCollection.findOne({
+    const existingReturnedCard = await returnedCollection.findOne(ownedFilter(userId, {
       set: returnedCard.set,
       cn: returnedCard.cn,
       foil: returnedCard.foil,
       proxy: returnedCard.proxy,
-    });
+    }));
 
     if (existingReturnedCard) {
       await returnedCollection.updateOne(
-        { _id: existingReturnedCard._id },
+        ownedFilter(userId, { _id: existingReturnedCard._id }),
         {
           $set: {
             quant: existingReturnedCard.quant + returnedCard.quant,
@@ -595,12 +616,12 @@ const replaceProxyWithOwnedCard = async (
         }
       );
     } else {
-      await returnedCollection.insertOne(returnedCard);
+      await returnedCollection.insertOne({ ...returnedCard, userId: requireUserId(userId) });
     }
   }
 
   await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     { $set: { [deckSection]: deckCards, lastUpdate: new Date() } }
   );
 
@@ -618,6 +639,7 @@ const cardIdentityMatches = (left: Card, right: Card): boolean => (
 );
 
 const applyPlannedChange = async (
+  userId: ObjectId,
   deckId: string,
   changeIndex: number,
   targetSection: "cards" | "sideboard" | "maybeboard" | "wishlist" = "maybeboard",
@@ -628,7 +650,7 @@ const applyPlannedChange = async (
   if (!["cards", "sideboard", "maybeboard", "wishlist"].includes(targetSection)) throw new Error("targetSection invalid");
 
   const deckCollection: Collection<Deck> = await decks();
-  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: new ObjectId(deckId) }));
   if (!deck) throw new Error("Deck not found");
 
   if (changeIndex >= deck.changes.length) throw new Error("Planned change not found");
@@ -731,7 +753,7 @@ const applyPlannedChange = async (
   deck.changes.splice(changeIndex, 1);
 
   await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $set: {
         cards: deck.cards,
@@ -746,17 +768,19 @@ const applyPlannedChange = async (
 };
 
 const addPlannedChange = async (
+  userId: ObjectId,
   deckId: string,
   cardOut: string,
   cardIn: string,
 ) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   cardOut = validation.verifyStr(cardOut, "cardOut");
   cardIn = validation.verifyStr(cardIn, "cardIn");
 
   const deckCollection: Collection<Deck> = await decks();
   const result = await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $push: {
         changes: {
@@ -775,22 +799,24 @@ const addPlannedChange = async (
 }
 
 const removePlannedChange = async (
+  userId: ObjectId,
   deckId: string,
   changeIndex: number,
 ) => {
+  requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
   changeIndex = validation.verifyInteger(changeIndex, "changeIndex");
   if (changeIndex < 0) throw new Error("changeIndex must be at least 0");
 
   const deckCollection: Collection<Deck> = await decks();
-  const deck = await deckCollection.findOne({ _id: new ObjectId(deckId) });
+  const deck = await deckCollection.findOne(ownedFilter(userId, { _id: new ObjectId(deckId) }));
   if (!deck) throw new Error("Deck not found");
   if (changeIndex >= deck.changes.length) throw new Error("Planned change not found");
 
   deck.changes.splice(changeIndex, 1);
 
   await deckCollection.updateOne(
-    { _id: new ObjectId(deckId) },
+    ownedFilter(userId, { _id: new ObjectId(deckId) }),
     {
       $set: {
         changes: deck.changes,

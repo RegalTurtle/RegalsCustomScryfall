@@ -1,3 +1,6 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
+import { ownedFilter } from "@/data/ownership";
 import { NextRequest, NextResponse } from "next/server";
 import { bulkCards, coolCards, tradeBinder } from "@/config/mongoCollections";
 import deckData from "@/data/decks";
@@ -72,11 +75,14 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ deck_id: string }> }
 ): Promise<NextResponse> {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   const { deck_id } = await params;
 
   try {
     const includeDeckCards = request.nextUrl.searchParams.get("includeDeckCards") === "true";
-    const deck = await deckData.findDeckByMongoId(deck_id);
+    const deck = await deckData.findDeckByMongoId(userId, deck_id);
     if (!deck) return NextResponse.json({ error: "Deck not found" }, { status: 404 });
 
     const deckCards = deck.cards ?? [];
@@ -110,9 +116,9 @@ export async function GET(
     const tradeBinderCollection = await tradeBinder();
 
     const [bulkMatches, coolMatches, tradeMatches] = await Promise.all([
-      bulkCardsCollection.find({ name: { $in: cardNamesToCheck }, quant: { $gt: 0 } }).project({ name: 1 }).toArray(),
-      coolCardsCollection.find({ name: { $in: cardNamesToCheck }, quant: { $gt: 0 } }).project({ name: 1 }).toArray(),
-      tradeBinderCollection.find({ name: { $in: cardNamesToCheck }, quant: { $gt: 0 } }).project({ name: 1 }).toArray(),
+      bulkCardsCollection.find(ownedFilter(userId, { name: { $in: cardNamesToCheck }, quant: { $gt: 0 } })).project({ name: 1 }).toArray(),
+      coolCardsCollection.find(ownedFilter(userId, { name: { $in: cardNamesToCheck }, quant: { $gt: 0 } })).project({ name: 1 }).toArray(),
+      tradeBinderCollection.find(ownedFilter(userId, { name: { $in: cardNamesToCheck }, quant: { $gt: 0 } })).project({ name: 1 }).toArray(),
     ]);
 
     const bulkNames = new Set(bulkMatches.map(card => card.name));

@@ -179,8 +179,8 @@ function getCookieValue(name: string): string | null {
   return cookie ? decodeURIComponent(cookie.split("=").slice(1).join("=")) : null;
 }
 
-function loadGroupPreferences(): WatchlistGroupPreferences | null {
-  const rawPreferences = getCookieValue(groupPreferencesCookieName);
+function loadGroupPreferences(userId: string): WatchlistGroupPreferences | null {
+  const rawPreferences = getCookieValue(`${groupPreferencesCookieName}_${userId}`);
   if (!rawPreferences) return null;
 
   try {
@@ -205,9 +205,9 @@ function loadGroupPreferences(): WatchlistGroupPreferences | null {
   }
 }
 
-function saveGroupPreferences(preferences: WatchlistGroupPreferences) {
+function saveGroupPreferences(userId: string, preferences: WatchlistGroupPreferences) {
   const oneYearInSeconds = 60 * 60 * 24 * 365;
-  document.cookie = `${groupPreferencesCookieName}=${encodeURIComponent(JSON.stringify(preferences))}; path=/decks/watchlist; max-age=${oneYearInSeconds}; SameSite=Lax`;
+  document.cookie = `${groupPreferencesCookieName}_${userId}=${encodeURIComponent(JSON.stringify(preferences))}; path=/decks/watchlist; max-age=${oneYearInSeconds}; SameSite=Lax`;
 }
 
 function getCardImage(card: ScryfallCard): string {
@@ -408,24 +408,25 @@ export default function DeckWatchlist() {
   }, [update]);
 
   useEffect(() => {
-    const savedPreferences = loadGroupPreferences();
+    if (!session?.user.id) return;
+    const savedPreferences = loadGroupPreferences(session.user.id);
     if (savedPreferences) {
       setGroupByTags(savedPreferences.tags);
       setGroupByColors(savedPreferences.colors);
       setSeparateBySet(savedPreferences.sets);
     }
     setLoadedGroupPreferences(true);
-  }, []);
+  }, [session?.user.id]);
 
   useEffect(() => {
-    if (!loadedGroupPreferences) return;
+    if (!loadedGroupPreferences || !session?.user.id) return;
 
-    saveGroupPreferences({
+    saveGroupPreferences(session.user.id, {
       tags: groupByTags,
       colors: groupByColors,
       sets: separateBySet,
     });
-  }, [groupByTags, groupByColors, separateBySet, loadedGroupPreferences]);
+  }, [groupByTags, groupByColors, separateBySet, loadedGroupPreferences, session?.user.id]);
 
   useEffect(() => {
     if (!separateBySet || cards.length === 0) return;

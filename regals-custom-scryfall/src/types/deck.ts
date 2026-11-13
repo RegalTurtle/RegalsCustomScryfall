@@ -2,6 +2,8 @@ import { ObjectId } from "mongodb";
 import { Card, DeckChange, Game } from "@/types";
 
 export interface Deck {
+  userId: ObjectId;
+  /** Descriptive attribution; never used for authorization. */
   _id?: ObjectId;
   owner: string;
   link?: string;

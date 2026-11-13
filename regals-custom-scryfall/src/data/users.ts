@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 const saltRounds = 10;
 
 type SanitizedUser = {
+  id: string,
   username: string,
   firstName: string,
   lastName: string,
@@ -35,6 +36,7 @@ const verifyUser = async (
 
   // User credentials are valid, return the user document
   return {
+    id: user._id.toString(),
     username: user.username,
     firstName: user.firstName,
     lastName: user.lastName,
@@ -83,9 +85,10 @@ const addUser = async (
     permissionLevel,
   };
 
-  await usersCollection.insertOne(user);
+  const { insertedId } = await usersCollection.insertOne(user);
 
   return {
+    id: insertedId.toString(),
     username,
     firstName,
     lastName,
