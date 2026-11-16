@@ -1,3 +1,6 @@
+import { authenticatedUserId } from "@/server/auth";
+import deckData from "@/data/decks";
+import { ownedFilter } from "@/data/ownership";
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { ObjectId } from "mongodb";
@@ -26,11 +29,14 @@ function getCardQuery(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
   try {
     const cardsParam = request.nextUrl.searchParams.get("cards");
     if (cardsParam) {
       const cards = JSON.parse(cardsParam) as Array<{ set: string; cn: string }>;
       const deckId = validation.verifyMongoId(request.nextUrl.searchParams.get("deckId") ?? "");
+      if (!await deckData.findDeckByMongoId(userId, deckId.toString())) return NextResponse.json({ error: "Deck not found" }, { status: 404 });
       const keys = cards.map(card => ({ set: String(card.set).toLowerCase(), cn: String(card.cn) }));
       const records = await (await cardPerformance()).aggregate<{ _id: { set: string; cn: string }; good: number; poor: number }>([
         { $match: { deckId, $or: keys } },
@@ -39,9 +45,10 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ summaries: Object.fromEntries(records.map(record => [`${record._id.set}|${record._id.cn}`, { good: record.good, poor: record.poor, score: record.good - record.poor }])) });
     }
     const { set, cn, deckId } = getCardQuery(request);
+    if (!await deckData.findDeckByMongoId(userId, deckId.toString())) return NextResponse.json({ error: "Deck not found" }, { status: 404 });
     const notes = await (await cardPerformance()).find({ set, cn, deckId }).sort({ createdAt: -1 }).toArray();
     const gameIds = notes.map(note => note.gameId).filter(id => ObjectId.isValid(id));
-    const gameList = await (await games()).find({ _id: { $in: gameIds } }).toArray();
+    const gameList = await (await games()).find(ownedFilter(userId, { _id: { $in: gameIds } })).toArray();
     const gameMap = new Map(gameList.map(game => [game._id?.toString(), game]));
     const serialized = notes.map(note => serialize(note, gameMap.get(note.gameId.toString())));
     const summary = serialized.reduce((result, note) => {
@@ -55,6 +62,8 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
   const session = await getServerSession({ request, ...authOptions });
   if (!session?.user?.username) {
     return NextResponse.json({ error: "Not signed in" }, { status: 401 });
@@ -71,7 +80,8 @@ export async function POST(request: NextRequest) {
     if (rating !== "good" && rating !== "poor") throw new Error("rating must be good or poor");
     const notes = typeof body.notes === "string" ? body.notes.trim() : "";
     if (notes.length > 1000) throw new Error("Notes cannot exceed 1000 characters");
-    const game = await (await games()).findOne({ _id: gameId });
+    if (!await deckData.findDeckByMongoId(userId, deckId.toString())) return NextResponse.json({ error: "Deck not found" }, { status: 404 });
+    const game = await (await games()).findOne(ownedFilter(userId, { _id: gameId }));
     if (!game) return NextResponse.json({ error: "Game not found" }, { status: 404 });
     if (!game.deckId || game.deckId.toString() !== deckId.toString()) {
       return NextResponse.json({ error: "That game was not played with this deck" }, { status: 400 });
@@ -91,6 +101,8 @@ export async function POST(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
   const session = await getServerSession({ request, ...authOptions });
   if (!session?.user?.username) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
   const noteId = request.nextUrl.searchParams.get("id");

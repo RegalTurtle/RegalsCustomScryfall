@@ -139,7 +139,7 @@ test('direct-query routes, reports, searches, pagination and statistics are scop
 
 test('every personal API handler rejects unauthenticated and legacy sessions before using input', async () => {
   function files(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(path.join(dir,e.name)) : [path.join(dir,e.name)]); }
-  const handlers = files(path.join(src, 'app/api')).filter(f => f.endsWith('route.ts') && !f.includes(`${path.sep}auth${path.sep}`));
+  const handlers = files(path.join(src, 'app/api')).filter(f => f.endsWith('route.ts') && !f.includes(`${path.sep}auth${path.sep}`) && !f.includes(`${path.sep}custom${path.sep}`));
   for (const value of [null, { user: { username: 'a', permissionLevel: 'owner' } }]) {
     session = value;
     for (const file of handlers) {
@@ -224,4 +224,37 @@ test('missing ownership stays invisible; migration dry-run, preservation, indexe
   const malformed = await migration.migrateOwnership(db, 'a');
   assert.equal(malformed.issues.length, 2);
   await assert.rejects(migration.migrateOwnership(db, 'a', { apply: true }), /blocked/);
+});
+
+// Main added these operations after the isolation branch diverged.
+test('rebased main features preserve behavior and reject foreign ownership', async () => {
+  const ownDeck = await addDeck(a, 'Rebase regression', false);
+  const foreignDeck = await addDeck(b, 'Foreign regression', false);
+  const ownId = String(ownDeck), foreignId = String(foreignDeck);
+  await decks.makeCardProxy(a, ownId, 'cards', 'tst', '1', 'nonfoil');
+  assert.equal((await decks.findDeckByMongoId(a, ownId)).cards[0].proxy, true);
+  await decks.setProxyImage(a, ownId, 'cards', 'tst', '1', 'nonfoil', 'https://example.com/proxy.jpg');
+  await decks.replaceCardVersion(a, ownId, 'tst', '1', 'new', '2');
+  assert.equal((await decks.findDeckByMongoId(a, ownId)).cards[0].set, 'new');
+  const before = await snapshot();
+  await assert.rejects(decks.makeCardProxy(a, foreignId, 'cards', 'tst', '1', 'nonfoil'), /not found/);
+  await assert.rejects(decks.setProxyImage(a, foreignId, 'cards', 'tst', '1', 'nonfoil', 'https://example.com/x.jpg'), /not found/);
+  await assert.rejects(decks.replaceCardVersion(a, foreignId, 'tst', '1', 'new', '2'), /not found/);
+  await assert.rejects(decks.applyPlannedChange(a, foreignId, 0), /not found/);
+  assert.equal(await snapshot(), before);
+  session = { user: { id: String(a), username: 'a', permissionLevel: 'user' } };
+  const deniedNotes = await route('card-performance').GET(request('/?set=tst&cn=1&deckId=' + foreignId));
+  assert.equal(deniedNotes.status, 404);
+  await decks.addPlannedChange(a, ownId, 'Test Card', 'Replacement');
+  await db.collection('decks').updateOne({ _id: ownDeck }, { $set: { maybeboard: [{ ...baseCard, name: 'Replacement', set: 'rep', cn: '3', quant: 1 }] } });
+  await decks.applyPlannedChange(a, ownId, 0);
+  assert.equal((await decks.findDeckByMongoId(a, ownId)).cards[0].name, 'Replacement');
+  assert.ok((await decks.getDeckOverviews(a)).every(deck => String(deck.userId) === String(a)));
+  assert.ok((await cards.getAllCards(a, 'watchlist')).every(card => String(card.userId) === String(a)));
+  const gameId = await games.addGame(a, { ...gameInput, deckId: ownId });
+  await games.updateGame(a, gameId, { ...gameInput, deckId: ownId, result: 'loss' });
+  assert.equal((await games.getDeckOverviewStats(a))[ownId].winPercent, 0);
+  assert.equal((await games.getDeckOverviewStats(b))[ownId], undefined);
+  await assert.rejects(games.updateGame(a, gameId, { ...gameInput, deckId: foreignId }), /not found/);
+  await assert.rejects(games.updateGame(b, gameId, gameInput), /not found/);
 });

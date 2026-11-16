@@ -190,6 +190,8 @@ const updateGame = async (userId: ObjectId, gameId: string, input: GameCreateInp
 
   if (input.deckId && input.deckId !== "") {
     updateFields.deckId = validation.verifyMongoId(input.deckId);
+    const deck = await (await decks()).findOne(ownedFilter(userId, { _id: updateFields.deckId }));
+    if (!deck) throw new Error("Deck not found");
   } else {
     updateFields.deckId = undefined;
   }

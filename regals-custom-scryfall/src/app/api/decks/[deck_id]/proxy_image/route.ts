@@ -1,10 +1,7 @@
 import { authenticatedUserId } from "@/server/auth";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
 import { mkdir, writeFile } from "fs/promises";
 import { randomUUID } from "crypto";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
 import { deleteLocalProxyImage, getProxyImagePath, getProxyImageUploadDir, proxyImageUrlPrefix } from "@/utils/proxyImages";
 

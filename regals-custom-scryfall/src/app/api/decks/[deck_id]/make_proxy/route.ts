@@ -1,8 +1,5 @@
 import { authenticatedUserId } from "@/server/auth";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
 
 export async function POST(

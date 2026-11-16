@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { ObjectId } from "mongodb";
 
 import type { Card, Deck } from "../types";
 import { getNetProxyCardsForDeck } from "./proxyReport";
@@ -22,6 +23,7 @@ const makeCard = (overrides: Partial<Card> = {}): Card => ({
 });
 
 const makeDeck = (overrides: Partial<Deck> = {}): Deck => ({
+  userId: new ObjectId(),
   owner: "owner",
   name: "Deck",
   cards: [],
