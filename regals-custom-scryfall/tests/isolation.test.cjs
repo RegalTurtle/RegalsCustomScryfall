@@ -7,8 +7,8 @@ const ts = require('typescript');
 const { MongoClient, ObjectId } = require('mongodb');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
-// Execute the actual TS data functions and route handlers; only the session
-// provider is substituted. All database operations run against real MongoDB.
+// Run the actual data functions and handlers with a test session and no Next.js
+// request cache. All database operations run against real MongoDB.
 const src = path.resolve(__dirname, '../src');
 const resolve = Module._resolveFilename;
 Module._resolveFilename = function(name, ...rest) {
@@ -21,6 +21,7 @@ let session = null;
 const load = Module._load;
 Module._load = function(name, ...rest) {
   if (name === 'next-auth') return { getServerSession: async () => session };
+  if (name === 'next/cache') return { revalidatePath: () => {} };
   return load.call(this, name, ...rest);
 };
 
@@ -53,6 +54,7 @@ before(async () => {
   // No configured application database URL is ever used by this test suite.
   server = await MongoMemoryServer.create({ binary: { version: '7.0.24' }, instance: { dbName: 'isolation_test' } });
   process.env.MONGO_URL = server.getUri();
+  process.env.MONGODB_URI = process.env.MONGO_URL;
   process.env.DATABASE_NAME = 'isolation_test';
   client = await MongoClient.connect(process.env.MONGO_URL);
   db = client.db(process.env.DATABASE_NAME);
@@ -159,14 +161,141 @@ test('credential verification and JWT/session use the database ID and reject use
   const password = 'TestPassword123!';
   await db.collection('users').insertOne({ _id: id, username: 'authuser', password: await bcrypt.hash(password, 4), firstName: 'Test', lastName: 'User', permissionLevel: 'user' });
   const verified = await require('@/data/users').default.verifyUser('authuser', password);
-  assert.equal(verified.id, String(id));
-  assert.equal(verified.password, undefined);
+  assert.deepEqual(verified, { id: String(id), username: 'authuser', permissionLevel: 'user' });
   const { authOptions } = require('@/auth-options');
-  const token = await authOptions.callbacks.jwt({ token: {}, user: { id: verified.id, username: verified.username, permissionLevel: 'user' } });
+  const token = await authOptions.callbacks.jwt({ token: {}, user: { id: verified.id, permissionLevel: 'user' } });
+  assert.deepEqual(token, { userId: String(id), permissionLevel: 'user' });
   const result = await authOptions.callbacks.session({ session: { user: {} }, token });
   assert.equal(result.user.id, String(id));
   const legacy = await authOptions.callbacks.session({ session: { user: {} }, token: { sub: 'authuser', username: 'authuser' } });
   assert.equal(legacy.user.id, '');
+});
+
+test('account management checks the current owner role and preserves credentials on profile edits', async () => {
+  const userData = require('@/data/users').default;
+  const { saveAccount } = require('@/app/settings/actions');
+  const ownerId = new ObjectId();
+  await db.collection('users').insertOne({ _id: ownerId, username: 'admin-test', permissionLevel: 'owner' });
+  const form = new FormData();
+  for (const [key, value] of Object.entries({
+    username: 'NewPlayer', password: 'PlayerPassword123!',
+    permissionLevel: 'user',
+  })) form.set(key, value);
+
+  for (const unauthorized of [null, { user: { id: String(b), permissionLevel: 'owner' } }]) {
+    session = unauthorized;
+    assert.deepEqual(await saveAccount('', form), { error: 'Owner access is required.' });
+  }
+
+  session = { user: { id: String(ownerId), permissionLevel: 'user' } };
+  const results = await Promise.all([saveAccount('', form), saveAccount('', form)]);
+  assert.equal(results.filter(result => result.message === 'Account created.').length, 1);
+  assert.equal(results.filter(result => /already exists/.test(result.error)).length, 1);
+
+  const account = (await userData.listAccounts(ownerId)).find(account => account.username === 'newplayer');
+  assert.deepEqual(account, { id: account.id, username: 'newplayer', email: '', permissionLevel: 'user' });
+  assert.deepEqual(
+    Object.keys(await db.collection('users').findOne({ _id: new ObjectId(account.id) })).sort(),
+    ['_id', 'password', 'permissionLevel', 'username'],
+  );
+
+  form.set('username', 'RenamedPlayer');
+  form.delete('password');
+  form.set('email', 'invalid');
+  assert.match((await saveAccount(account.id, form)).error, /Email/);
+  form.set('email', 'player@example.com');
+  assert.deepEqual(await saveAccount(String(ownerId), form), { error: 'Select another account to edit.' });
+  assert.deepEqual(await saveAccount(account.id, form), { message: 'Account updated.' });
+  assert.equal((await userData.verifyUser('renamedplayer', 'PlayerPassword123!')).id, account.id);
+  assert.equal((await db.collection('users').findOne({ _id: new ObjectId(account.id) })).email, 'player@example.com');
+
+  form.set('password', 'ResetPassword123!');
+  form.set('email', '');
+  assert.deepEqual(await saveAccount(account.id, form), { message: 'Account updated.' });
+  assert.equal(Object.hasOwn(await db.collection('users').findOne({ _id: new ObjectId(account.id) }), 'email'), false);
+  await assert.rejects(userData.verifyUser('renamedplayer', 'PlayerPassword123!'), /did not match/);
+  assert.equal((await userData.verifyUser('renamedplayer', 'ResetPassword123!')).id, account.id);
+
+  await db.collection('users').deleteMany({ _id: { $in: [ownerId, new ObjectId(account.id)] } });
+});
+
+test('renaming preserves the session ID and note ownership and updates linked attribution', async () => {
+  const userData = require('@/data/users').default;
+  const { saveProfile } = require('@/app/settings/actions');
+  const { authOptions } = require('@/auth-options');
+  const originalPassword = 'OriginalPassword123!';
+  const newPassword = 'UpdatedPassword123!';
+  const account = await userData.addUser({ username: 'profile-test', permissionLevel: 'user' }, originalPassword);
+  const userId = new ObjectId(account.id);
+  const deckId = await addDeck(userId, 'Profile test deck');
+  const deck = await decks.findDeckByMongoId(userId, deckId.toString());
+  const noteCollection = db.collection('card_performance');
+  const { insertedId: noteId } = await noteCollection.insertOne({ deckId: deck._id, creator: account.username });
+  const customCollection = db.collection('custom_cards');
+  const customCard = { set: 'PROFILETEST', cn: 1 };
+  const { insertedId: customCardId } = await customCollection.insertOne({
+    ...customCard, name: 'Profile test card', notes: [{ creator: 'legacy-author', notes: 'Legacy note' }],
+  });
+  const deleteUrl = '/?id=' + noteId;
+  const form = new FormData();
+  for (const [key, value] of Object.entries({
+    username: 'PROFILE-RENAMED', email: 'profile@example.com', currentPassword: 'IncorrectPassword123!',
+    newPassword, confirmPassword: newPassword, permissionLevel: 'owner', userId: String(b),
+  })) form.set(key, value);
+
+  try {
+    session = null;
+    assert.match((await saveProfile(form)).error, /Sign in/);
+    session = { user: { id: String(b), username: account.username } };
+    assert.equal((await route('card-performance').DELETE(request(deleteUrl))).status, 404);
+
+    session = { user: { id: account.id, username: account.username, permissionLevel: 'user' } };
+    const added = await route('custom/card/[set]/[cn]/notes').POST(
+      request('/', { note: 'Linked note' }), params({ set: customCard.set, cn: String(customCard.cn) }),
+    );
+    assert.equal(added.status, 200);
+    const storedCard = await customCollection.findOne({ _id: customCardId });
+    assert.ok(storedCard.notes[1].creatorId.equals(userId));
+    assert.match((await saveProfile(form)).error, /Current password/);
+    form.set('currentPassword', originalPassword);
+    form.set('confirmPassword', 'OtherPassword123!');
+    assert.match((await saveProfile(form)).error, /do not match/);
+    form.set('confirmPassword', newPassword);
+    assert.deepEqual(await saveProfile(form), {
+      profile: { username: 'profile-renamed', email: 'profile@example.com' },
+    });
+    const token = await authOptions.callbacks.jwt({
+      token: { userId: account.id, username: account.username, permissionLevel: 'user' },
+      trigger: 'update',
+      session: { userId: String(b), username: 'spoofed', permissionLevel: 'owner' },
+    });
+    assert.deepEqual(token, { userId: account.id, permissionLevel: 'user' });
+    const refreshed = await authOptions.callbacks.session({ session: { user: {} }, token });
+    assert.deepEqual(refreshed.user, { id: account.id, permissionLevel: 'user' });
+    const card = await require('@/data/customCards').getCustomCard(customCard.set, customCard.cn);
+    assert.deepEqual(card.notes.map(note => note.creator), ['legacy-author', 'profile-renamed']);
+    assert.equal(Object.hasOwn(card.notes[1], 'creatorId'), false);
+    await assert.rejects(userData.verifyUser('profile-renamed', originalPassword), /did not match/);
+    assert.deepEqual(await userData.verifyUser('profile-renamed', newPassword), {
+      id: account.id, username: 'profile-renamed', permissionLevel: 'user',
+    });
+    assert.equal((await db.collection('users').findOne({ _id: userId })).email, 'profile@example.com');
+    assert.equal((await route('card-performance').DELETE(request(deleteUrl))).status, 200);
+
+    form.set('currentPassword', newPassword);
+    form.set('email', '');
+    form.delete('newPassword');
+    form.delete('confirmPassword');
+    assert.deepEqual(await saveProfile(form), {
+      profile: { username: 'profile-renamed', email: '' },
+    });
+    assert.equal(Object.hasOwn(await db.collection('users').findOne({ _id: userId }), 'email'), false);
+  } finally {
+    await noteCollection.deleteOne({ _id: noteId });
+    await customCollection.deleteOne({ _id: customCardId });
+    await db.collection('decks').deleteOne({ _id: deck._id });
+    await db.collection('users').deleteOne({ _id: userId });
+  }
 });
 
 test('ordinary users manage their own records and cannot submit an ownership override', async () => {

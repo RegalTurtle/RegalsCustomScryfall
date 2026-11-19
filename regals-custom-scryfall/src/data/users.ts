@@ -1,21 +1,19 @@
 import { users } from "@/config/mongoCollections";
 import validation from "@/validation";
 import bcrypt from "bcryptjs";
+import { MongoServerError, type Filter, type ObjectId } from "mongodb";
+import type { AccountDetails, ManagedAccount, User } from "@/types/user";
 const saltRounds = 10;
 
-type SanitizedUser = {
-  id: string,
-  username: string,
-  firstName: string,
-  lastName: string,
-  permissionLevel: string,
-}
+export class AccountInputError extends Error {}
+
+type SanitizedUser = Pick<ManagedAccount, "id" | "username" | "permissionLevel">;
 
 /**
  * Checks if a given username and password combination is valid
  * @param {string} username - Username to test
  * @param {string} password - Password to test
- * @returns An object with the username, firstName, lastName, and permissionLevel of the user
+ * @returns The user's ID, username, and permission level
  */
 const verifyUser = async (
   username: string,
@@ -34,66 +32,138 @@ const verifyUser = async (
   const passwordMatch = await bcrypt.compare(password, user.password);
   if (!passwordMatch) throw new Error("Username and password did not match");
 
-  // User credentials are valid, return the user document
+  // Return the identity used by the session.
   return {
     id: user._id.toString(),
     username: user.username,
-    firstName: user.firstName,
-    lastName: user.lastName,
     permissionLevel: user.permissionLevel,
   };
 };
 
-/**
- * Adds a user to the database, hashes their password, and checks to not insert duplicate usernames
- * @param {string} username - username of new user
- * @param {string} password - plaintext password of new user
- * @param {string} firstName - first name of new user
- * @param {string} lastName - last name of new user
- * @param {string} email - email of new user
- * @param {string} permissionLevel - permission level of new user
- * @returns
- */
-const addUser = async (
-  username: string,
-  password: string,
-  firstName: string,
-  lastName: string,
-  email: string,
-  permissionLevel: string
-): Promise<SanitizedUser> => {
-  // Validate all inputs
-  username = validation.verifyUsername(username);
-  password = validation.verifyPassword(password);
-  firstName = validation.verifyStr(firstName, `firstName`);
-  lastName = validation.verifyStr(lastName, `lastName`);
-  email = validation.verifyEmail(email);
-  permissionLevel = validation.verifyPermissionLevel(permissionLevel);
+type ProfileDetails = Pick<AccountDetails, "username" | "email">;
 
-  // Fetch users collection from DB
-  const usersCollection = await users();
-  const userIfFound = await usersCollection.findOne({ username });
-  if (userIfFound) throw new Error(`A user with that username already exists.`);
+function validateProfile(details: ProfileDetails): ProfileDetails {
+  try {
+    const email = details.email?.trim();
+    return {
+      username: validation.verifyUsername(details.username),
+      ...(email ? { email: validation.verifyEmail(email) } : {}),
+    };
+  } catch (error) {
+    if (error instanceof Error) throw new AccountInputError(error.message);
+    throw error;
+  }
+}
 
-  const hash = await bcrypt.hash(password, saltRounds);
-  const user = {
-    username,
-    firstName,
-    lastName,
-    email,
-    password: hash,
-    permissionLevel,
-  };
+function validateAccount(details: AccountDetails): AccountDetails {
+  const profile = validateProfile(details);
+  try {
+    return { ...profile, permissionLevel: validation.verifyPermissionLevel(details.permissionLevel) };
+  } catch (error) {
+    if (error instanceof Error) throw new AccountInputError(error.message);
+    throw error;
+  }
+}
 
-  const { insertedId } = await usersCollection.insertOne(user);
+async function hashPassword(password: string): Promise<string> {
+  try {
+    password = validation.verifyPassword(password);
+    if (bcrypt.truncates(password)) throw new Error("Password must fit within 72 UTF-8 bytes.");
+  } catch (error) {
+    if (error instanceof Error) throw new AccountInputError(error.message);
+    throw error;
+  }
+  return bcrypt.hash(password, saltRounds);
+}
+
+async function accountsForWrite() {
+  const collection = await users();
+  await collection.createIndex({ username: 1 }, {
+    name: "unique_account_username",
+    unique: true,
+    partialFilterExpression: { username: { $type: "string" } },
+  });
+  return collection;
+}
+
+function rethrowAccountWrite(error: unknown): never {
+  if (error instanceof MongoServerError && error.code === 11000) {
+    throw new AccountInputError("A user with that username already exists.");
+  }
+  throw error;
+}
+
+async function addUser(input: AccountDetails, password: string): Promise<SanitizedUser> {
+  const details = validateAccount(input);
+  const hash = await hashPassword(password);
+  const collection = await accountsForWrite();
+  try {
+    const { insertedId } = await collection.insertOne({ ...details, password: hash });
+    return {
+      id: insertedId.toString(),
+      username: details.username,
+      permissionLevel: details.permissionLevel,
+    };
+  } catch (error) {
+    rethrowAccountWrite(error);
+  }
+}
+
+async function listAccounts(ownerId: ObjectId): Promise<ManagedAccount[]> {
+  const collection = await users();
+  const accounts = await collection.find({ _id: { $ne: ownerId } })
+    .project<AccountDetails & { _id: ObjectId }>({
+      username: 1, email: 1, permissionLevel: 1,
+    })
+    .sort({ username: 1 })
+    .toArray();
+  return accounts.map(({ _id, username, email, permissionLevel }) => ({
+    id: _id.toString(),
+    username: username ?? "",
+    email: email ?? "",
+    permissionLevel: permissionLevel ?? "",
+  }));
+}
+
+async function writeAccount(filter: Filter<User>, input: ProfileDetails & Partial<Pick<User, "permissionLevel">>, password: string) {
+  const { email, ...details } = input;
+  const passwordUpdate = password ? { password: await hashPassword(password) } : {};
+  const collection = await accountsForWrite();
+  try {
+    const result = await collection.updateOne(filter, {
+      $set: { ...details, ...passwordUpdate, ...(email ? { email } : {}) },
+      ...(email ? {} : { $unset: { email: "" } }),
+    });
+    return result.matchedCount > 0;
+  } catch (error) {
+    rethrowAccountWrite(error);
+  }
+}
+
+async function updateAccount(id: ObjectId, input: AccountDetails, password: string) {
+  if (!await writeAccount({ _id: id }, validateAccount(input), password)) {
+    throw new AccountInputError("Account not found.");
+  }
+}
+
+async function updateProfile(id: ObjectId, input: ProfileDetails, currentPassword: string, newPassword: string) {
+  const account = await (await users()).findOne({ _id: id }, { projection: { username: 1, password: 1 } });
+  if (!account?.password || !currentPassword || !await bcrypt.compare(currentPassword.trim(), account.password)) {
+    throw new AccountInputError("Current password is incorrect.");
+  }
+
+  const details = validateProfile(input);
+  const saved = await writeAccount(
+    { _id: id, password: account.password, username: account.username },
+    details,
+    newPassword,
+  );
+  if (!saved) throw new AccountInputError("Your account changed while saving. Reload and try again.");
 
   return {
-    id: insertedId.toString(),
-    username,
-    firstName,
-    lastName,
-    permissionLevel,
+    username: details.username,
+    email: details.email ?? "",
   };
-};
+}
 
-export default { verifyUser, addUser };
+export default { verifyUser, addUser, listAccounts, updateAccount, updateProfile };

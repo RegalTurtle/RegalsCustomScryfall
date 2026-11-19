@@ -1,15 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth-options";
+import { authenticatedUserId } from "@/server/auth";
 import { customCards } from "@/config/customCardCollections";
+import { users } from "@/config/mongoCollections";
 import validation from "@/validation";
 
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ set: string; cn: string }> },
 ) {
-  const session = await getServerSession({ request, ...authOptions });
-  if (!session?.user?.username) return NextResponse.json({ error: "You must be signed in" }, { status: 401 });
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "You must be signed in" }, { status: 401 });
+  const account = await (await users()).findOne({ _id: userId }, { projection: { username: 1 } });
+  if (!account?.username) return NextResponse.json({ error: "You must be signed in" }, { status: 401 });
 
   const { set, cn } = await params;
   const body = await request.json();
@@ -21,7 +23,7 @@ export async function POST(
   const formattedDate = `${String(date.getDate()).padStart(2, "0")}-${String(date.getMonth() + 1).padStart(2, "0")}-${date.getFullYear()}`;
   const result = await collection.updateOne(
     { set: set.toUpperCase(), cn: Number(cn) },
-    { $push: { notes: { date: formattedDate, creator: session.user.username, notes: note } } },
+    { $push: { notes: { date: formattedDate, creatorId: userId, creator: account.username, notes: note } } },
   );
 
   if (!result.matchedCount) return NextResponse.json({ error: "Card not found" }, { status: 404 });

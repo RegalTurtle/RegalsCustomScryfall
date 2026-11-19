@@ -8,5 +8,5 @@ export function middleware(_request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/api/collection/:path*", "/api/decks/:path*", "/api/games/:path*", "/collection/:path*", "/decks/:path*", "/games/:path*"],
+  matcher: ["/api/collection/:path*", "/api/decks/:path*", "/api/games/:path*", "/collection/:path*", "/decks/:path*", "/games/:path*", "/settings/:path*"],
 };

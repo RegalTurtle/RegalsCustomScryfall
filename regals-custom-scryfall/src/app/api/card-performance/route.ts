@@ -2,10 +2,8 @@ import { authenticatedUserId } from "@/server/auth";
 import deckData from "@/data/decks";
 import { ownedFilter } from "@/data/ownership";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
 import { ObjectId } from "mongodb";
-import { authOptions } from "@/auth-options";
-import { cardPerformance, games } from "@/config/mongoCollections";
+import { cardPerformance, games, users } from "@/config/mongoCollections";
 import { CardPerformanceRating, SerializedCardPerformanceNote } from "@/types";
 import validation from "@/validation";
 
@@ -64,12 +62,9 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   const userId = await authenticatedUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  const session = await getServerSession({ request, ...authOptions });
-  if (!session?.user?.username) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
-
   try {
+    const account = await (await users()).findOne({ _id: userId }, { projection: { username: 1 } });
+    if (!account?.username) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
     const body = await request.json();
     const cardName = validation.verifyStr(body.cardName, "cardName");
     const set = validation.verifyStr(body.set, "set").toLowerCase();
@@ -90,8 +85,8 @@ export async function POST(request: NextRequest) {
     const now = new Date();
     const collection = await cardPerformance();
     await collection.updateOne(
-      { cardName, set, cn, deckId, gameId, creator: session.user.username },
-      { $set: { rating, notes, updatedAt: now }, $setOnInsert: { cardName, set, cn, deckId, gameId, creator: session.user.username, createdAt: now } },
+      { cardName, set, cn, deckId, gameId },
+      { $set: { rating, notes, updatedAt: now }, $setOnInsert: { creator: account.username, createdAt: now } },
       { upsert: true },
     );
     return NextResponse.json({ success: true }, { status: 201 });
@@ -103,10 +98,14 @@ export async function POST(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   const userId = await authenticatedUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  const session = await getServerSession({ request, ...authOptions });
-  if (!session?.user?.username) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
   const noteId = request.nextUrl.searchParams.get("id");
   if (!noteId || !ObjectId.isValid(noteId)) return NextResponse.json({ error: "Invalid note" }, { status: 400 });
-  const result = await (await cardPerformance()).deleteOne({ _id: new ObjectId(noteId), creator: session.user.username });
+  const collection = await cardPerformance();
+  const id = new ObjectId(noteId);
+  const note = await collection.findOne({ _id: id }, { projection: { deckId: 1 } });
+  if (!note?.deckId || !await deckData.findDeckByMongoId(userId, note.deckId.toString())) {
+    return NextResponse.json({ error: "Note not found" }, { status: 404 });
+  }
+  const result = await collection.deleteOne({ _id: id, deckId: note.deckId });
   return result.deletedCount ? NextResponse.json({ success: true }) : NextResponse.json({ error: "Note not found" }, { status: 404 });
 }

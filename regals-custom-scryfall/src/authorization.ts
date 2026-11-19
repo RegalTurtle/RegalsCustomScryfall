@@ -1,5 +1,7 @@
 const permissionLevels = ["owner", "user", "collection-recorder"];
 
+const canManageAccounts = (permissionLevel?: string): boolean => permissionLevel === "owner";
+
 const canViewDecks = (permissionLevel: string): boolean => {
   const allowedLevels = permissionLevels;
 
@@ -26,6 +28,7 @@ const canAddCardsToCollection = (permissionLevel: string): boolean => {
 
 export default {
   permissionLevels,
+  canManageAccounts,
   canViewDecks,
   canAddDecks,
   canAddGames,

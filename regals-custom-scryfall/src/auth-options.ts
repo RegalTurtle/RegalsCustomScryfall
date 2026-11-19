@@ -23,7 +23,6 @@ export const authOptions: NextAuthOptions = {
 
         return {
           id: user.id,
-          username: user.username,
           permissionLevel: user.permissionLevel,
         };
       },
@@ -41,17 +40,14 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.userId = user.id;
-        token.username = user.username;
         token.permissionLevel = user.permissionLevel;
       }
+      delete token.username;
       return token;
     },
     async session({ session, token }) {
       // Old username-based tokens deliberately do not acquire an ID.
       session.user.id = typeof token.userId === "string" ? token.userId : "";
-      if (token.username) {
-        session.user.username = token.username;
-      }
       if (token.permissionLevel) {
         session.user.permissionLevel = token.permissionLevel;
       }

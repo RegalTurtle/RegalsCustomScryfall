@@ -3,6 +3,7 @@ import { ObjectId } from "mongodb";
 export type CustomCardNote = {
   date: string;
   creator: string;
+  creatorId?: ObjectId;
   notes: string;
 };
 
