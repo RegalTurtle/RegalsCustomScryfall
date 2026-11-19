@@ -6,6 +6,7 @@ import type { AccountDetails, ManagedAccount, User } from "@/types/user";
 const saltRounds = 10;
 
 export class AccountInputError extends Error {}
+export class InvalidCredentialsError extends Error {}
 
 type SanitizedUser = Pick<ManagedAccount, "id" | "username" | "permissionLevel">;
 
@@ -19,18 +20,23 @@ const verifyUser = async (
   username: string,
   password: string
 ): Promise<SanitizedUser> => {
-  username = validation.verifyUsername(username);
-  password = validation.verifyPassword(password);
+  try {
+    username = validation.verifyUsername(username);
+    password = validation.verifyPassword(password);
+  } catch (error) {
+    if (error instanceof Error) throw new InvalidCredentialsError(error.message);
+    throw error;
+  }
 
   // Fetch the user document from the database
   const usersCollection = await users();
   const user = await usersCollection.findOne({ username });
 
-  if (!user) throw new Error("User not found");
+  if (!user) throw new InvalidCredentialsError("User not found");
 
   // Compare the provided password with the hashed password in the database
   const passwordMatch = await bcrypt.compare(password, user.password);
-  if (!passwordMatch) throw new Error("Username and password did not match");
+  if (!passwordMatch) throw new InvalidCredentialsError("Username and password did not match");
 
   // Return the identity used by the session.
   return {

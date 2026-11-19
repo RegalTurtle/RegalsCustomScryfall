@@ -1,7 +1,6 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import userData from "@/data/users";
-import validation from "@/validation";
+import userData, { InvalidCredentialsError } from "@/data/users";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -13,18 +12,16 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials) return null;
-        let { username, password } = credentials;
-
-        username = validation.verifyUsername(username);
-        password = validation.verifyPassword(password);
-
-        const user = await userData.verifyUser(username, password);
-        if (!user) return null;
-
-        return {
-          id: user.id,
-          permissionLevel: user.permissionLevel,
-        };
+        try {
+          const user = await userData.verifyUser(credentials.username, credentials.password);
+          return {
+            id: user.id,
+            permissionLevel: user.permissionLevel,
+          };
+        } catch (error) {
+          if (error instanceof InvalidCredentialsError) return null;
+          throw error;
+        }
       },
     }),
   ],

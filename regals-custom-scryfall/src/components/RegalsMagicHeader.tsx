@@ -7,10 +7,11 @@ type HeaderProps = {
   showBack: boolean;
   backUrl: string;
   backText: string;
+  hideLoginLink?: boolean;
 }
 
 export default (
-  { showBack, backUrl, backText }: 
+  { showBack, backUrl, backText, hideLoginLink = false }:
   HeaderProps
 ) => {
   const { data: session } = useSession();
@@ -26,7 +27,7 @@ export default (
       <div className="col-start-2 row-start-2 flex flex-wrap justify-end gap-2 sm:col-start-3 sm:row-start-1">
         {session?.user.id ? (
           <Link href="/settings" className={buttonClass}>Settings</Link>
-        ) : (
+        ) : !hideLoginLink && (
           <Link href="/login" className={buttonClass}>Log In</Link>
         )}
       </div>
