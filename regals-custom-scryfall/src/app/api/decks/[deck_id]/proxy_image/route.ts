@@ -1,9 +1,7 @@
+import { authenticatedUserId } from "@/server/auth";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
 import { mkdir, writeFile } from "fs/promises";
 import { randomUUID } from "crypto";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
 import { deleteLocalProxyImage, getProxyImagePath, getProxyImageUploadDir, proxyImageUrlPrefix } from "@/utils/proxyImages";
 
@@ -41,11 +39,8 @@ export async function POST(
   { params }: { params: Promise<{ deck_id: string }> }
 ): Promise<NextResponse> {
   const { deck_id } = await params;
-  const session = await getServerSession({ request, ...authOptions });
-
-  if (!session || !authorization.canAddCardsToCollection(session.user?.permissionLevel)) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
 
   try {
     const formData = await request.formData();
@@ -88,7 +83,7 @@ export async function POST(
     await writeFile(uploadPath, Buffer.from(await file.arrayBuffer()));
     let previousImage: string | undefined;
     try {
-      previousImage = await deckData.setProxyImage(deck_id, deckSection, set, cn, foil, imageUrl);
+      previousImage = await deckData.setProxyImage(userId, deck_id, deckSection, set, cn, foil, imageUrl);
     } catch (error) {
       await deleteLocalProxyImage(imageUrl);
       throw error;

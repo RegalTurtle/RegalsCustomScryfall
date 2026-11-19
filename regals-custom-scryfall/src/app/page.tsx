@@ -1,6 +1,6 @@
 "use client";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
-import { useSession, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function Home() {

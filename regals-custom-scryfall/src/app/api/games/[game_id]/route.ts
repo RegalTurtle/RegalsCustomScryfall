@@ -1,7 +1,6 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import gameData from "@/data/games";
 
 export async function PUT(
@@ -9,15 +8,12 @@ export async function PUT(
   { params }: { params: Promise<{ game_id: string }> }
 ): Promise<NextResponse> {
   const { game_id } = await params;
-  const session = await getServerSession({ request, ...authOptions });
-
-  if (!session || !authorization.canAddGames(session.user?.permissionLevel)) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
 
   try {
     const body = await request.json();
-    await gameData.updateGame(game_id, body);
+    await gameData.updateGame(userId, game_id, body);
 
     return NextResponse.json({ message: "Game updated" }, { status: 200 });
   } catch (err) {
@@ -30,15 +26,12 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ game_id: string }> }
 ): Promise<NextResponse> {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   const { game_id } = await params;
-  const session = await getServerSession({ request, ...authOptions });
-
-  if (!session || !authorization.canAddGames(session.user?.permissionLevel)) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
-
   try {
-    await gameData.deleteGame(game_id);
+    await gameData.deleteGame(userId, game_id);
 
     return NextResponse.json({ message: "Game deleted" }, { status: 200 });
   } catch (err) {

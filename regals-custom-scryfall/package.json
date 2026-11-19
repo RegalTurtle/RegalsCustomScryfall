@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "typecheck": "tsc --noEmit --incremental false",
+    "migrate:ownership": "node scripts/migrate-ownership.mjs",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -23,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "mongodb-memory-server": "^10.2.3",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5.8.3"

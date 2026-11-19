@@ -3,6 +3,7 @@ import { ObjectId } from "mongodb";
 export type GameResult = "win" | "loss" | "tie";
 
 export interface Game {
+  userId: ObjectId;
   _id?: ObjectId;
   date: string;
   format: string;
@@ -20,7 +21,8 @@ export interface Game {
   win?: boolean;
 }
 
-export type SerializedGame = Omit<Game, "_id" | "deckId" | "createdAt" | "updatedAt"> & {
+export type SerializedGame = Omit<Game, "_id" | "userId" | "deckId" | "createdAt" | "updatedAt"> & {
+  userId: string;
   _id: string;
   deckId?: string;
   createdAt: string;

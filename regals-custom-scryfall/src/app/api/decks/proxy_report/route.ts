@@ -1,3 +1,6 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
+import { ownedFilter } from "@/data/ownership";
 import { NextRequest, NextResponse } from "next/server";
 import { bulkCards, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import { Card, Deck } from "@/types";
@@ -47,10 +50,13 @@ function proxyReportMatchesSearch(
 }
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   try {
     const searchTerms = request.nextUrl.searchParams.get("search")?.trim() ?? "";
     const decksCollection = await decks();
-    const allDecks = await decksCollection.find({ together: { $ne: false } }).toArray();
+    const allDecks = await decksCollection.find(ownedFilter(userId, { together: { $ne: false } })).toArray();
     const proxyCardsByName = new Map<string, {
       card: Card;
       decks: Array<{ deckId: string; deckName: string; quantity: number }>;
@@ -91,9 +97,9 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const tradeBinderCollection = await tradeBinder();
 
     const [bulkMatches, coolMatches, tradeMatches] = await Promise.all([
-      bulkCardsCollection.find({ name: { $in: proxyNames }, quant: { $gt: 0 } }).sort({ name: 1, set: 1, cn: 1 }).toArray(),
-      coolCardsCollection.find({ name: { $in: proxyNames }, quant: { $gt: 0 } }).sort({ name: 1, set: 1, cn: 1 }).toArray(),
-      tradeBinderCollection.find({ name: { $in: proxyNames }, quant: { $gt: 0 } }).sort({ name: 1, set: 1, cn: 1 }).toArray(),
+      bulkCardsCollection.find(ownedFilter(userId, { name: { $in: proxyNames }, quant: { $gt: 0 } })).sort({ name: 1, set: 1, cn: 1 }).toArray(),
+      coolCardsCollection.find(ownedFilter(userId, { name: { $in: proxyNames }, quant: { $gt: 0 } })).sort({ name: 1, set: 1, cn: 1 }).toArray(),
+      tradeBinderCollection.find(ownedFilter(userId, { name: { $in: proxyNames }, quant: { $gt: 0 } })).sort({ name: 1, set: 1, cn: 1 }).toArray(),
     ]);
 
     const ownedCopiesByName = new Map<string, ReturnType<typeof serializeCard>[]>();

@@ -1,10 +1,12 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import gameData from "@/data/games";
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   try {
     const deckId = request.nextUrl.searchParams.get("deckId") ?? undefined;
     const format = request.nextUrl.searchParams.get("format") ?? undefined;
@@ -14,7 +16,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const limitParam = request.nextUrl.searchParams.get("limit");
     const limit = limitParam ? Number(limitParam) : undefined;
 
-    const games = await gameData.getGames({
+    const games = await gameData.getGames(userId, {
       deckId,
       format,
       result: result === "win" || result === "loss" || result === "tie" ? result : undefined,
@@ -31,15 +33,12 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
-  const session = await getServerSession({ request, ...authOptions });
-
-  if (!session || !authorization.canAddGames(session.user?.permissionLevel)) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
 
   try {
     const body = await request.json();
-    const gameId = await gameData.addGame(body);
+    const gameId = await gameData.addGame(userId, body);
 
     return NextResponse.json({ gameId }, { status: 201 });
   } catch (err) {

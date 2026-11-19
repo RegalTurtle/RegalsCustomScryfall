@@ -1,6 +1,6 @@
 "use client";
 
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 type HeaderProps = {
@@ -15,12 +15,21 @@ export default (
 ) => {
   const { data: session } = useSession();
 
+  const buttonClass = "rounded-md bg-indigo-600 px-3 py-2 text-white hover:bg-indigo-700";
+
   return (
-    <header className="h-20 flex items-center relative mb-5 bg-teal-950">
-      {showBack && <Link href={backUrl} className="mr-auto mv-auto ml-5 bg-indigo-600 p-2 text-white rounded-md hover:bg-indigo-700">{backText}</Link>}
-      <h1 className="absolute left-1/2 transform -translate-x-1/2 text-3xl">Regal's Magic</h1>
-      {!session && <Link href="/login" className="ml-auto mv-auto mr-5 bg-indigo-600 p-2 text-white rounded-md hover:bg-indigo-700">Log In</Link>}
-      {session && <button onClick={() => signOut()} className="ml-auto mv-auto mr-5 bg-indigo-600 p-2 text-white rounded-md hover:bg-indigo-700">Log Out</button>}
+    <header className="mb-5 grid grid-cols-[1fr_auto] items-center gap-2 bg-teal-950 px-3 py-2 sm:min-h-20 sm:grid-cols-[1fr_auto_1fr] sm:px-5">
+      <div className="row-start-2 sm:row-start-1">
+        {showBack && <Link href={backUrl} className={`inline-block ${buttonClass}`}>{backText}</Link>}
+      </div>
+      <h1 className="col-span-2 row-start-1 text-center text-2xl sm:col-span-1 sm:col-start-2 sm:text-3xl">Regal's Magic</h1>
+      <div className="col-start-2 row-start-2 flex flex-wrap justify-end gap-2 sm:col-start-3 sm:row-start-1">
+        {session?.user.id ? (
+          <Link href="/settings" className={buttonClass}>Settings</Link>
+        ) : (
+          <Link href="/login" className={buttonClass}>Log In</Link>
+        )}
+      </div>
     </header>
-  )
+  );
 }

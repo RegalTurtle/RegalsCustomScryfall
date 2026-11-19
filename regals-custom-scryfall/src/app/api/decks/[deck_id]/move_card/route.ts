@@ -1,7 +1,6 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
 
 type DeckSection = "cards" | "sideboard" | "maybeboard" | "wishlist";
@@ -14,13 +13,10 @@ export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ deck_id: string }> }
 ): Promise<NextResponse> {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   const { deck_id } = await params;
-  const session = await getServerSession({ request, ...authOptions });
-
-  if (!session || !authorization.canAddCardsToCollection(session.user?.permissionLevel)) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
-
   try {
     const { sourceSection, targetSection, set, cn, foil, proxy, quant } = await request.json();
 
@@ -28,7 +24,7 @@ export async function POST(
       return NextResponse.json({ error: "Invalid deck section" }, { status: 400 });
     }
 
-    await deckData.moveCardCopies(deck_id, sourceSection, targetSection, set, cn, foil, proxy, quant);
+    await deckData.moveCardCopies(userId, deck_id, sourceSection, targetSection, set, cn, foil, proxy, quant);
 
     return NextResponse.json({ message: "Card moved" }, { status: 201 });
   } catch (err) {

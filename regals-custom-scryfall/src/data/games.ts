@@ -1,4 +1,5 @@
-import { games } from "@/config/mongoCollections";
+import { ownedFilter, requireUserId } from "@/data/ownership";
+import { games, decks } from "@/config/mongoCollections";
 import { Game, GameCreateInput, GameResult, GameStats, SerializedGame } from "@/types";
 import validation from "@/validation";
 import { Collection, Filter, ObjectId } from "mongodb";
@@ -33,6 +34,7 @@ function serializeGame(game: Game): SerializedGame {
   return {
     ...game,
     _id: game._id?.toString() ?? "",
+    userId: game.userId.toString(),
     deckId: game.deckId?.toString(),
     createdAt: game.createdAt.toISOString(),
     updatedAt: game.updatedAt.toISOString(),
@@ -62,10 +64,11 @@ function buildGameQuery(filters: GameFilters): Filter<Game> {
   return query;
 }
 
-const getGames = async (filters: GameFilters = {}): Promise<SerializedGame[]> => {
+const getGames = async (userId: ObjectId, filters: GameFilters = {}): Promise<SerializedGame[]> => {
+  requireUserId(userId);
   const gameCollection: Collection<Game> = await games();
   const cursor = gameCollection
-    .find(buildGameQuery(filters))
+    .find(ownedFilter(userId, buildGameQuery(filters)))
     .sort({ date: -1, createdAt: -1 });
   const foundGames = await (filters.limit
     ? cursor.limit(Math.min(Math.max(filters.limit, 1), 500))
@@ -75,14 +78,14 @@ const getGames = async (filters: GameFilters = {}): Promise<SerializedGame[]> =>
   return foundGames.map(serializeGame);
 };
 
-const getDeckOverviewStats = async (): Promise<Record<string, DeckGameOverviewStats>> => {
+const getDeckOverviewStats = async (userId: ObjectId): Promise<Record<string, DeckGameOverviewStats>> => {
   const gameCollection: Collection<Game> = await games();
   const groupedGames = await gameCollection.aggregate<{
     _id: ObjectId;
     gamesPlayed: number;
     wins: number;
   }>([
-    { $match: { deckId: { $exists: true, $ne: null } } },
+    { $match: ownedFilter(userId, { deckId: { $exists: true, $ne: null } }) },
     {
       $group: {
         _id: "$deckId",
@@ -105,7 +108,8 @@ const getDeckOverviewStats = async (): Promise<Record<string, DeckGameOverviewSt
   ]));
 };
 
-const addGame = async (input: GameCreateInput): Promise<string> => {
+const addGame = async (userId: ObjectId, input: GameCreateInput): Promise<string> => {
+  requireUserId(userId);
   const date = verifyDateInput(input.date);
   const format = validation.verifyStr(input.format, "format");
   const result = verifyGameResult(input.result);
@@ -123,6 +127,7 @@ const addGame = async (input: GameCreateInput): Promise<string> => {
   const notes = typeof input.notes === "string" ? input.notes : "";
   const now = new Date();
   const newGame: Game = {
+    userId,
     date,
     format,
     result,
@@ -136,6 +141,11 @@ const addGame = async (input: GameCreateInput): Promise<string> => {
 
   if (input.deckId) {
     newGame.deckId = validation.verifyMongoId(input.deckId);
+    const deckCollection = await decks();
+    const deck = await deckCollection.findOne(ownedFilter(userId, { _id: newGame.deckId }));
+    if (!deck) throw new Error("Deck not found");
+    newGame.deckName = deck.name;
+    newGame.deckLink = deck.link;
   }
 
   if (input.deckLink) {
@@ -143,13 +153,13 @@ const addGame = async (input: GameCreateInput): Promise<string> => {
   }
 
   const gameCollection: Collection<Game> = await games();
-  const { acknowledged, insertedId } = await gameCollection.insertOne(newGame);
+  const { acknowledged, insertedId } = await gameCollection.insertOne({ ...newGame, userId: requireUserId(userId) });
   if (!acknowledged) throw new Error("Database error");
 
   return insertedId.toString();
 };
 
-const updateGame = async (gameId: string, input: GameCreateInput): Promise<void> => {
+const updateGame = async (userId: ObjectId, gameId: string, input: GameCreateInput): Promise<void> => {
   const _id: ObjectId = validation.verifyMongoId(gameId);
   const date = verifyDateInput(input.date);
   const format = validation.verifyStr(input.format, "format");
@@ -180,6 +190,8 @@ const updateGame = async (gameId: string, input: GameCreateInput): Promise<void>
 
   if (input.deckId && input.deckId !== "") {
     updateFields.deckId = validation.verifyMongoId(input.deckId);
+    const deck = await (await decks()).findOne(ownedFilter(userId, { _id: updateFields.deckId }));
+    if (!deck) throw new Error("Deck not found");
   } else {
     updateFields.deckId = undefined;
   }
@@ -214,29 +226,32 @@ const updateGame = async (gameId: string, input: GameCreateInput): Promise<void>
     updateOperation.$unset = unsetFields;
   }
 
-  const updateResult = await gameCollection.updateOne({ _id }, updateOperation);
+  const updateResult = await gameCollection.updateOne(ownedFilter(userId, { _id }), updateOperation);
   if (updateResult.matchedCount === 0) throw new Error("Game not found");
 };
 
-const deleteGame = async (gameId: string): Promise<void> => {
+const deleteGame = async (userId: ObjectId, gameId: string): Promise<void> => {
+  requireUserId(userId);
   const _id: ObjectId = validation.verifyMongoId(gameId);
   const gameCollection: Collection<Game> = await games();
-  const result = await gameCollection.deleteOne({ _id });
+  const result = await gameCollection.deleteOne(ownedFilter(userId, { _id }));
   if (result.deletedCount === 0) throw new Error("Game not found");
 };
 
 const updateDeckSnapshot = async (
+  userId: ObjectId,
   deckId: string,
   deckName: string,
   deckLink: string | null,
 ): Promise<void> => {
+  requireUserId(userId);
   const deckObjectId = validation.verifyMongoId(deckId);
   deckName = validation.verifyStr(deckName, "deckName");
   if (deckLink) deckLink = validation.verifyStr(deckLink, "deckLink");
 
   const gameCollection: Collection<Game> = await games();
   await gameCollection.updateMany(
-    { deckId: deckObjectId },
+    ownedFilter(userId, { deckId: deckObjectId }),
     {
       $set: {
         deckName,

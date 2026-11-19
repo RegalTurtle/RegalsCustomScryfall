@@ -1,3 +1,5 @@
+import type { InventoryCard } from "@/types/card";
+import { ownedFilter, requireUserId } from "@/data/ownership";
 import { bulkCards, cardWatchlist, coolCards, decks, tradeBinder } from "@/config/mongoCollections";
 import validation from "@/validation";
 import { Collection, Document, ObjectId } from "mongodb";
@@ -8,11 +10,12 @@ import { Card, CollectionTypeOption, FoilOption } from "@/types";
  * @param id The string representation of the ObjectId
  * @returns A card object, or throws an error if the card isn't found
  */
-const getCardByMongoId = async (id: string): Promise<Card> => {
+const getCardByMongoId = async (userId: ObjectId, id: string): Promise<Card> => {
+  requireUserId(userId);
   const _id: ObjectId = validation.verifyMongoId(id);
   
-  const bulkCardsCollection: Collection<Card> = await bulkCards();
-  let card: Card | null = await bulkCardsCollection.findOne({ _id });
+  const bulkCardsCollection: Collection<InventoryCard> = await bulkCards();
+  let card: Card | null = await bulkCardsCollection.findOne(ownedFilter(userId, { _id }));
 
   if (!card) throw new Error(`Card not found`);
 
@@ -26,13 +29,14 @@ const getCardByMongoId = async (id: string): Promise<Card> => {
  * @param foilOption A FoilOption for the card
  * @returns A card object, or throws an error if the card is not found
  */
-const getCardBySetCn = async (set: string, cn: string, foilOption: FoilOption): Promise<Card> => {
+const getCardBySetCn = async (userId: ObjectId, set: string, cn: string, foilOption: FoilOption): Promise<Card> => {
+  requireUserId(userId);
   set = validation.verifyStr(set, `set`);
   cn = validation.verifyStr(cn, `cn`);
   foilOption = validation.verifyFoilType(foilOption);
 
-  const bulkCardsCollection: Collection<Card> = await bulkCards();
-  let card: Card | null = await bulkCardsCollection.findOne({ set, cn, foil: foilOption });
+  const bulkCardsCollection: Collection<InventoryCard> = await bulkCards();
+  let card: Card | null = await bulkCardsCollection.findOne(ownedFilter(userId, { set, cn, foil: foilOption }));
 
   if (!card) throw new Error(`Card not found`);
 
@@ -44,9 +48,10 @@ const getCardBySetCn = async (set: string, cn: string, foilOption: FoilOption): 
  * @param page Page number to navigate to
  * @returns An array of 20 card objects
  */
-const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
-  const bulkCardsCollection: Collection<Card> = await bulkCards();
-  let cardPage: Array<Card> = await bulkCardsCollection.find().sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
+const getPageOfCardsBulk = async (userId: ObjectId, page: number): Promise<Array<Card>> => {
+  requireUserId(userId);
+  const bulkCardsCollection: Collection<InventoryCard> = await bulkCards();
+  let cardPage: Array<Card> = await bulkCardsCollection.find(ownedFilter(userId)).sort({ updatedAt: -1 }).skip((page-1)*20).limit(20).toArray();
   
   return cardPage;
 }
@@ -59,8 +64,9 @@ const getPageOfCardsBulk = async (page: number): Promise<Array<Card>> => {
  */
 type CardCollectionType = "bulk" | "cool-cards" | "watchlist" | "trade-binder";
 
-const getPageOfCards = async ( page: number, collection_type: CardCollectionType ): Promise<Array<Card>> => {
-  let cardCollection: Collection<Card>;
+const getPageOfCards = async (userId: ObjectId,  page: number, collection_type: CardCollectionType ): Promise<Array<Card>> => {
+  requireUserId(userId);
+  let cardCollection: Collection<InventoryCard>;
   if (collection_type === "bulk") {
     cardCollection = await bulkCards();
   } else if (collection_type === "cool-cards") {
@@ -72,17 +78,17 @@ const getPageOfCards = async ( page: number, collection_type: CardCollectionType
   } else {
     throw new Error("collection_type invalid");
   }
-  let cardPage: Array<Card> = await cardCollection.find().sort({ updatedAt: -1 }).skip((page - 1) * 20).limit(20).toArray();
+  let cardPage: Array<Card> = await cardCollection.find(ownedFilter(userId)).sort({ updatedAt: -1 }).skip((page - 1) * 20).limit(20).toArray();
 
   return cardPage;
 }
 
-const getAllCards = async (collection_type: CardCollectionType): Promise<Array<Card>> => {
+const getAllCards = async (userId: ObjectId, collection_type: CardCollectionType): Promise<Array<Card>> => {
   const cardCollection = await getCardCollection(collection_type);
-  return await cardCollection.find().sort({ updatedAt: -1 }).toArray();
+  return await cardCollection.find(ownedFilter(userId)).sort({ updatedAt: -1 }).toArray();
 }
 
-const getCardCollection = async (collection_type: CardCollectionType): Promise<Collection<Card>> => {
+const getCardCollection = async (collection_type: CardCollectionType): Promise<Collection<InventoryCard>> => {
   if (collection_type === "bulk") {
     return await bulkCards();
   } else if (collection_type === "cool-cards") {
@@ -97,11 +103,13 @@ const getCardCollection = async (collection_type: CardCollectionType): Promise<C
 }
 
 const transferCard = async (
+  userId: ObjectId,
   fromCollectionType: CardCollectionType,
   toCollectionType: CardCollectionType,
   cardId: string,
   quant: number,
 ): Promise<undefined> => {
+  requireUserId(userId);
   if (fromCollectionType === toCollectionType) throw new Error("Collections must be different");
   const _id = validation.verifyMongoId(cardId);
   quant = validation.verifyInteger(quant, "quant");
@@ -110,20 +118,20 @@ const transferCard = async (
   const fromCollection = await getCardCollection(fromCollectionType);
   const toCollection = await getCardCollection(toCollectionType);
 
-  const sourceCard = await fromCollection.findOne({ _id });
+  const sourceCard = await fromCollection.findOne(ownedFilter(userId, { _id }));
   if (!sourceCard) throw new Error("Source card not found");
   if (sourceCard.quant < quant) throw new Error("Not enough copies to transfer");
 
-  const existingTargetCard = await toCollection.findOne({
+  const existingTargetCard = await toCollection.findOne(ownedFilter(userId, {
     set: sourceCard.set,
     cn: sourceCard.cn,
     foil: sourceCard.foil,
     proxy: sourceCard.proxy,
-  });
+  }));
 
   if (existingTargetCard) {
     await toCollection.updateOne(
-      { _id: existingTargetCard._id },
+      ownedFilter(userId, { _id: existingTargetCard._id }),
       {
         $set: {
           quant: existingTargetCard.quant + quant,
@@ -139,47 +147,49 @@ const transferCard = async (
       updatedAt: new Date(),
     };
     delete cardToTransfer._id;
-    await toCollection.insertOne(cardToTransfer);
+    await toCollection.insertOne({ ...cardToTransfer, userId: requireUserId(userId) });
   }
 
   const remainingQuant = sourceCard.quant - quant;
   if (remainingQuant < 1) {
-    await fromCollection.deleteOne({ _id });
+    await fromCollection.deleteOne(ownedFilter(userId, { _id }));
   } else {
     await fromCollection.updateOne(
-      { _id },
+      ownedFilter(userId, { _id }),
       { $set: { quant: remainingQuant, updatedAt: new Date() } }
     );
   }
 }
 
 const changeCardFoil = async (
+  userId: ObjectId,
   collection_type: CardCollectionType,
   cardId: string,
   quant: number,
   foil: FoilOption,
 ): Promise<undefined> => {
+  requireUserId(userId);
   const _id = validation.verifyMongoId(cardId);
   quant = validation.verifyInteger(quant, "quant");
   if (quant < 1) throw new Error("quant must be at least 1");
   foil = validation.verifyFoilType(foil);
 
   const cardsCollection = await getCardCollection(collection_type);
-  const sourceCard = await cardsCollection.findOne({ _id });
+  const sourceCard = await cardsCollection.findOne(ownedFilter(userId, { _id }));
   if (!sourceCard) throw new Error("Source card not found");
   if (sourceCard.foil === foil) throw new Error("Card already has that finish");
   if (sourceCard.quant < quant) throw new Error("Not enough copies to update");
 
-  const existingTargetCard = await cardsCollection.findOne({
+  const existingTargetCard = await cardsCollection.findOne(ownedFilter(userId, {
     set: sourceCard.set,
     cn: sourceCard.cn,
     foil,
     proxy: sourceCard.proxy,
-  });
+  }));
 
   if (existingTargetCard) {
     await cardsCollection.updateOne(
-      { _id: existingTargetCard._id },
+      ownedFilter(userId, { _id: existingTargetCard._id }),
       {
         $set: {
           quant: existingTargetCard.quant + quant,
@@ -196,56 +206,59 @@ const changeCardFoil = async (
       updatedAt: new Date(),
     };
     delete updatedFinishCard._id;
-    await cardsCollection.insertOne(updatedFinishCard);
+    await cardsCollection.insertOne({ ...updatedFinishCard, userId: requireUserId(userId) });
   }
 
   const remainingQuant = sourceCard.quant - quant;
   if (remainingQuant < 1) {
-    await cardsCollection.deleteOne({ _id });
+    await cardsCollection.deleteOne(ownedFilter(userId, { _id }));
   } else {
     await cardsCollection.updateOne(
-      { _id },
+      ownedFilter(userId, { _id }),
       { $set: { quant: remainingQuant, updatedAt: new Date() } }
     );
   }
 }
 
 const removeCard = async (
+  userId: ObjectId,
   collection_type: CardCollectionType,
   cardId: string,
   quant: number,
 ): Promise<undefined> => {
+  requireUserId(userId);
   const _id = validation.verifyMongoId(cardId);
   quant = validation.verifyInteger(quant, "quant");
   if (quant < 1) throw new Error("quant must be at least 1");
 
   const cardsCollection = await getCardCollection(collection_type);
-  const sourceCard = await cardsCollection.findOne({ _id });
+  const sourceCard = await cardsCollection.findOne(ownedFilter(userId, { _id }));
   if (!sourceCard) throw new Error("Card not found");
   if (sourceCard.quant < quant) throw new Error("Not enough copies to remove");
 
   const remainingQuant = sourceCard.quant - quant;
   if (remainingQuant < 1) {
-    await cardsCollection.deleteOne({ _id });
+    await cardsCollection.deleteOne(ownedFilter(userId, { _id }));
   } else {
     await cardsCollection.updateOne(
-      { _id },
+      ownedFilter(userId, { _id }),
       { $set: { quant: remainingQuant, updatedAt: new Date() } }
     );
   }
 }
 
-const getOwnedVersionsByName = async (name: string): Promise<Array<Card & { collection: "bulk" | "cool-cards" | "trade-binder", collectionLabel: string }>> => {
+const getOwnedVersionsByName = async (userId: ObjectId, name: string): Promise<Array<Card & { collection: "bulk" | "cool-cards" | "trade-binder", collectionLabel: string }>> => {
+  requireUserId(userId);
   name = validation.verifyStr(name, "name");
 
-  const bulkCardsCollection: Collection<Card> = await bulkCards();
-  const coolCardsCollection: Collection<Card> = await coolCards();
-  const tradeBinderCollection: Collection<Card> = await tradeBinder();
+  const bulkCardsCollection: Collection<InventoryCard> = await bulkCards();
+  const coolCardsCollection: Collection<InventoryCard> = await coolCards();
+  const tradeBinderCollection: Collection<InventoryCard> = await tradeBinder();
 
   const [bulkMatches, coolMatches, tradeMatches] = await Promise.all([
-    bulkCardsCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
-    coolCardsCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
-    tradeBinderCollection.find({ name, quant: { $gt: 0 } }).sort({ set: 1, cn: 1 }).toArray(),
+    bulkCardsCollection.find(ownedFilter(userId, { name, quant: { $gt: 0 } })).sort({ set: 1, cn: 1 }).toArray(),
+    coolCardsCollection.find(ownedFilter(userId, { name, quant: { $gt: 0 } })).sort({ set: 1, cn: 1 }).toArray(),
+    tradeBinderCollection.find(ownedFilter(userId, { name, quant: { $gt: 0 } })).sort({ set: 1, cn: 1 }).toArray(),
   ]);
 
   return [
@@ -266,6 +279,7 @@ const getOwnedVersionsByName = async (name: string): Promise<Array<Card & { coll
  * @returns Undefined
  */
 const addCard = async (
+  userId: ObjectId,
   collection_type: CollectionTypeOption,
   name: string, 
   quant: number, 
@@ -281,6 +295,7 @@ const addCard = async (
   cmc: number,
   tag: string[] = [],
 ): Promise<undefined> => {
+  requireUserId(userId);
   collection_type = validation.verifyCollectionType(collection_type);
   name = validation.verifyStr(name, `name`);
   quant = validation.verifyInteger(quant, `quant`);
@@ -297,7 +312,7 @@ const addCard = async (
   if (typeof cmc !== "number") throw new Error("cmc must be a number");
   if (!Array.isArray(tag) || tag.some(t => typeof t !== "string")) throw new Error("tag must be an array of strings");
   
-  let cardsCollection: Collection<Card>;
+  let cardsCollection: Collection<InventoryCard>;
   if (collection_type === "bulk") {
     cardsCollection = await bulkCards();
   } else if (collection_type === "cool-cards") {
@@ -323,7 +338,7 @@ const addCard = async (
       deckId = deckId.slice("wishlist+".length);
     }
 
-    const deck = await decksCollection.findOne({ _id: ObjectId.createFromHexString(deckId) });
+    const deck = await decksCollection.findOne(ownedFilter(userId, { _id: ObjectId.createFromHexString(deckId) }));
     if (!deck) throw new Error(`Deck not found`);
 
     const list = deck[listKey as "cards" | "sideboard" | "maybeboard" | "wishlist"] || [];
@@ -359,7 +374,7 @@ const addCard = async (
     }
 
     await decksCollection.updateOne(
-      { _id: ObjectId.createFromHexString(deckId) },
+      ownedFilter(userId, { _id: ObjectId.createFromHexString(deckId) }),
       { $set: { [listKey]: list, lastUpdate: new Date() } }
     );
 
@@ -368,21 +383,21 @@ const addCard = async (
     throw new Error(`collectionType invalid`);
   }
   
-  let foundCard: Card | null = await cardsCollection.findOne({ set, cn, foil, proxy });
+  let foundCard: Card | null = await cardsCollection.findOne(ownedFilter(userId, { set, cn, foil, proxy }));
   if (foundCard) {
     const newQuant: number = foundCard.quant + quant;
     if (newQuant < 1) {
-      await cardsCollection.deleteOne({ _id: foundCard._id });
+      await cardsCollection.deleteOne(ownedFilter(userId, { _id: foundCard._id }));
       return;
     }
     await cardsCollection.updateOne(
-      { _id: foundCard._id },
+      ownedFilter(userId, { _id: foundCard._id }),
       // update image here to slowly put all of the image URLs with the mongo objects
       { $set: { quant: newQuant, updatedAt: new Date(), image }}
     )
     return;
   }
-  await cardsCollection.insertOne({
+  await cardsCollection.insertOne({ ...{
     name,
     quant,
     set,
@@ -396,24 +411,27 @@ const addCard = async (
     color_identity,
     type,
     cmc,
-  })
+  }, userId: requireUserId(userId) })
 }
 
 /**
  * Gets the total quantity of cards in all collections  
  * @returns The total number of cards that are in the database
  */
-const countAllCards = async (): Promise<number> => {
+const countAllCards = async (userId: ObjectId): Promise<number> => {
+  requireUserId(userId);
   let totalQuant: number = 0;
 
-  const bulkCardsCollection: Collection<Card> = await bulkCards();
+  const bulkCardsCollection: Collection<InventoryCard> = await bulkCards();
   const bulkTotal: Array<Document> = await bulkCardsCollection.aggregate([
+    { $match: ownedFilter(userId) },
     { $group: { _id: null, totalQuant: { $sum: "$quant" } } }
   ]).toArray();
   totalQuant += bulkTotal[0]?.totalQuant || 0;
 
-  const coolCardsCollection: Collection<Card> = await coolCards();
+  const coolCardsCollection: Collection<InventoryCard> = await coolCards();
   const coolCardsTotal: Array<Document> = await coolCardsCollection.aggregate([
+    { $match: ownedFilter(userId) },
     { $group: { _id: null, totalQuant: { $sum: "$quant" } } }
   ]).toArray();
   totalQuant += coolCardsTotal[0]?.totalQuant || 0;

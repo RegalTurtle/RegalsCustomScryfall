@@ -1,22 +1,19 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import deckData from "@/data/decks";
 
 export async function POST(
   request: NextRequest
 ): Promise<NextResponse> {
-  const session = await getServerSession({ request, ...authOptions });
-
-  if (!session || !authorization.canAddDecks(session.user?.permissionLevel)) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
 
   try {
     const body = await request.json();
 
     const objId = await deckData.addDeck(
+      userId,
       body.name,
       body.link || null,
       body.owner,

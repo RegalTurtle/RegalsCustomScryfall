@@ -3,9 +3,10 @@ import { ObjectId } from "mongodb";
 export interface User {
   _id?: ObjectId;
   username: string;
-  firstName: string;
-  lastName: string;
-  email: string;
+  email?: string;
   password: string;
   permissionLevel: string;
 }
+
+export type AccountDetails = Pick<User, "username" | "email" | "permissionLevel">;
+export type ManagedAccount = AccountDetails & { id: string };

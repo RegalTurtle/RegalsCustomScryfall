@@ -1,3 +1,7 @@
+import type { InventoryCard } from "@/types/card";
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
+import { ownedFilter } from "@/data/ownership";
 import { NextRequest, NextResponse } from "next/server";
 import { bulkCards, cardWatchlist, coolCards, tradeBinder } from "@/config/mongoCollections";
 import { Card } from "@/types";
@@ -14,6 +18,9 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ search_terms: string, collection_type: string }> }
 ) {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   // const searchTerms = await (await params).search_terms;
   const { search_terms, collection_type } = await params;
   const mongoQuery = buildCollectionCardSearchQuery(search_terms);
@@ -23,7 +30,7 @@ export async function GET(
       return new NextResponse("collection_type invalid", { status: 400 });
     }
 
-    let cardsCollection: Collection<Card>;
+    let cardsCollection: Collection<InventoryCard>;
     if (collection_type === "bulk") {
       cardsCollection = await bulkCards();
     } else if (collection_type === "cool-cards") {
@@ -35,7 +42,7 @@ export async function GET(
     } else {
       return new NextResponse("collection_type invalid", { status: 400 });
     }
-    const foundCards = await cardsCollection.find(mongoQuery).sort({ updatedAt: -1 }).limit(100).toArray();
+    const foundCards = await cardsCollection.find(ownedFilter(userId, mongoQuery)).sort({ updatedAt: -1 }).limit(100).toArray();
     return NextResponse.json(foundCards);
   } catch (error) {
     console.error("Error fetching cards:", error);

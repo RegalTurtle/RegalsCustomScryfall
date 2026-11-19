@@ -1,3 +1,5 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
 import cardsData from "@/data/cards";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -11,6 +13,9 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ collection_type: string; page: string }> }
 ) {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+
   const { collection_type, page } = await params;
   try {
     if (!isCardCollectionType(collection_type)) {
@@ -18,7 +23,7 @@ export async function GET(
     }
 
     // Gets a page of cards from only those cards that are in my bulk
-    let allCards = await cardsData.getPageOfCards(parseInt(page), collection_type);
+    let allCards = await cardsData.getPageOfCards(userId, parseInt(page), collection_type);
 
     return NextResponse.json(allCards);
   } catch (error) {

@@ -1,5 +1,7 @@
 import { customCards } from "@/config/customCardCollections";
+import { users } from "@/config/mongoCollections";
 import { CustomCard } from "@/types/customCard";
+import { ObjectId } from "mongodb";
 
 export type CustomSearchOptions = {
   query: string;
@@ -60,7 +62,7 @@ function matchesToken(card: CustomCard, token: string): boolean {
 
 export async function searchCustomCards({ query }: CustomSearchOptions): Promise<CustomCard[]> {
   const collection = await customCards();
-  const cards = await collection.find({}).project<CustomCard>({ _id: 0 }).toArray();
+  const cards = await collection.find({}).project<CustomCard>({ _id: 0, "notes.creatorId": 0 }).toArray();
   const tokens = tokenize(query);
   const showAll = tokens.includes("show:all");
   const orderByCmc = tokens.includes("order:cmc");
@@ -75,7 +77,21 @@ export async function searchCustomCards({ query }: CustomSearchOptions): Promise
 
 export async function getCustomCard(set: string, cn: number): Promise<CustomCard | null> {
   const collection = await customCards();
-  return collection.findOne({ set: set.toUpperCase(), cn }, { projection: { _id: 0 } });
+  const card = await collection.findOne({ set: set.toUpperCase(), cn }, { projection: { _id: 0 } });
+  if (!card?.notes?.length) return card;
+
+  const creatorIds = card.notes.map(note => note.creatorId).filter(id => id instanceof ObjectId);
+  const authors = creatorIds.length
+    ? await (await users()).find({ _id: { $in: creatorIds } }, { projection: { username: 1 } }).toArray()
+    : [];
+  const usernames = new Map(authors.map(author => [author._id.toHexString(), author.username]));
+  return {
+    ...card,
+    notes: card.notes.map(({ creatorId, ...note }) => ({
+      ...note,
+      creator: creatorId instanceof ObjectId ? usernames.get(creatorId.toHexString()) ?? note.creator : note.creator,
+    })),
+  };
 }
 
 export { manaValue };

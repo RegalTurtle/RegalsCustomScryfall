@@ -70,7 +70,7 @@ export default function CustomCardDetailPage() {
             <ul className="mt-3 space-y-2">
               {card.notes?.map((item, index) => <li key={`${item.date}-${index}`} className="rounded bg-teal-900 p-3"><span className="font-semibold">{item.creator}:</span> {item.notes}<span className="ml-2 text-sm text-teal-300">({item.date})</span></li>)}
             </ul>
-            {session ? (
+            {session?.user.id ? (
               <form onSubmit={submitNote} className="mt-5 flex flex-col gap-2">
                 <textarea value={note} onChange={event => setNote(event.target.value)} required maxLength={1000} placeholder="Add a note" className="rounded-lg bg-teal-900 p-3 text-white" />
                 <button type="submit" className="self-start rounded-lg bg-indigo-600 px-4 py-2 hover:bg-indigo-700">Add note</button>

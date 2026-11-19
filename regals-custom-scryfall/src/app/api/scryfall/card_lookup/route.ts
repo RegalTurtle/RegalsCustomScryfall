@@ -1,7 +1,6 @@
+import { authenticatedUserId } from "@/server/auth";
+export const dynamic = "force-dynamic";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import authorization from "@/authorization";
-import { authOptions } from "@/auth-options";
 import { fetchScryfallJson } from "@/utils/scryfallRateLimit";
 
 const headers = {
@@ -84,11 +83,8 @@ async function fetchJson(url: string) {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
-  const session = await getServerSession({ request, ...authOptions });
-
-  if (!session || !authorization.canAddCardsToCollection(session.user?.permissionLevel)) {
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-  }
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
 
   try {
     const { name, set, cn, scryfallId } = await request.json();

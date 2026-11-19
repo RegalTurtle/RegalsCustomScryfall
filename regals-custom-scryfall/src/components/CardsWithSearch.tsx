@@ -336,7 +336,8 @@ const CardsWithSearch = ({
         className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition mb-4"
       />
 
-       <div className="grid grid-cols-1 gap-6 justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">    
+      {cards.length === 0 && <p>No cards found. Add cards to start your collection.</p>}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">    
         {cards.map((card, index) => (
           <button
             key={index}
