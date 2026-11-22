@@ -21,6 +21,7 @@ export async function POST(
       body.colorId || null,
       Boolean(body.mainForColorIdentity),
       body.together !== false,
+      body.workshop === true,
     );
 
     return NextResponse.json({ message: "Deck received", objId }, { status: 201 });

@@ -3,12 +3,12 @@ export const dynamic = "force-dynamic";
 import { NextRequest, NextResponse } from "next/server";
 import deckData from "@/data/decks";
 
-export async function GET(): Promise<NextResponse> {
+export async function GET(request: NextRequest): Promise<NextResponse> {
   const userId = await authenticatedUserId();
   if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
 
   try {
-    const allDecks = await deckData.getDeckOverviews(userId);
+    const allDecks = await deckData.getDeckOverviews(userId, request.nextUrl.searchParams.get("workshop") === "true");
 
     if (!allDecks) return NextResponse.json({ error: `No decks found` }, { status: 400 });
 

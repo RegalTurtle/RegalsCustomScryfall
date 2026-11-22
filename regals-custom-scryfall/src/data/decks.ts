@@ -17,6 +17,7 @@ const addDeck = async (
   colorId: string | null,
   mainForColorIdentity: boolean = false,
   together: boolean = true,
+  workshop: boolean = false,
 ) => {
   requireUserId(userId);
   name = validation.verifyStr(name, `name`);
@@ -24,6 +25,7 @@ const addDeck = async (
   format = validation.verifyStr(format, `format`);
   if (typeof mainForColorIdentity !== "boolean") throw new Error("mainForColorIdentity must be a boolean");
   if (typeof together !== "boolean") throw new Error("together must be a boolean");
+  if (typeof workshop !== "boolean") throw new Error("workshop must be a boolean");
 
   const newDeck: Deck = {
     userId,
@@ -41,6 +43,7 @@ const addDeck = async (
     maybeboard: [],
     wishlist: [],
     together,
+    workshop,
     mainForColorIdentity,
   };
 
@@ -92,11 +95,11 @@ const getAllDecks = async (userId: ObjectId) => {
   return allDecks;
 }
 
-const getDeckOverviews = async (userId: ObjectId) => {
+const getDeckOverviews = async (userId: ObjectId, workshopOnly = false) => {
   const deckCollection: Collection<Deck> = await decks();
 
-  return await deckCollection.find(ownedFilter(userId), {
-    projection: {
+  return await deckCollection.find(ownedFilter(userId, workshopOnly ? { workshop: true } : {}), {
+    projection: workshopOnly ? { changes: 0, sideboard: 0, games: 0 } : {
       cards: 0,
       changes: 0,
       notes: 0,
@@ -119,6 +122,7 @@ const updateDeckSettings = async (
   mainForColorIdentity: boolean,
   notes: string = "",
   together: boolean = true,
+  workshop: boolean = false,
 ) => {
   requireUserId(userId);
   if (!ObjectId.isValid(deckId)) throw new Error("deckId invalid");
@@ -128,6 +132,7 @@ const updateDeckSettings = async (
   if (typeof notes !== "string") throw new Error("notes must be a string");
   if (typeof mainForColorIdentity !== "boolean") throw new Error("mainForColorIdentity must be a boolean");
   if (typeof together !== "boolean") throw new Error("together must be a boolean");
+  if (typeof workshop !== "boolean") throw new Error("workshop must be a boolean");
 
   const deckUpdate: Partial<Deck> = {
     name,
@@ -135,6 +140,7 @@ const updateDeckSettings = async (
     format,
     notes,
     together,
+    workshop,
     mainForColorIdentity,
     lastUpdate: new Date(),
   };

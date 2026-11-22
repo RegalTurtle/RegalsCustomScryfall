@@ -38,6 +38,7 @@ export default function DeckSettings() {
   const [mainForColorIdentity, setMainForColorIdentity] = useState(false);
   const [notes, setNotes] = useState("");
   const [together, setTogether] = useState(true);
+  const [workshop, setWorkshop] = useState(false);
 
   useEffect(() => {
     if (!deckId) return;
@@ -56,6 +57,7 @@ export default function DeckSettings() {
         setMainForColorIdentity(Boolean(foundDeck.mainForColorIdentity));
         setNotes(foundDeck.notes ?? "");
         setTogether(foundDeck.together !== false);
+        setWorkshop(foundDeck.workshop === true);
       } catch (error) {
         setError(error instanceof Error ? error.message : "Failed to fetch deck");
       } finally {
@@ -107,6 +109,7 @@ export default function DeckSettings() {
           mainForColorIdentity,
           notes,
           together,
+          workshop,
         }),
       });
 
@@ -236,6 +239,21 @@ export default function DeckSettings() {
               <span className="block text-sm font-medium">Main deck for this color identity</span>
               <span className="block text-sm text-gray-600">
                 Show this deck in the EDH color overview. Other decks with the same format and colors will be listed below it.
+              </span>
+            </span>
+          </label>
+
+          <label className="flex items-start gap-3 rounded border border-indigo-200 bg-indigo-50 p-3">
+            <input
+              type="checkbox"
+              checked={workshop}
+              onChange={(e) => setWorkshop(e.target.checked)}
+              className="mt-1 h-4 w-4"
+            />
+            <span>
+              <span className="block text-sm font-medium">Deck Workshop</span>
+              <span className="block text-sm text-gray-600">
+                Show this deck in the brewing workspace, even if it is not currently built.
               </span>
             </span>
           </label>

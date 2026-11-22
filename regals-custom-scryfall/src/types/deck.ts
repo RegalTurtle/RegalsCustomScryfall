@@ -23,4 +23,6 @@ export interface Deck {
   maybeboard: Card[];
   wishlist: Card[];
   together: boolean;
+  /** Whether this deck belongs in the Deck Workshop. */
+  workshop?: boolean;
 }

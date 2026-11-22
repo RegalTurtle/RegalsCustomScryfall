@@ -125,7 +125,7 @@ export default function Decks() {
   ), [visibleDecks]);
 
   const notBuiltDecks = useMemo(() => (
-    visibleDecks.filter(deck => deck.together === false)
+    visibleDecks.filter(deck => deck.together === false && deck.workshop !== true)
   ), [visibleDecks]);
 
   const edhColorGroups = useMemo(() => {
@@ -210,6 +210,7 @@ export default function Decks() {
           {session && authorization.canAddDecks(session.user?.permissionLevel) &&
             <Link href="/decks/new" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">New Deck</Link>
           }
+          <Link href="/decks/workshop" className="bg-fuchsia-600 text-white px-4 py-2 rounded hover:bg-fuchsia-500">Deck Workshop</Link>
           <Link href="/decks/proxies" className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Proxy Report</Link>
           <Link href="/decks/watchlist" className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Watchlist</Link>
           <Link href="/decks/view-card" className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">View Card</Link>

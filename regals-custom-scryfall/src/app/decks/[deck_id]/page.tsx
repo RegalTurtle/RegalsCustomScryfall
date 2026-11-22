@@ -756,8 +756,8 @@ export default function Decks() {
     <div className="flex flex-col min-h-screen bg-teal-900">
       <RegalsMagicHeader 
         showBack={true}
-        backUrl="/decks"
-        backText="Decks"
+        backUrl={deck?.workshop ? "/decks/workshop" : "/decks"}
+        backText={deck?.workshop ? "Deck Workshop" : "Decks"}
       />
 
       {/* Deck Info Centered, Settings Button Right */}
