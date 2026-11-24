@@ -13,6 +13,9 @@ export default function CardPerformancePanel({ card, deckId, onChanged }: { card
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [edit, setEdit] = useState<{ id: string; text: string } | null>(null);
+  const [savingEdit, setSavingEdit] = useState(false);
+  const [editError, setEditError] = useState("");
 
   const load = async () => {
     setLoading(true);
@@ -63,6 +66,29 @@ export default function CardPerformancePanel({ card, deckId, onChanged }: { card
     }
   };
 
+  const saveEdit = async () => {
+    if (!edit) return;
+    setSavingEdit(true);
+    setEditError("");
+    try {
+      const response = await fetch(`/api/card-performance?id=${encodeURIComponent(edit.id)}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ deckId, notes: edit.text }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error ?? "Could not update performance note");
+      setNotes(current => current.map(note => note._id === edit.id
+        ? { ...note, notes: data.notes, updatedAt: data.updatedAt }
+        : note));
+      setEdit(null);
+    } catch (saveError) {
+      setEditError(saveError instanceof Error ? saveError.message : "Could not update performance note");
+    } finally {
+      setSavingEdit(false);
+    }
+  };
+
   const remove = async (id: string) => {
     const response = await fetch(`/api/card-performance?id=${encodeURIComponent(id)}`, { method: "DELETE" });
     if (response.ok) {
@@ -92,20 +118,56 @@ export default function CardPerformancePanel({ card, deckId, onChanged }: { card
                 <option value="good">Performed well ▲</option>
                 <option value="poor">Performed poorly ▼</option>
               </select>
-              <button onClick={save} disabled={saving || !gameId} className="flex-1 rounded bg-indigo-700 px-3 py-1 text-sm hover:bg-indigo-600 disabled:bg-gray-500">
+              <button onClick={save} disabled={saving || savingEdit || !gameId} className="flex-1 rounded bg-indigo-700 px-3 py-1 text-sm hover:bg-indigo-600 disabled:bg-gray-500">
                 {saving ? "Saving..." : "Save note"}
               </button>
             </div>
             <textarea value={noteText} onChange={event => setNoteText(event.target.value)} maxLength={1000} rows={2} placeholder="What happened?" className="rounded bg-gray-800 px-2 py-1 text-sm text-white" />
           </div>
-          {notes.length > 0 && <div className="mt-3 flex max-h-40 flex-col gap-2 overflow-y-auto">
+          {notes.length > 0 && <div className={`mt-3 flex flex-col gap-2 overflow-y-auto ${edit ? "max-h-64" : "max-h-40"}`}>
             {notes.map(note => <div key={note._id} className="rounded bg-gray-800 p-2 text-xs">
               <div className="flex items-start justify-between gap-2">
                 <span className={note.rating === "good" ? "text-green-300" : "text-red-300"}>{note.rating === "good" ? "▲ Good" : "▼ Poor"}</span>
-                <button onClick={() => remove(note._id)} className="text-red-300 hover:text-red-100">Remove</button>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    aria-label="Edit note"
+                    title="Edit note"
+                    aria-expanded={edit?.id === note._id}
+                    disabled={saving || savingEdit}
+                    onClick={() => {
+                      setEditError("");
+                      setEdit(edit?.id === note._id ? null : { id: note._id, text: note.notes ?? "" });
+                    }}
+                    className="rounded px-1 text-base leading-none text-gray-200 hover:bg-gray-700 disabled:opacity-50"
+                  >
+                    <span aria-hidden="true">⚙</span>
+                  </button>
+                  <button type="button" disabled={savingEdit || edit?.id === note._id} onClick={() => remove(note._id)} className="text-red-300 hover:text-red-100 disabled:opacity-50">Remove</button>
+                </div>
               </div>
               <p className="text-gray-300">{note.game ? `${note.game.date} · ${note.game.deckName} · ${note.game.result}` : "Game unavailable"}</p>
-              {note.notes && <p className="mt-1 whitespace-pre-wrap text-gray-100">{note.notes}</p>}
+              {edit?.id === note._id ? (
+                <div className="mt-2 flex flex-col gap-2">
+                  <textarea
+                    aria-label="Note text"
+                    value={edit.text}
+                    onChange={event => setEdit({ id: note._id, text: event.target.value })}
+                    disabled={savingEdit}
+                    maxLength={1000}
+                    rows={3}
+                    autoFocus
+                    className="w-full rounded bg-gray-900 px-2 py-1 text-sm text-white"
+                  />
+                  <div className="flex gap-2">
+                    <button type="button" onClick={saveEdit} disabled={saving || savingEdit} className="rounded bg-indigo-700 px-2 py-1 hover:bg-indigo-600 disabled:bg-gray-500">
+                      {savingEdit ? "Saving..." : "Save changes"}
+                    </button>
+                    <button type="button" onClick={() => setEdit(null)} disabled={savingEdit} className="rounded px-2 py-1 hover:bg-gray-700 disabled:opacity-50">Cancel</button>
+                  </div>
+                  {editError && <p role="alert" className="text-red-300">{editError}</p>}
+                </div>
+              ) : note.notes && <p className="mt-1 whitespace-pre-wrap text-gray-100">{note.notes}</p>}
             </div>)}
           </div>}
         </>

@@ -4,6 +4,8 @@ import { Game, GameCreateInput, GameResult, GameStats, SerializedGame } from "@/
 import validation from "@/validation";
 import { Collection, Filter, ObjectId } from "mongodb";
 
+export const gameSortOrder = { date: -1, createdAt: -1, _id: -1 } as const;
+
 type GameFilters = {
   deckId?: string;
   format?: string;
@@ -69,7 +71,7 @@ const getGames = async (userId: ObjectId, filters: GameFilters = {}): Promise<Se
   const gameCollection: Collection<Game> = await games();
   const cursor = gameCollection
     .find(ownedFilter(userId, buildGameQuery(filters)))
-    .sort({ date: -1, createdAt: -1 });
+    .sort(gameSortOrder);
   const foundGames = await (filters.limit
     ? cursor.limit(Math.min(Math.max(filters.limit, 1), 500))
     : cursor

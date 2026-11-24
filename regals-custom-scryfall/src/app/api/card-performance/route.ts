@@ -1,5 +1,6 @@
 import { authenticatedUserId } from "@/server/auth";
 import deckData from "@/data/decks";
+import { gameSortOrder } from "@/data/games";
 import { ownedFilter } from "@/data/ownership";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
@@ -46,9 +47,14 @@ export async function GET(request: NextRequest) {
     if (!await deckData.findDeckByMongoId(userId, deckId.toString())) return NextResponse.json({ error: "Deck not found" }, { status: 404 });
     const notes = await (await cardPerformance()).find({ set, cn, deckId }).sort({ createdAt: -1 }).toArray();
     const gameIds = notes.map(note => note.gameId).filter(id => ObjectId.isValid(id));
-    const gameList = await (await games()).find(ownedFilter(userId, { _id: { $in: gameIds } })).toArray();
-    const gameMap = new Map(gameList.map(game => [game._id?.toString(), game]));
-    const serialized = notes.map(note => serialize(note, gameMap.get(note.gameId.toString())));
+    const gameList = await (await games())
+      .find(ownedFilter(userId, { _id: { $in: gameIds } }))
+      .sort(gameSortOrder)
+      .toArray();
+    const gameMap = new Map(gameList.map((game, index) => [game._id?.toString(), { game, index }]));
+    const orderedNotes = notes.map(note => ({ note, match: gameMap.get(note.gameId.toString()) }));
+    orderedNotes.sort((a, b) => (a.match?.index ?? gameList.length) - (b.match?.index ?? gameList.length));
+    const serialized = orderedNotes.map(({ note, match }) => serialize(note, match?.game));
     const summary = serialized.reduce((result, note) => {
       result[note.rating] += 1;
       return result;
@@ -92,6 +98,31 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
     return NextResponse.json({ error: error instanceof Error ? error.message : "Could not save card performance" }, { status: 400 });
+  }
+}
+
+export async function PATCH(request: NextRequest) {
+  const userId = await authenticatedUserId();
+  if (!userId) return NextResponse.json({ error: "Not signed in" }, { status: 401 });
+  try {
+    const id = validation.verifyMongoId(request.nextUrl.searchParams.get("id") ?? "");
+    const body = await request.json();
+    const deckId = validation.verifyMongoId(body.deckId);
+    if (typeof body.notes !== "string") throw new Error("Notes must be text");
+    const notes = body.notes.trim();
+    if (notes.length > 1000) throw new Error("Notes cannot exceed 1000 characters");
+    if (!await deckData.findDeckByMongoId(userId, deckId.toString())) {
+      return NextResponse.json({ error: "Note not found" }, { status: 404 });
+    }
+    const updatedAt = new Date();
+    const result = await (await cardPerformance()).updateOne(
+      { _id: id, deckId },
+      { $set: { notes, updatedAt } },
+    );
+    if (!result.matchedCount) return NextResponse.json({ error: "Note not found" }, { status: 404 });
+    return NextResponse.json({ notes, updatedAt: updatedAt.toISOString() });
+  } catch (error) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : "Could not update performance note" }, { status: 400 });
   }
 }
 
