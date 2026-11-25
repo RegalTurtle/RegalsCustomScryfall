@@ -7,6 +7,7 @@ import CardPiles from "@/components/CardPiles";
 import { useCardPerformanceMarkers } from "@/components/useCardPerformanceMarkers";
 import DeckBulkEditModal from "@/components/DeckBulkEditModal";
 import DeckExportModal from "@/components/DeckExportModal";
+import GameFormModal from "@/components/GameFormModal";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader"
 import { Card, CardPile, CollectionTypeOption, Deck, GameStats, SerializedGame } from "@/types";
 import { useSession } from "next-auth/react";
@@ -379,6 +380,9 @@ export default function Decks() {
   const [ cardGroupMode, setCardGroupMode ] = useState<CardGroupMode>("tags");
   const [ cardSortMode, setCardSortMode ] = useState<CardSortMode>("cmc");
   const [recentGames, setRecentGames] = useState<SerializedGame[]>([]);
+  const [showAddGame, setShowAddGame] = useState(false);
+  const [gamesRevision, setGamesRevision] = useState(0);
+  const [gamesError, setGamesError] = useState("");
   const [gameStats, setGameStats] = useState<GameStats | null>(null);
   const [gamesLoading, setGamesLoading] = useState(false);
   const [deckLoadedForId, setDeckLoadedForId] = useState<string | null>(null);
@@ -539,25 +543,30 @@ export default function Decks() {
   };
 
   useEffect(() => {
-    if (!deckId || deckLoadedForId !== deckId.toString()) return;
+    if (!deckId || deckLoadedForId !== deckId) return;
 
+    const url = `/api/games?deckId=${encodeURIComponent(deckId)}`;
+    const controller = new AbortController();
     async function fetchDeckGames() {
       setGamesLoading(true);
+      setGamesError("");
       try {
-        const res = await fetch(`/api/games?deckId=${deckId}`);
+        const res = await fetch(url, { signal: controller.signal });
         if (!res.ok) throw new Error("Failed to fetch games");
         const { games, stats } = await res.json();
+        if (controller.signal.aborted) return;
         setRecentGames(games ?? []);
         setGameStats(stats ?? null);
-      } catch (error) {
-        console.error("Error fetching deck games:", error);
+      } catch {
+        if (!controller.signal.aborted) setGamesError("Could not load game history.");
       } finally {
-        setGamesLoading(false);
+        if (!controller.signal.aborted) setGamesLoading(false);
       }
     }
 
     fetchDeckGames();
-  }, [deckId, deckLoadedForId]);
+    return () => controller.abort();
+  }, [deckId, deckLoadedForId, gamesRevision]);
 
   if (loadingDeck) return <p>Loading...</p>;
   if (!deck) return <p>Deck not found</p>;
@@ -1271,6 +1280,7 @@ export default function Decks() {
               {gamesLoading && (
                 <p className="text-sm text-teal-100/80">Loading game history...</p>
               )}
+              {gamesError && <p role="alert" className="text-sm text-red-300">{gamesError}</p>}
               {gameStats && (
                 <p className="text-sm text-teal-100/80">
                   {`${gameStats.total} logged - ${gameStats.wins}/${gameStats.losses}/${gameStats.ties} - ${Math.round(gameStats.winRate * 100)}% win rate`}
@@ -1284,13 +1294,14 @@ export default function Decks() {
               >
                 View Games
               </a>
-              {session && authorization.canAddGames(session.user?.permissionLevel) && (
-                <a
-                  href={`/games?deckId=${deckId}&add=1`}
+              {deckId && session && authorization.canAddGames(session.user?.permissionLevel) && (
+                <button
+                  type="button"
+                  onClick={() => setShowAddGame(true)}
                   className="rounded bg-indigo-600 px-3 py-1 text-sm text-white hover:bg-indigo-700"
                 >
                   Add Game
-                </a>
+                </button>
               )}
             </div>
           </div>
@@ -1379,6 +1390,15 @@ export default function Decks() {
           )}
         </div>
       </section>
+
+      {showAddGame && deckId && (
+        <GameFormModal
+          initialDeck={{ _id: deckId, name: deck.name, format: deck.format, link: deck.link }}
+          lockDeck
+          onClose={() => setShowAddGame(false)}
+          onSaved={() => setGamesRevision(current => current + 1)}
+        />
+      )}
 
       {hoveredCard && (
         <aside className="fixed left-[calc((100vw-1468px)/2-22rem)] top-32 z-40 hidden w-80 rounded bg-gray-900/95 p-3 text-white shadow-xl min-[2200px]:block">

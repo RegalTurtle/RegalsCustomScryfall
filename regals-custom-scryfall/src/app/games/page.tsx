@@ -1,18 +1,12 @@
 "use client";
 
 import authorization from "@/authorization";
+import GameFormModal, { type GameDeckOption } from "@/components/GameFormModal";
 import RegalsMagicHeader from "@/components/RegalsMagicHeader";
 import { Deck, GameResult, GameStats, SerializedGame } from "@/types";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { FormEvent, useEffect, useMemo, useState } from "react";
-
-type DeckOption = {
-  _id: string;
-  name: string;
-  format: string;
-  link?: string;
-};
+import { useEffect, useMemo, useState } from "react";
 
 type GameBreakdownColumn = {
   key: string;
@@ -36,11 +30,7 @@ const emptyStats: GameStats = {
   averageTurn: null,
 };
 
-function todayString() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function serializeDeck(deck: Deck): DeckOption {
+function serializeDeck(deck: Deck): GameDeckOption {
   return {
     _id: deck._id?.toString() ?? "",
     name: deck.name,
@@ -64,27 +54,16 @@ export default function GamesPage() {
   const canAddGames = Boolean(session && authorization.canAddGames(session.user?.permissionLevel));
   const [games, setGames] = useState<SerializedGame[]>([]);
   const [stats, setStats] = useState<GameStats>(emptyStats);
-  const [decks, setDecks] = useState<DeckOption[]>([]);
+  const [decks, setDecks] = useState<GameDeckOption[]>([]);
   const [loading, setLoading] = useState(true);
-  const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [showAddGame, setShowAddGame] = useState(false);
-  const [editingGameId, setEditingGameId] = useState<string | null>(null);
+  const [gameForm, setGameForm] = useState<{ game?: SerializedGame; initialDeck?: GameDeckOption } | null>(null);
   const [update, setUpdate] = useState(0);
   const [deckFilter, setDeckFilter] = useState("");
   const [formatFilter, setFormatFilter] = useState("");
   const [resultFilter, setResultFilter] = useState("");
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
-  const [date, setDate] = useState(todayString());
-  const [deckId, setDeckId] = useState("");
-  const [deckName, setDeckName] = useState("");
-  const [deckLink, setDeckLink] = useState("");
-  const [format, setFormat] = useState("");
-  const [result, setResult] = useState<GameResult>("win");
-  const [numPlayers, setNumPlayers] = useState(4);
-  const [turnNumber, setTurnNumber] = useState("");
-  const [notes, setNotes] = useState("");
   const [initializedFromQuery, setInitializedFromQuery] = useState(false);
 
   const formats = useMemo(() => (
@@ -155,24 +134,24 @@ export default function GamesPage() {
   }, []);
 
   useEffect(() => {
-    if (initializedFromQuery || decks.length === 0) return;
+    if (status === "loading" || initializedFromQuery || decks.length === 0) return;
 
     const params = new URLSearchParams(window.location.search);
     const queryDeckId = params.get("deckId") ?? "";
 
     if (queryDeckId) {
-      chooseDeck(queryDeckId);
       setDeckFilter(queryDeckId);
     }
 
-    if (params.get("add") === "1") {
-      setShowAddGame(true);
+    if (canAddGames && params.get("add") === "1") {
+      setGameForm({ initialDeck: decks.find(deck => deck._id === queryDeckId) });
     }
 
     setInitializedFromQuery(true);
-  }, [decks, initializedFromQuery]);
+  }, [canAddGames, decks, initializedFromQuery, status]);
 
   useEffect(() => {
+    const controller = new AbortController();
     async function fetchGames() {
       setLoading(true);
       setError("");
@@ -185,110 +164,23 @@ export default function GamesPage() {
         if (dateFrom) params.set("dateFrom", dateFrom);
         if (dateTo) params.set("dateTo", dateTo);
 
-        const res = await fetch(`/api/games${params.toString() ? `?${params.toString()}` : ""}`);
+        const res = await fetch(`/api/games${params.toString() ? `?${params.toString()}` : ""}`, { signal: controller.signal });
         const data = await res.json();
         if (!res.ok) throw new Error(data.error ?? "Could not fetch games");
+        if (controller.signal.aborted) return;
 
         setGames(data.games ?? []);
         setStats(data.stats ?? emptyStats);
       } catch (error) {
-        setError(error instanceof Error ? error.message : "Could not fetch games");
+        if (!controller.signal.aborted) setError(error instanceof Error ? error.message : "Could not fetch games");
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     }
 
     fetchGames();
+    return () => controller.abort();
   }, [deckFilter, formatFilter, resultFilter, dateFrom, dateTo, update]);
-
-  const chooseDeck = (selectedDeckId: string) => {
-    setDeckId(selectedDeckId);
-    const selectedDeck = decks.find(deck => deck._id === selectedDeckId);
-    if (!selectedDeck) return;
-
-    setDeckName(selectedDeck.name);
-    setDeckLink(selectedDeck.link ?? "");
-    setFormat(selectedDeck.format);
-  };
-
-  const resetForm = () => {
-    setDate(todayString());
-    setDeckId("");
-    setDeckName("");
-    setDeckLink("");
-    setFormat("");
-    setResult("win");
-    setNumPlayers(4);
-    setTurnNumber("");
-    setNotes("");
-  };
-
-  const closeGameModal = () => {
-    setShowAddGame(false);
-    setEditingGameId(null);
-    resetForm();
-  };
-
-  const openAddGame = () => {
-    setEditingGameId(null);
-    resetForm();
-    setShowAddGame(true);
-  };
-
-  const openEditGame = (game: SerializedGame) => {
-    setEditingGameId(game._id);
-    setDate(game.date);
-    setDeckId(game.deckId ?? "");
-    setDeckName(game.deckName);
-    setDeckLink(game.deckLink ?? "");
-    setFormat(game.format);
-    setResult(game.result);
-    setNumPlayers(game.numPlayers);
-    setTurnNumber(game.turnNumber?.toString() ?? "");
-    setNotes(game.notes ?? "");
-    setShowAddGame(true);
-  };
-
-  const saveGame = async (event: FormEvent) => {
-    event.preventDefault();
-    setSaving(true);
-    setError("");
-
-    try {
-      const payload = {
-        date,
-        deckId: deckId || undefined,
-        deckName,
-        deckLink,
-        format,
-        result,
-        numPlayers,
-        turnNumber: turnNumber ? Number(turnNumber) : null,
-        notes,
-      };
-
-      const endpoint = editingGameId ? `/api/games/${editingGameId}` : "/api/games";
-      const method = editingGameId ? "PUT" : "POST";
-      const res = await fetch(endpoint, {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-
-      if (!res.ok) throw new Error(data.error ?? (editingGameId ? "Could not update game" : "Could not add game"));
-
-      closeGameModal();
-      setUpdate(current => current + 1);
-    } catch (error) {
-      const message = editingGameId ? "Could not update game" : "Could not add game";
-      setError(error instanceof Error ? error.message : message);
-    } finally {
-      setSaving(false);
-    }
-  };
 
   const deleteGame = async (gameId: string) => {
     setError("");
@@ -321,7 +213,7 @@ export default function GamesPage() {
           </div>
           {canAddGames && (
             <button
-              onClick={openAddGame}
+              onClick={() => setGameForm({})}
               className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700"
             >
               + Add Game
@@ -499,7 +391,7 @@ export default function GamesPage() {
                         <div className="flex justify-end gap-2">
                           <button
                             type="button"
-                            onClick={() => openEditGame(game)}
+                            onClick={() => setGameForm({ game })}
                             title="Edit game"
                             aria-label={`Edit ${game.deckName}`}
                             className="rounded bg-slate-600 px-2 py-1 text-sm text-white hover:bg-slate-500"
@@ -523,80 +415,14 @@ export default function GamesPage() {
         </section>
       </main>
 
-      {showAddGame && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-          onClick={closeGameModal}
-        >
-          <form
-            onSubmit={saveGame}
-            className="collection-card-modal max-h-[90vh] w-[90%] max-w-xl overflow-y-auto rounded bg-white p-5 text-black shadow"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-xl font-semibold">{editingGameId ? "Edit Game" : "Add Game"}</h2>
-              <button type="button" onClick={closeGameModal} className="text-xl">x</button>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Date</span>
-                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full rounded border p-2" required />
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Deck</span>
-                <select value={deckId} onChange={(e) => chooseDeck(e.target.value)} className="w-full rounded border p-2">
-                  <option value="">Manual deck</option>
-                  {decks.map(deck => (
-                    <option key={deck._id} value={deck._id}>{deck.name}</option>
-                  ))}
-                </select>
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Deck name</span>
-                <input type="text" value={deckName} onChange={(e) => setDeckName(e.target.value)} className="w-full rounded border p-2" required />
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Format</span>
-                <input type="text" value={format} onChange={(e) => setFormat(e.target.value)} className="w-full rounded border p-2" required />
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Result</span>
-                <select value={result} onChange={(e) => setResult(e.target.value as GameResult)} className="w-full rounded border p-2">
-                  <option value="win">Win</option>
-                  <option value="loss">Loss</option>
-                  <option value="tie">Tie</option>
-                </select>
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Number of players</span>
-                <input type="number" min={1} value={numPlayers} onChange={(e) => setNumPlayers(Math.max(1, Number(e.target.value)))} className="w-full rounded border p-2" required />
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Turn number</span>
-                <input type="number" min={1} value={turnNumber} onChange={(e) => setTurnNumber(e.target.value)} className="w-full rounded border p-2" />
-              </label>
-              <label className="block">
-                <span className="mb-1 block text-sm font-medium">Deck link</span>
-                <input type="url" value={deckLink} onChange={(e) => setDeckLink(e.target.value)} className="w-full rounded border p-2" />
-              </label>
-            </div>
-
-            <label className="mt-4 block">
-              <span className="mb-1 block text-sm font-medium">Notes</span>
-              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} className="min-h-28 w-full resize-y rounded border p-2" />
-            </label>
-
-            <div className="mt-4 flex justify-end gap-2">
-              <button type="button" onClick={closeGameModal} className="rounded border border-gray-300 px-4 py-2 hover:bg-gray-100">
-                Cancel
-              </button>
-              <button type="submit" disabled={saving} className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 disabled:bg-gray-400">
-                {saving ? "Saving..." : editingGameId ? "Save Changes" : "Save Game"}
-              </button>
-            </div>
-          </form>
-        </div>
+      {gameForm && (
+        <GameFormModal
+          decks={decks}
+          initialDeck={gameForm.initialDeck}
+          game={gameForm.game}
+          onClose={() => setGameForm(null)}
+          onSaved={() => setUpdate(current => current + 1)}
+        />
       )}
     </div>
   );
